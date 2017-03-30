@@ -1,0 +1,1081 @@
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Set Theory</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <link rel="canonical" href="../index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Set Theory">
+    <meta property="og:description" content="Contents What are sets?   Basic facts about sets   Operations on sets   Functions Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that">
+    <meta property="og:url" content="http://localhost:2368/set-theory/">
+    <meta property="article:published_time" content="2017-03-29T00:49:23.000Z">
+    <meta property="article:modified_time" content="2017-03-30T19:54:38.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Set Theory">
+    <meta name="twitter:description" content="Contents What are sets?   Basic facts about sets   Operations on sets   Functions Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that">
+    <meta name="twitter:url" content="http://localhost:2368/set-theory/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Set Theory",
+    "url": "http://localhost:2368/set-theory/",
+    "datePublished": "2017-03-29T00:49:23.000Z",
+    "dateModified": "2017-03-30T19:54:38.000Z",
+    "description": "Contents What are sets?   Basic facts about sets   Operations on sets   Functions Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../../rss/index.html">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,600,400">
+    <style amp-custom>
+        /* ==========================================================================
+           Table of Contents
+           ========================================================================== */
+
+        /*
+
+            0. Normalize
+            1. General
+            2. Utilities
+            3. AMP Post
+            4. Footer
+
+        */
+
+        /* ==========================================================================
+           0. normalize.css v3.0.3 | MIT License | git.io/normalize | (minified)
+           ========================================================================== */
+
+        html {
+            font-family: sans-serif;
+
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+        audio,
+        canvas,
+        progress,
+        video {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+        audio:not([controls]) {
+            display: none;
+            height: 0;
+        }
+        [hidden],
+        template {
+            display: none;
+        }
+        a {
+            background-color: transparent;
+        }
+        a:active,
+        a:hover {
+            outline: 0;
+        }
+        abbr[title] {
+            border-bottom: 1px dotted;
+        }
+        b,
+        strong {
+            font-weight: bold;
+        }
+        dfn {
+            font-style: italic;
+        }
+        h1 {
+            margin: 0.67em 0;
+            font-size: 2em;
+        }
+        mark {
+            background: #ff0;
+            color: #000;
+        }
+        small {
+            font-size: 80%;
+        }
+        sub,
+        sup {
+            position: relative;
+            vertical-align: baseline;
+            font-size: 75%;
+            line-height: 0;
+        }
+        sup {
+            top: -0.5em;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        img {
+            border: 0;
+        }
+        amp-img {
+            border: 0;
+        }
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        figure {
+            margin: 1em 40px;
+        }
+        hr {
+            box-sizing: content-box;
+            height: 0;
+        }
+        pre {
+            overflow: auto;
+        }
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            color: inherit;
+            font: inherit;
+        }
+        button {
+            overflow: visible;
+        }
+        button,
+        select {
+            text-transform: none;
+        }
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            cursor: pointer;
+
+            -webkit-appearance: button;
+        }
+        button[disabled],
+        html input[disabled] {
+            cursor: default;
+        }
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+        input {
+            line-height: normal;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+        input[type="search"] {
+            -webkit-appearance: textfield;
+        }
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        fieldset {
+            margin: 0 2px;
+            padding: 0.35em 0.625em 0.75em;
+            border: 1px solid #c0c0c0;
+        }
+        legend {
+            padding: 0;
+            border: 0;
+        }
+        textarea {
+            overflow: auto;
+        }
+        optgroup {
+            font-weight: bold;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            padding: 0;
+        }
+
+
+        /* ==========================================================================
+           1. General - Setting up some base styles
+           ========================================================================== */
+
+        html {
+            max-height: 100%;
+            height: 100%;
+            font-size: 62.5%;
+
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+            max-height: 100%;
+            height: 100%;
+            color: #3a4145;
+            background: #f4f8fb;
+            letter-spacing: 0.01rem;
+            font-family: "Merriweather", serif;
+            font-size: 1.8rem;
+            line-height: 1.75em;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "kern" 1;
+            -moz-font-feature-settings: "kern" 1;
+            -o-font-feature-settings: "kern" 1;
+        }
+
+        ::-moz-selection {
+            background: #d6edff;
+        }
+
+        ::selection {
+            background: #d6edff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 0.3em 0;
+            color: #2e2e2e;
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.15em;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+            -moz-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+            -o-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+        }
+
+        h1 {
+            text-indent: -2px;
+            letter-spacing: -1px;
+            font-size: 2.6rem;
+        }
+
+        h2 {
+            letter-spacing: 0;
+            font-size: 2.4rem;
+        }
+
+        h3 {
+            letter-spacing: -0.6px;
+            font-size: 2.1rem;
+        }
+
+        h4 {
+            font-size: 1.9rem;
+        }
+
+        h5 {
+            font-size: 1.8rem;
+        }
+
+        h6 {
+            font-size: 1.8rem;
+        }
+
+        a {
+            color: #4a4a4a;
+        }
+
+        a:hover {
+            color: #111;
+        }
+
+        p,
+        ul,
+        ol,
+        dl {
+            margin: 0 0 2.5rem 0;
+            font-size: 1.5rem;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+            -moz-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+            -o-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+        }
+
+        ol,
+        ul {
+            padding-left: 2em;
+        }
+
+        ol ol,
+        ul ul,
+        ul ol,
+        ol ul {
+            margin: 0 0 0.4em 0;
+            padding-left: 2em;
+        }
+
+        dl dt {
+            float: left;
+            clear: left;
+            overflow: hidden;
+            margin-bottom: 1em;
+            width: 180px;
+            text-align: right;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 700;
+        }
+
+        dl dd {
+            margin-bottom: 1em;
+            margin-left: 200px;
+        }
+
+        li {
+            margin: 0.4em 0;
+        }
+
+        li li {
+            margin: 0;
+        }
+
+        hr {
+            display: block;
+            margin: 1.75em 0;
+            padding: 0;
+            height: 1px;
+            border: 0;
+            border-top: #efefef 1px solid;
+        }
+
+        blockquote {
+            box-sizing: border-box;
+            margin: 1.75em 0 1.75em 0;
+            padding: 0 0 0 1.75em;
+            border-left: #4a4a4a 0.4em solid;
+
+            -moz-box-sizing: border-box;
+        }
+
+        blockquote p {
+            margin: 0.8em 0;
+            font-style: italic;
+        }
+
+        blockquote small {
+            display: inline-block;
+            margin: 0.8em 0 0.8em 1.5em;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        blockquote small:before {
+            content: "\2014 \00A0";
+        }
+
+        blockquote cite {
+            font-weight: 700;
+        }
+
+        blockquote cite a {
+            font-weight: normal;
+        }
+
+        mark {
+            background-color: #fdffb6;
+        }
+
+        code,
+        tt {
+            padding: 1px 3px;
+            border: #e3edf3 1px solid;
+            background: #f7fafb;
+            border-radius: 2px;
+            white-space: pre-wrap;
+            font-family: Inconsolata, monospace, sans-serif;
+            font-size: 0.85em;
+            font-feature-settings: "liga" 0;
+
+            -webkit-font-feature-settings: "liga" 0;
+            -moz-font-feature-settings: "liga" 0;
+        }
+
+        pre {
+            overflow: auto;
+            box-sizing: border-box;
+            margin: 0 0 1.75em 0;
+            padding: 10px;
+            width: 100%;
+            border: #e3edf3 1px solid;
+            background: #f7fafb;
+            border-radius: 3px;
+            white-space: pre;
+            font-family: Inconsolata, monospace, sans-serif;
+            font-size: 0.9em;
+
+            -moz-box-sizing: border-box;
+        }
+
+        pre code,
+        pre tt {
+            padding: 0;
+            border: none;
+            background: transparent;
+            white-space: pre-wrap;
+            font-size: inherit;
+        }
+
+        kbd {
+            display: inline-block;
+            margin-bottom: 0.4em;
+            padding: 1px 8px;
+            border: #ccc 1px solid;
+            background: #f4f4f4;
+            border-radius: 4px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+            0 1px 0 0 #fff inset;
+            color: #666;
+            text-shadow: #fff 0 1px 0;
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
+        table {
+            box-sizing: border-box;
+            margin: 1.75em 0;
+            max-width: 100%;
+            width: 100%;
+            background-color: transparent;
+
+            -moz-box-sizing: border-box;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            border-top: #efefef 1px solid;
+            vertical-align: top;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        table th {
+            color: #000;
+        }
+
+        table caption + thead tr:first-child th,
+        table caption + thead tr:first-child td,
+        table colgroup + thead tr:first-child th,
+        table colgroup + thead tr:first-child td,
+        table thead:first-child tr:first-child th,
+        table thead:first-child tr:first-child td {
+            border-top: 0;
+        }
+
+        table tbody + tbody {
+            border-top: #efefef 2px solid;
+        }
+
+        table table table {
+            background-color: #fff;
+        }
+
+        table tbody > tr:nth-child(odd) > td,
+        table tbody > tr:nth-child(odd) > th {
+            background-color: #f6f6f6;
+        }
+
+        table.plain tbody > tr:nth-child(odd) > td,
+        table.plain tbody > tr:nth-child(odd) > th {
+            background: transparent;
+        }
+
+        iframe,
+        amp-iframe,
+        .fluid-width-video-wrapper {
+            display: block;
+            margin: 1.75em 0;
+        }
+
+        /* When a video is inside the fitvids wrapper, drop the
+        margin on the iframe, cause it breaks stuff. */
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper amp-iframe {
+            margin: 0;
+        }
+
+        textarea,
+        select,
+        input {
+            margin: 0 0 5px 0;
+            padding: 6px 9px;
+            width: 260px;
+            outline: 0;
+            border: #e7eef2 1px solid;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.4em;
+            font-weight: 100;
+
+            -webkit-appearance: none;
+        }
+
+        textarea {
+            min-width: 250px;
+            min-height: 80px;
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="week"]:focus,
+        input[type="time"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        textarea:focus {
+            outline: none;
+            outline-width: 0;
+            border: #bbc7cc 1px solid;
+            background: #fff;
+        }
+
+        select {
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        /* ==========================================================================
+           2. Utilities
+           ========================================================================== */
+
+        /* Clears shit */
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+
+        /* ==========================================================================
+           3. AMP Post
+           ========================================================================== */
+
+
+
+        .main-header {
+            position: relative;
+            display: table;
+            overflow: hidden;
+            box-sizing: border-box;
+            width: 100%;
+            height: 50px;
+            background: #5ba4e5 no-repeat center center;
+            background-size: cover;
+            text-align: left;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .content {
+            background: #fff;
+            padding-top: 15px;
+        }
+        .blog-title,
+        .content {
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .blog-title a {
+            display: block;
+            padding-right: 16px;
+            padding-left: 16px;
+            height: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            line-height: 50px;
+            font-weight: 600;
+        }
+
+        .post {
+            position: relative;
+            margin-top: 0;
+            margin-right: 16px;
+            margin-left: 16px;
+            padding-bottom: 0;
+            max-width: 100%;
+            border-bottom: #ebf2f6 1px solid;
+            word-wrap: break-word;
+            font-size: 0.95em;
+            line-height: 1.65em;
+        }
+
+        .post-header {
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            margin-bottom: 0;
+        }
+
+        .post-title a {
+            text-decoration: none;
+        }
+
+        .post-meta {
+            display: block;
+            margin: 3px 0 0 0;
+            color: #9eabb3;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.3rem;
+            line-height: 2.2rem;
+        }
+
+        .post-meta a {
+            color: #9eabb3;
+            text-decoration: none;
+        }
+
+        .post-meta a:hover {
+            text-decoration: underline;
+        }
+
+        .post-meta .author {
+            margin: 0;
+            font-size: 1.3rem;
+            line-height: 1.3em;
+        }
+
+        .post-date {
+            display: inline-block;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: 1.2rem;
+            line-height: 1.2em;
+        }
+
+        .post-image {
+            margin: 0;
+            padding-top: 3rem;
+            padding-bottom: 30px;
+            border-top: 1px #E8E8E8 solid;
+        }
+
+        /* Keep images centered, and allow images wider than the main
+           text column to break out. */
+        .post-content amp-img,
+        .post-content amp-anim {
+            /* Centers an image by (1) pushing its left edge to the
+               center of its container and (2) shifting the entire image
+               in the opposite direction by half its own width.
+               Works for images that are larger than their containers. */
+            position: relative;
+            left: 50%;
+            display: block;
+            padding: 0;
+            min-width: 0;
+            max-width: 112%; /* fallback when calc doesn't work */
+            width: calc(100% + 32px); /* expand with to image + margins */
+            height: auto;
+            transform: translateX(-50%);
+
+            -webkit-transform: translateX(-50%); /* for Safari and iOS */
+            -ms-transform: translateX(-50%); /* for IE9 */
+        }
+
+        .footnotes {
+            font-size: 1.3rem;
+            line-height: 1.6em;
+            font-style: italic;
+        }
+
+        .footnotes li {
+            margin: 0.6rem 0;
+        }
+
+        .footnotes p {
+            margin: 0;
+        }
+
+        .footnotes p a:last-child {
+            text-decoration: none;
+        }
+
+        /* ==========================================================================
+           4. Footer - The bottom the AMP Post
+           ========================================================================== */
+
+        .site-footer {
+            position: relative;
+            margin: 0 auto 20px auto;
+            padding: 1rem 15px;
+            max-width: 600px;
+            color: rgba(0,0,0,0.5);
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.75em;
+        }
+
+        .site-footer a {
+            color: rgba(0,0,0,0.5);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-footer a:hover {
+            border-bottom: #bbc7cc 1px solid;
+        }
+
+        .poweredby {
+            display: block;
+            float: right;
+            width: 45%;
+            text-align: right;
+        }
+
+        .copyright {
+            display: block;
+            float: left;
+            width: 45%;
+        }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="../../">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Set Theory</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="../../author/eric/">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2017-03-29">2017-03-29</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <h3 id="contents">Contents</h3>
+
+<p></p>
+
+<ol>
+<li><a href="../index.html#what-are-sets">What are sets?</a>  </li>
+<li><a href="../index.html#basic-facts-about-sets">Basic facts about sets</a>  </li>
+<li><a href="../index.html#operations-on-sets">Operations on sets</a>  </li>
+<li><a href="../index.html#functions">Functions</a></li>
+</ol>
+
+<hr>
+
+<p>Everything in mathematics is built from sets.<sup id="fnref:1"><a href="../index.html#fn:1" rel="footnote">1</a></sup> Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that a basic familiarity with set theory is necessary in order to understand the topics I'll be discussing here. For this reason, I've decided to include this introductory post on the topic so that adventurous readers with little mathematical background will be able to understand my future posts without having to leave the confines of this blog.</p>
+
+<h3 id="whataresetsanamewhataresets">What are sets?<a name="what-are-sets"></a></h3>
+
+<p></p>
+
+<p>Already we encounter something of a problem — one which took mathematicians quite a while to resolve, and should not be underestimated. The issue is that, because we wish to use set theory as the foundation of all future mathematical exploration, we don't actually have a place to start when defining sets themselves.</p>
+
+<p>It takes quite a bit of logical sophistication to arrive at a truly satisfactory definition of a set. If you're interested in such things, I encourage you to look into any resource you can find on <em>Zermelo-Fraenkel Set Theory with the Axiom of Choice</em> (usually abbreviated <em>ZFC</em>), which is a more rigorous set of axioms which govern the behavior of sets.</p>
+
+<p>For our purposes, the standard "naïve" set theory will do just fine. It is largely intuition-based, because it relies on the primitive notion that sets contain elements and elements are what make up sets. However, as long as we take certain precautions when dealing with sets, we should never encounter any problems stemming from this treatment:</p>
+
+<p><strong>Definition:</strong> A <strong>set</strong> is a collection of <strong>elements</strong>.</p>
+
+<h3 id="basicfactsaboutsetsanamebasicfactsaboutsets">Basic facts about sets<a name="basic-facts-about-sets"></a></h3>
+
+<p></p>
+
+<p>Traditionally, capital letters like $A$, $B$ or $X$ are used to denote sets. If $x$ is an element of a set $X$, we write $x\in X$ and we say that "$x$ is in $X$."</p>
+
+<p>Sets are determined solely by the elements they contain. For instance, if the numbers $1$, $2$ and $3$ are the only elements of the set $X$, we can indicate this by writing $X=\{1,2,3\}$. When we define sets in this manner, by specifying a complete list of elements they contain, we always sandwich the list of elements between curly braces, as above.</p>
+
+<p><strong>Definition:</strong> If two sets $A$ and $B$ contain precisely the same elements, we say that they are <strong>equal</strong> and we write $A=B$. If they are <strong>not equal</strong>, we write $A\neq B$.</p>
+
+<p>If two sets are not equal, then by definition they do not contain the same elements. It follows then that one of them must contain at least one element that the other does not.</p>
+
+<p>This definition of set equality should hopefully seem reasonable. Note that it does imply that the sets $\{x, y, z\}$ and $\{x, x, z, y, x, z\}$ are equal because they contain the same elements. Although some elements may appear more than once in the description of a set, or the elements may by written in a different order, a set either contains an element or it does not. <strong>Sets do not have any concept of multiplicity or order for their elements.</strong></p>
+
+<p>There is nothing to prevent sets from containing other sets, but be careful when dealing with sets that have other sets as elements. If $x$ is some element, then $\big\{x, \{x\}\big\} \neq \{x\}$ because the set $\{x\}$ is not the same thing as the element $x$.</p>
+
+<p>It may be helpful to think of sets as bags, and their elements as objects inside these bags. If $x$ is an apple, then $\big\{x, \{x\}\big\}$ represents a bag inside of which are two things: an apple and a bag. Inside of the inner bag is also an apple. This is very clearly not the same thing as $\{x\}$, which is just a bad with only an apple inside.</p>
+
+<p>Equality is not the only relationship between sets that we will be concerned with. The following definitions give us a way to talk about sets which contain some of the same elements.</p>
+
+<p><strong>Definition:</strong> Let $A$ and $B$ denote two sets. If every element of $A$ is also and element of $B$, we say that $A$ is a <strong>subset</strong> of $B$ and we write $A\subseteq B$.</p>
+
+<p><strong>Definition:</strong> If $A\subseteq B$ but $A\neq B$, we say that $A$ is a <strong>proper subset</strong> of $B$ and we write $A\subset B$.</p>
+
+<p>Notice that, by these definitions, every set is a subset of itself. Also note that if $A\subset B$, it follows that $B$ contains some element that $A$ does not. Thus, if both sets are finite then $B$ is larger than $A$. Infinite sets are weird and do weird things, so we cannot necessarily make the same claim when they get involved.</p>
+
+<p>Again, we must take care and realize that $A\subseteq B$ is a completely different statement than $A\in B$. To visualize this, we refer again to our analogy between sets and bags. Take as an example the case where $A$ is a bag containing only an apple, while $B$ is a bag containing an apple and an orange. It should be clear that $A$ is not actually an element of $B$, but it is a subset.</p>
+
+<p>We're ready now for our first proof!</p>
+
+<hr>
+
+<p><strong>Theorem.</strong> Let $A$ and $B$ denote sets. If $A\subseteq B$ and $B\subseteq A$, then $A=B$.</p>
+
+<p><strong>Proof.</strong> Since $A$ is a subset of $B$, every element of $A$ is also an element of $B$. Likewise, since $B$ is a subset of $A$, every element of $B$ is also an element of $A$. It follows that the elements of each set are precisely the same, so $A=B$, as desired.</p>
+
+<hr>
+
+<p>One important set will come up in our discussions quite often:</p>
+
+<p><strong>Definition:</strong> The <strong>empty set</strong> is the unique set containing no elements.</p>
+
+<p>It is easy to see that the empty set is a subset of every set, since all of the elements it contains (none) are trivially also in every other set.</p>
+
+<p>In many upcoming posts, I am going to assume familiarity with the following sets:</p>
+
+<ul>
+<li>The set $\mathbb{N} = \{0, 1, 2, \dotsc\}$ of <strong>natural numbers</strong>.</li>
+<li>The set $\mathbb{Z} = \{\dotsc, -1, 0, 1, \dotsc\}$ of <strong>integers</strong>.</li>
+<li>The set $\mathbb{Q}$ of <strong>rational numbers</strong> whose elements are of the form $\frac{p}{q}$, where $p, q \in \mathbb{Z}$ and $q \neq 0$.</li>
+<li>The set $\mathbb{R}$ of <strong>real numbers</strong>.</li>
+<li>The set $\mathbb{C}$ of <strong>complex numbers</strong> whose elements are of the form $a+bi$, where $a, b \in \mathbb{R}$ and $i^2 = -1$.</li>
+</ul>
+
+<p>It is convenient and natural to assume that $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$, and I encourage you to think this way.<sup id="fnref:2"><a href="../index.html#fn:2" rel="footnote">2</a></sup></p>
+
+<p>It is often desirable to specify certain subsets of sets with which we are already acquainted in terms of some property that every element in the subset must possess. How would we, for instance, denote the set of positive real numbers? Or the set of even integers?</p>
+
+<p>We can construct such subsets using <strong>set-builder notation</strong>. This is basically a fancy notation describing the form that elements in the set take, followed by a vertical bar which means "such that," and then a property which every element obeys — all sandwiched between the usual set brackets.</p>
+
+<p>In this new notation, $\{x\in\mathbb{R} \mid x&gt;0\}$ would be the set of positive real numbers. Similarly, $\{2n \mid n\in\mathbb{Z}\}$ is the set of even integers.</p>
+
+<h3 id="operationsofsetsanameoperationsonsets">Operations of sets<a name="operations-on-sets"></a></h3>
+
+<p></p>
+
+<p>Given two or more sets, we will often find the need to combine them in certain ways to create new sets. Below are four very common ways of creating new sets from old. Each of their definitions can be extended to combine any finite collection of sets, and sometimes even an infinite collection. Make certain that you are comfortable with each of these definitions, since they will show up everywhere ever.</p>
+
+<p>Let $A$ and $B$ denote sets. Let's say, for illustration, that they're sets of points in the plane of your screen and they look like these blobs:</p>
+
+<p><amp-img src="http://localhost:2368/content/images/2017/03/sets.svg" alt width="334" height="198" layout="responsive"></amp-img></p>
+
+<p><strong>Definition:</strong> The <strong>union</strong> of $A$ and $B$ is the set of all elements in either $A$ or in $B$, or both. It is written $A\cup B$ and is defined as the set $\{x \mid x\in A \text{ or } x\in B\}$.</p>
+
+<p>The union of the sets above would look like this:</p>
+
+<p><amp-img src="http://localhost:2368/content/images/2017/03/union.svg" alt width="334" height="198" layout="responsive"></amp-img></p>
+
+<p><strong>Definition:</strong> The <strong>intersection</strong> of $A$ and $B$ is the set of all elements in both $A$ and $B$. It is written $A\cap B$ and is defined as the set $\{x \mid x\in A \text{ and } x\in B\}$.</p>
+
+<p><strong>Definition:</strong> Two sets are said to be <strong>disjoint</strong> if their intersection is empty.</p>
+
+<p>The intersection of the above sets would look like this:</p>
+
+<p><amp-img src="http://localhost:2368/content/images/2017/03/intersection.svg" alt width="334" height="198" layout="responsive"></amp-img></p>
+
+<p><strong>Definition:</strong> The <strong>complement</strong> (or <strong>difference</strong>) of $A$ in $B$ is the set of all elements that are in $B$ but not in $A$. It is written $B-A$ and is defined as the set $\{x\in B \mid x\notin A\}$.</p>
+
+<p>For the sets above, the complement of $A$ in $B$ would look like this:</p>
+
+<p><amp-img src="http://localhost:2368/content/images/2017/03/complement.svg" alt width="334" height="198" layout="responsive"></amp-img></p>
+
+<p>It is worth nothing that, unlike unlike unions and intersections, complements depend on which set comes first. That is, $A-B\neq B-A$.</p>
+
+<p><strong>Definition:</strong> The <strong>Cartesian product</strong> of $A$ and $B$, written $A \times B$, is the set of all ordered pairs whose first component is in $A$ and whose second component is in $B$.</p>
+
+<p>The Cartesian product of the above sets would be a bit trickier to draw since this would require four spacial dimensions. As a simpler example, suppose that $A$ and $B$ are both $\mathbb{R}$, the set of real numbers. Then $A\times B=\mathbb{R}\times\mathbb{R}$ and this set would consist of all points in the plane. This is because $\mathbb{R}\times\mathbb{R}$ by definition contains all pairs of the form $(x,y)$ where $x$ and $y$ are real numbers. This is why two-dimensional Euclidean space is often written as $\mathbb{R}^2$, as shorthand for $\mathbb{R}\times\mathbb{R}$.</p>
+
+<p>It should be somewhat obvious how to take the union of an arbitrary collection of sets. For a finite collection of $n$ sets — $A_1, A_2, \dotsc, A_n$ — their union contains all of the elements that are in at least one of the sets:</p>
+
+<p>$\bigcup\limits_{i=1}^n A_i = \{x\mid x\in A_1 \text{ or } x\in A_2 \text{ or } \dotsc \text{ or } x\in A_n\}.$</p>
+
+<p>We can go even further, and take the union of any collection of sets. To do so, we first let $I$ be some <strong>indexing set</strong> such that $A_i$ is a set for every $i\in I$. Notice that there is nothing to stop $I$ from being an infinite set, in which case there would be infinitely many sets $A_i$ in our collection. We can take the union of all these sets as follows:</p>
+
+<p>$\bigcup\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for some } i\in I\}.$</p>
+
+<p>The same type of thinking allows for intersections and Cartesian products to be defined for more than two sets. In the case of Cartesian products, multiplying $n$ sets yields a set whose elements are ordered $n$-tuples, where the $i$th component is an element of the $i$th set being multiplied. Cartesian products of infinitely many sets are a bit too complicated to discuss here, although we can easily take the intersection of an arbitrary collection of sets, much as we did for their union:</p>
+
+<p>$\bigcap\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for every } i\in I\}.$</p>
+
+<p>There are two interesting ways in which the operation of set difference distributes over the operations of unions and intersections. These are called <strong>De Morgan's Laws</strong>:</p>
+
+<p>$X - (A \cup B) = (X - A) \cap (X - B),$
+$X - (A \cap B) = (X - A) \cup (X - B).$</p>
+
+<p>These highly symmetric rules often turn out to be very useful, and I encourage you to draw some pictures to try to understand them. I will not prove them here. To illustrate the second rule, here is an example: if a ball is not both red and blue, then it is not red or it is not blue (or possibly both).</p>
+
+<p>De Morgan's Laws also extend naturally to arbitrary collections of sets:</p>
+
+<p>$X - \bigcup\limits_{i\in I} A_i = \bigcap\limits_{i\in I} (X - A_i),$
+$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$</p>
+
+<h3 id="functionsanamefunctions">Functions<a name="functions"></a></h3>
+
+<p></p>
+
+<p>The last topic I'll talk about in this post is the concept of a function, as well as several important traits that functions may or may not possess. You've likely encountered functions before as things that eat variables and poo out numbers, and that's not a terrible way of thinking about them. We're going to make things a bit more formal though.</p>
+
+<p><strong>Definition:</strong> A <strong>function</strong> from a set $A$ to a set $B$, denoted $f:A\to B$, is a subset of $A\times B$ such that for each $x\in A$, there is exactly one $y\in B$ for which $(x, y)\in f$. In this definition, the set $A$ is called the <strong>domain</strong> of $f$ and $B$ is called the <strong>codomain</strong>.</p>
+
+<p><strong>Definition:</strong> The <strong>range</strong> (or <strong>image</strong>) of a function $f$ is the set $\text{im } f = \{y\in B \mid (x,y)\in f \text{ for some } x\in A\}$.</p>
+
+<p>If you've never seen the above definition of a function before, it's natural to wonder at this point just what the crud I'm talking about. Why are we defining functions as sets? As I stated earlier, <em>everything</em> in mathematics is defined in terms of sets, and functions are no exception. We don't usually think of functions as sets of ordered pairs, but it is useful to define them this way so that we can make precise statements about them which stem from their definition. It also allows us to immediately infer what is meant by function equality, because it is inherited from our earlier definition of set equality.</p>
+
+<p>So using this definition, a function is basically a list of $(x,y)$ values where $y$ is what you'd usually call $f(x)$. That is, the first component is the "input" to the function and the second component is the "output." The second condition in the definition is a rephrasing of what you may know as the "vertical line test." In two dimensions, a function from $\mathbb{R}$ to $\mathbb{R}$ is anything you can draw that exists above every value on the $x$-axis, but not more than once.</p>
+
+<p>As I mentioned above, a more familiar way of rephrasing the last part of the definition might be this:</p>
+
+<p>... for each $x\in A$, there exists exactly one $y\in B$ for which $y=f(x)$.</p>
+
+<p>This notation is much more common, and I'll be using it almost exclusively from now on. Often, $f(x)$ is referred to as the <strong>image</strong> of $x$ under the function $f$. This is an unfortunate overloading of the word "image," but it will not lead to confusion if we are careful.</p>
+
+<p>One of the nice things about our definition of a function it that it allows us to define functions between any two sets we want, and the values of the function don't have to obey any particular rule. We can simply check each point and its image to make sure they obey the definition.</p>
+
+<p>If you're a bit confused by all this, just sit and absorb it for a minute. Realize that ordinary things like the function $f:\mathbb{R}\to\mathbb{R}$, defined by $f(x)=x^2$ for every $x\in\mathbb{R}$, still satisfy our new definition. Think everything through — maybe draw some pictures — and then continue reading.</p>
+
+<p>Now, notice that something like $f:\mathbb{R}\to\mathbb{R}$ defined by $f(x)=\frac{1}{x}$ for all $x\in\mathbb{R}$ is not actually a function! This is because not every element of the domain gets mapped to a real number. In particular, there is no $y\in\mathbb{R}$ for which $y=f(0)$. We would need to restrict the domain to $\mathbb{R} - \{0\}$ to turn this thing into a function.</p>
+
+<p>The next thing we'll do is introduce some common classes of functions. </p>
+
+<p><strong>Definition:</strong> A function $f:A\to B$ is <strong>injective</strong> if for every $y\in B$ there exists at most one $x\in A$ for which $y=f(x)$.</p>
+
+<p>Basically, an injective function cannot have two points in its domain get mapped to the same point in its codomain. We can check that a function is injective by showing that if $x\neq y$ then $f(x)\neq f(y)$. Equivalently, we can do this by instead showing that if $f(x)=f(y)$ then $x=y$. (These two statements are contrapositives so they are logically equivalent, but sometimes one will be easier to show than the other.) Injective functions in the plane satisfy what might constitute a "horizontal line test," in that any horizontal line will intersect their graph at most once.</p>
+
+<p><strong>Definition:</strong> A function $f:A\to B$ is <strong>surjective</strong> if for every $y\in B$, there exists at least one $x\in A$ for which $y=f(x)$.</p>
+
+<p>A surjective function has every point in its codomain get mapped to by some point in the domain. That is, every element of the codomain is the image of some element in the domain. In this case, the codomain of the function is equal to its range. Notice that we can turn any function into a surjective function by restricting its codomain to its range.</p>
+
+<p><strong>Definition:</strong> A function $f:A\to B$ is <strong>bijective</strong> if for every $y\in B$, there exists exactly one $x\in A$ for which $y=f(x)$. Equivalently, a function is bijective if it is both injective and surjective.</p>
+
+<p>Bijective functions are particularly nice because they have <strong>inverse functions</strong>. That is, if $f:A\to B$ is bijective, we can find a function $f:B\to A$ with the property that $f\big(g(y)\big)=y$ for every $y\in B$ and $g\big(f(x)\big)=x$ for every $x\in A$. </p>
+
+<p>A function's inverse essentially allows us to undo what that function did in the first place. It turns out that if a function has an inverse, then that inverse is unique and thus we can unambiguously write the inverse of $f$ as $f^{-1}$.</p>
+
+<p>Functions that aren't bijective do not have inverses, but we can still define something similar:</p>
+
+<p><strong>Definition:</strong> The <strong>preimage</strong> of a set $Y\subseteq B$ under a function $f:A\to B$ is the set of all $X\in A$ for which $f(x)\in Y$. We write $f^{-1}[Y]=\{x\in A\mid f(x)\in Y\}$.</p>
+
+<p>Note that $f^{-1}$ here does <em>not</em> denote an inverse function! We haven't even defined the preimage as a function at all (yet). The square brackets around its argument (which is always a set) help us to distinguish between whether we are talking about inverse functions or preimages. Given a subset of the codomain, the preimage tells us which elements in the domain get mapped into that set.</p>
+
+<p><strong>Definition:</strong> The <strong>power set</strong> of a set $X$ is the set of all subset of $X$.</p>
+
+<p>We often denote the power set of $X$ as $2^X$ because a simple combinatorial argument shows that if $X$ is a finite set with $n$ elements, then $X$ has $2^n$ distinct subsets.</p>
+
+<p>Preimages are technically functions themselves, though perhaps not in the way you might expect. Since preimages take subsets of a function's codomain and map them to subsets of a function's domain, the preimage of a function $f:X\to Y$ is a set-valued function $f^{-1}:2^Y\to 2^X$ defined by $f^{-1}[U]=\{x\in X\mid f(x)\in U\}$ for every $U\in 2^Y$.</p>
+
+<p>Now the overloading of the symbol $f^{-1}$ is even worse, because we have defined both inverses and preimages as functions! However, careful use of square brackets for the preimage and the fact that one function is set-valued while the other is usually not will help us to avoid confusion. Further, inverse functions only exist for bijections, but preimages are defined for all functions.</p>
+
+<p><strong>Definition:</strong> Given two functions $f:A\to B$ and $g:B\to C$ we can form a new function $g\circ f:A\to C$, called the <strong>composition</strong> of $f$ and $g$, by defining $(g\circ f)(x)=g\big(f(x)\big)$ for every $x\in A$.</p>
+
+<p>Intuitively, when taking the composition of $f$ and $g$, we first take $f(x)$ and then feed the result into $g$. Note that the composition of functions is only defined when the first function's codomain is equal to the second function's domain.</p>
+
+<p><strong>Definition:</strong> For any set $X$, we can define an <strong>identity function</strong> $1_X:X\to X$ by $1_X(x)=x$ for every $x\in X$.</p>
+
+<p>An identity function maps every element of a set to itself, so essentially it does nothing at all. If no confusion can arise about which set we're talking about, we sometimes drop the subscript and write $1$ instead of $1_X$ to denote this function.</p>
+
+<p>Notice now that we can phrase the definition of an inverse function more compactly: A function $f:A\to B$ has an inverse $f:B\to A$ if $g\circ g=1_B$ and $g\circ f=1_A$. That is, the two possible compositions of $f$ and $g$ are equal to the identity functions on their respective domains.</p>
+
+<p>One final remark I will make is that the composition of functions is always <strong>associative</strong>. That is, if we have three functions $f:A\to B$, $g:B\to C$ and $h:C\to D$, then $(h\circ g)\circ f=h\circ(g\circ f)$. This may look obvious, but the proof — while straightforward — might elude you if you are not accustomed to writing proofs. Nonetheless, I encourage you to try showing this fact for yourself. Here's a hint: use the definition of function composition. If you've done the proof right, it will probably feel as though you haven't really done anything at all.</p>
+
+<hr>
+
+<div class="footnotes"><ol><li class="footnote" id="fn:1"><p>One sentence in and I'm already lying to you. There are alternative formulations of mathematics, most notably via topos theory or type theory. If you are a beginner, I would recommend not looking these things up or you will likely be very confused. Set theory is by far the simplest foundation to start from, which explains why it is the most common approach (and the one I will take here). <a href="../index.html#fnref:1" title="return to article">↩</a></p></li>
+
+<li class="footnote" id="fn:2"><p>More formally it happens that each set, equipped with a certain algebraic structure, is isomorphic to a subobject of the next set, equipped with its own structure. If I ever decide to write a post (or five) detailing the constructions of each of the aforementioned sets, you'll see this idea in excruciating detail. <a href="../index.html#fnref:2" title="return to article">↩</a></p></li></ol></div>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../">Algebrology</a> © 2017</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>

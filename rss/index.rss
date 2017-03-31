@@ -1,16 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 31 Mar 2017 02:52:01 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Metric Spaces (1)</title><description>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-1/#motivation"&gt;Motivation&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-1/#metrics"&gt;Metrics&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-1/#open-and-closed-sets"&gt;Open and closed sets&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the&lt;/p&gt;</description><link>http://localhost:2368/metric-spaces-1/</link><guid isPermaLink="false">01099326-6fc1-4271-a4cb-4791eb439f72</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 31 Mar 2017 02:51:53 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 31 Mar 2017 02:54:04 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Metric Spaces (1)</title><description>Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements.</description><link>http://localhost:2368/metric-spaces-1/</link><guid isPermaLink="false">01099326-6fc1-4271-a4cb-4791eb439f72</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 31 Mar 2017 02:51:53 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

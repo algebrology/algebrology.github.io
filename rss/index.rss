@@ -1,21 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 31 Mar 2017 14:43:29 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Metric Spaces (2)</title><description>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-2/#review-from-previous-post"&gt;Review from previous post&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-2/#open-sets"&gt;Open sets&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-2/#closed-sets"&gt;Closed sets&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="http://localhost:2368/metric-spaces-2/#now-what"&gt;Now what?&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id="reviewfrompreviouspostanamereviewfrompreviouspost"&gt;Review from previous post&lt;a name="review-from-previous-post"&gt;&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before&lt;/p&gt;</description><link>http://localhost:2368/metric-spaces-2/</link><guid isPermaLink="false">632ca07f-d7e1-4903-87c3-0700039bf796</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 31 Mar 2017 14:42:15 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 31 Mar 2017 14:45:03 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Metric Spaces (2)</title><description>Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing.</description><link>http://localhost:2368/metric-spaces-2/</link><guid isPermaLink="false">632ca07f-d7e1-4903-87c3-0700039bf796</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 31 Mar 2017 14:42:15 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

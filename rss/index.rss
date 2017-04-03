@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 03 Apr 2017 01:29:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Mathematical Induction</title><description>In mathematics, we come across patterns all the time. For instance, here's a pattern you may have noticed before...</description><link>http://localhost:2368/mathematical-induction/</link><guid isPermaLink="false">f697003e-520c-45c6-8f3e-72cbe20e0f5a</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 02 Apr 2017 22:53:45 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 03 Apr 2017 02:24:45 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Mathematical Induction</title><description>In mathematics, we come across patterns all the time. For instance, here's a pattern you may have noticed before...</description><link>http://localhost:2368/mathematical-induction/</link><guid isPermaLink="false">f697003e-520c-45c6-8f3e-72cbe20e0f5a</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 02 Apr 2017 22:53:45 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -687,7 +687,7 @@ $${\bf y}=(y_1,y_2,\dotsc,y_n)$$&lt;/p&gt;
 
 &lt;p&gt;Before making this argument rigorous, let's take a look at the following diagram of an open ball in $\mathbb{R}^2$ for a hint as to how we should proceed:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/open-ball-is-open.png" alt="open ball is open"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/open-ball-is-open.svg" alt="open ball is open"&gt;&lt;/p&gt;
 
 &lt;p&gt;It certainly looks like we could choose $r=r_0-d(x,x_0)$, at least for the open ball above. We'd like to confirm that this choice will work for any open ball in any metric space. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $B(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq B(x_0,r_0)$, and that's all we need to do!&lt;/p&gt;
 
@@ -761,7 +761,7 @@ d(x_0,y) &amp;amp;\leq d(x_0,x)+d(x,y)\\ &lt;br&gt;
 
 &lt;p&gt;Once again, let's look at a diagram for some intuition before we dive any further into the proof:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/closed-ball-is-closed.png" alt="closed ball is closed"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/closed-ball-is-closed.svg" alt="closed ball is closed"&gt;&lt;/p&gt;
 
 &lt;p&gt;A little bit of inspection indicates that it might suffice to choose $r=d(x,x_0)-r_0$. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $X-\overline{B}(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$, and then we'll be finished.&lt;/p&gt;
 

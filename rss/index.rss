@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 03 Apr 2017 01:04:46 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Mathematical Induction</title><description>In mathematics, we come across patterns all the time. For instance, here's a pattern you may have noticed before...</description><link>http://localhost:2368/mathematical-induction/</link><guid isPermaLink="false">f697003e-520c-45c6-8f3e-72cbe20e0f5a</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 02 Apr 2017 22:53:45 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 03 Apr 2017 01:29:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Mathematical Induction</title><description>In mathematics, we come across patterns all the time. For instance, here's a pattern you may have noticed before...</description><link>http://localhost:2368/mathematical-induction/</link><guid isPermaLink="false">f697003e-520c-45c6-8f3e-72cbe20e0f5a</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 02 Apr 2017 22:53:45 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -253,7 +253,7 @@ X-\bigcup\limits_{i=1}^{n+1}A_i &amp;amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup
 
 &lt;p&gt;However, there are also many circumstances in which we care about the shape of a space but couldn't care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the &lt;strong&gt;Seven Bridges of Königsberg&lt;/strong&gt;. Basically, the city of Königsberg had two major islands at its center, completely disconnected from the mainland by a river except for seven bridges.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/bridges.png" alt="bridges of Königsberg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/bridges.svg" alt="bridges of Königsberg"&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is my &lt;em&gt;beautiful&lt;/em&gt; depiction of the scenario. It should be obvious from my exceptional artistic ability, but the blue crud is the river and the grey smudges are the bridges. For a far inferior — though perhaps more descriptive — picture of the problem, I suggest a Google Image search.&lt;/p&gt;
 
@@ -321,7 +321,7 @@ X-\bigcup\limits_{i=1}^{n+1}A_i &amp;amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup
 
 &lt;p&gt;Let's look at this topology visually:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/top-abc.png" alt="example topology"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/top-abc-1.svg" alt="example topology"&gt;&lt;/p&gt;
 
 &lt;p&gt;The ellipses in this diagram depict the open sets in the topology. Each ellipse is a subset of all the ellipses that encompass it. The empty set is a subset of every set and is not depicted.&lt;/p&gt;
 

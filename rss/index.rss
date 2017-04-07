@@ -1,4 +1,178 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Thu, 06 Apr 2017 19:37:20 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Bases for Topologies</title><description>Essentially, a basis is a 'small' collection of open sets from which every open set can be easily generated.</description><link>http://localhost:2368/bases-for-topologies/</link><guid isPermaLink="false">0c1149d0-8c16-4201-9453-efa5aef2fd42</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Mon, 03 Apr 2017 04:07:41 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 07 Apr 2017 23:05:35 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Groups and their Basic Properties</title><description>A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact...</description><link>http://localhost:2368/groups-and-their-basic-properties/</link><guid isPermaLink="false">dd42f408-6fd9-4d0b-8d0b-5335806f8596</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 07 Apr 2017 23:05:25 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#introduction"&gt;Introduction&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#the-definition"&gt;The Definition&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#examples"&gt;Examples&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#basic-properties"&gt;Basic Properties&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#subgroups"&gt;Subgroups&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="introductionanameintroduction"&gt;Introduction&lt;a name="introduction"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I think it's probably time I wrote a post about something other than topology, so today I'm going to break way into the field of algebra.&lt;sup id="fnref:1"&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; It's difficult to explain exactly what algebra is until you've been exposed to some of it, but I like to think of algebra as the study of structure. Using algebraic techniques, seemingly different objects can be shown to be not so different after all, and many difficult problems can be solved relatively easy using such observations.&lt;/p&gt;
+
+&lt;p&gt;The first algebraic object I'd like to introduce, as you may have guessed, is a group. This will not be my only post on groups, since there is a lot to say about them. Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other. Before I define a group, I need to talk a little bit about binary operations.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;strong&gt;binary operation&lt;/strong&gt; $\circ$ on a set $X$ is a function $\circ:X\times X\to X$.&lt;/p&gt;
+
+&lt;p&gt;The definition nicely captures several important ideas. First, it guarantees that if $a,b\in X$ then $\circ(a,b)\in X$ as well. This is called &lt;strong&gt;closure&lt;/strong&gt; under the binary operation — when we combine two elements in $X$, we always get back something which is also in $X$. Next, because we have defined $\circ$ as a function, it is guaranteed that every pair of elements in $X$ can be combined to yield a new element.&lt;/p&gt;
+
+&lt;p&gt;You're probably more used to &lt;strong&gt;infix notation&lt;/strong&gt; $a\circ b$, rather than the equivalent function notation $\circ(a,b)$, when it comes to denoting binary operations. That's good, since infix notation is more convenient and we will use it more often.&lt;/p&gt;
+
+&lt;p&gt;As an example, the usual operations of addition and multiplication on $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}$ and $\mathbb{C}$ are binary operations on each of these sets. Let $X$ denote any of the aforementioned sets. That addition and multiplication on $X$ actually constitute binary operations is shown easily by noting that for any two elements $a,b\in X$, their sum $a+b$ and their product $a\cdot b$ are well defined and are also in $X$.&lt;/p&gt;
+
+&lt;h3 id="thedefinitionanamethedefinition"&gt;The Definition&lt;a name="the-definition"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I'll jump straight into it, shall I?&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;strong&gt;group&lt;/strong&gt; is a set $G$ together with a binary operation $\circ:G\times G\to G$ with the following properties:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Associativity.&lt;/strong&gt; For any $a,b,c\in G$, we have that $(a\circ b)\circ c=a\circ (b\circ c)$.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identity.&lt;/strong&gt; There exists $e\in G$ such that $e\circ x=x\circ e=x$.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inverses.&lt;/strong&gt; For every $x\in G$ there exists $y\in G$ such that $x\circ y=e$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Stated in plain English, groups must have an identity element and inverses for every element, and the group operation must be associative. These all seem like reasonable requirements.&lt;/p&gt;
+
+&lt;p&gt;In the future, we will occasionally be even more lax and denote $a\circ b$ as simply $ab$, when a group's binary operation is implicitly understood and no confusion can arise. When an element is 'multiplied' by itself numerous times, we will use exponential notation. For instance, $aa=a^2$ and $aaa=a^3$. It is consistent and convenient in this notation to denote the identity element $e=a^0$ for any element $a$ in a group.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, I will frequently refer to $G$ itself as a group, as this very rarely results in any confusion. Just remember that whenever I mention a group, there is always some binary operation lurking behind the curtain.&lt;/p&gt;
+
+&lt;h3 id="examplesanameexamples"&gt;Examples&lt;a name="examples"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that groups have been defined, I'd like to walk you through a few simple examples of groups.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; The &lt;strong&gt;trivial group&lt;/strong&gt; is the group containing only one element.&lt;/p&gt;
+
+&lt;p&gt;Technically there are infinitely many 'trivial groups' since that one element could be anything, but all trivial groups are really the same. Let's call the element $e$. To see that the trivial group is in fact a group, first note that $e$ must be the group's identity element. Thus, $(ee)e=ee=e(ee)$ and so we have associativity. Furthermore, since $ee=ee=e$, clearly $e$ is its own inverse.&lt;/p&gt;
+
+&lt;p&gt;The set of integers under addition also forms a group. Associativity is a property of addition itself, and you probably use it every day without even thinking about it. The identity element is zero, since $x+0=0+x=x$ for any $x\in\mathbb{Z}$. Lastly, the inverse of any integer $x$ is $-x$, since $x+(-x)=0$.&lt;/p&gt;
+
+&lt;p&gt;Similarly, the set $\mathbb{R}^+$ of positive real numbers under multiplication forms a group. Again, associativity is obvious.&lt;sup id="fnref:2"&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; The identity element is $1$ since $1\cdot x=x\cdot 1=x$ for any $x\in\mathbb{R}^+$. Lastly, the inverse of any $x\in\mathbb{R}^+$ is $\frac{1}{x}$. Notice that the set of all real numbers does not form a group under multiplication because zero has no multiplicative inverse!&lt;/p&gt;
+
+&lt;p&gt;The last example I'd like to talk about is considerably more abstract, and probably not something you would ever have considered might be a group. It is called the &lt;strong&gt;dihedral group&lt;/strong&gt; (or &lt;strong&gt;group of symmetries&lt;/strong&gt;) of a regular polygon. We write $D_n$ to denote the dihedral group of the $n$-sided regular polygon. How is $D_n$ defined? I'm not quite ready to do it rigorously, since we haven't talked about permutations yet, but I'll explain it intuitively.&lt;/p&gt;
+
+&lt;p&gt;Basically, $D_n$ is the set of all rotations and reflections which preserve the locations of the vertices. The group operation is composition of these rotations and reflections, which essentially amounts to performing them one after the other. For instance, consider the equilateral triangle (the $3$-sided regular polygon)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/equilateral-triangle-1.svg" alt="equilateral triangle"&gt;&lt;/p&gt;
+
+&lt;p&gt;where I've numbered the vertices to avoid the tremendous confusion that would otherwise ensue. Here's one of the vertex location preserving rotations we can perform, $r_1$:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/r_1.svg" alt="r_1"&gt;&lt;/p&gt;
+
+&lt;p&gt;Here's another one, $r_2$:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/r_2-1.svg" alt="r_2"&gt;&lt;/p&gt;
+
+&lt;p&gt;It's not too difficult to see that $r_2$ is really just $r_1$ applied twice! That is, $r_2=r_1\circ r_1$. Remember that this is the notation of function composition, so the first rotation applied is written on the right.&lt;/p&gt;
+
+&lt;p&gt;Now that we have a better grasp of what's going on, let's think about the identity element of $D_3$. It should hopefully make sense that the identity element is the rotation by zero degrees. That is, the identity element is the act of doing nothing to the triangle. Call this element $e$. It should be clear that $e\circ r_1=r_1\circ e=r_1$ and likewise for $r_2$, so things are looking good so far.&lt;/p&gt;
+
+&lt;p&gt;What are the inverses of $r_1$ and $r_2$? We just need to figure out how to get the vertices back to their original positions. It looks like $r_1\circ r_2=r_2\circ r_1=e$, so $r_1$ and $r_2$ are actually inverses!&lt;/p&gt;
+
+&lt;p&gt;We've exhausted all the rotations, so now we need to look at the reflections. There are three of them, and each preserves the location of one vertex while swapping the other two. Let's call them $f_1, f_2$ and $f_3$, where the subscript denotes the vertex preserved under each. For instance, here's $f_1$:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/f_1.svg" alt="f_1"&gt;&lt;/p&gt;
+
+&lt;p&gt;What is the inverse of each reflection? If you reflect something twice along the same axis, it goes back to its original position. That is, $f_1, f_2$ and $f_3$ are each their own inverse.&lt;/p&gt;
+
+&lt;p&gt;It's important to remember that the elements of the group are these reflections and rotations, rather than the triangles they act upon. I'll make all this more precise later when I talk about permutations, but for now I think this visual explanation should suffice.&lt;/p&gt;
+
+&lt;p&gt;Next, $D_4$ is the dihedral group of the square, with four distinct rotations (where I have counted the identity among the rotations) and four reflections.&lt;/p&gt;
+
+&lt;p&gt;Likewise, $D_5$ is the dihedral group of the regular pentagon, with five rotations and five reflections. In general, $D_n$ consists of $n$ rotations and $n$ reflections, totaling $2n$ elements.&lt;/p&gt;
+
+&lt;p&gt;I'll talk about dihedral groups again in the future, but for now let me conclude by noting that the rotations in $D_n$ form a group of their own, since they cannot be composed in such a way as to produce anything other than a rotation. The reflections are a different story, though. They do not form a group since, for example, in $D_3$ we have that $f_2\circ f_1=r_2$. That is, the composition of two reflections can be a rotation.&lt;/p&gt;
+
+&lt;h3 id="basicpropertiesanamebasicproperties"&gt;Basic Properties&lt;a name="basic-properties"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that I've gotten a few examples of groups out of the way, I'd like to talk about some immediate consequences of the group axioms. Let's begin by showing that we are allowed to cancel terms from equations, as we are so used to doing in the familiar number systems.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Left Cancellation Law.&lt;/strong&gt; Let $G$ denote a group with $a,b,x\in G$. If $xa=xb$, then $a=b$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Since $x\in G$, there must exist an inverse $y\in G$ for $x$ and an identity element $e\in G$ such that $yx=e$. Thus,&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+a &amp;amp;= e a &amp;amp; \scriptstyle\textit{identity}\\&amp;amp;=(y x) a &amp;amp; \scriptstyle\textit{inverses}\\&amp;amp;=y(x a) &amp;amp; \scriptstyle\textit{associativity}\\&amp;amp;=y(x b) &amp;amp;\scriptstyle{x a=x b}\\&amp;amp;=(y x) b &amp;amp;\scriptstyle\textit{associativity}\\&amp;amp;=e b &amp;amp;\scriptstyle\textit{inverses}\\&amp;amp;=b. &amp;amp;\scriptstyle{\textit{identity}} &lt;br&gt;
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;This completes the proof.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I have included my reasoning for each step to the right, because such proofs can be difficult to parse when you first encounter them. Do not expect me to continue being this nice in the future. The &lt;strong&gt;right cancellation law&lt;/strong&gt; and its proof are completely symmetric, so I will not even bother to state them. Now that these cancellation laws have been established, we will be using them frequently. For instance, let's use one to prove the following proposition about inverses.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Each element in a group has a unique inverse.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Let $G$ denote a group with $x\in G$ and suppose that $y_1, y_2\in G$ are both inverses for $x$. Then $y_1x=y_2x=e$ by the definition of inverses, so by the right cancellation law it follows that $y_1=y_2$, completing the proof.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;How does this proof establish that each element's inverse is unique? We are guaranteed the existence of at least one inverse by the group axioms. Furthermore, we just demonstrated that if an element has two inverses, then they must really be the same element!&lt;/p&gt;
+
+&lt;p&gt;Next, let's prove a similar statement that there is only one identity element in any group. This is probably the simplest proof ever, but it's rather informative.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; The identity element in a group is unique.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Let $G$ denote a group and suppose that $e_1, e_2\in G$ are both identity elements. Then $e_1=e_1e_2=e_2$ by the definition of the identity, completing the proof.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I've already been saying 'the inverse' of an element and 'the identity' a lot prior to this, but now I'm actually justified in doing so. Furthermore, since each element $x$ only has one inverse, we can denote it unambiguously as $x^{-1}$. This plays well with the exponential notation I introduced earlier, i.e. $(x^{-1})^n=x^{-n}$ and $x^mx^{-m}=e$.&lt;/p&gt;
+
+&lt;p&gt;Before moving on I'd like to mention a very nice property that certain groups may exhibit, but they do not necessarily have to.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A group $G$ is &lt;strong&gt;abelian&lt;/strong&gt; (or &lt;strong&gt;commutative&lt;/strong&gt;) if $xy=yx$ for every $x,y\in G$.&lt;/p&gt;
+
+&lt;p&gt;Examples of abelian groups that we've already seen are the integers under addition and the positive real numbers under multiplication. On the other hand, the dihedral groups of order three and above are nonabelian.&lt;/p&gt;
+
+&lt;h3 id="subgroupsanamesubgroups"&gt;Subgroups&lt;a name="subgroups"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm almost done now, and I know this has been a pretty long post. I just need to introduce one more important concept and then I promise I'll stop.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;strong&gt;subgroup&lt;/strong&gt; $H$ of a group $G$ is a subset of $G$ which is itself a group under the group operation on $G$.&lt;/p&gt;
+
+&lt;p&gt;If $H$ is a subgroup of $G$, I will sometimes write $H\leq G$. This cannot really be confused with the "less than or equal to" relation because groups are not numbers and thus have no such concept.&lt;/p&gt;
+
+&lt;p&gt;As an example, the even integers (denoted $2\mathbb{Z}$) are a subgroup of $\mathbb{Z}$ under addition. This is because the sum of two even integers is always even. However, the odd integers do not form a subgroup of $\mathbb{Z}$ under addition because the sum of two odd integers is not odd.&lt;sup id="fnref:3"&gt;&lt;a href="http://localhost:2368/groups-and-their-basic-properties/#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;I pointed out earlier that the rotations in $D_3$ themselves formed a group under function composition, and this means that they are a subgroup of $D_3$.&lt;/p&gt;
+
+&lt;p&gt;In general, a group does not necessarily have any subgroups other than itself and the trivial group. We shall see later that if a subgroup (of a finite group) is to exist, it must contain a very predictable number of elements.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li class="footnote" id="fn:1"&gt;&lt;p&gt;Although my true motivation is perhaps more sinister than you could possibly imagine 😈 &lt;a href="http://localhost:2368/groups-and-their-basic-properties/#fnref:1" title="return to article"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li class="footnote" id="fn:2"&gt;&lt;p&gt;It's really not. When I inevitably define the real numbers from scratch as equivalence classes of Cauchy sequences of rational numbers in a future post, showing associativity will actually be something of a chore. As will everything else.  &lt;a href="http://localhost:2368/groups-and-their-basic-properties/#fnref:2" title="return to article"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li class="footnote" id="fn:3"&gt;&lt;p&gt;The odd integers form what is called a coset, $2\mathbb{Z}+1$ of the subgroup $2\mathbb{Z}$, but I will talk about this in a later post. &lt;a href="http://localhost:2368/groups-and-their-basic-properties/#fnref:3" title="return to article"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content:encoded></item><item><title>Bases for Topologies</title><description>Essentially, a basis is a 'small' collection of open sets from which every open set can be easily generated.</description><link>http://localhost:2368/bases-for-topologies/</link><guid isPermaLink="false">0c1149d0-8c16-4201-9453-efa5aef2fd42</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Mon, 03 Apr 2017 04:07:41 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

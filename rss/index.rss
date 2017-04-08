@@ -1,4 +1,186 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 08 Apr 2017 03:08:18 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Continuity and Homeomorphisms</title><description>If a function is continuous, points that are close together get mapped to points that are close together...</description><link>http://localhost:2368/continuity-and-homeomorphisms/</link><guid isPermaLink="false">90a1f2c7-66af-4ba3-a7c1-fbf333ff0f77</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 03:08:10 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 08 Apr 2017 16:47:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Subspaces</title><description>A topological space is, at its core, just a set with some additional structure. So what if we want to keep the structure, but change the underlying set?</description><link>http://localhost:2368/subspaces/</link><guid isPermaLink="false">42a2812d-af1a-41e9-b159-f8b95eee75e7</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 16:47:05 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/subspaces/#definition"&gt;Definition&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/subspaces/#examples"&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="definitionanamedefinition"&gt;Definition&lt;a name="definition"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;In this post I'm going to introduce a classic method which allows us to construct new topological spaces from existing ones in a natural way.&lt;/p&gt;
+
+&lt;p&gt;A topological space is, at its core, just a set with some additional structure. So what if we want to keep the structure, but change the underlying set? There's an easy and somewhat obvious way to do this.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $X$ denote a topological space with topology $\cal T$ and suppose $A\subseteq X$. Then ${\cal T}_A=\{A\cap U\mid U\in{\cal T}\}$ is called the &lt;strong&gt;subspace topology&lt;/strong&gt; on $A$. Equipped with this topology, we call $A$ a &lt;strong&gt;subspace&lt;/strong&gt; of $X$.&lt;/p&gt;
+
+&lt;p&gt;In standard English, this says that in the subspace topology on $A$, a set is open if it is the intersection of $A$ with some open set in $X$.&lt;/p&gt;
+
+&lt;p&gt;Now we have to prove that we are justified in calling this thing a topology. We need to show that the empty set and the subspace itself are open, that unions of opens sets are open, and that finite intersections of open sets are open.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $X$ denote a topological space with topology $\cal T$ and suppose $A\subseteq X$. Then ${\cal T}_A=\{A\cap U\mid U\in{\cal T}\}$ is a topology on $A$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Notice first that $\varnothing, X\in\cal T$ by the definition a topology. Certainly $\varnothing=A\cap\varnothing\in{\cal T}_A$, so the empty set is open in the subspace. Similarly, $A=A\cap X\in{\cal T}_A$ because $A\subseteq X$, so $A$ itself is open in the subspace.&lt;/p&gt;
+
+&lt;p&gt;Next, suppose that $I$ is an indexing set such that $V_i\in{\cal T}_A$ is open in the subspace for each $i\in I$. Then for every $i\in I$ we have that $V_i=A\cap U_i$ for some open set $U_i\in{\cal T}$, by the definition of the subspace topology. Since $\bigcup\limits_{i\in I}U_i\in\cal T$ it is clear that&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+\bigcup\limits_{i\in I}V_i &amp;amp;= \bigcup\limits_{i\in I}(A\cap U_i) \\
+&amp;amp;= A\cap \bigcup\limits_{i\in I}U_i \\
+&amp;amp;\in{\cal T}_A,
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;so we have shown that the union of any collection of open sets in the subspace is also open in the subspace.&lt;/p&gt;
+
+&lt;p&gt;Finally, suppose that $V\i\in{\cal T}_A$ is open in the subspace for $1\leq i\leq n$ for some $n\in\mathbb{Z}^+$. Then for $1\leq i\leq n$, we again have that $V_i=A\cap U_i$ for some open set $U_i\in{\cal T}$, by the definition of the subspace topology. Since $\bigcap\limits_{i=1}^n U_i\in\cal T$, it is clear that&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+\bigcap\limits_{i=1}^n V_i &amp;amp;= \bigcap\limits_{i=1}^n (A\cap U_i) \\
+&amp;amp;= A\cap \bigcap\limits_{i=1}^n U_i \\
+&amp;amp;\in {\cal T}_A,
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;so we have shown that the intersection of a finite collection of open sets in the subspace is also open in the subspace. It follows that the subspace topology on $A$ is a topology, as desired.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I have noticed that people often find the following observation confusing: If $A$ is a subset of a topological space $X$, then the set $A$ is both open and closed in the subspace topology on $A$. This is automatically true because of the definition of a topology. However, this says nothing at all about whether $A$ is open or closed as a &lt;em&gt;subset&lt;/em&gt; of $X$. Similarly, there are plenty of sets that may be open or closed in the subspace topology that may not have been that way in the original topology. Make sure you pay attention to the distinction between subspaces and subsets!&lt;/p&gt;
+
+&lt;p&gt;Next, there's a way to figure out what sets in a subspace are closed which is sometimes more direct than trying to make sure that their complements are open.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $A$ be a subspace of a topological space $X$. Then $U\subseteq A$ is closed in $A$ if and only if $U=A\cap V$ for some closed set $V\subseteq X$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; First, suppose that $U$ is closed in $A$. Then $A-U$ is open by definition, so $A-U=A\cap W$ for some open set $W$ in $X$. Certainly $V=X-W$ is closed in $X$, so&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+U &amp;amp;= A-(A-U) \\ &lt;br&gt;
+  &amp;amp;= A-(A\cap W) \\
+  &amp;amp;= A-W \\
+  &amp;amp;= A\cap (X-W) \\
+  &amp;amp;= A\cap V.
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;Conversely, suppose that $U=A\cap V$ for some closed set $V$ in $X$. Then $X-V$ is open in $X$, so&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+A-U &amp;amp;= A-(A\cap V) \\ &lt;br&gt;
+    &amp;amp;= A\cap (X-V)
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;is open in $A$. Thus, $U$ is closed in $A$.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I may not have explicitly proved all those set equalities in the past, but if they aren't immediately obvious to you then this might be a good time to go back and get some more practice with set-theoretic proofs.&lt;/p&gt;
+
+&lt;h3 id="examplesanameexamples"&gt;Examples&lt;a name="examples"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's look at a few examples of subspaces of topological spaces we are already familiar with.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Consider $\mathbb{R}$ with the standard topology. Obviously the half-open interval $[0,1)$ is a subset of $\mathbb{R}$. So what is the subspace topology on $[0,1)$?&lt;/p&gt;
+
+&lt;p&gt;Well, we already know it. The open sets are just intersections of $[0,1)$ with any open set in $\mathbb{R}$. Of course, the subspace $[0,1)$ is itself both open and closed.&lt;/p&gt;
+
+&lt;p&gt;Is $(0,1)$ open in the subspace topology? Of course it is. Certainly $(0,1)$ is open in $\mathbb{R}$, and $(0,1)=[0,1)\cap (0,1)$, so it is open in the subspace as well.&lt;/p&gt;
+
+&lt;p&gt;Play around with this a little bit more and you'll notice that the open sets in $[0,1)$ actually look a lot like the open sets in $\mathbb{R}$ which happen to be subsets of $[0,1)$. This is just a testament to the fact that the subspace topology is a very natural object. In fact, whenever I talk about an interval, I'll generally be assuming that it is equipped with the subspace topology induced by the standard topology on $\mathbb{R}$. Even though I won't always explicitly mention this, it will be especially important to remember when I talk about paths and homotopy in the future.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Let's look at another example, shall we?&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Consider $\mathbb{R}^2$ in the standard topology, and the set $A=\{(x,0)\in\mathbb{R}^2\mid x\in\mathbb{R}\}$.&lt;sup id="fnref:1"&gt;&lt;a href="http://localhost:2368/subspaces/#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; The open sets in the subspace topology on $A$ are, of course, any sets which can be expressed as the intersection of $A$ with unions of open balls in $\mathbb{R}^2$.&lt;/p&gt;
+
+&lt;p&gt;This looks an awful lot like the standard topology on $\mathbb{R}$, but technically it isn't because $A\ne\mathbb{R}$. In reality, $A$ is just the $x$-axis in the two-dimensional Euclidean plane. So it's basically $\mathbb{R}$, and behaves exactly like it. What we have, then, is that $A$ is homeomorphic to $\mathbb{R}$ with the standard topology.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Let's prove the assertion I just made. It's going to be a bit of work, but I think it's worth proving things just for fun once in a while. The homeomorphism we will choose in our proof is the obvious choice, but there are actually others that could work just as well.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Proposition.&lt;/strong&gt; Consider $\mathbb{R}$ with the standard topology and $A=\{(x,0)\in\mathbb{R}^2\mid x\in\mathbb{R}\}$ as a subspace of $\mathbb{R}^2$ with the standard topology. The spaces $\mathbb{R}$ and $A$ are homeomorphic.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; We argue that the function $f:A\to\mathbb{R}$ defined by $f\big((x,0)\big)=x$ is a homeomorphism. It is trivial to check that $f$ is bijective and that its inverse function $f^{-1}:\mathbb{R}\to A$ is given by $f^{-1}(x)=(x,0)$.&lt;/p&gt;
+
+&lt;p&gt;We will show first that $f^{-1}$ is continuous. Choose an open set $U$ in $A$. By definition, we can write $U$ as the intersection of $A$ with some union of open balls in $\mathbb{R}^2$. That is,&lt;/p&gt;
+
+&lt;p&gt;$$U=A\cap\bigcup\limits_{i\in I} B\big((x_i,y_i),r_i\big)$$&lt;/p&gt;
+
+&lt;p&gt;for some indexing set $I$, where $(x_i,y_i)\in\mathbb{R}^2$ and $r_i\in\mathbb{R}^+$ for each $i\in I$. It follows that&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+(f^{-1})^{-1}[U] &amp;amp;= f[U] \\
+&amp;amp;= f\left[A\cap\bigcup\limits_{i\in I}B\big((x_i,y_i),r_i\big)\right] \\
+&amp;amp;= f\left[\bigcup\limits_{i\in I}A\cap B\big((x_i,y_i),r_i\big)\right] \\
+&amp;amp;= \bigcup\limits_{i\in I}f\Big[A\cap B\big((x_i,y_i),r_i\big)\Big].
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;A small amount of geometry and the Pythagorean Theorem gets us that for each $i\in I$, the set $f\Big[A\cap B\big((x_i,y_i),r_i\big)\Big]$ is equal to the open interval&lt;/p&gt;
+
+&lt;p&gt;$$\left(x_i-\sqrt{r_i^2-y_i^2}, x_i+\sqrt{r_i^2-y_i^2}\right)$$&lt;/p&gt;
+
+&lt;p&gt;if $r_i&gt;y_i$, and it is empty if $r_i\leq y_i$. The union of open intervals is open in $\mathbb{R}$, so $(f^{-1})^{-1}[U]$ is open in $\mathbb{R}$ and thus $f^{-1}$ is continuous.&lt;/p&gt;
+
+&lt;p&gt;Next, we will show that $f$ is continuous. Choose an open set $U$ in $\mathbb{R}$. By definition, $U$ is a union of open intervals in $\mathbb{R}$ (possibly $\mathbb{R}$ itself, in which case $f^{-1}[U]=f^{-1}[\mathbb{R}]=A$ is certainly open). More precisely, we can write &lt;/p&gt;
+
+&lt;p&gt;$$U=\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i),$$&lt;/p&gt;
+
+&lt;p&gt;where $I$ is some indexing set such that $x_i\in\mathbb{R}$ and $r_i\in\mathbb{R}^+$ for every $i\in I$. It follows that&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+f^{-1}[U] &amp;amp;= f^{-1}\left[\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i)\right] \\ &lt;br&gt;
+&amp;amp;= f^{-1}\left[\bigcup\limits_{i\in I}\left\{x\in\mathbb{R}\bigg\vert \vert x-x_i\vert&amp;lt; r_i\right\}\right] \\
+&amp;amp;= \bigcup\limits_{i\in I}f^{-1}\left[\left\{x\in\mathbb{R}\bigg\vert \vert x-x_i\vert&amp;lt; r_i\right\}\right] \\
+&amp;amp;= \bigcup\limits_{i\in I}\left\{(x,0)\in\mathbb{R}^2\bigg\vert\vert x-x_i\vert&amp;lt; r_i\right\} \\
+&amp;amp;= \bigcup\limits_{i\in I}\bigg(A\cap B\big((x_i,0),r_i\big)\bigg) \\
+&amp;amp;= A\cap \bigcup\limits_{i\in I}B\big((x_i,0),r_i\big).
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;The union of open balls is open, so $f^{-1}[U]$ is the intersection of $A$ with an open set in $\mathbb{R}$ and is thus open in $A$. It follows that $f$ is continuous, completing the proof.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;It ended up being a bit long, but not too difficult. And I think this example really gets the point across that even though homeomorphic spaces may not be identical, they behave in essentially the same way. Most people aren't as careful as I just was, and frequently write that $\mathbb{R}$ is a subspace of $\mathbb{R}^2$. This isn't strictly true, but at least you now know how to interpret it.&lt;/p&gt;
+
+&lt;p&gt;Just so you know, we will see another proof of the above proposition when I talk about product spaces. I just really wanted to prove it this way once to give you some geometric intuition behind why it's true.&lt;/p&gt;
+
+&lt;p&gt;The last thing I'm going to do in this post is show that an open interval in $\mathbb{R}$ is homeomorphic to $\mathbb{R}$ itself. This will reinforce the notion that stretching a space does not alter its topological properties.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Proposition.&lt;/strong&gt; Let $a,b\in\mathbb{R}$ with $a&amp;lt; b$. Then $\mathbb{R}$ and the interval $(a,b)$ are homeomorphic.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;"Proof."&lt;/strong&gt; Define $f:(a,b)\to\mathbb{R}$ by &lt;/p&gt;
+
+&lt;p&gt;$$f(x)=\frac{1}{x-a}+\frac{1}{x-b}.$$&lt;/p&gt;
+
+&lt;p&gt;We will argue that $f$ is a homeomorphism. I am not going to check that $f$ is a bijection, although it is obvious just from looking at its graph. This could be done using the quadratic formula to find an explicit inverse function, being careful to restrict $f^{-1}$ so that it is surjective. It could also be done using calculus to show that this function is injective because it is monotonically decreasing and surjective by the intermediate value theorem because it approaches negative infinity at its left endpoint and positive infinity at its right endpoint.&lt;/p&gt;
+
+&lt;p&gt;The function $f$ is clearly continuous because it is a rational function whose denominator is nonzero for every $x\in(a,b)$. Its inverse, $f^{-1}$ is also continuous for the same reason, but since I haven't explicitly computed it I will not show that this is the case.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Okay, so that really wasn't a proof at all. But again, a quick glance at the graph of $f$ should really be enough to convince you that it's a homeomorphism. I could be more precise in giving an argument that any two open intervals are homeomorphic, but I think this post has gone on long enough already, and hopefully this fact is obvious to you. On the other hand, closed intervals are &lt;em&gt;not&lt;/em&gt; homeomorphic to open intervals. We don't have enough tools to prove that at this point, but it will become trivial when I talk about compactness in a later post.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li class="footnote" id="fn:1"&gt;&lt;p&gt;$(x,0)$ is not an open interval here, but a point in $\mathbb{R}^2$. That is, it's an ordered pair of real numbers. The fact that open intervals and ordered pairs have the same notation is unfortunate, but if we are careful it should always be clear which we are talking about. &lt;a href="http://localhost:2368/subspaces/#fnref:1" title="return to article"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content:encoded></item><item><title>Continuity and Homeomorphisms</title><description>If a function is continuous, points that are close together get mapped to points that are close together...</description><link>http://localhost:2368/continuity-and-homeomorphisms/</link><guid isPermaLink="false">90a1f2c7-66af-4ba3-a7c1-fbf333ff0f77</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 03:08:10 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

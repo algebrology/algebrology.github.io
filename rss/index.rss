@@ -1,4 +1,184 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 07 Apr 2017 23:05:35 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Groups and their Basic Properties</title><description>A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact...</description><link>http://localhost:2368/groups-and-their-basic-properties/</link><guid isPermaLink="false">dd42f408-6fd9-4d0b-8d0b-5335806f8596</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 07 Apr 2017 23:05:25 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 08 Apr 2017 00:34:33 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Limit Points, Closure, Boundary and Interior</title><description>It's fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble...</description><link>http://localhost:2368/limit-points-closure-boundary-and-interior/</link><guid isPermaLink="false">71d8695d-7c03-4315-88b3-9c252c45aa4c</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 00:34:07 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/limit-points-closure-boundary-and-interior/#limit-points"&gt;Limit Points&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/limit-points-closure-boundary-and-interior/#closure"&gt;Closure&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/limit-points-closure-boundary-and-interior/#boundary"&gt;Boundary&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:2368/limit-points-closure-boundary-and-interior/#interior"&gt;Interior&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;We are nearly ready to begin making some distinctions between different topological spaces. Distinguishing between fundamentally different spaces lies at the heart of the subject of topology, and it will occupy much of our time. However, before we can really dig in, we're going to need some additional tools.&lt;/p&gt;
+
+&lt;p&gt;On a different note, and I've been meaning to mention this, I'd be willing to bet that you probably had a different sense of what open and closed sets were before learning any topology. It's fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word 'boundary.' This is finally about to be addressed, first in the context of metric spaces because it is easier to see why the definitions are natural there. As in prior posts, these concepts generalize easily to topological space.&lt;/p&gt;
+
+&lt;h3 id="limitpointsanamelimitpoints"&gt;Limit Points&lt;a name="limit-points"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;If you've had any calculus, you've probably had some experience with limits. Whether or not the formal $\epsilon$-$\delta$ definition of a limit is familiar to you is of no real consequence. Even though this definition is extremely insightful, it isn't really necessary for our purposes. In fact, if we aren't working in a metric space then this definition doesn't even apply. The good news it that many definitions in topology have a sort of &lt;em&gt;too-good-to-be-true&lt;/em&gt; feel to them, since they're often deceptively simple.&lt;/p&gt;
+
+&lt;p&gt;Limit points are not the same type of limit that you encounter in a calculus or analysis class, but the underlying idea is similar. Informally, a point in a metric space is a limit point of some subset if it is arbitrarily close to other points in that subset. What exactly does this mean? It means that no matter how closely we zoom in on a limit point, there will always be another point in its immediate vicinity which belongs to the subset in question. Thus, we can in some sense approximate limit points to arbitrary accuracy using other points in the subset. This might be a little confusing or overwhelming, so I'll give you the definition now and you'll see that it isn't too bad. Its simplicity may even be a bit misleading.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $A$ denote a subset of a metric space $X$. A point $p\in X$ is a &lt;strong&gt;limit point&lt;/strong&gt; of $A$ if every open ball centered at $p$ contains a point $x\in A$ with $x\neq p$. We write $L(A)$ to denote the set of limit points of $A$.&lt;/p&gt;
+
+&lt;p&gt;The first thing that I will emphasize is that a limit point of a set does not need to belong to that set! All that is necessary is that there are points in the set &lt;em&gt;as close as we like&lt;/em&gt; to the limit point. This can be made more obvious by rephrasing the definition slightly. By "every open ball," what we mean is that for every real number $\epsilon&gt;0$ there exists some point $x\in A$ distinct from $p$ such that $x\in B(p,\epsilon)$. Take a moment to appreciate and understand that this definition ensures what I claim it does.&lt;/p&gt;
+
+&lt;p&gt;There's a sort of dual notion as well, which is called an isolated point. The following definition makes it clear that any point in a subset of a metric space is either a limit point or an isolated point.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $A$ denote a subset of a metric space $X$. A point $p\in X$ is an &lt;strong&gt;isolated point&lt;/strong&gt; of $A$ if there exists an open ball centered at $p$ which contains no other points of $A$.&lt;/p&gt;
+
+&lt;p&gt;Let's look at an example, to make sure we're fully on board with these concepts before we press onward. I'm going to cordon off the entire example so that we don't accidentally make sweeping generalizations about every metric space based on this one scenario.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Take $X=\mathbb{R}^2$ equipped, of course, with the standard metric $d:X\times X\to\mathbb{R}$. Let $A=B\big((0,0),1\big)$, the open unit ball centered at the origin. Consider the following points in $X$:&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+x &amp;amp;= (0,0), \\ &lt;br&gt;
+y &amp;amp;= (1,0), \\ &lt;br&gt;
+z &amp;amp;= (1,1). \\ &lt;br&gt;
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;I'll even throw in a diagram to make things crystal clear:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/limit_point_example.svg" alt="limit point example"&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly $x\in A$ because $d(x,x)=0&amp;lt; r$. However, $y,z\notin A$ because $d(x,y)=r$ and $d(x,z)=\sqrt{2}&gt;r$. Which, if any, of the points $x,y,z$ are limit points of $A$?&lt;/p&gt;
+
+&lt;p&gt;Let's consider $x$ first. Does every open ball centered at $x$ contain a point in $A$ distinct from $x$? The simple answer is "well DUH," but let's be a tad more rigorous.&lt;/p&gt;
+
+&lt;p&gt;Choose a real number $\epsilon&gt;0$. We consider separately the cases where $\epsilon\geq 1$ and $0&amp;lt;\epsilon&amp;lt;1$. If $\epsilon\geq 1$ then $A\subseteq B(x,\epsilon)$ and we are done because there are certainly points in $A$ distinct from $x$. If $0&amp;lt;\epsilon&amp;lt;1$, it is clear that the point $x_0=(0,\epsilon/2)\in B(x,\epsilon)$. Furthermore, $x_0\neq x$ because $d(x,x_0)&gt;0$.&lt;/p&gt;
+
+&lt;p&gt;So $x$ is a limit point of $A$, which was sort of obvious from the start. A similar argument could be made that any point $a\in A$ is a limit point of $A$ by adding a few more technical details to the above argument, but I won't bother because it feels like overkill.&lt;/p&gt;
+
+&lt;p&gt;Next, let's take a look at $y$. You should have a sense that $y$ is a limit point of $A$, because even though it is not in $A$ it is &lt;em&gt;superextraclose&lt;/em&gt; to lots and lots of points in $A$. Let's show that our intuition is correct.&lt;/p&gt;
+
+&lt;p&gt;Again, choose a real number $\epsilon&gt;0$ and consider the open ball $B(y,\epsilon)$. The point $y_0=(0,1-\epsilon/2)$ is clearly in $B(y,\epsilon)$ because $d(y,y_0)=\epsilon/2&amp;lt;\epsilon$ and thus it is also distinct from $y$. Furthermore, $y_0\in A$ since $d(x,y_0)=1-\epsilon/2&amp;lt;1$.&lt;/p&gt;
+
+&lt;p&gt;We've shown then that $y$ is a limit point of $A$, which is somewhat more interesting. A similar argument would show that any point $a\in X$ with $d(a,x)=1$ is a limit point of $A$. Sooo... even though we haven't defined the concept of "boundary" yet, it's looking like any point on what we intuitively perceive to be the boundary of $A$ is a limit point of $A$. This is an important realization.&lt;/p&gt;
+
+&lt;p&gt;Finally, let's show that $z$ is not a limit point of $A$. To show that the necessary property is not true for every open ball centered at $z$, all we need to do is demonstrate a single open ball centered at $z$ which contains no points of $A$. This is easy! Just take as the radius any positive $\epsilon&amp;lt;\sqrt{2}-1$ and that's essentially all there is to it.&lt;/p&gt;
+
+&lt;p&gt;More formally, choose $\epsilon&amp;lt;\sqrt{2}-1$ and consider $z_0\in B(z,\epsilon)$. By the definition of this open ball $d(z,z_0)&amp;lt;\epsilon$. By the triangle inequality,&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+d(x,z) &amp;amp;= \sqrt{2} \\ &lt;br&gt;
+       &amp;amp;\leq d(x,z_0) + d(z_0,z) \\
+       &amp;amp;&amp;lt; d(x,z_0) + \epsilon \\
+       &amp;amp;&amp;lt; d(x,z_0)+\sqrt{2}-1.
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;Rearranging the above inequality, we have that $d(x,z_0)&gt;1$ and so $z_0\notin A$. Thus, $z$ is not a limit point of $A$. Once again, a similar argument would show that, in general, any point $p\in X$ with $d(p,x)&gt;1$ is not a limit point of $A$.&lt;/p&gt;
+
+&lt;p&gt;What can we conclude about this particular set $A$? The limit points of $A$ are every point in $A$ as well as every point on the unit circle $S^1$. That is, $L(A)=A\cup S^1=\overline{B}(x,r)$. This is the closed ball with the same center and radius as $A$.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;We shall see soon enough that this is no accident. For any subset $A$ of a metric space $X$, it happens that the set of limit points $L(A)$ is closed. Let's prove something even better.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; A subset of a metric space is closed if and only if it contains all of its limit points.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; We argue first that if $L(A)\subseteq A$ then $A$ is closed. It suffices to show that $X-A$ is open. Choose a point $x\in X-A$. Clearly $x$ is not a limit point of $A$ since $x\notin A$ and thus $x\notin L(A)\subseteq A$. Thus there exists some open ball $B$ centered at $x$ which does not contain any points in $A$. It follows that $B\subseteq X-A$ and so $X-A$ is open.&lt;/p&gt;
+
+&lt;p&gt;We argue next that if $A$ is closed then $L(A)\subseteq A$. Since $A$ is closed, we know that $X-A$ is open. Thus for any $x\in X-A$ there exists some open ball centered at $x$ which is strictly contained in $X-A$ and therefore contains no points of $A$. It follows that $x$ is not a limit point of $A$, so any limit points of $A$ are contained in $A$.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Hooray! We now have an alternative, and often easier to use, definition of a closed set in a metric space! What's awesome is that nothing we've done (other than our example) depends on the metric, so we can immediately abstract everything to the setting of topological spaces!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $A$ denote a subset of a topological space $X$. A point $p\in X$ is a &lt;strong&gt;limit point&lt;/strong&gt; of $A$ if every neighborhood of $p$ contains a point $x\in A$ with $x\neq p$.&lt;/p&gt;
+
+&lt;p&gt;The theorem we just proved translates as well, if we simply replace open balls with neighborhoods each time the appear in the proof.&lt;/p&gt;
+
+&lt;p&gt;As always, there's nothing contradictory about the fact that the empty set is closed. Certainly the empty set contains all of its limit points, since it contains no points at all.&lt;/p&gt;
+
+&lt;h3 id="closureanameclosure"&gt;Closure&lt;a name="closure"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;We will now define the closure of a subset of a topological space. We will see later that taking the closure of a set is equivalent to include the set's boundary.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $A$ denote a subset of a topological space $X$. The &lt;strong&gt;closure&lt;/strong&gt; of $A$ is the intersection of all closed set in $X$ which contain $A$. We denote the closure of a $A$ by $\overline A$.&lt;/p&gt;
+
+&lt;p&gt;The closure of a set is always closed, because it is the intersection of closed sets. Furthermore, it is obvious that any closed set must equal its own closure. Intuitively, $\overline A$ is the smallest closed set which contains $A$. This is because, by definition, any closed set containing $A$ must also contain $\overline A$. Even more intuitively, the closure of $A$ is the union of $A$ with all of its limit points. Let's prove that this is true.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $A$ is a subset of a topological space, then $\overline A=A\cup L(A)$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; We argue first that $A\cup L(A)\subseteq\overline A$. Clearly $A\subseteq\overline A$ since $\overline A$ is the intersection of all closed sets containing $A$, and thus itself contains $A$. It remains to show then that $L(A)\subseteq\overline A$, which we do by contraposition. Suppose $x\notin\overline A$ so that $x\in X-\overline A$. Since $\overline A$ is closed, $X-\overline A$ is open and is thus a neighborhood of $x$ which contains no points in $A$. Thus $x\notin L(A)$.&lt;/p&gt;
+
+&lt;p&gt;We argue next that $\overline A\subseteq A\cup L(A)$. If $x\in A$ then the proof is immediate. If $x\in\overline A -A$, then by definition $x$ is in every closed set containing $A$. It follows that for any open set $U\subseteq X-A$, we have $x\notin U$. Thus any neighborhood of $x$ intersects $A$ in some point $p$. Since $x\notin A$, clearly $x\neq p$ and thus $x$ is a limit point of $A$.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;It's a somewhat gross proof, but a nice and useful result, and one that we will use often.&lt;/p&gt;
+
+&lt;h3 id="boundaryanameboundary"&gt;Boundary&lt;a name="boundary"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Next let's formalize the concept of boundary. It's easy and intuitive to think about the boundary of a ball, so let's start there. Let's say we have an open and closed ball of the same center and radius in some metric space. They obviously have the same boundary — the circle with the same radius as these balls. Even though these points don't belong to the open ball, they are &lt;em&gt;just&lt;/em&gt; touching its outer edge.&lt;/p&gt;
+
+&lt;p&gt;Now what about this set, as a subset of $\mathbb{R}^2$ in the standard metric?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/vomitous_mass.svg" alt="vomitous mass"&gt;&lt;/p&gt;
+
+&lt;p&gt;Trying to calculate the boundary of this set is a bit more difficult than just drawing a circle. Does that loop at the top right count as boundary? What about the points sitting by themselves? Do those inner circles count as well, or does the boundary have to enclose the set? It turns out that, the way we define boundary, the answer to all of these questions is yes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $A$ be a subset of a metric space $X$. A point $p\in X$ is a &lt;strong&gt;boundary point&lt;/strong&gt; of $A$ if every open ball centered at $p$ contains at least one point in $A$ and one point in $X-A$. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; The &lt;strong&gt;boundary&lt;/strong&gt; of $A$ is the set of all boundary points of $A$. We denote it by $\partial A$.&lt;/p&gt;
+
+&lt;p&gt;This makes a lot of sense! No matter how tiny an open ball we choose around a boundary point, it will always intersect both $A$ and its complement. That is, it will always contain points that are in $A$ and points that are not in $A$.&lt;/p&gt;
+
+&lt;p&gt;These definitions are identical in a topological space if we again replace open balls with neighborhoods. I won't even bother restating them.&lt;/p&gt;
+
+&lt;p&gt;It turns out we could already have defined the boundary of a set without the notion of boundary points!&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $A$ is a subset of a topological space $X$, then $\partial A=\overline A\cap\overline{X-A}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Choose $x\in\partial A$. By definition, every neighborhood of $x$ contains a point in $A$ and a point in $X-A$, so $x\in\overline A$ and $x\in\overline{X-A}$. Thus $x\in\overline A\cap\overline{X-A}$ and so $\partial A\subseteq \overline A\cap\overline{X-A}$.&lt;/p&gt;
+
+&lt;p&gt;The proof that $\overline A\cap\overline{X-A}\subseteq\partial A$ is precisely the same as above, with the steps reversed.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This means that the boundary of $A$ is the intersection of the smallest closed set containing $A$ and the smallest closed set containing its complement, which hopefully seems reasonable to you.&lt;/p&gt;
+
+&lt;h3 id="interioranameinterior"&gt;Interior&lt;a name="interior"&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm not going to bother with metric spaces for this part, since I think you get the idea. You can easily translate all the results about topological spaces back into metric spaces if you'd like. Intuitively, we can think of the interior of a set as everything in the set which does not belong to its boundary. This is actually not the definition we'll initially give, although we shall soon see that they are equivalent.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let $A$ denote a subset of a topological space $X$. The &lt;strong&gt;interior&lt;/strong&gt; of $A$ is the union of all open subsets of $A$. We write $\mathring A$ to denote the interior of $A$.&lt;/p&gt;
+
+&lt;p&gt;Clearly the interior of a set is always open because it is the union of open sets. We can think of the interior of a set as the largest open set contained in that set. Clearly every point in $\mathring A$ has a neighborhood contained in $A$. We call each such point an &lt;strong&gt;interior point&lt;/strong&gt; of $A$.&lt;/p&gt;
+
+&lt;p&gt;Now that we have defined the interior and closure of any set $A$, we have a sort of set sandwich $\mathring A\subseteq A\subseteq\overline A$. Here, $\mathring A$ contains none of its boundary points, $\overline A$ contains them all, and $A$ can contain some, all or none.&lt;/p&gt;
+
+&lt;p&gt;Let's finish up with the proof I promised you a minute ago.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $A$ is a subset of a topological space $X$, then $\mathring A=\overline A-\partial A$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Choose $x\in\mathring A$. Clearly $x\in\overline A$ because $\mathring A\subseteq\overline A$. Since $x$ is an interior point of $A$, there exists some neighborhood of $x$ which is contained in $A$. Thus $x$ is not a boundary point of $A$ and so $x\in\overline A-\partial A$.&lt;/p&gt;
+
+&lt;p&gt;Next, choose $x\in\overline A-\partial A$. Then $x\in A$ or $x$ is a limit point of $A$, but $x$ is not a boundary point of $A$. Thus any neighborhood of $x$ contains a point in $A$ but no points in $X-A$, so $x\in\mathring A$.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I'm probably boring you. I'm boring myself, actually, because I don't find any of this particularly interest. It's kind of necessary though, so I'm glad I went through it. I'm going to end the post here, and next time I'll finally talk about continuity, which is actually interesting and incredibly important.&lt;/p&gt;</content:encoded></item><item><title>Groups and their Basic Properties</title><description>A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact...</description><link>http://localhost:2368/groups-and-their-basic-properties/</link><guid isPermaLink="false">dd42f408-6fd9-4d0b-8d0b-5335806f8596</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Fri, 07 Apr 2017 23:05:25 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

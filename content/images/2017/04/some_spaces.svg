@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="824.52563"
+   height="253.53893"
+   id="svg8731"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="some_spaces.svg">
+  <defs
+     id="defs8733">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4762"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path4768"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.71238682"
+     inkscape:cx="527.32606"
+     inkscape:cy="202.82154"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="851"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5" />
+  <metadata
+     id="metadata8736">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(60.52565,-285.12234)">
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:8, 4, 2, 4;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       d="m -54.52565,307.39182 334,0 0,209 -334,0 z"
+       id="rect8890"
+       inkscape:connector-curvature="0" />
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:8, 4, 2, 4;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       d="m 371.99997,291.12234 386,0 0,241.53893 -386,0 z"
+       id="rect8890-5"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g10551">
+      <path
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;marker:none;enable-background:accumulate"
+         d="m 447.59375,356.4375 c -22.84189,-0.28504 -41.67838,7.56079 -60.59375,19.875 -21.61756,14.07338 -43.39407,33.95231 -71.65625,54.28125 -28.24771,20.31853 -54.45325,32.68079 -80.875,34.65625 -26.42175,1.97546 -53.09781,-6.42668 -82.3125,-27.71875 a 0.50316382,0.50316382 0 1 0 -0.59375,0.8125 c 29.34802,21.38923 56.28703,29.90115 82.96875,27.90625 26.68172,-1.9949 53.07643,-14.46616 81.40625,-34.84375 28.31535,-20.36717 50.11123,-40.24419 71.625,-54.25 21.51377,-14.00581 42.70632,-22.13458 69.96875,-19.09375 l 0,-0.0312 c 45.80328,7.04985 69.15625,36.5625 69.15625,36.5625 a 0.50024408,0.50024408 0 1 0 0.78125,-0.625 c 0,0 -23.62422,-29.80895 -69.8125,-36.90625 a 0.50005,0.50005 0 0 0 -0.0312,0 c -3.43937,-0.38362 -6.76812,-0.58428 -10.03125,-0.625 z"
+         id="path9981"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.8pt"
+         d="m 521.75816,388.33538 -5.61895,-0.65371 11.82551,8.49454 -5.55285,-13.45979 -0.65371,5.61896 z"
+         id="path10557" />
+    </g>
+    <g
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:STIXGeneral;-inkscape-font-specification:'STIXGeneral, Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text4160">
+      <path
+         d="m 121.02435,403.72932 -5.175,0 0,0.4 c 1.075,0.05 1.525,0.375 1.525,0.85 0,0.3 -0.175,0.675 -0.525,1.075 l -3.625,4.175 -1.475,-3.675 c -0.275,-0.675 -0.4,-1.075 -0.4,-1.4 0,-0.625 0.4,-0.85 1.775,-1.025 l 0,-0.4 -6.575,0 0,0.4 c 1.45,0.125 1.9,0.525 2.375,1.725 l 2.575,6.375 -2.075,2.425 c -3.425,4 -4.1,4.75 -5.5,5 l 0,0.4 5.325,0 0,-0.4 c -1.2,0 -1.65,-0.275 -1.65,-0.825 0,-0.35 0.225,-0.8 0.575,-1.2 l 3.775,-4.3 1.675,4.125 c 0.2,0.5 0.35,0.95 0.35,1.275 0,0.6 -0.425,0.9 -1.925,0.925 l 0,0.4 6.775,0 0,-0.4 c -1.7,-0.2 -2.025,-0.425 -2.625,-1.925 l -2.525,-6.375 4.225,-4.85 c 1.25,-1.45 2.05,-2.025 3.125,-2.375 l 0,-0.4 z"
+         id="path4173"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:STIXGeneral;-inkscape-font-specification:'STIXGeneral, Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text4164">
+      <path
+         d="m 571.93749,403.72929 -4.725,0 0,0.4 0.725,0.075 c 0.725,0.075 1,0.275 1,0.7 0,0.675 -1.1,2.225 -3.725,5.325 l -0.975,1.15 -0.775,-2.75 c -0.6,-2.125 -0.9,-3.225 -0.9,-3.6 0,-0.55 0.3,-0.75 1.8,-0.9 l 0,-0.4 -5.975,0 0,0.4 c 1.4,0.2 1.55,0.4 1.925,1.7 l 1.9,6.675 -1.475,5.125 c -0.45,1.6 -1.025,1.925 -2.675,2.025 l 0,0.4 7.225,0 0,-0.4 -0.9,-0.075 c -0.975,-0.075 -1.325,-0.3 -1.325,-0.925 0,-0.525 0.175,-1.2 0.75,-3.175 l 0.9,-3.075 5.475,-6.75 c 0.825,-1.025 1.025,-1.275 1.75,-1.525 l 0,-0.4 z"
+         id="path4176"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;line-height:125%;font-family:STIXGeneral;-inkscape-font-specification:'STIXGeneral, Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text4168">
+      <path
+         d="m 323.71815,389.76198 -0.175,0.8 2.275,0 -2.2,10.5 c -0.575,2.7 -1.375,4.05 -2.425,4.05 -0.3,0 -0.5,-0.175 -0.5,-0.4 0,-0.275 0.225,-0.4 0.225,-0.725 0,-0.525 -0.375,-0.925 -0.95,-0.925 -0.525,0 -0.95,0.475 -0.95,1.05 0,0.875 0.85,1.525 1.975,1.525 2.275,0 3.95,-2.45 5,-7.075 l 1.8,-8 2.7,0 0.15,-0.8 -2.675,0 c 0.725,-3.95 1.65,-5.7 3.05,-5.7 0.35,0 0.55,0.125 0.55,0.325 0,0.225 -0.25,0.35 -0.25,0.775 0,0.6 0.475,0.975 0.925,0.975 0.575,0 1.05,-0.525 1.05,-1.075 0,-0.9 -0.925,-1.55 -2.15,-1.55 -1.525,0 -2.55,0.85 -3.3,1.925 -0.825,1.175 -1.25,2.55 -1.8,4.325 l -2.325,0 z"
+         id="path4179"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

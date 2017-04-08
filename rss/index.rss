@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 08 Apr 2017 16:47:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Subspaces</title><description>A topological space is, at its core, just a set with some additional structure. So what if we want to keep the structure, but change the underlying set?</description><link>http://localhost:2368/subspaces/</link><guid isPermaLink="false">42a2812d-af1a-41e9-b159-f8b95eee75e7</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 16:47:05 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 08 Apr 2017 16:51:58 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Subspaces</title><description>A topological space is, at its core, just a set with some additional structure. So what if we want to keep the structure, but change the underlying set?</description><link>http://localhost:2368/subspaces/</link><guid isPermaLink="false">42a2812d-af1a-41e9-b159-f8b95eee75e7</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 16:47:05 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -39,7 +39,7 @@
 
 &lt;p&gt;so we have shown that the union of any collection of open sets in the subspace is also open in the subspace.&lt;/p&gt;
 
-&lt;p&gt;Finally, suppose that $V\i\in{\cal T}_A$ is open in the subspace for $1\leq i\leq n$ for some $n\in\mathbb{Z}^+$. Then for $1\leq i\leq n$, we again have that $V_i=A\cap U_i$ for some open set $U_i\in{\cal T}$, by the definition of the subspace topology. Since $\bigcap\limits_{i=1}^n U_i\in\cal T$, it is clear that&lt;/p&gt;
+&lt;p&gt;Finally, suppose that $V_i\in{\cal T}_A$ is open in the subspace for $1\leq i\leq n$ for some $n\in\mathbb{Z}^+$. Then for $1\leq i\leq n$, we again have that $V_i=A\cap U_i$ for some open set $U_i\in{\cal T}$, by the definition of the subspace topology. Since $\bigcap\limits_{i=1}^n U_i\in\cal T$, it is clear that&lt;/p&gt;
 
 &lt;p&gt;$$\begin{align}
 \bigcap\limits_{i=1}^n V_i &amp;amp;= \bigcap\limits_{i=1}^n (A\cap U_i) \\

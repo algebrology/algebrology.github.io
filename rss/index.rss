@@ -1,4 +1,140 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 08 Apr 2017 20:55:35 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Product Spaces</title><description>We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?</description><link>http://localhost:2368/product-spaces/</link><guid isPermaLink="false">5737640a-bfd4-4aea-80c9-2219d213c8a6</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 20:54:38 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 09 Apr 2017 00:42:01 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Equivalence Relations and Quotient Sets</title><description>This gives us a powerful method to collapse a set into a smaller set that is in some way still representative of the original set.</description><link>http://localhost:2368/equivalence-relations-and-quotient-sets/</link><guid isPermaLink="false">b81274b7-26bc-490d-b3e0-88aaebaa6b40</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 09 Apr 2017 00:41:51 GMT</pubDate><content:encoded>&lt;p&gt;The next topological construction I'm going to talk about is the quotient space, for which we will certainly need the notion of quotient sets. However, equivalence relations and quotient sets show up all over the place in mathematics and are worth studying on their own because of their tremendous importance and ubiquitousness.&lt;/p&gt;
+
+&lt;p&gt;The first concept I should introduce is that of a relation. A special type of relation, called an equivalence relation, will be vital to all of the content in this post.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;strong&gt;relation&lt;/strong&gt; on a set $A$ is a subset of the Cartesian product $A\times A$.&lt;/p&gt;
+
+&lt;p&gt;So technically any subset of $A\times A$ is a relation on $A$, but most of them are usually boring and have little meaning. Relations are generally used to compare two elements in some way. That is, we use them to determine whether two elements are 'related' in the manner specified. We should take a look at some characteristics that relations may possess which make them more interesting, but first I'd like to give some examples of familiar relations.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Take $A=\mathbb{N}$, the set of natural numbers. The "less than or equal to" relation on $\mathbb{N}$, usually written $\le$, is defined so that $(a,b)\in\le$ if and only if $b=a+x$ for some $x\in\mathbb{N}$. Clearly&lt;/p&gt;
+
+&lt;p&gt;$$\le=\{(a,b)\in\mathbb{N}^2\mid b=a+x\text{ for some }x\in\mathbb{N}\}$$&lt;/p&gt;
+
+&lt;p&gt;fits our definition of a relation because it is a subset of $\mathbb{N}\times\mathbb{N}$. However, no one ever writes things this way. Normal people use infix notation. That is, they write $a\le b$ rather than $(a,b)\in\le$. I will pretty much use infix notation for the rest of time since it tends to simplify things a great deal, and it is probably what you're used to seeing.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Here's another example:&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Take $A=\mathbb{Z}$, the set of integers, and choose some $n\in\mathbb{Z}$. We can define a relation $=_n$ on $\mathbb{Z}$ so that for any $a,b\in\mathbb{Z}$, we have that $a=_n b$ if and only if $b-a=kn$ for some $k\in\mathbb{Z}$. We can write this more formally as&lt;/p&gt;
+
+&lt;p&gt;$$=_n = \{(a,b)\in\mathbb{Z}^2\mid b-a=kn\text{ for some }k\in\mathbb{Z}\}$$&lt;/p&gt;
+
+&lt;p&gt;but there isn't usually any benefit in doing things that way, and I think it's even a little bit confusing to look at. By the way, this relation is called &lt;strong&gt;congruence modulo $n$&lt;/strong&gt; and it is of tremendous importance to many fields of mathematics. You can bet we'll be seeing this again at some point soon.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;And one more:&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;For any set $A$, both $\varnothing$ and $A\times A$ are relations on $A$. The $\varnothing$ relation doesn't relate elements of $A$ to anything, not even themselves. On the other hand, the relation $A\times A$ relates every element to every element of $A$. These are two extreme sorts of relations, but neither is particularly interesting or important.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now that I've given you a few examples, hopefully the definition of a relation has had time to sink in and begun to make a bit of sense. As promised I'll now discuss some important qualities that a relation may or may not have.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A relation $\sim$ on a set $A$ is &lt;strong&gt;reflexive&lt;/strong&gt; if $a\sim a$ for every $a\in A$.&lt;/p&gt;
+
+&lt;p&gt;For example, the relation $\le$ on $\mathbb{N}$ is reflexive because every natural number is less than or equal to itself, i.e. $n\le n$ for every $n\in\mathbb{N}$&lt;/p&gt;
+
+&lt;p&gt;Another example of a reflexive relation is that of congruence modulo $n$. This is because $a-a=0n$ for every $a\in\mathbb{Z}$.&lt;/p&gt;
+
+&lt;p&gt;The reflexive property holds for many important relations, and is in general quite easy to verify. This is because in most relations of interest to mathematicians, elements tend to be related to themselves. In fact, the only relation we discussed above that is not reflexive is the empty relation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A relation $\sim$ on a set $A$ is &lt;strong&gt;symmetric&lt;/strong&gt; if $b\sim a$ whenever $a\sim b$.&lt;/p&gt;
+
+&lt;p&gt;The relation $=_n$ on $\mathbb{Z}$ of congruence modulo some $n\in\mathbb{Z}$ is symmetric. To see this, suppose $a=_n b$ for some $a,b\in\mathbb{Z}$. Then by definition, $b-a=kn$ for some integer $k$. Negating each side, we see that $a-b=-kn$ and since $-k$ is also an integer it follows that $b=_n a$.&lt;/p&gt;
+
+&lt;p&gt;The relation $\le$ on $\mathbb{N}$, on the other hand, is not symmetric. We can see this by examining a single counterexample. Clearly $3\le 5$ but it is not true that $5\le 3$.&lt;/p&gt;
+
+&lt;p&gt;The final property I'm going to talk about is generally the most difficult to demonstrate holds for a particular relation. It sort of resembles the triangle inequality.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A relation $\sim$ on a set $A$ is &lt;strong&gt;transitive&lt;/strong&gt; if $a\sim c$ whenever both $a\sim b$ and $b\sim c$.&lt;/p&gt;
+
+&lt;p&gt;It's not too hard to show that the relation $\le$ on $\mathbb{N}$ is transitive. Consider $a,b,c\in\mathbb{N}$ such that $a\le b$ and $b\le c$. Then by definition, $b=a+x$ and $c=b+y$ for some $x,y\in\mathbb{N}$. Substituting the first equation into the second, we see that $c=a+x+y$. And since $x+y\in\mathbb{N}$, it follows that $a\le c$.&lt;/p&gt;
+
+&lt;p&gt;Next, consider again the relation $=_n$ on $\mathbb{Z}$ of congruence modulo some integer $n$. Suppose $a=_n b$ and $b=_n c$. Then $b-a=k_1 n$ and $c-b=k_2 n$ for some integers $k_1$ and $k_2$. Thus,&lt;/p&gt;
+
+&lt;p&gt;$$\begin{align}
+c-a &amp;amp;= (c-b) + (b-a) \\ &lt;br&gt;
+    &amp;amp;= k_2 n - k_1 n \\
+    &amp;amp;= (k_2-k_1)n.
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;Since $k_2-k_1\in\mathbb{Z}$, it follows that $a=_n c$.&lt;/p&gt;
+
+&lt;p&gt;Now that we have established these three types of relation, it is a piece of cake to define an equivalence relation:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; An &lt;strong&gt;equivalence relation&lt;/strong&gt; is a relation which is reflexive, symmetric and transitive.&lt;/p&gt;
+
+&lt;p&gt;We've established above that congruence modulo $n$ satisfies each of these properties, which automatically makes it an equivalence relation on the integers.&lt;/p&gt;
+
+&lt;p&gt;The relation "is the same age as" on the set of all people is an equivalence relation. Every person is the same age as him/herself. If person $A$ is the same age as person $B$, then certainly person $B$ is the same age as person $A$. And transitivity also holds, but I'm too lazy to type that one out right now.&lt;/p&gt;
+
+&lt;p&gt;The relation "has shaken hands with" on the set of all people is &lt;em&gt;not&lt;/em&gt; an equivalence relation because it is not transitive. For instance, it is entirely possible that Bob has shaken Fred's hand and Fred has shaken hands with the president, yet this does not necessarily mean that Bob has shaken the president's hand.&lt;/p&gt;
+
+&lt;p&gt;As you will learn, equivalence relations pop up constantly in every area of mathematics. This is because they give sets a very nice kind of structure. To explain this further, we first need the following concepts:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Given an equivalence relation $\sim$ on a set $A$ and an element $a\in A$, the &lt;strong&gt;equivalence class&lt;/strong&gt; of $A$ is the set $[a]=\{x\in A\mid a\sim x\}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Given an equivalence relation $\sim$ on a set $A$, the set of equivalence classes corresponding to $\sim$ is called a &lt;strong&gt;quotient set&lt;/strong&gt;&lt;sup id="fnref:1"&gt;&lt;a href="http://localhost:2368/equivalence-relations-and-quotient-sets/#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; and is written $A/\negthickspace\sim$.&lt;/p&gt;
+
+&lt;p&gt;So quotient sets of $A$ are comprised not of elements of $A$, but of the equivalence classes they fall into. This gives us a powerful method to collapse a set into a smaller set that is in some way still representative of the original set. Hopefully the following example will help make some sense of this.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Let's take another look at the set $\mathbb{Z}$ and the relation $=_3$ of congruence modulo $3$.&lt;sup id="fnref:2"&gt;&lt;a href="http://localhost:2368/equivalence-relations-and-quotient-sets/#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; Under this relation, two integers $a$ and $b$ are related if $b-a=3k$ for some integer $k$. Put more plainly, two integers are congruent if their difference is a multiple of $3$.&lt;/p&gt;
+
+&lt;p&gt;How many equivalence classes does this relation create? It isn't too tough to see that there are three: $[0], [1]$ and $[2]$. This is because all multiples of three, i.e. elements of the form $3k$ for some integer $k$, are congruent. Similarly, all elements of the form $3k+1$ are congruent and all elements of the form $3k+2$ are congruent. And these are all the possible options, really. I have chosen $0, 1$ and $2$ as the &lt;strong&gt;representatives&lt;/strong&gt; of these equivalence classes, but this choice was arbitrary (albeit standard). I could just as easily have named them $[3000], [16]$ and $[-1]$.&lt;/p&gt;
+
+&lt;p&gt;Lastly, we see that the quotient set $\mathbb{Z}/\negthickspace=_n$ is just the set $\big\{[0],[1],[2]\big\}$. That is, all congruent elements are essentially collapsed to a single point in the quotient set.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;There is one final topic I need to talk about here, which is the fact that equivalence classes form partitions of sets. This is called the Fundamental Theorem of Equivalence Relations, but I'm getting ahead of myself. Before I prove it, I need to tell you what a partition is.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;strong&gt;partition&lt;/strong&gt; $\cal P$ of a set $A$ is a collection of subsets of $A$ which satisfies the following properties:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The empty set is not in $\cal P$.  &lt;/li&gt;
+&lt;li&gt;For any two sets $X,Y$ in $\cal P$, either $X$ and $Y$ are disjoint or $X=Y$.  &lt;/li&gt;
+&lt;li&gt;The union $\bigcup\limits_{X\in\cal P}X$ of all subsets in the partition is equal to $A$ itself.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This is all basically a fancy way of saying that a partition is a method of breaking a set into non-overlapping subsets. Now it's time to prove that Fundamental Theorem thingy I mentioned a moment ago.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Fundamental Theorem of Equivalence Relations.&lt;/strong&gt; Let $\sim$ be an equivalence relation on a set $A$. Then the quotient set $A/\negthickspace\sim$ is a partition of $A$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; All we need to do is show that the three properties of partitions hold. Clearly the empty set $\varnothing$ is not in the quotient set $A/\negthickspace\sim$ because the reflexive property of equivalence relations tells us that $x\sim x$, and thus $x\in [x]$ for every $x\in A$.&lt;/p&gt;
+
+&lt;p&gt;Next, suppose that $[x]$ and $[y]$ are equivalences classes in $A/\negthickspace\sim$ and that they are disjoint, i.e. $[x]\cap [y]\ne\varnothing$. Then there exists some $a\in A$ such that $a\in [x]\cap [y]$. That is, $a\in [x]$ and $a\in [y]$, so $a\sim x$ and $a\sim y$. By the symmetric property of equivalence relations, $x\sim a$. And by the transitive property, $x\sim y$. Thus, it follows that $[x]=[y]$.&lt;/p&gt;
+
+&lt;p&gt;Finally, it is clear from the union lemma that the union of all equivalence classes, $\bigcup\limits_{[x]\in A/\sim}[x]$, is the entire set $A$.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Notice that we used all three properties of equivalence relations (reflexivity, symmetry and transitivity) to prove this result. This indicates that equivalence relations are the only relations which partition sets in this manner. It turns out that this is true, and it's very easy to prove. I won't do that here because this post is already longer than I intended, but I will at least state the theorem.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $\cal P$ be a partition of a set $A$ and define a relation $\sim$ by $x\sim y$ if and only if $x,y\in X$ for some $X\in\cal P$. Then $\sim$ is an equivalence relation.&lt;/p&gt;
+
+&lt;p&gt;What this theorem really tells us is that every partition is the quotient set of some equivalence relation, and that's a really cool idea.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li class="footnote" id="fn:1"&gt;&lt;p&gt;More formally, it is called the &lt;strong&gt;quotient set of $A$ modulo $\sim$.&lt;/strong&gt; &lt;a href="http://localhost:2368/equivalence-relations-and-quotient-sets/#fnref:1" title="return to article"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li class="footnote" id="fn:2"&gt;&lt;p&gt;It's easy to extend this example to integers other than $3$, but I feel like a more concrete example is useful here. &lt;a href="http://localhost:2368/equivalence-relations-and-quotient-sets/#fnref:2" title="return to article"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content:encoded></item><item><title>Product Spaces</title><description>We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?</description><link>http://localhost:2368/product-spaces/</link><guid isPermaLink="false">5737640a-bfd4-4aea-80c9-2219d213c8a6</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sat, 08 Apr 2017 20:54:38 GMT</pubDate><content:encoded>&lt;h3 id="contents"&gt;Contents&lt;/h3&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

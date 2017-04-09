@@ -1,0 +1,258 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Quotient Spaces</title>
+    <meta name="description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent...">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5a2c513e66">
+
+
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Quotient Spaces">
+    <meta property="og:description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent...">
+    <meta property="og:url" content="http://localhost:2368/quotient-spaces/">
+    <meta property="article:published_time" content="2017-04-09T14:16:40.000Z">
+    <meta property="article:modified_time" content="2017-04-09T14:16:40.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Quotient Spaces">
+    <meta name="twitter:description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent...">
+    <meta name="twitter:url" content="http://localhost:2368/quotient-spaces/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Quotient Spaces",
+    "url": "http://localhost:2368/quotient-spaces/",
+    "datePublished": "2017-04-09T14:16:40.000Z",
+    "dateModified": "2017-04-09T14:16:40.000Z",
+    "description": "The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent...",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true
+    }
+});
+</script>
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="../">Home</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="../rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Quotient Spaces</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-04-09">09 April 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Now that we've defined quotient sets, let's talk about quotient sets of topological spaces. The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post. These are useful tools, so I'm going to jump right into it. It may be a bit difficult to see where I'm going with this at first, but bear with me and hopefully it'll become clear.</p>
+
+<p><strong>Definition:</strong> Let $X$ denote a topological space, let $A$ be a set and let $f:X\to A$ be a surjective function. The <strong>quotient topology</strong> induced by $f$ has as its open sets all sets $U$ such that $f^{-1}[U]$ is open in $X$. We call $f$ a <strong>quotient map</strong> and $A$ a <strong>quotient space</strong> when equipped with this topology.</p>
+
+<p>Supposing the quotient topology is truly a topology, we get for free that quotient maps are always continuous, simple from the way they're defined.  However, we still need to verify that quotient topologies satisfy the requirements of a topology. We need to show that $\varnothing$ and $A$ are open, and that unions and finite intersections of open sets are open.</p>
+
+<hr>
+
+<p><strong>Theorem.</strong> Let $X$ denote a topological space, let $A$ be a set and let $f:X\to A$ be a surjective function. Then the quotient topology defined above is a topology on $A$.</p>
+
+<p><strong>Proof.</strong> It is clear that $f^{-1}[\varnothing]=\varnothing$ and so the empty set is open in $A$. Furthermore, since $f$ is surjective, we know that $f^{-1}[A]=X$ is open in $X$ and so $A$ is also open in $A$.</p>
+
+<p>Next, suppose that $I$ is an indexing set and $U_i\subseteq A$ are such that $f^{-1}[U_i]$ is open in $X$ for each $i\in I$. Then certainly</p>
+
+<p>$$f^{-1}\left[\bigcup\limits_{i\in I}U_i\right]=\bigcup\limits_{i\in I}f^{-1}[U_i]$$</p>
+
+<p>is open in $X$ since it is the union of open sets. Thus, $\bigcup\limits_{i\in I}U_i$ is open in A.</p>
+
+<p>Finally, suppose that $n\in\mathbb{Z}^+$ and that $U_i\subseteq A$ are such that $f^{-1}[U_i]$ is open in $X$ for each $1\le i\le n$. Then</p>
+
+<p>$$f^{-1}\left[\bigcap\limits_{i=1}^n U_i\right]=\bigcap\limits_{i=1}^n f^{-1}[U_i]$$</p>
+
+<p>is open in $X$ since it is the intersection of a finite number of open sets. Thus, $\bigcap\limits_{i=1}^n U_i$ is open in $A$, completing the proof.</p>
+
+<hr>
+
+<p>There is also an equivalent, more intuitive way to define quotient spaces which will probably look more familiar to you after our discussion on quotient sets last post.</p>
+
+<p><strong>Definition:</strong> Let $X$ denote a topological space and let $\sim$ be an equivalence relation on $X$. The <strong>quotient space</strong> $X/\negthickspace\sim$ is this quotient set where the open sets are sets of equivalence classes whose unions are open in $X$.</p>
+
+<p>We've established that quotient maps induce a topology in this way, so let's take a look at what they can do for us.</p>
+
+<p>While it's true that any set $A$ can be turned into a quotient space by defining a suitable surjection as our quotient map, we generally restrict our interest to partitions of $A$. Let's first visualize the construction of a simple quotient space, which you may have seen before. We will then figure out how to formally document this process.</p>
+
+<p>Consider the square $[0,1]^2$ in the standard topology. We can first create a cylinder from the square by gluing two opposite edges together.</p>
+
+<p><img src="../content/images/2017/04/square_to_cylinder.svg" alt="square to cylinder"></p>
+
+<p>Next, we can glue the two open circular ends of the cylinder together to form a torus.</p>
+
+<p><img src="../content/images/2017/04/cylinder_to_torus.svg" alt="cylinder to torus"></p>
+
+<p>What we've really done here is glue the opposite edges of the square together, one pair at a time. A much more concise diagram representing this act simply identifies opposite edges of the square with each other, and the gluing is implied.</p>
+
+<p><img src="../content/images/2017/04/square_to_torus.svg" alt="square to torus"></p>
+
+<p>In such diagrams, it is understood that the two edges with one arrow get glued to each other and the two edges with two arrows get glued to each other. In this case everything is symmetrical so it doesn't matter which pair gets glued first, but there are probably cases in which it does matter. It is conventional to first glue together sides with one arrow, then two arrows and so on.</p>
+
+<p>It is this last diagram which provides us with something we can really use. This <em>identification</em> of sides is crucial to defining the torus as a quotient space of the square. What we are really doing here is partitioning the square in such a way that certain pairs of points on the boundary get grouped into the same equivalence class. More precisely, we partition the square into many sets, namely every point in the interior of the square and each pair of opposite points on the square's boundary:</p>
+
+<p>$$\begin{align}
+B_{x,y} &amp;= \{(x,y)\}\text{ for } (x,y)\in (0,1)^2, \\ <br>
+C_x     &amp;= \{(x,0),(x,1)\}\text{ for } x\in (0,1), \\ <br>
+D_y     &amp;= \{(0,y),(1,y)\}\text{ for } y\in (0,1), \\ <br>
+E        &amp;= \{(0,0),(0,1),(1,0),(1,1)\}. <br>
+\end{align}$$</p>
+
+<p>Allow me to explain these choices a little bit. We have defined one set $B_{x,y}$ in the partition for every point $(x,y)$ in the interior of the square. This is because in our quotient space, we do not want the interior of the square to collapse at all, and so every point should be in its own equivalence class. There is one set $C_x$ for every pair of points along the bottom and top of the square, and one set $C_y$ for every pair along the left and right edges. Putting these pairs into the same equivalence classes ensures that they will become one thing, i.e. 'glued together,' in the quotient space. Lastly, $E$ includes the corners of the square separately to avoid double-counting them.<sup id="fnref:1"><a href="index.html#fn:1" rel="footnote">1</a></sup> This also ensures explicitly that the four corners of the square will all end up being glued together.</p>
+
+<p>Going back to our original definitions for quotient maps and spaces, we define the set $A$ as the collection of all sets in this partition and the quotient map $f$ as the surjective function mapping each point in the square to the set in $A$ which contains it. Then it is easy to show that the resulting quotient space is (homeomorphic to) the torus $S^1\times S^1$, so we have accomplished what we set out to.</p>
+
+<p>Many, many more examples of quotient spaces can be generated easily in much the same manner. We can define the sphere as a quotient space of pretty much any polygon, for instance. However, it is tedious and difficult to draw diagrams and they can be found all over the internet anyway. This post is also nice and short for a change, so I'm going to stop here. The good news is that I've now introduced most of the common methods for constructing new topological spaces!</p>
+
+<hr>
+
+<div class="footnotes"><ol><li class="footnote" id="fn:1"><p>Remember that the sets in a partition must be pairwise disjoint. <a href="index.html#fnref:1" title="return to article">↩</a></p></li></ol></div>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/eric/">Eric Shapiro</a></h4>
+
+                    <p>Read <a href="../author/eric/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Quotient%20Spaces&amp;url=http://localhost:2368/quotient-spaces/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/quotient-spaces/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/quotient-spaces/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+          
+          <section class="disqus">
+            <hr>
+            <div id="disqus_thread"></div>
+              <script>
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+              var disqus_config = function () {
+                this.page.url = 'http://localhost:2368/quotient-spaces/';
+                this.page.identifier = 'ghost-15';
+              };
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://algebrology.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story prev no-cover" href="../equivalence-relations-and-quotient-sets/">
+        <section class="post">
+            <h2>Equivalence Relations and Quotient Sets</h2>
+            <p>The next topological construction I'm going to talk about is the quotient space, for which we will certainly need…</p>
+        </section>
+    </a>
+</aside>                                
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../">Algebrology</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=5a2c513e66"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=5a2c513e66"></script>
+
+</body>

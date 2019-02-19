@@ -159,7 +159,7 @@ MathJax.Hub.Config({
 
 <p>So far we've put a lot of effort into defining notions of distance, even giving these ideas fancy names. Distance is an important property in many situations, and you probably don't need me telling you this because you think about distances every day.</p>
 <p>However, there are also many circumstances in which we care about the shape of a space but couldn't care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the <strong>Seven Bridges of Königsberg</strong>. Basically, the city of Königsberg had two major islands at its center, completely disconnected from the mainland by a river except for seven bridges.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/bridges.svg" alt="bridges of Königsberg"></p>
+<p><img src="../content/images/2017/04/bridges.svg" alt="bridges of Königsberg"></p>
 <p>Here is my <em>beautiful</em> depiction of the scenario. It should be obvious from my exceptional artistic ability, but the blue crud is the river and the grey smudges are the bridges. For a far inferior — though perhaps more descriptive — picture of the problem, I suggest a Google Image search.</p>
 <p>The puzzle is as follows: <strong>Is it possible to walk across every bridge precisely once without getting wet?</strong></p>
 <p>Try drawing a couple paths and you'll quickly begin to suspect that the answer is no. This is correct, but proving it is tricky. The solution to a problem like this has nothing whatsoever to do with the distance between bridges. Stretch the river, move the bridges slightly, and the solution remains the same. This indicates that there may be more fundamental properties intrinsic to the space in this puzzle than distance.</p>
@@ -197,7 +197,7 @@ MathJax.Hub.Config({
 <p><strong>Example.</strong> Consider the set $X=\{a,b,c\}$ with just three elements. Let's determine whether the following is a valid topology on $X$:</p>
 <p>$${\cal T} = \big\{\varnothing,\{a\}, \{a,b\}, \{a,b,c\}\big\}$$</p>
 <p>Let's look at this topology visually:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/top-abc-1.svg" alt="example topology"></p>
+<p><img src="../content/images/2017/04/top-abc-1.svg" alt="example topology"></p>
 <p>The ellipses in this diagram depict the open sets in the topology. Each ellipse is a subset of all the ellipses that encompass it. The empty set is a subset of every set and is not depicted.</p>
 <p>Even without the picture, it's easy to verify that all the required properties hold and that this is a topology on $X$. If you take the union of any collection of these open sets, you wind up with another open set in the topology. The same is true of intersections. (We could list out all such unions and intersections, but that would take up too much space.) The empty set and $X$ itself are explicitly listed and so clearly they are open, and thus $\cal T$ is indeed a topology on $X$.</p>
 <p>One last thing: the set $\{b\}$ in this topological space is neither open nor closed, as an example of what I was saying before.</p>

@@ -174,7 +174,7 @@ MathJax.Hub.Config({
 </blockquote>
 <p>That's a bit of a mouthful, so let's spend a little bit of time making sure we know what we're getting ourselves into. Essentially what I mean when I say that a sequences converges to a point $x$ is that eventually everything in the sequence becomes as close to $x$ as I want. More precisely, given $\epsilon &gt; 0$, I want everything beyond the $N$th entry in the sequence to be within the open ball $B(x,\epsilon)$, where I get to choose $N$. If I can find such an $N$ for every $\epsilon$, then the sequence converges. Generally, $N$ will need to be very large when $\epsilon$ is very close to zero.</p>
 <p><strong>Example.</strong> Consider the sequence $(x_n)_{n=1}^\infty$ in $\mathbb{R}$ where each $x_n=\frac{1}{n}$. We can visualize this sequence in the following manner:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/1-over-n.svg" alt=""></p>
+<p><img src="../content/images/2017/04/1-over-n.svg" alt=""></p>
 <p>Notice that the points in the sequence all lie on the graph of the function $f:\mathbb{R}^+\to\mathbb{R}$ defined by $f(x)=\frac{1}{x}$. This is not surprising, considering we originally defined sequences as functions themselves. That is, this sequence is really the restriction of $f$ to the positive integers, $f\negmedspace\mid_{\mathbb{Z}^+}:\mathbb{Z}^+\to\mathbb{R}$. If you have any experience with this function, you'll believe me when I say that it becomes extremely close to zero and always grows closer to it. It makes sense then that our sequence does the same, so we might guess that it converges to zero. Let's prove this!</p>
 <hr>
 <p><strong>Theorem.</strong> The sequence $(x_n)_{n=1}^\infty$ given by $x_n=\frac{1}{n}$ converges to $0$.</p>

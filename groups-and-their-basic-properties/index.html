@@ -186,16 +186,16 @@ MathJax.Hub.Config({
 <p>Similarly, the set $\mathbb{R}^+$ of positive real numbers under multiplication forms a group. Again, associativity is obvious.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:1">[1:1]</a></sup> The identity element is $1$ since $1\cdot x=x\cdot 1=x$ for any $x\in\mathbb{R}^+$. Lastly, the inverse of any $x\in\mathbb{R}^+$ is $\frac{1}{x}$. Notice that the set of all real numbers does not form a group under multiplication because zero has no multiplicative inverse!</p>
 <p>The last example I'd like to talk about is considerably more abstract, and probably not something you would ever have considered might be a group. It is called the <strong>dihedral group</strong> (or <strong>group of symmetries</strong>) of a regular polygon. We write $D_n$ to denote the dihedral group of the $n$-sided regular polygon. How is $D_n$ defined? I'm not quite ready to do it rigorously, since we haven't talked about permutations yet, but I'll explain it intuitively.</p>
 <p>Basically, $D_n$ is the set of all rotations and reflections which preserve the locations of the vertices. The group operation is composition of these rotations and reflections, which essentially amounts to performing them one after the other. For instance, consider the equilateral triangle (the $3$-sided regular polygon)</p>
-<p><img src="http://localhost:2368/content/images/2017/04/equilateral-triangle-1.svg" alt="equilateral triangle"></p>
+<p><img src="../content/images/2017/04/equilateral-triangle-1.svg" alt="equilateral triangle"></p>
 <p>where I've numbered the vertices to avoid the tremendous confusion that would otherwise ensue. Here's one of the vertex location preserving rotations we can perform, $r_1$:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/r_1.svg" alt="r_1"></p>
+<p><img src="../content/images/2017/04/r_1.svg" alt="r_1"></p>
 <p>Here's another one, $r_2$:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/r_2-1.svg" alt="r_2"></p>
+<p><img src="../content/images/2017/04/r_2-1.svg" alt="r_2"></p>
 <p>It's not too difficult to see that $r_2$ is really just $r_1$ applied twice! That is, $r_2=r_1\circ r_1$. Remember that this is the notation of function composition, so the first rotation applied is written on the right.</p>
 <p>Now that we have a better grasp of what's going on, let's think about the identity element of $D_3$. It should hopefully make sense that the identity element is the rotation by zero degrees. That is, the identity element is the act of doing nothing to the triangle. Call this element $e$. It should be clear that $e\circ r_1=r_1\circ e=r_1$ and likewise for $r_2$, so things are looking good so far.</p>
 <p>What are the inverses of $r_1$ and $r_2$? We just need to figure out how to get the vertices back to their original positions. It looks like $r_1\circ r_2=r_2\circ r_1=e$, so $r_1$ and $r_2$ are actually inverses!</p>
 <p>We've exhausted all the rotations, so now we need to look at the reflections. There are three of them, and each preserves the location of one vertex while swapping the other two. Let's call them $f_1, f_2$ and $f_3$, where the subscript denotes the vertex preserved under each. For instance, here's $f_1$:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/f_1.svg" alt="f_1"></p>
+<p><img src="../content/images/2017/04/f_1.svg" alt="f_1"></p>
 <p>What is the inverse of each reflection? If you reflect something twice along the same axis, it goes back to its original position. That is, $f_1, f_2$ and $f_3$ are each their own inverse.</p>
 <p>It's important to remember that the elements of the group are these reflections and rotations, rather than the triangles they act upon. I'll make all this more precise later when I talk about permutations, but for now I think this visual explanation should suffice.</p>
 <p>Next, $D_4$ is the dihedral group of the square, with four distinct rotations (where I have counted the identity among the rotations) and four reflections.</p>

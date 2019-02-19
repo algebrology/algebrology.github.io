@@ -155,7 +155,7 @@ MathJax.Hub.Config({
 <p>The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they're talking about a continuous map.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup></p>
 <p>I've heard it said that a function is continuous if you can draw its graph without lifting your pencil. This is an awful, imprecise definition, but it does give us a hint of intuition regarding the nature of continuity.</p>
 <p>So then what is continuity? Let's take a look at pieces of two functions, $f,g:\mathbb{R}\to\mathbb{R}$.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:1">[1:1]</a></sup></p>
-<p><img src="http://localhost:2368/content/images/2017/04/i_can_haz_continuous.svg" alt="I can haz continuous?"></p>
+<p><img src="../content/images/2017/04/i_can_haz_continuous.svg" alt="I can haz continuous?"></p>
 <p>Your gut instinct should tell you that $f$ is continuous on the interval depicted but $g$ is not. So what does your gut know that you don't? Here's a (very) rough description:</p>
 <p>If you zoom in far enough on any point in the graph of $f$, the whole graph behaves similarly in that region. On the other hand, there are pieces of the graph of $g$ which look nothing like nearby pieces.</p>
 <p>This is just an informal way of saying that if a function is continuous, points that are close together get mapped to points that are close together. This phrasing is not only much more revealing, it also allows us to extend the definition of continuity away from real-valued functions.</p>
@@ -167,11 +167,11 @@ MathJax.Hub.Config({
 <hr>
 <p>Think of the person you loathe the most in this world. I'll refer to this person as &quot;the enemy&quot; and use the pronoun &quot;it.&quot;</p>
 <p>Say you have two metric spaces $X$ and $Y$, and a continuous map $f:X\to Y$ between them:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/some_spaces.svg" alt="some spaces"></p>
+<p><img src="../content/images/2017/04/some_spaces.svg" alt="some spaces"></p>
 <p>You are omnipotent, as in real life, and you know everything there is to know about $X,Y$ and $f$. However, the enemy, being a foolish fool, mistakenly thinks that $f$ is not continuous. And so it tries to trick you. It plots a point $x\in X$ and its image $f(x)\in Y$. Then it draws an open ball $B$ of radius $\epsilon$ around $f(x)$.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/turn_1.svg" alt="turn 1"></p>
+<p><img src="../content/images/2017/04/turn_1.svg" alt="turn 1"></p>
 <p>The enemy challenges you to find an open ball $B'$ around $x$ whose image is contained in $B$. So you think for a while and you use your information about $f$ and you quickly come up with such an open ball, with radius $\delta$.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/turn_2.svg" alt="turn 2"></p>
+<p><img src="../content/images/2017/04/turn_2.svg" alt="turn 2"></p>
 <p>The enemy is angry. It chooses a new smaller ball $B$ and you draw a new, smaller $B'$ to compensate. You do it faster this time, because you've noticed a pattern. No matter what radius $\epsilon$ it chooses to make $B$, you've come up with a method to calculate the radius $\delta$ that $B'$ needs to be so that $f[B']$ will fit inside $B$.</p>
 <p>You tell the enemy your method, and it has no choice but to conclude that $f$ is continuous at $x$. Next, you demonstrate how to do this for any point $x\in X$, and reason that $f$ is continuous. The enemy's head promptly explodes.</p>
 <p>Let's look at a specific example. Let $X$ be a metric space and consider the identity function $i:X\to X$ defined by $i(x)=x$ for every $x\in X$. The enemy first chooses a point $x_0\in X$ and draws a ball of radius $\epsilon$ around $x_0=i(x_0)$. You realize immediately that</p>

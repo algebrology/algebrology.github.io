@@ -173,7 +173,7 @@ y &amp;= (1,0), \<br>
 z &amp;= (1,1). \<br>
 \end{align}$$</p>
 <p>I'll even throw in a diagram to make things crystal clear:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/limit_point_example.svg" alt="limit point example"></p>
+<p><img src="../content/images/2017/04/limit_point_example.svg" alt="limit point example"></p>
 <p>Clearly $x\in A$ because $d(x,x)=0&lt; r$. However, $y,z\notin A$ because $d(x,y)=r$ and $d(x,z)=\sqrt{2}&gt;r$. Which, if any, of the points $x,y,z$ are limit points of $A$?</p>
 <p>Let's consider $x$ first. Does every open ball centered at $x$ contain a point in $A$ distinct from $x$? The simple answer is &quot;well DUH,&quot; but let's be a tad more rigorous.</p>
 <p>Choose a real number $\epsilon&gt;0$. We consider separately the cases where $\epsilon\geq 1$ and $0&lt;\epsilon&lt;1$. If $\epsilon\geq 1$ then $A\subseteq B(x,\epsilon)$ and we are done because there are certainly points in $A$ distinct from $x$. If $0&lt;\epsilon&lt;1$, it is clear that the point $x_0=(0,\epsilon/2)\in B(x,\epsilon)$. Furthermore, $x_0\neq x$ because $d(x,x_0)&gt;0$.</p>
@@ -217,7 +217,7 @@ d(x,z) &amp;= \sqrt{2} \<br>
 
 <p>Next let's formalize the concept of boundary. It's easy and intuitive to think about the boundary of a ball, so let's start there. Let's say we have an open and closed ball of the same center and radius in some metric space. They obviously have the same boundary — the circle with the same radius as these balls. Even though these points don't belong to the open ball, they are <em>just</em> touching its outer edge.</p>
 <p>Now what about this set, as a subset of $\mathbb{R}^2$ in the standard metric?</p>
-<p><img src="http://localhost:2368/content/images/2017/04/vomitous_mass.svg" alt="vomitous mass"></p>
+<p><img src="../content/images/2017/04/vomitous_mass.svg" alt="vomitous mass"></p>
 <p>Trying to calculate the boundary of this set is a bit more difficult than just drawing a circle. Does that loop at the top right count as boundary? What about the points sitting by themselves? Do those inner circles count as well, or does the boundary have to enclose the set? It turns out that, the way we define boundary, the answer to all of these questions is yes.</p>
 <p><strong>Definition:</strong> Let $A$ be a subset of a metric space $X$. A point $p\in X$ is a <strong>boundary point</strong> of $A$ if every open ball centered at $p$ contains at least one point in $A$ and one point in $X-A$.</p>
 <p><strong>Definition:</strong> The <strong>boundary</strong> of $A$ is the set of all boundary points of $A$. We denote it by $\partial A$.</p>

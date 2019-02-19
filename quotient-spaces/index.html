@@ -147,11 +147,11 @@ MathJax.Hub.Config({
 <p>We've established that quotient maps induce a topology in this way, so let's take a look at what they can do for us.</p>
 <p>While it's true that any set $A$ can be turned into a quotient space by defining a suitable surjection as our quotient map, we generally restrict our interest to partitions of $A$. Let's first visualize the construction of a simple quotient space, which you may have seen before. We will then figure out how to formally document this process.</p>
 <p>Consider the square $[0,1]^2$ in the standard topology. We can first create a cylinder from the square by gluing two opposite edges together.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/square_to_cylinder.svg" alt="square to cylinder"></p>
+<p><img src="../content/images/2017/04/square_to_cylinder.svg" alt="square to cylinder"></p>
 <p>Next, we can glue the two open circular ends of the cylinder together to form a torus.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/cylinder_to_torus.svg" alt="cylinder to torus"></p>
+<p><img src="../content/images/2017/04/cylinder_to_torus.svg" alt="cylinder to torus"></p>
 <p>What we've really done here is glue the opposite edges of the square together, one pair at a time. A much more concise diagram representing this act simply identifies opposite edges of the square with each other, and the gluing is implied.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/square_to_torus.svg" alt="square to torus"></p>
+<p><img src="../content/images/2017/04/square_to_torus.svg" alt="square to torus"></p>
 <p>In such diagrams, it is understood that the two edges with one arrow get glued to each other and the two edges with two arrows get glued to each other. In this case everything is symmetrical so it doesn't matter which pair gets glued first, but there are probably cases in which it does matter. It is conventional to first glue together sides with one arrow, then two arrows and so on.</p>
 <p>It is this last diagram which provides us with something we can really use. This <em>identification</em> of sides is crucial to defining the torus as a quotient space of the square. What we are really doing here is partitioning the square in such a way that certain pairs of points on the boundary get grouped into the same equivalence class. More precisely, we partition the square into many sets, namely every point in the interior of the square and each pair of opposite points on the square's boundary:</p>
 <p>$$\begin{align}<br>

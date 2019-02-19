@@ -238,7 +238,7 @@ $${\bf y}=(y_1,y_2,\dotsc,y_n)$$</p>
 <p><strong>Theorem.</strong> In any metric space, an open ball is an open set.</p>
 <p><strong>Proof.</strong> Suppose we are given an arbitrary open ball of radius $r_0$ centered at a point $x_0$ in a metric space $X$. We need to show that for every point $x\in B(x_0,r_0)$, we can find a real number $r&gt;0$ such that $B(x,r)\subseteq B(x_0,r_0)$.</p>
 <p>Before making this argument rigorous, let's take a look at the following diagram of an open ball in $\mathbb{R}^2$ for a hint as to how we should proceed:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/open-ball-is-open.svg" alt="open ball is open"></p>
+<p><img src="../content/images/2017/04/open-ball-is-open.svg" alt="open ball is open"></p>
 <p>It certainly looks like we could choose $r=r_0-d(x,x_0)$, at least for the open ball above. We'd like to confirm that this choice will work for any open ball in any metric space. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $B(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq B(x_0,r_0)$, and that's all we need to do!</p>
 <p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r_0-r$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation:</p>
 <p>$$\begin{aligned}<br>
@@ -277,7 +277,7 @@ d(x_0,y) &amp;\leq d(x_0,x)+d(x,y)\<br>
 <p><strong>Theorem.</strong> In any metric space, a closed ball is a closed set.</p>
 <p><strong>Proof.</strong> Suppose we are given an arbitrary closed ball of radius $r_0$ centered at a point $x_0$ in a metric space $X$. If we can show that its complement, $X-\overline{B}(x_0,r_0)$, is open, then by the definition of a closed set, we will be done. Thus, we need to show that for every point $x\in X-\overline{B}(x_0,r_0)$ we can find a real number $r&gt;0$ such that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$.</p>
 <p>Once again, let's look at a diagram for some intuition before we dive any further into the proof:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/closed-ball-is-closed.svg" alt="closed ball is closed"></p>
+<p><img src="../content/images/2017/04/closed-ball-is-closed.svg" alt="closed ball is closed"></p>
 <p>A little bit of inspection indicates that it might suffice to choose $r=d(x,x_0)-r_0$. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $X-\overline{B}(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$, and then we'll be finished.</p>
 <p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r+r_0$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation, again starting with a slightly rearranged form of the triangle inequality:</p>
 <p>$$\begin{aligned}<br>

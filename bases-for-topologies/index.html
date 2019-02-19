@@ -211,7 +211,7 @@ MathJax.Hub.Config({
 <hr>
 <p><strong>Theorem.</strong> In a metric space $X$ with metric $d:X\times X\to\mathbb{R}$, the set of open balls $\{B(x,r)\subseteq X\mid x\in X,r&gt;0\}$ is a basis for a topology on $X$.</p>
 <p><strong>Proof.</strong> The first condition for a basis is clearly satisfied, since for any $x\in X$ we have that $x\in B(x,r)$ for any $r&gt;0$. For the next part, here's a diagram to help you visualize my argument, because I know how much you love my diagrams:</p>
-<p><img src="http://localhost:2368/content/images/2017/04/basis-intersection-balls-1.svg" alt=""></p>
+<p><img src="../content/images/2017/04/basis-intersection-balls-1.svg" alt=""></p>
 <p>I've practically already proved that second condition already in my first post on metric spaces. Suppose that $a,b\in X$ and $B(a,r_a)\cap B(b,r_b)\neq\varnothing$ for some real numbers $r_a, r_b &gt;0$. If $x\in B(a,r_a)\cap B(b,r_b)$ then $x\in B(a,r_a)$ and $x\in B(b,r_b)$ by the definition of set intersection. We already know that there exist real numbers $r_1, r_2&gt;0$ for which $B(x,r_1)\subseteq B(a,r_a)$ and $B(x,r_2)\subseteq B(b,r_b)$ Simply choosing the smaller of these open balls, $B(x,r)$ with $r=min\{r_1,r_2\}$, yields a basis element containing $x$ which is contained entirely in the intersection.</p>
 <hr>
 <p>It's important to realize that this is a proof that the open balls in <em>any</em> metric space are the basis for a topology on that space. We call this topology the <strong>topology induced by a metric</strong>. It is clear that this topology on $\mathbb{R}^n$ is the standard topology, and any open set in $\mathbb{R}^n$ is thus the union of some collection of open balls. I talked about this a few posts ago, but now I'm actually justified in claiming it.</p>

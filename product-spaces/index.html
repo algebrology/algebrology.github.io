@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <p>Next let's talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces? What should the topology look like?</p>
 <p>Obviously there are many options (to name a few, the discrete or trivial topologies can be defined on any set), but we would like to choose a topology that is as natural as possible and inherits its properties from the spaces from which it is built. This decision actually has its roots in category theory, but I hope that the choice will make some sense to you nonetheless.</p>
 <p>Let's say we are given topological spaces $X$ and $Y$ and we want to construct a &quot;natural&quot; topology on $X\times Y$. Our first instinct might be to choose as the open sets all products $U\times V$ where $U$ is open in $X$ and $V$ is open in $Y$. But even in $\mathbb{R}\times\mathbb{R}$ we can see that this doesn't result in a topology, since the union of products of open sets isn't necessarily itself a product of open sets, as illustrated below.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/nonono.svg" alt="no no no"></p>
+<p><img src="../content/images/2017/04/nonono.svg" alt="no no no"></p>
 <p>So clearly the products of open sets aren't going to form a topology by themselves, since they are not closed under unions. We don't throw out this idea entirely, though. It just so happens that the products of open sets do form a <em>basis</em> for a topology on $X\times Y$.</p>
 <hr>
 <p><strong>Theorem.</strong> Let $(X,{\cal T}_X)$ and $(Y,{\cal T}_Y)$ denote topological spaces. Then ${\cal B} = \{U\times V\mid U\in {\cal T}_X, V\in {\cal T}_V\}$ is a basis for a topology on $X\times Y$.</p>
@@ -182,12 +182,12 @@ B_1\cap B_2 &amp;= (U_1\times V_1)\cap (U_2\times V_2) \<br>
 <p>The next example is long enough that it deserves its own section.</p>
 <hr>
 <p>Consider the unit circle $S^1=\{(x,y)\in\mathbb{R}^2\mid x^2+y^2=1\}$ as a subspace of $\mathbb{R}^2$. Let's begin by visualizing $S^1\times S^1$. Recalling the definition of the Cartesian product, we can think loosely of each point on the first circle $S^1$ as corresponding to an entire circle. We thus obtain the <strong>torus</strong>, which is a donut-shaped subset of $\mathbb{R}^3$.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/torus-1.svg" alt="torus"></p>
+<p><img src="../content/images/2017/04/torus-1.svg" alt="torus"></p>
 <p>Notice that the torus is hollow. If we wanted a solid torus, we would take $S^1\times D^2$, where $D^2=\{(x,y)\in\mathbb{R}^2\mid x^2+y^2\le 1\}$ is the closed unit ball.</p>
 <p>Before we can think about the topology on the torus $S^1\times S^1$, we should first consider the topology on the circle $S^1$. Since it's a subspace of $\mathbb{R}^2$, open sets in the circle are intersections of $S^1$ with open sets in $\mathbb{R}^2$. These open sets basically look like unions of &quot;open intervals&quot; wrapped around the circle. In fact, they are all homeomorphic to open intervals, except for $S^1$ itself (which I will prove when I talk about connectedness).</p>
-<p><img src="http://localhost:2368/content/images/2017/04/circle_open_sets.svg" alt="circle open sets"></p>
+<p><img src="../content/images/2017/04/circle_open_sets.svg" alt="circle open sets"></p>
 <p>Products of these open sets somewhat resemble open rectangles wrapped around the surface of the torus. We'll call them open patches, and the unions of these open patches form the open sets on the torus.</p>
-<p><img src="http://localhost:2368/content/images/2017/04/torus_open_sets.svg" alt="torus open sets"></p>
+<p><img src="../content/images/2017/04/torus_open_sets.svg" alt="torus open sets"></p>
 <hr>
 <p>Since $S^1\times S^1$ can also be viewed as a subspace of $\mathbb{R}^3$, we could also view the open sets on the torus as intersections of open sets in $\mathbb{R}^3$ with $S^1\times S^1$. This statement may seen obvious, but I haven't proved it yet.</p>
 <hr>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Set Theory</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=6af012b2a6" />
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=6af012b2a6" /></noscript>
+
+    <meta name="description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it." />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Set Theory" />
+    <meta property="og:description" content="Contents
+ 1. What are sets?
+ 2. Basic facts about sets
+ 3. Operations on sets
+ 4. Functions
+
+
+--------------------------------------------------------------------------------
+
+Everything in mathematics is built from sets.[1]  Even objects such as functions
+and arithmetic operations like addition are formally defined in terms of sets,
+although you would likely never expect it. A consequence of this fact is that a
+basic familiarity with set theory is necessary in order to understand the topics
+I&#x27;l" />
+    <meta property="og:url" content="http://localhost:2368/set-theory/" />
+    <meta property="article:published_time" content="2017-03-29T00:49:23.000Z" />
+    <meta property="article:modified_time" content="2017-04-03T13:57:45.000Z" />
+    <meta property="article:tag" content="set-theory" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Set Theory" />
+    <meta name="twitter:description" content="Contents
+ 1. What are sets?
+ 2. Basic facts about sets
+ 3. Operations on sets
+ 4. Functions
+
+
+--------------------------------------------------------------------------------
+
+Everything in mathematics is built from sets.[1]  Even objects such as functions
+and arithmetic operations like addition are formally defined in terms of sets,
+although you would likely never expect it. A consequence of this fact is that a
+basic familiarity with set theory is necessary in order to understand the topics
+I&#x27;l" />
+    <meta name="twitter:url" content="http://localhost:2368/set-theory/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="set-theory" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Set Theory",
+    "url": "http://localhost:2368/set-theory/",
+    "datePublished": "2017-03-29T00:49:23.000Z",
+    "dateModified": "2017-04-03T13:57:45.000Z",
+    "keywords": "set-theory",
+    "description": "Contents\n 1. What are sets?\n 2. Basic facts about sets\n 3. Operations on sets\n 4. Functions\n\n\n--------------------------------------------------------------------------------\n\nEverything in mathematics is built from sets.[1]  Even objects such as functions\nand arithmetic operations like addition are formally defined in terms of sets,\nalthough you would likely never expect it. A consequence of this fact is that a\nbasic familiarity with set theory is necessary in order to understand the topics\nI&#x27;l",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script src="../public/ghost-sdk.js?v=6af012b2a6"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "9c6ba2277476"
+});
+</script>
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true
+    }
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template tag-set-theory">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="../index.html" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../index.html">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 29, 2017</span>
+            <h1>Set Theory</h1>
+        </header>
+
+
+        <div class="content">
+            <h3 id="contents">Contents</h3>
+
+<ol>
+<li><a href="index.html#what-are-sets">What are sets?</a></li>
+<li><a href="index.html#basic-facts-about-sets">Basic facts about sets</a></li>
+<li><a href="index.html#operations-on-sets">Operations on sets</a></li>
+<li><a href="index.html#functions">Functions</a></li>
+</ol>
+<hr>
+<p>Everything in mathematics is built from sets.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that a basic familiarity with set theory is necessary in order to understand the topics I'll be discussing here. For this reason, I've decided to include this introductory post on the topic so that adventurous readers with little mathematical background will be able to understand my future posts without having to leave the confines of this blog.</p>
+<h3 id="whataresetsanamewhataresets">What are sets?<a name="what-are-sets"></a></h3>
+
+<p>Already we encounter something of a problem — one which took mathematicians quite a while to resolve, and should not be underestimated. The issue is that, because we wish to use set theory as the foundation of all future mathematical exploration, we don't actually have a place to start when defining sets themselves.</p>
+<p>It takes quite a bit of logical sophistication to arrive at a truly satisfactory definition of a set. If you're interested in such things, I encourage you to look into any resource you can find on <em>Zermelo-Fraenkel Set Theory with the Axiom of Choice</em> (usually abbreviated <em>ZFC</em>), which is a more rigorous set of axioms which govern the behavior of sets.</p>
+<p>For our purposes, the standard &quot;naïve&quot; set theory will do just fine. It is largely intuition-based, because it relies on the primitive notion that sets contain elements and elements are what make up sets. However, as long as we take certain precautions when dealing with sets, we should never encounter any problems stemming from this treatment:</p>
+<p><strong>Definition:</strong> A <strong>set</strong> is a collection of <strong>elements</strong>.</p>
+<h3 id="basicfactsaboutsetsanamebasicfactsaboutsets">Basic facts about sets<a name="basic-facts-about-sets"></a></h3>
+
+<p>Traditionally, capital letters like $A$, $B$ or $X$ are used to denote sets. If $x$ is an element of a set $X$, we write $x\in X$ and we say that &quot;$x$ is in $X$.&quot;</p>
+<p>Sets are determined solely by the elements they contain. For instance, if the numbers $1$, $2$ and $3$ are the only elements of the set $X$, we can indicate this by writing $X=\{1,2,3\}$. When we define sets in this manner, by specifying a complete list of elements they contain, we always sandwich the list of elements between curly braces, as above.</p>
+<p><strong>Definition:</strong> If two sets $A$ and $B$ contain precisely the same elements, we say that they are <strong>equal</strong> and we write $A=B$. If they are <strong>not equal</strong>, we write $A\neq B$.</p>
+<p>If two sets are not equal, then by definition they do not contain the same elements. It follows then that one of them must contain at least one element that the other does not.</p>
+<p>This definition of set equality should hopefully seem reasonable. Note that it does imply that the sets $\{x, y, z\}$ and $\{x, x, z, y, x, z\}$ are equal because they contain the same elements. Although some elements may appear more than once in the description of a set, or the elements may by written in a different order, a set either contains an element or it does not. <strong>Sets do not have any concept of multiplicity or order for their elements.</strong></p>
+<p>There is nothing to prevent sets from containing other sets, but be careful when dealing with sets that have other sets as elements. If $x$ is some element, then $\big\{x, \{x\}\big\} \neq \{x\}$ because the set $\{x\}$ is not the same thing as the element $x$.</p>
+<p>It may be helpful to think of sets as bags, and their elements as objects inside these bags. If $x$ is an apple, then $\big\{x, \{x\}\big\}$ represents a bag inside of which are two things: an apple and a bag. Inside of the inner bag is also an apple. This is very clearly not the same thing as $\{x\}$, which is just a bad with only an apple inside.</p>
+<p>Equality is not the only relationship between sets that we will be concerned with. The following definitions give us a way to talk about sets which contain some of the same elements.</p>
+<p><strong>Definition:</strong> Let $A$ and $B$ denote two sets. If every element of $A$ is also and element of $B$, we say that $A$ is a <strong>subset</strong> of $B$ and we write $A\subseteq B$.</p>
+<p><strong>Definition:</strong> If $A\subseteq B$ but $A\neq B$, we say that $A$ is a <strong>proper subset</strong> of $B$ and we write $A\subset B$.</p>
+<p>Notice that, by these definitions, every set is a subset of itself. Also note that if $A\subset B$, it follows that $B$ contains some element that $A$ does not. Thus, if both sets are finite then $B$ is larger than $A$. Infinite sets are weird and do weird things, so we cannot necessarily make the same claim when they get involved.</p>
+<p>Again, we must take care and realize that $A\subseteq B$ is a completely different statement than $A\in B$. To visualize this, we refer again to our analogy between sets and bags. Take as an example the case where $A$ is a bag containing only an apple, while $B$ is a bag containing an apple and an orange. It should be clear that $A$ is not actually an element of $B$, but it is a subset.</p>
+<p>We're ready now for our first proof!</p>
+<hr>
+<p><strong>Theorem.</strong> Let $A$ and $B$ denote sets. If $A\subseteq B$ and $B\subseteq A$, then $A=B$.</p>
+<p><strong>Proof.</strong> Since $A$ is a subset of $B$, every element of $A$ is also an element of $B$. Likewise, since $B$ is a subset of $A$, every element of $B$ is also an element of $A$. It follows that the elements of each set are precisely the same, so $A=B$, as desired.</p>
+<hr>
+<p>One important set will come up in our discussions quite often:</p>
+<p><strong>Definition:</strong> The <strong>empty set</strong> is the unique set containing no elements.</p>
+<p>It is easy to see that the empty set is a subset of every set, since all of the elements it contains (none) are trivially also in every other set.</p>
+<p>In many upcoming posts, I am going to assume familiarity with the following sets:</p>
+<ul>
+<li>The set $\mathbb{N} = \{0, 1, 2, \dotsc\}$ of <strong>natural numbers</strong>.</li>
+<li>The set $\mathbb{Z} = \{\dotsc, -1, 0, 1, \dotsc\}$ of <strong>integers</strong>.</li>
+<li>The set $\mathbb{Q}$ of <strong>rational numbers</strong> whose elements are of the form $\frac{p}{q}$, where $p, q \in \mathbb{Z}$ and $q \neq 0$.</li>
+<li>The set $\mathbb{R}$ of <strong>real numbers</strong>.</li>
+<li>The set $\mathbb{C}$ of <strong>complex numbers</strong> whose elements are of the form $a+bi$, where $a, b \in \mathbb{R}$ and $i^2 = -1$.</li>
+</ul>
+<p>It is convenient and natural to assume that $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$, and I encourage you to think this way.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:1">[1:1]</a></sup></p>
+<p>It is often desirable to specify certain subsets of sets with which we are already acquainted in terms of some property that every element in the subset must possess. How would we, for instance, denote the set of positive real numbers? Or the set of even integers?</p>
+<p>We can construct such subsets using <strong>set-builder notation</strong>. This is basically a fancy notation describing the form that elements in the set take, followed by a vertical bar which means &quot;such that,&quot; and then a property which every element obeys — all sandwiched between the usual set brackets.</p>
+<p>In this new notation, $\{x\in\mathbb{R} \mid x&gt;0\}$ would be the set of positive real numbers. Similarly, $\{2n \mid n\in\mathbb{Z}\}$ is the set of even integers.</p>
+<h3 id="operationsofsetsanameoperationsonsets">Operations of sets<a name="operations-on-sets"></a></h3>
+
+<p>Given two or more sets, we will often find the need to combine them in certain ways to create new sets. Below are four very common ways of creating new sets from old. Each of their definitions can be extended to combine any finite collection of sets, and sometimes even an infinite collection. Make certain that you are comfortable with each of these definitions, since they will show up everywhere ever.</p>
+<p>Let $A$ and $B$ denote sets. Let's say, for illustration, that they're sets of points in the plane of your screen and they look like these blobs:</p>
+<p><img src="http://localhost:2368/content/images/2017/03/sets.svg" alt=""></p>
+<p><strong>Definition:</strong> The <strong>union</strong> of $A$ and $B$ is the set of all elements in either $A$ or in $B$, or both. It is written $A\cup B$ and is defined as the set $\{x \mid x\in A \text{ or } x\in B\}$.</p>
+<p>The union of the sets above would look like this:</p>
+<p><img src="http://localhost:2368/content/images/2017/03/union.svg" alt=""></p>
+<p><strong>Definition:</strong> The <strong>intersection</strong> of $A$ and $B$ is the set of all elements in both $A$ and $B$. It is written $A\cap B$ and is defined as the set $\{x \mid x\in A \text{ and } x\in B\}$.</p>
+<p><strong>Definition:</strong> Two sets are said to be <strong>disjoint</strong> if their intersection is empty.</p>
+<p>The intersection of the above sets would look like this:</p>
+<p><img src="http://localhost:2368/content/images/2017/03/intersection.svg" alt=""></p>
+<p><strong>Definition:</strong> The <strong>complement</strong> (or <strong>difference</strong>) of $A$ in $B$ is the set of all elements that are in $B$ but not in $A$. It is written $B-A$ and is defined as the set $\{x\in B \mid x\notin A\}$.</p>
+<p>For the sets above, the complement of $A$ in $B$ would look like this:</p>
+<p><img src="http://localhost:2368/content/images/2017/03/complement.svg" alt=""></p>
+<p>It is worth nothing that, unlike unlike unions and intersections, complements depend on which set comes first. That is, $A-B\neq B-A$.</p>
+<p><strong>Definition:</strong> The <strong>Cartesian product</strong> of $A$ and $B$, written $A \times B$, is the set of all ordered pairs whose first component is in $A$ and whose second component is in $B$.</p>
+<p>The Cartesian product of the above sets would be a bit trickier to draw since this would require four spacial dimensions. As a simpler example, suppose that $A$ and $B$ are both $\mathbb{R}$, the set of real numbers. Then $A\times B=\mathbb{R}\times\mathbb{R}$ and this set would consist of all points in the plane. This is because $\mathbb{R}\times\mathbb{R}$ by definition contains all pairs of the form $(x,y)$ where $x$ and $y$ are real numbers. This is why two-dimensional Euclidean space is often written as $\mathbb{R}^2$, as shorthand for $\mathbb{R}\times\mathbb{R}$.</p>
+<p>It should be somewhat obvious how to take the union of an arbitrary collection of sets. For a finite collection of $n$ sets — $A_1, A_2, \dotsc, A_n$ — their union contains all of the elements that are in at least one of the sets:</p>
+<p>$$\bigcup\limits_{i=1}^n A_i = \{x\mid x\in A_1 \text{ or } x\in A_2 \text{ or } \dotsc \text{ or } x\in A_n\}.$$</p>
+<p>We can go even further, and take the union of any collection of sets. To do so, we first let $I$ be some <strong>indexing set</strong> such that $A_i$ is a set for every $i\in I$. Notice that there is nothing to stop $I$ from being an infinite set, in which case there would be infinitely many sets $A_i$ in our collection. We can take the union of all these sets as follows:</p>
+<p>$$\bigcup\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for some } i\in I\}.$$</p>
+<p>The same type of thinking allows for intersections and Cartesian products to be defined for more than two sets. In the case of Cartesian products, multiplying $n$ sets yields a set whose elements are ordered $n$-tuples, where the $i$th component is an element of the $i$th set being multiplied. Cartesian products of infinitely many sets are a bit too complicated to discuss here, although we can easily take the intersection of an arbitrary collection of sets, much as we did for their union:</p>
+<p>$$\bigcap\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for every } i\in I\}.$$</p>
+<p>There are two interesting ways in which the operation of set difference distributes over the operations of unions and intersections. These are called <strong>De Morgan's Laws</strong>:</p>
+<p>$$X - (A \cup B) = (X - A) \cap (X - B),$$<br>
+$$X - (A \cap B) = (X - A) \cup (X - B).$$</p>
+<p>These highly symmetric rules often turn out to be very useful, and I encourage you to draw some pictures to try to understand them. I will not prove them here. To illustrate the second rule, here is an example: if a ball is not both red and blue, then it is not red or it is not blue (or possibly both).</p>
+<p>De Morgan's Laws also extend naturally to arbitrary collections of sets:</p>
+<p>$$X - \bigcup\limits_{i\in I} A_i = \bigcap\limits_{i\in I} (X - A_i),$$<br>
+$$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
+<h3 id="functionsanamefunctions">Functions<a name="functions"></a></h3>
+
+<p>The last topic I'll talk about in this post is the concept of a function, as well as several important traits that functions may or may not possess. You've likely encountered functions before as things that eat variables and poo out numbers, and that's not a terrible way of thinking about them. We're going to make things a bit more formal though.</p>
+<p><strong>Definition:</strong> A <strong>function</strong> from a set $A$ to a set $B$, denoted $f:A\to B$, is a subset of $A\times B$ such that for each $x\in A$, there is exactly one $y\in B$ for which $(x, y)\in f$. In this definition, the set $A$ is called the <strong>domain</strong> of $f$ and $B$ is called the <strong>codomain</strong>.</p>
+<p><strong>Definition:</strong> The <strong>range</strong> (or <strong>image</strong>) of a function $f$ is the set $\text{im } f = \{y\in B \mid (x,y)\in f \text{ for some } x\in A\}$.</p>
+<p>If you've never seen the above definition of a function before, it's natural to wonder at this point just what the crud I'm talking about. Why are we defining functions as sets? As I stated earlier, <em>everything</em> in mathematics is defined in terms of sets, and functions are no exception. We don't usually think of functions as sets of ordered pairs, but it is useful to define them this way so that we can make precise statements about them which stem from their definition. It also allows us to immediately infer what is meant by function equality, because it is inherited from our earlier definition of set equality.</p>
+<p>So using this definition, a function is basically a list of $(x,y)$ values where $y$ is what you'd usually call $f(x)$. That is, the first component is the &quot;input&quot; to the function and the second component is the &quot;output.&quot; The second condition in the definition is a rephrasing of what you may know as the &quot;vertical line test.&quot; In two dimensions, a function from $\mathbb{R}$ to $\mathbb{R}$ is anything you can draw that exists above every value on the $x$-axis, but not more than once.</p>
+<p>As I mentioned above, a more familiar way of rephrasing the last part of the definition might be this:</p>
+<p>... for each $x\in A$, there exists exactly one $y\in B$ for which $y=f(x)$.</p>
+<p>This notation is much more common, and I'll be using it almost exclusively from now on. Often, $f(x)$ is referred to as the <strong>image</strong> of $x$ under the function $f$. This is an unfortunate overloading of the word &quot;image,&quot; but it will not lead to confusion if we are careful.</p>
+<p>One of the nice things about our definition of a function it that it allows us to define functions between any two sets we want, and the values of the function don't have to obey any particular rule. We can simply check each point and its image to make sure they obey the definition.</p>
+<p>If you're a bit confused by all this, just sit and absorb it for a minute. Realize that ordinary things like the function $f:\mathbb{R}\to\mathbb{R}$, defined by $f(x)=x^2$ for every $x\in\mathbb{R}$, still satisfy our new definition. Think everything through — maybe draw some pictures — and then continue reading.</p>
+<p>Now, notice that something like $f:\mathbb{R}\to\mathbb{R}$ defined by $f(x)=\frac{1}{x}$ for all $x\in\mathbb{R}$ is not actually a function! This is because not every element of the domain gets mapped to a real number. In particular, there is no $y\in\mathbb{R}$ for which $y=f(0)$. We would need to restrict the domain to $\mathbb{R} - \{0\}$ to turn this thing into a function.</p>
+<p>The next thing we'll do is introduce some common classes of functions.</p>
+<p><strong>Definition:</strong> A function $f:A\to B$ is <strong>injective</strong> if for every $y\in B$ there exists at most one $x\in A$ for which $y=f(x)$.</p>
+<p>Basically, an injective function cannot have two points in its domain get mapped to the same point in its codomain. We can check that a function is injective by showing that if $x\neq y$ then $f(x)\neq f(y)$. Equivalently, we can do this by instead showing that if $f(x)=f(y)$ then $x=y$. (These two statements are contrapositives so they are logically equivalent, but sometimes one will be easier to show than the other.) Injective functions in the plane satisfy what might constitute a &quot;horizontal line test,&quot; in that any horizontal line will intersect their graph at most once.</p>
+<p><strong>Definition:</strong> A function $f:A\to B$ is <strong>surjective</strong> if for every $y\in B$, there exists at least one $x\in A$ for which $y=f(x)$.</p>
+<p>A surjective function has every point in its codomain get mapped to by some point in the domain. That is, every element of the codomain is the image of some element in the domain. In this case, the codomain of the function is equal to its range. Notice that we can turn any function into a surjective function by restricting its codomain to its range.</p>
+<p><strong>Definition:</strong> A function $f:A\to B$ is <strong>bijective</strong> if for every $y\in B$, there exists exactly one $x\in A$ for which $y=f(x)$. Equivalently, a function is bijective if it is both injective and surjective.</p>
+<p>Bijective functions are particularly nice because they have <strong>inverse functions</strong>. That is, if $f:A\to B$ is bijective, we can find a function $f:B\to A$ with the property that $f\big(g(y)\big)=y$ for every $y\in B$ and $g\big(f(x)\big)=x$ for every $x\in A$.</p>
+<p>A function's inverse essentially allows us to undo what that function did in the first place. It turns out that if a function has an inverse, then that inverse is unique and thus we can unambiguously write the inverse of $f$ as $f^{-1}$.</p>
+<p>Functions that aren't bijective do not have inverses, but we can still define something similar:</p>
+<p><strong>Definition:</strong> The <strong>preimage</strong> of a set $Y\subseteq B$ under a function $f:A\to B$ is the set of all $X\in A$ for which $f(x)\in Y$. We write $f^{-1}[Y]=\{x\in A\mid f(x)\in Y\}$.</p>
+<p>Note that $f^{-1}$ here does <em>not</em> denote an inverse function! We haven't even defined the preimage as a function at all (yet). The square brackets around its argument (which is always a set) help us to distinguish between whether we are talking about inverse functions or preimages. Given a subset of the codomain, the preimage tells us which elements in the domain get mapped into that set.</p>
+<p><strong>Definition:</strong> The <strong>power set</strong> of a set $X$ is the set of all subsets of $X$.</p>
+<p>We often denote the power set of $X$ as $2^X$ because a simple combinatorial argument shows that if $X$ is a finite set with $n$ elements, then $X$ has $2^n$ distinct subsets.</p>
+<p>Preimages are technically functions themselves, though perhaps not in the way you might expect. Since preimages take subsets of a function's codomain and map them to subsets of a function's domain, the preimage of a function $f:X\to Y$ is a set-valued function $f^{-1}:2^Y\to 2^X$ defined by $f^{-1}[U]=\{x\in X\mid f(x)\in U\}$ for every $U\in 2^Y$.</p>
+<p>Now the overloading of the symbol $f^{-1}$ is even worse, because we have defined both inverses and preimages as functions! However, careful use of square brackets for the preimage and the fact that one function is set-valued while the other is usually not will help us to avoid confusion. Further, inverse functions only exist for bijections, but preimages are defined for all functions.</p>
+<p><strong>Definition:</strong> Given two functions $f:A\to B$ and $g:B\to C$ we can form a new function $g\circ f:A\to C$, called the <strong>composition</strong> of $f$ and $g$, by defining $(g\circ f)(x)=g\big(f(x)\big)$ for every $x\in A$.</p>
+<p>Intuitively, when taking the composition of $f$ and $g$, we first take $f(x)$ and then feed the result into $g$. Note that the composition of functions is only defined when the first function's codomain is equal to the second function's domain.</p>
+<p><strong>Definition:</strong> For any set $X$, we can define an <strong>identity function</strong> $1_X:X\to X$ by $1_X(x)=x$ for every $x\in X$.</p>
+<p>An identity function maps every element of a set to itself, so essentially it does nothing at all. If no confusion can arise about which set we're talking about, we sometimes drop the subscript and write $1$ instead of $1_X$ to denote this function.</p>
+<p>Notice now that we can phrase the definition of an inverse function more compactly: A function $f:A\to B$ has an inverse $f:B\to A$ if $g\circ g=1_B$ and $g\circ f=1_A$. That is, the two possible compositions of $f$ and $g$ are equal to the identity functions on their respective domains.</p>
+<p>One final remark I will make is that the composition of functions is always <strong>associative</strong>. That is, if we have three functions $f:A\to B$, $g:B\to C$ and $h:C\to D$, then $(h\circ g)\circ f=h\circ(g\circ f)$. This may look obvious, but the proof — while straightforward — might elude you if you are not accustomed to writing proofs. Nonetheless, I encourage you to try showing this fact for yourself. Here's a hint: use the definition of function composition. If you've done the proof right, it will probably feel as though you haven't really done anything at all.</p>
+<hr>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>More formally it happens that each set, equipped with a certain algebraic structure, is isomorphic to a subobject of the next set, equipped with its own structure. If I ever decide to write a post (or five) detailing the constructions of each of the aforementioned sets, you'll see this idea in excruciating detail. <a href="index.html#fnref1" class="footnote-backref">↩︎</a> <a href="index.html#fnref1:1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/index.html">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; Algebrology</li>
+                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
+                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=6af012b2a6"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=6af012b2a6"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=6af012b2a6"></script>
+    <script src="../assets/main/js/browser.min.js?v=6af012b2a6"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=6af012b2a6"></script>
+    <script src="../assets/main/js/util.js?v=6af012b2a6"></script>
+    <script src="../assets/main/js/main.js?v=6af012b2a6"></script>
+
+    
+
+</body>
+</html>

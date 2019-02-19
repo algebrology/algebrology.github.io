@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Groups and their Basic Properties</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="description" content="A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact..." />
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="../index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Groups and their Basic Properties" />
+    <meta property="og:description" content="Contents
+ 1. Introduction
+ 2. The Definition
+ 3. Examples
+ 4. Basic Properties
+ 5. Subgroups
+
+
+--------------------------------------------------------------------------------
+
+Introduction
+I think it&#x27;s probably time I wrote a post about something other than topology,
+so today I&#x27;m going to break way into the field of algebra.[1]  It&#x27;s difficult to
+explain exactly what algebra is until you&#x27;ve been exposed to some of it, but I
+like to think of algebra as the study of structure. Using algebraic tec" />
+    <meta property="og:url" content="http://localhost:2368/groups-and-their-basic-properties/" />
+    <meta property="article:published_time" content="2017-04-07T23:05:25.000Z" />
+    <meta property="article:modified_time" content="2017-04-07T23:05:25.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Groups and their Basic Properties" />
+    <meta name="twitter:description" content="Contents
+ 1. Introduction
+ 2. The Definition
+ 3. Examples
+ 4. Basic Properties
+ 5. Subgroups
+
+
+--------------------------------------------------------------------------------
+
+Introduction
+I think it&#x27;s probably time I wrote a post about something other than topology,
+so today I&#x27;m going to break way into the field of algebra.[1]  It&#x27;s difficult to
+explain exactly what algebra is until you&#x27;ve been exposed to some of it, but I
+like to think of algebra as the study of structure. Using algebraic tec" />
+    <meta name="twitter:url" content="http://localhost:2368/groups-and-their-basic-properties/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Groups and their Basic Properties",
+    "url": "http://localhost:2368/groups-and-their-basic-properties/",
+    "datePublished": "2017-04-07T23:05:25.000Z",
+    "dateModified": "2017-04-07T23:05:25.000Z",
+    "description": "Contents\n 1. Introduction\n 2. The Definition\n 3. Examples\n 4. Basic Properties\n 5. Subgroups\n\n\n--------------------------------------------------------------------------------\n\nIntroduction\nI think it&#x27;s probably time I wrote a post about something other than topology,\nso today I&#x27;m going to break way into the field of algebra.[1]  It&#x27;s difficult to\nexplain exactly what algebra is until you&#x27;ve been exposed to some of it, but I\nlike to think of algebra as the study of structure. Using algebraic tec",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../../rss/index.html" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="../../index.html">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Groups and their Basic Properties</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="../../author/eric/index.html">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2017-04-07">2017-04-07</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <h3 id="contents">Contents</h3>
+
+<ol>
+<li><a href="index.html#introduction">Introduction</a></li>
+<li><a href="index.html#the-definition">The Definition</a></li>
+<li><a href="index.html#examples">Examples</a></li>
+<li><a href="index.html#basic-properties">Basic Properties</a></li>
+<li><a href="index.html#subgroups">Subgroups</a></li>
+</ol>
+<hr></hr>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+
+<p>I think it's probably time I wrote a post about something other than topology, so today I'm going to break way into the field of algebra.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> It's difficult to explain exactly what algebra is until you've been exposed to some of it, but I like to think of algebra as the study of structure. Using algebraic techniques, seemingly different objects can be shown to be not so different after all, and many difficult problems can be solved relatively easy using such observations.</p>
+<p>The first algebraic object I'd like to introduce, as you may have guessed, is a group. This will not be my only post on groups, since there is a lot to say about them. Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other. Before I define a group, I need to talk a little bit about binary operations.</p>
+<p><strong>Definition:</strong> A <strong>binary operation</strong> $\circ$ on a set $X$ is a function $\circ:X\times X\to X$.</p>
+<p>The definition nicely captures several important ideas. First, it guarantees that if $a,b\in X$ then $\circ(a,b)\in X$ as well. This is called <strong>closure</strong> under the binary operation — when we combine two elements in $X$, we always get back something which is also in $X$. Next, because we have defined $\circ$ as a function, it is guaranteed that every pair of elements in $X$ can be combined to yield a new element.</p>
+<p>You're probably more used to <strong>infix notation</strong> $a\circ b$, rather than the equivalent function notation $\circ(a,b)$, when it comes to denoting binary operations. That's good, since infix notation is more convenient and we will use it more often.</p>
+<p>As an example, the usual operations of addition and multiplication on $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}$ and $\mathbb{C}$ are binary operations on each of these sets. Let $X$ denote any of the aforementioned sets. That addition and multiplication on $X$ actually constitute binary operations is shown easily by noting that for any two elements $a,b\in X$, their sum $a+b$ and their product $a\cdot b$ are well defined and are also in $X$.</p>
+<h3 id="thedefinitionanamethedefinition">The Definition<a name="the-definition"></a></h3>
+
+<p>I'll jump straight into it, shall I?</p>
+<hr></hr>
+<p><strong>Definition:</strong> A <strong>group</strong> is a set $G$ together with a binary operation $\circ:G\times G\to G$ with the following properties:</p>
+<ol>
+<li><strong>Associativity.</strong> For any $a,b,c\in G$, we have that $(a\circ b)\circ c=a\circ (b\circ c)$.</li>
+<li><strong>Identity.</strong> There exists $e\in G$ such that $e\circ x=x\circ e=x$.</li>
+<li><strong>Inverses.</strong> For every $x\in G$ there exists $y\in G$ such that $x\circ y=e$.</li>
+</ol>
+<hr></hr>
+<p>Stated in plain English, groups must have an identity element and inverses for every element, and the group operation must be associative. These all seem like reasonable requirements.</p>
+<p>In the future, we will occasionally be even more lax and denote $a\circ b$ as simply $ab$, when a group's binary operation is implicitly understood and no confusion can arise. When an element is 'multiplied' by itself numerous times, we will use exponential notation. For instance, $aa=a^2$ and $aaa=a^3$. It is consistent and convenient in this notation to denote the identity element $e=a^0$ for any element $a$ in a group.</p>
+<p>Furthermore, I will frequently refer to $G$ itself as a group, as this very rarely results in any confusion. Just remember that whenever I mention a group, there is always some binary operation lurking behind the curtain.</p>
+<h3 id="examplesanameexamples">Examples<a name="examples"></a></h3>
+
+<p>Now that groups have been defined, I'd like to walk you through a few simple examples of groups.</p>
+<p><strong>Definition:</strong> The <strong>trivial group</strong> is the group containing only one element.</p>
+<p>Technically there are infinitely many 'trivial groups' since that one element could be anything, but all trivial groups are really the same. Let's call the element $e$. To see that the trivial group is in fact a group, first note that $e$ must be the group's identity element. Thus, $(ee)e=ee=e(ee)$ and so we have associativity. Furthermore, since $ee=ee=e$, clearly $e$ is its own inverse.</p>
+<p>The set of integers under addition also forms a group. Associativity is a property of addition itself, and you probably use it every day without even thinking about it. The identity element is zero, since $x+0=0+x=x$ for any $x\in\mathbb{Z}$. Lastly, the inverse of any integer $x$ is $-x$, since $x+(-x)=0$.</p>
+<p>Similarly, the set $\mathbb{R}^+$ of positive real numbers under multiplication forms a group. Again, associativity is obvious.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:1">[1:1]</a></sup> The identity element is $1$ since $1\cdot x=x\cdot 1=x$ for any $x\in\mathbb{R}^+$. Lastly, the inverse of any $x\in\mathbb{R}^+$ is $\frac{1}{x}$. Notice that the set of all real numbers does not form a group under multiplication because zero has no multiplicative inverse!</p>
+<p>The last example I'd like to talk about is considerably more abstract, and probably not something you would ever have considered might be a group. It is called the <strong>dihedral group</strong> (or <strong>group of symmetries</strong>) of a regular polygon. We write $D_n$ to denote the dihedral group of the $n$-sided regular polygon. How is $D_n$ defined? I'm not quite ready to do it rigorously, since we haven't talked about permutations yet, but I'll explain it intuitively.</p>
+<p>Basically, $D_n$ is the set of all rotations and reflections which preserve the locations of the vertices. The group operation is composition of these rotations and reflections, which essentially amounts to performing them one after the other. For instance, consider the equilateral triangle (the $3$-sided regular polygon)</p>
+<p></p>
+<p>where I've numbered the vertices to avoid the tremendous confusion that would otherwise ensue. Here's one of the vertex location preserving rotations we can perform, $r_1$:</p>
+<p></p>
+<p>Here's another one, $r_2$:</p>
+<p></p>
+<p>It's not too difficult to see that $r_2$ is really just $r_1$ applied twice! That is, $r_2=r_1\circ r_1$. Remember that this is the notation of function composition, so the first rotation applied is written on the right.</p>
+<p>Now that we have a better grasp of what's going on, let's think about the identity element of $D_3$. It should hopefully make sense that the identity element is the rotation by zero degrees. That is, the identity element is the act of doing nothing to the triangle. Call this element $e$. It should be clear that $e\circ r_1=r_1\circ e=r_1$ and likewise for $r_2$, so things are looking good so far.</p>
+<p>What are the inverses of $r_1$ and $r_2$? We just need to figure out how to get the vertices back to their original positions. It looks like $r_1\circ r_2=r_2\circ r_1=e$, so $r_1$ and $r_2$ are actually inverses!</p>
+<p>We've exhausted all the rotations, so now we need to look at the reflections. There are three of them, and each preserves the location of one vertex while swapping the other two. Let's call them $f_1, f_2$ and $f_3$, where the subscript denotes the vertex preserved under each. For instance, here's $f_1$:</p>
+<p></p>
+<p>What is the inverse of each reflection? If you reflect something twice along the same axis, it goes back to its original position. That is, $f_1, f_2$ and $f_3$ are each their own inverse.</p>
+<p>It's important to remember that the elements of the group are these reflections and rotations, rather than the triangles they act upon. I'll make all this more precise later when I talk about permutations, but for now I think this visual explanation should suffice.</p>
+<p>Next, $D_4$ is the dihedral group of the square, with four distinct rotations (where I have counted the identity among the rotations) and four reflections.</p>
+<p>Likewise, $D_5$ is the dihedral group of the regular pentagon, with five rotations and five reflections. In general, $D_n$ consists of $n$ rotations and $n$ reflections, totaling $2n$ elements.</p>
+<p>I'll talk about dihedral groups again in the future, but for now let me conclude by noting that the rotations in $D_n$ form a group of their own, since they cannot be composed in such a way as to produce anything other than a rotation. The reflections are a different story, though. They do not form a group since, for example, in $D_3$ we have that $f_2\circ f_1=r_2$. That is, the composition of two reflections can be a rotation.</p>
+<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
+
+<p>Now that I've gotten a few examples of groups out of the way, I'd like to talk about some immediate consequences of the group axioms. Let's begin by showing that we are allowed to cancel terms from equations, as we are so used to doing in the familiar number systems.</p>
+<hr></hr>
+<p><strong>Left Cancellation Law.</strong> Let $G$ denote a group with $a,b,x\in G$. If $xa=xb$, then $a=b$.</p>
+<p><strong>Proof.</strong> Since $x\in G$, there must exist an inverse $y\in G$ for $x$ and an identity element $e\in G$ such that $yx=e$. Thus,</p>
+<p>$\begin{align}<br />
+a &amp;= e a &amp; \scriptstyle\textit{identity}\&amp;=(y x) a &amp; \scriptstyle\textit{inverses}\&amp;=y(x a) &amp; \scriptstyle\textit{associativity}\&amp;=y(x b) &amp;\scriptstyle{x a=x b}\&amp;=(y x) b &amp;\scriptstyle\textit{associativity}\&amp;=e b &amp;\scriptstyle\textit{inverses}\&amp;=b. &amp;\scriptstyle{\textit{identity}}<br />
+\end{align}$</p>
+<p>This completes the proof.</p>
+<hr></hr>
+<p>I have included my reasoning for each step to the right, because such proofs can be difficult to parse when you first encounter them. Do not expect me to continue being this nice in the future. The <strong>right cancellation law</strong> and its proof are completely symmetric, so I will not even bother to state them. Now that these cancellation laws have been established, we will be using them frequently. For instance, let's use one to prove the following proposition about inverses.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> Each element in a group has a unique inverse.</p>
+<p><strong>Proof.</strong> Let $G$ denote a group with $x\in G$ and suppose that $y_1, y_2\in G$ are both inverses for $x$. Then $y_1x=y_2x=e$ by the definition of inverses, so by the right cancellation law it follows that $y_1=y_2$, completing the proof.</p>
+<hr></hr>
+<p>How does this proof establish that each element's inverse is unique? We are guaranteed the existence of at least one inverse by the group axioms. Furthermore, we just demonstrated that if an element has two inverses, then they must really be the same element!</p>
+<p>Next, let's prove a similar statement that there is only one identity element in any group. This is probably the simplest proof ever, but it's rather informative.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> The identity element in a group is unique.</p>
+<p><strong>Proof.</strong> Let $G$ denote a group and suppose that $e_1, e_2\in G$ are both identity elements. Then $e_1=e_1e_2=e_2$ by the definition of the identity, completing the proof.</p>
+<hr></hr>
+<p>I've already been saying 'the inverse' of an element and 'the identity' a lot prior to this, but now I'm actually justified in doing so. Furthermore, since each element $x$ only has one inverse, we can denote it unambiguously as $x^{-1}$. This plays well with the exponential notation I introduced earlier, i.e. $(x^{-1})^n=x^{-n}$ and $x^mx^{-m}=e$.</p>
+<p>Before moving on I'd like to mention a very nice property that certain groups may exhibit, but they do not necessarily have to.</p>
+<p><strong>Definition:</strong> A group $G$ is <strong>abelian</strong> (or <strong>commutative</strong>) if $xy=yx$ for every $x,y\in G$.</p>
+<p>Examples of abelian groups that we've already seen are the integers under addition and the positive real numbers under multiplication. On the other hand, the dihedral groups of order three and above are nonabelian.</p>
+<h3 id="subgroupsanamesubgroups">Subgroups<a name="subgroups"></a></h3>
+
+<p>I'm almost done now, and I know this has been a pretty long post. I just need to introduce one more important concept and then I promise I'll stop.</p>
+<p><strong>Definition:</strong> A <strong>subgroup</strong> $H$ of a group $G$ is a subset of $G$ which is itself a group under the group operation on $G$.</p>
+<p>If $H$ is a subgroup of $G$, I will sometimes write $H\leq G$. This cannot really be confused with the "less than or equal to" relation because groups are not numbers and thus have no such concept.</p>
+<p>As an example, the even integers (denoted $2\mathbb{Z}$) are a subgroup of $\mathbb{Z}$ under addition. This is because the sum of two even integers is always even. However, the odd integers do not form a subgroup of $\mathbb{Z}$ under addition because the sum of two odd integers is not odd.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:2">[1:2]</a></sup></p>
+<p>I pointed out earlier that the rotations in $D_3$ themselves formed a group under function composition, and this means that they are a subgroup of $D_3$.</p>
+<p>In general, a group does not necessarily have any subgroups other than itself and the trivial group. We shall see later that if a subgroup (of a finite group) is to exist, it must contain a very predictable number of elements.</p>
+<hr></hr>
+<hr class="footnotes-sep"></hr>
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>The odd integers form what is called a coset, $2\mathbb{Z}+1$ of the subgroup $2\mathbb{Z}$, but I will talk about this in a later post. <a href="index.html#fnref1" class="footnote-backref">↩︎</a> <a href="index.html#fnref1:1" class="footnote-backref">↩︎</a> <a href="index.html#fnref1:2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../index.html">Algebrology</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Metric Spaces (1)</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements." />
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="../index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Metric Spaces (1)" />
+    <meta property="og:description" content="Contents
+ 1. Motivation
+ 2. Metrics
+ 3. Open and closed sets
+
+
+--------------------------------------------------------------------------------
+
+Taken by themselves, sets do not have much structure to them. They are
+essentially barren wastelands with no relationships at all between their
+elements. In this post we will remedy that by defining a way to add a measure of
+proximity to the points in a set.
+
+Motivation
+First, I&#x27;d like to motivate the definition of a metric space a little bit.
+Recall th" />
+    <meta property="og:url" content="http://localhost:2368/metric-spaces-1/" />
+    <meta property="article:published_time" content="2017-03-31T02:51:53.000Z" />
+    <meta property="article:modified_time" content="2017-04-06T19:36:34.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Metric Spaces (1)" />
+    <meta name="twitter:description" content="Contents
+ 1. Motivation
+ 2. Metrics
+ 3. Open and closed sets
+
+
+--------------------------------------------------------------------------------
+
+Taken by themselves, sets do not have much structure to them. They are
+essentially barren wastelands with no relationships at all between their
+elements. In this post we will remedy that by defining a way to add a measure of
+proximity to the points in a set.
+
+Motivation
+First, I&#x27;d like to motivate the definition of a metric space a little bit.
+Recall th" />
+    <meta name="twitter:url" content="http://localhost:2368/metric-spaces-1/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Metric Spaces (1)",
+    "url": "http://localhost:2368/metric-spaces-1/",
+    "datePublished": "2017-03-31T02:51:53.000Z",
+    "dateModified": "2017-04-06T19:36:34.000Z",
+    "description": "Contents\n 1. Motivation\n 2. Metrics\n 3. Open and closed sets\n\n\n--------------------------------------------------------------------------------\n\nTaken by themselves, sets do not have much structure to them. They are\nessentially barren wastelands with no relationships at all between their\nelements. In this post we will remedy that by defining a way to add a measure of\nproximity to the points in a set.\n\nMotivation\nFirst, I&#x27;d like to motivate the definition of a metric space a little bit.\nRecall th",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../../rss/index.html" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="../../index.html">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Metric Spaces (1)</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="../../author/eric/index.html">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2017-03-31">2017-03-31</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <h3 id="contents">Contents</h3>
+
+<ol>
+<li><a href="index.html#motivation">Motivation</a></li>
+<li><a href="index.html#metrics">Metrics</a></li>
+<li><a href="index.html#open-and-closed-sets">Open and closed sets</a></li>
+</ol>
+<hr></hr>
+<p>Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set.</p>
+<h3 id="motivationanamemotivation">Motivation<a name="motivation"></a></h3>
+
+<p>First, I'd like to motivate the definition of a metric space a little bit. Recall the set $\mathbb{R}$ of real numbers. Given two numbers $a,b\in\mathbb{R}$ with $a&lt; b$, we make the following definitions:</p>
+<p><strong>Definition:</strong> The <strong>open interval</strong> with endpoints $a$ and $b$ is the set $(a,b)=\{x\in\mathbb{R}\mid a&lt; x&lt; b\}$.</p>
+<p><strong>Definition:</strong> The <strong>closed interval</strong> with endpoints $a$ and $b$ is the set $[a,b]=\{x\in\mathbb{R}\mid a\leq x\leq b\}$.</p>
+<p>Notice how the only difference between these two types of intervals is that the closed interval includes its endpoints whereas the open interval does not. You've no doubt been exposed to these definitions before so there isn't terribly much to discuss, but these will be our prototypes for the concepts of open and closed sets.</p>
+<p>How do we measure the distance between two real numbers? We would like our distance to always be positive, so we take whichever number is lower and subtract it from the higher number. If we don't know which number is higher or we want to make a general statement, we make use of the <strong>absolute value function</strong>:</p>
+<p>$\vert x \vert=<br />
+\begin{cases}<br />
+x  &amp; \text{if } x\geq 0,\<br />
+-x &amp; \text{if } x&lt;0.<br />
+\end{cases}$</p>
+<p>Notice that $\vert -x \vert = \vert x \vert$ for every $x\in\mathbb{R}$. Armed with this function which always returns a positive value, we can rephrase our notion of distance between real numbers $a$ and $b$. We'll call this distance $\vert a - b \vert$. The order in which the points appear no longer matters, which is a good sign.</p>
+<p>Now let's explore some of the very nice properties of this distance function we've just defined.</p>
+<ol>
+<li>$\vert a-b \vert \geq 0$ for all $a,b\in\mathbb{R}$.</li>
+<li>$\vert a-b \vert = 0$ if and only if $a=b$.</li>
+<li>$\vert a-b \vert = \vert b-a \vert$ for all $a,b\in\mathbb{R}$.</li>
+<li>$\vert a-c \vert \leq \vert a-b \vert + \vert b-c \vert$ for all $a,b,c\in\mathbb{R}$.</li>
+</ol>
+<p>The first three properties above should be somewhat obvious, and I will not bother proving them. The fourth property is known as the <strong>triangle inequality</strong>, and it is very important so I will prove it in two different ways so you'll have to believe it twice as hard.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> Let $a,b$ and $c$ denote real numbers. Then $\vert a-c \vert \leq \vert a-b \vert + \vert b-c \vert$.</p>
+<p><strong>Proof 1.</strong> From the definition of the absolute value function, we have the following two facts:</p>
+<p>$-\vert a-b\vert\leq a-b\leq\vert a-b\vert,$<br />
+$-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$</p>
+<p>Adding together these two inequalities, we see that</p>
+<p>$-\vert a-b\vert-\vert b-c\vert\leq (a-b)+(b-c)\leq\vert a-b\vert+\vert b-c\vert,$</p>
+<p>which simplifies to</p>
+<p>$-\big(\vert a-b\vert+\vert b-c\vert\big)\leq a-c\leq\vert a-b\vert+\vert b-c\vert.$</p>
+<p>If we use the definition of the absolute value function yet again, it follows that $\vert a-c\vert\leq\vert a-b\vert+\vert b-c\vert$, as desired.</p>
+<p><strong>Proof 2.</strong> We proceed directly by the following computation:</p>
+<p>$\begin{aligned}<br />
+\vert a-c\vert^2 &amp;=\big\vert (a-b)+(b-c)\big\vert^2\<br />
+&amp;= \big((a-b)+(b-c)\big)\big((a-b)+(b-c)\big)\<br />
+&amp;=(a-b)^2+2(a-b)(b-c)+(b-c)^2\<br />
+&amp;=\vert a-b\vert^2+2(a-b)(b-c)+\vert b-c\vert^2\<br />
+&amp;\leq \vert a-b\vert^2+2\vert a-b\vert\vert b-c\vert+\vert b-c\vert^2\<br />
+&amp;=\big(\vert a-b\vert+\vert b-c\vert\big)^2.<br />
+\end{aligned}$</p>
+<p>Taking the positive square root of each side, we see that $\vert a-c\vert\leq\vert a-b\vert+\vert b-c\vert$, completing the proof.</p>
+<hr></hr>
+<p>It may not be too obvious why right now, but the four properties above are extremely nice. Let's now move away from the real numbers to more general sets.</p>
+<h3 id="metricsanamemetrics">Metrics<a name="metrics"></a></h3>
+
+<p>As I mentioned before, sets do not come with any notion of distance between their elements. We can remedy this problem with the concept of a metric function, which is really just a way to define a concept of distance between every pair of points. This can tell us quite a lot about the set we're dealing with. We would like our metrics to be meaningful in some sense, so we define them in such a way that they obey precisely the four properties we just discussed pertaining to the absolute value function.</p>
+<hr></hr>
+<p><strong>Definition:</strong> A <strong>metric</strong> (or <strong>distance function</strong>) on a set $X$ is a function $d:X\times X\to\mathbb{R}$ which satisfies the following four properties:</p>
+<ol>
+<li>$d(x,y)\geq 0$ for all $x,y\in X$.</li>
+<li>$d(x,y) = 0$ if and only if $x=y$.</li>
+<li>$d(x,y)=d(y,x)$ for all $x,y\in X$.</li>
+<li>$d(x,z)\leq d(x,y)+d(y,x)$ for all $x,y,z\in X$.</li>
+</ol>
+<hr></hr>
+<p>The concept of a metric thus captures many of the properties we associate with the concept of distance. For instance, the distance between a point and itself is always zero, which makes a lot of sense. The distance between two points is the same regardless of which direction you measure it. The distance between two points is never negative.</p>
+<p>We add the triangle inequality into the mix because it ensures our metrics don't become too unruly (we will see later that without it, open balls wouldn't necessarily be open sets). There's a silly, but perhaps insightful, quote justifying it: "The triangle inequality means that if you are going from $x$ to $z$ and you stop for a beer, it's going to take a little longer."</p>
+<p><strong>Definition:</strong> A <strong>metric space</strong> is a set $X$ together with a metric on $X$.</p>
+<p>Notice that we can turn any set into a metric space! This means that we can talk about distances between points in any set. Not all such metrics are particularly useful, but we can at least define them.</p>
+<p>We'll frequently just refer to the set $X$ as a metric space if its metric is implicitly understood. When talking about $n$-dimensional Euclidean space, $\mathbb{R}^n$, it should be understood that we are always referring to it as a metric space with the following metric, unless otherwise stated. This is really just the distance function you're used to extended to $n$-dimensional space:</p>
+<hr></hr>
+<p><strong>Definition:</strong> The <strong>standard metric</strong> (or <strong>Euclidean metric</strong>) on $\mathbb{R}^n$ is defined by</p>
+<p>$ d({\bf x,y})=\sqrt{\sum\limits_{i=1}^n(x_i-y_i)^2}$</p>
+<p>for all ${\bf x,y}\in\mathbb{R}^n$, where</p>
+<p>${\bf x}=(x_1,x_2,\dotsc,x_n)$<br />
+${\bf y}=(y_1,y_2,\dotsc,y_n)$</p>
+<p>for some $x_1,x_2,\dotsc,x_n,y_1,y_2,\dotsc,y_n\in\mathbb{R}$.</p>
+<hr></hr>
+<h3 id="openandclosedsetsanameopenandclosedsets">Open and closed sets<a name="open-and-closed-sets"></a></h3>
+
+<p>Next, let's generalize the notions of open and closed intervals to arbitrary metric spaces. In each of the following definitions, let $X$ denote a metric space with distance function $d$, and let $r\in\mathbb{R}$.</p>
+<p><strong>Definition:</strong> An <strong>open ball</strong> of radius $r&gt;0$ centered at the point $x_0\in X$ is the set $B(x_0,r)=\{x\in X\mid d(x,x_0)&lt; r\}$.</p>
+<p><strong>Definition:</strong> A <strong>closed ball</strong> of radius $r&gt;0$ centered at the point $x_0\in X$ is the set $\overline{B}(x_0,r)=\{x\in X\mid d(x,x_0)\leq r\}$.</p>
+<p>Both open and closed balls contain all the points of distance less than $r$ from $x_0$. The only difference is that a closed ball also contains the points precisely $r$ away from $x_0$.</p>
+<p>We're now set up to define the concept of an open set. This definition is crucial, so be certain to <a href="http://i.imgur.com/qdWoQQr.jpg">firmly grasp it</a> before moving on.</p>
+<p><strong>Definition:</strong> A subset $U$ of a metric space $X$ is <strong>open</strong> in $X$ if for every point $x\in U$ there exists a real number $r&gt;0$ for which the open ball $B(x,r)\subseteq U$.</p>
+<p>I'm going to rephrase this definition slightly before moving on, just to really drill it into your head. A set is open if every point in the set is at the center of some open ball which is itself completely contained in that set. In the familiar metric spaces, this definition neatly captures the idea that no matter how close you get to the edge of an open set, there are always more points inside which are closer to the edge.</p>
+<p>Now let's prove something that really ought to be true. I'll even throw in a pretty picture for clarity.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In any metric space, an open ball is an open set.</p>
+<p><strong>Proof.</strong> Suppose we are given an arbitrary open ball of radius $r_0$ centered at a point $x_0$ in a metric space $X$. We need to show that for every point $x\in B(x_0,r_0)$, we can find a real number $r&gt;0$ such that $B(x,r)\subseteq B(x_0,r_0)$.</p>
+<p>Before making this argument rigorous, let's take a look at the following diagram of an open ball in $\mathbb{R}^2$ for a hint as to how we should proceed:</p>
+<p></p>
+<p>It certainly looks like we could choose $r=r_0-d(x,x_0)$, at least for the open ball above. We'd like to confirm that this choice will work for any open ball in any metric space. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $B(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq B(x_0,r_0)$, and that's all we need to do!</p>
+<p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r_0-r$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation:</p>
+<p>$\begin{aligned}<br />
+d(x_0,y) &amp;\leq d(x_0,x)+d(x,y)\<br />
+&amp;&lt;(r_0-r)+r\<br />
+&amp;=r_0.<br />
+\end{aligned}$</p>
+<p>But this implies, by the definition of our open ball $B(x_0,r_0)$, that $y\in B(x_0,r_0)$. Thus we have shown that $B(x,r)\subseteq B(x_0,r_0)$, as desired.</p>
+<hr></hr>
+<p>That was actually a decent amount of work to prove something which seemed obvious, right? Notice how without the triangle inequality in the first line of this computation, we could not have finished this proof.</p>
+<p>Before going any further, let's look at some results which are easier to prove.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In any metric space $X$, the entire set $X$ is itself open.</p>
+<p><strong>Proof.</strong> For any point $x\in X$, every real number $r&gt;0$ satisfies the condition that $B(x,r)\subseteq X$, because every open ball consists only of points in $X$. It follows that $X$ is an open set.</p>
+<hr></hr>
+<p>That was short! Here's an even simpler one:</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In any metric space $X$, the empty set $\varnothing=\{\}$ is open.</p>
+<p><strong>Proof.</strong> Since there are by definition no points in the empty set, it is vacuously true that every point in $\varnothing$ is at the center of an open ball contained in $\varnothing$. It follows that the empty set is open.</p>
+<hr></hr>
+<p>Since we're on a roll, let's move on to the definition of a closed set, shall we?</p>
+<p><strong>Definition:</strong> A subset $U$ of a metric space $X$ is <strong>closed</strong> in $X$ if its complement, $X-U$, is open in $X$.</p>
+<p>This leads to another closely-related pair of theorems with even easier proofs.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In any metric space $X$, the empty set is closed.</p>
+<p><strong>Proof.</strong> The complement of the empty set is $X-\varnothing=X$. Since $X$ is open, it follows that the empty set is closed.</p>
+<hr></hr>
+<p>I bet you can already guess the next one.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In any metric space $X$, the entire set $X$ is itself closed.</p>
+<p><strong>Proof.</strong> The complement of $X$ is $X-X=\varnothing$. Since the empty set is open, it follows that $X$ is closed.</p>
+<hr></hr>
+<p>At first glance, these might seem like they contradict our earlier statements about these very same sets being open. The empty set and the space itself are both open and closed? I've heard several times the phrase "a set is not a door." Yes, sets can be both open and closed. The two are not mutually exclusive. It's also easy to find examples of sets in metric spaces which are neither open nor closed!</p>
+<p>The next thing we should do is confirm that a closed ball is a closed set — otherwise we'd be in a fair bit of trouble. This proof is pretty similar to the proof that an open ball is open, but a teensy bit trickier.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In any metric space, a closed ball is a closed set.</p>
+<p><strong>Proof.</strong> Suppose we are given an arbitrary closed ball of radius $r_0$ centered at a point $x_0$ in a metric space $X$. If we can show that its complement, $X-\overline{B}(x_0,r_0)$, is open, then by the definition of a closed set, we will be done. Thus, we need to show that for every point $x\in X-\overline{B}(x_0,r_0)$ we can find a real number $r&gt;0$ such that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$.</p>
+<p>Once again, let's look at a diagram for some intuition before we dive any further into the proof:</p>
+<p></p>
+<p>A little bit of inspection indicates that it might suffice to choose $r=d(x,x_0)-r_0$. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $X-\overline{B}(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$, and then we'll be finished.</p>
+<p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r+r_0$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation, again starting with a slightly rearranged form of the triangle inequality:</p>
+<p>$\begin{aligned}<br />
+d(x_0,y)&amp;\geq d(x,x_0)-d(x,y)\<br />
+&amp;=(r+r_0)-d(x,y)\<br />
+&amp;&gt;r_0.<br />
+\end{aligned}$</p>
+<p>The last step above may take a little bit of explanation. Since $d(x,y)&lt; r$, clearly $r-d(x,y)&gt;0$. Thus, $r+r_0-d(x,y)&gt;r_0$, which hopefully makes things a bit clearer.</p>
+<p>Since $d(x_0,y)&gt;r_0$, it follows that $y\notin\overline{B}(x_0,r_0)$ by the definition of this closed ball. It follows that $y\in X-\overline{B}(x_0,r_0)$. Thus, $X-\overline{B}(x_0,r_0)$ is open and so its complement $\overline{B}(x_0,r_0)$ is closed, as desired.</p>
+<hr></hr>
+<p>That's enough for one post, I think. Don't worry though — we've only just begun with the <em>joys</em> of metric spaces!</p>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../index.html">Algebrology</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

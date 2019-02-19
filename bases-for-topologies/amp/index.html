@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Bases for Topologies</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="description" content="Essentially, a basis is a &#x27;small&#x27; collection of open sets from which every open set can be easily generated." />
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="../index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Bases for Topologies" />
+    <meta property="og:description" content="Contents
+ 1. Recap
+ 2. Bases
+
+
+--------------------------------------------------------------------------------
+
+Recap
+It occurred to me after I finished my last post on topological spaces that there
+is actually quite a lot I can already tell you about them. First I&#x27;m going to
+show a sort of stronger correspondence between the ideas of open sets in metric
+and topological spaces. Then I&#x27;m going to talk about bases for topologies. I
+believe I&#x27;ve mentioned these before, but now I&#x27;m finally ready to" />
+    <meta property="og:url" content="http://localhost:2368/bases-for-topologies/" />
+    <meta property="article:published_time" content="2017-04-03T04:07:41.000Z" />
+    <meta property="article:modified_time" content="2017-04-03T17:40:55.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Bases for Topologies" />
+    <meta name="twitter:description" content="Contents
+ 1. Recap
+ 2. Bases
+
+
+--------------------------------------------------------------------------------
+
+Recap
+It occurred to me after I finished my last post on topological spaces that there
+is actually quite a lot I can already tell you about them. First I&#x27;m going to
+show a sort of stronger correspondence between the ideas of open sets in metric
+and topological spaces. Then I&#x27;m going to talk about bases for topologies. I
+believe I&#x27;ve mentioned these before, but now I&#x27;m finally ready to" />
+    <meta name="twitter:url" content="http://localhost:2368/bases-for-topologies/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Bases for Topologies",
+    "url": "http://localhost:2368/bases-for-topologies/",
+    "datePublished": "2017-04-03T04:07:41.000Z",
+    "dateModified": "2017-04-03T17:40:55.000Z",
+    "description": "Contents\n 1. Recap\n 2. Bases\n\n\n--------------------------------------------------------------------------------\n\nRecap\nIt occurred to me after I finished my last post on topological spaces that there\nis actually quite a lot I can already tell you about them. First I&#x27;m going to\nshow a sort of stronger correspondence between the ideas of open sets in metric\nand topological spaces. Then I&#x27;m going to talk about bases for topologies. I\nbelieve I&#x27;ve mentioned these before, but now I&#x27;m finally ready to",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../../rss/index.html" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="../../index.html">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Bases for Topologies</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="../../author/eric/index.html">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2017-04-03">2017-04-03</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <h3 id="contents">Contents</h3>
+
+<ol>
+<li><a href="index.html#recap">Recap</a></li>
+<li><a href="index.html#bases">Bases</a></li>
+</ol>
+<hr></hr>
+<h3 id="recapanamerecap">Recap<a name="recap"></a></h3>
+
+<p>It occurred to me after I finished my last post on topological spaces that there is actually quite a lot I can already tell you about them. First I'm going to show a sort of stronger correspondence between the ideas of open sets in metric and topological spaces. Then I'm going to talk about bases for topologies. I believe I've mentioned these before, but now I'm finally ready to define them.</p>
+<p>Recall that in a metric space, a set $U$ is open if every point $x\in U$ is at the center of some open ball which is itself a subset of $U$.</p>
+<p>Recall also that in a topological space, the open sets are required to include the empty set and the space itself, the union of any number of open sets, and the intersection of any finite number of open sets.</p>
+<p>Let's see if we can get the definition of open sets in topological spaces to look a little bit more like the definition in metric spaces. First, we'll need the following lemma. It's a bit obvious, but useful enough to have a name.</p>
+<hr></hr>
+<p><strong>Union Lemma.</strong> Suppose $X$ is a set and $\cal T$ is a collection of subsets of $X$. If every $x\in X$ is contained in some set $U_x\in\cal T$ then $X=\bigcup\limits_{x\in X}U_x$.</p>
+<p><strong>Proof.</strong> To show that these two sets are equal, it suffices to show that each is a subset of the other.</p>
+<p>Since every set $U_x$ is a subset of $X$, it must be that their union, $\bigcup\limits_{x\in X}U_x$ is a subset of $X$.</p>
+<p>Next, suppose $y\in X$. Then by hypothesis there exists $U_y\in\cal T$ for which $y\in U_y$. Thus, $y\in U_y\subseteq\bigcup\limits_{x\in X}U_x$. It follows that $X$ is a subset of $\bigcup\limits_{x\in X}U_x$, completing the proof.</p>
+<hr></hr>
+<p>Just from the letters I chose to represent the sets in the statement of this lemma, it should be somewhat obvious where I'm going with this. Think of $X$ as a topological space, $\cal T$ as a topology on $X$, and each $U_x\in\cal T$ as a neighborhood of each point $x\in X$. (Recall that a neighborhood of a point is any open set containing that point, and that I've likened them to open balls in the past.)</p>
+<p>Now let's do what I promised earlier<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup>.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> A subset $V$ of a topological space $X$ is open if and only if every point $x\in V$ has a neighborhood $U_x$ such that $U_x\subseteq V$.</p>
+<p><strong>Proof.</strong> Suppose first that $V$ is open. Then the set $V$ itself is a neighborhood of every $x\in V$, so choosing each $U_x=V$ will suffice.</p>
+<p>Suppose next that every point $x\in V$ has a neighborhood $U_x$ such that $U_x\subseteq V$. Then by the union lemma, $v=\bigcup\limits_{x\in V}U_x$, which is open because it is the union of open sets.</p>
+<hr></hr>
+<p>That looks a lot like the definition of openness in a metric space, doesn't it? This analogous definition of open sets in topological spaces says that a set $V$ is open if every point in the set is contained in an open set which is itself a subset of $V$.</p>
+<p>Since metric spaces <em>are</em> topological spaces (when equipped with the proper topology, of course (the one that's induced by the metric (I wonder how many nested parenthetical statements I can get away with?))) we can use this new concept of openness in metric spaces too! That means we are no longer restricted to open balls centered at a point.</p>
+<h3 id="basesanamebases">Bases<a name="bases"></a></h3>
+
+<p>Now I'm going to talk about the idea of a basis for a topological space. Essentially, a basis is a 'small' collection of open sets from which every open set can be easily generated. It is often useful to talk about the topology generated by a specific basis, since many facts about a topology can be gleaned by studying one of its bases.</p>
+<hr></hr>
+<p><strong>Definition:</strong> A <strong>basis</strong> $\cal B$ for a topology on a set $X$ is a collection of open sets (called <strong>basis elements</strong> with the following two properties:</p>
+<ol>
+<li>Every point in $X$ is contained in some basis element $B\in\cal B$.</li>
+<li>If two basis elements $B_1, B_2\in\cal B$ are not disjoint, then for each $x\in B_1\cap B_2$ there is another basis element $B_x\subseteq B_1\cap B_2$ for which $x\in B_x$.</li>
+</ol>
+<hr></hr>
+<p>The first condition is self-evident. The second condition just means that if two basis elements intersect, then for every point in their intersection there is another basis element containing that point which is itself contained in their intersection.</p>
+<p>It isn't too hard to see how such a collection generates a topology:</p>
+<hr></hr>
+<p><strong>Definition:</strong> The <strong>topology generated by the basis</strong> $\cal B$ is defined as follows:</p>
+<ol>
+<li>The empty set is, of course, open.</li>
+<li>The union of any collection of sets in $\cal B$ is open.</li>
+</ol>
+<hr></hr>
+<p>We need to verify that the topology generated by a basis is, in fact, a topology. Otherwise we'd be in a world of trouble, and we'd have some nerve calling it that. To do so, we're going to need another lemma:</p>
+<hr></hr>
+<p><strong>Basis Intersection Lemma.</strong> Let $\cal B$ be a basis for a topology on $X$, let $B_1, B_2, \dotsc, B_n\in\cal B$ and suppose that $x\in\bigcap\limits_{i=1}^n B_i$. Then there also exists $B_x\in\cal B$ such that $x\in B_x\subseteq\bigcap\limits_{i=1}^n B_i$.</p>
+<p><strong>Proof.</strong> We proceed by induction on $n$. The base case, $n=2$, holds by the definition of a basis.</p>
+<p>Suppose then that the lemma holds for $n-1$, where $n&gt;2$. That is, if $B_1, B_2, \dotsc, B_n\in\cal B$ then there exists $B_x\in\cal B$ such that $x\in B_x\subseteq\bigcap\limits_{i=1}^{n-1}B_i$. Suppose that $x\in\bigcap\limits_{i=1}^n=\bigcap\limits_{i=1}^{n-1}\cap B_n$. Then $x\in B_x$ and $x\in B_n$, so from the definition of a basis it it follows that there exists $B'_x\in\cal B$ for which $x\in B'_x\subseteq\bigcap\limits_{i=1}^n$, as desired. This completes the proof.</p>
+<hr></hr>
+<p>We now have all the tools we need to prove that a basis actually generates a topology!</p>
+<hr></hr>
+<p><strong>Theorem.</strong> Given a set $X$, the topology generated by a basis $\cal B$ is a topology on $X$.</p>
+<p><strong>Proof.</strong> First notice that the empty set is open by definition, and the set $X$ is open by the union lemma since every point in $X$ is required to be in some basis element.</p>
+<p>Next, let $I$ be an indexing set such that $A_i\subseteq X$ is open for each $i\in I$. Define $U=\bigcup\limits_{i\in I}A_i$. Each set $A_i$ is either empty or the union of some collection of basis elements, so it is open. Thus, $U$ is open since it is the union of open sets.</p>
+<p>Finally, let $A_1, A_2, \dotsc, A_n$ be open sets for some $n\in\mathbb{N}$ and define $I=\bigcap\limits_{i=1}^n A_i$. If any $A_i$ is empty then so is $I$, and thus it is open. Suppose then that $I$ is nonempty, and let $x\in I$ so that $x\in A_i$ for each $i$. Since each $A_i$ is the union of basis elements, there exists $B_i\in\cal B$ such that $x\in B_i\subseteq A_i$ for each $i$. Thus, $x\in\bigcap\limits_{i=1}^n B_i$, so by the basis intersection lemma there exists $B_x\in\cal B$ such that $x\in B_x\subseteq\bigcap\limits_{i=1}^n B_i\subseteq V$. By the union lemma, $V=\bigcup\limits_{x\in I} B_x$. This is open since it is the union of basis elements, completing the proof.</p>
+<hr></hr>
+<p>Woah. That proof was long and boring. What was even the point of all that again? Well, now we can be verify that a collection of subsets is a basis for a topology and immediately talk about the topology it generates without having to prove that it really is a topology each and every time. Looking at a space in terms of a basis for that space can also simplify our talk of open sets quite a bit, as in the following theorem.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> Let $X$ denote a topological space generated by a basis $\cal B$. A set $U\subseteq X$ is open if and only if for each $x\in U$ there is some basis element $B_x\in\cal B$ for which $x\in B_x\subseteq U$.</p>
+<p><strong>Proof.</strong> Suppose first that $U\subseteq X$ is open. Then $U$ is the union of some collection of basis elements, so for each $x\in U$ there exists at least one $B_x\in\cal B$ for which $x\in B_x\subseteq U$.</p>
+<p>Suppose next that for each $x\in U$ there is some $B_x\in\cal B$ for which $x\in B_x\subseteq U$. Then by the union lemma we have that $U=\bigcup\limits_{x\in U} B_x$, which is open since it is the union of basis elements.</p>
+<hr></hr>
+<p>This is the ultimate relationship between open sets in metric and topological spaces. In fact, if we take open balls in the metric as the basis elements of a topology, we have precisely the same definition for each. Let's actually make sure that the open balls in a metric space form a basis.</p>
+<hr></hr>
+<p><strong>Theorem.</strong> In a metric space $X$ with metric $d:X\times X\to\mathbb{R}$, the set of open balls $\{B(x,r)\subseteq X\mid x\in X,r&gt;0\}$ is a basis for a topology on $X$.</p>
+<p><strong>Proof.</strong> The first condition for a basis is clearly satisfied, since for any $x\in X$ we have that $x\in B(x,r)$ for any $r&gt;0$. For the next part, here's a diagram to help you visualize my argument, because I know how much you love my diagrams:</p>
+<p></p>
+<p>I've practically already proved that second condition already in my first post on metric spaces. Suppose that $a,b\in X$ and $B(a,r_a)\cap B(b,r_b)\neq\varnothing$ for some real numbers $r_a, r_b &gt;0$. If $x\in B(a,r_a)\cap B(b,r_b)$ then $x\in B(a,r_a)$ and $x\in B(b,r_b)$ by the definition of set intersection. We already know that there exist real numbers $r_1, r_2&gt;0$ for which $B(x,r_1)\subseteq B(a,r_a)$ and $B(x,r_2)\subseteq B(b,r_b)$ Simply choosing the smaller of these open balls, $B(x,r)$ with $r=min\{r_1,r_2\}$, yields a basis element containing $x$ which is contained entirely in the intersection.</p>
+<hr></hr>
+<p>It's important to realize that this is a proof that the open balls in <em>any</em> metric space are the basis for a topology on that space. We call this topology the <strong>topology induced by a metric</strong>. It is clear that this topology on $\mathbb{R}^n$ is the standard topology, and any open set in $\mathbb{R}^n$ is thus the union of some collection of open balls. I talked about this a few posts ago, but now I'm actually justified in claiming it.</p>
+<p>Can you show that in $\mathbb{R}^2$, the set of open rectangles of the form</p>
+<p>$\{(x,y)\in\mathbb{R}^2\mid x\in (a,b), y\in (c,d)\},$</p>
+<p>where $a,b,c,d\in\mathbb{R}$, is the basis for a topology on $\mathbb{R}^2$? It's really not terribly difficult, and drawing a picture of the situation is practically a proof in itself. It can be shown that this basis also generates the standard topology on $\mathbb{R}^2$, although this is a bit more work.</p>
+<p>In closing, several metrics can induce the same topology on a space. However, not every topology is induced by some metric! We say that a topology on $X$ is <strong>metrizable</strong> if there exists a metric on $X$ which induces that topology. I may talk about this in the future, but I don't personally find this topic too interesting.</p>
+<p>In my next post, I'm going to do what I promised to do in my last post. That is, I'll introduce some more important definitions in metric spaces, and hopefully it won't be as long and boring as this post was.</p>
+<hr></hr>
+<hr class="footnotes-sep"></hr>
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>I don't believe I've done an 'if and only if' type proof on here before. The basic idea is that '$A$ if and only if $B
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../index.html">Algebrology</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>
+ is the same as saying '$A$ implies $B
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../index.html">Algebrology</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>
+ and '$B$ implies $A$. That is, all we have to do in order to prove such a statement is show that each half implies the other half. <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../index.html">Algebrology</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

@@ -2288,6 +2288,12 @@ input[type="radio"]:focus+label:before {
 	display: none
 }
 
+img {
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .image {
 	border: 0;
 	display: inline-block;

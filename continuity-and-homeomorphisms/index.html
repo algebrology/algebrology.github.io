@@ -21,39 +21,13 @@
     <meta property="og:site_name" content="Algebrology" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Continuity and Homeomorphisms" />
-    <meta property="og:description" content="Contents
- 1. Continuity
- 2. Homeomorphisms
-
-
---------------------------------------------------------------------------------
-
-Continuity
-The concept of continuity is central to the study of topology. So much so, in
-fact, that whenever anyone talks about a map between topological spaces, they
-generally expect you to know that they&#x27;re talking about a continuous map.[1]
-
-I&#x27;ve heard it said that a function is continuous if you can draw its graph
-without lifting your pencil. This is an awful, imprec" />
+    <meta property="og:description" content="The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they&#x27;re talking about a continuous map." />
     <meta property="og:url" content="http://localhost:2368/continuity-and-homeomorphisms/" />
     <meta property="article:published_time" content="2017-04-08T03:08:10.000Z" />
-    <meta property="article:modified_time" content="2017-04-08T03:08:10.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:45:54.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Continuity and Homeomorphisms" />
-    <meta name="twitter:description" content="Contents
- 1. Continuity
- 2. Homeomorphisms
-
-
---------------------------------------------------------------------------------
-
-Continuity
-The concept of continuity is central to the study of topology. So much so, in
-fact, that whenever anyone talks about a map between topological spaces, they
-generally expect you to know that they&#x27;re talking about a continuous map.[1]
-
-I&#x27;ve heard it said that a function is continuous if you can draw its graph
-without lifting your pencil. This is an awful, imprec" />
+    <meta name="twitter:description" content="The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they&#x27;re talking about a continuous map." />
     <meta name="twitter:url" content="http://localhost:2368/continuity-and-homeomorphisms/" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Eric Shapiro" />
@@ -81,8 +55,8 @@ without lifting your pencil. This is an awful, imprec" />
     "headline": "Continuity and Homeomorphisms",
     "url": "http://localhost:2368/continuity-and-homeomorphisms/",
     "datePublished": "2017-04-08T03:08:10.000Z",
-    "dateModified": "2017-04-08T03:08:10.000Z",
-    "description": "Contents\n 1. Continuity\n 2. Homeomorphisms\n\n\n--------------------------------------------------------------------------------\n\nContinuity\nThe concept of continuity is central to the study of topology. So much so, in\nfact, that whenever anyone talks about a map between topological spaces, they\ngenerally expect you to know that they&#x27;re talking about a continuous map.[1]\n\nI&#x27;ve heard it said that a function is continuous if you can draw its graph\nwithout lifting your pencil. This is an awful, imprec",
+    "dateModified": "2019-02-20T04:45:54.000Z",
+    "description": "The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they&#x27;re talking about a continuous map.",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -125,7 +99,6 @@ MathJax.Hub.Config({
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
-        <li><a href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
     </ul>
 </nav>
 
@@ -139,29 +112,32 @@ MathJax.Hub.Config({
         <header class="major">
             <span class="date">April 8, 2017</span>
             <h1>Continuity and Homeomorphisms</h1>
+                <p class="content">The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they&#x27;re talking about a continuous map.</p>
         </header>
 
 
         <div class="content">
             <h3 id="contents">Contents</h3>
-
 <ol>
 <li><a href="index.html#continuity">Continuity</a></li>
 <li><a href="index.html#homeomorphisms">Homeomorphisms</a></li>
 </ol>
 <hr>
 <h3 id="continuityanamecontinuity">Continuity<a name="continuity"></a></h3>
-
 <p>The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they're talking about a continuous map.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup></p>
 <p>I've heard it said that a function is continuous if you can draw its graph without lifting your pencil. This is an awful, imprecise definition, but it does give us a hint of intuition regarding the nature of continuity.</p>
-<p>So then what is continuity? Let's take a look at pieces of two functions, $f,g:\mathbb{R}\to\mathbb{R}$.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:1">[1:1]</a></sup></p>
+<p>So then what is continuity? Let's take a look at pieces of two functions, $f,g:\mathbb{R}\to\mathbb{R}$.<sup class="footnote-ref"><a href="index.html#fn2" id="fnref2">[2]</a></sup></p>
 <p><img src="../content/images/2017/04/i_can_haz_continuous.svg" alt="I can haz continuous?"></p>
 <p>Your gut instinct should tell you that $f$ is continuous on the interval depicted but $g$ is not. So what does your gut know that you don't? Here's a (very) rough description:</p>
 <p>If you zoom in far enough on any point in the graph of $f$, the whole graph behaves similarly in that region. On the other hand, there are pieces of the graph of $g$ which look nothing like nearby pieces.</p>
 <p>This is just an informal way of saying that if a function is continuous, points that are close together get mapped to points that are close together. This phrasing is not only much more revealing, it also allows us to extend the definition of continuity away from real-valued functions.</p>
 <p>Let's make this notion more precise, in the context of metric spaces. I'll give you the definition first, and then try to make sense of it for you.</p>
-<p><strong>Definition:</strong> Let $X$ and $Y$ denote metric spaces. A function $f:X\to Y$ is <strong>continuous at the point</strong> $x\in X$ if for every real number $\epsilon&gt;0$, there exists a real number $\delta&gt;0$ such that $f\big[B(x,\delta)\big]\subseteq B\big(f(x),\epsilon\big)$.</p>
-<p><strong>Definition:</strong> A function $f:X\to Y$ is <strong>continuous</strong> if it is continuous at every point $x\in X$.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $X$ and $Y$ denote metric spaces. A function $f:X\to Y$ is <strong>continuous at the point</strong> $x\in X$ if for every real number $\epsilon&gt;0$, there exists a real number $\delta&gt;0$ such that $f\big[B(x,\delta)\big]\subseteq B\big(f(x),\epsilon\big)$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> A function $f:X\to Y$ is <strong>continuous</strong> if it is continuous at every point $x\in X$.</p>
+</blockquote>
 <p>All the definition really says is that if a function is continuous at $x$, no matter how closely you look at $f(x)$ there will always be points around $x$ which get mapped within that distance of $f(x)$. So like I said earlier, points that are close together get mapped to points that are close together.</p>
 <p>If that makes perfect sense to you, skip the next few paragraphs. Otherwise, I'm going to explain this definition to you very slowly through a story.</p>
 <hr>
@@ -176,55 +152,61 @@ MathJax.Hub.Config({
 <p>You tell the enemy your method, and it has no choice but to conclude that $f$ is continuous at $x$. Next, you demonstrate how to do this for any point $x\in X$, and reason that $f$ is continuous. The enemy's head promptly explodes.</p>
 <p>Let's look at a specific example. Let $X$ be a metric space and consider the identity function $i:X\to X$ defined by $i(x)=x$ for every $x\in X$. The enemy first chooses a point $x_0\in X$ and draws a ball of radius $\epsilon$ around $x_0=i(x_0)$. You realize immediately that</p>
 <p>$$\begin{align}<br>
-i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \<br>
+i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br>
 &amp;= B\big(i(x_0),\epsilon\big)<br>
 \end{align}$$</p>
 <p>because $i$ is the identity function. So no matter what point $x_0$ or radius $\epsilon$ the enemy chooses, picking $\delta=\epsilon$ will always work. This argument shows that the identity function on any metric space is continuous!</p>
 <hr>
 <p>Hopefully the definition of continuity makes sense to you now, because I'm about move on to an equivalent and simpler definition.</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> Let $X$ and $Y$ denote metric spaces with $f: X\to Y$. Then $f$ is continuous if and only if the preimage $f^{-1}[U]$ of any open set $U\subseteq Y$ is open in $X$.</p>
 <p><strong>Proof.</strong> Suppose first that $f:X\to Y$ is continuous. If $f^{-1}[U]=\varnothing$ then we are done because this is open in $X$. Suppose then that $f^{-1}[U]\ne\varnothing$. Choose $x\in f^{-1}[U]$, so that $f(x)\in U$. Since $U$ is open, there exists a real number $\epsilon&gt;0$ such that $B\big(f(x),\epsilon\big)\subseteq U$. Since $f$ is continuous, there exists a real number $\delta&gt;0$ such that $f\big[B(x,\delta)\big]\subseteq B\big(f(x),\epsilon\big)$. That is, $B(x,\delta)\subseteq f^{-1}\big[B\big(f(x),\epsilon\big)\big]\subseteq f^{-1}[U]$. Thus, there is an open ball centered at $x$ which is contained in $f^{-1}[U]$, so clearly $f^{-1}[U]$ is open in $X$.</p>
 <p>Suppose conversely that $f^{-1}[U]$ is open in $X$ whenever $U$ is open in $Y$. Choose $x\in X$ and a real number $\epsilon&gt;0$. Since $B\big(f(x),\epsilon\big)$ is open in $Y$, we have that $f^{-1}\big[B\big(f(x),\epsilon\big)\big]$ is open in $X$. Since $x\in f^{-1}\big[B\big(f(x),\epsilon\big)\big]$, there exists a real number $\delta&gt;0$ such that $B(x,\delta)\subseteq f^{-1}\big[B\big(f(x),\epsilon\big)\big]$. Thus, $f$ is continuous.</p>
-<hr>
+</blockquote>
 <p>This is most excellent. We've arrived at a &quot;distance-free&quot; definition of continuity, phrased entirely in terms of open sets. You know what that means! We're going to adopt this as the definition of continuity in a general topological setting.</p>
-<p><strong>Definition:</strong> Let $X$ and $Y$ denote topological spaces. A function $f:X\to Y$ is <strong>continuous</strong> if $f^{-1}[U]$ is open in $X$ whenever $U$ is open in $Y$.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $X$ and $Y$ denote topological spaces. A function $f:X\to Y$ is <strong>continuous</strong> if $f^{-1}[U]$ is open in $X$ whenever $U$ is open in $Y$.</p>
+</blockquote>
 <p>There is also a corresponding definition for continuity at a point, but we will never need it.</p>
 <p>As is oft desired, we would like a way to determine whether a function between topological spaces is continuous, given only a basis for each space. This is done easily and naturally.</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> Let $X$ and $Y$ denote topological spaces, let ${\cal B}_X$ be a basis for the topology on $X$ and ${\cal B}_Y$ a basis for the topology on $Y$. A function $f:X\to Y$ is continuous if and only if $f^{-1}[B]$ is open in $X$ whenever $B\in{\cal B}_Y$.</p>
 <p><strong>Proof.</strong> Suppose first that $f$ is continuous. Since $B$ is a basis element, it is open in $Y$. It follows immediately that $f^{-1}[B]$ is open in $X$.</p>
 <p>Suppose next that the preimage of any basis element in $Y$ is open in $X$. It has been established that for any open set  $U\subseteq Y$, there exists an indexing set $I$ and basis elements $B_i\in{\cal{B}}_Y$ such that  $U=\bigcup\limits_{i\in I}B_i$. Thus,</p>
 <p>$$f^{-1}[U]=f^{-1}\left[\bigcup\limits_{i\in I}B_i\right]=\bigcup\limits_{i\in I}f^{-1}[B_i],$$</p>
 <p>which is open since it is the union of open sets.</p>
-<hr>
+</blockquote>
 <p>Yay! Now let's use our beautiful definition of continuity to prove an elementary property of continuous maps: that the composition of two continuous functions</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> Let $X,Y$ and $Z$ denote topological spaces with continuous functions $f:X\to Y$ and $g:Y\to Z$. Then their composition $(g\circ f):X\to Z$, defined by $(g\circ f)(x)=g\big(f(x)\big)$ for every $x\in X$, is continuous.</p>
 <p><strong>Proof.</strong> Suppose $U\subseteq Z$ is open. Then $g^{-1}[U]\subseteq Y$ is open, so $f^{-1}\big[g^{-1}[U]\big]\subseteq X$ is open. Thus, it suffices to show that $f^{-1}\big[g^{-1}[U]\big]=(g\circ f)^{-1}[U]$.</p>
 <p>Suppose $x\in f^{-1}\big[g^{-1}[U]\big]$. Then $f(x)\in g^{-1}[U]$, so $g\big(f(x)\big)=(g\circ f)(x)\in U$. Thus, $x\in (g\circ f)^{-1}[U]$.</p>
 <p>Suppose next that $x\in (g\circ f)^{-1}[U]$. Then $(g\circ f)(x)=g\big(f(x)\big)\in U$, so $f(x)\in g^{-1}[U]$ and thus $x\in f^{-1}\big[g^{-1}[U]\big]$.</p>
-<hr>
+</blockquote>
 <h3 id="homeomorphismsanamehomeomorphisms">Homeomorphisms<a name="homeomorphisms"></a></h3>
-
 <p>Ages ago, when I first started talking about topological spaces, I mentioned the idea of topological equivalence. I believe I said something like &quot;two spaces are topologically equivalent if they can be continuously deformed into each other,&quot; and that &quot;continuous deformations are ways we can bend, stretch and move spaces without tearing, cutting or gluing them.&quot; We now have the machinery to formally define this notion.</p>
-<p><strong>Definition:</strong> Let $X$ and $Y$ denote topological spaces. A bijective function $f:X\to Y$ is a <strong>homeomorphism</strong> if both $f$ and $f^{-1}:X\to Y$ are continuous. We say that the spaces are <strong>homeomorphic</strong>.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $X$ and $Y$ denote topological spaces. A bijective function $f:X\to Y$ is a <strong>homeomorphism</strong> if both $f$ and $f^{-1}:X\to Y$ are continuous. We say that the spaces are <strong>homeomorphic</strong>.</p>
+</blockquote>
 <p>It is particularly important that $f$ is bijective, since otherwise $f^{-1}$ would not be well defined.</p>
 <p>There is no consistent symbol for &quot;is homeomorphic to,&quot; although I've seen several used by different authors. For instance, $X\simeq Y$, $Y\approx Y$ or $X\sim Y$ could all be used. And I've seen them all used. I won't use any such notation, however, because I find it terribly confusing.</p>
 <p>It should go without saying that if a function is a homeomorphism then so is its inverse. The next result is perhaps a tad less obvious, although its proof is almost trivial.</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> Let $X, Y$ and $Z$ denote topological spaces with homeomorphisms $f:X\to Y$ and $g:Y\to Z$. Then $X$ is homeomorphic to $Z$ via $(g\circ f):X\to Z$.</p>
 <p><strong>Proof.</strong> Since $f,g$ are bijective and continuous, $g\circ f$ is bijective and continuous. Furthermore, since $f^{-1},g^{-1}$ are bijective and continuous, $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$ is bijective and continuous. Thus $g\circ f$ is a homeomorphism.</p>
-<hr>
+</blockquote>
 <p>Unfortunately, it is difficult to give simple examples of homeomorphic spaces without first discussing the constructions of new spaces, so more examples of homeomorphisms won't come for a few posts. We can, however, talk about what homeomorphism really means.</p>
 <p>Given a homeomorphism $f$, we know that $f$ and its inverse $f^{-1}$ are continuous. This means that open sets get mapped to open sets in both directions. So essentially, homeomorphisms preserve open sets. Why is this nice? <strong>Because topological spaces are defined in terms of open sets.</strong> This indicates that homeomorphic spaces are really the same, just with their open sets renamed in some way.</p>
-<p>There is a lot more to say about homeomorphisms. In fact, much of what topologists do is in an attempt to identify which spaces are homeomorphic.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1:2">[1:2]</a></sup> And it isn't always obvious directly from the definition. All the tools I bring up from now on will be useful on this quest.</p>
+<p>There is a lot more to say about homeomorphisms. In fact, much of what topologists do is in an attempt to identify which spaces are homeomorphic.<sup class="footnote-ref"><a href="index.html#fn3" id="fnref3">[3]</a></sup> And it isn't always obvious directly from the definition. All the tools I bring up from now on will be useful on this quest.</p>
 <p>We will mainly be interested in things called <strong>topological invariants</strong>, which are characteristics of spaces that are preserved under homeomorphisms. If two spaces have different invariants, this tells us that these spaces are <em>not</em> homeomorphic. As we shall see, connectedness, compactness, countability, separation conditions, homology and homotopy groups are all topological invariants. These are all properties of the open sets of spaces, so this makes sense. Properties like boundedness and completeness, on the other hand, which rely on the notion of distance, are not topological invariants.</p>
-<hr>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Although we are often willing to settle for homotopy equivalence. <a href="index.html#fnref1" class="footnote-backref">↩︎</a> <a href="index.html#fnref1:1" class="footnote-backref">↩︎</a> <a href="index.html#fnref1:2" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>If I haven't mentioned this before, &quot;map&quot; is just another word for &quot;function&quot; and the two are often used interchangeably. <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>I'm not sure why the arrows in my diagram are on sideways, but I'm too lazy to fix it. <a href="index.html#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Although we are often willing to settle for homotopy equivalence. <a href="index.html#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -265,9 +247,7 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \<br>
 
         <div id="copyright">
             <ul>
-                <li>&copy; Algebrology</li>
-                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
-                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 

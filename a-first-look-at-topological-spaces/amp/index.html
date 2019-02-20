@@ -16,43 +16,13 @@
     <meta property="og:site_name" content="Algebrology" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="A First Look at Topological Spaces" />
-    <meta property="og:description" content="Contents
- 1. Motivation
- 2. The definition
- 3. Examples
-
-
---------------------------------------------------------------------------------
-
-Motivation
-So far we&#x27;ve put a lot of effort into defining notions of distance, even giving
-these ideas fancy names. Distance is an important property in many situations,
-and you probably don&#x27;t need me telling you this because you think about
-distances every day.
-
-However, there are also many circumstances in which we care about the shape of a
-space but could" />
+    <meta property="og:description" content="There are also many circumstances in which we care about the shape of a space but couldn&#x27;t care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the **Seven Bridges of Königsberg**." />
     <meta property="og:url" content="http://localhost:2368/a-first-look-at-topological-spaces/" />
     <meta property="article:published_time" content="2017-03-31T17:01:23.000Z" />
-    <meta property="article:modified_time" content="2017-04-03T01:28:13.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:49:55.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="A First Look at Topological Spaces" />
-    <meta name="twitter:description" content="Contents
- 1. Motivation
- 2. The definition
- 3. Examples
-
-
---------------------------------------------------------------------------------
-
-Motivation
-So far we&#x27;ve put a lot of effort into defining notions of distance, even giving
-these ideas fancy names. Distance is an important property in many situations,
-and you probably don&#x27;t need me telling you this because you think about
-distances every day.
-
-However, there are also many circumstances in which we care about the shape of a
-space but could" />
+    <meta name="twitter:description" content="There are also many circumstances in which we care about the shape of a space but couldn&#x27;t care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the **Seven Bridges of Königsberg**." />
     <meta name="twitter:url" content="http://localhost:2368/a-first-look-at-topological-spaces/" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Eric Shapiro" />
@@ -80,8 +50,8 @@ space but could" />
     "headline": "A First Look at Topological Spaces",
     "url": "http://localhost:2368/a-first-look-at-topological-spaces/",
     "datePublished": "2017-03-31T17:01:23.000Z",
-    "dateModified": "2017-04-03T01:28:13.000Z",
-    "description": "Contents\n 1. Motivation\n 2. The definition\n 3. Examples\n\n\n--------------------------------------------------------------------------------\n\nMotivation\nSo far we&#x27;ve put a lot of effort into defining notions of distance, even giving\nthese ideas fancy names. Distance is an important property in many situations,\nand you probably don&#x27;t need me telling you this because you think about\ndistances every day.\n\nHowever, there are also many circumstances in which we care about the shape of a\nspace but could",
+    "dateModified": "2019-02-20T04:49:55.000Z",
+    "description": "There are also many circumstances in which we care about the shape of a space but couldn&#x27;t care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the **Seven Bridges of Königsberg**.",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -122,7 +92,6 @@ space but could" />
             <section class="post-content">
 
                 <h3 id="contents">Contents</h3>
-
 <ol>
 <li><a href="index.html#motivation">Motivation</a></li>
 <li><a href="index.html#the-definition">The definition</a></li>
@@ -130,7 +99,6 @@ space but could" />
 </ol>
 <hr></hr>
 <h3 id="motivationanamemotivation">Motivation<a name="motivation"></a></h3>
-
 <p>So far we've put a lot of effort into defining notions of distance, even giving these ideas fancy names. Distance is an important property in many situations, and you probably don't need me telling you this because you think about distances every day.</p>
 <p>However, there are also many circumstances in which we care about the shape of a space but couldn't care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the <strong>Seven Bridges of Königsberg</strong>. Basically, the city of Königsberg had two major islands at its center, completely disconnected from the mainland by a river except for seven bridges.</p>
 <p></p>
@@ -139,7 +107,6 @@ space but could" />
 <p>Try drawing a couple paths and you'll quickly begin to suspect that the answer is no. This is correct, but proving it is tricky. The solution to a problem like this has nothing whatsoever to do with the distance between bridges. Stretch the river, move the bridges slightly, and the solution remains the same. This indicates that there may be more fundamental properties intrinsic to the space in this puzzle than distance.</p>
 <p>The branch of mathematics called <strong>topology</strong> is, loosely speaking, the study of the properties of space which remain unaltered by continuous deformations. This probably sounds kind of like poo at this point, but bear with me. Continuous deformations are, intuitively, ways in which we can stretch, bend and move objects but not tear or cut them. As an example, an egg and a pancake are in some sense topologically equivalent, since you can squish an egg down until it becomes sufficiently cake-shaped. You won't even see this idea again for a while, but I find it helps to have some idea of where we're headed in the long run.</p>
 <h3 id="thedefinitionanamethedefinition">The definition<a name="the-definition"></a></h3>
-
 <p>Before we proceed, let's recall a few of the nice properties I've previously showed are true of open sets in metric spaces:</p>
 <ul>
 <li>The empty set and the space itself are open.</li>
@@ -148,45 +115,55 @@ space but could" />
 </ul>
 <p>As I mentioned before, we need to trash any definitions we have that mention metrics or distances, so the old definition of open sets in a metric space won't work for the more general topological spaces. What we do instead is kind of neat.</p>
 <p>We define a topology in terms of which sets are open, and these open sets must obey certain properties. Actually, they must obey the properties I just listed! These properties talk about open sets only in terms of set theory, and never mention distance, so we simply demand that all of these properties hold.</p>
-<hr></hr>
-<p><strong>Definition:</strong> A <strong>topology</strong> $\cal T$ on a set $X$ is a collection of subsets of $X$ called <strong>open sets</strong> which satisfy the following properties.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>topology</strong> $\cal T$ on a set $X$ is a collection of subsets of $X$ called <strong>open sets</strong> which satisfy the following properties.</p>
 <ol>
 <li>The empty set $\varnothing$ and the set $X$ are in $\cal T$.</li>
 <li>The union of any collection of sets in $\cal T$ is in $\cal T$.</li>
 <li>The intersection of any finite collection of sets in $\cal T$ is in $\cal T$.</li>
 </ol>
 <p>A <strong>topological space</strong> is a set $X$ together with a topology $\cal T$ on $X$.</p>
-<hr></hr>
+</blockquote>
 <p>As a slight abuse of notation, the set $X$ will usually be referred to as a topological space, and it will go without saying that we're talking about some topology on $X$. This is much the same as when we talk about a set as a metric space and it is implicitly understood to have some distance function.</p>
 <p>This probably all feels a bit anticlimactic. I've been building up to this for a while, and it probably seems like this isn't anything new at all. At first, it might seem odd to define a topological space as a collection of sets that are open, but it's actually fairly natural. Hopefully at the very least you understand why the three properties in the definition are a natural choice. I spent the last two posts trying to get it to feel that way.</p>
 <p>There is a sort of topological analogue to the concept in metric spaces of an open ball centered at a point:</p>
-<p><strong>Definition:</strong> A <strong>neighborhood</strong> of a point $x$ in a topological space is an open set containing $x$.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>neighborhood</strong> of a point $x$ in a topological space is an open set containing $x$.</p>
+</blockquote>
 <p>And of course, whenever there are open sets there are also closed sets:</p>
-<p><strong>Definition:</strong> A subset $U$ of a topological space $X$ is <strong>closed</strong> in $X$ if its complement, $X-U$, is open.</p>
+<blockquote>
+<p><strong>Definition.</strong> A subset $U$ of a topological space $X$ is <strong>closed</strong> in $X$ if its complement, $X-U$, is open.</p>
+</blockquote>
 <p>Notice again that sets in a topological space can be open, closed, both or neither. In every topological space $X$, we have that $\varnothing$ and $X$ are both open and closed. This information is now part of the very definition of open and closed sets!</p>
 <h3 id="examplesanameexamples">Examples<a name="examples"></a></h3>
-
 <p>I haven't been including terribly many examples so far, so I should probably try to fix that. Most people don't learn too well being relentlessly bombarded by definitions and theorems and not ever having an opportunity to step back and apply what they've just learned.</p>
-<hr></hr>
+<blockquote>
 <p><strong>Example.</strong> Consider the set $X=\{a,b,c\}$ with just three elements. Let's determine whether the following is a valid topology on $X$:</p>
 <p>${\cal T} = \big\{\varnothing,\{a\}, \{a,b\}, \{a,b,c\}\big\}$</p>
 <p>Let's look at this topology visually:</p>
 <p></p>
 <p>The ellipses in this diagram depict the open sets in the topology. Each ellipse is a subset of all the ellipses that encompass it. The empty set is a subset of every set and is not depicted.</p>
-<p>Even without the picture, it's easy to verify that all the required properties hold and that this is a topology on $X$. If you take the union of any collection of these open sets, you wind up with another open set in the topology. The same is true of intersections. (We could list out all such unions and intersections, but that would take up too much space.) The empty set and $X$ itself are explicitly listed and so clearly they are open, and thus $\cal T$ is indeed a topology on $X$.</p>
+<p>Even without the picture, it's easy to verify that all the required properties hold and that this is a topology on $X$. If you take the union of any collection of these open sets, you wind up with another open set in the topology. The same is true of &gt; intersections. (We could list out all such unions and intersections, but that would take up too much space.) The empty set and $X$ itself are explicitly listed and so clearly they are open, and thus $\cal T$ is indeed a topology on $X$.</p>
 <p>One last thing: the set $\{b\}$ in this topological space is neither open nor closed, as an example of what I was saying before.</p>
-<hr></hr>
+</blockquote>
 <p>There are two topologies that we can define right off the bat on any set $X$.</p>
-<p><strong>Definition:</strong> The <strong>trivial topology</strong> on $X$ is the set $\{\varnothing, X\}$.</p>
-<p><strong>Definition:</strong> The <strong>discrete topology</strong> on $X$ is the set $2^X$ of all subsets of $X$.</p>
+<blockquote>
+<p><strong>Definition.</strong> The <strong>trivial topology</strong> on $X$ is the set $\{\varnothing, X\}$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> The <strong>discrete topology</strong> on $X$ is the set $2^X$ of all subsets of $X$.</p>
+</blockquote>
 <p>The trivial topology only has two<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> open sets, and it is in a sense the smallest topology we can define because those sets are required to be open by the definition of a topology. On the other hand, every set is open in the discrete topology, so it is in some sense the largest. Let's make rigorous these notions by defining the concepts of coarseness and fineness.</p>
-<p><strong>Definition:</strong> Given two topologies ${\cal T}_1, {\cal T}_2$ on a set $X$, we say that ${\cal T}_1$ is <strong>coarser</strong> than ${\cal T}_2$ if ${\cal T}_1\subseteq {\cal T}_2$. That is, every open set in ${\cal T}_1$ is also open in ${\cal T}_2$. Equivalently, we also sometimes say that ${\cal T}_2$ is <strong>finer</strong> than ${\cal T}_1$.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given two topologies ${\cal T}_1, {\cal T}_2$ on a set $X$, we say that ${\cal T}_1$ is <strong>coarser</strong> than ${\cal T}_2$ if ${\cal T}_1\subseteq {\cal T}_2$. That is, every open set in ${\cal T}_1$ is also open in ${\cal T}_2$. Equivalently, we also sometimes say that ${\cal T}_2$ is <strong>finer</strong> than ${\cal T}_1$.</p>
+</blockquote>
 <p>Notice that the trivial topology is always the coarsest topology we can define, and the discrete topology is always the finest. Also notice that there can exist topologies on a set that cannot be compared with each other in this way because it is possible for each topology to contain open sets that are not contained in the other.</p>
 <p>Here's just one more example for now, and this should hopefully feel a lot like the "correct" definition to you. We can still talk about open balls in $\mathbb{R}^n$ purely as the sets $B(x_0,r)=\{x\in\mathbb{R}^n\mid d(x,x_0)&lt; r\}$. We can define a topology using these that is very similar to the standard metric on $\mathbb{R}^n$:</p>
-<p><strong>Definition:</strong> The <strong>standard topology</strong> on $\mathbb{R}^n$ is the topology whose nonempty open sets are precisely the unions of open balls in $\mathbb{R}^n$.</p>
+<blockquote>
+<p><strong>Definition.</strong> The <strong>standard topology</strong> on $\mathbb{R}^n$ is the topology whose nonempty open sets are precisely the unions of open balls in $\mathbb{R}^n$.</p>
+</blockquote>
 <p>The last thing I want to mention right now is that our definition of a topological space is broad. So broad, in fact, that many such spaces often behave in ways that are not at all desirable. Very frequently, we will talk about certain "tame" types of topological spaces. For instance, soon I'll introduce you to Hausdorff spaces, which have a number of nice properties that we'd generally expect "space" to have.</p>
 <p>Next time we'll look again at some more properties of metric spaces. Fair warning: the next post is where things will start getting fairly technical, so make sure you're really comfortable with everything I've discussed so far!</p>
-<hr></hr>
 <hr class="footnotes-sep"></hr>
 <section class="footnotes">
 <ol class="footnotes-list">

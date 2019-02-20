@@ -21,43 +21,13 @@
     <meta property="og:site_name" content="Algebrology" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Metric Spaces (2)" />
-    <meta property="og:description" content="Contents
- 1. Review from previous post
- 2. Open sets
- 3. Closed sets
- 4. Now what?
-
-
---------------------------------------------------------------------------------
-
-Review from previous post
-Looking back through my first post about metric spaces, it occurred to me that I
-should probably have emphasized a few things that could be a bit confusing, so
-let me address those first before pressing forward.
-
-I briefly mentioned the standard metric  on $\mathbb{R}^n$ ($n$-dimensional
-Euclidean space), " />
+    <meta property="og:description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward. " />
     <meta property="og:url" content="http://localhost:2368/metric-spaces-2/" />
     <meta property="article:published_time" content="2017-03-31T14:42:15.000Z" />
-    <meta property="article:modified_time" content="2017-03-31T14:44:34.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:50:17.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Metric Spaces (2)" />
-    <meta name="twitter:description" content="Contents
- 1. Review from previous post
- 2. Open sets
- 3. Closed sets
- 4. Now what?
-
-
---------------------------------------------------------------------------------
-
-Review from previous post
-Looking back through my first post about metric spaces, it occurred to me that I
-should probably have emphasized a few things that could be a bit confusing, so
-let me address those first before pressing forward.
-
-I briefly mentioned the standard metric  on $\mathbb{R}^n$ ($n$-dimensional
-Euclidean space), " />
+    <meta name="twitter:description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward. " />
     <meta name="twitter:url" content="http://localhost:2368/metric-spaces-2/" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Eric Shapiro" />
@@ -85,8 +55,8 @@ Euclidean space), " />
     "headline": "Metric Spaces (2)",
     "url": "http://localhost:2368/metric-spaces-2/",
     "datePublished": "2017-03-31T14:42:15.000Z",
-    "dateModified": "2017-03-31T14:44:34.000Z",
-    "description": "Contents\n 1. Review from previous post\n 2. Open sets\n 3. Closed sets\n 4. Now what?\n\n\n--------------------------------------------------------------------------------\n\nReview from previous post\nLooking back through my first post about metric spaces, it occurred to me that I\nshould probably have emphasized a few things that could be a bit confusing, so\nlet me address those first before pressing forward.\n\nI briefly mentioned the standard metric  on $\\mathbb{R}^n$ ($n$-dimensional\nEuclidean space), ",
+    "dateModified": "2019-02-20T04:50:17.000Z",
+    "description": "Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward. ",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -129,7 +99,6 @@ MathJax.Hub.Config({
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
-        <li><a href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
     </ul>
 </nav>
 
@@ -143,12 +112,12 @@ MathJax.Hub.Config({
         <header class="major">
             <span class="date">March 31, 2017</span>
             <h1>Metric Spaces (2)</h1>
+                <p class="content">Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward. </p>
         </header>
 
 
         <div class="content">
             <h3 id="contents">Contents</h3>
-
 <ol>
 <li><a href="index.html#review-from-previous-post">Review from previous post</a></li>
 <li><a href="index.html#open-sets">Open sets</a></li>
@@ -157,7 +126,6 @@ MathJax.Hub.Config({
 </ol>
 <hr>
 <h3 id="reviewfrompreviouspostanamereviewfrompreviouspost">Review from previous post<a name="review-from-previous-post"></a></h3>
-
 <p>Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward.</p>
 <p>I briefly mentioned the <strong>standard metric</strong> on $\mathbb{R}^n$ ($n$-dimensional Euclidean space), but I didn't relate it back to anything concrete. I defined this metric by</p>
 <p>$$d({\bf x},{\bf y})=\sqrt{\sum\limits_{i=1}^n(x_i-y_i)^2},$$</p>
@@ -168,74 +136,75 @@ MathJax.Hub.Config({
 <p>$$d({\bf x},{\bf y})=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2}.$$</p>
 <p>This is the distance function we all saw in high school, and it's easy enough to verify that it is, in fact, a metric. However, it's somewhat challenging to show that the standard metric satisfied the properties of a metric for Euclidean spaces of arbitrary dimension, so I won't do that here.</p>
 <p>I also want to be clear that the standard metric isn't even close to the only metric we can define. In fact, we can define the following metric on any set at all:</p>
-<hr>
-<p><strong>Definition:</strong> Let $X$ be a metric space. The <strong>discrete metric</strong> on $X$ is specified by</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $X$ be a metric space. The <strong>discrete metric</strong> on $X$ is specified by</p>
 <p>$$d(a,b)=<br>
 \begin{cases}<br>
-0 &amp; \text{if } a=b,\<br>
+0 &amp; \text{if } a=b,\\<br>
 1 &amp; \text{if } a\neq b<br>
 \end{cases}$$</p>
-<p>where $a,b\in X$.</p>
-<hr>
+<p>for $a,b\in X$.</p>
+</blockquote>
 <p>It's easy to show that the discrete metric is in fact a metric. Furthermore, we can actually use the discrete metric as a basis to generate an infinite number of metrics on any set! (How?)</p>
 <p>There are less trivial metrics, too. For instance, if $X$ is the set of real-valued functions which are continuous on the closed interval $[a,b]$, then</p>
 <p>$$d(f,g)=\int\limits_0^1\vert f(x)-g(x)\vert\mathrm{d}x,$$</p>
 <p>where $f,g\in X$, is a metric on $X$. If this example is gibberish to you, don't worry. I haven't defined integration, or even continuity, yet. I just wanted to show that there are even meaningful concepts of distance between functions, which is an enticing concept.</p>
 <p>I think that's about all I wanted to clarify from last time. Now we can move on to some more exciting new stuff!</p>
 <h3 id="opensetsanameopensets">Open sets<a name="open-sets"></a></h3>
-
 <p>We already defined open sets in the last post, but let's restate that definition here so you don't have to go looking it up:</p>
-<p><strong>Definition:</strong> A subset $U$ of a metric space $X$ is <strong>open</strong> in $X$ if for every point $x\in U$ there exists a real number $r&gt;0$ for which the open ball $B(x,r)\subseteq U$.</p>
+<blockquote>
+<p><strong>Definition.</strong> A subset $U$ of a metric space $X$ is <strong>open</strong> in $X$ if for every point $x\in U$ there exists a real number $r&gt;0$ for which the open ball $B(x,r)\subseteq U$.</p>
+</blockquote>
 <p>I didn't explicitly say this last time, but this definition for open sets applies only for metric spaces. When we talk about the more general topological spaces, we'll have to throw out this definition (although it will serve to motivate the general definition).</p>
 <p>Now, armed only with this definition and a few notions from set theory, we can already say quite a bit about open sets.</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> The union of any collection of open sets in a metric space is open.</p>
 <p><strong>Proof.</strong> Let $X$ denote a metric space and let $I$ be an indexing set such that $A_i\subseteq X$ is an open set for each $i\in I$. Define $U=\bigcup\limits_{i\in I}A_i$.</p>
 <p>If every $A_i$ is empty then $U=\varnothing$, which is open. So if this is the case, then we're done.</p>
 <p>Suppose then that $U\neq\varnothing$. We need to show that for any $x\in U$, there exists a real number $r&gt;0$ for which $B(x,r)\subseteq U$. But this is extremely easy!</p>
 <p>Since $x\in U$, we know from the definition of the union operation that $x\in A_j$ for some $j\in I$. Since $A_j$ is open by assumption, there exists a real number $r_j&gt;0$ such that $B(x,r_j)\subseteq A_j$. Since every point in $A_j$ is also in $U$, choosing $r=r_j$ gives us that $B(x,r)\subseteq U$.</p>
-<hr>
+</blockquote>
 <p>This is an important property, so never forget it. Also notice that essentially all we had to do in the above proof was notice that, for each point in the union, we already had an open ball that served our purposes.</p>
 <p>Next, let's prove a similar result:</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> The intersection of a finite collection of open sets in a metric space is open.</p>
 <p><strong>Proof.</strong> Let $X$ denote a metric space and let $A_1,A_2,\dotsc,A_n\subseteq X$ be open sets for some $n\in\mathbb{N}$. Define $I=\bigcap\limits_{i=1}^n A_i$.</p>
 <p>First, consider the case where the intersection $I$ is empty. If this is true, then we're done since the empty set is open.</p>
 <p>Suppose then that $I\neq\varnothing$. We need to show that for every $x\in I$ there exists some real number $r&gt;0$ for which $B(x,r)\subseteq I$. This time the choice of $r$ isn't quite so obvious, but hopefully my reasoning is clear. (If it isn't, try drawing a picture!)</p>
 <p>Since $x\in I$, the point $x$ is in every set $A_1,A_2,\dotsc,A_n$. Since each of these sets is open, there exist real numbers $r_1,r_2,\dotsc,r_n&gt;0$ such that</p>
-<p>$$B(x,r_1)\subseteq A_1, \<br>
-B(x,r_2)\subseteq A_2, \<br>
-\vdots                  \<br>
+<p>$$B(x,r_1)\subseteq A_1, \\<br>
+B(x,r_2)\subseteq A_2, \\<br>
+\vdots                  \\<br>
 B(x,r_n)\subseteq A_n.$$</p>
 <p>Since there are only a finite number of sets, simply picking the smallest radius, that is, $r=\min\limits_{1\leq i\leq n} r_i$, will ensure that $B(x,r)\subseteq A_i$ for $1\leq i\leq n$. It follows immediately that $B(x,r)\subseteq I$.</p>
-<hr>
+</blockquote>
 <p>Hopefully you're wondering why I only argued that a <em>finite</em> intersection of open sets is open. After all, I showed that an infinite union work, and unions and intersections are pretty similar, right? Well, not really. In fact, I can easily come up with an example of an infinite collection of open sets whose intersection isn't open:</p>
 <p>Consider $\mathbb{R}$ equipped with the standard metric, and the infinite collection of open intervals defined by $A_n=\left(-\frac{1}{n},\frac{1}{n}\right)$ for $n\in\mathbb{N}$. It's easy enough to see that $\bigcap\limits_{n=1}^\infty \left(-\frac{1}{n},\frac{1}{n}\right)=\{0\}$. For any $x&gt;0$, the quantity $\frac{1}{n}$ eventually becomes smaller than $x$ as $n$ grows larger, so the only point common to all these sets is $0$ because $\frac{1}{n}\neq 0$ for any $n\in\mathbb{N}$, no matter how large.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> The set $\{0\}$ is not open because no open ball of positive radius is contained within it.</p>
 <h3 id="closedsetsanameclosedsets">Closed sets<a name="closed-sets"></a></h3>
-
 <p>Again, we defined closed sets last time, but we'll restate their definition here as well for convenience:</p>
-<p><strong>Definition:</strong> A subset $U$ of a metric space $X$ is <strong>closed</strong> in $X$ if its complement, $X-U$, is open in $X$.</p>
+<blockquote>
+<p><strong>Definition.</strong> A subset $U$ of a metric space $X$ is <strong>closed</strong> in $X$ if its complement, $X-U$, is open in $X$.</p>
+</blockquote>
 <p>Let's pause for a second to think about what this means in terms of open balls. This definition tells us that $U$ is closed when any point that it not in $U$ is at the center of some open ball which is disjoint from $U$. This is the concept we used in the last post to prove that a closed ball was closed.</p>
 <p>Now we're going to prove two theorems about closed sets that closely mirror the theorems about open sets that we just proved above. Rather than go through a similar process of trying to find a radius which works, we'll make use of the previous results and apply De Morgan's Laws.</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> The union of a finite collection of closed sets in a metric space is closed.</p>
 <p><strong>Proof.</strong> Let $X$ denote a metric space and let $A_1,A_2,\dotsc,A_n\subseteq X$ be closed sets for some $n\in\mathbb{N}$. From the definition of a closed set we see immediately that their complements, $X-A_1$, $X-A_2$, $\dotsc$, $X-A_n$ are each open. Since the intersection of a finite number of open sets is open,</p>
 <p>$$\bigcap\limits_{i=1}^n (X-A_i)=X-\bigcup\limits_{i=1}^n A_i$$</p>
 <p>is open by De Morgan's Laws. Since the complement of an open set is closed, we have that $\bigcup\limits_{i=1}^n A_i$ is closed, and we are done.</p>
-<hr>
+</blockquote>
 <p>Hopefully by now you can see the next theorem coming from a mile away, simply from the symmetry of things. I'll prove it anyway for completeness.</p>
-<hr>
+<blockquote>
 <p><strong>Theorem.</strong> The intersection of any collection of closed sets in a metric space is closed.</p>
-<p><strong>Proof.</strong> Let $$ denote a metric space and let $I$ be an indexing set such that $A_i\subseteq X$ is a closed set for each $i\in I$. Then the complement of each set, $X-A_i$, is open for every $i\in I$. Since the union of an arbitrary collection of open sets is open,</p>
+<p><strong>Proof.</strong> Let $X$ denote a metric space and let $I$ be an indexing set such that $A_i\subseteq X$ is a closed set for each $i\in I$. Then the complement of each set, $X-A_i$, is open for every $i\in I$. Since the union of an arbitrary collection of open sets is open,</p>
 <p>$$\bigcup\limits_{i\in I} (X-A_i)=X-\bigcap\limits_{i\in I}A_i$$</p>
 <p>is open by De Morgan's Laws. Therefore its complement, $\bigcap\limits_{i\in I}A_i$, is closed, completing the proof.</p>
-<hr>
+</blockquote>
 <h3 id="nowwhatanamenowwhat">Now what?<a name="now-what"></a></h3>
-
 <p>What's fairly awesome is that we now actually know everything we need to know about open and closed sets. Well, not really. But we <em>do</em> know enough now to take another leap forward and define a <strong>topology</strong> on a set! I'm not going to do that right now, though. Instead I'm going to show you that everything we've done so far is really perfectly natural, in that it gives us the results we'd expect when talking about familiar sets.</p>
 <p>Let's first look at the set of real numbers. To be formal, I'm talking about $\mathbb{R}$ equipped with the standard metric $d(x,y)=\vert x-y\vert$. I think I said this earlier, but unless I say otherwise you should always assume that I'm talking about the standard metric whenever I say words about the real numbers. I asserted above that the open balls in this metric space are open intervals. That is,</p>
 <p>$$\begin{align}<br>
-B(x,r) &amp;= \{x\in\mathbb{R}\mid d(x,y)&lt; r\} \<br>
+B(x,r) &amp;= \{x\in\mathbb{R}\mid d(x,y)&lt; r\} \\<br>
 &amp;= (x-r,x+r).<br>
 \end{align}$$</p>
 <p>What are the simplest open sets in this metric space? We'll talk about this in a more formal sense when we discuss bases for topologies, but it turns out that in a very real sense, these open intervals are the fundamental building blocks for all open sets on the real number line. That is, any nonempty open set in $\mathbb{R}$ can actually be written as the union of some collection of open intervals!</p>
@@ -243,7 +212,6 @@ B(x,r) &amp;= \{x\in\mathbb{R}\mid d(x,y)&lt; r\} \<br>
 <p>In the plane, $\mathbb{R}^2$ or $\mathbb{C}$, the same is true. However, we're now talking about the standard metric in two dimensions, so open balls look like open disks instead of open line segments. Nonempty open sets in the plane can all be formed by joining together these open balls. Even open <em>rectangles</em> can be expressed as unions of open balls.</p>
 <p>An <strong>open rectangle</strong> is the Cartesian product of two open intervals, say $(a,b)\times(c,d)$. The proof that they are open is similar to the proof that open balls are open, and it is not particularly informative so I won't include it . here. But I think it's pretty neat that even the <em>corners</em> of these rectangles can be expressed as the union of a bunch of sufficiently small open balls. What might be even more interesting is that open rectangles can alternatively be thought as the primitive open sets in the plane, and you can get any open set by unioning rectangles together. That includes open balls!</p>
 <p>In my next post I'll finally define topological spaces. It will likely be fairly short, since we don't have much to say about them yet, but it will at least give you a sense of what we'll be working with from here on out. From then on, I'll probably alternate between metric spaces and topological spaces. It's usually easiest to introduce topological concepts such as convergence, continuity, connectedness and compactness in terms of metric spaces first, and then take what we need from those definitions to talk about them in the more general setting of topological spaces.</p>
-<hr>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -288,9 +256,7 @@ B(x,r) &amp;= \{x\in\mathbb{R}\mid d(x,y)&lt; r\} \<br>
 
         <div id="copyright">
             <ul>
-                <li>&copy; Algebrology</li>
-                <li>Design by <a href="https://html5up.net">HTML5 UP</a></li>
-                <li>Published with <a href="https://ghost.org">Ghost</a></li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 

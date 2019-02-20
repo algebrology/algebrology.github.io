@@ -24,7 +24,7 @@
     <meta property="og:description" content="Before my next post on bases for topologies, I need to introduce a proof technique that I haven&#x27;t used so far." />
     <meta property="og:url" content="http://localhost:2368/mathematical-induction/" />
     <meta property="article:published_time" content="2017-04-02T22:53:45.000Z" />
-    <meta property="article:modified_time" content="2019-02-20T04:48:43.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T06:24:27.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Mathematical Induction" />
     <meta name="twitter:description" content="Before my next post on bases for topologies, I need to introduce a proof technique that I haven&#x27;t used so far." />
@@ -55,7 +55,7 @@
     "headline": "Mathematical Induction",
     "url": "http://localhost:2368/mathematical-induction/",
     "datePublished": "2017-04-02T22:53:45.000Z",
-    "dateModified": "2019-02-20T04:48:43.000Z",
+    "dateModified": "2019-02-20T06:24:27.000Z",
     "description": "Before my next post on bases for topologies, I need to introduce a proof technique that I haven&#x27;t used so far.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -159,8 +159,8 @@ MathJax.Hub.Config({
 <li><strong>Inductive Step:</strong> If $P(n)$ is true for some $n\in\mathbb{N}$ then so is $P(n+1)$.</li>
 </ol>
 <p>Then $P(n)$ is true for every $n\in\mathbb{N}$.</p>
-<p><strong>Proof.</strong> We give a proof by contradiction. That is, we're going to assume that the statement is false and show that this leads to an absurd result. We will then be forced to accept the principle of mathematical induction because we will have shown that it &gt; cannot be false.</p>
-<p>Suppose then that both criteria hold, but that $P$ is not true for at least one natural number. Let $S$ denote the set of natural numbers for which $P$ is false. By assumption, $S$ is not empty, so the well-ordering theorem tells us that $S$ contains a least &gt; element. Call this element $x$. Then $x-1\notin S$ since $x$ is the smallest element of $S$. That is, $P(x)$ is false but $P(x-1)$ is true. However, the second criterion tells us that $P\big((x-1)+1\big)=P(x)$ must be true. This is a contradiction, since $P&gt; (x)$ cannot be simultaneously true and false. It follows that $P(n)$ is true for every natural number $n$.</p>
+<p><strong>Proof.</strong> We give a proof by contradiction. That is, we're going to assume that the statement is false and show that this leads to an absurd result. We will then be forced to accept the principle of mathematical induction because we will have shown that it cannot be false.</p>
+<p>Suppose then that both criteria hold, but that $P$ is not true for at least one natural number. Let $S$ denote the set of natural numbers for which $P$ is false. By assumption, $S$ is not empty, so the well-ordering theorem tells us that $S$ contains a least element. Call this element $x$. Then $x-1\notin S$ since $x$ is the smallest element of $S$. That is, $P(x)$ is false but $P(x-1)$ is true. However, the second criterion tells us that $P\big((x-1)+1\big)=P(x)$ must be true. This is a contradiction, since $P(x)$ cannot be simultaneously true and false. It follows that $P(n)$ is true for every natural number $n$.</p>
 </blockquote>
 <p>The proof is not terribly important, so don't spend too much time dissecting it. What really matters to us is the statement itself, which might seem daunting at first, so let's break it down piece by piece.</p>
 <p>We start off with a statement which is either true or false depending on what number we feed it. The following are examples of such statements<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup>:</p>
@@ -188,7 +188,7 @@ MathJax.Hub.Config({
 <p><strong>Theorem.</strong> For any $n\geq 1$,</p>
 <p>$$1+3+5+\dotsc+(2n-1)=n^2.$$</p>
 <p><strong>Proof.</strong> We give a proof by induction on $n$.</p>
-<p>For our base case, we need to show that the statement is true when we let $n=1$. This is simple enough, because $1$ is certainly the sum of the first $1$ odd numbers, and it is equal to its square. That is, $1=1^2$, so we have shown that our base case is &gt; true.</p>
+<p>For our base case, we need to show that the statement is true when we let $n=1$. This is simple enough, because $1$ is certainly the sum of the first $1$ odd numbers, and it is equal to its square. That is, $1=1^2$, so we have shown that our base case is true.</p>
 <p>Now for the inductive step. We will assume that</p>
 <p>$$1+3+5+\dotsc+(2n-1)=n^2,$$</p>
 <p>and use this to show that</p>
@@ -235,17 +235,17 @@ X-\bigcup\limits_{i=1}^{n+1}A_i &amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup A_{
 <p><img src="../content/images/2017/04/L_shaped_tile-1.svg" alt="L-shaped tile"></p>
 <p>Lastly, when we say that a board can be covered by these tiles with the exception of one arbitrary square, we mean something like this:</p>
 <p><img src="../content/images/2017/04/tiled_4x4_board.svg" alt="tiled 4 by 4 board"></p>
-<p>It's important to point out that we could have left out <em>any</em> one square on the board above and still been able to tile the rest of the board. It does not matter which square we choose to exclude; we should still be able to cover the rest of the board. Try &gt; playing around with boards of different sizes, leaving one random square empty, and trying to come up with such a tiling. For larger boards, this quickly becomes no easy task.</p>
+<p>It's important to point out that we could have left out <em>any</em> one square on the board above and still been able to tile the rest of the board. It does not matter which square we choose to exclude; we should still be able to cover the rest of the board. Try playing around with boards of different sizes, leaving one random square empty, and trying to come up with such a tiling. For larger boards, this quickly becomes no easy task.</p>
 <p>Now that we have a better understanding of the problem, it is our goal to show that we can cover any $2^n\times 2^n$ board in this manner, and we will do so by induction on $n$.</p>
-<p>For our base case ($n=1$), we must show that the $2\times 2$ board can be tiled by L-shaped tiles, no matter which square we choose to omit. Since there are only four squares on this board, we can 'brute-force' the base case by demonstrating that with any &gt; square missing, the rest of the board can be tiled quite trivially using a single L-shaped tile:</p>
+<p>For our base case ($n=1$), we must show that the $2\times 2$ board can be tiled by L-shaped tiles, no matter which square we choose to omit. Since there are only four squares on this board, we can 'brute-force' the base case by demonstrating that with any square ommitted, the rest of the board can be tiled quite trivially using a single L-shaped tile:</p>
 <p><img src="../content/images/2017/04/base_case.svg" alt="base case"></p>
 <p>We have shown that any $2\times 2$ board can be covered in the desired manner, so the base case has been verified.</p>
-<p>Next we argue the inductive step. We begin with the assumption that for an arbitrary $n\geq 1$, we can cover the $2^n\times 2^n$ checkerboard (with any one arbitrary square omitted) as desired. We must use this information to show that we can then tile the &gt; $2^{n+1}\times 2^{n+1}$ board in the same manner.</p>
+<p>Next we argue the inductive step. We begin with the assumption that for an arbitrary $n\geq 1$, we can cover the $2^n\times 2^n$ checkerboard (with any one arbitrary square omitted) as desired. We must use this information to show that we can then tile the $2^{n+1}\times 2^{n+1}$ board in the same manner.</p>
 <p>Notice that if we are given a $2^{n+1}\times 2^{n+1}$ board, the missing tile will necessarily lie in precisely one of its four quadrants:</p>
 <p><img src="../content/images/2017/04/quadrants.svg" alt="quadrants"></p>
-<p>But each of these quadrants is actually a $2^n\times 2^n$ board, which we already know can be covered! So one of our quadrants has a missing tile already chosen for us, and the other three quadrants we can cover however we choose. So we do so in the &gt; following crafty way:</p>
+<p>But each of these quadrants is actually a $2^n\times 2^n$ board, which we already know can be covered! So one of our quadrants has a missing tile already chosen for us, and the other three quadrants we can cover however we choose. So we do so in the following crafty way:</p>
 <p><img src="../content/images/2017/04/quadrants_tiled.svg" alt="quadrants tiled"></p>
-<p>We've now covered the entire $2^{n+1}\times 2^{n+1}$ board with the exception of our arbitrary missing square and a nice L-shaped hole in the middle, which we can fill in with a single L-shaped tile, leaving only the chosen square uncovered. We have thus &gt; shown that the inductive step holds, completing the proof.</p>
+<p>We've now covered the entire $2^{n+1}\times 2^{n+1}$ board with the exception of our arbitrary missing square and a nice L-shaped hole in the middle, which we can fill in with a single L-shaped tile, leaving only the chosen square uncovered. We have thus shown that the inductive step holds, completing the proof.</p>
 </blockquote>
 <p>I think that's more than enough for one post, so I'm going to leave it at that. We will be using induction for many of our future proofs, though, so this won't be the last time you'll see it!</p>
 <hr class="footnotes-sep">

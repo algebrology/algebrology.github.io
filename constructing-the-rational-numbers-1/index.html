@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Constructing the Rational Numbers (1)</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=761b7defd2" />
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=761b7defd2" /></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Constructing the Rational Numbers (1)" />
+    <meta property="og:description" content="We work with number systems every day, but we just sort of take their existence for granted. However, it is possible to construct all of these number systems from scratch." />
+    <meta property="og:url" content="http://localhost:2368/constructing-the-rational-numbers-1/" />
+    <meta property="article:published_time" content="2019-02-20T05:08:09.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T20:58:51.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Constructing the Rational Numbers (1)" />
+    <meta name="twitter:description" content="We work with number systems every day, but we just sort of take their existence for granted. However, it is possible to construct all of these number systems from scratch." />
+    <meta name="twitter:url" content="http://localhost:2368/constructing-the-rational-numbers-1/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Constructing the Rational Numbers (1)",
+    "url": "http://localhost:2368/constructing-the-rational-numbers-1/",
+    "datePublished": "2019-02-20T05:08:09.000Z",
+    "dateModified": "2019-02-20T20:58:51.000Z",
+    "description": "We work with number systems every day, but we just sort of take their existence for granted. However, it is possible to construct all of these number systems from scratch.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    }
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="../index.html" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../index.html">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">February 19, 2019</span>
+            <h1>Constructing the Rational Numbers (1)</h1>
+        </header>
+
+
+        <div class="content">
+            <h3 id="contents">Contents</h3>
+<ol>
+<li><a href="index.html#introduction">Introduction</a></li>
+<li><a href="index.html#construction">The Construction</a></li>
+</ol>
+<hr>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<p>It's been a very long time since I've posted, so I figured I'd kick things off again with one of my favorite topics.</p>
+<p>We work with number systems every day, but we just sort of take their existence for granted. However, it is possible to construct all of these number systems from scratch.</p>
+<ul>
+<li>The natural numbers are built from sets.</li>
+<li>The integers are built from natural numbers.</li>
+<li>The rational numbers are built from integers.</li>
+<li>The real numbers are built from rational numbers.</li>
+<li>The complex numbers are built from real numbers.</li>
+</ul>
+<p>We could go on and on, since there are also quaternions, octonions and god knows what else.</p>
+<p>There is an obvious hierarchy here, and if I wanted to do things right I would start off at the very lowest level by constructing the natural numbers. Maybe I'll do a post on each of these constructions at some point, but for now I think I'll start in the middle.</p>
+<p>We are going to assume that we already have the set $\mathbb{Z}$ of integers and all of their properties, and we will work from there. That means we know everything about their arithmetic (addition, subtraction and multiplication), as well as their other properties such as order.</p>
+<p>The first thing to consider whenever we want to construct a new number system is what is missing from what we already have? What is not present in the set of integers that we would like to be there? What sorts of problems can we phrase in terms of integers that don't have integer solutions but should have some sort of solution?</p>
+<p>What immediately springs to mind is the following sort of equation:</p>
+<p>$$2x = 1.$$</p>
+<p>Obviously we want to scream out to the heavens that $x=\frac{1}{2}$. However, there is no such thing as a half in the set of integers. We have no concept of fractions or division, and so the above equation actually has no solution right now.</p>
+<p>So we'd like our rational numbers to be able to fill in this sort of gap and provide answers to equations of the form $ax = b$, where $a$ and $b$ are integers. But there's an even more obvious criterion we would like our new numbers to satisfy.</p>
+<p><img src="../content/images/2019/02/integer_line.svg" alt="integer_line"></p>
+<p>Here's a traditional illustration of the &quot;number line.&quot; It may seem weird to even think about this since it's so ingrained in us after years of doing mathematics, but why do we draw our numbers on a line? Well the reason they can be layed out linearly to begin with is their order: $2$ comes after $1$ and before $3$, etc. But putting them on a line like this suggests something else – that there should be something <em>between</em> them.</p>
+<p>That is, we would like our new rational numbers to have the property that between any two rational numbers there is another rational number. This is certainly something that the integers don't obey. There is no integer between $1$ and $2$.</p>
+<p>Lastly, we would like our rational numbers to <em>extend</em> the integers in such a way that we can view the integers as sitting &quot;inside&quot; them, as on the number line. Furthermore, we would like the rational numbers to extend their arithmetic as well. Addition, multiplication and subtraction should all be defined and compatible when we restrict ourselves to talking about integers.</p>
+<p>Let's summarize all of that:</p>
+<blockquote>
+<p><strong>Desired Properties of the Rational Numbers</strong></p>
+<ul>
+<li>There is a subset of the rational numbers which behaves exactly like the integers.</li>
+<li>Rational numbers can be multiplied, added or subtracted in a way that extends the integers and has all the usual properties.</li>
+<li>The rational numbers can be ordered in a way that extends the integers.</li>
+<li>If $a$ and $b$ are integers, there exists a rational number $x$ for which $ax=b$.</li>
+<li>If $p$ and $p$ are rational numbers, there exists a rational number $x$ for which $p&lt;x&lt;q$.</li>
+</ul>
+</blockquote>
+<p>If whatever construction we come up with has all of the above properties, we'll have been successful. With all of that in mind, let's get started.</p>
+<h3 id="theconstructionanameconstruction">The Construction<a name="construction"></a></h3>
+<p>We have a significant advantage here in that we already know exactly what our rational numbers should end up looking like: they should resemble fractions $\frac{p}{q}$ where $p$ and $q$ are integers and $q\ne 0$. We even know what their arithmetic should like like in terms of these fractions. Thus, we are able to draw inspiration from our preconceived notion of what they are and how they should behave. However, we will have to build the concept of &quot;fraction&quot; from the ground up, since it does not exist for us currently.</p>
+<p>We might not have fractions, but we already have the next best thing – <strong>cartesian products</strong>. Basically a fraction is just a pair of integers, right? So instead of $\frac{p}{q}$, why not just write $(p, q)$? This is actually very close to what we'll end up doing, but it doesn't quite get us where we need to be.</p>
+<p>To see why, recall that any fraction has infinite equivalent representations. For example,</p>
+<p>$$\frac{1}{2}=\frac{2}{4}=\frac{-100}{-200}=\frac{1024}{2048}=\cdots$$</p>
+<p>Unfortunately, our ordered pair idea doesn't allow for this sort of equivalent representation. Certainly $(1, 2)\ne (2, 4)$. They are completely different ordered pairs because their components are different integers! However, we are already equipped with a way to identify these ordered pairs – as a quotient set, by defining an equivalence relation on them.</p>
+<p>At this point, if you have not read my post on <a href="../equivalence-relations-and-quotient-sets/index.html">Equivalence Relations and Quotient Sets</a>, I would strongly encourage you to pause here and give it a thorough read. It is the main tool we will be using in our construction and is therefore of critical importance to the rest of this post.</p>
+<p>The idea here is to define an equivalence relation $\sim$ on $\mathbb{Z}\times\mathbb{Z}^*$ (the set of ordered pairs of integers whose second component is nonzero) for which</p>
+<p>$$(1, 2) \sim (2, 4) \sim (-100, -200) \sim (1024, 2048) \sim \cdots$$</p>
+<p>and more generally, if $(p, q)\in\mathbb{Z}\times\mathbb{Z}^*$ and $n\in\mathbb{Z}$ then $(p, q) \sim (np, nq)$.</p>
+<p>Let's look back to our intuitive understanding of fractions to see how we might define this equivalence relation. If two fractions are equal, we can &quot;cross multiply&quot; them to obtain an expression purely in terms of integers. That is, if $\frac{a}{b}=\frac{c}{d}$ then $ad=bc$. We will use this to define the following relation:</p>
+<blockquote>
+<p><strong>Definition.</strong> We define the relation $\sim_\mathbb{Q}$ on the set $\mathbb{Z}\times\mathbb{Z}^*$ as follows:</p>
+<center>$(a, b) \sim_\mathbb{Q} (c, d)$ if and only if $ad=bc$,</center><br>
+<p>where $a,b,c$ and $d$ are integers with $b,d\ne 0$.</p>
+</blockquote>
+<p>In the definition above, $\sim_\mathbb{Q}$ is just a symbol meant to distinguish this particular relation. This is not a standard notation or something you will ever need to use again outside of the construction in this post.</p>
+<p>Things are looking good so far. We've managed to rephrase equivalence of fractions solely in terms of ordered pairs of integers. Let's not get too far ahead of ourselves, though. We need to show that this is actually an equivalence relation!</p>
+<blockquote>
+<p><strong>Theorem.</strong> The relation $\sim_\mathbb{Q}$ is an equivalence relation on the set $\mathbb{Z}\times\mathbb{Z}^*$.</p>
+<p><strong>Proof.</strong> We need to show that $\sim_\mathbb{Q}$ is symmetric, reflexive and transitive.</p>
+<p>We argue first that it is symmetric. Choose $a, b\in Z$ with $b\ne 0$. Certainly $ab=ba$ since multiplication of integers is commutative and so $(a, b) \sim_\mathbb{Q} (a, b)$ by the definition of this relation.</p>
+<p>We argue next that it is reflexive. Choose $a,b,c,d\in\mathbb{Z}$ with $b,d\ne 0$ and suppose that $(a,b) \sim_\mathbb{Q} (c,d)$. Then, by definition, we have that $ad=bc$. Again, from the commutativity of integer multiplication, we have that $cb=da$. Thus $(c,d) \sim_\mathbb{Q} (a,b)$.</p>
+<p>Lastly, we argue that it is transitive. Choose $a,b,c,d,e,f\in\mathbb{Z}$ with $b,d,f\ne 0$. Suppose that $(a,b) \sim_\mathbb{Q} (c,d)$ and that $(c,d) \sim_\mathbb{Q} (e,f)$. Then $ad=bc$ and $cf=de$ by definition. Since $cf$ and $de$ are equal, we may multiply the respective sides of the equation $ad=bc$ by these quantities without affecting the equality. That is, $adcf=bcde$. By commutativity, we then have $afdc=bedc$, and so $af=be$. Thus $(a,b) \sim_\mathbb{Q} (e,f)$, as desired.</p>
+</blockquote>
+<p>I would be remiss if I failed to mention that in proving the transitivity of $\sim_\mathbb{Q}$ above, we used a property of the integers that might require some explaining. We cancelled the quantity $dc$ from both sides of an equation involving only integers. However, the integers don't have a concept of division! What gives?</p>
+<p>We may not be able to divide integers, but we can still cancel them as we did above. Even though I said before we would assume perfect knowledge of all properties of the integers, I think this one merits special mention since it is not mentioned often outside of a modern algebra course.</p>
+<blockquote>
+<p><strong>Right Cancellation Property of the Integers.</strong> If $a,b$ and $c$ are integers with $c\ne 0$ and $ac=bc$, then $a=b$.</p>
+<p><strong>Proof.</strong> Since $ac=bc$, we may subtract $bc$ from both sides to obtain the equation $ac-bc=0$. Factoring this yields $(a-b)c=0$. This can only be the case if either $a-b=0$ or $c=0$, since the integers have no zero divisors. However, $c\ne 0$ by hypothesis, and so it must be that $a-b=0$. That is, $a=b$, completing the proof.</p>
+</blockquote>
+<p>We used this cancellation property above to cancel the quantity $dc$. There is an analagous left cancellation property, but I think that is obvious and symmetrical enough that I do not need to go into it in detail here.</p>
+<p>Anyway, back to business! We've demonstrated that $\sim_\mathbb{Q}$ is an equivalence relation. This allows us to construct the following quotient set:</p>
+<blockquote>
+<p><strong>Definition.</strong> We define the set of rational numbers to be the quotient set</p>
+<p>$$\mathbb{Q}=(\mathbb{Z}\times\mathbb{Z}^*)/\negthickspace\sim_\mathbb{Q}.$$</p>
+</blockquote>
+<p>This is simultaneously a really beautiful idea and a really ugly expression. And if you're confused by this, let's take a step back and examine what this definition really means.</p>
+<p>Recall that the quotient set defined by an equivalence relation is the set of all of its equivalence classes. What do the equivalence classes look like in this case? Well, they are the sets of all ordered pairs which are equivalent. For instance, the following are all elements of $\mathbb{Q}$:</p>
+<p>$$\begin{align}<br>
+[(1,2)] &amp;= \{(1,2),(-2,4),(3,-6),\ldots\}, \\<br>
+[(-3,4)] &amp;= \{(-3,4),(3,-4),(-30,40),\ldots\}, \\<br>
+[(5,1)] &amp;= \{(5,1),(15,3),(45,9),\ldots\}, \\<br>
+[(0,1)] &amp;= \{(0,1),(0,2),(0,-4),\ldots\}.<br>
+\end{align}$$</p>
+<p>And that's because</p>
+<p>$$\begin{align}<br>
+(1,2) &amp; \sim_\mathbb{Q} (-2,4) \sim_\mathbb{Q} (3,-6) \sim_\mathbb{Q} \cdots, \\<br>
+(-3,4) &amp; \sim_\mathbb{Q} (3,-4) \sim_\mathbb{Q} (-30,40) \sim_\mathbb{Q} \cdots, \\<br>
+(5,1) &amp; \sim_\mathbb{Q} (15,4) \sim_\mathbb{Q} (45,9) \sim_\mathbb{Q} \cdots, \\<br>
+(0,1) &amp; \sim_\mathbb{Q} (0, 2) \sim_\mathbb{Q} (0, -4) \sim_\mathbb{Q} \cdots.<br>
+\end{align}$$</p>
+<p>Essentially all we've done is taken, for instance, all of the pairs which we think should correspond to $\frac{1}{2}$ and we've collapsed them down into a single equivalence class called $[(1,2)]$. In this manner, every rational number is an equivalence class of these ordered pairs of integers.</p>
+<p>Now that we have our rational numbers, we still need to define their arithmetic. We could technically do this however we wanted, but obviously we would like their arithmetic to coincide with our preconceived ideas of fractional arithmetic.</p>
+<p>For example, we could try to define addition as follows:</p>
+<blockquote>
+<p><strong>Incorrect Definition.</strong> Given two rational numbers $[(a,b)]$ and $[(c,d)]$, we <em>incorrectly</em> define their <strong>sum</strong> to be $$[(a,b)] + [(c,d)] = [(a+c,b+d)].$$</p>
+</blockquote>
+<p>There are two reasons why this is a bad definition. First, because in the language of fractions this would translate to $\frac{a}{b}+\frac{c}{d}=\frac{a+b}{c+d}$, which our elementary school teachers drilled into our heads was <em>WRONG</em>. (Maybe the phrase &quot;common denominator&quot; is echoing around your head right now.) This definition simply does not correspond to our physical intuition of what should happen when we add fractions.</p>
+<p>But there is an even more fundamental reason why this definition cannot be correct. And it's a little bit subtle, so I'll try to break it down the best that I can.</p>
+<p>To see why this &quot;addition&quot; doesn't even work, let's try to add the rational numbers $[(1,2)]$ and $[(1,4)]$. According to the above definition,</p>
+<p>$$[(1,2)] + [(1,3)] = [(1+1, 2+3)] = [(2,5)].$$</p>
+<p>However, we know that $[(1,2)]=[(2,4)]$. But the above definition gives us</p>
+<p>$$[(2,4)] + [(1,3)] = [(2+1, 4+3)] = [(3,7)].$$</p>
+<p>Obviously $[(2,5)] \ne [(3,7)]$ since $(2,5)\not\sim_\mathbb{Q} (3,7)$, and so we have a serious problem here. The issue is that this notion of addition is not <strong>well defined</strong>. That is, the result of our addition is different depending on which representative ordered pairs we choose for our equivalence classes. This is unacceptable, because it leads to nonsensical results.</p>
+<p>With that in mind, let's work toward the correct definition. In terms of fractions, we would expect $\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$. And in fact, this is exactly how we shall proceed.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given two rational numbers $[(a,b)]$ and $[(c,d)]$, we define their <strong>sum</strong> to be $$[(a,b)] + [(c,d)] = [(ad+bc,bd)].$$</p>
+</blockquote>
+<p>In light of the disaster that was the previous attempt at a definition, we need to verify that this notion of addition is well defined. That is, the result does not depend on our choice of representatives.</p>
+<blockquote>
+<p><strong>Proposition.</strong> Addition of rational numbers is well defined.</p>
+<p><strong>Proof.</strong> Suppose that $[(a_1,b_1)]=[(a_2,b_2)]$ and $[(c_1,d_1)]=[(c_2,d_2)]$. We need to show that $[(a_1,b_1)]+[(c_1,d_1)]=[(a_2,b_2)]+[(c_2,d_2)]$.</p>
+<p>Since $(a_1,b_1)\sim_\mathbb{Q}(a_2,b_2)$, we have that $a_1b_2=a_2b_1$. Similarly, since $(c_1,d_1)\sim_\mathbb{Q}(c_2,d_2)$, we have that $c_1d_2=c_2d_1$. We note that</p>
+<p>$$\begin{align}<br>
+(a_1d_1+b_1c_1)b_2d_2 &amp;= a_1b_2d_1d_2 + b_1b_2c_1d_2 \\<br>
+&amp;= a_2b_1d_1d_2 + b_1b_2c_2d_1 \\<br>
+&amp;= b_1d_1(a_2d_2+b_2c_2).<br>
+\end{align}$$</p>
+<p>But by definition this means that $(a_1d_1+b_1c_2, b_1d_1) \sim_\mathbb{Q} (a_2d_2+b_2c_2, b_2d_2)$. That is, $[(a_1,b_1)]+[(c_1,d_1)]=[(a_2,b_2)]+[(c_2,d_2)]$, as desired.</p>
+</blockquote>
+<p>Thank goodness! This definition of addition is both mathematically legal and matches what we would intuitively expect. So let's move on.</p>
+<p>Logically, the next thing to do is work toward defining multiplication of rational numbers. This is very similar to defining addition. Given what we know about fractions, we expect $\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$. By now, hopefully you can guess what the definition will look like.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given two rational numbers $[(a,b)]$ and $[(c,d)]$, we define their <strong>product</strong> to be $$[(a,b)] \cdot [(c,d)] = [(ac,bd)].$$</p>
+</blockquote>
+<p>Just like we did for addition, we need to show that multiplication is well defined.</p>
+<blockquote>
+<p><strong>Proposition.</strong> Multiplication of rational numbers is well defined.</p>
+<p><strong>Proof.</strong> Suppose that $[(a_1,b_1)]=[(a_2,b_2)]$ and $[(c_1,d_1)]=[(c_2,d_2)]$. We need to show that $[(a_1,b_1)] \cdot [(c_1,d_1)] = [(a_2,b_2)] \cdot [(c_2,d_2)]$.</p>
+<p>Since $(a_1,b_1)\sim_\mathbb{Q}(a_2,b_2)$, we have that $a_1b_2=a_2b_1$. Similarly, since $(c_1,d_1)\sim_\mathbb{Q}(c_2,d_2)$, we have that $c_1d_2=c_2d_1$. We note that</p>
+<p>$$\begin{align}<br>
+a_1c_1b_2d_2 &amp;= (a_1b_2)(c_1d_2) \\<br>
+&amp;= (a_2b_1)(c_2d_1) \\<br>
+&amp;= b_1d_1a_2c_2.<br>
+\end{align}$$</p>
+<p>But by definition this means that $(a_1c_1, b_1d_1) \sim_\mathbb{Q} (a_2c_2, b_2d_2)$. That is, $[(a_1,b_1)]\cdot[(c_1,d_1)]=[(a_2,b_2)]\cdot[(c_2,d_2)]$, as desired.</p>
+</blockquote>
+<p>This post is getting long, so I'm going to leave it here for now and continue the construction in a later post, along with the verification of our desired properties of the rational numbers. Until next time! :)</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/index.html">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=761b7defd2"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=761b7defd2"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=761b7defd2"></script>
+    <script src="../assets/main/js/browser.min.js?v=761b7defd2"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=761b7defd2"></script>
+    <script src="../assets/main/js/util.js?v=761b7defd2"></script>
+    <script src="../assets/main/js/main.js?v=761b7defd2"></script>
+
+    
+
+</body>
+</html>

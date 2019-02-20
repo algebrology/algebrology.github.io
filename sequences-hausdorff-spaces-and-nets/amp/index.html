@@ -19,7 +19,7 @@
     <meta property="og:description" content="I&#x27;m now going to talk about sequences and nets, which often provide an alternative way of describing topological phenomena. I&#x27;ll also talk about Hausdorff spaces, which have all sorts of nice properties." />
     <meta property="og:url" content="http://localhost:2368/sequences-hausdorff-spaces-and-nets/" />
     <meta property="article:published_time" content="2017-04-20T21:11:25.000Z" />
-    <meta property="article:modified_time" content="2019-02-20T04:42:33.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T17:15:49.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Sequences, Hausdorff Spaces and Nets" />
     <meta name="twitter:description" content="I&#x27;m now going to talk about sequences and nets, which often provide an alternative way of describing topological phenomena. I&#x27;ll also talk about Hausdorff spaces, which have all sorts of nice properties." />
@@ -50,7 +50,7 @@
     "headline": "Sequences, Hausdorff Spaces and Nets",
     "url": "http://localhost:2368/sequences-hausdorff-spaces-and-nets/",
     "datePublished": "2017-04-20T21:11:25.000Z",
-    "dateModified": "2019-02-20T04:42:33.000Z",
+    "dateModified": "2019-02-20T17:15:49.000Z",
     "description": "I&#x27;m now going to talk about sequences and nets, which often provide an alternative way of describing topological phenomena. I&#x27;ll also talk about Hausdorff spaces, which have all sorts of nice properties.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -135,7 +135,7 @@ d(x_n, 0) &amp;= \vert x_n - 0\vert \\<br />
 &amp;&lt; \epsilon.<br />
 \end{aligned}$</p>
 </blockquote>
-<p>You don't really need to remember the proof of this fact, although it's incredibly easy to reproduce — the candidate for $N$ in this case is more obvious than usual. Just remember that $\lim\limits_{n\to\infty}=0$, which should hopefully make a lot of sense to you anyway. This is an important sequence which we will occasional use in the future.</p>
+<p>You don't really need to remember the proof of this fact, although it's incredibly easy to reproduce — the candidate for $N$ in this case is more obvious than usual. Just remember that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, which should hopefully make a lot of sense to you anyway. This is an important sequence which we will occasional use in the future.</p>
 <p>Also, notice that the sequence we just looked at doesn't actually <em>quite</em> fit the definition I gave for sequences. That is, it doesn't have an entry for every natural number (in particular, there is no $x_0$). We could easily remedy that by rewriting each term as $\frac{1}{n+1}$ and shifting each entry's index down by one. I chose to write it the way I did because it looks a bit nicer. It is somewhat common to allow sequences to start at any index we like, as we can always translate it into starting at zero using a similar substitution.</p>
 <p>Now, in a calculus or analysis class you would study lots of properties and characteristics of sequences in $\mathbb{R}$ and learn a bunch of tricks to help you show that certain types of sequences in $\mathbb{R}$ converge. However, all of that stuff bores me and I want to talk generally about convergent sequences in topological spaces, not just about $\mathbb{R}$ with the standard topology. This will require a slight reworking of the definition of convergence to eliminate the concept of distance that we have in metric spaces.</p>
 <blockquote>

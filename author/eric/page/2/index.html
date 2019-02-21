@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../assets/main/css/main.css?v=761b7defd2" />
-    <noscript><link rel="stylesheet" href="../../../../assets/main/css/noscript.css?v=761b7defd2" /></noscript>
+    <link rel="stylesheet" type="text/css" href="../../../../assets/main/css/main.css?v=db0038ebdb" />
+    <noscript><link rel="stylesheet" href="../../../../assets/main/css/noscript.css?v=db0038ebdb" /></noscript>
 
     <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="index.html" />
@@ -23,7 +23,17 @@ MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [["$", "$"], ["\\(", "\\)"]],
         processEscapes: true,
-    }
+    },
+    TeX: {
+    	Macros: {
+            abs: ["{\\lvert #1 \\rvert}", 1],
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+    	}
+  	}
 });
 </script>
 
@@ -55,13 +65,23 @@ MathJax.Hub.Config({
         <h1><a href="../../index.html">Eric Shapiro</a></h1>
         <div class="author-meta">
             <div class="author-stats">
-                15 posts <span class="bull">&bull;</span>
+                16 posts <span class="bull">&bull;</span>
             </div>
         </div>
     </header>
 
     <section class="posts">
 
+        <article>
+            <header>
+                <span class="date">Mar 31, 2017</span>
+                <h2><a href="../../../../a-first-look-at-topological-spaces/index.html">A First Look at Topological Spaces</a></h2>
+            </header>
+            <p>There are also many circumstances in which we care about the shape of a space but couldn't care less about distances. For instance, a famous puzzle that influenced the development of the entire field of topology is the problem of the **Seven Bridges of Königsberg**.</p>
+            <ul class="actions special">
+                <li><a href="../../../../a-first-look-at-topological-spaces/index.html" class="button">Full Story</a></li>
+            </ul>
+        </article>
         <article>
             <header>
                 <span class="date">Mar 31, 2017</span>
@@ -114,13 +134,13 @@ MathJax.Hub.Config({
     </div>
 
 
-    <script src="../../../../assets/main/js/jquery.min.js?v=761b7defd2"></script>
-    <script src="../../../../assets/main/js/jquery.scrollex.min.js?v=761b7defd2"></script>
-    <script src="../../../../assets/main/js/jquery.scrolly.min.js?v=761b7defd2"></script>
-    <script src="../../../../assets/main/js/browser.min.js?v=761b7defd2"></script>
-    <script src="../../../../assets/main/js/breakpoints.min.js?v=761b7defd2"></script>
-    <script src="../../../../assets/main/js/util.js?v=761b7defd2"></script>
-    <script src="../../../../assets/main/js/main.js?v=761b7defd2"></script>
+    <script src="../../../../assets/main/js/jquery.min.js?v=db0038ebdb"></script>
+    <script src="../../../../assets/main/js/jquery.scrollex.min.js?v=db0038ebdb"></script>
+    <script src="../../../../assets/main/js/jquery.scrolly.min.js?v=db0038ebdb"></script>
+    <script src="../../../../assets/main/js/browser.min.js?v=db0038ebdb"></script>
+    <script src="../../../../assets/main/js/breakpoints.min.js?v=db0038ebdb"></script>
+    <script src="../../../../assets/main/js/util.js?v=db0038ebdb"></script>
+    <script src="../../../../assets/main/js/main.js?v=db0038ebdb"></script>
 
     
 

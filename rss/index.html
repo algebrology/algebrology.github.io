@@ -1,4 +1,220 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Algebrology</title><link>http://localhost:2368/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Wed, 20 Feb 2019 20:59:02 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Constructing the Rational Numbers (1)]]></title><description><![CDATA[We work with number systems every day, but we just sort of take their existence for granted. However, it is possible to construct all of these number systems from scratch.]]></description><link>http://localhost:2368/constructing-the-rational-numbers-1/</link><guid isPermaLink="false">5c6ce0a7a4e2f60287eae2a9</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Wed, 20 Feb 2019 05:08:09 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Algebrology</title><link>http://localhost:2368/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Thu, 21 Feb 2019 09:15:14 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Connectedness]]></title><description><![CDATA[In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.]]></description><link>http://localhost:2368/connectedness/</link><guid isPermaLink="false">5c6e5add0ba2bb003f86050b</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Thu, 21 Feb 2019 08:02:07 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
+<ol>
+<li><a href="#connected-spaces">Connected Spaces</a></li>
+<li><a href="#some-cool-results">Some Cool Results</a></li>
+</ol>
+<hr>
+<h3 id="connectedspacesanameconnectedspaces">Connected Spaces<a name="connected-spaces"></a></h3>
+<p>I decided to postpone the second half of my construction of the rational numbers because I needed to break up the monotony a bit.</p>
+<p>I'm finally about to show you some really cool stuff. In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness. I'll probably save path-connectedness for a later time, since this post will be long enough as is.</p>
+<p>Connectedness is pretty much exactly what you'd expect it to be - if something is connected then that means it is all one coherent piece. This is a very hand-wavy statement though, so let's try to come up with a real definition that makes sense in the context of topological spaces. It might be better to start by considering what it is that makes a space disconnected. Let's look at this picture of a space $X$ which we should certainly call disconnected (as a subspace of the plane $\R^2$ with the standard topology):</p>
+<p><img src="http://localhost:2368/content/images/2019/02/disconnectedspace1.svg" alt="disconnectedspace1"></p>
+<p>The space $X$ is very clearly comprised of two distinct components that are separated from each other. Now here is the key insight: each of these components is both open and closed in $X$. For this particular example, we can see that each component is open because it is the intersection of $X$ with an open set in $\R^2$ (remember that this is the definition of an open set in the subspace topology).</p>
+<p><img src="http://localhost:2368/content/images/2019/02/disconnectedspace2.svg" alt="disconnectedspace2"></p>
+<p>Similarly, each component is closed because it is the intersection of $X$ with a closed set in $\R^2$.</p>
+<p><img src="http://localhost:2368/content/images/2019/02/disconnectedspace3.svg" alt="disconnectedspace3"></p>
+<p>So in disconnected spaces, there can be numerous sets that are both open and closed. This is something that is not true of connected spaces!</p>
+<blockquote>
+<p><strong>Definition.</strong> A space $X$ is <strong>connected</strong> if its only subsets which are both open and closed are $\varnothing$ and $X$ itself.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> A space $X$ is <strong>disconnected</strong> if it is not connected, i.e., there exists a nonempty proper subset $A\subset X$ which is both open and closed in $X$.</p>
+</blockquote>
+<p>We may occasionally also wish to ask whether subsets of a topological space are connected, and there is an easy way to look at this by using definitions we already have:</p>
+<blockquote>
+<p><strong>Definition.</strong> A subset $A$ of a topological space $X$ is <strong>connected</strong> if $A$ is connected when viewed as a subspace of $X$.</p>
+</blockquote>
+<p>This is just one of several equivalent and common ways that we may define connectedness. Let's take a look at two more, since they will be convenient for proofs later in this post. For the first equivalent definition, it is somewhat easier to talk about disconnectedness.</p>
+<blockquote>
+<p><strong>Theorem.</strong> A topological space $X$ is disconnected if and only if there exist nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
+<p><strong>Proof.</strong> Suppose first that $X$ is disconnected. That is, there exists a nonempty proper subset $A\subset X$ which is both open and closed in $X$. Then by definition, $X-A$ is also both open and closed, and $X-A$ is nonempty because $A\ne X$. We observe that $A\cap(X-A)=\varnothing$ and $A\cup(X-A)=X$. Thus, we have demonstrated nonempty open sets $U=A$ and $V=X-A$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
+</blockquote>
+<p>Suppose next that there exist nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$. Then $V=X-U$ is also closed since it is the complement of the open set $U$. Note also that $V$ is nonempty by hypothesis, and $V\ne X$ because $U$ is nonempty. It follows that $X$ is disconnected.</p>
+<p>Just looking at this new phrasing of disconnectedness, we see that it is immediately applicable to my above example. Clearly that space $X$ is the union of two disjoint, nonempty open sets. Before I move on, let me formally state this new definition in the context of connectedness.</p>
+<blockquote>
+<p><strong>Definition.</strong> If a space $X$ is disconnected, then a <strong>separation</strong> of $X$ is a pair of nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> A topological space $X$ is <strong>connected</strong> if it does not have a separation.</p>
+</blockquote>
+<p>The next equivalent definition of connectedness may look a little bit strange to you right now, but it will make our lives a lot easier in two of the proofs that lie ahead. Recall that a constant function $f$ has $f(x_1)=f(x_2)$ for all $x_1,x_2$ in its domain.</p>
+<blockquote>
+<p><strong>Theorem.</strong> A topological space $X$ is connected if and only if every continuous function $f:X\to\{0,1\}$ is constant, where $\{0,1\}$ is equipped with the discrete topology.</p>
+<p><strong>Proof.</strong> We prove each direction by contraposition. We argue first that if a continuous function $f:X\to\{0,1\}$ is not constant, then $X$ is not connected.</p>
+<p>Suppose there exists a nonconstant continuous function $f:X\to\{0,1\}$. Since $f$ is not constant, it takes on at least two values in its codomain and thus it must be the case that $f[X]=\{0,1\}$, so clearly $f$ is surjective. Define $U=f^{-1}\big[{0}\big]$ and $V=f^{-1}\big[{1}\big]$. Certainly $U\cap V=\varnothing$ and $U\cup V=X$. Also, $U$ and $V$ are nonempty because $f$ is surjective. It follows that $U$ and $V$ form a separation of $X$, and so $X$ is not connected.</p>
+<p>We argue next that if $X$ is not connected, then there exists a continuous function $f:X\to\{0,1\}$ which is not constant.</p>
+<p>Suppose $X$ is not connected. Then there exists a separation $U,V$ of $X$. Define $f:X\to\{0,1\}$ by</p>
+<p>$$f(n) =<br>
+\begin{cases}<br>
+0 &amp; \text{if } x\in U, \\<br>
+1 &amp; \text{if } x\in V.<br>
+\end{cases}$$</p>
+<p>This function is nonconstant because both $U$ and $V$ are nonempty. It is obvious that $f^{-1}\big[\{1\}\big]=U$ and $f^{-1}\big[\{0\}\big]=V$, which are both open in $X$. Furthermore, $f^{-1}\big[\{0,1\}\big]=X$ and $f^{-1}[\varnothing]=\varnothing$ are both open in $X$. We have demonstrated that the preimage of every open set in $\{0,1\}$ is open in $X$, and so $f$ is continuous by definition.</p>
+</blockquote>
+<p>Let's rewrite this as yet another definition of connectedness.</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological space $X$ is <strong>connected</strong> if every continuous function $f:X\to\{0,1\}$ is constant.</p>
+</blockquote>
+<p>This definition may seem a little bit stranger than the other two, but it is perfectly natural if we recall that continuous functions map points that are close together to points that are close together. In a connected space, all points are close together and thus a continuous function cannot bridge the gap between $0$ and $1$ - it must stay constant for all values of the domain. Of course, there is nothing special about $\{0,1\}$. We could just has easily used any other discrete two-point space. I'm about to prove a useful theorem whose proof is made much easier by this new definition of connectedness, but first we will need the following lemma.</p>
+<blockquote>
+<p><strong>Lemma.</strong> Let $X,Y$ denote topological spaces, let $A$ denote a subspace of $X$ and let $f:X\to Y$ be a continuous map. The restriction $f\mid_A:A\to Y$, defined by $f\mid_A(a)=f(a)$ for each $a\in A$, is continuous.</p>
+<p><strong>Proof.</strong> Choose any open set $U\subseteq Y$. Since $f$ is continuous, $f^{-1}[U]$ is open in $X$. Thus, $f\mid_A^{-1}[U]=A\cap f^{-1}[U]$ is open in $A$ by the definition of the subspace topology, and thus $f\mid_A$ is continuous.</p>
+</blockquote>
+<p>Now we have the machinery to prove the following intuitive theorem:</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $X$ denote a topological space and suppose $\{A_i\}_{i=1}^n$ is a collection of $n$ connected subsets of $X$. If $A_i\cap A_{i+1}$ is nonempty for each $1\leq i&lt; n$, then the set $\bigcup\limits_{i=1}^n A_i$ is connected.</p>
+<p><strong>Proof.</strong> We will proceed by induction on $n$, with our base case $n=1$ being too obvious to require proof.</p>
+<p>Suppose $\{A_i\}_{i=1}^{n+1}$ are connected with $A_i\cap A_{i+1}\ne\varnothing$ for every $1\le i&lt; n+1$, and that $\bigcup\limits_{i=1}^n A_i$ is connected. Suppose also that $f:\bigcup\limits_{i=1}^{n+1}A_i\to\{0,1\}$ is continuous. Then $f\mid_{\bigcup\limits_{i=1}^n A_i}:\bigcup\limits_{i=1}^n A_i\to\{0,1\}$ and $f\mid_{A_{n+1}}:A_{n+1}\to\{0,1\}$ are also continuous, and they are thus constant because their domains are connected. Since $A_n\cap A_{n+1}$ is nonempty, certainly $\left(\bigcup\limits_{i=1}^n A_i\right)\cap A_{n+1}$ is nonempty, and so there exists a point $x\in\left(\bigcup\limits_{i=1}^n A_i\right)\cap A_{n+1}$. Thus, because $f$ must be well defined, $f\mid_{\bigcup\limits_{i=1}^n A_i}(x)=f\mid_{A_{n+1}}(x)$. Since $f\mid_{\bigcup\limits_{i=1}^n A_i}$ and $f\mid_{A_{n+1}}$ are both constant and they agree at one point, they must agree at every point. Thus, $f$ is constant and so $\bigcup\limits_{i=1}^{n+1} A_i$ is connected.</p>
+</blockquote>
+<p>The proof is simple but looks a bit ugly rendered this way, for which I apologize. The theorem itself should be fairly obvious, and is in fact quite easy to think of visually. Take the following diagram, for instance:</p>
+<p><img src="http://localhost:2368/content/images/2019/02/connectedsequence.svg" alt="connectedsequence"></p>
+<p>This is a collection of six connected subsets of $\R^2$, each of which intersects the next in precisely one point. (They may or may not correspond to the six Bagel Bites I am about to enjoy.) From our theorem, it follows that their union is connected. Of course, we could have any number of connected subsets that intersect each other in different ways, as long as the successive pairwise intersections are nonempty. I will not prove it here, but this result also applies for any collection of connected subsets (even uncountably infinite).</p>
+<p>I mentioned a few posts back that much of the study of topology is focused on distinguishing between non-homeomorphic spaces. Connectedness offers a way of doing exactly that, because it is a topological property. What I mean by that is this: if two spaces are homeomorphic and one is connected, then so is the other.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $X,Y$ denote topological spaces, let $f:X\to Y$ be a homeomorphism and suppose $X$ is connected. Then $Y$ is connected.</p>
+<p><strong>Proof.</strong> We will prove the contrapositive. Suppose $Y$ is not connected, so that there exist open sets $U,V$ that separate $Y$. We argue that $f^{-1}[U]$ and $f^{-1}[V]$ form a separation of $X$.</p>
+<p>Clearly $f^{-1}[U]$ and $f^{-1}[V]$ are open because $f$ is continuous, and they are each nonempty because $f$ is surjective. In addition, because $U\cap V=\varnothing$, we have that</p>
+<p>$$\begin{align}<br>
+f^{-1}[U]\cap f^{-1}[V]&amp;=f^{-1}[U\cap V] \\<br>
+&amp;=f^{-1}[\varnothing] \\<br>
+&amp;=\varnothing.<br>
+\end{align}$$</p>
+<p>Similarly, because $U\cup V=Y$, we have that</p>
+<p>$$\begin{align}<br>
+f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br>
+&amp;=f^{-1}[Y] \\<br>
+&amp;=X.<br>
+\end{align}$$</p>
+<p>It follows that $f^{-1}[U]$ and $f^{-1}[V]$ form a separation of $X$, so $X$ is not connected.</p>
+</blockquote>
+<p>Really all we used was continuity and surjectivity of $f$, so saying that $f$ was a homeomorphism actually weakened the result a little bit. It's actually true that all continuous functions preserve connectedness! I won't prove it though, because it's really just a teensy modification of the above proof.</p>
+<p>Clearly we can distinguish between topological spaces as follows: if one space is connected and another isn't, then the spaces are not homeomorphic. However, we can also use connectedness in a somewhat trickier way to distinguish between certain connected spaces!</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>cutset</strong> $A$ of a connected topological space $X$ is a subset of $X$ for which $X-A$ is disconnected.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>cutpoint</strong> $x$ of a connected topological space $X$ is a point of $X$ for which $\{x\}$ is a cutset, i.e., $X-\{x\}$ is disconnected.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> Let's look again the connected set $A=\bigcup\limits_{i=1}^6 A_i$ depicted below, and consider the points $x$ and $y$.</p>
+<p><img src="http://localhost:2368/content/images/2019/02/cutset.svg" alt="cutset"></p>
+<p>Is $x$ a cutpoint of $A$? No, it is not because $$A-\{x\}=(A_1-\{x\})\cup\bigcup\limits_{i=2}^5 A_i\cup(A_6-\{x\}).$$ Each of the sets being unioned are connected and the intersection of each set with the next is nonempty, so $A-\{x\}$ is connected. If we permute the indices of the $A_i$, the same logic tells us that $y$ is not a cutpoint of $A$.</p>
+<p>However, $\{x,y\}$ is a cutset of $A$ (or, equivalently, $y$ is a cutpoint of $A-\{x\}$). That's because</p>
+<p>$$\begin{align}<br>
+U &amp;= (A_1-\{x\})\cup(A_2-\{y\}) \\<br>
+V &amp;= (A_3-\{y\})\cup\bigcup\limits_{i=4}^5 A_i\cup (A_6-\{x\})<br>
+\end{align}$$</p>
+</blockquote>
+<p>is a separation of $A-\{x,y\}$.</p>
+<p>How can we use cutsets to distinguish between connected spaces? I'm glad you ask.</p>
+<blockquote>
+<p>Theorem. Let $f:X\to Y$ be a homeomorphism between connected spaces $X$ and $Y$. If $A$ is a cutset of $X$, then $f[A]$ is a cutset of $Y$.</p>
+<p>Proof. Since $X-A$ is disconnected, there exists a separation $U,V$ of $X-A$. We argue that $f[U]$ and $f[V]$ form a separation of $Y-f[A]$. Because $f$ is a homeomorphism, $f^{-1}$ is continuous and thus $f[U]=(f^{-1})^{-1}[U]$ and $f[V]=(f^{-1})^{-1}[V]$ are open in $Y$. Since $U$ and $V$ are nonempty, certainly $f[U]$ and $f[V]$ are nonempty. Observe that, because $U\cap V=\varnothing$,</p>
+<p>$$\begin{align}<br>
+f[U]\cap f[V]&amp;=(f^{-1})^{-1}[U]\cap(f^{-1})^{-1}[V]\\<br>
+&amp;=(f^{-1})^{-1}[U\cap V]\\<br>
+&amp;=f[U\cap V]\\<br>
+&amp;=f[\varnothing]\\<br>
+&amp;=\varnothing.<br>
+\end{align}$$</p>
+<p>Furthermore, because $U\cup V=X-A$ and $f$ is bijective,</p>
+<p>$$\begin{align}f[U]\cup f[V]&amp;=f[U\cup V]\\<br>
+&amp;=f[X-A]\\<br>
+&amp;=f[X]-f[A]\\<br>
+&amp;=Y-f[A].<br>
+\end{align}$$</p>
+<p>Thus, $f[U]$ and $f[V]$ separate $Y-f[A]$. It follows that $f[A]$ is a cutset of $Y$.</p>
+</blockquote>
+<p>To see how this can be applied, let's take a look at another example.</p>
+<blockquote>
+<p><strong>Example.</strong> The subspace $[0,2\pi)$ of $\R$ and the unit circle $S^1=\{(x,y)\in\R^2\mid x^2+y^2=1\}$ as a subspace of $\R^2$ are not homeomorphic. I have not yet shown that either of these sets is connected, but for now we will take it for granted that they both are. Any point $x\in [0,2\pi)$ with $x\ne 0$ is a cutpoint of $[0,2\pi)$ because $$[0,2\pi)-\{x\}=[0,x)\cup (x,2\pi),$$ which is already expressed as the union of its separation. On the other hand, $S^1$ has no cutpoints. For any $x\in S^1$, the space $S^1-\{x\}$ is homeomorphic to an open interval (which is connected). Any cutset of $S^1$ would therefore consist of at least two points, and so cannot be the homeomorphic image of a cutpoint for $[0,2\pi)$.</p>
+</blockquote>
+<p>I was just very hand-wavy by claiming that certain sets were connected without proving it. Let me at least prove that $\R$ is connected, from which it will immediately follow that open intervals are connected (because they are homeomorphic to $\R$). The proof will require the following fact about the real numbers, which itself needs to be prefaced with the following definitions.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a subset $A$ of $\R$, a number $x\in\R$ is an <strong>upper bound</strong> for $A$ if $x\ge a$ for every $a\in A$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> A subset $A$ of $\R$ is <strong>bounded above</strong> if an upper bound for $A$ exists.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> Given a subset $A$ of $\R$, a number $x\in\R$ is the <strong>supremum</strong> (or <strong>least upper bound</strong>) of $A$ if $x$ is an upper bound for $A$ and $x\le y$ for every upper bound $y$ of $A$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Least Upper Bound Property.</strong> Any nonempty subset of $\R$ which is bounded above has a supremum.</p>
+</blockquote>
+<p>This is one of the defining properties of the real numbers, and it is in fact equivalent to the fact that every Cauchy sequence in $\R$ converges (if you've taken an analysis class, this should seem familiar). We will take the least upper bound property for granted, although it can be proven from the construction of the real numbers as either Dedekind cuts or equivalence classes of rational Cauchy sequences. You don't need to understand any of this to move forward. Just smile and nod while you wait for me to shut up.</p>
+<p>Here's the proof that $\R$ is connected. It's pretty gross.</p>
+<blockquote>
+<p><strong>Theorem.</strong> The set $\R$ of real numbers, equipped with the standard topology, is connected.</p>
+<p><strong>Proof.</strong> We proceed by contradiction, supposing that $\R$ is not connected. This means that there exist open sets $U$ and $V$ which separate $\R$. Choose $u\in U$ and $v\in V$, and assume without loss of generality that $u&lt;v$. Define $U'=[u,v]-V$ and $V'=[u,v]-U$. Using De Morgan's law and the fact that $V\cap U=\varnothing$, it follows that</p>
+<p>$$\begin{align}<br>
+U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br>
+&amp;=[u,v]-(V\cap U)\\<br>
+&amp;=[u,v]-\varnothing\\<br>
+&amp;=[u,v].<br>
+\end{align}$$</p>
+</blockquote>
+<p>The set $U'$ is nonempty because $u\in U'$ and it is bounded above by $v$, and so $U'$ has a supremum, $s$. Clearly $s\in [u,v]$, so either $s\in U'$ or $s\in V'$.</p>
+<blockquote>
+<p>Suppose first that $s\in U'$. Then because $U'$ is open in $[u,v]$ and $v\notin U'$, there exists $d\in[u,v]$ for which $[s,d)\subseteq U'$. Then for every $x\in (s,d)$, we have that $x\in U'$ and $x&gt;s$, which is a contradiction because $s$ is the supremum of $U'$.</p>
+<p>Suppose then that $s\in V'$. Then because $V'$ is open in $[u,v]$ and $u\notin V'$, there exists $d\in (u,s)$ for which $(d,s]\subseteq V'$. Then for every $x\in (d,s)$, we have that $x&lt;s$ and $x&gt;y$ for every $y\in U'$, which is again a contradiction because $s$ is the supremum of $U'$.</p>
+<p>Since $s\notin U'$ and $s\notin V'$, it must be true that $s\notin [u,v]$, which contradicts its definition.</p>
+</blockquote>
+<h3 id="somecoolresultsanamesomecoolresults">Some Cool Results<a name="some-cool-results"></a></h3>
+<p>It's time for some fun stuff now. Let's start with the intermediate value theorem, which you may have experienced and ignored in a calculus class.</p>
+<blockquote>
+<p><strong>Intermediate Value Theorem.</strong> Let $X$ denote a connected space and let $f:X\to\R$ be continuous. If $x,y\in f[X]$ and $c\in [x,y]$, then $c\in f[X]$.</p>
+<p><strong>Proof.</strong> It suffices to consider $c\in (x,y)$, because if $x\in\{x,y\}$ there is nothing to prove. Since $X$ is connected and $f$ is continuous, $f[X]$ is connected in $\R$. We proceed by contradiction.</p>
+<p>Suppose $c\notin f[X]$ and define $U'=(-\infty,c)$ and $V'=(c,\infty)$. Clearly $U'\cap V'=\varnothing$ and $f[X]\subseteq U'\cup V'$. We argue that $U=U'\cap f[x]$ and $V=V'\cap f[X]$ form a separation of $f[X]$. Since $x\in U'$ and $y\in V'$, we have that $U$ and $V$ are nonempty. Furthermore,</p>
+<p>$$\begin{align}<br>
+U\cap V &amp;= (U'\cap f[X])\cap(V'\cap f[X])\\<br>
+&amp;= (U'\cap V')\cap f[X]\\<br>
+&amp;= \varnothing\cap f[X]\\<br>
+&amp;= \varnothing.<br>
+\end{align}$$</p>
+<p>In addition, because $f[X]\subseteq U'\cup V'$, we have that</p>
+<p>$$\begin{align}<br>
+U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
+&amp;= (U'\cup V')\cap f[X]\\<br>
+&amp;= f[X].<br>
+\end{align}$$</p>
+<p>Thus, $U$ and $V$ separate $f[X]$, which is a contradiction.</p>
+</blockquote>
+<p>This theorem has many important consequences, but I won't spend too long talking about them right now because I want to get to the Brouwer fixed point theorem. We'll see the intermediate value theorem again though, I promise.</p>
+<p>Of course, before I can talk about a fixed point theorem, it would help if I told you what fixed points were.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a set $X$, a function $f:X\to X$ has a <strong>fixed point</strong> $x\in X$ if $f(x)=x$.</p>
+</blockquote>
+<p>So fixed points are points which stay fixed after a function acts on them.</p>
+<blockquote>
+<p><strong>One-Dimensional Brouwer Fixed Point Theorem.</strong> Every continuous map $f:[-1,1]\to[-1,1]$ has a fixed point.</p>
+<p><strong>Proof.</strong> We proceed by contradiction. Suppose $f:[-1,1]\to[-1,1]$ is continuous but has no fixed point. That is, $f(x)\ne x$ for every $x\in[-1,1]$. Define $g:[-1,1]\to\{-1,1\}$ by</p>
+<p>$$g(x) =<br>
+\begin{cases}<br>
+-1 &amp; \text{if } f(x) &gt; x, \\<br>
+\phantom{-}1 &amp; \text{if } f(x) &lt; x.<br>
+\end{cases}$$</p>
+<p>There is an alternative way of writing this: $$g(x)=\frac{f(x)-x}{\abs{f(x)-x}}.$$ Because $f(x)\ne x$ for every $x\in[-1,1]$, clearly $f(x)-x\ne 0$ and $g$ is thus a continuous function. Because $g$ is continuous and its codomain is a discrete two-point set, it must be that $g$ is constant. However, we also have that $g(-1)=1$ and $g(1)=-1$, and so $g$ is not constant - a contradiction.</p>
+</blockquote>
+<p>This might all seem a bit abstract right now, so maybe a diagram will shed some light on why this theorem makes sense.</p>
+<p><img src="http://localhost:2368/content/images/2019/02/brouwer1d.svg" alt="brouwer1d"></p>
+<p>Here's a graph of some continuous function $f:[-1,1]\to[-1,1]$. Clearly any such function must intersect the diagonal of the square in at least one point. Any such intersection is a fixed point of $f$.</p>
+<p>There is a more general Brouwer fixed point theorem which works for any dimension, although we cannot prove it yet. The beginning of the proof is very similar to the above proof, though, so let's get as far as we can go. (Recall the $\partial A$ denotes the boundary of a set $A$.)</p>
+<blockquote>
+<p><strong>Brouwer Fixed Point Theorem.</strong> Let $B^n$ denote the closed unit ball in $\R^n$. Then every continuous function $f:B^n\to B^n$ has a fixed point.</p>
+<p><strong>Beginning of Proof.</strong> Again, we proceed by contradiction and suppose that $f$ has no fixed points, i.e., $f(x)\ne x$ for every $x\in B^n$. We define a new function $g:B^n\to\partial B^n$ by $$g(x)=\frac{f(x)-x}{d\big(f(x),x\big)},$$ where $d$ is the standard metric.</p>
+<p>We can visualize this function as follows: since every point $x$ is distinct from its image $f(x)$, there is a unique line segment in $B^n$ starting at $f(x)$ and passing through $x$ which intersects the boundary $\partial B^n$ in exactly one point, $g(x)$.</p>
+<p><img src="http://localhost:2368/content/images/2019/02/brouwernd.svg" alt="brouwernd"></p>
+<p>Since $f(x)\ne x$ for every $x\in B^n$, $d\big(f(x),x)&gt;0$ for every $x\in B^n$ and thus $g$ is continuous. Furthermore, $g(x)=x$ for every $x\in\partial B^n$ This should lead to a contradiction, but we can't show this right now.</p>
+</blockquote>
+<p>The contradiction is that there is no continuous function which maps the ball to its boundary while keeping the boundary fixed. You can probably visualize why this is in your head - any such &quot;retraction&quot; would require tearing a hole in the ball. Unfortunately, we need the idea of homology in order to establish that there is no retraction to the ball's boundary, and we are a long way from that.</p>
+<p>I think there's time for one last proof. Basically, we will prove that fixed point properties are preserved by homeomorphism.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Suppose $X$ is a topological space for which every continuous function $f:X\to X$ has a fixed point, and that $Y$ is a space homeomorphic to $X$. Then every continuous function $g:Y\to Y$ has a fixed point.</p>
+<p><strong>Proof.</strong> Let $h:X\to Y$ be a homeomorphism, and let $g:Y\to Y$ be continuous. By hypothesis, $h$ and $h^{-1}$ are continuous, so $h^{-1}\circ g\circ h:X\to X$ is continuous since it is the composition of continuous functions. Thus, $h^{-1}\circ g\circ h$ has a fixed point. That is, there exists some $x\in X$ for which $\big(h^{-1}\circ g\circ h\big)(x)=x$. But then $\big(g\circ h\big)(x)=h(x)$, and thus $h(x)$ is a fixed point of $g$.</p>
+</blockquote>
+<p>I'll leave you with the following interesting fact that might occasionally occur to you as you stir hot beverages: the Brouwer fixed point theorem, together with the theorem above, tells us that some particle of your drink will end up in the same place it began. This is because the space occupied by the liquid (presumably a cylinder) is homeomorphic to the three-dimensional closed unit ball.</p>
+]]></content:encoded></item><item><title><![CDATA[Constructing the Rational Numbers (1)]]></title><description><![CDATA[We work with number systems every day, but we just sort of take their existence for granted. However, it is possible to construct all of these number systems from scratch.]]></description><link>http://localhost:2368/constructing-the-rational-numbers-1/</link><guid isPermaLink="false">5c6ce0a7a4e2f60287eae2a9</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Wed, 20 Feb 2019 05:08:09 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#construction">The Construction</a></li>
@@ -1557,161 +1773,4 @@ d(x_0,y)&amp;\geq d(x,x_0)-d(x,y)\\<br>
 <p>Since $d(x_0,y)&gt;r_0$, it follows that $y\notin\overline{B}(x_0,r_0)$ by the definition of this closed ball. It follows that $y\in X-\overline{B}(x_0,r_0)$. Thus, $X-\overline{B}(x_0,r_0)$ is open and so its complement $\overline{B}(x_0,r_0)$ is closed, as desired.</p>
 </blockquote>
 <p>That's enough for one post, I think. Don't worry though — we've only just begun with the <em>joys</em> of metric spaces!</p>
-]]></content:encoded></item><item><title><![CDATA[Set Theory]]></title><description><![CDATA[Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it.]]></description><link>http://localhost:2368/set-theory/</link><guid isPermaLink="false">5c6c6452a4e2f60287eae215</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Wed, 29 Mar 2017 00:49:23 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
-<ol>
-<li><a href="#what-are-sets">What are sets?</a></li>
-<li><a href="#basic-facts-about-sets">Basic facts about sets</a></li>
-<li><a href="#operations-on-sets">Operations on sets</a></li>
-<li><a href="#functions">Functions</a></li>
-</ol>
-<hr>
-<p>Everything in mathematics is built from sets.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that a basic familiarity with set theory is necessary in order to understand the topics I'll be discussing here. For this reason, I've decided to include this introductory post on the topic so that adventurous readers with little mathematical background will be able to understand my future posts without having to leave the confines of this blog.</p>
-<h3 id="whataresetsanamewhataresets">What are sets?<a name="what-are-sets"></a></h3>
-<p>Already we encounter something of a problem — one which took mathematicians quite a while to resolve, and should not be underestimated. The issue is that, because we wish to use set theory as the foundation of all future mathematical exploration, we don't actually have a place to start when defining sets themselves.</p>
-<p>It takes quite a bit of logical sophistication to arrive at a truly satisfactory definition of a set. If you're interested in such things, I encourage you to look into any resource you can find on <em>Zermelo-Fraenkel Set Theory with the Axiom of Choice</em> (usually abbreviated <em>ZFC</em>), which is a more rigorous set of axioms which govern the behavior of sets.</p>
-<p>For our purposes, the standard &quot;naïve&quot; set theory will do just fine. It is largely intuition-based, because it relies on the primitive notion that sets contain elements and elements are what make up sets. However, as long as we take certain precautions when dealing with sets, we should never encounter any problems stemming from this treatment:</p>
-<blockquote>
-<p><strong>Definition.</strong> A <strong>set</strong> is a collection of <strong>elements</strong>.</p>
-</blockquote>
-<h3 id="basicfactsaboutsetsanamebasicfactsaboutsets">Basic facts about sets<a name="basic-facts-about-sets"></a></h3>
-<p>Traditionally, capital letters like $A$, $B$ or $X$ are used to denote sets. If $x$ is an element of a set $X$, we write $x\in X$ and we say that &quot;$x$ is in $X$.&quot;</p>
-<p>Sets are determined solely by the elements they contain. For instance, if the numbers $1$, $2$ and $3$ are the only elements of the set $X$, we can indicate this by writing $X=\{1,2,3\}$. When we define sets in this manner, by specifying a complete list of elements they contain, we always sandwich the list of elements between curly braces, as above.</p>
-<blockquote>
-<p><strong>Definition.</strong> If two sets $A$ and $B$ contain precisely the same elements, we say that they are <strong>equal</strong> and we write $A=B$. If they are <strong>not equal</strong>, we write $A\neq B$.</p>
-</blockquote>
-<p>If two sets are not equal, then by definition they do not contain the same elements. It follows then that one of them must contain at least one element that the other does not.</p>
-<p>This definition of set equality should hopefully seem reasonable. Note that it does imply that the sets $\{x, y, z\}$ and $\{x, x, z, y, x, z\}$ are equal because they contain the same elements. Although some elements may appear more than once in the description of a set, or the elements may by written in a different order, a set either contains an element or it does not. <strong>Sets do not have any concept of multiplicity or order for their elements.</strong></p>
-<p>There is nothing to prevent sets from containing other sets, but be careful when dealing with sets that have other sets as elements. If $x$ is some element, then $\big\{x, \{x\}\big\} \neq \{x\}$ because the set $\{x\}$ is not the same thing as the element $x$.</p>
-<p>It may be helpful to think of sets as bags, and their elements as objects inside these bags. If $x$ is an apple, then $\big\{x, \{x\}\big\}$ represents a bag inside of which are two things: an apple and a bag. Inside of the inner bag is also an apple. This is very clearly not the same thing as $\{x\}$, which is just a bad with only an apple inside.</p>
-<p>Equality is not the only relationship between sets that we will be concerned with. The following definitions give us a way to talk about sets which contain some of the same elements.</p>
-<blockquote>
-<p><strong>Definition.</strong> Let $A$ and $B$ denote two sets. If every element of $A$ is also and element of $B$, we say that $A$ is a <strong>subset</strong> of $B$ and we write $A\subseteq B$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Definition.</strong> If $A\subseteq B$ but $A\neq B$, we say that $A$ is a <strong>proper subset</strong> of $B$ and we write $A\subset B$.</p>
-</blockquote>
-<p>Notice that, by these definitions, every set is a subset of itself. Also note that if $A\subset B$, it follows that $B$ contains some element that $A$ does not. Thus, if both sets are finite then $B$ is larger than $A$. Infinite sets are weird and do weird things, so we cannot necessarily make the same claim when they get involved.</p>
-<p>Again, we must take care and realize that $A\subseteq B$ is a completely different statement than $A\in B$. To visualize this, we refer again to our analogy between sets and bags. Take as an example the case where $A$ is a bag containing only an apple, while $B$ is a bag containing an apple and an orange. It should be clear that $A$ is not actually an element of $B$, but it is a subset.</p>
-<p>We're ready now for our first proof!</p>
-<blockquote>
-<p><strong>Theorem.</strong> Let $A$ and $B$ denote sets. If $A\subseteq B$ and $B\subseteq A$, then $A=B$.</p>
-<p><strong>Proof.</strong> Since $A$ is a subset of $B$, every element of $A$ is also an element of $B$. Likewise, since $B$ is a subset of $A$, every element of $B$ is also an element of $A$. It follows that the elements of each set are precisely the same, so $A=B$, as desired.</p>
-</blockquote>
-<p>One important set will come up in our discussions quite often:</p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>empty set</strong> is the unique set containing no elements.</p>
-</blockquote>
-<p>It is easy to see that the empty set is a subset of every set, since all of the elements it contains (none) are trivially also in every other set.</p>
-<p>In many upcoming posts, I am going to assume familiarity with the following sets:</p>
-<ul>
-<li>The set $\mathbb{N} = \{0, 1, 2, \dotsc\}$ of <strong>natural numbers</strong>.</li>
-<li>The set $\mathbb{Z} = \{\dotsc, -1, 0, 1, \dotsc\}$ of <strong>integers</strong>.</li>
-<li>The set $\mathbb{Q}$ of <strong>rational numbers</strong> whose elements are of the form $\frac{p}{q}$, where $p, q \in \mathbb{Z}$ and $q \neq 0$.</li>
-<li>The set $\mathbb{R}$ of <strong>real numbers</strong>.</li>
-<li>The set $\mathbb{C}$ of <strong>complex numbers</strong> whose elements are of the form $a+bi$, where $a, b \in \mathbb{R}$ and $i^2 = -1$.</li>
-</ul>
-<p>It is convenient and natural to assume that $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$, and I encourage you to think this way.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<p>It is often desirable to specify certain subsets of sets with which we are already acquainted in terms of some property that every element in the subset must possess. How would we, for instance, denote the set of positive real numbers? Or the set of even integers?</p>
-<p>We can construct such subsets using <strong>set-builder notation</strong>. This is basically a fancy notation describing the form that elements in the set take, followed by a vertical bar which means &quot;such that,&quot; and then a property which every element obeys — all sandwiched between the usual set brackets.</p>
-<p>In this new notation, $\{x\in\mathbb{R} \mid x&gt;0\}$ would be the set of positive real numbers. Similarly, $\{2n \mid n\in\mathbb{Z}\}$ is the set of even integers.</p>
-<h3 id="operationsofsetsanameoperationsonsets">Operations of sets<a name="operations-on-sets"></a></h3>
-<p>Given two or more sets, we will often find the need to combine them in certain ways to create new sets. Below are four very common ways of creating new sets from old. Each of their definitions can be extended to combine any finite collection of sets, and sometimes even an infinite collection. Make certain that you are comfortable with each of these definitions, since they will show up everywhere ever.</p>
-<p>Let $A$ and $B$ denote sets. Let's say, for illustration, that they're sets of points in the plane of your screen and they look like these blobs:</p>
-<p><img src="http://localhost:2368/content/images/2017/03/sets.svg" alt=""></p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>union</strong> of $A$ and $B$ is the set of all elements in either $A$ or in $B$, or both. It is written $A\cup B$ and is defined as the set $\{x \mid x\in A \text{ or } x\in B\}$.</p>
-</blockquote>
-<p>The union of the sets above would look like this:</p>
-<p><img src="http://localhost:2368/content/images/2017/03/union.svg" alt=""></p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>intersection</strong> of $A$ and $B$ is the set of all elements in both $A$ and $B$. It is written $A\cap B$ and is defined as the set $\{x \mid x\in A \text{ and } x\in B\}$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Definition.</strong> Two sets are said to be <strong>disjoint</strong> if their intersection is empty.</p>
-</blockquote>
-<p>The intersection of the above sets would look like this:</p>
-<p><img src="http://localhost:2368/content/images/2017/03/intersection.svg" alt=""></p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>complement</strong> (or <strong>difference</strong>) of $A$ in $B$ is the set of all elements that are in $B$ but not in $A$. It is written $B-A$ and is defined as the set $\{x\in B \mid x\notin A\}$.</p>
-</blockquote>
-<p>For the sets above, the complement of $A$ in $B$ would look like this:</p>
-<p><img src="http://localhost:2368/content/images/2017/03/complement.svg" alt=""></p>
-<p>It is worth nothing that, unlike unlike unions and intersections, complements depend on which set comes first. That is, $A-B\neq B-A$.</p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>Cartesian product</strong> of $A$ and $B$, written $A \times B$, is the set of all ordered pairs whose first component is in $A$ and whose second component is in $B$.</p>
-</blockquote>
-<p>The Cartesian product of the above sets would be a bit trickier to draw since this would require four spacial dimensions. As a simpler example, suppose that $A$ and $B$ are both $\mathbb{R}$, the set of real numbers. Then $A\times B=\mathbb{R}\times\mathbb{R}$ and this set would consist of all points in the plane. This is because $\mathbb{R}\times\mathbb{R}$ by definition contains all pairs of the form $(x,y)$ where $x$ and $y$ are real numbers. This is why two-dimensional Euclidean space is often written as $\mathbb{R}^2$, as shorthand for $\mathbb{R}\times\mathbb{R}$.</p>
-<p>It should be somewhat obvious how to take the union of an arbitrary collection of sets. For a finite collection of $n$ sets — $A_1, A_2, \dotsc, A_n$ — their union contains all of the elements that are in at least one of the sets:</p>
-<p>$$\bigcup\limits_{i=1}^n A_i = \{x\mid x\in A_1 \text{ or } x\in A_2 \text{ or } \dotsc \text{ or } x\in A_n\}.$$</p>
-<p>We can go even further, and take the union of any collection of sets. To do so, we first let $I$ be some <strong>indexing set</strong> such that $A_i$ is a set for every $i\in I$. Notice that there is nothing to stop $I$ from being an infinite set, in which case there would be infinitely many sets $A_i$ in our collection. We can take the union of all these sets as follows:</p>
-<p>$$\bigcup\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for some } i\in I\}.$$</p>
-<p>The same type of thinking allows for intersections and Cartesian products to be defined for more than two sets. In the case of Cartesian products, multiplying $n$ sets yields a set whose elements are ordered $n$-tuples, where the $i$th component is an element of the $i$th set being multiplied. Cartesian products of infinitely many sets are a bit too complicated to discuss here, although we can easily take the intersection of an arbitrary collection of sets, much as we did for their union:</p>
-<p>$$\bigcap\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for every } i\in I\}.$$</p>
-<p>There are two interesting ways in which the operation of set difference distributes over the operations of unions and intersections. These are called <strong>De Morgan's Laws</strong>:</p>
-<p>$$X - (A \cup B) = (X - A) \cap (X - B),$$<br>
-$$X - (A \cap B) = (X - A) \cup (X - B).$$</p>
-<p>These highly symmetric rules often turn out to be very useful, and I encourage you to draw some pictures to try to understand them. I will not prove them here. To illustrate the second rule, here is an example: if a ball is not both red and blue, then it is not red or it is not blue (or possibly both).</p>
-<p>De Morgan's Laws also extend naturally to arbitrary collections of sets:</p>
-<p>$$X - \bigcup\limits_{i\in I} A_i = \bigcap\limits_{i\in I} (X - A_i),$$<br>
-$$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
-<h3 id="functionsanamefunctions">Functions<a name="functions"></a></h3>
-<p>The last topic I'll talk about in this post is the concept of a function, as well as several important traits that functions may or may not possess. You've likely encountered functions before as things that eat variables and poo out numbers, and that's not a terrible way of thinking about them. We're going to make things a bit more formal though.</p>
-<blockquote>
-<p><strong>Definition.</strong> A <strong>function</strong> from a set $A$ to a set $B$, denoted $f:A\to B$, is a subset of $A\times B$ such that for each $x\in A$, there is exactly one $y\in B$ for which $(x, y)\in f$. In this definition, the set $A$ is called the <strong>domain</strong> of $f$ and $B$ is called the <strong>codomain</strong>.</p>
-</blockquote>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>range</strong> (or <strong>image</strong>) of a function $f$ is the set $\text{im } f = \{y\in B \mid (x,y)\in f \text{ for some } x\in A\}$.</p>
-</blockquote>
-<p>If you've never seen the above definition of a function before, it's natural to wonder at this point just what the crud I'm talking about. Why are we defining functions as sets? As I stated earlier, <em>everything</em> in mathematics is defined in terms of sets, and functions are no exception. We don't usually think of functions as sets of ordered pairs, but it is useful to define them this way so that we can make precise statements about them which stem from their definition. It also allows us to immediately infer what is meant by function equality, because it is inherited from our earlier definition of set equality.</p>
-<p>So using this definition, a function is basically a list of $(x,y)$ values where $y$ is what you'd usually call $f(x)$. That is, the first component is the &quot;input&quot; to the function and the second component is the &quot;output.&quot; The second condition in the definition is a rephrasing of what you may know as the &quot;vertical line test.&quot; In two dimensions, a function from $\mathbb{R}$ to $\mathbb{R}$ is anything you can draw that exists above every value on the $x$-axis, but not more than once.</p>
-<p>As I mentioned above, a more familiar way of rephrasing the last part of the definition might be this:</p>
-<p>... for each $x\in A$, there exists exactly one $y\in B$ for which $y=f(x)$.</p>
-<p>This notation is much more common, and I'll be using it almost exclusively from now on. Often, $f(x)$ is referred to as the <strong>image</strong> of $x$ under the function $f$. This is an unfortunate overloading of the word &quot;image,&quot; but it will not lead to confusion if we are careful.</p>
-<p>One of the nice things about our definition of a function it that it allows us to define functions between any two sets we want, and the values of the function don't have to obey any particular rule. We can simply check each point and its image to make sure they obey the definition.</p>
-<p>If you're a bit confused by all this, just sit and absorb it for a minute. Realize that ordinary things like the function $f:\mathbb{R}\to\mathbb{R}$, defined by $f(x)=x^2$ for every $x\in\mathbb{R}$, still satisfy our new definition. Think everything through — maybe draw some pictures — and then continue reading.</p>
-<p>Now, notice that something like $f:\mathbb{R}\to\mathbb{R}$ defined by $f(x)=\frac{1}{x}$ for all $x\in\mathbb{R}$ is not actually a function! This is because not every element of the domain gets mapped to a real number. In particular, there is no $y\in\mathbb{R}$ for which $y=f(0)$. We would need to restrict the domain to $\mathbb{R} - \{0\}$ to turn this thing into a function.</p>
-<p>The next thing we'll do is introduce some common classes of functions.</p>
-<blockquote>
-<p><strong>Definition.</strong> A function $f:A\to B$ is <strong>injective</strong> if for every $y\in B$ there exists at most one $x\in A$ for which $y=f(x)$.</p>
-</blockquote>
-<p>Basically, an injective function cannot have two points in its domain get mapped to the same point in its codomain. We can check that a function is injective by showing that if $x\neq y$ then $f(x)\neq f(y)$. Equivalently, we can do this by instead showing that if $f(x)=f(y)$ then $x=y$. (These two statements are contrapositives so they are logically equivalent, but sometimes one will be easier to show than the other.) Injective functions in the plane satisfy what might constitute a &quot;horizontal line test,&quot; in that any horizontal line will intersect their graph at most once.</p>
-<blockquote>
-<p><strong>Definition.</strong> A function $f:A\to B$ is <strong>surjective</strong> if for every $y\in B$, there exists at least one $x\in A$ for which $y=f(x)$.</p>
-</blockquote>
-<p>A surjective function has every point in its codomain get mapped to by some point in the domain. That is, every element of the codomain is the image of some element in the domain. In this case, the codomain of the function is equal to its range. Notice that we can turn any function into a surjective function by restricting its codomain to its range.</p>
-<blockquote>
-<p><strong>Definition.</strong> A function $f:A\to B$ is <strong>bijective</strong> if for every $y\in B$, there exists exactly one $x\in A$ for which $y=f(x)$. Equivalently, a function is bijective if it is both injective and surjective.</p>
-</blockquote>
-<p>Bijective functions are particularly nice because they have <strong>inverse functions</strong>. That is, if $f:A\to B$ is bijective, we can find a function $f:B\to A$ with the property that $f\big(g(y)\big)=y$ for every $y\in B$ and $g\big(f(x)\big)=x$ for every $x\in A$.</p>
-<p>A function's inverse essentially allows us to undo what that function did in the first place. It turns out that if a function has an inverse, then that inverse is unique and thus we can unambiguously write the inverse of $f$ as $f^{-1}$.</p>
-<p>Functions that aren't bijective do not have inverses, but we can still define something similar:</p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>preimage</strong> of a set $Y\subseteq B$ under a function $f:A\to B$ is the set of all $X\in A$ for which $f(x)\in Y$. We write $f^{-1}[Y]=\{x\in A\mid f(x)\in Y\}$.</p>
-</blockquote>
-<p>Note that $f^{-1}$ here does <em>not</em> denote an inverse function! We haven't even defined the preimage as a function at all (yet). The square brackets around its argument (which is always a set) help us to distinguish between whether we are talking about inverse functions or preimages. Given a subset of the codomain, the preimage tells us which elements in the domain get mapped into that set.</p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>power set</strong> of a set $X$ is the set of all subsets of $X$.</p>
-</blockquote>
-<p>We often denote the power set of $X$ as $2^X$ because a simple combinatorial argument shows that if $X$ is a finite set with $n$ elements, then $X$ has $2^n$ distinct subsets.</p>
-<p>Preimages are technically functions themselves, though perhaps not in the way you might expect. Since preimages take subsets of a function's codomain and map them to subsets of a function's domain, the preimage of a function $f:X\to Y$ is a set-valued function $f^{-1}:2^Y\to 2^X$ defined by $f^{-1}[U]=\{x\in X\mid f(x)\in U\}$ for every $U\in 2^Y$.</p>
-<p>Now the overloading of the symbol $f^{-1}$ is even worse, because we have defined both inverses and preimages as functions! However, careful use of square brackets for the preimage and the fact that one function is set-valued while the other is usually not will help us to avoid confusion. Further, inverse functions only exist for bijections, but preimages are defined for all functions.</p>
-<blockquote>
-<p><strong>Definition.</strong> Given two functions $f:A\to B$ and $g:B\to C$ we can form a new function $g\circ f:A\to C$, called the <strong>composition</strong> of $f$ and $g$, by defining $(g\circ f)(x)=g\big(f(x)\big)$ for every $x\in A$.</p>
-</blockquote>
-<p>Intuitively, when taking the composition of $f$ and $g$, we first take $f(x)$ and then feed the result into $g$. Note that the composition of functions is only defined when the first function's codomain is equal to the second function's domain.</p>
-<blockquote>
-<p><strong>Definition.</strong> For any set $X$, we can define an <strong>identity function</strong> $1_X:X\to X$ by $1_X(x)=x$ for every $x\in X$.</p>
-</blockquote>
-<p>An identity function maps every element of a set to itself, so essentially it does nothing at all. If no confusion can arise about which set we're talking about, we sometimes drop the subscript and write $1$ instead of $1_X$ to denote this function.</p>
-<p>Notice now that we can phrase the definition of an inverse function more compactly: A function $f:A\to B$ has an inverse $f:B\to A$ if $g\circ g=1_B$ and $g\circ f=1_A$. That is, the two possible compositions of $f$ and $g$ are equal to the identity functions on their respective domains.</p>
-<p>One final remark I will make is that the composition of functions is always <strong>associative</strong>. That is, if we have three functions $f:A\to B$, $g:B\to C$ and $h:C\to D$, then $(h\circ g)\circ f=h\circ(g\circ f)$. This may look obvious, but the proof — while straightforward — might elude you if you are not accustomed to writing proofs. Nonetheless, I encourage you to try showing this fact for yourself. Here's a hint: use the definition of function composition. If you've done the proof right, it will probably feel as though you haven't really done anything at all.</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>One sentence in and I'm already lying to you. There are alternative formulations of mathematics, most notably via topos theory or type theory. If you are a beginner, I would recommend not looking these things up or you will likely be very confused. Set theory is by far the simplest foundation to start from, which explains why it is the most common approach (and the one I will take here). <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>More formally it happens that each set, equipped with a certain algebraic structure, is isomorphic to a subobject of the next set, equipped with its own structure. If I ever decide to write a post (or five) detailing the constructions of each of the aforementioned sets, you'll see this idea in excruciating detail. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 ]]></content:encoded></item></channel></rss>

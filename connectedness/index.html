@@ -23,7 +23,7 @@
     <meta property="og:description" content="In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness." />
     <meta property="og:url" content="http://localhost:2368/connectedness/" />
     <meta property="article:published_time" content="2019-02-21T08:02:07.000Z" />
-    <meta property="article:modified_time" content="2019-02-21T09:14:46.000Z" />
+    <meta property="article:modified_time" content="2019-02-21T10:24:00.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Connectedness" />
     <meta name="twitter:description" content="In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness." />
@@ -54,7 +54,7 @@
     "headline": "Connectedness",
     "url": "http://localhost:2368/connectedness/",
     "datePublished": "2019-02-21T08:02:07.000Z",
-    "dateModified": "2019-02-21T09:14:46.000Z",
+    "dateModified": "2019-02-21T10:24:00.000Z",
     "description": "In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -224,8 +224,8 @@ f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br>
 U &amp;= (A_1-\{x\})\cup(A_2-\{y\}) \\<br>
 V &amp;= (A_3-\{y\})\cup\bigcup\limits_{i=4}^5 A_i\cup (A_6-\{x\})<br>
 \end{align}$$</p>
-</blockquote>
 <p>is a separation of $A-\{x,y\}$.</p>
+</blockquote>
 <p>How can we use cutsets to distinguish between connected spaces? I'm glad you ask.</p>
 <blockquote>
 <p>Theorem. Let $f:X\to Y$ be a homeomorphism between connected spaces $X$ and $Y$. If $A$ is a cutset of $X$, then $f[A]$ is a cutset of $Y$.</p>
@@ -273,9 +273,7 @@ U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br>
 &amp;=[u,v]-\varnothing\\<br>
 &amp;=[u,v].<br>
 \end{align}$$</p>
-</blockquote>
 <p>The set $U'$ is nonempty because $u\in U'$ and it is bounded above by $v$, and so $U'$ has a supremum, $s$. Clearly $s\in [u,v]$, so either $s\in U'$ or $s\in V'$.</p>
-<blockquote>
 <p>Suppose first that $s\in U'$. Then because $U'$ is open in $[u,v]$ and $v\notin U'$, there exists $d\in[u,v]$ for which $[s,d)\subseteq U'$. Then for every $x\in (s,d)$, we have that $x\in U'$ and $x&gt;s$, which is a contradiction because $s$ is the supremum of $U'$.</p>
 <p>Suppose then that $s\in V'$. Then because $V'$ is open in $[u,v]$ and $u\notin V'$, there exists $d\in (u,s)$ for which $(d,s]\subseteq V'$. Then for every $x\in (d,s)$, we have that $x&lt;s$ and $x&gt;y$ for every $y\in U'$, which is again a contradiction because $s$ is the supremum of $U'$.</p>
 <p>Since $s\notin U'$ and $s\notin V'$, it must be true that $s\notin [u,v]$, which contradicts its definition.</p>

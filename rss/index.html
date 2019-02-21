@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Algebrology</title><link>http://localhost:2368/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Thu, 21 Feb 2019 09:15:14 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Connectedness]]></title><description><![CDATA[In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.]]></description><link>http://localhost:2368/connectedness/</link><guid isPermaLink="false">5c6e5add0ba2bb003f86050b</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Thu, 21 Feb 2019 08:02:07 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Algebrology</title><link>http://localhost:2368/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Thu, 21 Feb 2019 10:24:39 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Connectedness]]></title><description><![CDATA[In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.]]></description><link>http://localhost:2368/connectedness/</link><guid isPermaLink="false">5c6e5add0ba2bb003f86050b</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Thu, 21 Feb 2019 08:02:07 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#connected-spaces">Connected Spaces</a></li>
 <li><a href="#some-cool-results">Some Cool Results</a></li>
@@ -104,8 +104,8 @@ f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br>
 U &amp;= (A_1-\{x\})\cup(A_2-\{y\}) \\<br>
 V &amp;= (A_3-\{y\})\cup\bigcup\limits_{i=4}^5 A_i\cup (A_6-\{x\})<br>
 \end{align}$$</p>
-</blockquote>
 <p>is a separation of $A-\{x,y\}$.</p>
+</blockquote>
 <p>How can we use cutsets to distinguish between connected spaces? I'm glad you ask.</p>
 <blockquote>
 <p>Theorem. Let $f:X\to Y$ be a homeomorphism between connected spaces $X$ and $Y$. If $A$ is a cutset of $X$, then $f[A]$ is a cutset of $Y$.</p>
@@ -153,9 +153,7 @@ U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br>
 &amp;=[u,v]-\varnothing\\<br>
 &amp;=[u,v].<br>
 \end{align}$$</p>
-</blockquote>
 <p>The set $U'$ is nonempty because $u\in U'$ and it is bounded above by $v$, and so $U'$ has a supremum, $s$. Clearly $s\in [u,v]$, so either $s\in U'$ or $s\in V'$.</p>
-<blockquote>
 <p>Suppose first that $s\in U'$. Then because $U'$ is open in $[u,v]$ and $v\notin U'$, there exists $d\in[u,v]$ for which $[s,d)\subseteq U'$. Then for every $x\in (s,d)$, we have that $x\in U'$ and $x&gt;s$, which is a contradiction because $s$ is the supremum of $U'$.</p>
 <p>Suppose then that $s\in V'$. Then because $V'$ is open in $[u,v]$ and $u\notin V'$, there exists $d\in (u,s)$ for which $(d,s]\subseteq V'$. Then for every $x\in (d,s)$, we have that $x&lt;s$ and $x&gt;y$ for every $y\in U'$, which is again a contradiction because $s$ is the supremum of $U'$.</p>
 <p>Since $s\notin U'$ and $s\notin V'$, it must be true that $s\notin [u,v]$, which contradicts its definition.</p>

@@ -1,35 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Connectedness</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=7f30b9a1f9" />
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=7f30b9a1f9" /></noscript>
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=b2c11776c2">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=b2c11776c2"></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="index.html" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <link rel="amphtml" href="amp/index.html" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
     
-    <meta property="og:site_name" content="Algebrology" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Connectedness" />
-    <meta property="og:description" content="In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness." />
-    <meta property="og:url" content="http://localhost:2368/connectedness/" />
-    <meta property="article:published_time" content="2019-02-21T08:02:07.000Z" />
-    <meta property="article:modified_time" content="2019-02-21T10:24:00.000Z" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Connectedness" />
-    <meta name="twitter:description" content="In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness." />
-    <meta name="twitter:url" content="http://localhost:2368/connectedness/" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Connectedness">
+    <meta property="og:description" content="In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.">
+    <meta property="og:url" content="http://localhost:2368/connectedness/">
+    <meta property="article:published_time" content="2019-02-21T08:02:07.000Z">
+    <meta property="article:modified_time" content="2019-02-25T09:28:21.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Connectedness">
+    <meta name="twitter:description" content="In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.">
+    <meta name="twitter:url" content="http://localhost:2368/connectedness/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
     
     <script type="application/ld+json">
 {
@@ -54,7 +53,7 @@
     "headline": "Connectedness",
     "url": "http://localhost:2368/connectedness/",
     "datePublished": "2019-02-21T08:02:07.000Z",
-    "dateModified": "2019-02-21T10:24:00.000Z",
+    "dateModified": "2019-02-25T09:28:21.000Z",
     "description": "In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +62,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html" />
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     tex2jax: {
@@ -88,16 +87,16 @@ MathJax.Hub.Config({
 </head>
 <body class="is-preload post-template">
 
-    <div id="wrapper" >
+    <div id="wrapper">
 
 
         <header id="header">
-                <a href="../index.html" class="logo">Algebrology</a>
+                <a href="../" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../index.html">Home</a></li>
+        <li class="nav-home "><a href="../">Home</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -148,14 +147,14 @@ MathJax.Hub.Config({
 <blockquote>
 <p><strong>Theorem.</strong> A topological space $X$ is disconnected if and only if there exist nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
 <p><strong>Proof.</strong> Suppose first that $X$ is disconnected. That is, there exists a nonempty proper subset $A\subset X$ which is both open and closed in $X$. Then by definition, $X-A$ is also both open and closed, and $X-A$ is nonempty because $A\ne X$. We observe that $A\cap(X-A)=\varnothing$ and $A\cup(X-A)=X$. Thus, we have demonstrated nonempty open sets $U=A$ and $V=X-A$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
-</blockquote>
 <p>Suppose next that there exist nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$. Then $V=X-U$ is also closed since it is the complement of the open set $U$. Note also that $V$ is nonempty by hypothesis, and $V\ne X$ because $U$ is nonempty. It follows that $X$ is disconnected.</p>
+</blockquote>
 <p>Just looking at this new phrasing of disconnectedness, we see that it is immediately applicable to my above example. Clearly that space $X$ is the union of two disjoint, nonempty open sets. Before I move on, let me formally state this new definition in the context of connectedness.</p>
 <blockquote>
 <p><strong>Definition.</strong> If a space $X$ is disconnected, then a <strong>separation</strong> of $X$ is a pair of nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
 </blockquote>
 <blockquote>
-<p><strong>Definition.</strong> A topological space $X$ is <strong>connected</strong> if it does not have a separation.</p>
+<p><strong>Corollary.</strong> A topological space $X$ is <strong>connected</strong> if it does not have a separation.</p>
 </blockquote>
 <p>The next equivalent definition of connectedness may look a little bit strange to you right now, but it will make our lives a lot easier in two of the proofs that lie ahead. Recall that a constant function $f$ has $f(x_1)=f(x_2)$ for all $x_1,x_2$ in its domain.</p>
 <blockquote>
@@ -210,7 +209,7 @@ f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br>
 <p>Really all we used was continuity and surjectivity of $f$, so saying that $f$ was a homeomorphism actually weakened the result a little bit. It's actually true that all continuous functions preserve connectedness! I won't prove it though, because it's really just a teensy modification of the above proof.</p>
 <p>Clearly we can distinguish between topological spaces as follows: if one space is connected and another isn't, then the spaces are not homeomorphic. However, we can also use connectedness in a somewhat trickier way to distinguish between certain connected spaces!</p>
 <blockquote>
-<p><strong>Definition.</strong> A <strong>cutset</strong> $A$ of a connected topological space $X$ is a subset of $X$ for which $X-A$ is disconnected.</p>
+<p><strong>Definition.</strong> A <strong>cutset</strong> $A$ of a connected topological space $X$ is a subset of $X$ for which $X-A$ is disconnected.</p>
 </blockquote>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>cutpoint</strong> $x$ of a connected topological space $X$ is a point of $X$ for which $\{x\}$ is a cutset, i.e., $X-\{x\}$ is disconnected.</p>
@@ -325,7 +324,7 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
 <p><img src="../content/images/2019/02/brouwernd.svg" alt="brouwernd"></p>
 <p>Since $f(x)\ne x$ for every $x\in B^n$, $d\big(f(x),x)&gt;0$ for every $x\in B^n$ and thus $g$ is continuous. Furthermore, $g(x)=x$ for every $x\in\partial B^n$ This should lead to a contradiction, but we can't show this right now.</p>
 </blockquote>
-<p>The contradiction is that there is no continuous function which maps the ball to its boundary while keeping the boundary fixed. You can probably visualize why this is in your head - any such &quot;retraction&quot; would require tearing a hole in the ball. Unfortunately, we need the idea of homology in order to establish that there is no retraction to the ball's boundary, and we are a long way from that.</p>
+<p>The contradiction is that there is no continuous function which maps the ball to its boundary while keeping the boundary fixed. You can probably visualize why this is in your head - any such "retraction" would require tearing a hole in the ball. Unfortunately, we need the idea of homology in order to establish that there is no retraction to the ball's boundary, and we are a long way from that.</p>
 <p>I think there's time for one last proof. Basically, we will prove that fixed point properties are preserved by homeomorphism.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Suppose $X$ is a topological space for which every continuous function $f:X\to X$ has a fixed point, and that $Y$ is a space homeomorphic to $X$. Then every continuous function $g:Y\to Y$ has a fixed point.</p>
@@ -339,7 +338,7 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/index.html">
+                <a class="author-box" href="../author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -369,22 +368,21 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
 
         <div id="copyright">
             <ul>
-                <li>&copy; 2019 Eric Shapiro</li>
+                <li>© 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/browser.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/util.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/main.js?v=7f30b9a1f9"></script>
+    <script src="../assets/main/js/jquery.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/browser.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/util.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/main.js?v=b2c11776c2"></script>
 
     
 
 </body>
-</html>

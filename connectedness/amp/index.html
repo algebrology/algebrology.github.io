@@ -1,30 +1,29 @@
-<!DOCTYPE html>
-<html ⚡>
+
 <head>
     <meta charset="utf-8">
 
     <title>Connectedness</title>
 
-    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
-    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="../index.html" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="../index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     
-    <meta property="og:site_name" content="Algebrology" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Connectedness" />
-    <meta property="og:description" content="In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness." />
-    <meta property="og:url" content="http://localhost:2368/connectedness/" />
-    <meta property="article:published_time" content="2019-02-21T08:02:07.000Z" />
-    <meta property="article:modified_time" content="2019-02-21T10:24:00.000Z" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Connectedness" />
-    <meta name="twitter:description" content="In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness." />
-    <meta name="twitter:url" content="http://localhost:2368/connectedness/" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Connectedness">
+    <meta property="og:description" content="In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.">
+    <meta property="og:url" content="http://localhost:2368/connectedness/">
+    <meta property="article:published_time" content="2019-02-21T08:02:07.000Z">
+    <meta property="article:modified_time" content="2019-02-25T09:28:21.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Connectedness">
+    <meta name="twitter:description" content="In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.">
+    <meta name="twitter:url" content="http://localhost:2368/connectedness/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
     
     <script type="application/ld+json">
 {
@@ -49,7 +48,7 @@
     "headline": "Connectedness",
     "url": "http://localhost:2368/connectedness/",
     "datePublished": "2019-02-21T08:02:07.000Z",
-    "dateModified": "2019-02-21T10:24:00.000Z",
+    "dateModified": "2019-02-25T09:28:21.000Z",
     "description": "In this post, I&#x27;m going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -58,10 +57,10 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../../rss/index.html" />
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../../rss/index.html">
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,600,400">
     <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -74,7 +73,7 @@
 <body class="amp-template">
     <header class="main-header">
         <nav class="blog-title">
-            <a href="../../index.html">Algebrology</a>
+            <a href="../../">Algebrology</a>
         </nav>
     </header>
 
@@ -84,7 +83,7 @@
             <header class="post-header">
                 <h1 class="post-title">Connectedness</h1>
                 <section class="post-meta">
-                    <p class="author">by <a href="../../author/eric/index.html">Eric Shapiro</a></p>
+                    <p class="author">by <a href="../../author/eric/">Eric Shapiro</a></p>
                     <time class="post-date" datetime="2019-02-21">2019-02-21</time>
                 </section>
             </header>
@@ -95,7 +94,7 @@
 <li><a href="index.html#connected-spaces">Connected Spaces</a></li>
 <li><a href="index.html#some-cool-results">Some Cool Results</a></li>
 </ol>
-<hr></hr>
+<hr>
 <h3 id="connectedspacesanameconnectedspaces">Connected Spaces<a name="connected-spaces"></a></h3>
 <p>I decided to postpone the second half of my construction of the rational numbers because I needed to break up the monotony a bit.</p>
 <p>I'm finally about to show you some really cool stuff. In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness. I'll probably save path-connectedness for a later time, since this post will be long enough as is.</p>
@@ -120,14 +119,14 @@
 <blockquote>
 <p><strong>Theorem.</strong> A topological space $X$ is disconnected if and only if there exist nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
 <p><strong>Proof.</strong> Suppose first that $X$ is disconnected. That is, there exists a nonempty proper subset $A\subset X$ which is both open and closed in $X$. Then by definition, $X-A$ is also both open and closed, and $X-A$ is nonempty because $A\ne X$. We observe that $A\cap(X-A)=\varnothing$ and $A\cup(X-A)=X$. Thus, we have demonstrated nonempty open sets $U=A$ and $V=X-A$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
-</blockquote>
 <p>Suppose next that there exist nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$. Then $V=X-U$ is also closed since it is the complement of the open set $U$. Note also that $V$ is nonempty by hypothesis, and $V\ne X$ because $U$ is nonempty. It follows that $X$ is disconnected.</p>
+</blockquote>
 <p>Just looking at this new phrasing of disconnectedness, we see that it is immediately applicable to my above example. Clearly that space $X$ is the union of two disjoint, nonempty open sets. Before I move on, let me formally state this new definition in the context of connectedness.</p>
 <blockquote>
 <p><strong>Definition.</strong> If a space $X$ is disconnected, then a <strong>separation</strong> of $X$ is a pair of nonempty open sets $U,V\subset X$ for which $U\cap V=\varnothing$ and $U\cup V=X$.</p>
 </blockquote>
 <blockquote>
-<p><strong>Definition.</strong> A topological space $X$ is <strong>connected</strong> if it does not have a separation.</p>
+<p><strong>Corollary.</strong> A topological space $X$ is <strong>connected</strong> if it does not have a separation.</p>
 </blockquote>
 <p>The next equivalent definition of connectedness may look a little bit strange to you right now, but it will make our lives a lot easier in two of the proofs that lie ahead. Recall that a constant function $f$ has $f(x_1)=f(x_2)$ for all $x_1,x_2$ in its domain.</p>
 <blockquote>
@@ -136,10 +135,10 @@
 <p>Suppose there exists a nonconstant continuous function $f:X\to\{0,1\}$. Since $f$ is not constant, it takes on at least two values in its codomain and thus it must be the case that $f[X]=\{0,1\}$, so clearly $f$ is surjective. Define $U=f^{-1}\big[{0}\big]$ and $V=f^{-1}\big[{1}\big]$. Certainly $U\cap V=\varnothing$ and $U\cup V=X$. Also, $U$ and $V$ are nonempty because $f$ is surjective. It follows that $U$ and $V$ form a separation of $X$, and so $X$ is not connected.</p>
 <p>We argue next that if $X$ is not connected, then there exists a continuous function $f:X\to\{0,1\}$ which is not constant.</p>
 <p>Suppose $X$ is not connected. Then there exists a separation $U,V$ of $X$. Define $f:X\to\{0,1\}$ by</p>
-<p>$f(n) =<br />
-\begin{cases}<br />
-0 &amp; \text{if } x\in U, \\<br />
-1 &amp; \text{if } x\in V.<br />
+<p>$f(n) =<br>
+\begin{cases}<br>
+0 &amp; \text{if } x\in U, \\<br>
+1 &amp; \text{if } x\in V.<br>
 \end{cases}$</p>
 <p>This function is nonconstant because both $U$ and $V$ are nonempty. It is obvious that $f^{-1}\big[\{1\}\big]=U$ and $f^{-1}\big[\{0\}\big]=V$, which are both open in $X$. Furthermore, $f^{-1}\big[\{0,1\}\big]=X$ and $f^{-1}[\varnothing]=\varnothing$ are both open in $X$. We have demonstrated that the preimage of every open set in $\{0,1\}$ is open in $X$, and so $f$ is continuous by definition.</p>
 </blockquote>
@@ -166,23 +165,23 @@
 <p><strong>Theorem.</strong> Let $X,Y$ denote topological spaces, let $f:X\to Y$ be a homeomorphism and suppose $X$ is connected. Then $Y$ is connected.</p>
 <p><strong>Proof.</strong> We will prove the contrapositive. Suppose $Y$ is not connected, so that there exist open sets $U,V$ that separate $Y$. We argue that $f^{-1}[U]$ and $f^{-1}[V]$ form a separation of $X$.</p>
 <p>Clearly $f^{-1}[U]$ and $f^{-1}[V]$ are open because $f$ is continuous, and they are each nonempty because $f$ is surjective. In addition, because $U\cap V=\varnothing$, we have that</p>
-<p>$\begin{align}<br />
-f^{-1}[U]\cap f^{-1}[V]&amp;=f^{-1}[U\cap V] \\<br />
-&amp;=f^{-1}[\varnothing] \\<br />
-&amp;=\varnothing.<br />
+<p>$\begin{align}<br>
+f^{-1}[U]\cap f^{-1}[V]&amp;=f^{-1}[U\cap V] \\<br>
+&amp;=f^{-1}[\varnothing] \\<br>
+&amp;=\varnothing.<br>
 \end{align}$</p>
 <p>Similarly, because $U\cup V=Y$, we have that</p>
-<p>$\begin{align}<br />
-f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br />
-&amp;=f^{-1}[Y] \\<br />
-&amp;=X.<br />
+<p>$\begin{align}<br>
+f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br>
+&amp;=f^{-1}[Y] \\<br>
+&amp;=X.<br>
 \end{align}$</p>
 <p>It follows that $f^{-1}[U]$ and $f^{-1}[V]$ form a separation of $X$, so $X$ is not connected.</p>
 </blockquote>
 <p>Really all we used was continuity and surjectivity of $f$, so saying that $f$ was a homeomorphism actually weakened the result a little bit. It's actually true that all continuous functions preserve connectedness! I won't prove it though, because it's really just a teensy modification of the above proof.</p>
 <p>Clearly we can distinguish between topological spaces as follows: if one space is connected and another isn't, then the spaces are not homeomorphic. However, we can also use connectedness in a somewhat trickier way to distinguish between certain connected spaces!</p>
 <blockquote>
-<p><strong>Definition.</strong> A <strong>cutset</strong> $A$ of a connected topological space $X$ is a subset of $X$ for which $X-A$ is disconnected.</p>
+<p><strong>Definition.</strong> A <strong>cutset</strong> $A$ of a connected topological space $X$ is a subset of $X$ for which $X-A$ is disconnected.</p>
 </blockquote>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>cutpoint</strong> $x$ of a connected topological space $X$ is a point of $X$ for which $\{x\}$ is a cutset, i.e., $X-\{x\}$ is disconnected.</p>
@@ -192,9 +191,9 @@ f^{-1}[U]\cup f^{-1}[V]&amp;=f^{-1}[U\cup V] \\<br />
 <p></p>
 <p>Is $x$ a cutpoint of $A$? No, it is not because $A-\{x\}=(A_1-\{x\})\cup\bigcup\limits_{i=2}^5 A_i\cup(A_6-\{x\}).$ Each of the sets being unioned are connected and the intersection of each set with the next is nonempty, so $A-\{x\}$ is connected. If we permute the indices of the $A_i$, the same logic tells us that $y$ is not a cutpoint of $A$.</p>
 <p>However, $\{x,y\}$ is a cutset of $A$ (or, equivalently, $y$ is a cutpoint of $A-\{x\}$). That's because</p>
-<p>$\begin{align}<br />
-U &amp;= (A_1-\{x\})\cup(A_2-\{y\}) \\<br />
-V &amp;= (A_3-\{y\})\cup\bigcup\limits_{i=4}^5 A_i\cup (A_6-\{x\})<br />
+<p>$\begin{align}<br>
+U &amp;= (A_1-\{x\})\cup(A_2-\{y\}) \\<br>
+V &amp;= (A_3-\{y\})\cup\bigcup\limits_{i=4}^5 A_i\cup (A_6-\{x\})<br>
 \end{align}$</p>
 <p>is a separation of $A-\{x,y\}$.</p>
 </blockquote>
@@ -202,18 +201,18 @@ V &amp;= (A_3-\{y\})\cup\bigcup\limits_{i=4}^5 A_i\cup (A_6-\{x\})<br />
 <blockquote>
 <p>Theorem. Let $f:X\to Y$ be a homeomorphism between connected spaces $X$ and $Y$. If $A$ is a cutset of $X$, then $f[A]$ is a cutset of $Y$.</p>
 <p>Proof. Since $X-A$ is disconnected, there exists a separation $U,V$ of $X-A$. We argue that $f[U]$ and $f[V]$ form a separation of $Y-f[A]$. Because $f$ is a homeomorphism, $f^{-1}$ is continuous and thus $f[U]=(f^{-1})^{-1}[U]$ and $f[V]=(f^{-1})^{-1}[V]$ are open in $Y$. Since $U$ and $V$ are nonempty, certainly $f[U]$ and $f[V]$ are nonempty. Observe that, because $U\cap V=\varnothing$,</p>
-<p>$\begin{align}<br />
-f[U]\cap f[V]&amp;=(f^{-1})^{-1}[U]\cap(f^{-1})^{-1}[V]\\<br />
-&amp;=(f^{-1})^{-1}[U\cap V]\\<br />
-&amp;=f[U\cap V]\\<br />
-&amp;=f[\varnothing]\\<br />
-&amp;=\varnothing.<br />
+<p>$\begin{align}<br>
+f[U]\cap f[V]&amp;=(f^{-1})^{-1}[U]\cap(f^{-1})^{-1}[V]\\<br>
+&amp;=(f^{-1})^{-1}[U\cap V]\\<br>
+&amp;=f[U\cap V]\\<br>
+&amp;=f[\varnothing]\\<br>
+&amp;=\varnothing.<br>
 \end{align}$</p>
 <p>Furthermore, because $U\cup V=X-A$ and $f$ is bijective,</p>
-<p>$\begin{align}f[U]\cup f[V]&amp;=f[U\cup V]\\<br />
-&amp;=f[X-A]\\<br />
-&amp;=f[X]-f[A]\\<br />
-&amp;=Y-f[A].<br />
+<p>$\begin{align}f[U]\cup f[V]&amp;=f[U\cup V]\\<br>
+&amp;=f[X-A]\\<br>
+&amp;=f[X]-f[A]\\<br>
+&amp;=Y-f[A].<br>
 \end{align}$</p>
 <p>Thus, $f[U]$ and $f[V]$ separate $Y-f[A]$. It follows that $f[A]$ is a cutset of $Y$.</p>
 </blockquote>
@@ -239,11 +238,11 @@ f[U]\cap f[V]&amp;=(f^{-1})^{-1}[U]\cap(f^{-1})^{-1}[V]\\<br />
 <blockquote>
 <p><strong>Theorem.</strong> The set $\R$ of real numbers, equipped with the standard topology, is connected.</p>
 <p><strong>Proof.</strong> We proceed by contradiction, supposing that $\R$ is not connected. This means that there exist open sets $U$ and $V$ which separate $\R$. Choose $u\in U$ and $v\in V$, and assume without loss of generality that $u&lt;v$. Define $U'=[u,v]-V$ and $V'=[u,v]-U$. Using De Morgan's law and the fact that $V\cap U=\varnothing$, it follows that</p>
-<p>$\begin{align}<br />
-U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br />
-&amp;=[u,v]-(V\cap U)\\<br />
-&amp;=[u,v]-\varnothing\\<br />
-&amp;=[u,v].<br />
+<p>$\begin{align}<br>
+U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br>
+&amp;=[u,v]-(V\cap U)\\<br>
+&amp;=[u,v]-\varnothing\\<br>
+&amp;=[u,v].<br>
 \end{align}$</p>
 <p>The set $U'$ is nonempty because $u\in U'$ and it is bounded above by $v$, and so $U'$ has a supremum, $s$. Clearly $s\in [u,v]$, so either $s\in U'$ or $s\in V'$.</p>
 <p>Suppose first that $s\in U'$. Then because $U'$ is open in $[u,v]$ and $v\notin U'$, there exists $d\in[u,v]$ for which $[s,d)\subseteq U'$. Then for every $x\in (s,d)$, we have that $x\in U'$ and $x&gt;s$, which is a contradiction because $s$ is the supremum of $U'$.</p>
@@ -256,17 +255,17 @@ U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br />
 <p><strong>Intermediate Value Theorem.</strong> Let $X$ denote a connected space and let $f:X\to\R$ be continuous. If $x,y\in f[X]$ and $c\in [x,y]$, then $c\in f[X]$.</p>
 <p><strong>Proof.</strong> It suffices to consider $c\in (x,y)$, because if $x\in\{x,y\}$ there is nothing to prove. Since $X$ is connected and $f$ is continuous, $f[X]$ is connected in $\R$. We proceed by contradiction.</p>
 <p>Suppose $c\notin f[X]$ and define $U'=(-\infty,c)$ and $V'=(c,\infty)$. Clearly $U'\cap V'=\varnothing$ and $f[X]\subseteq U'\cup V'$. We argue that $U=U'\cap f[x]$ and $V=V'\cap f[X]$ form a separation of $f[X]$. Since $x\in U'$ and $y\in V'$, we have that $U$ and $V$ are nonempty. Furthermore,</p>
-<p>$\begin{align}<br />
-U\cap V &amp;= (U'\cap f[X])\cap(V'\cap f[X])\\<br />
-&amp;= (U'\cap V')\cap f[X]\\<br />
-&amp;= \varnothing\cap f[X]\\<br />
-&amp;= \varnothing.<br />
+<p>$\begin{align}<br>
+U\cap V &amp;= (U'\cap f[X])\cap(V'\cap f[X])\\<br>
+&amp;= (U'\cap V')\cap f[X]\\<br>
+&amp;= \varnothing\cap f[X]\\<br>
+&amp;= \varnothing.<br>
 \end{align}$</p>
 <p>In addition, because $f[X]\subseteq U'\cup V'$, we have that</p>
-<p>$\begin{align}<br />
-U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br />
-&amp;= (U'\cup V')\cap f[X]\\<br />
-&amp;= f[X].<br />
+<p>$\begin{align}<br>
+U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
+&amp;= (U'\cup V')\cap f[X]\\<br>
+&amp;= f[X].<br>
 \end{align}$</p>
 <p>Thus, $U$ and $V$ separate $f[X]$, which is a contradiction.</p>
 </blockquote>
@@ -279,10 +278,10 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br />
 <blockquote>
 <p><strong>One-Dimensional Brouwer Fixed Point Theorem.</strong> Every continuous map $f:[-1,1]\to[-1,1]$ has a fixed point.</p>
 <p><strong>Proof.</strong> We proceed by contradiction. Suppose $f:[-1,1]\to[-1,1]$ is continuous but has no fixed point. That is, $f(x)\ne x$ for every $x\in[-1,1]$. Define $g:[-1,1]\to\{-1,1\}$ by</p>
-<p>$g(x) =<br />
-\begin{cases}<br />
--1 &amp; \text{if } f(x) &gt; x, \\<br />
-\phantom{-}1 &amp; \text{if } f(x) &lt; x.<br />
+<p>$g(x) =<br>
+\begin{cases}<br>
+-1 &amp; \text{if } f(x) &gt; x, \\<br>
+\phantom{-}1 &amp; \text{if } f(x) &lt; x.<br>
 \end{cases}$</p>
 <p>There is an alternative way of writing this: $g(x)=\frac{f(x)-x}{\abs{f(x)-x}}.$ Because $f(x)\ne x$ for every $x\in[-1,1]$, clearly $f(x)-x\ne 0$ and $g$ is thus a continuous function. Because $g$ is continuous and its codomain is a discrete two-point set, it must be that $g$ is constant. However, we also have that $g(-1)=1$ and $g(1)=-1$, and so $g$ is not constant - a contradiction.</p>
 </blockquote>
@@ -311,8 +310,7 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="../../index.html">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="../../">Algebrology</a> © 2019</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>
-</html>

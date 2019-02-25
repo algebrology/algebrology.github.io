@@ -1,36 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Continuity and Homeomorphisms</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=7f30b9a1f9" />
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=7f30b9a1f9" /></noscript>
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=b2c11776c2">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=b2c11776c2"></noscript>
 
-    <meta name="description" content="If a function is continuous, points that are close together get mapped to points that are close together..." />
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="index.html" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <link rel="amphtml" href="amp/index.html" />
+    <meta name="description" content="If a function is continuous, points that are close together get mapped to points that are close together...">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
     
-    <meta property="og:site_name" content="Algebrology" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Continuity and Homeomorphisms" />
-    <meta property="og:description" content="The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they&#x27;re talking about a continuous map." />
-    <meta property="og:url" content="http://localhost:2368/continuity-and-homeomorphisms/" />
-    <meta property="article:published_time" content="2017-04-08T03:08:10.000Z" />
-    <meta property="article:modified_time" content="2019-02-20T04:45:54.000Z" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Continuity and Homeomorphisms" />
-    <meta name="twitter:description" content="The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they&#x27;re talking about a continuous map." />
-    <meta name="twitter:url" content="http://localhost:2368/continuity-and-homeomorphisms/" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Continuity and Homeomorphisms">
+    <meta property="og:description" content="The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they're talking about a continuous map.">
+    <meta property="og:url" content="http://localhost:2368/continuity-and-homeomorphisms/">
+    <meta property="article:published_time" content="2017-04-08T03:08:10.000Z">
+    <meta property="article:modified_time" content="2019-02-20T04:45:54.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Continuity and Homeomorphisms">
+    <meta name="twitter:description" content="The concept of continuity is central to the study of topology. So much so, in fact, that whenever anyone talks about a map between topological spaces, they generally expect you to know that they're talking about a continuous map.">
+    <meta name="twitter:url" content="http://localhost:2368/continuity-and-homeomorphisms/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
     
     <script type="application/ld+json">
 {
@@ -64,8 +63,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html" />
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     tex2jax: {
@@ -89,16 +88,16 @@ MathJax.Hub.Config({
 </head>
 <body class="is-preload post-template">
 
-    <div id="wrapper" >
+    <div id="wrapper">
 
 
         <header id="header">
-                <a href="../index.html" class="logo">Algebrology</a>
+                <a href="../" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../index.html">Home</a></li>
+        <li class="nav-home "><a href="../">Home</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -143,7 +142,7 @@ MathJax.Hub.Config({
 <p>All the definition really says is that if a function is continuous at $x$, no matter how closely you look at $f(x)$ there will always be points around $x$ which get mapped within that distance of $f(x)$. So like I said earlier, points that are close together get mapped to points that are close together.</p>
 <p>If that makes perfect sense to you, skip the next few paragraphs. Otherwise, I'm going to explain this definition to you very slowly through a story.</p>
 <hr>
-<p>Think of the person you loathe the most in this world. I'll refer to this person as &quot;the enemy&quot; and use the pronoun &quot;it.&quot;</p>
+<p>Think of the person you loathe the most in this world. I'll refer to this person as "the enemy" and use the pronoun "it."</p>
 <p>Say you have two metric spaces $X$ and $Y$, and a continuous map $f:X\to Y$ between them:</p>
 <p><img src="../content/images/2017/04/some_spaces.svg" alt="some spaces"></p>
 <p>You are omnipotent, as in real life, and you know everything there is to know about $X,Y$ and $f$. However, the enemy, being a foolish fool, mistakenly thinks that $f$ is not continuous. And so it tries to trick you. It plots a point $x\in X$ and its image $f(x)\in Y$. Then it draws an open ball $B$ of radius $\epsilon$ around $f(x)$.</p>
@@ -165,7 +164,7 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br>
 <p><strong>Proof.</strong> Suppose first that $f:X\to Y$ is continuous. If $f^{-1}[U]=\varnothing$ then we are done because this is open in $X$. Suppose then that $f^{-1}[U]\ne\varnothing$. Choose $x\in f^{-1}[U]$, so that $f(x)\in U$. Since $U$ is open, there exists a real number $\epsilon&gt;0$ such that $B\big(f(x),\epsilon\big)\subseteq U$. Since $f$ is continuous, there exists a real number $\delta&gt;0$ such that $f\big[B(x,\delta)\big]\subseteq B\big(f(x),\epsilon\big)$. That is, $B(x,\delta)\subseteq f^{-1}\big[B\big(f(x),\epsilon\big)\big]\subseteq f^{-1}[U]$. Thus, there is an open ball centered at $x$ which is contained in $f^{-1}[U]$, so clearly $f^{-1}[U]$ is open in $X$.</p>
 <p>Suppose conversely that $f^{-1}[U]$ is open in $X$ whenever $U$ is open in $Y$. Choose $x\in X$ and a real number $\epsilon&gt;0$. Since $B\big(f(x),\epsilon\big)$ is open in $Y$, we have that $f^{-1}\big[B\big(f(x),\epsilon\big)\big]$ is open in $X$. Since $x\in f^{-1}\big[B\big(f(x),\epsilon\big)\big]$, there exists a real number $\delta&gt;0$ such that $B(x,\delta)\subseteq f^{-1}\big[B\big(f(x),\epsilon\big)\big]$. Thus, $f$ is continuous.</p>
 </blockquote>
-<p>This is most excellent. We've arrived at a &quot;distance-free&quot; definition of continuity, phrased entirely in terms of open sets. You know what that means! We're going to adopt this as the definition of continuity in a general topological setting.</p>
+<p>This is most excellent. We've arrived at a "distance-free" definition of continuity, phrased entirely in terms of open sets. You know what that means! We're going to adopt this as the definition of continuity in a general topological setting.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $X$ and $Y$ denote topological spaces. A function $f:X\to Y$ is <strong>continuous</strong> if $f^{-1}[U]$ is open in $X$ whenever $U$ is open in $Y$.</p>
 </blockquote>
@@ -186,12 +185,12 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br>
 <p>Suppose next that $x\in (g\circ f)^{-1}[U]$. Then $(g\circ f)(x)=g\big(f(x)\big)\in U$, so $f(x)\in g^{-1}[U]$ and thus $x\in f^{-1}\big[g^{-1}[U]\big]$.</p>
 </blockquote>
 <h3 id="homeomorphismsanamehomeomorphisms">Homeomorphisms<a name="homeomorphisms"></a></h3>
-<p>Ages ago, when I first started talking about topological spaces, I mentioned the idea of topological equivalence. I believe I said something like &quot;two spaces are topologically equivalent if they can be continuously deformed into each other,&quot; and that &quot;continuous deformations are ways we can bend, stretch and move spaces without tearing, cutting or gluing them.&quot; We now have the machinery to formally define this notion.</p>
+<p>Ages ago, when I first started talking about topological spaces, I mentioned the idea of topological equivalence. I believe I said something like "two spaces are topologically equivalent if they can be continuously deformed into each other," and that "continuous deformations are ways we can bend, stretch and move spaces without tearing, cutting or gluing them." We now have the machinery to formally define this notion.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $X$ and $Y$ denote topological spaces. A bijective function $f:X\to Y$ is a <strong>homeomorphism</strong> if both $f$ and $f^{-1}:X\to Y$ are continuous. We say that the spaces are <strong>homeomorphic</strong>.</p>
 </blockquote>
 <p>It is particularly important that $f$ is bijective, since otherwise $f^{-1}$ would not be well defined.</p>
-<p>There is no consistent symbol for &quot;is homeomorphic to,&quot; although I've seen several used by different authors. For instance, $X\simeq Y$, $Y\approx Y$ or $X\sim Y$ could all be used. And I've seen them all used. I won't use any such notation, however, because I find it terribly confusing.</p>
+<p>There is no consistent symbol for "is homeomorphic to," although I've seen several used by different authors. For instance, $X\simeq Y$, $Y\approx Y$ or $X\sim Y$ could all be used. And I've seen them all used. I won't use any such notation, however, because I find it terribly confusing.</p>
 <p>It should go without saying that if a function is a homeomorphism then so is its inverse. The next result is perhaps a tad less obvious, although its proof is almost trivial.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $X, Y$ and $Z$ denote topological spaces with homeomorphisms $f:X\to Y$ and $g:Y\to Z$. Then $X$ is homeomorphic to $Z$ via $(g\circ f):X\to Z$.</p>
@@ -204,7 +203,7 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>If I haven't mentioned this before, &quot;map&quot; is just another word for &quot;function&quot; and the two are often used interchangeably. <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>If I haven't mentioned this before, "map" is just another word for "function" and the two are often used interchangeably. <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p>I'm not sure why the arrows in my diagram are on sideways, but I'm too lazy to fix it. <a href="index.html#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
@@ -219,7 +218,7 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/index.html">
+                <a class="author-box" href="../author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -249,22 +248,21 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br>
 
         <div id="copyright">
             <ul>
-                <li>&copy; 2019 Eric Shapiro</li>
+                <li>© 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/browser.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/util.js?v=7f30b9a1f9"></script>
-    <script src="../assets/main/js/main.js?v=7f30b9a1f9"></script>
+    <script src="../assets/main/js/jquery.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/browser.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/util.js?v=b2c11776c2"></script>
+    <script src="../assets/main/js/main.js?v=b2c11776c2"></script>
 
     
 
 </body>
-</html>

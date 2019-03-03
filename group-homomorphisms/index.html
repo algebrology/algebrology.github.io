@@ -1,0 +1,330 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Group Homomorphisms</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=0e28cd7b0f">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=0e28cd7b0f"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Group Homomorphisms">
+    <meta property="og:description" content=" 1. Introduction
+ 2. Homomorphisms
+
+
+--------------------------------------------------------------------------------
+
+Introduction
+A long time ago I wrote my first post about group theory
+[http://localhost:2368/groups-and-their-basic-properties/], in which I defined
+groups and subgroups, gave several examples of groups and proved a few of their
+basic but important properties. Hopefully at the very least you remember that a
+group is a set with an associative binary operation, an identity element">
+    <meta property="og:url" content="http://localhost:2368/group-homomorphisms/">
+    <meta property="article:published_time" content="2019-03-03T05:37:37.000Z">
+    <meta property="article:modified_time" content="2019-03-03T06:54:11.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Group Homomorphisms">
+    <meta name="twitter:description" content=" 1. Introduction
+ 2. Homomorphisms
+
+
+--------------------------------------------------------------------------------
+
+Introduction
+A long time ago I wrote my first post about group theory
+[http://localhost:2368/groups-and-their-basic-properties/], in which I defined
+groups and subgroups, gave several examples of groups and proved a few of their
+basic but important properties. Hopefully at the very least you remember that a
+group is a set with an associative binary operation, an identity element">
+    <meta name="twitter:url" content="http://localhost:2368/group-homomorphisms/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Group Homomorphisms",
+    "url": "http://localhost:2368/group-homomorphisms/",
+    "datePublished": "2019-03-03T05:37:37.000Z",
+    "dateModified": "2019-03-03T06:54:11.000Z",
+    "description": " 1. Introduction\n 2. Homomorphisms\n\n\n--------------------------------------------------------------------------------\n\nIntroduction\nA long time ago I wrote my first post about group theory\n[http://localhost:2368/groups-and-their-basic-properties/], in which I defined\ngroups and subgroups, gave several examples of groups and proved a few of their\nbasic but important properties. Hopefully at the very least you remember that a\ngroup is a set with an associative binary operation, an identity element",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 2, 2019</span>
+            <h1>Group Homomorphisms</h1>
+        </header>
+
+
+        <div class="content">
+            <ol>
+<li><a href="index.html#introduction">Introduction</a></li>
+<li><a href="index.html#homomorphisms">Homomorphisms</a></li>
+</ol>
+<hr>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<p>A long time ago I wrote <a href="../groups-and-their-basic-properties/">my first post about group theory</a>, in which I defined groups and subgroups, gave several examples of groups and proved a few of their basic but important properties. Hopefully at the very least you remember that a group is a set with an associative binary operation, an identity element and inverses for all its elements. The identity, as well as each element's invers, is unique and we can cancel like terms from both sides of equations like we generally do without thinking anyway.</p>
+<p>Before I dive in, there are just a few quick things we will need before we can talk about homomorphisms. The first is an easy way to identify whether a subset of a group is actually a subgroup.</p>
+<blockquote>
+<p><strong>Lemma.</strong> A subset $H$ of a group $G$ is a subgroup of $G$ if it is nonempty and if $ab^{-1}\in H$ whenever $a,b\in H$.</p>
+<p><strong>Proof.</strong> Since the operation on $H$ is inherited from $G$, it is clearly associative. Next, since $H$ is nonempty there exists $x\in H$, and thus by hypothesis $xx^{-1}=e\in H$, where $e$ is the identity element. Furthermore, since $e,x\in H$, we have that $ex^{-1}=x^{-1}\in H$, so $H$ contains inverses for all its elements. Finally, for any $a,b\in H$ we have established that $b^{-1}\in H$. So again by hypothesis, $a(b^{-1})^{-1}=ab\in H$, and so $H$ is closed under products. We have shown that $H$ is a group, and thus it is a subgroup of $G$.</p>
+</blockquote>
+<p>Notice that when I say something is "closed under products," what this really means is that the group operation is a well defined binary operation. For multiplicative groups, the word "product" fits nicely. For abelian groups with additive notation, it doesn't make quite as much sense but I will probably slip up and use it anyway.</p>
+<p>For the most part, this lemma will simply make it a little bit faster to verify that certain things are subgroups of other groups. This will help keep future proofs nice and short.</p>
+<p>The next thing I should mention is the concept of a group's order. Because I have not talked about cardinality anywhere on my blog yet, I will only define order for finite groups. Luckily, this is all we'll need for a while.</p>
+<blockquote>
+<p><strong>Definition.</strong> The <strong>order</strong> of a finite group is the number of elements that group contains. We denote the order of a group $G$ by $\abs{G}$.</p>
+</blockquote>
+<p>That's a pretty simple definition. The trivial group contains only the identity, so it is a group of order one. The dihedral group of the regular $n$-gon, written $D_n$ and which I talked about in my first post on groups, has $2n$ elements and thus $\abs{D_n}=2n$. There are an abundance of examples of interesting finite groups, and the order of a finite group is really just its size.</p>
+<h3 id="homomorphismsanamehomomorphisms">Homomorphisms<a name="homomorphisms"></a></h3>
+<p>A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the "correct" type of maps. For topological spaces, it is the continuous maps that help us to understand their structure. For groups, we have the following analogous idea.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>group homomorphism</strong> between groups $G$ and $H$ is a function $f:G\to H$ such that $f(x)f(y)=f(xy)$ for all $x,y\in G$.</p>
+</blockquote>
+<p>When it is understood that I am talking about groups, I will often refer to these things simply as homomorphisms, rather than group homomorphisms.</p>
+<p>The first thing I want to stress is that <em>homomorphism</em> and <em>homeomorphism</em> are different words and different concepts. Homomorphisms are functions that preserve group multiplication, whereas homeomorphisms preserve open sets in topological spaces.</p>
+<p>The seconds thing I need to mention is that in the above definition, the multiplication of $f(x)$ and $f(y)$ on the left side of the equation takes place in the group $H$, whereas the multiplication of $x$ and $y$ on the right takes place in $G$. That is to say, homomorphisms are precisely the maps for which is does not matter whether we multiply elements before or after applying the map.</p>
+<p>To put it another way, we can multiply elements in $G$ and take the image of their product, or we can take their images first and then multiply them in $H$. Either way, we always get the same answer. This means that the group operation is preserved by homomorphisms. And that means that much of the group's structure is also preserved. There is, in fact, a special type of homomorphism which perfectly preserves a group's structure.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>group isomorphism</strong> between groups $G$ and $H$ is a bijective homomorphism $f:G\to H$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> Two groups are <strong>isomorphic</strong> if there exists a group isomorphism between them.</p>
+</blockquote>
+<p>Isomorphisms are the nicest sort of map between groups. Since they are bijective, they map each group element to precisely one element in the other group. Since they are homomorphisms, they preserve the group operation. This means that an isomorphism is essentially just a way of renaming the elements of a group. They do not alter the way that elements interaction with each other. Perhaps an example will help get my point across.</p>
+<blockquote>
+<p><strong>Example.</strong> The group $(\R, +)$ of real numbers under addition and the group $(\R^+, \cdot)$ of positive real numbers under multiplication are isomorphic. We can establish this by exhibiting an isomorphism between them.</p>
+<p>Let's define the function $f:\R^+\to\R$ by $f(x)=\log x$. We will argue that $f$ is an isomorphism. First, it is clearly a homomorphism because from the basic properties of the logarithm,</p>
+<p>$$\begin{align}<br>
+f(x) + f(y) &amp;= \log x +\log y \\<br>
+&amp;= \log(x \cdot y) \\<br>
+&amp;= f(x \cdot y).<br>
+\end{align}$$</p>
+<p>In addition, we know that $f$ is bijective because it has an inverse function, the exponential map $f^{-1}:\R\to\R^+$ given explicitly by $f^{-1}(x)=e^x$.</p>
+<p>What does it really mean when we say that these groups are isomorphic? It isn't just some meaningless abstract statement that these groups are "essentially" the same. It actually means that we can do algebra in one and then easily transfer it over to the other group! That is, we can do multiplication in $\R^+$ simply by doing the corresponding addition in $\R$ and then applying the logarithm. This is the principle that slide rules are based on. Addition is easier than multiplication, so we add our numbers by hand and then use the magic slide rule isomorphism machine to take us between groups and into the world of multiplication.</p>
+</blockquote>
+<p>Isomorphisms may be useful in certain cases, but they are actually a bit boring precisely <em>because</em> they perfectly preserve structure. After all, how interesting is a flat renaming of group elements? We might as well just call two isomorphic groups the same. General homomorphisms are actually much more interesting.</p>
+<p>It may be enlightening to see an example of a homomorphism that is not an isomorphism, but is still surprisingly structure-preserving.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider the group $\Z$ of integers under addition and the group $\{-1,1\}$ under multiplication. In $\{-1,1\}$ we have that</p>
+<p>$$\begin{align}<br>
+1\cdot 1 &amp;= 1, \\<br>
+-1\cdot 1 &amp;= -1. \\<br>
+1\cdot -1 &amp;= -1, \\<br>
+-1\cdot -1 &amp;= 1,<br>
+\end{align}$$</p>
+<p>So clearly the identity element in $\{-1,1\}$ is $1$ and every element is its own inverse. Let's construct a function $f:\Z\to\{-1,1\}$ defined by</p>
+<p>$$f(x) =<br>
+\begin{cases}<br>
+1 &amp; \text{if } x\in 2\Z, \\<br>
+-1 &amp; \text{if } x\in 2\Z+1.<br>
+\end{cases}$$</p>
+<p>(Here $2\Z$ is the set of even integers and $2\Z+1$ is the set of odd integers. My reason for denoting them this way will become apparent once we talk about cosets in a later post.)</p>
+<p>Let's show that this function is a homomorphism. Choose $m,n\in\Z$. There are three possible cases:</p>
+<ol>
+<li>Both $m$ and $n$ are even. That is, $m,n\in 2\Z$.</li>
+<li>Both $m$ and $n$ are odd. That is, $m,n\in 2\Z+1$.</li>
+<li>Either $m$ is even and $n$ is odd or vice versa. Because both groups we're considering are abelian, it suffices to consider only one of these cases, $m\in 2\Z$ and $n\in 2\Z+1$.</li>
+</ol>
+<p>We examine case 1 first. Suppose $m,n\in 2\Z$, so that $f(m)=f(n)=1$. Then $m=2k_1$ and $n=2k_2$ for some $k_1,k_2\in\Z$. This means that $m+n=2k_1+2k_2=2(k_1+k_2)\in 2\Z$. Thus, $f(m)f(n)=1\cdot 1=1=f(m+n)$.</p>
+<p>Next, we look at case 2. Suppose that $m,n\in 2\Z+1$, so that $f(m)=f(n)=-1$. Then $m=2k_1+1$ and $n=2k_2+1$ for some $k_1,k_2\in\Z$. This means that $m+n=(2k_1+1)+(2k_2+1)=2k_1+2k_2+2=2(k_1+k_2+1)\in 2\Z$. Thus, $f(m)f(n)=-1\cdot -1=1=f(m+n)$.</p>
+<p>Lastly, we examine case 3. Suppose that $m\in 2\Z$ but $n\in 2\Z+1$, so that $f(m)=1$ and $f(n)=-1$. Then $m=2k_1$ and $n=2k_2+1$ for some $k_1,k_2\in\Z$. This means that $m+n=2k_1+2k_2+1=2(k_1+k_2)+1\in 2\Z+1$. Thus, $f(m)f(n)=1\cdot -1=-1=f(m+n)$.</p>
+<p>Since we have now checked that $f(m)f(n)=f(m+n)$ for all $m,n\in\Z$, it follows that $f$ is a homomorphism.</p>
+<p>That was really us showing what we already know — that the sum of two even numbers is even, the sum of two odd numbers is also even, and the sum of an even and an odd number is odd. The property of being even or odd is sometimes called <strong>parity</strong>, and this homomorphism preseves the parity of integers, as well as what happens to the parity of integers after you add them together. Actually, parity is basically all that is preserved by this homomorphism, but it's still a nice example of how homomorphisms can preserve important aspects of a group's structure.</p>
+</blockquote>
+<p>Now for some basic properties of homomorphisms. I promise these next two proofs are easy and short. The first property is that homomorphisms always map the identity of one group to the identity of the other. If we were being very careful, we would represent the identity of $G$ by $e_G$ and the identity in $H$ by $e_H$. However, it is common to be a bit sloppy and use $e$ to represent the identity element in both groups. If proper care is taken, this should never result in any confusion.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $f:G\to H$ is a group homomorphism then $f(e)=e$.</p>
+<p><strong>Proof.</strong> Since $f$ is a homomorphism, we have that</p>
+<p>$$\begin{align}<br>
+f(e)f(e) &amp;= f(ee) \\<br>
+&amp;= f(e) \\<br>
+&amp;= f(e)e.<br>
+\end{align}$$</p>
+<p>Thus, cancellation on the left yields the equality $f(e)=e$.</p>
+</blockquote>
+<p>The next property is just as straightforward — homomorphisms always map inverses to inverses.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $f:G\to H$ is a group homomorphism then $f(x^{-1})=f(x)^{-1}$ for every $x\in G$.</p>
+<p><strong>Proof.</strong> Since $f$ is a homomorphism, we have that</p>
+<p>$$\begin{align}<br>
+f(x)f(x^{-1}) &amp;= f(xx^{-1}) \\<br>
+&amp;= f(e) \\<br>
+&amp;= e.<br>
+\end{align}$$</p>
+<p>Multiplication on the left by $f(x)^{-1}$ on both sides yields $f(x^{-1})=f(x)^{-1}$, as desired.</p>
+</blockquote>
+<p>Both of these properties only serve to reinforce my claim that homomorphisms are structure-preserving maps. I'll shut my smug face now and define two of the most important things ever.</p>
+<blockquote>
+<p><strong>Definition.</strong> The <strong>kernel</strong> of a group homomorphism $f:G\to H$ is the set $$\ker f=\{x\in G\mid f(x)=e\}.$$ That is, it is the set of elements in $G$ that get mapped to the identity in $H$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> The <strong>image</strong> of a group homomorphism $f:G\to H$ is the set $$\im f=f[G]=\{f(x)\in H\mid x\in G\}.$$ That is, it is the set of elements in $H$ that get mapped to by some element in $G$.</p>
+</blockquote>
+<p>If $f:G\to H$ is a group homomorphism and $f$ is surjective, it should be clear that $H=\im f$. Similarly, if $f$ is injective then $\ker f = \{e\}$. These facts, along with the next two theorems, are crucial to everything we will do with groups in the future.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $f:G\to H$ is a group homomorphism then its kernel is a subgroup of $G$.</p>
+<p><strong>Proof.</strong> From the lemma at the beginning of this post, it suffices to show that $\ker f$ is nonempty and that $ab^{-1}\in \ker f$ whenever $a,b\in\ker f$.</p>
+<p>The fact that $\ker f$ is nonempty follows immediately from the property that $f(e)=e$, so certainly $e\in\ker f$.</p>
+<p>Next, suppose that $a,b\in\ker f$. That is, $f(a)=f(b)=e$. Then</p>
+<p>$$\begin{align}<br>
+f(ab^{-1}) &amp;= f(a)f(b^{-1}) \\<br>
+&amp;= f(a)f(b)^{-1}) \\<br>
+&amp;= ee^{-1} \\<br>
+&amp;= e,<br>
+\end{align}$$</p>
+<p>and thus $ab^{-1}\in\ker f$ by definition. It follows that $\ker f$ is a subgroup of $G$.</p>
+</blockquote>
+<p>Along similar lines:</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $f:G\to H$ is a group homomorphism then its image is a subgroup of $H$.</p>
+<p><strong>Proof.</strong> We will employ the same technique as in the previous proof.</p>
+<p>Certainly $\im f$ is nonempty because $e\in G$ and thus $f(e)=e\in\im g$.</p>
+<p>Next, suppose that $a,b\in\in f$. That is, $a=f(x)$ and $b=f(y)$ for some $x,y\in G$. Certainly $y^{-1}\in G$ and thus $xy^{-1}\in G$ as well, so<br>
+$$\begin{align}<br>
+ab^{-1} &amp;= f(x)f(y)^{-1} \\<br>
+&amp;= f(xy^{-1}) \\<br>
+&amp;\in \im f,<br>
+\end{align}$$</p>
+<p>as desired.</p>
+</blockquote>
+<p>In my next few posts, you will begin to understand why it's such a big deal that the kernal and image of a homomorphism are subgroups.</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/browser.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/util.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/main.js?v=0e28cd7b0f"></script>
+
+    
+
+</body>

@@ -1,0 +1,240 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cosets and Lagrange's Theorem</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=0e28cd7b0f">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=0e28cd7b0f"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cosets and Lagrange's Theorem">
+    <meta property="og:description" content="It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.">
+    <meta property="og:url" content="http://localhost:2368/cosets-and-lagranges-theorem/">
+    <meta property="article:published_time" content="2019-03-05T03:53:03.000Z">
+    <meta property="article:modified_time" content="2019-03-05T05:25:15.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cosets and Lagrange's Theorem">
+    <meta name="twitter:description" content="It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.">
+    <meta name="twitter:url" content="http://localhost:2368/cosets-and-lagranges-theorem/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Cosets and Lagrange&#x27;s Theorem",
+    "url": "http://localhost:2368/cosets-and-lagranges-theorem/",
+    "datePublished": "2019-03-05T03:53:03.000Z",
+    "dateModified": "2019-03-05T05:25:15.000Z",
+    "description": "It&#x27;s a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you&#x27;ll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 4, 2019</span>
+            <h1>Cosets and Lagrange's Theorem</h1>
+        </header>
+
+
+        <div class="content">
+            <ol>
+<li><a href="index.html#cosets">Cosets</a></li>
+<li><a href="index.html#lagrange's-theorem">Lagrange's Theorem</a></li>
+</ol>
+<hr>
+<h3 id="cosetsanamecosets">Cosets<a name="cosets"></a></h3>
+<p>It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra. Let's dig in, shall we?</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>right coset</strong> of $H$ with respect to $x$ is the set $Hx=\{hx\in G\mid h\in H\}$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>left coset</strong> of $H$ with respect to $x$ is the set $xH=\{xh\in G\mid h\in H\}$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note.</strong> For abelian groups with additive notation, left and right cosets are instead denoted by $H+x$ and $x+H$, respectively.</p>
+</blockquote>
+<p>So basically a coset is a set obtained by taking the elements of a subgroup and adding a particular element to all of them. Note that a coset does need not be a subgroup! To get a feeling for what cosets really are and how they behave, let's look at an example.</p>
+<blockquote>
+<p><strong>Example.</strong> Take $G=\Z$, the additive group of integers, and $H=2\Z$, the set of even integers. Certainly $2\Z$ is a subgroup of $Z$ because it contains the identity $0$, the sum of two even integers is even, and every even integer has an even inverse — its negative.</p>
+<p>Let's look at a few cosets of $2\Z$. How about the right cosets with respect to $0,1,2$ and $3$? Notice that because $\Z$ is an additive group, these cosets will be written $2\Z+0$, $2\Z+1$, $2\Z+2$ and $2\Z+3$.</p>
+<p>Directly from the definition of a right coset, we see that</p>
+<p>$$\begin{align}<br>
+2\Z+0 &amp;= \{x+0\in\Z\mid x\in 2\Z\} \\<br>
+&amp;= \{x\in\Z\mid x\in 2\Z\} \\<br>
+&amp;= 2\Z.<br>
+\end{align}$$</p>
+<p>So in this case, the coset with respect to $0$ is just the subgroup $2\Z$. This actually always happens, as you can easily see. Adding the identity to all elements of a subgroup will of course just yield that subgroup again!</p>
+<p>Next, let's look at $2\Z+1$. This is the set $\{x+1\in\Z\mid x\in 2\Z\}$, which consists of things like $\ldots,-3,-1,1,3,5,\ldots$. This is really just the set of odd integers! It's definitely not a subgroup of $\Z$ though, since it doesn't contain $0$.</p>
+<p>The coset $2\Z+2$ is the set $\{x+2\in\Z\mid z\in 2\Z\}$, which contains elements like $\ldots,-4,-2,0,2,4,\ldots$. But this is the set of even integers again! That means $2\Z+2=2\Z$.</p>
+<p>Lastly, let's look at $2\Z+2$. This is the set $\{x+3\in\Z\mid z\in 2\Z\}$, which contains things like $\ldots,-3,-1,1,3,5,\ldots$. We've already seen that somewhere before. It's just the set of odd integers again. That is, $2\Z+3=2\Z+1$.</p>
+<p>It looks like there might actually only be two distinct cosets of $2\Z$. They are $2\Z$ itself and $2\Z+1$. Furthermore, every element of $\Z$ is in either one coset or the other, but never both (because an integer is either even or odd). So these cosets actually <em>partition</em> $\Z$, which is a very important point. But let's not get too far ahead of ourselves.</p>
+</blockquote>
+<p>The first thing I'd like to prove about cosets is fairly simple — if we are working in an abelian group, left and right cosets are the same!</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $H$ is a subgroup of an abelian group $G$, then $H+x=x+H$ for every $x\in G$.</p>
+<p><strong>Proof.</strong> We will proceed by demonstrating that each side is a subset of the other.</p>
+<p>We show first that $H+x\subseteq x+H$. Choose $g\in H+x$, so that $g=h+x$ for some $h\in H$. Since $G$ is abelian, $h+x=x+h$ and thus $g=x+h\in x+H$. It follows that $H+x\subseteq x+H$.</p>
+<p>The proof that $x+H\subseteq H+x$ is completely analogous to the above, so we won't bother with it. We can thus conclude that $H+x=x+H$.</p>
+</blockquote>
+<p>This implies, for instance, that we could instead write $1+2\Z$ to denote the odd integers, but to me this doesn't look right for some reason and so I usually don't. In fact, for most of our purposes we really only need to consider one variety of coset. I tend to favor right cosets.</p>
+<p>Now it's time to prove my suspicion from the above example. This is important, so pay close attention. If you don't remember what a partition is, I advise you to read <a href="../equivalence-relations-and-quotient-sets/">my earlier post about them</a>.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $H$ is a subgroup of a group $G$, then the (left/right) cosets of $H$ partition $G$.</p>
+<p><strong>Proof.</strong> We will prove the result for right cosets, since the proof for left cosets is practically identical.</p>
+<p>It is clear that every coset $Hx$ is nonempty because the identity element $e$ is in $H$ by virtue of it being a subgroup, and thus $x=ex\in Hx$.</p>
+<p>The next thing we need to show is that cosets cover all of $G$. But is clear that $$\bigcup_{x\in G}x=G\subseteq\bigcup_{x\in G}Hx,$$</p>
+<p>and similarly that $$\bigcup_{x\in G}Hx\subseteq G=\bigcup_{x\in G}x,$$</p>
+<p>because $Hx\subseteq G$ for every $x\in G$. Thus, $G=\bigcup_{x\in G}Hx$.</p>
+<p>The last thing we need to show is that for any $x,y\in G$, if $Hx\ne Hy$ then $Hx\cap Hy=\varnothing$. That is, either cosets are the same or they are disjoint. We will argue the contrapositve, supposing that $Hx\cap Hy$ is nonempty. Then there exists some element $a\in Hx\cap Hy$. That is, $a\in Hx$ and $a\in Hy$, so $a=h_1x$ and $a=h_2y$ for some elements $h_1,h_2\in H$. It follows that $h_1x=h_2y$, and multiplication on the left by $h_1^{-1}$ show that $x=h_1^{-1}h_2y\in Hy$ because $h_1^{-1}h_2\in H$. Thus $Hx=Hy$, completing the proof.</p>
+</blockquote>
+<p>This is pretty exciting! It means that we can form an equivalence relation $\sim$ on any group $G$, where elements are equivalent if they are in the same coset of $H$. Moreover, we can form the quotient set $G\quotient{\sim}$, whose elements are precisely the cosets of $H$. For simplicity, we generally write $G/H$ instead of to denote this quotient set, since it is so very important that we are talking about the set of cosets of $H$. We'll revisit this special type of quotient set in my next post.</p>
+<h3 id="lagrangestheoremanamelagrangestheorem">Lagrange's Theorem<a name="lagrange's-theorem"></a></h3>
+<p>We're actually very close to proving this famous theorem already. We just need one lemma first:</p>
+<blockquote>
+<p><strong>Lemma.</strong> If $H$ is a subgroup of a group $G$ and $x\in G$, there exists a bijection $f:G\to Hx$.</p>
+<p><strong>Proof.</strong> We define a function $f:H\to Hx$ by $f(h)=hx$ for every $h\in H$. That is, the function that maps every element of $H$ to its product with $x$. Clearly $f$ is injective because if $f(h_1)=f(h_2)$ then $h_1x=h2_x$ and the right cancellation law yields $h_1=h_2$. Furthermore, $f$ is surjective because for any $y\in Hx$ we have by definition that $y=hx$ for some $h\in H$, and thus $y=f(h)$. It follows that $f$ is bijective, as desired.</p>
+</blockquote>
+<p>Recall that a bijection exists between finite sets only if those sets contain the same number of elements. This fact, along with the lemma above, tells us that all cosets of a subgroup are the same size! We are now ready to prove Lagrange's Theorem, which is actually very easy at this point.</p>
+<blockquote>
+<p><strong>Lagrange's Theorem.</strong> If $H$ is a subgroup of a finite group $G$, then $\abs{G}$ is a multiple of $\abs{H}$.</p>
+<p><strong>Proof.</strong> We have already established that every coset of $H$ contains the same number of elements, $\abs{H}$. Since $G$ is finite, there are a finite number of distinct cosets of $H$, say $n$ of them. Because these cosets partition $G$, it follows that $\abs{G}=n\abs{H}$, completing the proof.</p>
+</blockquote>
+<p>This is probably somewhat surprising unless you're already familiar with groups. But it's just part of the astonishing usefulness of cosets. Lagrange's Theorem is actually incredibly useful because it tells us instantly that certain things <em>cannot</em> be subgroups of other things. For instance, a group of order $12$ cannot ever have subgroups of order $5,7,8,9,10$ or $11$. Without this theorem, you might have guessed that this was the case, but it would have been pretty tricky to prove it conclusively.</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/browser.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/util.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/main.js?v=0e28cd7b0f"></script>
+
+    
+
+</body>

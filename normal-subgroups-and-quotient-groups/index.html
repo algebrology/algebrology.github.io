@@ -1,0 +1,284 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Normal Subgroups and Quotient Groups</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=0e28cd7b0f">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=0e28cd7b0f"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Normal Subgroups and Quotient Groups">
+    <meta property="og:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
+    <meta property="og:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
+    <meta property="article:published_time" content="2019-03-06T04:52:39.000Z">
+    <meta property="article:modified_time" content="2019-03-06T04:53:24.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Normal Subgroups and Quotient Groups">
+    <meta name="twitter:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
+    <meta name="twitter:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Normal Subgroups and Quotient Groups",
+    "url": "http://localhost:2368/normal-subgroups-and-quotient-groups/",
+    "datePublished": "2019-03-06T04:52:39.000Z",
+    "dateModified": "2019-03-06T04:53:24.000Z",
+    "description": "Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 5, 2019</span>
+            <h1>Normal Subgroups and Quotient Groups</h1>
+        </header>
+
+
+        <div class="content">
+            <ol>
+<li><a href="index.html#normal-subgroups">Normal Subgroups</a></li>
+<li><a href="index.html#quotient-groups">Quotient Groups</a></li>
+</ol>
+<hr>
+<h3 id="normalsubgroupsanamenormalsubgroups">Normal Subgroups<a name="normal-subgroups"></a></h3>
+<p>Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though? Recall that the elements of $G/H$ are the cosets of $H$, so what we really need to define is a meaningful way to multiply cosets.</p>
+<p>It would be great if we could define coset multiplication as follows:</p>
+<blockquote>
+<p><strong>Desired Definition.</strong> If $H$ is a subgroup of $G$ and $x,y\in G$, then<br>
+$$(Hx)(Hy)=H(xy).$$</p>
+</blockquote>
+<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(an)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="../constructing-the-rational-numbers-1/index.html#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
+<p>Interestingly, in this case the remedy is not to define coset multiplication in a different manner. Rather, we choose to restrict our attention only to cosets of a certain, particularly nice sort of subgroup.</p>
+<blockquote>
+<p><strong>Definition.</strong> A subgroup $N$ of a group $G$ is a <strong>normal subgroup</strong> if $xnx^{-1}\in N$ whenever $n\in N$ and $x\in G$. We refer to this defining property of normal subgroups by saying they are <strong>closed under conjugation</strong>.</p>
+</blockquote>
+<p>It goes without saying that every subgroup of an abelian group is normal, since in that case</p>
+<p>$$\begin{align}<br>
+xnx^{-1} &amp;= xx^{-1}n \\<br>
+&amp;= n,<br>
+\end{align}$$</p>
+<p>which is in $N$ by definition. However, there are certainly non-abelian groups with normal subgroups. And normal subgroups are particularly special because their left and right cosets are the same, even if they are not subgroups of an abelian group!</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $N$ is a normal subgroup of a group $G$, then $xN=Nx$ for every $x\in G$.</p>
+<p><strong>Proof.</strong> For any $g\in xN$, we have that $g=xn$ for some $n\in N$. Since $N$ is closed under conjugation, $xnx^{-1}\in N$ and so $g=(xnx^{-1}x)\in Nx$. Thus, $xN\subseteq Nx$.</p>
+<p>The proof that $Nx\subseteq xN$ is nearly identical, so I will not include it.</p>
+</blockquote>
+<p>We are now ready to define quotient <em>groups</em>!</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $N$ denote a normal subgroup of a group $G$. The <strong>quotient group of $G$ modulo $N$</strong> is the set $G/N$ together with coset multiplication defined by $(Nx)(Ny)=N(xy)$ for all $x,y\in G$.</p>
+</blockquote>
+<p>That's all well and good, but we're getting ahead of ourselves again. We still haven't actually shown that this multiplication is well defined when restricted to cosets of normal subgroups. Let's do that right now. After that, we'll still need to prove that this thing we'ved defined is really a group.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $N$ denote a normal subgroup of a group $G$, with $Nx=Na$ and $Ny=Nb$ for some $a,b,x,y\in G$. Then $N(xy)=N(ab)$.</p>
+<p><strong>Proof.</strong> Since $Nx=Na$, we know that $x\in Na$ and thus $x=n_1a$ for some $n_1\in N$. Similarly, since $Ny=Nb$, we know that $y\in Nb$ and thus $y=n_2b$ for some $n_2\in N$. Thus,</p>
+<p>$$\begin{align}<br>
+xy &amp;= n_1an_2b \\<br>
+&amp;\in NaNb \\<br>
+&amp;= N(ab),<br>
+\end{align}$$</p>
+<p>so $N(xy)=N(ab)$, as desired.</p>
+</blockquote>
+<p>Now we need to show that quotient groups are actually groups. The proof of this is fairly straightforward.</p>
+<blockquote>
+<p><strong>Theorem.</strong> The quotient group as defined above is in fact a group.</p>
+<p><strong>Proof.</strong> We have already shownthat coset multiplication is well defined. We will show first that it is associative. Consider $Nx, Ny, Nz\in G/N$. By definition,</p>
+<p>$$\begin{align}<br>
+Nx(NyNz) &amp;= NxN(yz) \\<br>
+&amp;= N(xyz) \\<br>
+&amp;= N(xy)Nz \\<br>
+&amp;= (NxNy)Nz.<br>
+\end{align}$$</p>
+<p>Next, we will show that $N$ is the identity element of $G/N$. Because $N$ is a subgroup of $G$, the identity element $e\in G$ is in $N$. Thus, for any $Nx\in G/N$, we have that</p>
+<p>$$\begin{align}<br>
+NNx &amp;= NeNx \\<br>
+&amp;= N(ex) \\<br>
+&amp;= Nx \\<br>
+&amp;= N(xe) \\<br>
+&amp;= NxNe \\<br>
+&amp;= NxN.<br>
+\end{align}$$</p>
+<p>Finally, we will show that for any $Nx\in G/N$, the coset $Nx^{-1}$ is its inverse. This is clear because</p>
+<p>$$\begin{align}<br>
+NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
+&amp;= Ne \\<br>
+&amp;= N(x^{-1}x) \\<br>
+&amp;= Nx^{-1}Nx.<br>
+\end{align}$$</p>
+<p>We have shown that $G/N$ has all the properties of a group, so the proof is complete.</p>
+</blockquote>
+<p>Before moving on, let's look at a concrete example of a quotient group which is hopefully already familiar to you.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider again the group $\Z$ of integers under addition and its subgroup $2\Z$ of even integers. Certainly $2\Z$ is a normal subgroup because $\Z$ is abelian, and we may thus form the quotient group $Z/2\Z$. Recall that this quotient group contains only two cosets, namely $2\Z$ and $2\Z+1$.</p>
+<p>Coset "multiplication" here is really coset addition because we are working in an additive group. Since $2\Z$ is the identity, we have that</p>
+<p>$$\begin{align}<br>
+2\Z+2\Z &amp;= 2\Z, \\<br>
+2\Z + (2\Z+1) &amp;= 2\Z+1,\\<br>
+(2\Z+1) + 2\Z &amp;= 2\Z+1, \\<br>
+(2\Z+1) + (2\Z+1) &amp;= 2\Z.<br>
+\end{align}$$</p>
+<p>Let's rename these cosets, just for kicks. We'll refer to $2\Z$ as $0$ and $2\Z+1$ as 1. Then we get</p>
+<p>$$\begin{align}<br>
+0 + 0 &amp;= 0, \\<br>
+0 + 1 &amp;= 1,\\<br>
+1 + 0 &amp;= 1, \\<br>
+1 + 1 &amp;= 0.<br>
+\end{align}$$</p>
+<p>This is precisely the group $\Z_2$ of integers modulo $2$, with the operation of addition modulo $2$. In fact, the formal way to define $Z_n$, the group of integers modulo $n$, is as the quotient group $\Z/n\Z$.</p>
+</blockquote>
+<p>Now I'd like to give some motivation for why quotient groups are so important and useful. This is best done by example, because otherwise my explanation would likely turn into another incomprehensible rant.</p>
+<blockquote>
+<p><strong>Example.</strong> To start, we define a <strong>commutator</strong> of a group $G$ to be any element of the form $aba^{-1}b^{-1}$, where $a,b\in G$. Notice that $aba^{-1}b^{-1}$ reduces to the identity $e$ if and only if $ab=ba$. That is, the commutator $aba^{-1}b^{-1}$ collapses to the identity precisely when $a$ and $b$ commute. Clearly in any abelian group, every commutator is equal to the identity element.</p>
+<p>Suppose a quotient group $G/N$ is abelian. That is, for any two cosets $Nx, Ny\in G/N$, their product commutes, i.e.,</p>
+<p>$$\begin{align}<br>
+NxNy &amp;= N(xy) \\<br>
+&amp;= N(yx) \\<br>
+&amp;= NyNx.<br>
+\end{align}$$</p>
+<p>But this is true if and only if</p>
+<p>$$\begin{align}<br>
+xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
+&amp;\in N.<br>
+\end{align}$$</p>
+<p>Thus, a quotient group is abelian precisely when all commutators are contained within the identity coset!</p>
+<p>A slightly more liberal, though meaningful, way of phrasing this is by saying that if we <em>factor out</em> all the commutators of $G$, we are always left with an abelian group. This because all commutators are collapsed to the identity element in the quotient group when we quotient out the commutator subgroup. This is just one example of a more general phenomenon.</p>
+</blockquote>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/browser.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/util.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/main.js?v=0e28cd7b0f"></script>
+
+    
+
+</body>

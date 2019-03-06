@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Cosets and Lagrange's Theorem</title>
+    <title>Normal Subgroups and Quotient Groups</title>
 
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -13,15 +13,15 @@
     
     <meta property="og:site_name" content="Algebrology">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Cosets and Lagrange's Theorem">
-    <meta property="og:description" content="It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.">
-    <meta property="og:url" content="http://localhost:2368/cosets-and-lagranges-theorem/">
-    <meta property="article:published_time" content="2019-03-05T03:53:03.000Z">
-    <meta property="article:modified_time" content="2019-03-06T03:37:34.000Z">
+    <meta property="og:title" content="Normal Subgroups and Quotient Groups">
+    <meta property="og:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
+    <meta property="og:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
+    <meta property="article:published_time" content="2019-03-06T04:52:39.000Z">
+    <meta property="article:modified_time" content="2019-03-06T04:53:24.000Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Cosets and Lagrange's Theorem">
-    <meta name="twitter:description" content="It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.">
-    <meta name="twitter:url" content="http://localhost:2368/cosets-and-lagranges-theorem/">
+    <meta name="twitter:title" content="Normal Subgroups and Quotient Groups">
+    <meta name="twitter:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
+    <meta name="twitter:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Eric Shapiro">
     
@@ -45,11 +45,11 @@
         "url": "http://localhost:2368/author/eric/",
         "sameAs": []
     },
-    "headline": "Cosets and Lagrange&#x27;s Theorem",
-    "url": "http://localhost:2368/cosets-and-lagranges-theorem/",
-    "datePublished": "2019-03-05T03:53:03.000Z",
-    "dateModified": "2019-03-06T03:37:34.000Z",
-    "description": "It&#x27;s a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you&#x27;ll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.",
+    "headline": "Normal Subgroups and Quotient Groups",
+    "url": "http://localhost:2368/normal-subgroups-and-quotient-groups/",
+    "datePublished": "2019-03-06T04:52:39.000Z",
+    "dateModified": "2019-03-06T04:53:24.000Z",
+    "description": "Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -81,77 +81,121 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Cosets and Lagrange's Theorem</h1>
+                <h1 class="post-title">Normal Subgroups and Quotient Groups</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="../../author/eric/">Eric Shapiro</a></p>
-                    <time class="post-date" datetime="2019-03-04">2019-03-04</time>
+                    <time class="post-date" datetime="2019-03-05">2019-03-05</time>
                 </section>
             </header>
             <section class="post-content">
 
                 <ol>
-<li><a href="index.html#cosets">Cosets</a></li>
-<li><a href="index.html#lagrange's-theorem">Lagrange's Theorem</a></li>
+<li><a href="index.html#normal-subgroups">Normal Subgroups</a></li>
+<li><a href="index.html#quotient-groups">Quotient Groups</a></li>
 </ol>
 <hr>
-<h3 id="cosetsanamecosets">Cosets<a name="cosets"></a></h3>
-<p>It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra. Let's dig in, shall we?</p>
+<h3 id="normalsubgroupsanamenormalsubgroups">Normal Subgroups<a name="normal-subgroups"></a></h3>
+<p>Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though? Recall that the elements of $G/H$ are the cosets of $H$, so what we really need to define is a meaningful way to multiply cosets.</p>
+<p>It would be great if we could define coset multiplication as follows:</p>
 <blockquote>
-<p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>right coset</strong> of $H$ with respect to $x$ is the set $Hx=\{hx\in G\mid h\in H\}$.</p>
+<p><strong>Desired Definition.</strong> If $H$ is a subgroup of $G$ and $x,y\in G$, then<br>
+$(Hx)(Hy)=H(xy).$</p>
 </blockquote>
+<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(an)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="../../constructing-the-rational-numbers-1/index.html#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
+<p>Interestingly, in this case the remedy is not to define coset multiplication in a different manner. Rather, we choose to restrict our attention only to cosets of a certain, particularly nice sort of subgroup.</p>
 <blockquote>
-<p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>left coset</strong> of $H$ with respect to $x$ is the set $xH=\{xh\in G\mid h\in H\}$.</p>
+<p><strong>Definition.</strong> A subgroup $N$ of a group $G$ is a <strong>normal subgroup</strong> if $xnx^{-1}\in N$ whenever $n\in N$ and $x\in G$. We refer to this defining property of normal subgroups by saying they are <strong>closed under conjugation</strong>.</p>
 </blockquote>
-<blockquote>
-<p><strong>Note.</strong> For abelian groups with additive notation, right and left cosets are instead denoted by $H+x$ and $x+H$, respectively.</p>
-</blockquote>
-<p>So basically a coset is a set obtained by taking the elements of a subgroup and adding a particular element to all of them. Note that a coset does need not be a subgroup! To get a feeling for what cosets really are and how they behave, let's look at an example.</p>
-<blockquote>
-<p><strong>Example.</strong> Take $G=\Z$, the additive group of integers, and $H=2\Z$, the set of even integers. Certainly $2\Z$ is a subgroup of $Z$ because it contains the identity $0$, the sum of two even integers is even, and every even integer has an even inverse — its negative.</p>
-<p>Let's look at a few cosets of $2\Z$. How about the right cosets with respect to $0,1,2$ and $3$? Notice that because $\Z$ is an additive group, these cosets will be written $2\Z+0$, $2\Z+1$, $2\Z+2$ and $2\Z+3$.</p>
-<p>Directly from the definition of a right coset, we see that</p>
+<p>It goes without saying that every subgroup of an abelian group is normal, since in that case</p>
 <p>$\begin{align}<br>
-2\Z+0 &amp;= \{x+0\in\Z\mid x\in 2\Z\} \\<br>
-&amp;= \{x\in\Z\mid x\in 2\Z\} \\<br>
-&amp;= 2\Z.<br>
+xnx^{-1} &amp;= xx^{-1}n \\<br>
+&amp;= n,<br>
 \end{align}$</p>
-<p>So in this case, the coset with respect to $0$ is just the subgroup $2\Z$. This actually always happens, as you can easily see. Adding the identity to all elements of a subgroup will of course just yield that subgroup again!</p>
-<p>Next, let's look at $2\Z+1$. This is the set $\{x+1\in\Z\mid x\in 2\Z\}$, which consists of things like $\ldots,-3,-1,1,3,5,\ldots$. This is really just the set of odd integers! It's definitely not a subgroup of $\Z$ though, since it doesn't contain $0$.</p>
-<p>The coset $2\Z+2$ is the set $\{x+2\in\Z\mid z\in 2\Z\}$, which contains elements like $\ldots,-4,-2,0,2,4,\ldots$. But this is the set of even integers again! That means $2\Z+2=2\Z$.</p>
-<p>Lastly, let's look at $2\Z+2$. This is the set $\{x+3\in\Z\mid z\in 2\Z\}$, which contains things like $\ldots,-3,-1,1,3,5,\ldots$. We've already seen that somewhere before. It's just the set of odd integers again. That is, $2\Z+3=2\Z+1$.</p>
-<p>It looks like there might actually only be two distinct cosets of $2\Z$. They are $2\Z$ itself and $2\Z+1$. Furthermore, every element of $\Z$ is in either one coset or the other, but never both (because an integer is either even or odd). So these cosets actually <em>partition</em> $\Z$, which is a very important point. But let's not get too far ahead of ourselves.</p>
-</blockquote>
-<p>The first thing I'd like to prove about cosets is fairly simple — if we are working in an abelian group, left and right cosets are the same!</p>
+<p>which is in $N$ by definition. However, there are certainly non-abelian groups with normal subgroups. And normal subgroups are particularly special because their left and right cosets are the same, even if they are not subgroups of an abelian group!</p>
 <blockquote>
-<p><strong>Theorem.</strong> If $H$ is a subgroup of an abelian group $G$, then $H+x=x+H$ for every $x\in G$.</p>
-<p><strong>Proof.</strong> We will proceed by demonstrating that each side is a subset of the other.</p>
-<p>We show first that $H+x\subseteq x+H$. Choose $g\in H+x$, so that $g=h+x$ for some $h\in H$. Since $G$ is abelian, $h+x=x+h$ and thus $g=x+h\in x+H$. It follows that $H+x\subseteq x+H$.</p>
-<p>The proof that $x+H\subseteq H+x$ is completely analogous to the above, so we won't bother with it. We can thus conclude that $H+x=x+H$.</p>
+<p><strong>Theorem.</strong> If $N$ is a normal subgroup of a group $G$, then $xN=Nx$ for every $x\in G$.</p>
+<p><strong>Proof.</strong> For any $g\in xN$, we have that $g=xn$ for some $n\in N$. Since $N$ is closed under conjugation, $xnx^{-1}\in N$ and so $g=(xnx^{-1}x)\in Nx$. Thus, $xN\subseteq Nx$.</p>
+<p>The proof that $Nx\subseteq xN$ is nearly identical, so I will not include it.</p>
 </blockquote>
-<p>This implies, for instance, that we could instead write $1+2\Z$ to denote the odd integers, but to me this doesn't look right for some reason and so I usually don't. In fact, for most of our purposes we really only need to consider one variety of coset. I tend to favor right cosets.</p>
-<p>Now it's time to prove my suspicion from the above example. This is important, so pay close attention. If you don't remember what a partition is, I advise you to read <a href="../../equivalence-relations-and-quotient-sets/">my earlier post about them</a>.</p>
+<p>We are now ready to define quotient <em>groups</em>!</p>
 <blockquote>
-<p><strong>Theorem.</strong> If $H$ is a subgroup of a group $G$, then the (left/right) cosets of $H$ partition $G$.</p>
-<p><strong>Proof.</strong> We will prove the result for right cosets, since the proof for left cosets is practically identical.</p>
-<p>It is clear that every coset $Hx$ is nonempty because the identity element $e$ is in $H$ by virtue of it being a subgroup, and thus $x=ex\in Hx$.</p>
-<p>The next thing we need to show is that cosets cover all of $G$. But is clear that $\bigcup_{x\in G}x=G\subseteq\bigcup_{x\in G}Hx,$</p>
-<p>and similarly that $\bigcup_{x\in G}Hx\subseteq G=\bigcup_{x\in G}x,$</p>
-<p>because $Hx\subseteq G$ for every $x\in G$. Thus, $G=\bigcup_{x\in G}Hx$.</p>
-<p>The last thing we need to show is that for any $x,y\in G$, if $Hx\ne Hy$ then $Hx\cap Hy=\varnothing$. That is, either cosets are the same or they are disjoint. We will argue the contrapositve, supposing that $Hx\cap Hy$ is nonempty. Then there exists some element $a\in Hx\cap Hy$. That is, $a\in Hx$ and $a\in Hy$, so $a=h_1x$ and $a=h_2y$ for some elements $h_1,h_2\in H$. It follows that $h_1x=h_2y$, and multiplication on the left by $h_1^{-1}$ show that $x=h_1^{-1}h_2y\in Hy$ because $h_1^{-1}h_2\in H$. Thus $Hx=Hy$, completing the proof.</p>
+<p><strong>Definition.</strong> Let $N$ denote a normal subgroup of a group $G$. The <strong>quotient group of $G$ modulo $N$</strong> is the set $G/N$ together with coset multiplication defined by $(Nx)(Ny)=N(xy)$ for all $x,y\in G$.</p>
 </blockquote>
-<p>This is pretty exciting! It means that we can form an equivalence relation $\sim$ on any group $G$, where elements are equivalent if they are in the same coset of $H$. Moreover, we can form the quotient set $G\quotient{\sim}$, whose elements are precisely the cosets of $H$. For simplicity, we generally write $G/H$ instead of to denote this quotient set, since it is so very important that we are talking about the set of cosets of $H$. We'll revisit this special type of quotient set in my next post.</p>
-<h3 id="lagrangestheoremanamelagrangestheorem">Lagrange's Theorem<a name="lagrange's-theorem"></a></h3>
-<p>We're actually very close to proving this famous theorem already. We just need one lemma first:</p>
+<p>That's all well and good, but we're getting ahead of ourselves again. We still haven't actually shown that this multiplication is well defined when restricted to cosets of normal subgroups. Let's do that right now. After that, we'll still need to prove that this thing we'ved defined is really a group.</p>
 <blockquote>
-<p><strong>Lemma.</strong> If $H$ is a subgroup of a group $G$ and $x\in G$, there exists a bijection $f:G\to Hx$.</p>
-<p><strong>Proof.</strong> We define a function $f:H\to Hx$ by $f(h)=hx$ for every $h\in H$. That is, the function that maps every element of $H$ to its product with $x$. Clearly $f$ is injective because if $f(h_1)=f(h_2)$ then $h_1x=h2_x$ and the right cancellation law yields $h_1=h_2$. Furthermore, $f$ is surjective because for any $y\in Hx$ we have by definition that $y=hx$ for some $h\in H$, and thus $y=f(h)$. It follows that $f$ is bijective, as desired.</p>
+<p><strong>Theorem.</strong> Let $N$ denote a normal subgroup of a group $G$, with $Nx=Na$ and $Ny=Nb$ for some $a,b,x,y\in G$. Then $N(xy)=N(ab)$.</p>
+<p><strong>Proof.</strong> Since $Nx=Na$, we know that $x\in Na$ and thus $x=n_1a$ for some $n_1\in N$. Similarly, since $Ny=Nb$, we know that $y\in Nb$ and thus $y=n_2b$ for some $n_2\in N$. Thus,</p>
+<p>$\begin{align}<br>
+xy &amp;= n_1an_2b \\<br>
+&amp;\in NaNb \\<br>
+&amp;= N(ab),<br>
+\end{align}$</p>
+<p>so $N(xy)=N(ab)$, as desired.</p>
 </blockquote>
-<p>Recall that a bijection exists between finite sets only if those sets contain the same number of elements. This fact, along with the lemma above, tells us that all cosets of a subgroup are the same size! We are now ready to prove Lagrange's Theorem, which is actually very easy at this point.</p>
+<p>Now we need to show that quotient groups are actually groups. The proof of this is fairly straightforward.</p>
 <blockquote>
-<p><strong>Lagrange's Theorem.</strong> If $H$ is a subgroup of a finite group $G$, then $\abs{G}$ is a multiple of $\abs{H}$.</p>
-<p><strong>Proof.</strong> We have already established that every coset of $H$ contains the same number of elements, $\abs{H}$. Since $G$ is finite, there are a finite number of distinct cosets of $H$, say $n$ of them. Because these cosets partition $G$, it follows that $\abs{G}=n\abs{H}$, completing the proof.</p>
+<p><strong>Theorem.</strong> The quotient group as defined above is in fact a group.</p>
+<p><strong>Proof.</strong> We have already shownthat coset multiplication is well defined. We will show first that it is associative. Consider $Nx, Ny, Nz\in G/N$. By definition,</p>
+<p>$\begin{align}<br>
+Nx(NyNz) &amp;= NxN(yz) \\<br>
+&amp;= N(xyz) \\<br>
+&amp;= N(xy)Nz \\<br>
+&amp;= (NxNy)Nz.<br>
+\end{align}$</p>
+<p>Next, we will show that $N$ is the identity element of $G/N$. Because $N$ is a subgroup of $G$, the identity element $e\in G$ is in $N$. Thus, for any $Nx\in G/N$, we have that</p>
+<p>$\begin{align}<br>
+NNx &amp;= NeNx \\<br>
+&amp;= N(ex) \\<br>
+&amp;= Nx \\<br>
+&amp;= N(xe) \\<br>
+&amp;= NxNe \\<br>
+&amp;= NxN.<br>
+\end{align}$</p>
+<p>Finally, we will show that for any $Nx\in G/N$, the coset $Nx^{-1}$ is its inverse. This is clear because</p>
+<p>$\begin{align}<br>
+NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
+&amp;= Ne \\<br>
+&amp;= N(x^{-1}x) \\<br>
+&amp;= Nx^{-1}Nx.<br>
+\end{align}$</p>
+<p>We have shown that $G/N$ has all the properties of a group, so the proof is complete.</p>
 </blockquote>
-<p>This is probably somewhat surprising unless you're already familiar with groups. But it's just part of the astonishing usefulness of cosets. Lagrange's Theorem is actually incredibly useful because it tells us instantly that certain things <em>cannot</em> be subgroups of other things. For instance, a group of order $12$ cannot ever have subgroups of order $5,7,8,9,10$ or $11$. Without this theorem, you might have guessed that this was the case, but it would have been pretty tricky to prove it conclusively.</p>
+<p>Before moving on, let's look at a concrete example of a quotient group which is hopefully already familiar to you.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider again the group $\Z$ of integers under addition and its subgroup $2\Z$ of even integers. Certainly $2\Z$ is a normal subgroup because $\Z$ is abelian, and we may thus form the quotient group $Z/2\Z$. Recall that this quotient group contains only two cosets, namely $2\Z$ and $2\Z+1$.</p>
+<p>Coset "multiplication" here is really coset addition because we are working in an additive group. Since $2\Z$ is the identity, we have that</p>
+<p>$\begin{align}<br>
+2\Z+2\Z &amp;= 2\Z, \\<br>
+2\Z + (2\Z+1) &amp;= 2\Z+1,\\<br>
+(2\Z+1) + 2\Z &amp;= 2\Z+1, \\<br>
+(2\Z+1) + (2\Z+1) &amp;= 2\Z.<br>
+\end{align}$</p>
+<p>Let's rename these cosets, just for kicks. We'll refer to $2\Z$ as $0$ and $2\Z+1$ as 1. Then we get</p>
+<p>$\begin{align}<br>
+0 + 0 &amp;= 0, \\<br>
+0 + 1 &amp;= 1,\\<br>
+1 + 0 &amp;= 1, \\<br>
+1 + 1 &amp;= 0.<br>
+\end{align}$</p>
+<p>This is precisely the group $\Z_2$ of integers modulo $2$, with the operation of addition modulo $2$. In fact, the formal way to define $Z_n$, the group of integers modulo $n$, is as the quotient group $\Z/n\Z$.</p>
+</blockquote>
+<p>Now I'd like to give some motivation for why quotient groups are so important and useful. This is best done by example, because otherwise my explanation would likely turn into another incomprehensible rant.</p>
+<blockquote>
+<p><strong>Example.</strong> To start, we define a <strong>commutator</strong> of a group $G$ to be any element of the form $aba^{-1}b^{-1}$, where $a,b\in G$. Notice that $aba^{-1}b^{-1}$ reduces to the identity $e$ if and only if $ab=ba$. That is, the commutator $aba^{-1}b^{-1}$ collapses to the identity precisely when $a$ and $b$ commute. Clearly in any abelian group, every commutator is equal to the identity element.</p>
+<p>Suppose a quotient group $G/N$ is abelian. That is, for any two cosets $Nx, Ny\in G/N$, their product commutes, i.e.,</p>
+<p>$\begin{align}<br>
+NxNy &amp;= N(xy) \\<br>
+&amp;= N(yx) \\<br>
+&amp;= NyNx.<br>
+\end{align}$</p>
+<p>But this is true if and only if</p>
+<p>$\begin{align}<br>
+xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
+&amp;\in N.<br>
+\end{align}$</p>
+<p>Thus, a quotient group is abelian precisely when all commutators are contained within the identity coset!</p>
+<p>A slightly more liberal, though meaningful, way of phrasing this is by saying that if we <em>factor out</em> all the commutators of $G$, we are always left with an abelian group. This because all commutators are collapsed to the identity element in the quotient group when we quotient out the commutator subgroup. This is just one example of a more general phenomenon.</p>
+</blockquote>
 
 
             </section>

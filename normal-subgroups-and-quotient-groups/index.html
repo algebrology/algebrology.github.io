@@ -22,7 +22,7 @@
     <meta property="og:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
     <meta property="og:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
     <meta property="article:published_time" content="2019-03-06T04:52:39.000Z">
-    <meta property="article:modified_time" content="2019-03-06T04:53:24.000Z">
+    <meta property="article:modified_time" content="2019-03-06T05:16:31.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Normal Subgroups and Quotient Groups">
     <meta name="twitter:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
@@ -53,7 +53,7 @@
     "headline": "Normal Subgroups and Quotient Groups",
     "url": "http://localhost:2368/normal-subgroups-and-quotient-groups/",
     "datePublished": "2019-03-06T04:52:39.000Z",
-    "dateModified": "2019-03-06T04:53:24.000Z",
+    "dateModified": "2019-03-06T05:16:31.000Z",
     "description": "Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -148,6 +148,7 @@ xnx^{-1} &amp;= xx^{-1}n \\<br>
 <p><strong>Proof.</strong> For any $g\in xN$, we have that $g=xn$ for some $n\in N$. Since $N$ is closed under conjugation, $xnx^{-1}\in N$ and so $g=(xnx^{-1}x)\in Nx$. Thus, $xN\subseteq Nx$.</p>
 <p>The proof that $Nx\subseteq xN$ is nearly identical, so I will not include it.</p>
 </blockquote>
+<h3 id="quotientgroupsanamequotientgroups">Quotient Groups<a name="quotient-groups"></a></h3>
 <p>We are now ready to define quotient <em>groups</em>!</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $N$ denote a normal subgroup of a group $G$. The <strong>quotient group of $G$ modulo $N$</strong> is the set $G/N$ together with coset multiplication defined by $(Nx)(Ny)=N(xy)$ for all $x,y\in G$.</p>
@@ -193,7 +194,7 @@ NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
 </blockquote>
 <p>Before moving on, let's look at a concrete example of a quotient group which is hopefully already familiar to you.</p>
 <blockquote>
-<p><strong>Example.</strong> Consider again the group $\Z$ of integers under addition and its subgroup $2\Z$ of even integers. Certainly $2\Z$ is a normal subgroup because $\Z$ is abelian, and we may thus form the quotient group $Z/2\Z$. Recall that this quotient group contains only two cosets, namely $2\Z$ and $2\Z+1$.</p>
+<p><strong>Example.</strong> Consider again the group $\Z$ of integers under addition and its subgroup $2\Z$ of even integers. Certainly $2\Z$ is a normal subgroup because $\Z$ is abelian, and we may thus form the quotient group $\Z/2\Z$. Recall that this quotient group contains only two cosets, namely $2\Z$ and $2\Z+1$.</p>
 <p>Coset "multiplication" here is really coset addition because we are working in an additive group. Since $2\Z$ is the identity, we have that</p>
 <p>$$\begin{align}<br>
 2\Z+2\Z &amp;= 2\Z, \\<br>
@@ -208,7 +209,7 @@ NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
 1 + 0 &amp;= 1, \\<br>
 1 + 1 &amp;= 0.<br>
 \end{align}$$</p>
-<p>This is precisely the group $\Z_2$ of integers modulo $2$, with the operation of addition modulo $2$. In fact, the formal way to define $Z_n$, the group of integers modulo $n$, is as the quotient group $\Z/n\Z$.</p>
+<p>This is precisely the group $\Z_2$ of integers modulo $2$, with the operation of addition modulo $2$. In fact, the formal way to define $\Z_n$, the group of integers modulo $n$, is as the quotient group $\Z/n\Z$.</p>
 </blockquote>
 <p>Now I'd like to give some motivation for why quotient groups are so important and useful. This is best done by example, because otherwise my explanation would likely turn into another incomprehensible rant.</p>
 <blockquote>

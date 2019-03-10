@@ -1,0 +1,225 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>The First Isomorphism Theorem</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=4aa25223d9">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=4aa25223d9"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The First Isomorphism Theorem">
+    <meta property="og:description" content="It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!">
+    <meta property="og:url" content="http://localhost:2368/the-first-isomorphism-theorem/">
+    <meta property="article:published_time" content="2019-03-10T06:34:06.000Z">
+    <meta property="article:modified_time" content="2019-03-10T07:33:26.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The First Isomorphism Theorem">
+    <meta name="twitter:description" content="It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!">
+    <meta name="twitter:url" content="http://localhost:2368/the-first-isomorphism-theorem/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "The First Isomorphism Theorem",
+    "url": "http://localhost:2368/the-first-isomorphism-theorem/",
+    "datePublished": "2019-03-10T06:34:06.000Z",
+    "dateModified": "2019-03-10T07:33:26.000Z",
+    "description": "It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 9, 2019</span>
+            <h1>The First Isomorphism Theorem</h1>
+        </header>
+
+
+        <div class="content">
+            <p>In the study of group theory, there are a few important theorems called the First, Second and Third Isomorphism Theorems. The second and third are really just special cases of the first, and they will not be immediately useful to us so I will put off their discussion until some other time.</p>
+<p>Before proceeding any further, I would like to make a notational change that will make my life a little easier when writing these posts about algebra. Thus far, I have been using $e$ to denote the identity element of a group. From here on out, I will use the following convention:</p>
+<blockquote>
+<p><strong>Notation.</strong> Given an arbitrary group $G$, its identity element will be written $1_G$ (or simply $1$ when no confusion can arise).</p>
+<p>If we know we are working with an additive abelian group, the identity will instead be written $0_G$ (or simply $0$).</p>
+</blockquote>
+<p>This notational convention may seem odd at first, but it will make things easier to understand in general.</p>
+<p>We will need the result I proved in my <a href="../normal-subgroups-and-quotient-groups/">previous post</a> that the kernel of a group homomorphism is a normal subgroup of the domain. We will also need the following theorem, which basically states that for any homomorphism, elements in the same coset of the kernel all get mapped to the same element.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $f:G\to H$ be a group homomorphism with $x,y\in G$ and let $K=\ker f$ to keep things concise. Then $Kx=Ky$ if and only if $f(x)=f(y)$.</p>
+<p><strong>Proof.</strong> Suppose first that $Kx=Ky$. Then $xy^{-1}\in K=\ker f$, so</p>
+<p>$$\begin{align}<br>
+f(xy^{-1}) &amp;= f(x)f(y^{-1}) \\<br>
+&amp;= f(x)f(y)^{-1} \\<br>
+&amp;= 1_H.<br>
+\end{align}$$</p>
+<p>Multiplication on the right by $f(y)$ yields $f(x)=f(y)$.</p>
+<p>Suppose conversely that $f(x)=f(y)$. Then we can essentially just do the above in reverse. Multiplication on the right by $f(y)^{-1}$ yields</p>
+<p>$$\begin{align}<br>
+f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br>
+&amp;= f(xy^{-1}) \\<br>
+&amp;= 1_H,<br>
+\end{align}$$</p>
+<p>and thus $xy^{-1}\in\ker f=K$ by definition, completing the proof.</p>
+</blockquote>
+<p>This theorem, while deceptively simple, tells us something extremely important. Namely, that each coset of the kernel corresponds to precisely one element of the codomain. It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!</p>
+<blockquote>
+<p><strong>First Isomorphism Theorem.</strong> If $f:G\to H$ is a group homomorphism, then $G/\ker f$ is isomorphic to $\im f$.</p>
+<p><strong>Proof.</strong> Our claim is that the function $\varphi:G/\ker f\to\im f$ defined by $$\varphi(Kx)=f(x)$$ for every $Kx\in G/\ker f$ is an isomorphism. Again for convenience, we let $K=\ker f$.</p>
+<p>First, since $\varphi$ acts on cosets we must show that it is well defined, i.e., if $Kx=Ky$ then $\varphi(Kx)=\varphi(Ky)$. But from the above theorem, if $Kx=Ky$ then $f(x)=f(y)$, so it follows immediately that this is true.</p>
+<p>Next we argue that $\varphi$ is a homomorphism. Again, choose cosets $Kx$ and $Ky$ in $G/K$. Then</p>
+<p>$$\begin{align}<br>
+\varphi(Kx)\varphi(Ky) &amp;= f(x)f(y) \\<br>
+&amp;= f(xy) \\<br>
+&amp;= \varphi(K(xy))<br>
+\end{align}$$</p>
+<p>because $f$ is a homomorphism, so $\varphi$ essentially inherits this property from $f$.</p>
+<p>Finally, we need to show that $\varphi$ is a bijection. To see that it is injective, suppose that $\varphi(Kx)=\varphi(Ky)$ for some cosets $Kx$ and $Ky$ in $G/K$. Then $f(x)=f(y)$, and so $Kx=Ky$ by the above theorem. To see that $\varphi$ is surjective, choose any $b\in\im f$. By definition, there exists $a\in G$ for which $f(a)=b$. Thus $b=\varphi(Ka)$, and so it follows that $\varphi$ is bijective, completing the proof.</p>
+</blockquote>
+<p>I'm trying to keep this post short, but I should provide at least one example of how this theorem can be applied.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider the abelian group $\R^*$ of nonzero real numbers under multiplication, the group $\R^+$ of positive real numbers under multiplication, and the subgroup $\{-1,1\}$ of $\R^*$. This subgroup is certainly normal since it comes from an abelian group.</p>
+<p>We will show that the quotient group $\frac{\R^*}{\{-1,1\}}$ is isomorphic to $\R^+$. And we'll do it using the first isomorphism theorem!</p>
+<p>We need to define a surjective homomorphism $f:\R^*\to \R^+$ for which $\ker f=\{-1,1\}$. This is actually really easy. We'll just let $f(x)=\abs{x}$. Clearly $f(x)=1$ precisely when either $x=1$ or $x=-1$, and so $\ker f=\{-1,1\}$ as desired. That $f$ is a homomorphism follows from the fact that $\abs{xy}=\abs{x}\abs{y}$ for all real numbers. It's just as easy to see that $f$ is surjective, because for any $x\in\R^+$ we know that at least $\abs{x}=x$.</p>
+<p>We've demonstrated that there exists a surjective homomorphism from $\R^*$ to $\R^+$ whose kernel is $\{-1,1\}$. The first isomorphism theorem immediately yields the desired result — that $\frac{\R^*}{\{-1,1\}}$ is isomorphic to $\R^+$.</p>
+<p>We don't even need to construct the isomorphism, although it's fairly straightforward to do so (the proof of the first isomorphism theorem tells us how).</p>
+<p>And intuitively, these groups <em>should</em> be isomorphic, if we think of the quotient group $\frac{\R^*}{\{-1,1\}}$ in the correct way. Basically, $\R^*$ is a gluing together of two copies of $\R^+$ — one copy containing all the positive numbers, and the other a mirror image containing all the negative numbers. The quotient group essentially "factors out" the sign of each number, leaving us with only one copy. The result is something that looks, acts and feels exactly like $\R^+$.</p>
+</blockquote>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/browser.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/util.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/main.js?v=4aa25223d9"></script>
+
+    
+
+</body>

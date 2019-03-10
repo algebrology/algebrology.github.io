@@ -8,8 +8,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=0e28cd7b0f">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=0e28cd7b0f"></noscript>
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=4aa25223d9">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=4aa25223d9"></noscript>
 
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="canonical" href="index.html">
@@ -22,7 +22,7 @@
     <meta property="og:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
     <meta property="og:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
     <meta property="article:published_time" content="2019-03-06T04:52:39.000Z">
-    <meta property="article:modified_time" content="2019-03-06T05:16:31.000Z">
+    <meta property="article:modified_time" content="2019-03-10T05:38:01.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Normal Subgroups and Quotient Groups">
     <meta name="twitter:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
@@ -53,7 +53,7 @@
     "headline": "Normal Subgroups and Quotient Groups",
     "url": "http://localhost:2368/normal-subgroups-and-quotient-groups/",
     "datePublished": "2019-03-06T04:52:39.000Z",
-    "dateModified": "2019-03-06T05:16:31.000Z",
+    "dateModified": "2019-03-10T05:38:01.000Z",
     "description": "Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -132,7 +132,7 @@ MathJax.Hub.Config({
 <p><strong>Desired Definition.</strong> If $H$ is a subgroup of $G$ and $x,y\in G$, then<br>
 $$(Hx)(Hy)=H(xy).$$</p>
 </blockquote>
-<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(an)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="../constructing-the-rational-numbers-1/index.html#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
+<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(ab)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="../constructing-the-rational-numbers-1/index.html#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
 <p>Interestingly, in this case the remedy is not to define coset multiplication in a different manner. Rather, we choose to restrict our attention only to cosets of a certain, particularly nice sort of subgroup.</p>
 <blockquote>
 <p><strong>Definition.</strong> A subgroup $N$ of a group $G$ is a <strong>normal subgroup</strong> if $xnx^{-1}\in N$ whenever $n\in N$ and $x\in G$. We refer to this defining property of normal subgroups by saying they are <strong>closed under conjugation</strong>.</p>
@@ -147,6 +147,19 @@ xnx^{-1} &amp;= xx^{-1}n \\<br>
 <p><strong>Theorem.</strong> If $N$ is a normal subgroup of a group $G$, then $xN=Nx$ for every $x\in G$.</p>
 <p><strong>Proof.</strong> For any $g\in xN$, we have that $g=xn$ for some $n\in N$. Since $N$ is closed under conjugation, $xnx^{-1}\in N$ and so $g=(xnx^{-1}x)\in Nx$. Thus, $xN\subseteq Nx$.</p>
 <p>The proof that $Nx\subseteq xN$ is nearly identical, so I will not include it.</p>
+</blockquote>
+<p>In a recent post I showed that the kernel of a homomorphism is a always a subgroup of its domain. It turns out that they are actually <em>normal</em> subgroups, and this will be very important to us later on.</p>
+<blockquote>
+<p><strong>Theorem.</strong> The kernel of any group homomorphism is a normal subgroup of the domain.</p>
+<p><strong>Proof.</strong> Let $G$ and $H$ be groups and let $f:G\to H$ denote a homomorphism between them. Suppose $x\in G$ and $k\in\ker f$. We need to show that $xkx^{-1}\in\ker f$.</p>
+<p>Since $k\in\ker f$, we have by definition that $f(k)=e$. Furthermore, since $f$ is a homomorphism,</p>
+<p>$$\begin{align}<br>
+f(xkx^{-1}) &amp;= f(x)f(k)f(x^{-1}) \\<br>
+&amp;= f(x)ef(x)^{-1} \\<br>
+&amp;= f(x)f(x)^{-1} \\<br>
+&amp;= e.<br>
+\end{align}$$</p>
+<p>Thus, $xkx^{-1}$ is in $\ker f$ by definition, so $\ker f$ is a normal subgroup of $G$.</p>
 </blockquote>
 <h3 id="quotientgroupsanamequotientgroups">Quotient Groups<a name="quotient-groups"></a></h3>
 <p>We are now ready to define quotient <em>groups</em>!</p>
@@ -167,7 +180,7 @@ xy &amp;= n_1an_2b \\<br>
 <p>Now we need to show that quotient groups are actually groups. The proof of this is fairly straightforward.</p>
 <blockquote>
 <p><strong>Theorem.</strong> The quotient group as defined above is in fact a group.</p>
-<p><strong>Proof.</strong> We have already shownthat coset multiplication is well defined. We will show first that it is associative. Consider $Nx, Ny, Nz\in G/N$. By definition,</p>
+<p><strong>Proof.</strong> We have already shown that coset multiplication is well defined. We will show first that it is associative. Consider $Nx, Ny, Nz\in G/N$. By definition,</p>
 <p>$$\begin{align}<br>
 Nx(NyNz) &amp;= NxN(yz) \\<br>
 &amp;= N(xyz) \\<br>
@@ -202,7 +215,7 @@ NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
 (2\Z+1) + 2\Z &amp;= 2\Z+1, \\<br>
 (2\Z+1) + (2\Z+1) &amp;= 2\Z.<br>
 \end{align}$$</p>
-<p>Let's rename these cosets, just for kicks. We'll refer to $2\Z$ as $0$ and $2\Z+1$ as 1. Then we get</p>
+<p>Let's rename these cosets, just for kicks. We'll refer to $2\Z$ as $0$ and $2\Z+1$ as $1$. Then we get</p>
 <p>$$\begin{align}<br>
 0 + 0 &amp;= 0, \\<br>
 0 + 1 &amp;= 1,\\<br>
@@ -272,13 +285,13 @@ xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=0e28cd7b0f"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=0e28cd7b0f"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=0e28cd7b0f"></script>
-    <script src="../assets/main/js/browser.min.js?v=0e28cd7b0f"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=0e28cd7b0f"></script>
-    <script src="../assets/main/js/util.js?v=0e28cd7b0f"></script>
-    <script src="../assets/main/js/main.js?v=0e28cd7b0f"></script>
+    <script src="../assets/main/js/jquery.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/browser.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/util.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/main.js?v=4aa25223d9"></script>
 
     
 

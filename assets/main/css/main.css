@@ -2869,7 +2869,7 @@ table.alt tbody tr td {
 @media screen and (max-width: 480px) {
 	.pagination .page,
 	.pagination .extra {
-		display: none
+		/* display: none */
 	}
 }
 

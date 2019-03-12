@@ -1,0 +1,314 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Free Abelian Groups</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=4aa25223d9">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=4aa25223d9"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Free Abelian Groups">
+    <meta property="og:description" content=" 1. Cyclic Groups
+ 2. Direct Sums
+ 3. Free Abelian Groups
+
+
+--------------------------------------------------------------------------------
+
+This is gonna be a long one. And before we can even talk about free abelian
+groups we'll need a few definitions. Cyclic groups and direct sums are
+interesting in their own right. However, I will spend as little time on them as
+possible right now, using them only as a means to an end. So consider this a
+speed-run through the machinery needed to construct an">
+    <meta property="og:url" content="http://localhost:2368/free-abelian-groups/">
+    <meta property="article:published_time" content="2019-03-12T04:54:30.000Z">
+    <meta property="article:modified_time" content="2019-03-12T08:21:02.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Abelian Groups">
+    <meta name="twitter:description" content=" 1. Cyclic Groups
+ 2. Direct Sums
+ 3. Free Abelian Groups
+
+
+--------------------------------------------------------------------------------
+
+This is gonna be a long one. And before we can even talk about free abelian
+groups we'll need a few definitions. Cyclic groups and direct sums are
+interesting in their own right. However, I will spend as little time on them as
+possible right now, using them only as a means to an end. So consider this a
+speed-run through the machinery needed to construct an">
+    <meta name="twitter:url" content="http://localhost:2368/free-abelian-groups/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Free Abelian Groups",
+    "url": "http://localhost:2368/free-abelian-groups/",
+    "datePublished": "2019-03-12T04:54:30.000Z",
+    "dateModified": "2019-03-12T08:21:02.000Z",
+    "description": " 1. Cyclic Groups\n 2. Direct Sums\n 3. Free Abelian Groups\n\n\n--------------------------------------------------------------------------------\n\nThis is gonna be a long one. And before we can even talk about free abelian\ngroups we&#x27;ll need a few definitions. Cyclic groups and direct sums are\ninteresting in their own right. However, I will spend as little time on them as\npossible right now, using them only as a means to an end. So consider this a\nspeed-run through the machinery needed to construct an",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 11, 2019</span>
+            <h1>Free Abelian Groups</h1>
+        </header>
+
+
+        <div class="content">
+            <ol>
+<li><a href="index.html#cyclic-groups">Cyclic Groups</a></li>
+<li><a href="index.html#direct-sums">Direct Sums</a></li>
+<li><a href="index.html#free-abelian-groups">Free Abelian Groups</a></li>
+</ol>
+<hr>
+<p>This is gonna be a long one. And before we can even talk about free abelian groups we'll need a few definitions. Cyclic groups and direct sums are interesting in their own right. However, I will spend as little time on them as possible right now, using them only as a means to an end. So consider this a speed-run through the machinery needed to construct and effectively use free abelian groups.</p>
+<h3 id="cyclicgroupsanamecyclicgroups">Cyclic Groups<a name="cyclic-groups"></a></h3>
+<blockquote>
+<p><strong>Definition.</strong> If $G$ is a group and $x\in G$, then the <strong>cyclic subgroup</strong> of $G$ <strong>generated by $x$</strong> is the set</p>
+<p>$$\inner{x}=\{x^n\mid n\in\Z\}.$$</p>
+</blockquote>
+<p>So basically a cyclic subgroup consists of everything you can get by multiplying a single element repeatedly. Let's look at a few examples:</p>
+<blockquote>
+<p><strong>Example.</strong> Let's look at some cyclic subgroups of the infinite group $\Z$ of integers whose operation is the usual addition. Since this is an abelian group, we will be using additive notation in this example, so $x^n$ becomes $nx$ and $ab$ becomes $a+b$.</p>
+<p>The cyclic subgroup of $\Z$ generated by $0$ is the set</p>
+<p>$$\inner{0}=\{0n\mid n\in\Z\},$$</p>
+<p>which is really just $\{0\}$, the trivial group.</p>
+<p>The cyclic subgroup of $\Z$ generated by $1$ is the set</p>
+<p>$$\inner{1}=\{1n\mid n\in\Z\},$$</p>
+<p>which is quite clearly just $\Z$ itself.</p>
+<p>The cyclic subgroup of $\Z$ generated by $2$ is the set</p>
+<p>$$\inner{2}=\{2n\mid n\in\Z\},$$</p>
+<p>which is the set $2\Z$ of multiples of two.</p>
+<p>It shouldn't be too hard to see that in general,</p>
+<p>$$\begin{align}<br>
+\inner{k} &amp;= \{kn\mid n\in\Z\} \\<br>
+&amp;= \abs{k}\Z,<br>
+\end{align}$$</p>
+<p>which is the set of integer multiples of $k$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> Now let's look at a finite group. We'll use $D_3$, the dihedral group of the triangle, which I introduced in my <a href="../groups-and-their-basic-properties/index.html#examples">first post about groups</a>. Recall that</p>
+<p>$$D_3 = \{1,r_1,r_2,f_1,f_2,f_3\},$$</p>
+<p>where $1$ is the identity transformation, $r_1$ and $r_2$ are rotations and $f_1,f_2$ and $f_3$ are reflections. Recall also here that the group operation is composition, so that $f_1\circ r_2$ is the result of first rotating via $r_2$ and then reflecting via $f_1$.</p>
+<p>To make the following discussion simpler, I have computed the entire group table below:</p>
+<p><img src="../content/images/2019/03/D_3-multiplication-table-1.svg" alt="D_3-multiplication-table-1"></p>
+<p>The section I've highlighted in red is the subgroup of rotations, $\{1,r_1,r_2\}$. Recall that the reflections do not form a subgroup, since the composition of two reflections is usually a rotation.</p>
+<p>The cyclic subgroup of $D_3$ generated by $1$ is the set</p>
+<p>$$\begin{align}<br>
+\inner{1} &amp;= \{1^n\mid n\in\Z\} \\<br>
+&amp;= \{1\},<br>
+\end{align}$$</p>
+<p>since composing the identity with itself always results in the identity no matter how many times we do it.</p>
+<p>The cyclic subgroup of $D_3$ generated by $r_1$ is the set</p>
+<p>$$\begin{align}<br>
+\inner{r_1} &amp;= \{r_1^n\mid n\in\Z\} \\<br>
+&amp;= \{\ldots, r_1^0, r_1^1, r_1^2, \ldots\} \\<br>
+&amp;= \{1,r_1,r_2\},<br>
+\end{align}$$</p>
+<p>the subgroup of rotations. This cyclic subgroup has order three, because once we reach $r_2$, composing with $r_1$ again gets us back to the identity.</p>
+<p>The cyclic subgroup of $D_3$ generated by $r_2$ is the same as the above, since $r_2^0=1$, $r_2^1=r_2$, $r_2^2=r_1$ and $r_2^3=1$, bringing us right back to where we started.</p>
+<p>The cyclic subgroup of $D_3$ generated by $f_1$ is the set</p>
+<p>$$\begin{align}<br>
+\inner{f_1} &amp;= \{f_1^n\mid n\in\Z\} \\<br>
+&amp;= \{\ldots, f_1^0, f_1^1, f_1^2, \ldots\} \\<br>
+&amp;= \{1, f_1\}.<br>
+\end{align}$$</p>
+<p>That's because $f_1$ is its own inverse! The other reflections exhibit the same sort of behavior since they are also each their own inverse.</p>
+<p>So to wrap things up, $D_3$ has five cyclic subgroups, one of order $1$, one of order $3$, and three of order $2$.</p>
+</blockquote>
+<p>I will not bother proving that cyclic subgroups are actually subgroups, or that they are always abelian, since the proofs of these facts are basically encompassed in the definition of cyclic subgroups.</p>
+<p>Another important thing to notice is the following:</p>
+<blockquote>
+<p><strong>Note.</strong> All cyclic groups of the same order are isomorphic.</p>
+</blockquote>
+<p>In addition to finite groups, the above additionally implies that all infinite cyclic groups are isomorphic! This means that any infinite cyclic group is basically $\Z$.</p>
+<h3 id="directsumsanamedirectsums">Direct Sums<a name="direct-sums"></a></h3>
+<p>Given a collection of abelian groups, it is often convenient to form a new group which combines them in the following manner:</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a collection of abelian groups $\{G_i\}_{i\in I}$ their <strong>direct sum</strong> is defined as follows:</p>
+<ul>
+<li>The underlying set is the cartesian product $\displaystyle\prod_{i\in I}G_i$.</li>
+<li>The group operation $+$ is given componentwise:</li>
+</ul>
+<p>$$(g_1,g_2,g_3,\ldots) + (h_1,h_2,h_3,\ldots) = (g_1 + h_1, g_2 + h_2, g_3 +h_3,\ldots),$$</p>
+<p>where addition in the $i$th slot represents the group operation in $G_i$.</p>
+<p>The resulting group is denoted $\displaystyle\bigoplus_{i\in I}G_i$.</p>
+</blockquote>
+<p>Since I am speed-running this, I will not bother proving that the direct sum of abelian groups is an abelian group. The proof is very straightforward — it essentially inherits its group properties from the groups it is made from.</p>
+<p>I will, however, give one example.</p>
+<blockquote>
+<p><strong>Example.</strong> Let's look at the direct sum of $\Z$ and $2\Z$. This group consists of all ordered pairs of the form $(n, 2m)$, where $n$ and $m$ are integers. That is, all ordered pairs where the first component is any integer and the second is any even integer.</p>
+<p>Given two elements $(n_1, 2m_1)$ and $(n_2, 2m_2)$ of the direct sum $\Z\oplus 2\Z$, their sum is $$(n_1+n_2, 2(m_1+m_2)).$$</p>
+</blockquote>
+<h3 id="freeabeliangroupsanamefreeabeliangroups">Free Abelian Groups<a name="free-abelian-groups"></a></h3>
+<p>Essentially, free abelian groups give us a rigorous way of talking about formal linear combinartions of some set of generators. I will explain what I mean by this in a bit more detail laters on.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $B$ denote a subset of an abelian group $F$. Then $F$ is a <strong>free abelian group</strong> with <strong>basis</strong> $B$ if $F=\displaystyle\bigoplus_{b\in B}\inner{b}$ and the cyclic subgroup $\inner{b}$ is infinite for every $b\in B$.</p>
+</blockquote>
+<p>It is easy to see that free abelian groups are always isomorphic to direct sums of copies of $\Z$, since all infinite cyclic groups are isomorphic to the integers. Furthermore, if $F$ is free abelian then any element $x\in F$ can be written uniquely as</p>
+<p>$$x=\sum_{b\in B}m_b b,$$</p>
+<p>where $m_b\in\Z$ and all but a finite number of the $m_b$ are zero.</p>
+<blockquote>
+<p><strong>Example.</strong> Let $B=\{\text{cat},\text{mouse},\text{sheep}\}$. Then any element in the free abelian group with basis $B$ can be written</p>
+<p>$$a\cdot\text{cat} + b\cdot\text{mouse} + c\cdot\text{sheep},$$</p>
+<p>where $a,b$ and $c$ are integers.</p>
+</blockquote>
+<p>The next theorem is incredibly important. If you are familiar with linear algebra, it shows us that homomorphisms between free abelian groups behave very similarly to linear maps between vector spaces, in that they are determined entirely by how they act on their bases.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $F$ be a free abelian group with basis $B$. For any abelian group $G$ and any function $f':B\to G$, there exists a unique homomorphism $f:F\to G$ for which $f\restriction{B}=f'$.</p>
+<p><strong>Proof.</strong> Choose $x\in F$, so that $x=\displaystyle\sum_{b\in B}m_b b$ for some integers $\{m_b\}_{b\in B}$. Define</p>
+<p>$$f(x)=\sum_{b\in B}m_b f'(b).$$</p>
+<p>This is clearly a well-defined homomorphism because the expression for $x$ is unique (by definition). In addition, $f$ is unique because two homomorphisms that agree on generators must be equal.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> The above construction of $f$ from $f'$ is called <strong>extending by linearity</strong>.</p>
+</blockquote>
+<p>It is not difficult to show that any two bases for the same free abelian group must have the same cardinality. This cardinality is akin to the dimension of a vector space, but we use a different name for it.</p>
+<blockquote>
+<p><strong>Definition.</strong> If $F$ is a free abelian group with basis $B$, then the <strong>rank</strong> of $F$ is an invariant equal to the cardinality of $B$. That is, $\text{rank }F=\abs{B}$, and this does not depend on our choice of basis.</p>
+</blockquote>
+<p>I'm going to end the post here and save the good stuff for next time. In particular, I still need to talk about matrices for homomorphisms between free abelian groups, Smith Normal Form, and the Fundamental Theorem of Finitely Generated Abelian Groups.</p>
+<p>Until next time :D</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/browser.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/util.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/main.js?v=4aa25223d9"></script>
+
+    
+
+</body>

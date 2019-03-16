@@ -68,19 +68,13 @@
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
-        linebreaks: { 
-            automatic: true 
-        }
+        linebreaks: {automatic: true},
     },
   	"HTML-CSS": { 
-        linebreaks: { 
-            automatic: true 
-        },
+        linebreaks: {automatic: true},
     },
     SVG: {
-        linebreaks: {
-            automatic: true 
-        } 
+        linebreaks: {automatic: true},
     },
     tex2jax: {
         inlineMath: [["$", "$"], ["\\(", "\\)"]],
@@ -96,6 +90,9 @@ MathJax.Hub.Config({
             quotient: ["{/\\negthickspace #1}", 1],
             inner: ["{\\langle #1 \\rangle}", 1],
  			P: "{\\mathscr{P}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",

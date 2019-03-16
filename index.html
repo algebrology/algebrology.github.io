@@ -55,19 +55,13 @@
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
-        linebreaks: { 
-            automatic: true 
-        }
+        linebreaks: {automatic: true},
     },
   	"HTML-CSS": { 
-        linebreaks: { 
-            automatic: true 
-        },
+        linebreaks: {automatic: true},
     },
     SVG: {
-        linebreaks: {
-            automatic: true 
-        } 
+        linebreaks: {automatic: true},
     },
     tex2jax: {
         inlineMath: [["$", "$"], ["\\(", "\\)"]],
@@ -83,6 +77,9 @@ MathJax.Hub.Config({
             quotient: ["{/\\negthickspace #1}", 1],
             inner: ["{\\langle #1 \\rangle}", 1],
  			P: "{\\mathscr{P}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -143,12 +140,22 @@ MathJax.Hub.Config({
 
         <article>
             <header>
+                <span class="date">Mar 16, 2019</span>
+                <h2><a href="vector-spaces-2/">Vector Spaces (2) - Direct Sums, Span and Linear Independence</a></h2>
+            </header>
+            <p>I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.</p>
+            <ul class="actions special">
+                <li><a href="vector-spaces-2/" class="button">Full Story</a></li>
+            </ul>
+        </article>
+        <article>
+            <header>
                 <span class="date">Mar 15, 2019</span>
-                <h2><a href="vector-spaces/">Vector Spaces, Subspaces and Sums</a></h2>
+                <h2><a href="vector-spaces-1/">Vector Spaces (1) - Subspaces and Sums</a></h2>
             </header>
             <p>A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.</p>
             <ul class="actions special">
-                <li><a href="vector-spaces/" class="button">Full Story</a></li>
+                <li><a href="vector-spaces-1/" class="button">Full Story</a></li>
             </ul>
         </article>
         <article>
@@ -251,23 +258,13 @@ MathJax.Hub.Config({
                 <li><a href="sequences-hausdorff-spaces-and-nets/" class="button">Full Story</a></li>
             </ul>
         </article>
-        <article>
-            <header>
-                <span class="date">Apr 9, 2017</span>
-                <h2><a href="quotient-spaces/">Quotient Spaces</a></h2>
-            </header>
-            <p>The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post.</p>
-            <ul class="actions special">
-                <li><a href="quotient-spaces/" class="button">Full Story</a></li>
-            </ul>
-        </article>
 
     </section>
 
     <footer>
     <nav class="pagination" role="navigation">
         <div class="spacer"></div>
-        <span class="page-number">Page 1 of 2</span>
+        <span class="page-number">Page 1 of 3</span>
         <a class="page next older-posts" href="page/2/">Older Posts</a>
     </nav>
 </footer>

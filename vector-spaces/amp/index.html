@@ -17,7 +17,7 @@
     <meta property="og:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.">
     <meta property="og:url" content="http://localhost:2368/vector-spaces/">
     <meta property="article:published_time" content="2019-03-16T04:04:40.000Z">
-    <meta property="article:modified_time" content="2019-03-16T07:33:22.000Z">
+    <meta property="article:modified_time" content="2019-03-16T08:21:29.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Vector Spaces, Subspaces and Sums">
     <meta name="twitter:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.">
@@ -48,7 +48,7 @@
     "headline": "Vector Spaces, Subspaces and Sums",
     "url": "http://localhost:2368/vector-spaces/",
     "datePublished": "2019-03-16T04:04:40.000Z",
-    "dateModified": "2019-03-16T07:33:22.000Z",
+    "dateModified": "2019-03-16T08:21:29.000Z",
     "description": "A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -99,7 +99,7 @@
 <hr>
 <h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
 <p>It's almost ridiculous that I would expose you to free abelian groups before talking about vector spaces and linear algebra. Vector spaces and free abelian groups have a lot in common, but vector spaces are more familiar, more ubiquitous and easier to compute with.</p>
-<p>At their core, vector spaces are very simple and their definition will closely mimic that of groups and topological space. Recall that a group is a set with a binary operation, an identity and inverses for all its elements. A topological space is a set and a collection of "open sets" which include the set itself, the empty set, finite intersections and arbitrary unions of open sets. Vector spaces are defined in a similar manner.</p>
+<p>At their core, vector spaces are very simple and their definition will closely mimic that of groups and topological spaces. Recall that a group is a set with a binary operation, an identity and inverses for all its elements. A topological space is a set and a collection of "open sets" which include the set itself, the empty set, finite intersections and arbitrary unions of open sets. Vector spaces are defined in a similar manner.</p>
 <p>A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.</p>
 <p>You have likely encountered the idea of a vector before as some sort of arrow, anchored to the origin in euclidean space with some well-defined magnitude and direction.</p>
 <p></p>
@@ -107,29 +107,33 @@
 <p>We would like our definition to include some way to scale vectors so that we can expand of shrink them in magnitude while preserving their direction. Since in general there is no concept of vector multiplication, we will need to bring in additional elements by which we are allowed to multiply our vectors to achieve a scaling effect. These <em>scalars</em> will be the elements of a field, which we have encountered before in my posts on constructing the rational numbers, but I will give the definition again because it is so important.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>field</strong> is a set $\F$ of elements called <strong>scalars</strong>, together with two binary operations:</p>
-<p>    <strong>Addition</strong><br>
-        which assigns to any pair of scalars $a,b\in\F$ the scalar $a+b\in\F$,</p>
-<p>    <strong>Multiplication</strong><br>
-        which assigns to any pair of scalars $a,b\in\F$ the scalar $ab\in\F$.</p>
+<div>
+<p><strong>Addition</strong><br>
+which assigns to any pair of scalars $a,b\in\F$ the scalar $a+b\in\F$,</p>
+<p><strong>Multiplication</strong><br>
+which assigns to any pair of scalars $a,b\in\F$ the scalar $ab\in\F$.</p>
+</div>
 <p>Any field and its operations must satisfy the following properties:</p>
-<p>    <strong>Additive Identity</strong><br>
-         There exists $0\in\F$ such that $0+a=a$ for every $a\in\F$.</p>
-<p>    <strong>Additive Inverses</strong><br>
-         For every $a\in\F$, there exists $b\in\F$ for which $a+b=0$.</p>
-<p>    <strong>Commutative Property of Addition</strong><br>
-         For all $a,b\in\F$, we have that $a+b=b+a$.</p>
-<p>    <strong>Associative Property of Addition</strong><br>
-         For all $a,b,c\in\F$, we have that $(a+b)+c=a+(b+c)$.</p>
-<p>    <strong>Multiplicative Identity</strong><br>
-         There exists $1\in\F$, with $1\ne 0$, such that $1a=a$ for every $a\in\F$.</p>
-<p>    <strong>Multiplicative Inverses</strong><br>
-         For every $a\in\F$ with $a\ne 0$, there exists $b\in\F$ for which $ab=1$.</p>
-<p>    <strong>Commutative Property of Multiplication</strong><br>
-         For all $a,b\in\F$, we have that $ab=ba$.</p>
-<p>    <strong>Associative Property of Multiplication</strong><br>
-         For all $a,b,c\in\F$, we have that $(ab)c=a(bc)$.</p>
-<p>    <strong>Distributive Property</strong><br>
-         For all $a,b,c\in\F$, we have that $a(b+c)=ab+ac$.</p>
+<div> 
+<p><strong>Additive Identity</strong><br>
+There exists $0\in\F$ such that $0+a=a$ for every $a\in\F$.</p>
+<p><strong>Additive Inverses</strong><br>
+For every $a\in\F$, there exists $b\in\F$ for which $a+b=0$.</p>
+<p><strong>Commutative Property of Addition</strong><br>
+For all $a,b\in\F$, we have that $a+b=b+a$.</p>
+<p><strong>Associative Property of Addition</strong><br>
+For all $a,b,c\in\F$, we have that $(a+b)+c=a+(b+c)$.</p>
+<p><strong>Multiplicative Identity</strong><br>
+There exists $1\in\F$, with $1\ne 0$, such that $1a=a$ for every $a\in\F$.</p>
+<p><strong>Multiplicative Inverses</strong><br>
+For every $a\in\F$ with $a\ne 0$, there exists $b\in\F$ for which $ab=1$.</p>
+<p><strong>Commutative Property of Multiplication</strong><br>
+For all $a,b\in\F$, we have that $ab=ba$.</p>
+<p><strong>Associative Property of Multiplication</strong><br>
+For all $a,b,c\in\F$, we have that $(ab)c=a(bc)$.</p>
+<p><strong>Distributive Property</strong><br>
+For all $a,b,c\in\F$, we have that $a(b+c)=ab+ac$.</p>
+</div>
 </blockquote>
 <p>It is not too difficult to verify that the set $\R$ of real numbers is a field when considered with the usual addition and multiplication. Similarly, the sets $\C$ of complex numbers and $\Q$ of rational numbers form fields when equipped with their usual arithmetic.</p>
 <p>There are other examples of fields besides these familiar ones. For example, the set $\Z_3$ of integers modulo $3$ is a field when considered with addition and multiplication modulo $3$. The tables below describe addition and multiplication in $\Z_3$, so you can check for yourself that the field axioms hold.</p>
@@ -139,27 +143,31 @@
 <p>With all of this in mind, we can move forward with defining the concept of a vector space over a field. This definition ensures that vectors interact with scalars and other vectors in a reasonable way.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>vector space over a field</strong> $\F$ is a set $V$ of elements called <strong>vectors</strong>, together with two operations:</p>
-<p>    <strong>Vector Addition</strong><br>
-        which assigns to any pair of vectors $\vec{u},\vec{v}\in V$ the vector $\vec{u}+\vec{v}\in V$,</p>
-<p>    <strong>Scalar Multiplication</strong><br>
-        which assigns to any scalar $a\in\F$ and any vector $\vec{v}\in V$ the vector $a\vec{v}\in V$.</p>
+<div>
+<p><strong>Vector Addition</strong><br>
+which assigns to any pair of vectors $\vec{u},\vec{v}\in V$ the vector $\vec{u}+\vec{v}\in V$,</p>
+<p><strong>Scalar Multiplication</strong><br>
+which assigns to any scalar $a\in\F$ and any vector $\vec{v}\in V$ the vector $a\vec{v}\in V$.</p>
+</div>
 <p>Any vector space and its operations must satisfy the following properties:</p>
-<p>    <strong>Zero Vector</strong><br>
-        There exists $\vec{0}\in V$ such that $\vec{0}+\vec{v}=\vec{v}$ for every $\vec{v}\in V$.</p>
-<p>    <strong>Additive Inverses</strong><br>
-        For every $\vec{u}\in V$, there exists $\vec{v}\in V$ for which $\vec{u}+\vec{v}=\vec{0}$.</p>
-<p>    <strong>Commutative Property of Addition</strong><br>
-        For all $\vec{u},\vec{v}\in V$, we have that $\vec{u}+\vec{v}=\vec{v}+\vec{u}$.</p>
-<p>    <strong>Associative Property of Addition</strong><br>
-        For all $\vec{u},\vec{v}, \vec{w}\in V$, we have that $(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})$.</p>
-<p>    <strong>Compatibility with Field Multiplication</strong><br>
-        For all $a,b\in\F$ and $\vec{v}\in V$, we have that $(ab)\vec{v}=a(b\vec{v})$.</p>
-<p>    <strong>Scalar Multiplicative Identity</strong><br>
-        For every $\vec{v}\in V$, we have that $1\vec{v}=\vec{v}$.</p>
-<p>    <strong>First Distributive Property</strong><br>
-        For all $a,b\in\F$ and $\vec{v}\in V$, we have that $(a+b)\vec{v}=a\vec{v}+b\vec{v}$.</p>
-<p>    <strong>Second Distributive Property</strong><br>
-        For all $a\in\F$ and $\vec{u},\vec{v}\in V$, we have that $a(\vec{u}+\vec{v})=a\vec{u}+a\vec{v}$.</p>
+<div>
+<p><strong>Zero Vector</strong><br>
+There exists $\vec{0}\in V$ such that $\vec{0}+\vec{v}=\vec{v}$ for every $\vec{v}\in V$.</p>
+<p><strong>Additive Inverses</strong><br>
+For every $\vec{u}\in V$, there exists $\vec{v}\in V$ for which $\vec{u}+\vec{v}=\vec{0}$.</p>
+<p><strong>Commutative Property of Addition</strong><br>
+For all $\vec{u},\vec{v}\in V$, we have that $\vec{u}+\vec{v}=\vec{v}+\vec{u}$.</p>
+<p><strong>Associative Property of Addition</strong><br>
+For all $\vec{u},\vec{v}, \vec{w}\in V$, we have that $(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})$.</p>
+<p><strong>Compatibility with Field Multiplication</strong><br>
+For all $a,b\in\F$ and $\vec{v}\in V$, we have that $(ab)\vec{v}=a(b\vec{v})$.</p>
+<p><strong>Scalar Multiplicative Identity</strong><br>
+For every $\vec{v}\in V$, we have that $1\vec{v}=\vec{v}$.</p>
+<p><strong>First Distributive Property</strong><br>
+For all $a,b\in\F$ and $\vec{v}\in V$, we have that $(a+b)\vec{v}=a\vec{v}+b\vec{v}$.</p>
+<p><strong>Second Distributive Property</strong><br>
+For all $a\in\F$ and $\vec{u},\vec{v}\in V$, we have that $a(\vec{u}+\vec{v})=a\vec{u}+a\vec{v}$.</p>
+</div>
 </blockquote>
 <p>Although the choice of field is important when defining a particular vector space, it is often ignored when talking generally about vector spaces. This is because many results hold true for all vector spaces, regardless of the field over which they are defined. Whenever this information is important, it will be specified. Otherwise, we will often refer simply to a vector space $V$, with the understanding that some field $\F$ is lurking in the background.</p>
 <h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>

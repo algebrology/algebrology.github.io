@@ -27,7 +27,7 @@ MathJax.Hub.Config({
   	"HTML-CSS": { 
         linebreaks: { 
             automatic: true 
-        } 
+        },
     },
     SVG: {
         linebreaks: {
@@ -40,16 +40,33 @@ MathJax.Hub.Config({
     },
     TeX: {
     	Macros: {
+            
+            <!-- OPERATORS -->
             abs: ["{\\lvert #1 \\rvert}", 1],
             restriction: ["{\\mid_{#1}}", 1],
             im: "{\\text{im }}",
             quotient: ["{/\\negthickspace #1}", 1],
             inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+    
+            <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
             Z: "{\\mathbb Z}",
             Q: "{\\mathbb Q}",
             R: "{\\mathbb R}",
             C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
     	}
   	}
 });
@@ -83,13 +100,23 @@ MathJax.Hub.Config({
         <h1><a href="../../">Eric Shapiro</a></h1>
         <div class="author-meta">
             <div class="author-stats">
-                23 posts <span class="bull">•</span>
+                24 posts <span class="bull">•</span>
             </div>
         </div>
     </header>
 
     <section class="posts">
 
+        <article>
+            <header>
+                <span class="date">Apr 8, 2017</span>
+                <h2><a href="../../../../equivalence-relations-and-quotient-sets/">Equivalence Relations and Quotient Sets</a></h2>
+            </header>
+            <p>Quotient sets of $A$ are comprised not of elements of $A$, but of the equivalence classes they fall into. This gives us a powerful method to collapse a set into a smaller set that is in some way still representative of the original set.</p>
+            <ul class="actions special">
+                <li><a href="../../../../equivalence-relations-and-quotient-sets/" class="button">Full Story</a></li>
+            </ul>
+        </article>
         <article>
             <header>
                 <span class="date">Apr 8, 2017</span>

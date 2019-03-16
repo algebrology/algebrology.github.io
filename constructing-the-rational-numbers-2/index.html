@@ -74,7 +74,7 @@ MathJax.Hub.Config({
   	"HTML-CSS": { 
         linebreaks: { 
             automatic: true 
-        } 
+        },
     },
     SVG: {
         linebreaks: {
@@ -87,16 +87,33 @@ MathJax.Hub.Config({
     },
     TeX: {
     	Macros: {
+            
+            <!-- OPERATORS -->
             abs: ["{\\lvert #1 \\rvert}", 1],
             restriction: ["{\\mid_{#1}}", 1],
             im: "{\\text{im }}",
             quotient: ["{/\\negthickspace #1}", 1],
             inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+    
+            <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
             Z: "{\\mathbb Z}",
             Q: "{\\mathbb Q}",
             R: "{\\mathbb R}",
             C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
     	}
   	}
 });

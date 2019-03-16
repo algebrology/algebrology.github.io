@@ -1,0 +1,526 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Vector Spaces, Subspaces and Sums</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=4aa25223d9">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=4aa25223d9"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vector Spaces, Subspaces and Sums">
+    <meta property="og:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.">
+    <meta property="og:url" content="http://localhost:2368/vector-spaces/">
+    <meta property="article:published_time" content="2019-03-16T04:04:40.000Z">
+    <meta property="article:modified_time" content="2019-03-16T07:33:22.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vector Spaces, Subspaces and Sums">
+    <meta name="twitter:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.">
+    <meta name="twitter:url" content="http://localhost:2368/vector-spaces/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Vector Spaces, Subspaces and Sums",
+    "url": "http://localhost:2368/vector-spaces/",
+    "datePublished": "2019-03-16T04:04:40.000Z",
+    "dateModified": "2019-03-16T07:33:22.000Z",
+    "description": "A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: { 
+            automatic: true 
+        }
+    },
+  	"HTML-CSS": { 
+        linebreaks: { 
+            automatic: true 
+        },
+    },
+    SVG: {
+        linebreaks: {
+            automatic: true 
+        } 
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 15, 2019</span>
+            <h1>Vector Spaces, Subspaces and Sums</h1>
+        </header>
+
+
+        <div class="content">
+            <ol>
+<li><a href="index.html#introduction">Introduction</a></li>
+<li><a href="index.html#vector-spaces">Vector Spaces</a></li>
+<li><a href="index.html#basic-properties">Basic Properties</a></li>
+<li><a href="index.html#examples">Examples</a></li>
+<li><a href="index.html#subspaces-and-sums">Subspaces and Sums</a></li>
+</ol>
+<hr>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<p>It's almost ridiculous that I would expose you to free abelian groups before talking about vector spaces and linear algebra. Vector spaces and free abelian groups have a lot in common, but vector spaces are more familiar, more ubiquitous and easier to compute with.</p>
+<p>At their core, vector spaces are very simple and their definition will closely mimic that of groups and topological space. Recall that a group is a set with a binary operation, an identity and inverses for all its elements. A topological space is a set and a collection of "open sets" which include the set itself, the empty set, finite intersections and arbitrary unions of open sets. Vector spaces are defined in a similar manner.</p>
+<p>A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.</p>
+<p>You have likely encountered the idea of a vector before as some sort of arrow, anchored to the origin in euclidean space with some well-defined magnitude and direction.</p>
+<p><img src="../content/images/2019/03/vector-arrow.svg" alt="vector-arrow"></p>
+<p>This is the sort of vector encountered in introductory physics classes. However, such arrows are not the only mathematical objects that can be added and scaled, so it would be silly to restrict our attention only to them. We will make a more abstract and inclusive definition of vector spaces, which are the main objects of study in linear algebra.</p>
+<p>We would like our definition to include some way to scale vectors so that we can expand of shrink them in magnitude while preserving their direction. Since in general there is no concept of vector multiplication, we will need to bring in additional elements by which we are allowed to multiply our vectors to achieve a scaling effect. These <em>scalars</em> will be the elements of a field, which we have encountered before in my posts on constructing the rational numbers, but I will give the definition again because it is so important.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>field</strong> is a set $\F$ of elements called <strong>scalars</strong>, together with two binary operations:</p>
+<p>    <strong>Addition</strong><br>
+        which assigns to any pair of scalars $a,b\in\F$ the scalar $a+b\in\F$,</p>
+<p>    <strong>Multiplication</strong><br>
+        which assigns to any pair of scalars $a,b\in\F$ the scalar $ab\in\F$.</p>
+<p>Any field and its operations must satisfy the following properties:</p>
+<p>    <strong>Additive Identity</strong><br>
+         There exists $0\in\F$ such that $0+a=a$ for every $a\in\F$.</p>
+<p>    <strong>Additive Inverses</strong><br>
+         For every $a\in\F$, there exists $b\in\F$ for which $a+b=0$.</p>
+<p>    <strong>Commutative Property of Addition</strong><br>
+         For all $a,b\in\F$, we have that $a+b=b+a$.</p>
+<p>    <strong>Associative Property of Addition</strong><br>
+         For all $a,b,c\in\F$, we have that $(a+b)+c=a+(b+c)$.</p>
+<p>    <strong>Multiplicative Identity</strong><br>
+         There exists $1\in\F$, with $1\ne 0$, such that $1a=a$ for every $a\in\F$.</p>
+<p>    <strong>Multiplicative Inverses</strong><br>
+         For every $a\in\F$ with $a\ne 0$, there exists $b\in\F$ for which $ab=1$.</p>
+<p>    <strong>Commutative Property of Multiplication</strong><br>
+         For all $a,b\in\F$, we have that $ab=ba$.</p>
+<p>    <strong>Associative Property of Multiplication</strong><br>
+         For all $a,b,c\in\F$, we have that $(ab)c=a(bc)$.</p>
+<p>    <strong>Distributive Property</strong><br>
+         For all $a,b,c\in\F$, we have that $a(b+c)=ab+ac$.</p>
+</blockquote>
+<p>It is not too difficult to verify that the set $\R$ of real numbers is a field when considered with the usual addition and multiplication. Similarly, the sets $\C$ of complex numbers and $\Q$ of rational numbers form fields when equipped with their usual arithmetic.</p>
+<p>There are other examples of fields besides these familiar ones. For example, the set $\Z_3$ of integers modulo $3$ is a field when considered with addition and multiplication modulo $3$. The tables below describe addition and multiplication in $\Z_3$, so you can check for yourself that the field axioms hold.</p>
+<p><img src="../content/images/2019/03/Z_3-tables.svg" alt="Z_3-tables"></p>
+<p>In fact, there are many more examples of finite fields. For any prime number $p$, the set $\Z_p$ of integers modulo $p$ forms a field. However, for our purposes we will usually only be interested in the fields $\R$ and $\C$.</p>
+<h3 id="vectorspacesanamevectorspaces">Vector Spaces<a name="vector-spaces"></a></h3>
+<p>With all of this in mind, we can move forward with defining the concept of a vector space over a field. This definition ensures that vectors interact with scalars and other vectors in a reasonable way.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>vector space over a field</strong> $\F$ is a set $V$ of elements called <strong>vectors</strong>, together with two operations:</p>
+<p>    <strong>Vector Addition</strong><br>
+        which assigns to any pair of vectors $\vec{u},\vec{v}\in V$ the vector $\vec{u}+\vec{v}\in V$,</p>
+<p>    <strong>Scalar Multiplication</strong><br>
+        which assigns to any scalar $a\in\F$ and any vector $\vec{v}\in V$ the vector $a\vec{v}\in V$.</p>
+<p>Any vector space and its operations must satisfy the following properties:</p>
+<p>    <strong>Zero Vector</strong><br>
+        There exists $\vec{0}\in V$ such that $\vec{0}+\vec{v}=\vec{v}$ for every $\vec{v}\in V$.</p>
+<p>    <strong>Additive Inverses</strong><br>
+        For every $\vec{u}\in V$, there exists $\vec{v}\in V$ for which $\vec{u}+\vec{v}=\vec{0}$.</p>
+<p>    <strong>Commutative Property of Addition</strong><br>
+        For all $\vec{u},\vec{v}\in V$, we have that $\vec{u}+\vec{v}=\vec{v}+\vec{u}$.</p>
+<p>    <strong>Associative Property of Addition</strong><br>
+        For all $\vec{u},\vec{v}, \vec{w}\in V$, we have that $(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})$.</p>
+<p>    <strong>Compatibility with Field Multiplication</strong><br>
+        For all $a,b\in\F$ and $\vec{v}\in V$, we have that $(ab)\vec{v}=a(b\vec{v})$.</p>
+<p>    <strong>Scalar Multiplicative Identity</strong><br>
+        For every $\vec{v}\in V$, we have that $1\vec{v}=\vec{v}$.</p>
+<p>    <strong>First Distributive Property</strong><br>
+        For all $a,b\in\F$ and $\vec{v}\in V$, we have that $(a+b)\vec{v}=a\vec{v}+b\vec{v}$.</p>
+<p>    <strong>Second Distributive Property</strong><br>
+        For all $a\in\F$ and $\vec{u},\vec{v}\in V$, we have that $a(\vec{u}+\vec{v})=a\vec{u}+a\vec{v}$.</p>
+</blockquote>
+<p>Although the choice of field is important when defining a particular vector space, it is often ignored when talking generally about vector spaces. This is because many results hold true for all vector spaces, regardless of the field over which they are defined. Whenever this information is important, it will be specified. Otherwise, we will often refer simply to a vector space $V$, with the understanding that some field $\F$ is lurking in the background.</p>
+<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
+<p>Now we will verify five basic facts that are true of all vector spaces. They may seem obvious, and many of them closely mimic analogous results we've already seen in group theory. Nonetheless, without proof we could not in good faith use them in our later arguments.</p>
+<p>The first important property is that a vector space only has one zero vector.</p>
+<blockquote>
+<p><strong>Theorem.</strong> In any vector space $V$, the zero vector is unique.</p>
+<p><strong>Proof.</strong> Suppose there exist two zero vectors, $\vec{0}_1,\vec{0}_2\in V$. Then, using the definition of a zero vector and the commutative property, we have that</p>
+<p>\begin{align}<br>
+\vec{0}_1 &amp;= \vec{0}_1+\vec{v}, \\<br>
+\vec{0}_2 &amp;= \vec{v}+\vec{0}_2,<br>
+\end{align}</p>
+<p>for every $\vec{v}\in V$. In light of these equations,</p>
+<p>\begin{align}<br>
+\vec{0}_1 &amp;= \vec{0}_1 + \vec{0}_2 \\<br>
+&amp;= \vec{0}_2.<br>
+\end{align}</p>
+<p>It follows that the zero vector is unique.</p>
+</blockquote>
+<p>The next fact that we will prove is that each vector in a vector space has only one additive inverse. Its proof is extremely similar to the above.</p>
+<blockquote>
+<p><strong>Theorem.</strong> In any vector space $V$, every vector $\vec{u}\in V$ has a unique additive inverse.</p>
+<p><strong>Proof.</strong> Suppose $\vec{u}$ has two additive inverses, $\vec{v}_1,\vec{v}_2\in V$. Then, using the definition of an additive inverse and the commutative property, we have that</p>
+<p>\begin{align}<br>
+\vec{v}_1+\vec{u} &amp;= \vec{0}, \\<br>
+\vec{u}+\vec{v}_2 &amp;= \vec{0}.<br>
+\end{align}</p>
+<p>In light of these equations,</p>
+<p>\begin{align}<br>
+\vec{v}_1 &amp;= \vec{v}_1 + \vec{0} &amp; \scriptstyle\textit{zero vector}\\<br>
+&amp;= \vec{v}_1 + (\vec{u}+\vec{v_2}) &amp; \scriptstyle\textit{additive inverses}\\<br>
+&amp;= (\vec{v}_1 + \vec{u}) + \vec{v}_2 &amp; \scriptstyle\textit{associativity}\\<br>
+&amp;= \vec{0} + \vec{v}_2 &amp; \scriptstyle\textit{additive inverses}\\<br>
+&amp;= \vec{v}_2. &amp; \scriptstyle\textit{zero vector}<br>
+\end{align}</p>
+<p>It follows that $u$ has a unique additive inverse.</p>
+</blockquote>
+<p>Because of this theorem, no confusion arises if we write $-\vec{v}$ to denote the additive inverse of $V$. We will adopt this notation for the rest of time.</p>
+<p>We will not take the time to do this, but it should be clear how to modify the above two proofs to show that in any field $\F$, additive and multiplicative identities are unique, as well as additive and multiplicative inverses.</p>
+<p>Next, we show that the scalar product of a field's additive identity $0$ with any vector yields the zero vector.</p>
+<blockquote>
+<p><strong>Theorem.</strong> In any vector space $V$, we have that $0\vec{v}=\vec{0}$ for every $\vec{v}\in V$.</p>
+<p><strong>Proof.</strong> We proceed via the following computation:</p>
+<p>\begin{align}<br>
+0\vec{v} + 0\vec{v} &amp;= (0+0)\vec{v} &amp; \scriptstyle\textit{first distributive property}\\<br>
+&amp;= 0\vec{v} &amp; \scriptstyle\textit{additive identity}\\<br>
+&amp;= 0\vec{v} + \vec{0}. &amp; \scriptstyle\textit{zero vector}<br>
+\end{align}</p>
+<p>Adding $-0\vec{v}$ to both sides yields $0\vec{v} = \vec{0}$, the desired equality.</p>
+</blockquote>
+<p>It is very important to realize that in the above proof, the scalar $0$ on the left is the additive identity in the underlying field $\F$, while the vector $\vec{0}$ on the right is the zero vector in the vector space $V$. Remember that we do not have any concept of multiplying vectors.</p>
+<p>We will now prove a result of similar obviousness, whose proof is similar to the above.</p>
+<blockquote>
+<p><strong>Theorem.</strong> In any vector space $V$ over a field $\F$, we have that $a\vec{0}=\vec{0}$ for every $a\in\F$.</p>
+<p><strong>Proof.</strong> We proceed via the following computation:</p>
+<p>\begin{align}<br>
+a\vec{0} + a\vec{0} &amp;= a(\vec{0}+\vec{0}) &amp; \scriptstyle\textit{second distributive property}\\<br>
+&amp;= a\vec{0} &amp; \scriptstyle\textit{zero vector}\\<br>
+&amp;= a\vec{0} + \vec{0}. &amp; \scriptstyle\textit{zero vector}<br>
+\end{align}</p>
+<p>Adding $-a\vec{0}$ to both sides yields $a\vec{0} = \vec{0}$, the desired equality.</p>
+</blockquote>
+<p>There is one obvious fact left to prove, namely that the scalar product of $-1$ with any vector yields the additive inverse of that vector.</p>
+<blockquote>
+<p><strong>Theorem.</strong> In any vector space $V$, we have that $-1\vec{v}=-\vec{v}$ for every $\vec{v}\in V$.</p>
+<p><strong>Proof.</strong> We proceed via the following computation:</p>
+<p>\begin{align}<br>
+-1\vec{v}+\vec{v} &amp;= -1\vec{v}+1\vec{v} &amp; \scriptstyle\textit{multiplicative identity}\\<br>
+&amp;= (-1+1)\vec{v} &amp; \scriptstyle\textit{first distributive property}\\<br>
+&amp;= 0\vec{v} &amp; \scriptstyle\textit{additive inverses}\\<br>
+&amp;= \vec{0}. &amp; \scriptstyle\textit{zero vector}<br>
+\end{align}</p>
+<p>Adding $-\vec{v}$ to both sides yields $-1\vec{v} = -\vec{v}$, the desired equality.</p>
+</blockquote>
+<h3 id="examplesanameexamples">Examples<a name="examples"></a></h3>
+<p>We are now armed with a number of facts about abstract vector spaces and their interactions with scalars, but we have yet to exhibit a single actual example of a vector space. We will now examine some vector spaces that are important throughout the entire subject of linear algebra.</p>
+<blockquote>
+<p><strong>Example.</strong> It isn't too hard to see that the set $\{\0\}$, which contains only the zero vector, is a vector space over any field. We are forced to define vector addition and scalar multiplication in the only possible way, and $\0$ must act as both the zero vector and its own additive inverse. This is analogous to the trivial group in group theory, and is not a particularly interesting example.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> For any field $\F$, it happens that $\F$ is a vector space over itself, taking vector addition to be the same as field addition and scalar multiplication to be the same as field multiplication. This, again, is easy to check directly from the definitions. As specific examples, $\R$ and $\C$ are both vector spaces over themselves.</p>
+</blockquote>
+<p>For the next example, recall the definition of cartesian product. In particular, recall that $\F^n$ is the set of all ordered tuples of length $n$ with components in $\F$. For instance, $(i, 3+2i, 4)$ is an element of $\C^3$ and $(0, -\pi, 8, \sqrt{2})$ is an element of $\R^4$.</p>
+<blockquote>
+<p><strong>Example.</strong> For any field $\F$, the set $\F^n$ is a vector space over $\F$ if we define vector addition and scalar multiplication in the following (obvious) way.</p>
+<p>Given $\x=(x_1,x_2,\ldots,x_n)$ and $\y=(y_1,y_2,\ldots,y_n)$ in $\F^n$, we define addition component-wise in terms of field addition as follows:</p>
+<p>$$\begin{align}<br>
+\x+\y &amp;= (x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n) \\<br>
+&amp;= (x_1+y_1,x_2+y_2,\ldots,x_n+y_n).<br>
+\end{align}$$</p>
+<p>Similarly, given $a\in\F$ and $\x=(x_1,x_2,\ldots,x_n)\in\F^n$, we define scalar multiplication component-wise in terms of field multiplication as follows:</p>
+<p>$$\begin{align}<br>
+a\x &amp;= a(x_1,x_2,\ldots,x_n) \\<br>
+&amp;= (ax_1,ax_2,\ldots,ax_n).<br>
+\end{align}$$</p>
+<p>It is not terribly difficult to show that $\F^n$ does in fact constitute a vector space over $\F$ with these operations. For instance, clearly $\0=(0,0,\ldots,0)$ acts as the zero vector in $\F^n$, and $-\x=(-x_1,-x_2,\ldots,-x_n)$ acts as the additive inverse of $\x=(x_1,x_2,\ldots,x_n)$.</p>
+</blockquote>
+<p>Our next example as a vector space may be slightly surprising at first, but it is both highly important and an excellent example of a vector space whose vectors are certainly not arrows of any kind. First, we will need the following definition.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $\F$ denote a field and let $n$ be a natural number. A <strong>polynomial</strong> with coefficients $a_0,a_1,\ldots,a_n$ in $\F$ is a function $p:\F\to\F$ of the form</p>
+<p>$$\begin{align}<br>
+p(x) &amp;= \sum_{i=0}^n a_ix^i \\<br>
+&amp;= a_0 + a_1x+a_2x^2+\cdots+a_nx^n<br>
+\end{align}$$</p>
+<p>for all $x\in\F$. If $a_n\ne 0$, we say that $n$ is the <strong>degree</strong> of $p$. We write $\mathscr{P}(\F)$ to denote the set of all polynomials with coefficients in $\F$.</p>
+</blockquote>
+<p>As a concrete example, the function $p:\R\to\R$ defined by</p>
+<p>$$p(x)=3+2x+8x^2$$</p>
+<p>is a polynomial of degree two with coefficients in $\R$, namely $a_0=3$, $a_1=2$ and $a_2=8$. It is thus an element of $\mathscr{P}(\R)$.</p>
+<p>If $p(x)=0$ for all $x\in\F$, we call $p$ the <strong>zero polynomial</strong>, whose degree is undefined. However, for the purposes of adding and multiplying polynomials, it is sometimes useful to formally treat the degree of the zero polyomial as $-\infty$.</p>
+<blockquote>
+<p><strong>Example.</strong> It is easy to see that for any field $\F$, the set $\mathscr{P}(\F)$ forms a vector space over $\F$ when equipped with the following definitions of vector addition and scalar multiplication.</p>
+<p>For any two vectors $\p,\q\in\mathscr{P}(\F)$, we define their sum $\p+\q\in\mathscr{P}(\F)$ in terms of function addition. That is,</p>
+<p>$$(\p+\q)(x)=\p(x)+\q(x)$$</p>
+<p>for all $x\in\F$. Similarly, for any $a\in\F$ and $\p\in\mathscr{P}(\F)$, we define scalar multiplication as expected:</p>
+<p>$$(a\p)(x)=a\p(x)$$</p>
+<p>for all $x\in\F$. It is clear that the zero polynomial must act as the zero vector. Again, checking that $\mathscr{P}(\F)$ is actually a vector space with these definitions is easy but fairly time consuming, so I won't do it here.</p>
+</blockquote>
+<h3 id="subspacesandsumsanamesubspacesandsums">Subspaces and Sums<a name="subspaces-and-sums"></a></h3>
+<p>It often happens that a vector space contains a subset which also acts as a vector space under the same operations of addition and scalar multiplication. For instance, the vector space $\{\0\}$ is a (fairly boring) subset of any vector space. This phenomenon is so important that we give it a name.</p>
+<blockquote>
+<p><strong>Definition.</strong> A subset $U$ of a vector space $V$ is a <strong>subspace</strong> of $V$ if it is itself a vector space under the same operations of vector addition and scalar multiplication.</p>
+</blockquote>
+<p>It should go without saying that $U$ and $V$ are defined over the same field.</p>
+<p>Note the unfortunate naming conflict with subspaces of topological spaces. Normally they are discussed in different contexts and so this causes no confusion. In cases where confusion may arise, we will sometimes refer to them as <em>topological subspaces</em> and <em>linear subspaces</em>.</p>
+<p>Using this definition, certainly $\{\0\}$ constitutes a subspace of every vector space. At the other extreme, every vector space is a subspace of itself (because every set is a subset of itself). However, the concept of a subspace wouldn't be very interesting if these were the only possibilities. Before demonstrating some nontrivial proper subspaces, we provide a more straightforward method for determining whether a subset of a vector space constitutes a subspace.</p>
+<blockquote>
+<p><strong>Proposition.</strong> A subset $U$ of a vector space $V$ is a subspace of $V$ if and only if the following three conditions hold:</p>
+<ol>
+<li>The zero vector is in $U$.</li>
+<li>The set $U$ is closed under addition of vectors.</li>
+<li>The set $U$ is closed under scalar multiplication.</li>
+</ol>
+</blockquote>
+<p>Proving this would consist largely of statements like "the associative property holds in $U$ because it holds in $V$." Therefore, I will omit the proof of this proposition.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider the set $U=\{(x,0\in\F^2\mid x\in\F\}$, where $\F$ is any field. This is the set of all ordered pairs with entries in $\F$ whose second component is the additive identity.</p>
+<p>The zero vector $(0,0)$ is certainly in $U$. From the definition of addition in $\F^2$, the sum of two vectors in $U$ must be of the form</p>
+<p>$$(x,0) + (y,0) = (x+y,0)$$</p>
+<p>which is certainly in $U$. Similarly, the scalar product of any $a\in\F$ with any vector in $U$ must be of the form</p>
+<p>$$a(x,0)=(ax,0)$$</p>
+<p>which is also in $U$. We have shown that all three conditions are met, so $U$ is a subspace of $\F^2$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> If $\F$ is a field and $n$ is a natural number, then the set of all polynomials whose degree is at most $n$ forms a subspace of $\P(\F)$. We denote this subspace $\P_n(\F)$.</p>
+<p>To see that this is truly a subspace, we will verify the three conditions of the above proposition. We have already stated that the degree of the zero polynomial is $-\infty$, which is certainly less than $N$, so $\0\in\P_n(\F)$.</p>
+<p>Next, suppose that $\p,\q\in\P_n(\F)$. Then there exist degrees $j,k\le n$ and coefficients $a_0,\ldots,a_j,b_0,\ldots,b_k\in\F$ for which</p>
+<p>$$\begin{align}<br>
+\p(x) &amp;= \sum_{i=0}^j a_ix^i, \\<br>
+\q(x) &amp;= \sum_{i=0}^k b_ix^i<br>
+\end{align}$$</p>
+<p>for every $x\in\F$. Since $j$ is the degree of $\p$ and $k$ is the degree of $\q$, we know by definition that $a_j,b_k\ne 0$. Suppose without loss of generality that $j\le k$. It follows that</p>
+<p>$$\begin{align}<br>
+(\p+\q)(x) &amp;= \sum_{i=0}^j a_ix^i + \sum_{i=0}^k b_ix^i \\<br>
+&amp;= \sum_{i=0}^j (a_i+b_i)x^i + \sum_{i=j+1}^k b_ix^i<br>
+\end{align}$$</p>
+<p>for all $x\in\F$. Note that we have combined like terms until the smaller polynomial ran out, then added terms from the higher-degree polynomial until it was also depleted.</p>
+<p>For each $0\le i\le k$, define</p>
+<p>$$c_i =<br>
+\begin{cases}<br>
+a_i + b_i &amp; \text{if } i\le j, \\<br>
+b_i &amp; \text{if } i&gt;j.<br>
+\end{cases}$$</p>
+<p>Then $c_0,\ldots,c_k\in\F$ are the coefficients of the polynomial $\p+\q$. That is,</p>
+<p>$$(\p+\q)(x)=\sum_{i=0}^k c_i x^i.$$</p>
+<p>If $c_k\ne 0$ then $\p+\q$ is a polynomial of degree $k$. If $c_k = 0$ then $\p+\q$ is a polynomial of degree less than $k$. Since $k\le n$, it follows either way that $\p+\q\in\P(\F)$.</p>
+<p>Next, suppose that $a\in\F$ and $p\in\P(\F)$. Then there exists a degree $j\le n$ and coefficients $b_0,\ldots,b_j\in\F$ for which</p>
+<p>$$\p(x)=\sum_{i=0}^j b_i x^i$$</p>
+<p>for all $x\in\F$. Thus,</p>
+<p>$$\begin{align}<br>
+a\p(x) &amp;= a\sum_{i=0}^j b_i x^i \\<br>
+&amp;= \sum_{i=0}^j ab_i x^i<br>
+\end{align}$$</p>
+<p>for every $x\in\F$. If $a=0$ then clearly $a\p$ is the zero polynomial and thus $a\p=\0\in\P_n(\F)$. If $a\ne 0$ then for each $0\le i\le j$, define $c_i=ab_i$. Then $c_0,\ldots,c_j$ are the coefficients of $a\p$. That is,</p>
+<p>$$a\p(x)=\sum_{i=0}^j c_i x^i.$$</p>
+<p>Therefore, $a\p$ is a polynomial of degree $j\le n$, so $a\p\in\P(\F)$. We have established (rather painstakingly) that all three conditions hold, and so we conclude that $\P_n(\F)$ is in fact a subspace of $\P(\F)$.</p>
+</blockquote>
+<p>We will now work toward defining sums of subspaces. We will begin with the following theorem, which establishes that the intersection of subspaces is always a subspace.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $U$ and $W$ are subspaces of a vector space $V$, their intersection  $U\cap V$ is also a subspace of $V$.</p>
+<p><strong>Proof.</strong> We will again show that the conditions of the proposition hold. Since $U$ and $W$ are subspaces, we know that they both contain the zero vector and are closed under vector addition and scalar multiplication.</p>
+<p>Since $\0\in U$ and $\0\in W$, certainly $\0\in U\cap W$.</p>
+<p>For any vectors $\u,\v\in U\cap W$, we have that $\u,\v\in U$ and $\u,\v\in W$. Since both subspaces are closed under vector addition, $u+v\in U$ and $u+v\in W$. Thus, $\u+\v\in U\cap W$.</p>
+<p>Lastly, suppose $a\in\F$ and $\v\in U\cap W$. Then $\v\in U$ and $\v\in W$, so $a\v\in U$ and $a\v\in W$ because both subspaces are closed under scalar multiplication. It follows that $a\v\in U\cap W$, completing the proof.</p>
+</blockquote>
+<p>Using an inductive argument, it is easy to show that this result can be extended to any finite intersection of subspaces.</p>
+<p>Naturally, we might now consider the question of whether the union of subspaces is a subspaces. A moment's thought will probably be enough to convince you that this is not true in general. The following example shows why.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider the subspaces</p>
+<p>$$\begin{align}<br>
+U &amp;= \{(x,0)\in\R^2\mid x\in\R\}, \\<br>
+W &amp;= \{(0,y)\in\R^2\mid y\in\R\}<br>
+\end{align}$$</p>
+<p>of $\R^2$. We can picture $U$ as the space of all vectors lying on the horizontal axis of the cartesian plane, and $W$ as the space of all vectors lying on the vertical axis. The union of these subspaces, $U\cup W$, is not closed under vector addition. To illustrate this, notice that $(1,0)\in U$ and $(0,1)\in W$, and that $(1,0)+(0,1)=(1,1)$. However, $(1,1)\notin U$ and $(1,1)\notin W$, so certainly $(1,1)\notin U\cup W$. Therefore, $U\cup W$ is not a subspace of $\R^2$.</p>
+</blockquote>
+<p>This is somewhat unfortunate behavior, because intersections and unions of sets are very natural and easy to work with. We would therefore like to define a way to combine subspaces in order to obtain a new subspace which is <em>as close as possible</em> to their union. We mean this in the sense that this new subspace should be the smallest subspace containing their union. To this end, we define the sum of subspaces in the following manner.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $U$ and $W$ be subspaces of a vector space $V$. The <strong>sum</strong> of $U$ and $W$ is the set</p>
+<p>$$U+W=\{\u+\w\in V\mid\u\in U,\w\in W\}.$$</p>
+<p>Similarly, the sum of subspaces $U_1,\ldots,U_n$ of $V$ is the set</p>
+<p>$$\sum_{i=1}^n U_i = \{\u_1 + \cdots + u_n\in V\mid \u_1\in U_1,\ldots,\u_n\in U_n\}.$$</p>
+</blockquote>
+<p>This definition certainly fixes the issue we had with unions of subspaces, because it ensures by its very definition that it contains the sum of any vector in $U$ and any vector in $W$. We should make sure that the sum of subspaces is actually a subspace.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $U$ and $W$ be subspaces of a vector space $V$, their sum $U+W$ is also a subspace of $V$.</p>
+<p><strong>Proof.</strong> Since $U$ and $W$ are subspaces, we know that they both contain the zero vector and are closed under vector addition and scalar multiplication.</p>
+<p>Since $\0\in U$ and $\0\in W$, clearly $\0\in U+W$ because $\0=\0+\0$, i.e., it is the sum of a vector in $U$ and a vector in $W$.</p>
+<p>Next, let $\v_1,\v_2\in U+W$. Then</p>
+<p>$$\begin{align}<br>
+\v_1 &amp;= \u_1+\w_1, \\<br>
+\v_2 &amp;= \u_2+\w_2<br>
+\end{align}$$</p>
+<p>for some vectors $\u_1,\u_2\in U$ and $\w_1,\w_2\in W$. Since $U$ and $W$ are closed under vector addition, we know that $\u_1+\u_2\in U$ and $\w_1+\w_2\in W$. Therefore,</p>
+<p>$$\begin{align}<br>
+\v_1+\v_2 &amp;= (\u_1+\w_1) + (\u_2+\w_2) \\<br>
+&amp;= (\u_1+\u_2) + (\w_1+\w_2) \\<br>
+&amp;\in U+W<br>
+\end{align}$$</p>
+<p>since it is the sum of a vector in $U$ and a vector in $W$.</p>
+<p>Finally, let $a\in\F$ and $\v\in U+W$, so that $\v=\u+\w$ for some $\u\in U$ and some $\w\in W$. Since $U$ and $W$ are closed under scalar multiplication, we know that $a\u\in U$ and $a\w\in W$. Thus,</p>
+<p>$$\begin{align}<br>
+a\v &amp;= a(\u+\w) \\<br>
+&amp;= a\u + a\w \\<br>
+&amp;\in U+W<br>
+\end{align}$$</p>
+<p>since it is the sum of a vector in $U$ and a vector in $W$.</p>
+</blockquote>
+<p>Now that we have established that the sum of two subspaces is a subspace, we will prove our assertion above — that the sum of two subspaces is the smallest subspace containing their union. We do this by showing that any subspace containing their union must also contain their sum.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $U_1$ and $U_2$ are subspaces of a vector space $V$, then every subspace containing $U_1\cup U_2$ also contains $U_1+U_2$.</p>
+<p><strong>Proof.</strong> Suppose $W$ is a subspace of $V$ for which $U_1\cup U_2\subseteq W$, and let $\v\in U_1+U_2$. Clearly $\v=\u_1+\u_2$ for some $\u_1\in U_1$ and some $\u_2\in U_2$, and so $\v\in W$ since $U_1\cup U_2\subseteq W$ and $W$ must be closed under vector addition since it is a subspace of $V$. Thus, $U_1+U_2\subseteq W$, completing the proof.</p>
+</blockquote>
+<p>The above is equivalent to saying that $U_1+U_2$ is the intersection of all subspaces containing $U_1\cup U_2$. Again, this result extends to any finite number of subspaces via a simple inductive argument.</p>
+<p>This verifies that the sum of subspaces acts as we originally intended, in that it is as close to their union as possible while remaining a subspace. Now that we have demonstrated this nice characterization of sums, I will provide an example before moving on.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider the subspaces</p>
+<p>$$\begin{align}<br>
+U_1 &amp;= \{(x,0,0)\in\R^3\mid x\in\R\}, \\<br>
+U_2 &amp;= \{(0,y,0)\in\R^3\mid y\in\R\}, \\<br>
+U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br>
+\end{align}$$</p>
+<p>of the vector space $\R^3$. These correspond to the subspaces of vectors lying along the $x$, $y$ and $z$ axes, respectively. The sum of these three subspaces is $\R^3$ itself, because for any vector $(x,y,z)\in\R^3$, we may write</p>
+<p>$$(x,y,z)=(x,0,0)+(0,y,0)+(0,0,z),$$</p>
+<p>which is a sum of vectors in $U_1$, $U_2$ and $U_3$, respectively. This sum has a particularly nice property — namely that every vector in $\R^3$ has a <em>unique</em> representation as a sum of vectors in $U_1$, $U_2$ and $U_3$. Put another way, this sum is special because we are forced to express $(x,y,z)$ as above — there is no other way to break it down as such a sum. This is really why we choose to express points in $\R^3$ using these coordinates. In fact, this property of sums is so important that it has a name. But I will discuss direct sums next time, since it's very late and I'm a sleepyhead.</p>
+</blockquote>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/browser.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/util.js?v=4aa25223d9"></script>
+    <script src="../assets/main/js/main.js?v=4aa25223d9"></script>
+
+    
+
+</body>

@@ -22,7 +22,7 @@
     <meta property="og:description" content="I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.">
     <meta property="og:url" content="http://localhost:2368/vector-spaces-2/">
     <meta property="article:published_time" content="2019-03-16T18:24:28.000Z">
-    <meta property="article:modified_time" content="2019-03-16T22:26:47.000Z">
+    <meta property="article:modified_time" content="2019-03-19T20:28:38.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Vector Spaces (2) - Direct Sums, Span and Linear Independence">
     <meta name="twitter:description" content="I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.">
@@ -53,7 +53,7 @@
     "headline": "Vector Spaces (2) - Direct Sums, Span and Linear Independence",
     "url": "http://localhost:2368/vector-spaces-2/",
     "datePublished": "2019-03-16T18:24:28.000Z",
-    "dateModified": "2019-03-16T22:26:47.000Z",
+    "dateModified": "2019-03-19T20:28:38.000Z",
     "description": "I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -176,10 +176,10 @@ V &amp;= \sum_{i=1}^n U_i \\<br>
 <p>where $\u_i\in U_i$ for every $i$, is unique. Such a direct sum is expressed symbolically as</p>
 <p>$$\begin{align}<br>
 V &amp;= \bigoplus_{i=1}^n U_i \\<br>
-&amp;= U_1 \oplus U_2 \oplus \cdots \oplus U_n,<br>
+&amp;= U_1 \oplus U_2 \oplus \cdots \oplus U_n.<br>
 \end{align}$$</p>
 </blockquote>
-<p>Notice that a direct sum of linear subspaces is not really its own thing. It is a normal sum which happens to also have the property of being direct.</p>
+<p>Notice that a direct sum of linear subspaces is not really its own thing. It is a normal sum which happens to also have the property of being direct. You do not start with two subspaces and take their direct sum. You take the sum of subspaces, and that sum may happen to be direct.</p>
 <p>We have already seen an example of a sum which is direct. You may find it more enlightening if we exhibit an example of a sum which is <em>not</em> direct.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the subspaces</p>
@@ -341,10 +341,10 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br>
 <p>$$\u_1=\u_2=\cdots=\u_n=\0.$$</p>
 <p>Since each $\u_i\in\span\v_i$, it follows that for each $i$, there is some $a_i\in\F$ for which $\u_i=a_i\v_i$. Since each $\v_i\ne 0$, it must be that each $a_i=0$. Thus, the list $(\v_1,\v_2,\ldots,\v_n)$ is linearly independent.</p>
 </blockquote>
-<p>This theorem establishes a somewhat different way of thinking about linear independence, ans since the two are equivalent we are free to use either as a definition of linear independence.</p>
+<p>This theorem establishes a somewhat different way of thinking about linear independence, and since the two are equivalent we are free to use either as a definition of linear independence.</p>
 <p>Linearly depdendent lists have an interesting, yet fairly undesirable, property which is explained in the next theorem. This result is commonly called the linear dependence lemma, and it will be crucial for many future arguments. It states than any linearly dependent list contains a vector which is in the span of the previous vectors in the list. Furthermore, it asserts that removing this vector from the list does not affect the list's span.</p>
 <blockquote>
-<p><strong>Linear Dependence Lemma.</strong> Suppose $(\v_1,\v_2,\ldots,\v_n)$ is a linearly dependent list of vectors in a vector space $V$ for which $\v_1\ne\0$. Then there exists a natural number $i\ge 2$ for which</p>
+<p><strong>Linear Dependence Lemma/Steinitz Exchange Lemma.</strong> Suppose $(\v_1,\v_2,\ldots,\v_n)$ is a linearly dependent list of vectors in a vector space $V$ for which $\v_1\ne\0$. Then there exists a natural number $i\ge 2$ for which</p>
 <p>$(a) \;\;$ $\v_i\in\span(\v_1,\v_2,\ldots,\v_n)$,<br>
 $(b) \;\;$ removing $\v_i$ from $(\v_1,\v_2,\ldots,\v_n)$ results in a list with the same span.</p>
 <p><strong>Proof.</strong> Since $(\v_1,\v_2,\ldots,\v_n)$ is linearly dependent, there exist $a_1,a_2,\ldots,a_n\in\F$, not all zero, for which</p>
@@ -361,8 +361,7 @@ $(b) \;\;$ removing $\v_i$ from $(\v_1,\v_2,\ldots,\v_n)$ results in a list with
 <p>Now we will establish that linearly independent lists possess the property I mentioned earlier. Namely, we will show that linearly independent lists are the shortest possible spanning lists.</p>
 <blockquote>
 <p><strong>Theorem.</strong> In any finite-dimensional vector space $V$, the length of a list of vectors which spans $V$ is never shorter than any linearly independent list.</p>
-<p><strong>Proof.</strong></p>
-<p>Suppose $(\u_1,\u_2,\ldots,\u_m)$ is a list of vectors which spans $V$, and that $(\v_1,\v_2,\ldots,\v_n)$ is a linearly independent list. This implies $\v_i\ne\0$ for every $i$. We will show that $m\ge n$ through the following algorithmic construction.</p>
+<p><strong>Proof.</strong> Suppose $(\u_1,\u_2,\ldots,\u_m)$ is a list of vectors which spans $V$, and that $(\v_1,\v_2,\ldots,\v_n)$ is a linearly independent list. This implies $\v_i\ne\0$ for every $i$. We will show that $m\ge n$ through the following algorithmic construction.</p>
 <div style="margin-left:1.5em">
 <p><strong>Step 1.</strong><br>
 Because $(\u_1,\u_2,\ldots,\u_m)$ spans $V$, adding any vector to this list must result in a list which is linearly dependent. Namely, the list $L_{1,1}=(\v_1,\u_1,\u_2,\ldots,\u_m)$ is linearly dependent. It follows from the linear dependence lemma that there exists a positive integer $i\le m$ for which the removal of $\u_i$ from $L_{1,1}$ results in a new list $L_{1,2}$ which still spans $V$. Notice that $L_{1,2}$ is a list of length $m$. To simplify matters, we replace the index of every $\u_j$ for which $j&gt;i$ with $j-1$, so that we can write</p>
@@ -375,7 +374,7 @@ Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector
 </div>
 <p>At the end of step $n$, we have used up every $\v_i$ and so the algorithm terminates. It cannot terminate before this because each list $K_{k,1}$ is linearly dependent, and so $m-n\ge 0$. We conclude that $m\ge n$, as desired.</p>
 </blockquote>
-<p>This is a different sort of proof than we have seen before, and it's very typical of linear algebra to prove a result by actually providing an algorithm to construct the result.</p>
+<p>Algorithmic proofs like the above are common in linear algebra. Linear algebra has applications in almost every field, partially because it lends itself so nicely to computation.</p>
 <p>I will end here for now, and next time I will talk about bases for vector spaces.</p>
 
         </div>

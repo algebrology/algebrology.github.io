@@ -1,0 +1,419 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Linear Maps</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=e7ae078e0a">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=e7ae078e0a"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Linear Maps">
+    <meta property="og:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.">
+    <meta property="og:url" content="http://localhost:2368/linear-maps/">
+    <meta property="article:published_time" content="2019-03-20T08:49:00.000Z">
+    <meta property="article:modified_time" content="2019-03-20T08:49:27.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Linear Maps">
+    <meta name="twitter:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.">
+    <meta name="twitter:url" content="http://localhost:2368/linear-maps/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Linear Maps",
+    "url": "http://localhost:2368/linear-maps/",
+    "datePublished": "2019-03-20T08:49:00.000Z",
+    "dateModified": "2019-03-20T08:49:27.000Z",
+    "description": "Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: {automatic: true},
+    },
+  	"HTML-CSS": { 
+        linebreaks: {automatic: true},
+    },
+    SVG: {
+        linebreaks: {automatic: true},
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            null: "{\\text{null }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 20, 2019</span>
+            <h1>Linear Maps</h1>
+        </header>
+
+
+        <div class="content">
+            <ol>
+<li><a href="index.html#linear-maps">Linear Maps</a></li>
+<li><a href="index.html#basic-properties">Basic Properties</a></li>
+<li><a href="index.html#rank-and-nullity">Rank and Nullity</a></li>
+</ol>
+<hr>
+<p>Sooo somewhere along the line I dropped the arrow notation for vectors. I was using $\v$ instead of $v$ to denote vectors to keep things clean and avoid confusion, but it was inevitable that this would eventually stop happening because it was a lot of work on my end.</p>
+<h3 id="linearmapsanamelinearmaps">Linear Maps<a name="linear-maps"></a></h3>
+<p>Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.</p>
+<p>If you've been paying close attention, you may have noticed that vector spaces are really just groups to which we have added scalar multiplication. In the same vein, linear maps are really just homomorphisms with an additional property which makes them compatible with scalar multiplication.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>linear map</strong> (or <strong>linear transformation</strong>) between two vector spaces $U$ and $V$ is a function $T:U\to V$ for which the following properties hold:</p>
+<div style="margin-left:1.5em">
+<p><strong>Additivity</strong><br>
+For any vectors $u_1,u_2\in U$, we have that $T(u_1+u_2) = T(u_1) + T(u_2)$.</p>
+<p><strong>Homogeneity</strong><br>
+For any vector $u\in U$ and any scalar $a\in\F$, we have that $T(au)=aT(u)$.</p>
+</div>
+<p>It is conventional to write $Tu$ to mean $T(u)$, when no confusion arises from this shorthand. The reason for this notation will become apparent shortly.</p>
+</blockquote>
+<p>It is important to note that on the left side of each equation in this definition, the vector addition and scalar multiplication are being done in $U$. That is, we are applying $T$ to the sum $u_1+u_2\in U$ and to the scalar product $au\in U$. On the right, the addition and multiplication are being done in $V$. That is, we are first applying $T$ to $u_1$ and $u_2$ separately and adding the result in $V$, or applying it to $u$ and multiplying the result in $V$. So linear maps are precisely those functions for which it does not matter whether we add/multiply before or after applying the function.</p>
+<blockquote>
+<p><strong>Example.</strong> We define a "zero map" $0:U\to V$ between any two vector spaces by $0(u)=0$ for all vectors $u\in U$. This is obviously a linear map because</p>
+<p>$$\begin{align}<br>
+0(u_1 + u_2) &amp;= 0 \\<br>
+&amp;= 0 + 0 \\<br>
+&amp;= 0(u_1) + 0(u_2),<br>
+\end{align}$$</p>
+<p>which shows that it satisfies additivity, and</p>
+<p>$$\begin{align}<br>
+0(au) &amp;= 0 \\<br>
+&amp;= a0 \\<br>
+&amp;= a0(u),<br>
+\end{align}$$</p>
+<p>which shows that it satisfies homogeneitry.</p>
+</blockquote>
+<p>Note that I am making no distinction between the zero vector in the domain and the zero vector in the codomain. Nonetheless, it is important to realize that they may be different objects. For example, in the case of a linear map from $\R^n$ to $\P(\F)$, the zero vector in $\R^n$ is the $n$-tuple $(0,0,\ldots,0)$ and the zero vector in $\P(\F)$ is the zero polynomial $p(x)=0$.</p>
+<p>What's even worse though it that I'm also using the symbol $0$ to represent the zero map. Maybe I just worship chaos.</p>
+<blockquote>
+<p><strong>Example.</strong> The identity map $I:U\to V$ between any two vector spaces, defined as usual by $Iu=u$ for all vectors $u\in U$, is a linear map. To see that it is additive, note that</p>
+<p>$$\begin{align}<br>
+I(u_1+u_2) &amp;= u_1+u_2 \\<br>
+&amp;= Iu_1 + Iu_2.<br>
+\end{align}$$</p>
+<p>To see that it is additive, note that</p>
+<p>$$\begin{align}<br>
+I(au) &amp;= au \\<br>
+&amp;= aIu.<br>
+\end{align}$$</p>
+</blockquote>
+<p>The identity map is <em>super</em> important in linear algebra.</p>
+<blockquote>
+<p><strong>Example.</strong> The map $T:\R^2\to\R$ defined by $T(x,y)=x+y$ for any vector $(x,y)\in\R^2$ is a linear map.</p>
+<p>This map is additive because</p>
+<p>$$\begin{align}<br>
+T((x_1,y_1)+(x_2,y_2)) &amp;= T(x_1+x_2,y_1+y_2) \\<br>
+&amp;= x_1+x_2+y_1+y_2 \\<br>
+&amp;= x_1+y_1+x_2+y_2 \\<br>
+&amp;= T(x_1,y_1) + T(x_2,y_2).<br>
+\end{align}$$</p>
+<p>It is homogeneous because</p>
+<p>$$\begin{align}<br>
+T(a(x,y)) &amp;= T(ax,ay) \\<br>
+&amp;= ax+ay \\<br>
+&amp;= a(x+y) \\<br>
+&amp;= aT(x,y).<br>
+\end{align}$$</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The map $T:\R^3\to\P_2(\R)$ defined by $T(a,b,c)=a+bx+(a-b)x^2$ is a linear map.</p>
+<p>It's additive because</p>
+<p>$$\begin{align}<br>
+T((a_1,b_1)+(a_2,b_2)) &amp;= T(a_1+a_2,b_1+b_2) \\<br>
+&amp;= a_1+a_2 + (b_1+b_2)x + (a_1+a_2 - b_1-b_2)x^2\\<br>
+&amp;= a_1 + b_1x + (a_1-b_1)x^2 + a_2 + b_2x + (a_2-b_2)x^2\\<br>
+&amp;= T(a_1,b_1) + T(a_2,b_2).<br>
+\end{align}$$</p>
+<p>And it's homogeneous because</p>
+<p>$$\begin{align}<br>
+T(k(a,b)) &amp;= T(ka,kb) \\<br>
+&amp;= ka + kbx + (ka-kb)x^2 \\<br>
+&amp;= k(a+bx+(a-b)x^2) \\<br>
+&amp;= kT(a,b).<br>
+\end{align}$$</p>
+</blockquote>
+<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
+<p>What follows are some basic properties of linear maps.</p>
+<p>The first result says that linear maps take the zero vector in the domain to the zero vector in the codomain.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $T:U\to V$ is a linear map, then $T(0)=0$.</p>
+<p><strong>Proof.</strong> We proceed directly via the following computation:</p>
+<p>$$\begin{align}<br>
+T(0) &amp;= T(0) + 0 \\<br>
+&amp;= T(0) + T(0) - T(0) \\<br>
+&amp;= T(0 + 0) - T(0) \\<br>
+&amp;= T(0) - T(0) \\<br>
+&amp;= 0.<br>
+\end{align}$$</p>
+</blockquote>
+<p>Linear maps do a lot more than that though. They also map subspaces to subspaces!</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $T:U\to V$ and $W$ is a subspace of $U$ then $T[W]$ is a subspace of $V$.</p>
+<p><strong>Proof.</strong> We just need to show that $T[W]$ contains the zero vector and is closed under vector addition and scalar multiplication.</p>
+<p>Since $W$ is a subspace, it contains the zero vector in $U$. Thus, since $T(0)=0$, it follows that $T[W]$ contains the zero vector in $V$.</p>
+<p>Next, suppose $v_1,v_2\in T[W]$. Then $v_1=Tw_1$ and $v_2=Tw_2$ for some vectors $w_1,w_2\in W$. But since $W$ is a subspace, it contains $w_1+w_2$. Thus,</p>
+<p>$$\begin{align}<br>
+v_1 + v_2 &amp;= Tw_1 + Tw_2 \\<br>
+&amp;= T(w_1 + w_2) \\<br>
+&amp;\in T[W].<br>
+\end{align}$$</p>
+<p>Lastly, suppose $v\in T[W]$ and $a\in\F$. Then $v=Tw$ for some $w\in W$. But since $W$ is a subspace, it contains $aw$. Thus,</p>
+<p>$$\begin{align}<br>
+av &amp;= aTw \\<br>
+&amp;= T(aw) \\<br>
+&amp;\in T[W].<br>
+\end{align}$$</p>
+<p>It follows that $T[W]$ is a subspace of $V$, as desired.</p>
+</blockquote>
+<p>The kernel of any linear transformation is a subspace of the domain.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $T:U\to V$ then $\ker T$ is a subspace of $U$.</p>
+<p><strong>Proof.</strong> Again, we need to show that $\ker T$ contains the zero vector and is closed under vector addition and scalar multiplication.</p>
+<p>Since $T(0)=0$, certainly $0\in\ker T$ by definition.</p>
+<p>Next, suppose $u_1,u_2\in\ker T$. Then $Tu_1=0$ and $Tu_2=0$. Thus,</p>
+<p>$$\begin{align}<br>
+T(u_1 + u_2) &amp;= Tu_1 + Tu_2 \\<br>
+&amp;= 0 + 0 \\<br>
+&amp;= 0,<br>
+\end{align}$$</p>
+<p>and so $u_1+u_2\in\ker T$.</p>
+<p>Lastly, suppose that $u\in\ker T$ and $a\in\F$. Then $Tu=0$, and therefore</p>
+<p>$$\begin{align}<br>
+T(au) &amp;= aTu \\<br>
+&amp;= a0 \\<br>
+&amp;= 0,<br>
+\end{align}$$</p>
+<p>so $au\in\ker T$. It follows that $\ker T$ is a subspace of $U$.</p>
+</blockquote>
+<p>For some reason in linear algebra it is common to refer to the kernel of a linear transformation as its <strong>null space</strong>, and to write $\ker T$ as $\null T$. I personally find this annoying since in every other context we refer to fiber of $0$ as the kernel. But you should at least be aware that this convention exists and is prevalent in the literature.</p>
+<p>In the same vein, the image of any linear transformation is a subspace of the codomain. Actually we've already done all the work to show this.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $T:U\to V$ then $\im T$ is a subspace of $V$.</p>
+<p><strong>Proof.</strong> Since linear maps take subspaces to subspaces, and $U$ is a subspace of itself, it follows that $\im T$ is a subspace of $V$.</p>
+</blockquote>
+<h3 id="rankandnullityanamerankandnullity">Rank and Nullity<a name="rank-and-nullity"></a></h3>
+<p>Now we will explore the interesting relation between the dimensions of the kernel and image of a linear map. It will take some time to build up to the "big result" of this section, but it is well worth the wait.</p>
+<p>To understand this connection, we begin by considering what injective and surjective linear maps look like.</p>
+<blockquote>
+<p><strong>Theorem.</strong> A linear map $T:U\to V$ is injective if and only if $\ker T = \set{0}$.</p>
+<p><strong>Proof.</strong> Suppose first that $\ker T=\set{0}$, and suppose further that $Tu_1=Tu_2$. Then</p>
+<p>$$\begin{align}<br>
+0 &amp;= Tu_1 - Tu_2 \\<br>
+&amp;= T(u_1-u_2),<br>
+\end{align}$$</p>
+<p>and so $u_1-u_2\in\ker T$. But $\ker T$ contains only one element — the zero vector. So $u_1-u_2=0$, meaning $u_1=u_2$. It follows that $T$ is injective.</p>
+<p>Suppose conversely that $T$ is injective. We know that $T(0)=0$. Furthermore, since $T$ is injective, at most one vector in the domain can be mapped to any vector in the codomain. This implies that $0$ is the only vector which gets mapped to zero. Hence, $\ker T=\set{0}$.</p>
+</blockquote>
+<p>Injective linear maps have an extremely special property. Namely, they preserve linear independence!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $T:U\to V$ denote an injective linear map, and suppose $(u_1,\ldots,u_n)$ is a linearly independent list of vectors in $U$. Then $(Tu_1,\ldots,Tu_n)$ is a linearly independent list of vectors in $V$.</p>
+<p><strong>Proof.</strong> Suppose we have scalars $a_i\in\F$ for $1\le i\le n$ such that</p>
+<p>$$\begin{align}<br>
+\sum_{i=1}a_iTu_i &amp;= T\left(\sum_{i=1}^n a_i u_i\right) \\<br>
+&amp;= 0.<br>
+\end{align}$$</p>
+<p>Since $T$ is injective, we know that $\ker T=\set{0}$ and therefore</p>
+<p>$$\sum_{i=1}^n a_i u_i = 0.$$</p>
+<p>Since $(u_1,\ldots,u_n)$ is linearly independent, this implies $a_i=0$ for $1\le i\le n$. Thus, $(Tu_1,\ldots,Tu_n)$ is linearly independent.</p>
+</blockquote>
+<p>The next theorem is probably pretty obvious. It just says that if the domain of a linear map is finite-dimensional then so is its image.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $T:U\to V$ denote a linear map. If $U$ is finite-dimensional, then $\im T$ is a finite-dimensional subspace of $V$.</p>
+<p><strong>Proof.</strong> We have already shown that $\im T$ is a subspace of $V$. To show that it is finite-dimensional, we must demonstrate that it is spanned by a finite list of vectors in $V$. Let $(e_1,\ldots,e_n)$ be any basis for $U$. We claim that</p>
+<p>$$\im T = \span(Te_1,\ldots,Te_n).$$</p>
+<p>To see this, choose any vector $v\in\im T$. Then $v=Tu$ for some $u\in U$. We may write $u$ as a linear combination of basis vectors</p>
+<p>$$u = \sum_{i=1}^n a_i e_i,$$</p>
+<p>where $a_i\in\F$ for $i\le i\le n$. Thus,</p>
+<p>$$\begin{align}<br>
+v &amp;= Tu \\<br>
+&amp;= T\left(\sum_{i=1}^n a_i e_i\right) \\<br>
+&amp;= \sum_{i=1}^n a_i Te_i.<br>
+\end{align}$$</p>
+<p>We have expressed $v$ as a linear combination of the vectors $Te_1,\ldots,Te_n$. It follows that</p>
+<p>$$\im T = \span(Te_1,\ldots,Te_n).$$</p>
+<p>Since $\im T$ is spanned by a finite list of vectors, it is finite-dimensional.</p>
+</blockquote>
+<p>We now come to the main theorem of this post, which states that the dimension of the domain of a linear map is always equal to the sum of the dimensions of its kernel and image.</p>
+<blockquote>
+<p><strong>Rank-Nullity Theorem.</strong> Suppose $U$ is a finite-dimensional vector space, $V$ is any vector space, and $T:U\to V$ is a linear map. Then</p>
+<p>$$\dim U = \dim\ker T + \dim\im T.$$</p>
+<p><strong>Proof.</strong> Let $n=\dim\ker T$, and choose any basis $(e_1,\ldots,e_n)$ for $\ker T$. Then we can extend this list to a basis $(e_1,\ldots,e_n,f_1,\ldots,f_m)$ for $U$ by adding $m=\dim U - n$ linearly independent vectors. We argue that $\dim\im T=m$ by showing that $(Tf_1,\ldots,Tf_m)$ is a basis for $\im T$.</p>
+<p>Certainly $\im T = \span(Tf_1,\ldots,Tf_m)$ since $\span(Te_1,\ldots,Te_n)=\set{0}$ as all the $e_i$ are in the kernel of $T$. It suffices to show then that $(Tf_1,\ldots,Tf_m)$ is linearly independent.</p>
+<p>To this end, suppose we are given $a_i$ for $1\le i\le m$ such that</p>
+<p>$$\sum_{i=1}^m a_i Tf_i = 0.$$</p>
+<p>Then since $T$ is a linear map, we have that</p>
+<p>$$T\left(\sum_{i=1}^m a_i f_i\right) = 0.$$</p>
+<p>It follows that</p>
+<p>$$\sum_{i=1}^m a_i f_i\in\ker T,$$</p>
+<p>and so we can rewrite this uniquely in terms of basis vectors for $\ker T$:</p>
+<p>$$\sum_{i=1}^m a_i f_i = \sum_{i=1}^n b_i e_i, \tag{1}$$</p>
+<p>where $b_i\in\F$ for $i\le 1\le n$. Since $(e_1,\ldots,e_n,f_1,\ldots,f_m)$ is a basis for $U$, it is linearly independent. Thus, equation $(1)$ implies that $a_i=0$ for $1\le i\le m$ and $b_i=0$ for $1\le i\le n$. Thus, $(Tf_1,\ldots,Tf_m)$ is linearly independent and so it is a basis for $\im T$. It follows that $\dim\im T = $m$, and thus</p>
+<p>$$\dim U = \dim\ker T + \dim\im T.$$</p>
+</blockquote>
+<p>Essentially what this means is that with any linear map, every dimension of the domain is accounted for. By this, I really mean that every one-dimensional subspace is either squashed down to zero and thus in the kernel, or its linear dependence is preserved and it gets mapped to a unique one-dimensional subspace of the codomain.</p>
+<p>The reason this is called the rank-nullity theorem is because we make the following definitions:</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $T:U\to V$ denote a linear map. The <strong>rank</strong> of $T$ is</p>
+<p>$$\text{rank }T = \dim\im T.$$</p>
+<p>Similarly, the <strong>nullity</strong> of $T$ is</p>
+<p>$$\text{nullity }T = \dim\ker T.$$</p>
+</blockquote>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=e7ae078e0a"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=e7ae078e0a"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=e7ae078e0a"></script>
+    <script src="../assets/main/js/browser.min.js?v=e7ae078e0a"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=e7ae078e0a"></script>
+    <script src="../assets/main/js/util.js?v=e7ae078e0a"></script>
+    <script src="../assets/main/js/main.js?v=e7ae078e0a"></script>
+
+    
+
+</body>

@@ -22,7 +22,7 @@
     <meta property="og:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.">
     <meta property="og:url" content="http://localhost:2368/linear-maps/">
     <meta property="article:published_time" content="2019-03-20T08:49:00.000Z">
-    <meta property="article:modified_time" content="2019-03-20T08:54:43.000Z">
+    <meta property="article:modified_time" content="2019-03-20T09:18:05.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Linear Maps">
     <meta name="twitter:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.">
@@ -53,7 +53,7 @@
     "headline": "Linear Maps",
     "url": "http://localhost:2368/linear-maps/",
     "datePublished": "2019-03-20T08:49:00.000Z",
-    "dateModified": "2019-03-20T08:54:43.000Z",
+    "dateModified": "2019-03-20T09:18:05.000Z",
     "description": "Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -362,6 +362,23 @@ v &amp;= Tu \\<br>
 <p>Similarly, the <strong>nullity</strong> of $T$ is</p>
 <p>$$\text{nullity }T = \dim\ker T.$$</p>
 </blockquote>
+<p>The rank-nullity theorem has an interesting implication.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $U$ and $V$ are finite-dimensional vector spaces with $\dim U=\dim V$ and $T:U\to V$ is a linear map. Then $T$ is injective if and only if it is surjective.</p>
+<p><strong>Proof.</strong> Suppose first that $T$ is injective, so that $\ker T=\set{0}$. Then $\dim\ker T = 0$, so from the rank-nullity theorem it follows that</p>
+<p>$$\begin{align}<br>
+\dim\im T &amp;= \dim U \\<br>
+&amp;= \dim V,<br>
+\end{align}$$</p>
+<p>and thus $\im T = V$ because the only subspace of a finite-dimensional vector space whose dimension is the same as the parent space is the parent space itself. Thus, $T$ is surjective.</p>
+<p>Suppose next that $T$ is surjective. Then</p>
+<p>$$\begin{align}<br>
+\dim\im T &amp;= \dim V \\<br>
+&amp;= \dim U.<br>
+\end{align}$$</p>
+<p>From the rank-nullity theorem, it follows that $\dim\ker T = 0$. The only subspace with dimension zero is the trivial subspace, and so $\ker T = \set{0}$. Thus, $T$ is injective.</p>
+</blockquote>
+<p>So for two finite-dimensional vector spaces of the same dimension, injective and surjective linear maps are actually the same thing. Remember that a function that is both injective and surjective is called bijective and has an inverse function. As you shall see, all kinds of interesting results follow from this observation.</p>
 
         </div>
 

@@ -1,0 +1,429 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Matrices for Linear Maps</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=d6fbb2c4a3">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=d6fbb2c4a3"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Matrices for Linear Maps">
+    <meta property="og:description" content="If you already knew some linear algebra before reading my posts, you might be wondering where the heck all the matrices are. The goal of this post is to connect the theory of linear maps and vector spaces to the theory of matrices and computation.">
+    <meta property="og:url" content="http://localhost:2368/matrices-for-linear-maps/">
+    <meta property="article:published_time" content="2019-03-21T07:06:11.000Z">
+    <meta property="article:modified_time" content="2019-03-23T05:02:02.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Matrices for Linear Maps">
+    <meta name="twitter:description" content="If you already knew some linear algebra before reading my posts, you might be wondering where the heck all the matrices are. The goal of this post is to connect the theory of linear maps and vector spaces to the theory of matrices and computation.">
+    <meta name="twitter:url" content="http://localhost:2368/matrices-for-linear-maps/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Matrices for Linear Maps",
+    "url": "http://localhost:2368/matrices-for-linear-maps/",
+    "datePublished": "2019-03-21T07:06:11.000Z",
+    "dateModified": "2019-03-23T05:02:02.000Z",
+    "description": "If you already knew some linear algebra before reading my posts, you might be wondering where the heck all the matrices are. The goal of this post is to connect the theory of linear maps and vector spaces to the theory of matrices and computation.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: {automatic: true},
+    },
+  	"HTML-CSS": { 
+        linebreaks: {automatic: true},
+    },
+    SVG: {
+        linebreaks: {automatic: true},
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            null: "{\\text{null }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+            M: "{\\mathscr{M}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">March 21, 2019</span>
+            <h1>Matrices for Linear Maps</h1>
+        </header>
+
+
+        <div class="content">
+            <p>If you already knew some linear algebra before reading my posts, you might be wondering where the heck all the matrices are. The goal of this post is to connect the theory of linear maps and vector spaces to the theory of matrices and computation.</p>
+<p>The key observation is that linear maps between finite-dimensional vector spaces can be completely described solely in terms of how they act on basis vectors. Let's explore this idea in a more precise setting.</p>
+<p>Suppose $T:U\to V$ is a linear map with $\dim U = n$ and $\dim V = m$. Let $(e_1,\ldots,e_n)$ be a basis for $U$ and let $(f_1,\ldots,f_m)$ be a basis for $V$. Then for any vector $u\in U$, we may express $u$ uniquely as a linear combination of basis vectors,</p>
+<p>$$u=\sum_{i=1}^n a_i e_i,$$</p>
+<p>where $a_i\in\F$ for $1\le i\le n$. Since $T$ is a linear map, this means that</p>
+<p>$$\begin{align}<br>
+Tu &amp;= T\left(\sum_{i=1}^n a_i e_i\right) \\<br>
+&amp;= \sum_{i=1}^n a_i Te_i. \tag{1}<br>
+\end{align}$$</p>
+<p>We can go further and decompose each $Te_i\in V$ as a linear combination of basis vectors in $V$,</p>
+<p>$$Te_i = \sum_{j=1}^m b_{j,i} f_j,$$</p>
+<p>where $b_{j,i}\in\F$ for $1\le j\le m$. Thus, we may rewrite equation $(1)$ as</p>
+<p>$$Tu = \sum_{i=1}^n \sum_{j=1}^m a_i b_{j,i} f_j.$$</p>
+<p>Since the scalars $a_i$ depend only on the input vector $u$ and the basis vectors $f_j$ are fixed, this means that the way $T$ acts on $u$ is determined entirely by the scalars $b_{j,i}$.</p>
+<p>To put it another way, say we've chosen bases for $U$ and $V$. Then <em>everything</em> about the linear map is encoded in a collection of $m\times n$ scalars, which describe how the map acts on basis vectors in $U$ in terms of basis vectors in $V$.</p>
+<p>If we were, for instance, to write the scalars $b_{j,i}$ in the following form:</p>
+<p>$$\begin{bmatrix}<br>
+b<br>
+\end{bmatrix}_{j,i} = \begin{bmatrix}<br>
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; b_{1,n} \\<br>
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; b_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+b_{m,1} &amp; b_{m,2} &amp; \cdots &amp; b_{m,n}<br>
+\end{bmatrix},$$</p>
+<p>then we would have a compact and easy to read way of describing the linear map $T$.</p>
+<p>This is what we call an <strong>$\mathbf{m\times n}$ matrix</strong>. In this case, $[b_{j,i}]$ is the matrix corresponding to the linear transformation $T$ with respect to the bases $(e_1,\ldots,e_n)$ for $U$ and $(f_1,\ldots,f_m)$ for $V$. We sometimes write $\M(T)$ denote the matrix for $T$, assuming we have already established which bases we are using for our domain and codomain.</p>
+<p>It can be a bit confusing at first trying to remember what the shape of a linear map's matrix should be. The number of columns corresponds to the dimension of the domain, and the number of rows corresponds to the dimension of the codomain. The $i$th column of the matrix is really just the components of $Te_i$. That is, we may think of the matrix $\M(T)$ as</p>
+<p>$$\M(T) = \begin{bmatrix}<br>
+\mid &amp; \mid &amp;        &amp; \mid \\<br>
+Te_1   &amp; Te_2   &amp; \cdots &amp; Te_n \\<br>
+\mid &amp; \mid &amp;        &amp; \mid<br>
+\end{bmatrix}.$$</p>
+<p>The scalar $b_{j,i}$ in the $j$th row and $i$th column of $\M(T)$ is thus the coefficient of the $j$th basis vector $f_j$ for $V$ in the representation of $Te_i$.</p>
+<p>If $T:\F_1^n\to\F_2^m$ is a linear map between vector spaces $\F_1^n$ and $\F_2^m$, where $\F_1$ and $\F_2$ are fields, then unless otherwise specified it should be assumed that its matrix $\M(T)$ is with respect to the standard bases on $\F_1^n$ and $\F_2^m$. Otherwise, it does not make sense to talk about a matrix for a linear map without first explicitly choosing bases for the vector spaces involved. <strong>This is very important.</strong></p>
+<blockquote>
+<p><strong>Example.</strong> Recall the zero map we defined last time, $0:U\to V$ where $U(u)=0$ for every $u\in U$. Suppose $(e_1,\ldots,e_n)$ is any basis for $U$ and $(f_1,\ldots,f_m)$ is any basis for $V$.</p>
+<p>To compute the matrix for the zero map with respect to these bases, all we need to do is figure out how it acts on basis vectors. Choose and $i$ for which $1\le i\le n$. Then</p>
+<p>$$\begin{align}<br>
+0(e_i) &amp;= \sum_{j=1}^m b_{j,i} f_j \\<br>
+&amp;= 0<br>
+\end{align}$$</p>
+<p>for some scalars $b_{j,i}\in\F$. But since $(f_1,\ldots,f_m)$ is a basis for $V$, it is linearly independent and so this is only possible if $b_{j,i}=0$ for $1\le j\le m$. That means the matrix for the zero map looks like this:</p>
+<p>$$\M(0) = \begin{bmatrix}<br>
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br>
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+0 &amp; 0 &amp; \cdots &amp; 0<br>
+\end{bmatrix}.$$</p>
+<p>And it looks like this for any choice of bases for $U$ and $V$, since there's only one way to write the zero vector in terms of any basis.</p>
+<p>We call this the <strong>zero matrix</strong> of dimension $m\times n$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> Recall the identity map we defined last time, $I:V\to V$ where $Iv=v$ for every $v\in V$. Suppose $(e_1,\ldots,e_n)$ is any basis for $V$.</p>
+<p>How does $I$ act on basis vectors? Choose any $i$ with $1\le i\le n$. Then</p>
+<p>$$\begin{align}<br>
+Ie_i &amp;= \sum_{j=1}^n b_{j,i} e_j \\<br>
+&amp;= e_i.<br>
+\end{align}$$</p>
+<p>Since $(e_1,\ldots,e_n)$ is linearly independent, this is only possible if $b_{j,i} = 0$ for every $j\ne i$ and $b_{i,i} = 1$. That is,</p>
+<p>$$b_{j,i} = \begin{cases}<br>
+0 &amp; \text{if } j\ne i, \\<br>
+1 &amp; \text{if } j=i.<br>
+\end{cases} \tag{2}$$</p>
+<p>This means that the matrix for the identity map is a square matrix which looks like this:</p>
+<p>$$\M(I) = \begin{bmatrix}<br>
+1 &amp; 0 &amp; \cdots &amp; 0 \\<br>
+0 &amp; 1 &amp; \cdots &amp; 0 \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+0 &amp; 0 &amp; \cdots &amp; 1<br>
+\end{bmatrix},$$</p>
+<p>with $1$s along the main diagonal and $0$s everywhere else. And it looks like this for any choice of basis for $V$, as long as we use <em>the same</em> basis for both copies of $V$ (the domain and the codomain). Otherwise, all bets are off.</p>
+<p>We call this the <strong>identity matrix</strong> of dimension $n\times n$.</p>
+<p>We also give a name to formula $(2)$ for the scalars $b_{j,i}$. The <strong>Kronecker delta</strong> is a function of two variables defined by</p>
+<p>$$\delta_{j,i} = \begin{cases}<br>
+0 &amp; \text{if } j\ne i, \\<br>
+1 &amp; \text{if } j=i.<br>
+\end{cases}$$</p>
+<p>We can rewrite the identity map in terms of the Kronecker delta, if we want:</p>
+<p>$$\M(I) = \begin{bmatrix}<br>
+\delta_{1,1} &amp; \delta_{1,2} &amp; \cdots &amp; \delta_{1,n} \\<br>
+\delta_{2,1} &amp; \delta_{2,2} &amp; \cdots &amp; \delta_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+\delta_{n,1} &amp; \delta_{n,2} &amp; \cdots &amp; \delta_{n,n}<br>
+\end{bmatrix}.$$</p>
+</blockquote>
+<p>There are a number of important operations we can define on matrices.</p>
+<blockquote>
+<p><strong>Definition.</strong> If $\begin{bmatrix} a \end{bmatrix}_{j,i}$ and $\begin{bmatrix} b \end{bmatrix}_{j,i}$ are $m\times n$ matrices, their <strong>sum</strong> is defined component-wise:</p>
+<p>$$\begin{align}<br>
+\begin{bmatrix} a \end{bmatrix}_{j,i} + \begin{bmatrix} b \end{bmatrix}_{j,i} &amp;= \begin{bmatrix}<br>
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\<br>
+a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}<br>
+\end{bmatrix} + \begin{bmatrix}<br>
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; b_{1,n} \\<br>
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; b_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+b_{m,1} &amp; b_{m,2} &amp; \cdots &amp; b_{m,n}<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \begin{bmatrix}<br>
+a_{1,1} + b_{1,1} &amp; a_{1,2} + b_{1,2} &amp; \cdots &amp; a_{1,n} + b_{1,n} \\<br>
+a_{2,1} + b_{2,1} &amp; a_{2,2} + b_{2,2} &amp; \cdots &amp; a_{2,n} + b_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+a_{m,1} + b_{m,1} &amp; a_{m,2} + b_{m,2} &amp; \cdots &amp; a_{m,n} + b_{m,n}<br>
+\end{bmatrix}.<br>
+\end{align}$$</p>
+</blockquote>
+<p>It is easy to show that with this definition and the normal operation of addition of functions, $M(T_1 + T_2) = M(T_1) + M(T_2)$ for any linear maps $T_1,T_2:U\to V$.</p>
+<p>Addition of matrices is not defined for matrices of different sizes, since this would be like trying to add functions with different domains and codomains.</p>
+<blockquote>
+<p><strong>Definition.</strong> If $\begin{bmatrix} a \end{bmatrix}_{j,i}$ is an $m\times n$ matrix, its <strong>scalar product</strong> with $k\in\F$ is defined component-wise:</p>
+<p>$$\begin{align}<br>
+k\begin{bmatrix} a \end{bmatrix}_{j,i} &amp;= k\begin{bmatrix}<br>
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\<br>
+a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \phantom{k}\begin{bmatrix}<br>
+ka_{1,1} &amp; ka_{1,2} &amp; \cdots &amp; ka_{1,n} \\<br>
+ka_{2,1} &amp; ka_{2,2} &amp; \cdots &amp; ka_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+ka_{m,1} &amp; ka_{m,2} &amp; \cdots &amp; ka_{m,n}<br>
+\end{bmatrix}.<br>
+\end{align}$$</p>
+</blockquote>
+<p>So far we have seen a lot of matrices but I have not shown you what they are useful for. The rest of this post will address their uses.</p>
+<p>Suppose we have a linear map $T:U\to V$ and bases $(e_1,\ldots,e_n)$ for $U$ and $(f_1,\ldots,f_m)$ for $V$. Then for any $u\in U$, we may write</p>
+<p>$$u = \sum_{i=1}^n u_i e_i,$$</p>
+<p>where the scalars $u_i\in\F$ are unique. We can define a new sort of matrix — the <strong>matrix of the vector $u$</strong>, as follows:</p>
+<p>$$\M(u) = \begin{bmatrix}<br>
+u_1 \\<br>
+u_2 \\<br>
+\vdots \\<br>
+u_n<br>
+\end{bmatrix}.$$</p>
+<p>The natural question to ask is this: given the matrix $M(T)$ for the linear map $T$ and the matrix $M(u)$ for the vector $u$, what does the matrix $M(Tu)$ for the vector $Tu\in V$ look like? All we need to do is calculate its components in terms of the basis $(f_1,\ldots,f_m)$,</p>
+<p>$$Tu = \sum_{i=1}^n \sum_{j=1}^m u_i b_{j,i} f_j.$$</p>
+<p>So the matrix for $Tu$ is</p>
+<p>$$\begin{align}<br>
+\M(Tu) &amp;= \begin{bmatrix}<br>
+(Tu)_1 \\<br>
+(Tu)_2 \\<br>
+\vdots \\<br>
+(Tu)_m<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \begin{bmatrix}<br>
+\sum_{i=1}^n u_i b_{1,i} \\<br>
+\sum_{i=1}^n u_i b_{2,i} \\<br>
+\vdots \\<br>
+\sum_{i=1}^n u_i b_{m,i}<br>
+\end{bmatrix}.<br>
+\end{align}$$</p>
+<p>Observe that all of the information about $\M(Tu)$ is encoded in the matrices $\M(T)$ and $\M(u)$. So we make the following definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> If $\begin{bmatrix} b \end{bmatrix}_{j,i}$ is an $m\times n$ matrix for a linear map and $\begin{bmatrix} u \end{bmatrix}_{i}$ is an $n\times 1$ matrix for a vector, we define <strong>matrix-vector</strong> multiplication as follows:</p>
+<p>$$\begin{align}<br>
+\begin{bmatrix} b \end{bmatrix}_{j,i} \begin{bmatrix} u \end{bmatrix}_{i} &amp;= \begin{bmatrix}<br>
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; b_{1,n} \\<br>
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; b_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+b_{m,1} &amp; b_{m,2} &amp; \cdots &amp; b_{m,n}<br>
+\end{bmatrix} \begin{bmatrix}<br>
+u_1 \\<br>
+u_2 \\<br>
+\vdots \\<br>
+u_n<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \begin{bmatrix}<br>
+\sum_{i=1}^n u_i b_{1,i} \\<br>
+\sum_{i=1}^n u_i b_{2,i} \\<br>
+\vdots \\<br>
+\sum_{i=1}^n u_i b_{m,i}<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \begin{bmatrix} \sum_{i=1}^n u_i b_{j,i} \end{bmatrix}_j.<br>
+\end{align}$$</p>
+</blockquote>
+<p>By definition then, we have that $\M(Tu)=\M(T)\M(u)$. This means if we have a matrix representation of a linear map and a matrix representation of a vector, both in terms of some bases, then we work entirely in terms of matrices. Incidentally, this is why it is common to write $Tu$ to mean $T(u)$ — because the action of the linear map $T$ on the vector $u$ can be calculated via multiplication of their matrices.</p>
+<p>Now, suppose we have three vector spaces $U$, $V$ and $W$, of dimensions $n$, $m$ and $l$, respectively. Let $T:U\to V$ and $S:V\to W$ be linear maps, and let $(e_1,\ldots,e_n)$ be a basis for $U$, $(f_1,\ldots,f_m)$ be a basis for $V$, and $(g_1,\ldots,g_l)$ be a basis for $W$. We have already seen that if</p>
+<p>$$u=\sum_{i=1}^n u_i e_i$$</p>
+<p>and</p>
+<p>$$Te_i = \sum_{i=1}^m b_{j,i}f_j$$</p>
+<p>then</p>
+<p>$$Tu = \sum_{i=1}^n \sum_{i=1}^m u_i b_{j,i} f_j.$$</p>
+<p>Let's take this one step further, and compute $S(Tu)$. Suppose $S$ acts on each basis vector $f_j$ as follows:</p>
+<p>$$Sf_j = \sum_{k=1}^l c_{k,j}g_k.$$</p>
+<p>Then</p>
+<p>$$\begin{align}<br>
+S(Tu) &amp;= S\left(\sum_{i=1}^n \sum_{i=1}^m u_i b_{j,i} f_j\right) \\<br>
+&amp;= \sum_{i=1}^n \sum_{i=1}^m u_i b_{j,i} Sf_j \\<br>
+&amp;= \sum_{i=1}^n \sum_{i=1}^m \sum_{k=1}^l u_i b_{j,i} c_{k,j} g_k.<br>
+\end{align}$$</p>
+<p>We thus make the following definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> If $\begin{bmatrix} b \end{bmatrix}_{j,i}$ is an $m\times n$ matrix and $\begin{bmatrix} c \end{bmatrix}_{k,j}$ is an $l\times m$ matrix, we defined <strong>matrix-matrix</strong> multiplication as follows:</p>
+<p>$$\begin{align}<br>
+\begin{bmatrix} c \end{bmatrix}_{k,j} \begin{bmatrix} b \end{bmatrix}_{j,i} &amp;= \begin{bmatrix}<br>
+c_{1,1} &amp; c_{1,2} &amp; \cdots &amp; c_{1,m} \\<br>
+c_{2,1} &amp; c_{2,2} &amp; \cdots &amp; c_{2,m} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+c_{l,1} &amp; c_{l,2} &amp; \cdots &amp; c_{l,m}<br>
+\end{bmatrix}\begin{bmatrix}<br>
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; b_{1,n} \\<br>
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; b_{2,n} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+b_{m,1} &amp; b_{m,2} &amp; \cdots &amp; b_{m,n}<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \begin{bmatrix}<br>
+\sum_{j=1}^m b_{j,1}c_{1,j} &amp; \sum_{j=1}^m b_{j,2}c_{1,j} &amp; \cdots &amp; \sum_{j=1}^m b_{j,n}c_{1,j} \\<br>
+\sum_{j=1}^m b_{j,1}c_{2,j} &amp; \sum_{j=1}^m b_{j,2}c_{2,j} &amp; \cdots &amp; \sum_{j=1}^m b_{j,n}c_{2,j} \\<br>
+\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots \\<br>
+\sum_{j=1}^m b_{j,1}c_{l,j} &amp; \sum_{j=1}^m b_{j,2}c_{l,j} &amp; \cdots &amp; \sum_{j=1}^m b_{j,n}c_{l,j}<br>
+\end{bmatrix} \\[1em]<br>
+&amp;= \begin{bmatrix} \sum_{j=1}^m b_{j,i} c_{k,j} \end{bmatrix}_{k,i}.<br>
+\end{align}$$</p>
+<p>Note that the product is an $l\times n$ matrix.</p>
+</blockquote>
+<p>By definition then, we have that $\M(S)\M(T)=\M(S\circ T)$. Which is super awesome! Matrix multiplication corresponds to function composition of linear maps. And of course the dimensions of the product should be $l\times n$, since $S\circ T:U\to W$. We often write $S\circ T$ as simply $ST$, since this is reminiscent of multiplication.</p>
+<p>I'm going to end here for now because all of these indices are making my head spin. But we'll see matrices again all over the place.</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=d6fbb2c4a3"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=d6fbb2c4a3"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=d6fbb2c4a3"></script>
+    <script src="../assets/main/js/browser.min.js?v=d6fbb2c4a3"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=d6fbb2c4a3"></script>
+    <script src="../assets/main/js/util.js?v=d6fbb2c4a3"></script>
+    <script src="../assets/main/js/main.js?v=d6fbb2c4a3"></script>
+
+    
+
+</body>

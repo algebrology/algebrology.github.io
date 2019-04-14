@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Algebrology</title><link>http://localhost:2368/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Sun, 14 Apr 2019 05:42:16 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Simplicial Complexes and Boundary Maps</title><description>The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.</description><link>http://localhost:2368/simplicial-complexes-and-boundary-maps/</link><guid isPermaLink="false">5c96fb2d7f36fe003eea0f77</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 14 Apr 2019 03:48:00 GMT</pubDate><content:encoded>&lt;ol&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Algebrology</title><description>A gentle introduction to insanity.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Algebrology</title><link>http://localhost:2368/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Sun, 14 Apr 2019 17:38:09 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Simplicial Complexes and Boundary Maps</title><description>The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.</description><link>http://localhost:2368/simplicial-complexes-and-boundary-maps/</link><guid isPermaLink="false">5c96fb2d7f36fe003eea0f77</guid><dc:creator>Eric Shapiro</dc:creator><pubDate>Sun, 14 Apr 2019 03:48:00 GMT</pubDate><content:encoded>&lt;ol&gt;
 &lt;li&gt;&lt;a href="#linear-maps"&gt;Simplicial Complexes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#chain-groups"&gt;Chain Groups&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#boundary-maps"&gt;Boundary Maps&lt;/a&gt;&lt;/li&gt;
@@ -45,9 +45,31 @@
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This definition ensures that the gluing of simplices is done in such a way that all the vertices and faces line up nicely. And of course, we make a simplicial complex $X$ into a topological space by taking the union of all its simplices and considering it as a topological subspace of $\R^{n+1}$, where $n$ is the maximum dimension of any simplex in $X$.&lt;/p&gt;
-&lt;p&gt;Here's an example of a simplicial complex which we'll be revisiting later. It should technically live in $\R^3$ since $f$ is a $2$-simplex, but this one just happens to be flat enough to embed in $\R^2$.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Example.&lt;/strong&gt; Here's an example of a simplicial complex which we'll be revisiting later. It should technically live in $\R^3$ since $f$ is a $2$-simplex, but this one just happens to be flat enough to embed in $\R^2$.&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://localhost:2368/content/images/2019/04/simplicial-complex-3.svg" alt="simplicial-complex-3"&gt;&lt;/p&gt;
 &lt;p&gt;Notice that the edges have arrows. This is because they are oriented simplices. That is, $[v_0, v_1]$ is a different simplex than $[v_1, v_0]$, and the arrows are visual indicators of the orientation. Technically $f$ is oriented as well, but I have not added a visual indication of this fact. We will treat $f$ as the simplex $[v_0, v_1, v_2]$.&lt;/p&gt;
+&lt;p&gt;With all of that in mind, this complex consists of the following simplices:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0-simplices&lt;/strong&gt;:&lt;/p&gt;
+&lt;div style="margin-left:1.5em; margin-top:-1.5em"&gt;
+$v_0$
+&lt;p&gt;$v_1$&lt;br&gt;
+$v_2$&lt;br&gt;
+$v_3$&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;1-simplices&lt;/strong&gt;:&lt;/p&gt;
+&lt;div style="margin-left:1.5em; margin-top:-1.5em"&gt;
+$e_0 = [v_0, v_1]$
+&lt;p&gt;$e_1 = [v_1, v_2]$&lt;br&gt;
+$e_2 = [v_2, v_0]$&lt;br&gt;
+$e_3 = [v_3, v_2]$&lt;br&gt;
+$e_4 = [v_0, v_3]$&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;2-simplices&lt;/strong&gt;:&lt;/p&gt;
+&lt;div style="margin-left:1.5em; margin-top:-1.5em; margin-bottom:2em"&gt;
+$f=[v_0, v_1, v_2]$
+&lt;/div&gt;
+&lt;/blockquote&gt;
 &lt;h3 id="chaingroupsanamechaingroups"&gt;Chain Groups&lt;a name="chain-groups"&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;In an earlier post, I developed the machinery of free abelian groups. Now let's finally put that to use.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -69,9 +91,13 @@ C_n &amp;amp;= \set{0} \text{ for } n\ge 3.&lt;br&gt;
 &lt;p&gt;Its double, $2\sigma = 2e_0 + 2e_1 + 2e_2$ traces out the same path twice in a row. That is, it loops around $f$ two times instead of just once.&lt;/p&gt;
 &lt;p&gt;It might seem natural to view the chain $\sigma$ as the &lt;em&gt;boundary&lt;/em&gt; of the simplex $f$. Let's work toward making this idea more formal.&lt;/p&gt;
 &lt;h3 id="boundarymapsanameboundarymaps"&gt;Boundary Maps&lt;a name="boundary-maps"&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;First lets define the boundary of a $1$-simplex, since it is the easiest to visualize. Since a $1$-simplex is essentially just a closed line segment, its boundary should consist solely of its endpoints, which are $0$-simplices. However, the directedness of the edges indicates that we should add/subtract the endpoints rather than take their union. This tells us that the boundary of these edges should be a map $\partial:C_1\to C_0$ from the group of $1$-chains to the group of $0$-chains. That is, the boundary of a $1$-simplex will be an integral combination of $0$-simplices.&lt;/p&gt;
-&lt;p&gt;Thus, we define the boundary of the $1$-simplex $\sigma=[v_0, v_1]$ to be the $0$-chain $v_1-v_0$.&lt;/p&gt;
-&lt;p&gt;In general, we will define boundary homomorphisms between chain groups. First we will describe how they act on generateors and then we will extend by linearity to a homomorphism on the chain groups.&lt;/p&gt;
+&lt;p&gt;First lets define the boundary of a $1$-simplex, since it is the easiest to visualize. Since a $1$-simplex is essentially just a closed line segment, its boundary should consist solely of its endpoints, which are $0$-simplices. However, the directedness of the edges indicates that we should add/subtract the endpoints rather than take their union.&lt;/p&gt;
+&lt;p&gt;Thus, we define the boundary of the $1$-simplex $[v_0, v_1]$ to be the $0$-chain $v_1-v_0$.&lt;/p&gt;
+&lt;p&gt;Similarly, we would like the boundary of the $2$-simplex $[v_0, v_1, v_2]$ to be the sum of its edges $[v_0, v_1]$, $[v_1, v_2]$ and $[v_2, v_0]$. So we define the boudary of $[v_0, v_1, v_2]$ as&lt;/p&gt;
+&lt;p&gt;$$[v_0, v_1] + [v_1, v_2] + [v_2, v_0] = [v_1, v_2] - [v_0, v_2] + [v_0, v_1].$$&lt;/p&gt;
+&lt;p&gt;Note that the expressions on both sides are completely equal, just with the order permuted and $[v_2, v_0]$ negated twice. The reason for this rearrangement will become apparent shortly.&lt;/p&gt;
+&lt;p&gt;It is &lt;em&gt;very&lt;/em&gt; important to note that the boundary of an $n$-simplex is always an $(n-1)$-chain!&lt;/p&gt;
+&lt;p&gt;In general, we will define boundary homomorphisms not just on simplices but between chain groups. First we will describe how they act on generateors and then we will extend by linearity to a homomorphism on the chain groups.&lt;/p&gt;
 &lt;p&gt;Let $X$ be a simplicial complex and let $B_n(X)$ denote the set of $n$-simplices in $X$. That is, $B_n(X)$ is a basis for the free abelian group $C_n(X)$, the group of $n$-chains in $X$. Define a function $\partial'_n:B_n(X)\to C_{n-1}(X)$ as follows: For any oriented $n$-simplex $\sigma=[v_0, v_1,\ldots, v_n]$, we let&lt;/p&gt;
 &lt;p&gt;$$\partial'_n(\sigma) = \partial'_n([v_0, v_1,\ldots, v_n])=\sum_{i=0}^n(-1)^i[v_0,\ldots,v_{i-1},v_{i+1},\ldots,v_n].$$&lt;/p&gt;
 &lt;p&gt;That is, an alternating sum of $n-1$-simplices where the $i$th term is missing the $i$th vertex.&lt;/p&gt;

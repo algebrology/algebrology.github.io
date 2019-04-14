@@ -22,7 +22,7 @@
     <meta property="og:description" content='The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.'>
     <meta property="og:url" content="http://localhost:2368/simplicial-complexes-and-boundary-maps/">
     <meta property="article:published_time" content="2019-04-14T03:48:00.000Z">
-    <meta property="article:modified_time" content="2019-04-14T05:41:45.000Z">
+    <meta property="article:modified_time" content="2019-04-14T17:37:51.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Simplicial Complexes and Boundary Maps">
     <meta name="twitter:description" content='The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.'>
@@ -53,7 +53,7 @@
     "headline": "Simplicial Complexes and Boundary Maps",
     "url": "http://localhost:2368/simplicial-complexes-and-boundary-maps/",
     "datePublished": "2019-04-14T03:48:00.000Z",
-    "dateModified": "2019-04-14T05:41:45.000Z",
+    "dateModified": "2019-04-14T17:37:51.000Z",
     "description": "The idea behind our definitions is that lots of topological spaces can be &quot;triangularized&quot; in such a way that they look sort of like a bunch of &quot;triangles&quot; glued together.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -199,9 +199,31 @@ MathJax.Hub.Config({
 </ol>
 </blockquote>
 <p>This definition ensures that the gluing of simplices is done in such a way that all the vertices and faces line up nicely. And of course, we make a simplicial complex $X$ into a topological space by taking the union of all its simplices and considering it as a topological subspace of $\R^{n+1}$, where $n$ is the maximum dimension of any simplex in $X$.</p>
-<p>Here's an example of a simplicial complex which we'll be revisiting later. It should technically live in $\R^3$ since $f$ is a $2$-simplex, but this one just happens to be flat enough to embed in $\R^2$.</p>
+<blockquote>
+<p><strong>Example.</strong> Here's an example of a simplicial complex which we'll be revisiting later. It should technically live in $\R^3$ since $f$ is a $2$-simplex, but this one just happens to be flat enough to embed in $\R^2$.</p>
 <p><img src="../content/images/2019/04/simplicial-complex-3.svg" alt="simplicial-complex-3"></p>
 <p>Notice that the edges have arrows. This is because they are oriented simplices. That is, $[v_0, v_1]$ is a different simplex than $[v_1, v_0]$, and the arrows are visual indicators of the orientation. Technically $f$ is oriented as well, but I have not added a visual indication of this fact. We will treat $f$ as the simplex $[v_0, v_1, v_2]$.</p>
+<p>With all of that in mind, this complex consists of the following simplices:</p>
+<p><strong>0-simplices</strong>:</p>
+<div style="margin-left:1.5em; margin-top:-1.5em">
+$v_0$
+<p>$v_1$<br>
+$v_2$<br>
+$v_3$</p>
+</div>
+<p><strong>1-simplices</strong>:</p>
+<div style="margin-left:1.5em; margin-top:-1.5em">
+$e_0 = [v_0, v_1]$
+<p>$e_1 = [v_1, v_2]$<br>
+$e_2 = [v_2, v_0]$<br>
+$e_3 = [v_3, v_2]$<br>
+$e_4 = [v_0, v_3]$</p>
+</div>
+<p><strong>2-simplices</strong>:</p>
+<div style="margin-left:1.5em; margin-top:-1.5em; margin-bottom:2em">
+$f=[v_0, v_1, v_2]$
+</div>
+</blockquote>
 <h3 id="chaingroupsanamechaingroups">Chain Groups<a name="chain-groups"></a></h3>
 <p>In an earlier post, I developed the machinery of free abelian groups. Now let's finally put that to use.</p>
 <blockquote>
@@ -223,9 +245,13 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br>
 <p>Its double, $2\sigma = 2e_0 + 2e_1 + 2e_2$ traces out the same path twice in a row. That is, it loops around $f$ two times instead of just once.</p>
 <p>It might seem natural to view the chain $\sigma$ as the <em>boundary</em> of the simplex $f$. Let's work toward making this idea more formal.</p>
 <h3 id="boundarymapsanameboundarymaps">Boundary Maps<a name="boundary-maps"></a></h3>
-<p>First lets define the boundary of a $1$-simplex, since it is the easiest to visualize. Since a $1$-simplex is essentially just a closed line segment, its boundary should consist solely of its endpoints, which are $0$-simplices. However, the directedness of the edges indicates that we should add/subtract the endpoints rather than take their union. This tells us that the boundary of these edges should be a map $\partial:C_1\to C_0$ from the group of $1$-chains to the group of $0$-chains. That is, the boundary of a $1$-simplex will be an integral combination of $0$-simplices.</p>
-<p>Thus, we define the boundary of the $1$-simplex $\sigma=[v_0, v_1]$ to be the $0$-chain $v_1-v_0$.</p>
-<p>In general, we will define boundary homomorphisms between chain groups. First we will describe how they act on generateors and then we will extend by linearity to a homomorphism on the chain groups.</p>
+<p>First lets define the boundary of a $1$-simplex, since it is the easiest to visualize. Since a $1$-simplex is essentially just a closed line segment, its boundary should consist solely of its endpoints, which are $0$-simplices. However, the directedness of the edges indicates that we should add/subtract the endpoints rather than take their union.</p>
+<p>Thus, we define the boundary of the $1$-simplex $[v_0, v_1]$ to be the $0$-chain $v_1-v_0$.</p>
+<p>Similarly, we would like the boundary of the $2$-simplex $[v_0, v_1, v_2]$ to be the sum of its edges $[v_0, v_1]$, $[v_1, v_2]$ and $[v_2, v_0]$. So we define the boudary of $[v_0, v_1, v_2]$ as</p>
+<p>$$[v_0, v_1] + [v_1, v_2] + [v_2, v_0] = [v_1, v_2] - [v_0, v_2] + [v_0, v_1].$$</p>
+<p>Note that the expressions on both sides are completely equal, just with the order permuted and $[v_2, v_0]$ negated twice. The reason for this rearrangement will become apparent shortly.</p>
+<p>It is <em>very</em> important to note that the boundary of an $n$-simplex is always an $(n-1)$-chain!</p>
+<p>In general, we will define boundary homomorphisms not just on simplices but between chain groups. First we will describe how they act on generateors and then we will extend by linearity to a homomorphism on the chain groups.</p>
 <p>Let $X$ be a simplicial complex and let $B_n(X)$ denote the set of $n$-simplices in $X$. That is, $B_n(X)$ is a basis for the free abelian group $C_n(X)$, the group of $n$-chains in $X$. Define a function $\partial'_n:B_n(X)\to C_{n-1}(X)$ as follows: For any oriented $n$-simplex $\sigma=[v_0, v_1,\ldots, v_n]$, we let</p>
 <p>$$\partial'_n(\sigma) = \partial'_n([v_0, v_1,\ldots, v_n])=\sum_{i=0}^n(-1)^i[v_0,\ldots,v_{i-1},v_{i+1},\ldots,v_n].$$</p>
 <p>That is, an alternating sum of $n-1$-simplices where the $i$th term is missing the $i$th vertex.</p>

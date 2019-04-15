@@ -1,0 +1,327 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Simplicial Homology</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
+    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Algebrology">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Simplicial Homology">
+    <meta property="og:description" content="Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.">
+    <meta property="og:url" content="http://localhost:2368/simplicial-homology/">
+    <meta property="article:published_time" content="2019-04-15T04:04:40.000Z">
+    <meta property="article:modified_time" content="2019-04-15T20:03:41.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Simplicial Homology">
+    <meta name="twitter:description" content="Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.">
+    <meta name="twitter:url" content="http://localhost:2368/simplicial-homology/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Eric Shapiro">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Simplicial Homology",
+    "url": "http://localhost:2368/simplicial-homology/",
+    "datePublished": "2019-04-15T04:04:40.000Z",
+    "dateModified": "2019-04-15T20:03:41.000Z",
+    "description": "Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14">
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: {automatic: true},
+    },
+  	"HTML-CSS": { 
+        linebreaks: {automatic: true},
+    },
+    SVG: {
+        linebreaks: {automatic: true},
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            null: "{\\text{null }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+            M: "{\\mathscr{M}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
+            rank: "{\\text{rank }}",
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper">
+
+
+        <header id="header">
+                <a href="../" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">April 14, 2019</span>
+            <h1>Simplicial Homology</h1>
+        </header>
+
+
+        <div class="content">
+            <p>Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.</p>
+<p>For now, we will restrict our discussion to homology of simplicial complexes. Since many topological spaces of interest can be triangularized into a simplicial complex, this is robust enough for a first treatment of homology. I will talk about the more general theory of singular homology in a later post.</p>
+<p>I actually gave the definition of simplicial homology groups in my last post, but it was not motivated by anything in particular. Because the motivation for the construction of homology groups can be difficult to understand, we'll work through the concept by looking at a rather in-depth example. As we will see, the natural and intuitive steps we take in this example generalize to a broader theory of homology.</p>
+<p>Let's work with the same simplicial complex we looked at in my last post:</p>
+<p><img src="../content/images/2019/04/simplicial-complex-4.svg" alt="simplicial-complex-4"></p>
+<p>We'll call the complex $X$, to match our notation from last time. The $v_i$ are $0$-simplices, the $e_i$ are $1$-simplices and $f$ is a $2$-simplex. We will be working with the chain groups of $X$ as in the previous post. We define $C_0(X)$ as the free abelian group generated by the $v_i$, $C_1(X)$ as the free abelian group generated by the $e_i$, and $C_2(X)$ as the free abelian group generated by $f$.</p>
+<p>Notice that elements of $C_0(X)$ are integral linear combinations of the vertices $v_i$. A typical element $\sigma_0 \in C_0(X)$ can be expressed as</p>
+<p>$$\sigma_0 = \sum_{i=0}^3 a_iv_i = a_0v_0 + a_1v_1 + a_2v_2 + a_3v_3,$$</p>
+<p>where the $a_i$ are integers. We refer to the elements of $C_0(X)$ as $0$-chains.</p>
+<p>Similarly, the elements of $C_1(X)$, which we call $1$-chains, are integral linear combinations of the edges $e_i$. A typical element $\sigma_1 \in C_1(X)$ can be written</p>
+<p>$$\sigma_1 = \sum_{i=0}^4 b_ie_i = b_0e_0 + b_1e_1 + b_2e_2 + b_3e_3 + b_4e_4,$$</p>
+<p>where the $b_i$ are integers. Since the edges are oriented, remember that we think of the negative of an edge as that same edge oriented in the opposite direction. There are only two possible orientations for each edge, so this works out nicely.</p>
+<p>Lastly, the elements of $C_2(X)$, the $2$-chains, are integral multiples of the face $f$. A typical element $\sigma_2 \in C_2(X)$ is of the form</p>
+<p>$$\sigma_2 = cf,$$</p>
+<p>where $c$ is an integer. We will assume that $f=[v_0, v_1, v_2]$ is oriented clockwise.</p>
+<p>Last time, we defined the boundary maps between chain groups for any simplicial complex. Let's look at the boundaries of the simplices in $X$. These are determined by the homomorphisms</p>
+<p>$$C_2(X)\xrightarrow{\partial_2} C_1(X)\xrightarrow{\partial_1}C_0(X)\xrightarrow{\partial_0}0.$$</p>
+<p>Recall the definition of the boundary of an $n$-simplex:</p>
+<p>$$\partial_n([v_0, v_1,\ldots, v_n])=\sum_{i=0}^n(-1)^i[v_0,\ldots,v_{i-1},v_{i+1},\ldots,v_n].$$</p>
+<p>We see immediately that</p>
+<p>$$\partial_0([v_i]) = 0$$</p>
+<p>for every $1$-simplex $v_i$. This should make intuitive sense, since a vertex shouldn't have any boundary. This means that $\partial_0$ is the zero map, (as it must be since it's codomain is the trivial group).</p>
+<p>Next we see that</p>
+<p>$$\begin{align}<br>
+\partial_1(e_0) &amp;= \partial_1([v_0, v_1]) = v_1 - v_0 \\[.5em]<br>
+\partial_1(e_1) &amp;= \partial_1([v_1, v_2]) = v_2 - v_1 \\[.5em]<br>
+\partial_1(e_2) &amp;= \partial_1([v_2, v_0]) = v_0 - v_2 \\[.5em]<br>
+\partial_1(e_3) &amp;= \partial_1([v_3, v_2]) = v_2 - v_3 \\[.5em]<br>
+\partial_1(e_4) &amp;= \partial_1([v_0, v_3]) = v_3 - v_0.<br>
+\end{align}$$</p>
+<p>Since homomorphisms between free abelian groups are uniquely determined by the way they act on generators, we immediately know how to calculate the boundary $\partial_1$ of any $1$-chain in $X$. If</p>
+<p>$$\sigma_1 = \sum_{i=0}^4 b_ie_i$$</p>
+<p>then from the properties of homomorphisms we see that</p>
+<p>$$\begin{align}<br>
+\partial_1(\sigma_1) &amp;= \partial_1\left(\sum_{i=0}^4 b_ie_i\right) \\<br>
+&amp;= \sum_{i=0}^4 b_i \partial_1(e_i) \\[1em]<br>
+&amp;= b_0(v_1-v_0) + b_1(v_2-v_1) + b_2(v_0-v_2) + b_3(v_2-v_3) + b_4(v_3-v_0) \\[1em]<br>
+&amp;= (-b_0+b_2-b_4)v_0 + (b_0-b_1)v_1 + (b_1-b_2+b_3)v_2 + (-b_3+b_4)v_3.<br>
+\end{align}$$</p>
+<p>Of particular interest to us are cycles in $C_1(X)$. As you might expect, a cycle is a $1$-chain which starts where it began and traverses the edges in a natural order. For instance, we would like</p>
+<p>$$\begin{align}<br>
+\sigma_1 &amp;= e_0 + e_1 + e_2, \\[1em]<br>
+\sigma_2 &amp;= -2e_2 -2e_4 -2e_3<br>
+\end{align}$$</p>
+<p>to be considered cycles, since they are natural paths around the simplex and they form closed loops. However,</p>
+<p>$$\begin{align}<br>
+\sigma_3 &amp;= e_0 + e_1, \\[1em]<br>
+\sigma_4 &amp;= 3e_1 -e_4<br>
+\end{align}$$</p>
+<p>should not be, as $\sigma_3$ does not form a closed loop and $\sigma_4$ is not even a natural path.</p>
+<p>How should we algebraically determine which chains are cycles? To answer this question, let's take a look at the boundaries of the $1$-chains we just discussed. Remember that chain groups are abelian, so we can rearrange terms. This is extremely important!</p>
+<p>$$\begin{align}<br>
+\partial_1(\sigma_1) &amp;= \partial(e_0 + e_1 + e_2) \\[.5em]<br>
+&amp;= \partial(e_0) + \partial(e_1) + \partial(e_2) \\[.5em]<br>
+&amp;= (v_1-v_0) + (v_2-v_1) + (v_0-v_2) \\[.5em]<br>
+&amp;= (v_0 - v_0) + (v_1 - v_1) + (v_2 - v_2) \\[.5em]<br>
+&amp;= 0, \\[2em]<br>
+\partial_1(\sigma_2) &amp;= \partial(-2e_2 -2e_4 -2e_3) \\[.5em]<br>
+&amp;= -2\partial(e_2) -2\partial(e_4) + -2\partial(e_3) \\[.5em]<br>
+&amp;= -2(v_0-v_2) -2(v_3-v_0) -2(v_2-v_3) \\[.5em]<br>
+&amp;= -2(v_0 - v_0) -2(v_2 - v_2) -2(v_3 - v_3) \\[.5em]<br>
+&amp;= 0, \\[2em]<br>
+\partial_1(\sigma_3) &amp;= \partial(e_0 + e_1) \\[.5em]<br>
+&amp;= \partial(e_0) + \partial(e_1)\\[.5em]<br>
+&amp;= (v_1-v_0) + (v_2-v_1)\\[.5em]<br>
+&amp;= -v_0 + (v_1-v_1) + v_2 \\[.5em]<br>
+&amp;= -v_0 + v_2, \\[2em]<br>
+\partial_1(\sigma_4) &amp;= \partial(3e_1 -e_4) \\[.5em]<br>
+&amp;= 3\partial(e_1) -\partial(e_4) \\[.5em]<br>
+&amp;= 3(v_2-v_1) -(v_3-v_0) \\[.5em]<br>
+&amp;= -v_0 -3v_1 + 3v_2 -v_3. \\[.5em]<br>
+\end{align}$$</p>
+<p>So It looks like the $1$-chains that ought to be cycles have a boundary of $0$, whereas the others have nonzero boundary. This should make some sense, since remember that the boundary of a $1$-simplex is its second vertex minus its first vertex. So if the edges of a chain follow a natural path, i.e., the chain is of the form</p>
+<p>$$\sigma = [v_0, v_1] + [v_1, v_2] + [v_2, v_3] + \cdots + [v_{n-2}, v_{n-1}] + [v_{n-1}, v_n]$$</p>
+<p>then the terms in its boundary will telescope and only the extreme points will remain. That is,</p>
+<p>$$\begin{align}<br>
+\partial_1(\sigma) &amp;= \partial_1([v_0, v_1] + [v_1, v_2] + [v_2, v_3] + \cdots +[v_{n-2}, v_{n-1}] + [v_{n-1}, v_n]) \\[.5em]<br>
+&amp;= \partial([v_0, v_1]) + \partial([v_1, v_2]) + \partial([v_2, v_3]) + \cdots + \partial([v_{n-2}, v_{n-1}]) + \partial([v_{n-1}, v_n]) \\[.5em]<br>
+&amp;= (v_1-v_0) + (v_2-v_1) + (v_3-v_2) + \cdots + (v_{n-1}-v_{n-2}) + (v_n-v_{n-1}) \\[.5em]<br>
+&amp;= -v_0 + (v_1-v_1) + (v_2-v_2) + \cdots + (v_{n-1}-v_{n-1}) + v_n\\[.5em]<br>
+&amp;= -v_0 + v_n.<br>
+\end{align}$$</p>
+<p>If it happens that the chain is also closed, then its first and last vertices are the same. That is, $v_0=v_n$, and so $\partial_1(\sigma)=0$. That means that any cycle is in the kernel of the boundary map! It thus makes sense to make the following definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> If $X$ is a simplicial complex with chain groups and boundary operators</p>
+<p>$$\cdots\xrightarrow{\partial_{n+1}} C_n(X)\xrightarrow{\partial_n} C_{n-1}(X)\xrightarrow{\partial_{n-1}}\cdots\xrightarrow{\partial_2}C_1(X)\xrightarrow{\partial_1}C_0(X)\xrightarrow{\partial_0}0,$$</p>
+<p>then for each natural number $n$, the <strong>group of $n$-cycles</strong> in $X$ is defined as</p>
+<p>$$Z_n(X)=\ker\partial_n.$$</p>
+</blockquote>
+<p>This subgroup consists of all $n$-chains whose boundary is zero. That is, precisely the chains which we called cycles. Since each cycle group $Z_n(X)$ is the kernel of a homomorphism, it is always a normal subgroup of $C_n(X)$.</p>
+<p>Remember that the whole point of this endeavor is to identify the holes in our simplicial complex $X$. Intuitively, just from looking at the diagram of $X$, it seems there should only be one hole: that empty region bounded by the edges $e_2$, $e_4$ and $e_3$.</p>
+<p>How do we instinctively know this? Because $e_2+e_3+e_4$ is a a cycle in $Z_1(X)$ but it is not the boundary of any $2$-chain in $X$. Those edges could feasibly form the boundary of a $2$-simplex, but there is simply not a $2$-simplex sitting there. That tells us there's a hole in our complex.</p>
+<p>On the other hand, $e_0+e_1+e_2$ is a cycle in $Z_1(X)$ and it is the boundary of the $2$-chain $f$, so there is no hole there.</p>
+<p>What I'm saying is that <strong>holes in $X$ correspond to cycles which are not also the boundary of anything in $X$.</strong></p>
+<p>How do we know which chains are also boundaries? Well that's easy! Any boundary of a simplex in $X$ is the image of that simplex under the boundary map.</p>
+<blockquote>
+<p><strong>Definition.</strong> If $X$ is a simplicial complex with chain groups and boundary operators</p>
+<p>$$\cdots\xrightarrow{\partial_{n+1}} C_n(X)\xrightarrow{\partial_n} C_{n-1}(X)\xrightarrow{\partial_{n-1}}\cdots\xrightarrow{\partial_2}C_1(X)\xrightarrow{\partial_1}C_0(X)\xrightarrow{\partial_0}0,$$</p>
+<p>then for each natural number $n$, the <strong>group of $n$-boundaries</strong> in $X$ is defined as</p>
+<p>$$B_n(X)=\im\partial_{n+1}.$$</p>
+</blockquote>
+<p>This subgroup consists of all $n$-chains which are the image of an $(n+1)$-chain under the $(n+1)$th boundary map. That is, $B_n(X)$ consists of all boundaries of the $(n+1)$-chains in $X$.</p>
+<p>We showed last time that the boundary of a boundary is always zero, i.e., $(\partial_{n}\circ \partial_{n+1})(\sigma)=0$ for all $n$. We also showed that this implies that $\im\partial_{n+1}\subseteq\ker\partial_n$. Or, in the terminology of this post, $B_n(X)\subseteq Z_n(X)$.</p>
+<p>This should make intuitive sense, since every boundary of a simplex should be a cycle but not all cycles are necessarily boundaries. In fact, it is precisely the cycles that are <em>not</em> boundaries that we are interested in. We're finally ready to define homology groups!</p>
+<blockquote>
+<p><strong>Definition.</strong> If $X$ is a simplicial complex with chain groups and boundary operators</p>
+<p>$$\cdots\xrightarrow{\partial_{n+1}} C_n(X)\xrightarrow{\partial_n} C_{n-1}(X)\xrightarrow{\partial_{n-1}}\cdots\xrightarrow{\partial_2}C_1(X)\xrightarrow{\partial_1}C_0(X)\xrightarrow{\partial_0}0,$$</p>
+<p>then for each natural number $n$, the <strong>$n$th simplicial homology group</strong> of $X$ is defined as the quotient group</p>
+<p>$$H_n(X)=\frac{Z_n(X)}{B_n(X)} = \frac{\ker\partial_n}{\im\partial_{n+1}}.$$</p>
+</blockquote>
+<p>In the case of our example, $Z_1(X)$ is the free abelian group generated by the two basic cycles in $X$. That is, any cycle in $Z_1(X)$ is an integral combination of $e_0+e_1+e_2$ and $e_2+e_4+e_3$. Since it is generated by two elements, $\rank Z_1(X)=2$.</p>
+<p>On the other hand, $B_1(X)$ is the free abelian group generated by boundaries of the $2$-simplices in $X$. But there is only one $2$-simplex, namely $f$. The boundary of $f$ is the chain $e_0+e_1+e_2$, so any boundary in $B_1(X)$ is an integral multiple of this chain. Since it is generated by a single element, $\rank B_1(X)=1$.</p>
+<p>This implies that $\rank H_1(X)=2-1=1$. This coincides with our intuitive idea that there is one hole in the complex $X$. In general, the rank of the $n$-th homology group tells us how many $n$-dimensional holes are in a simplicial complex.</p>
+<p>The elements of the $1$st homology group $H_1(X)$ are the cosets of $B_1(X)$. That is, any element $\sigma\in H_1(X)$ is of the form</p>
+<p>$$B_1(X) + \gamma$$</p>
+<p>where $\gamma$ is any $1$-cycle in $Z_1(X)$. If $\gamma$ is a multiple of the chain $e_0+e_1+e_2$ then $\gamma\in B_1(X)$ and so we have the identity coset. Otherwise, $\gamma$ contains some multiple of the other cycle, $e_2+e_4+e_3$, and so $B_1(X) + \gamma$ is not the identity. This is why the rank of $H_1(X)$ is $1$ in this case — because the only distinct cosets are the identity and $B_1(X) + e_2+e_4+e_3$.</p>
+<p>I'll leave you with this for now. Next time I'll discuss an algorithm for actually computing homology groups of simplicial complexes!</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="../author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>© 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
+    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
+    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
+    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
+    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
+    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
+    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+
+    
+
+</body>

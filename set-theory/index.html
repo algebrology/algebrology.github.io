@@ -1,35 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Set Theory</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <meta name="description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it.">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <meta name="description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it." />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/set-theory/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/set-theory/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Set Theory">
-    <meta property="og:description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it.">
-    <meta property="og:url" content="http://localhost:2368/set-theory/">
-    <meta property="article:published_time" content="2017-03-29T00:49:23.000Z">
-    <meta property="article:modified_time" content="2019-02-20T04:41:43.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Set Theory">
-    <meta name="twitter:description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it.">
-    <meta name="twitter:url" content="http://localhost:2368/set-theory/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Set Theory" />
+    <meta property="og:description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it." />
+    <meta property="og:url" content="http://localhost:2368/set-theory/" />
+    <meta property="article:published_time" content="2017-03-29T00:49:23.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:41:43.000Z" />
+    <meta property="article:tag" content="foundations" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Set Theory" />
+    <meta name="twitter:description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it." />
+    <meta name="twitter:url" content="http://localhost:2368/set-theory/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="foundations" />
     
     <script type="application/ld+json">
 {
@@ -55,6 +60,7 @@
     "url": "http://localhost:2368/set-theory/",
     "datePublished": "2017-03-29T00:49:23.000Z",
     "dateModified": "2019-02-20T04:41:43.000Z",
+    "keywords": "foundations",
     "description": "Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +69,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -96,6 +102,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -122,18 +130,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-foundations">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -156,22 +169,22 @@ MathJax.Hub.Config({
         <div class="content">
             <h3 id="contents">Contents</h3>
 <ol>
-<li><a href="index.html#what-are-sets">What are sets?</a></li>
-<li><a href="index.html#basic-facts-about-sets">Basic facts about sets</a></li>
-<li><a href="index.html#operations-on-sets">Operations on sets</a></li>
-<li><a href="index.html#functions">Functions</a></li>
+<li><a href="#what-are-sets">What are sets?</a></li>
+<li><a href="#basic-facts-about-sets">Basic facts about sets</a></li>
+<li><a href="#operations-on-sets">Operations on sets</a></li>
+<li><a href="#functions">Functions</a></li>
 </ol>
 <hr>
-<p>Everything in mathematics is built from sets.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that a basic familiarity with set theory is necessary in order to understand the topics I'll be discussing here. For this reason, I've decided to include this introductory post on the topic so that adventurous readers with little mathematical background will be able to understand my future posts without having to leave the confines of this blog.</p>
+<p>Everything in mathematics is built from sets.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that a basic familiarity with set theory is necessary in order to understand the topics I'll be discussing here. For this reason, I've decided to include this introductory post on the topic so that adventurous readers with little mathematical background will be able to understand my future posts without having to leave the confines of this blog.</p>
 <h3 id="whataresetsanamewhataresets">What are sets?<a name="what-are-sets"></a></h3>
 <p>Already we encounter something of a problem — one which took mathematicians quite a while to resolve, and should not be underestimated. The issue is that, because we wish to use set theory as the foundation of all future mathematical exploration, we don't actually have a place to start when defining sets themselves.</p>
 <p>It takes quite a bit of logical sophistication to arrive at a truly satisfactory definition of a set. If you're interested in such things, I encourage you to look into any resource you can find on <em>Zermelo-Fraenkel Set Theory with the Axiom of Choice</em> (usually abbreviated <em>ZFC</em>), which is a more rigorous set of axioms which govern the behavior of sets.</p>
-<p>For our purposes, the standard "naïve" set theory will do just fine. It is largely intuition-based, because it relies on the primitive notion that sets contain elements and elements are what make up sets. However, as long as we take certain precautions when dealing with sets, we should never encounter any problems stemming from this treatment:</p>
+<p>For our purposes, the standard &quot;naïve&quot; set theory will do just fine. It is largely intuition-based, because it relies on the primitive notion that sets contain elements and elements are what make up sets. However, as long as we take certain precautions when dealing with sets, we should never encounter any problems stemming from this treatment:</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>set</strong> is a collection of <strong>elements</strong>.</p>
 </blockquote>
 <h3 id="basicfactsaboutsetsanamebasicfactsaboutsets">Basic facts about sets<a name="basic-facts-about-sets"></a></h3>
-<p>Traditionally, capital letters like $A$, $B$ or $X$ are used to denote sets. If $x$ is an element of a set $X$, we write $x\in X$ and we say that "$x$ is in $X$."</p>
+<p>Traditionally, capital letters like $A$, $B$ or $X$ are used to denote sets. If $x$ is an element of a set $X$, we write $x\in X$ and we say that &quot;$x$ is in $X$.&quot;</p>
 <p>Sets are determined solely by the elements they contain. For instance, if the numbers $1$, $2$ and $3$ are the only elements of the set $X$, we can indicate this by writing $X=\{1,2,3\}$. When we define sets in this manner, by specifying a complete list of elements they contain, we always sandwich the list of elements between curly braces, as above.</p>
 <blockquote>
 <p><strong>Definition.</strong> If two sets $A$ and $B$ contain precisely the same elements, we say that they are <strong>equal</strong> and we write $A=B$. If they are <strong>not equal</strong>, we write $A\neq B$.</p>
@@ -207,19 +220,19 @@ MathJax.Hub.Config({
 <li>The set $\mathbb{R}$ of <strong>real numbers</strong>.</li>
 <li>The set $\mathbb{C}$ of <strong>complex numbers</strong> whose elements are of the form $a+bi$, where $a, b \in \mathbb{R}$ and $i^2 = -1$.</li>
 </ul>
-<p>It is convenient and natural to assume that $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$, and I encourage you to think this way.<sup class="footnote-ref"><a href="index.html#fn2" id="fnref2">[2]</a></sup></p>
+<p>It is convenient and natural to assume that $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$, and I encourage you to think this way.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <p>It is often desirable to specify certain subsets of sets with which we are already acquainted in terms of some property that every element in the subset must possess. How would we, for instance, denote the set of positive real numbers? Or the set of even integers?</p>
-<p>We can construct such subsets using <strong>set-builder notation</strong>. This is basically a fancy notation describing the form that elements in the set take, followed by a vertical bar which means "such that," and then a property which every element obeys — all sandwiched between the usual set brackets.</p>
+<p>We can construct such subsets using <strong>set-builder notation</strong>. This is basically a fancy notation describing the form that elements in the set take, followed by a vertical bar which means &quot;such that,&quot; and then a property which every element obeys — all sandwiched between the usual set brackets.</p>
 <p>In this new notation, $\{x\in\mathbb{R} \mid x&gt;0\}$ would be the set of positive real numbers. Similarly, $\{2n \mid n\in\mathbb{Z}\}$ is the set of even integers.</p>
 <h3 id="operationsofsetsanameoperationsonsets">Operations of sets<a name="operations-on-sets"></a></h3>
 <p>Given two or more sets, we will often find the need to combine them in certain ways to create new sets. Below are four very common ways of creating new sets from old. Each of their definitions can be extended to combine any finite collection of sets, and sometimes even an infinite collection. Make certain that you are comfortable with each of these definitions, since they will show up everywhere ever.</p>
 <p>Let $A$ and $B$ denote sets. Let's say, for illustration, that they're sets of points in the plane of your screen and they look like these blobs:</p>
-<p><img src="../content/images/2017/03/sets.svg" alt=""></p>
+<p><img src="http://localhost:2368/content/images/2017/03/sets.svg" alt=""></p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>union</strong> of $A$ and $B$ is the set of all elements in either $A$ or in $B$, or both. It is written $A\cup B$ and is defined as the set $\{x \mid x\in A \text{ or } x\in B\}$.</p>
 </blockquote>
 <p>The union of the sets above would look like this:</p>
-<p><img src="../content/images/2017/03/union.svg" alt=""></p>
+<p><img src="http://localhost:2368/content/images/2017/03/union.svg" alt=""></p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>intersection</strong> of $A$ and $B$ is the set of all elements in both $A$ and $B$. It is written $A\cap B$ and is defined as the set $\{x \mid x\in A \text{ and } x\in B\}$.</p>
 </blockquote>
@@ -227,12 +240,12 @@ MathJax.Hub.Config({
 <p><strong>Definition.</strong> Two sets are said to be <strong>disjoint</strong> if their intersection is empty.</p>
 </blockquote>
 <p>The intersection of the above sets would look like this:</p>
-<p><img src="../content/images/2017/03/intersection.svg" alt=""></p>
+<p><img src="http://localhost:2368/content/images/2017/03/intersection.svg" alt=""></p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>complement</strong> (or <strong>difference</strong>) of $A$ in $B$ is the set of all elements that are in $B$ but not in $A$. It is written $B-A$ and is defined as the set $\{x\in B \mid x\notin A\}$.</p>
 </blockquote>
 <p>For the sets above, the complement of $A$ in $B$ would look like this:</p>
-<p><img src="../content/images/2017/03/complement.svg" alt=""></p>
+<p><img src="http://localhost:2368/content/images/2017/03/complement.svg" alt=""></p>
 <p>It is worth nothing that, unlike unlike unions and intersections, complements depend on which set comes first. That is, $A-B\neq B-A$.</p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>Cartesian product</strong> of $A$ and $B$, written $A \times B$, is the set of all ordered pairs whose first component is in $A$ and whose second component is in $B$.</p>
@@ -260,10 +273,10 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
 <p><strong>Definition.</strong> The <strong>range</strong> (or <strong>image</strong>) of a function $f$ is the set $\text{im } f = \{y\in B \mid (x,y)\in f \text{ for some } x\in A\}$.</p>
 </blockquote>
 <p>If you've never seen the above definition of a function before, it's natural to wonder at this point just what the crud I'm talking about. Why are we defining functions as sets? As I stated earlier, <em>everything</em> in mathematics is defined in terms of sets, and functions are no exception. We don't usually think of functions as sets of ordered pairs, but it is useful to define them this way so that we can make precise statements about them which stem from their definition. It also allows us to immediately infer what is meant by function equality, because it is inherited from our earlier definition of set equality.</p>
-<p>So using this definition, a function is basically a list of $(x,y)$ values where $y$ is what you'd usually call $f(x)$. That is, the first component is the "input" to the function and the second component is the "output." The second condition in the definition is a rephrasing of what you may know as the "vertical line test." In two dimensions, a function from $\mathbb{R}$ to $\mathbb{R}$ is anything you can draw that exists above every value on the $x$-axis, but not more than once.</p>
+<p>So using this definition, a function is basically a list of $(x,y)$ values where $y$ is what you'd usually call $f(x)$. That is, the first component is the &quot;input&quot; to the function and the second component is the &quot;output.&quot; The second condition in the definition is a rephrasing of what you may know as the &quot;vertical line test.&quot; In two dimensions, a function from $\mathbb{R}$ to $\mathbb{R}$ is anything you can draw that exists above every value on the $x$-axis, but not more than once.</p>
 <p>As I mentioned above, a more familiar way of rephrasing the last part of the definition might be this:</p>
 <p>... for each $x\in A$, there exists exactly one $y\in B$ for which $y=f(x)$.</p>
-<p>This notation is much more common, and I'll be using it almost exclusively from now on. Often, $f(x)$ is referred to as the <strong>image</strong> of $x$ under the function $f$. This is an unfortunate overloading of the word "image," but it will not lead to confusion if we are careful.</p>
+<p>This notation is much more common, and I'll be using it almost exclusively from now on. Often, $f(x)$ is referred to as the <strong>image</strong> of $x$ under the function $f$. This is an unfortunate overloading of the word &quot;image,&quot; but it will not lead to confusion if we are careful.</p>
 <p>One of the nice things about our definition of a function it that it allows us to define functions between any two sets we want, and the values of the function don't have to obey any particular rule. We can simply check each point and its image to make sure they obey the definition.</p>
 <p>If you're a bit confused by all this, just sit and absorb it for a minute. Realize that ordinary things like the function $f:\mathbb{R}\to\mathbb{R}$, defined by $f(x)=x^2$ for every $x\in\mathbb{R}$, still satisfy our new definition. Think everything through — maybe draw some pictures — and then continue reading.</p>
 <p>Now, notice that something like $f:\mathbb{R}\to\mathbb{R}$ defined by $f(x)=\frac{1}{x}$ for all $x\in\mathbb{R}$ is not actually a function! This is because not every element of the domain gets mapped to a real number. In particular, there is no $y\in\mathbb{R}$ for which $y=f(0)$. We would need to restrict the domain to $\mathbb{R} - \{0\}$ to turn this thing into a function.</p>
@@ -271,7 +284,7 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
 <blockquote>
 <p><strong>Definition.</strong> A function $f:A\to B$ is <strong>injective</strong> if for every $y\in B$ there exists at most one $x\in A$ for which $y=f(x)$.</p>
 </blockquote>
-<p>Basically, an injective function cannot have two points in its domain get mapped to the same point in its codomain. We can check that a function is injective by showing that if $x\neq y$ then $f(x)\neq f(y)$. Equivalently, we can do this by instead showing that if $f(x)=f(y)$ then $x=y$. (These two statements are contrapositives so they are logically equivalent, but sometimes one will be easier to show than the other.) Injective functions in the plane satisfy what might constitute a "horizontal line test," in that any horizontal line will intersect their graph at most once.</p>
+<p>Basically, an injective function cannot have two points in its domain get mapped to the same point in its codomain. We can check that a function is injective by showing that if $x\neq y$ then $f(x)\neq f(y)$. Equivalently, we can do this by instead showing that if $f(x)=f(y)$ then $x=y$. (These two statements are contrapositives so they are logically equivalent, but sometimes one will be easier to show than the other.) Injective functions in the plane satisfy what might constitute a &quot;horizontal line test,&quot; in that any horizontal line will intersect their graph at most once.</p>
 <blockquote>
 <p><strong>Definition.</strong> A function $f:A\to B$ is <strong>surjective</strong> if for every $y\in B$, there exists at least one $x\in A$ for which $y=f(x)$.</p>
 </blockquote>
@@ -305,9 +318,9 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>One sentence in and I'm already lying to you. There are alternative formulations of mathematics, most notably via topos theory or type theory. If you are a beginner, I would recommend not looking these things up or you will likely be very confused. Set theory is by far the simplest foundation to start from, which explains why it is the most common approach (and the one I will take here). <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>One sentence in and I'm already lying to you. There are alternative formulations of mathematics, most notably via topos theory or type theory. If you are a beginner, I would recommend not looking these things up or you will likely be very confused. Set theory is by far the simplest foundation to start from, which explains why it is the most common approach (and the one I will take here). <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>More formally it happens that each set, equipped with a certain algebraic structure, is isomorphic to a subobject of the next set, equipped with its own structure. If I ever decide to write a post (or five) detailing the constructions of each of the aforementioned sets, you'll see this idea in excruciating detail. <a href="index.html#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>More formally it happens that each set, equipped with a certain algebraic structure, is isomorphic to a subobject of the next set, equipped with its own structure. If I ever decide to write a post (or five) detailing the constructions of each of the aforementioned sets, you'll see this idea in excruciating detail. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -318,7 +331,7 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -348,21 +361,22 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

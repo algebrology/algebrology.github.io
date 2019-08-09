@@ -1,35 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Limit Points, Closure, Boundary and Interior</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <meta name="description" content="It's fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble...">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <meta name="description" content="It&#x27;s fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble..." />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/limit-points-closure-boundary-and-interior/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/limit-points-closure-boundary-and-interior/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Limit Points, Closure, Boundary and Interior">
-    <meta property="og:description" content="It's fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word 'boundary.'">
-    <meta property="og:url" content="http://localhost:2368/limit-points-closure-boundary-and-interior/">
-    <meta property="article:published_time" content="2017-04-08T00:34:07.000Z">
-    <meta property="article:modified_time" content="2019-02-20T04:46:48.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Limit Points, Closure, Boundary and Interior">
-    <meta name="twitter:description" content="It's fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word 'boundary.'">
-    <meta name="twitter:url" content="http://localhost:2368/limit-points-closure-boundary-and-interior/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Limit Points, Closure, Boundary and Interior" />
+    <meta property="og:description" content="It&#x27;s fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word &#x27;boundary.&#x27;" />
+    <meta property="og:url" content="http://localhost:2368/limit-points-closure-boundary-and-interior/" />
+    <meta property="article:published_time" content="2017-04-08T00:34:07.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:46:48.000Z" />
+    <meta property="article:tag" content="topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Limit Points, Closure, Boundary and Interior" />
+    <meta name="twitter:description" content="It&#x27;s fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word &#x27;boundary.&#x27;" />
+    <meta name="twitter:url" content="http://localhost:2368/limit-points-closure-boundary-and-interior/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="topology" />
     
     <script type="application/ld+json">
 {
@@ -55,6 +60,7 @@
     "url": "http://localhost:2368/limit-points-closure-boundary-and-interior/",
     "datePublished": "2017-04-08T00:34:07.000Z",
     "dateModified": "2019-02-20T04:46:48.000Z",
+    "keywords": "topology",
     "description": "It&#x27;s fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word &#x27;boundary.&#x27;",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +69,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -96,6 +102,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -122,18 +130,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -156,10 +169,10 @@ MathJax.Hub.Config({
         <div class="content">
             <h3 id="contents">Contents</h3>
 <ol>
-<li><a href="index.html#limit-points">Limit Points</a></li>
-<li><a href="index.html#closure">Closure</a></li>
-<li><a href="index.html#boundary">Boundary</a></li>
-<li><a href="index.html#interior">Interior</a></li>
+<li><a href="#limit-points">Limit Points</a></li>
+<li><a href="#closure">Closure</a></li>
+<li><a href="#boundary">Boundary</a></li>
+<li><a href="#interior">Interior</a></li>
 </ol>
 <hr>
 <p>We are nearly ready to begin making some distinctions between different topological spaces. Distinguishing between fundamentally different spaces lies at the heart of the subject of topology, and it will occupy much of our time. However, before we can really dig in, we're going to need some additional tools.</p>
@@ -170,7 +183,7 @@ MathJax.Hub.Config({
 <blockquote>
 <p><strong>Definition.</strong> Let $A$ denote a subset of a metric space $X$. A point $p\in X$ is a <strong>limit point</strong> of $A$ if every open ball centered at $p$ contains a point $x\in A$ with $x\neq p$. We write $L(A)$ to denote the set of limit points of $A$.</p>
 </blockquote>
-<p>The first thing that I will emphasize is that a limit point of a set does not need to belong to that set! All that is necessary is that there are points in the set <em>as close as we like</em> to the limit point. This can be made more obvious by rephrasing the definition slightly. By "every open ball," what we mean is that for every real number $\epsilon&gt;0$ there exists some point $x\in A$ distinct from $p$ such that $x\in B(p,\epsilon)$. Take a moment to appreciate and understand that this definition ensures what I claim it does.</p>
+<p>The first thing that I will emphasize is that a limit point of a set does not need to belong to that set! All that is necessary is that there are points in the set <em>as close as we like</em> to the limit point. This can be made more obvious by rephrasing the definition slightly. By &quot;every open ball,&quot; what we mean is that for every real number $\epsilon&gt;0$ there exists some point $x\in A$ distinct from $p$ such that $x\in B(p,\epsilon)$. Take a moment to appreciate and understand that this definition ensures what I claim it does.</p>
 <p>There's a sort of dual notion as well, which is called an isolated point. The following definition makes it clear that any point in a subset of a metric space is either a limit point or an isolated point.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $A$ denote a subset of a metric space $X$. A point $p\in X$ is an <strong>isolated point</strong> of $A$ if there exists an open ball centered at $p$ which contains no other points of $A$.</p>
@@ -184,14 +197,14 @@ y &amp;= (1,0), \\<br>
 z &amp;= (1,1). \\<br>
 \end{align}$$</p>
 <p>I'll even throw in a diagram to make things crystal clear:</p>
-<p><img src="../content/images/2017/04/limit_point_example.svg" alt="limit point example"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/limit_point_example.svg" alt="limit point example"></p>
 <p>Clearly $x\in A$ because $d(x,x)=0&lt; r$. However, $y,z\notin A$ because $d(x,y)=r$ and $d(x,z)=\sqrt{2}&gt;r$. Which, if any, of the points $x,y,z$ are limit points of $A$?</p>
-<p>Let's consider $x$ first. Does every open ball centered at $x$ contain a point in $A$ distinct from $x$? The simple answer is "well DUH," but let's be a tad more rigorous.</p>
+<p>Let's consider $x$ first. Does every open ball centered at $x$ contain a point in $A$ distinct from $x$? The simple answer is &quot;well DUH,&quot; but let's be a tad more rigorous.</p>
 <p>Choose a real number $\epsilon&gt;0$. We consider separately the cases where $\epsilon\geq 1$ and $0&lt;\epsilon&lt;1$. If $\epsilon\geq 1$ then $A\subseteq B(x,\epsilon)$ and we are done because there are certainly points in $A$ distinct from $x$. If $0&lt;\epsilon&lt;1$, it is clear that the point $x_0=(0,\epsilon/2)\in B(x,\epsilon)$. Furthermore, $x_0\neq x$ because $d(x,x_0)&gt;0$.</p>
 <p>So $x$ is a limit point of $A$, which was sort of obvious from the start. A similar argument could be made that any point $a\in A$ is a limit point of $A$ by adding a few more technical details to the above argument, but I won't bother because it feels like overkill.</p>
 <p>Next, let's take a look at $y$. You should have a sense that $y$ is a limit point of $A$, because even though it is not in $A$ it is <em>superextraclose</em> to lots and lots of points in $A$. Let's show that our intuition is correct.</p>
 <p>Again, choose a real number $\epsilon&gt;0$ and consider the open ball $B(y,\epsilon)$. The point $y_0=(0,1-\epsilon/2)$ is clearly in $B(y,\epsilon)$ because $d(y,y_0)=\epsilon/2&lt;\epsilon$ and thus it is also distinct from $y$. Furthermore, $y_0\in A$ since $d(x,y_0)=1-\epsilon/2&lt;1$.</p>
-<p>We've shown then that $y$ is a limit point of $A$, which is somewhat more interesting. A similar argument would show that any point $a\in X$ with $d(a,x)=1$ is a limit point of $A$. Sooo... even though we haven't defined the concept of "boundary" yet, it's looking like any point on what we intuitively perceive to be the boundary of $A$ is a limit point of $A$. This is an important realization.</p>
+<p>We've shown then that $y$ is a limit point of $A$, which is somewhat more interesting. A similar argument would show that any point $a\in X$ with $d(a,x)=1$ is a limit point of $A$. Sooo... even though we haven't defined the concept of &quot;boundary&quot; yet, it's looking like any point on what we intuitively perceive to be the boundary of $A$ is a limit point of $A$. This is an important realization.</p>
 <p>Finally, let's show that $z$ is not a limit point of $A$. To show that the necessary property is not true for every open ball centered at $z$, all we need to do is demonstrate a single open ball centered at $z$ which contains no points of $A$. This is easy! Just take as the radius any positive $\epsilon&lt;\sqrt{2}-1$ and that's essentially all there is to it.</p>
 <p>More formally, choose $\epsilon&lt;\sqrt{2}-1$ and consider $z_0\in B(z,\epsilon)$. By the definition of this open ball $d(z,z_0)&lt;\epsilon$. By the triangle inequality,</p>
 <p>$$\begin{align}<br>
@@ -230,7 +243,7 @@ d(x,z) &amp;= \sqrt{2} \\<br>
 <h3 id="boundaryanameboundary">Boundary<a name="boundary"></a></h3>
 <p>Next let's formalize the concept of boundary. It's easy and intuitive to think about the boundary of a ball, so let's start there. Let's say we have an open and closed ball of the same center and radius in some metric space. They obviously have the same boundary — the circle with the same radius as these balls. Even though these points don't belong to the open ball, they are <em>just</em> touching its outer edge.</p>
 <p>Now what about this set, as a subset of $\mathbb{R}^2$ in the standard metric?</p>
-<p><img src="../content/images/2017/04/vomitous_mass.svg" alt="vomitous mass"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/vomitous_mass.svg" alt="vomitous mass"></p>
 <p>Trying to calculate the boundary of this set is a bit more difficult than just drawing a circle. Does that loop at the top right count as boundary? What about the points sitting by themselves? Do those inner circles count as well, or does the boundary have to enclose the set? It turns out that, the way we define boundary, the answer to all of these questions is yes.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $A$ be a subset of a metric space $X$. A point $p\in X$ is a <strong>boundary point</strong> of $A$ if every open ball centered at $p$ contains at least one point in $A$ and one point in $X-A$.</p>
@@ -268,7 +281,7 @@ d(x,z) &amp;= \sqrt{2} \\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -298,21 +311,22 @@ d(x,z) &amp;= \sqrt{2} \\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

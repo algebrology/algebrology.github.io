@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Simplicial Homology</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/simplicial-homology/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/simplicial-homology/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Simplicial Homology">
-    <meta property="og:description" content="Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.">
-    <meta property="og:url" content="http://localhost:2368/simplicial-homology/">
-    <meta property="article:published_time" content="2019-04-15T04:04:40.000Z">
-    <meta property="article:modified_time" content="2019-04-18T19:51:44.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Simplicial Homology">
-    <meta name="twitter:description" content="Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.">
-    <meta name="twitter:url" content="http://localhost:2368/simplicial-homology/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Simplicial Homology" />
+    <meta property="og:description" content="Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute." />
+    <meta property="og:url" content="http://localhost:2368/simplicial-homology/" />
+    <meta property="article:published_time" content="2019-04-15T04:04:40.000Z" />
+    <meta property="article:modified_time" content="2019-04-18T19:51:44.000Z" />
+    <meta property="article:tag" content="algebraic topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Simplicial Homology" />
+    <meta name="twitter:description" content="Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute." />
+    <meta name="twitter:url" content="http://localhost:2368/simplicial-homology/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebraic topology" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/simplicial-homology/",
     "datePublished": "2019-04-15T04:04:40.000Z",
     "dateModified": "2019-04-18T19:51:44.000Z",
+    "keywords": "algebraic topology",
     "description": "Homology groups are topological invariants which, informally, give information about the types of holes in a topological space. They are not the only such invariant in algebraic topology, but they are particularly nice to work with since they are always abelian and easy to compute.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebraic-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -157,7 +170,7 @@ MathJax.Hub.Config({
 <p>For now, we will restrict our discussion to homology of simplicial complexes. Since many topological spaces of interest can be triangularized into a simplicial complex, this is robust enough for a first treatment of homology. I will talk about the more general theory of singular homology in a later post.</p>
 <p>I actually gave the definition of simplicial homology groups in my last post, but it was not motivated by anything in particular. Because the motivation for the construction of homology groups can be difficult to understand, we'll work through the concept by looking at a rather in-depth example. As we will see, the natural and intuitive steps we take in this example generalize to a broader theory of homology.</p>
 <p>Let's work with the same simplicial complex we looked at in my last post:</p>
-<p><img src="../content/images/2019/04/simplicial-complex-4.svg" alt="simplicial-complex-4"></p>
+<p><img src="http://localhost:2368/content/images/2019/04/simplicial-complex-4.svg" alt="simplicial-complex-4"></p>
 <p>We'll call the complex $X$, to match our notation from last time. The $v_i$ are $0$-simplices, the $e_i$ are $1$-simplices and $f$ is a $2$-simplex. We will be working with the chain groups of $X$ as in the previous post. We define $C_0(X)$ as the free abelian group generated by the $v_i$, $C_1(X)$ as the free abelian group generated by the $e_i$, and $C_2(X)$ as the free abelian group generated by $f$.</p>
 <p>Notice that elements of $C_0(X)$ are integral linear combinations of the vertices $v_i$. A typical element $\sigma_0 \in C_0(X)$ can be expressed as</p>
 <p>$$\sigma_0 = \sum_{i=0}^3 a_iv_i = a_0v_0 + a_1v_1 + a_2v_2 + a_3v_3,$$</p>
@@ -277,7 +290,7 @@ MathJax.Hub.Config({
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -307,21 +320,22 @@ MathJax.Hub.Config({
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

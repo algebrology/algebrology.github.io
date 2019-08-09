@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Vector Spaces (2) - Direct Sums, Span and Linear Independence</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/vector-spaces-2/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/vector-spaces-2/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Vector Spaces (2) - Direct Sums, Span and Linear Independence">
-    <meta property="og:description" content="I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.">
-    <meta property="og:url" content="http://localhost:2368/vector-spaces-2/">
-    <meta property="article:published_time" content="2019-03-16T18:24:28.000Z">
-    <meta property="article:modified_time" content="2019-03-19T20:28:38.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Vector Spaces (2) - Direct Sums, Span and Linear Independence">
-    <meta name="twitter:description" content="I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.">
-    <meta name="twitter:url" content="http://localhost:2368/vector-spaces-2/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Vector Spaces (2) - Direct Sums, Span and Linear Independence" />
+    <meta property="og:description" content="I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces." />
+    <meta property="og:url" content="http://localhost:2368/vector-spaces-2/" />
+    <meta property="article:published_time" content="2019-03-16T18:24:28.000Z" />
+    <meta property="article:modified_time" content="2019-03-19T20:28:38.000Z" />
+    <meta property="article:tag" content="linear algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vector Spaces (2) - Direct Sums, Span and Linear Independence" />
+    <meta name="twitter:description" content="I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces." />
+    <meta name="twitter:url" content="http://localhost:2368/vector-spaces-2/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="linear algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/vector-spaces-2/",
     "datePublished": "2019-03-16T18:24:28.000Z",
     "dateModified": "2019-03-19T20:28:38.000Z",
+    "keywords": "linear algebra",
     "description": "I left off last time with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-linear-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,13 +167,13 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#direct-sums">Direct Sums</a></li>
-<li><a href="index.html#span-and-linear-combinations">Span and Linear Combinations</a></li>
-<li><a href="index.html#linear-independence">Linear Independence</a></li>
+<li><a href="#direct-sums">Direct Sums</a></li>
+<li><a href="#span-and-linear-combinations">Span and Linear Combinations</a></li>
+<li><a href="#linear-independence">Linear Independence</a></li>
 </ol>
 <hr>
 <h3 id="directsumsanamedirectsums">Direct Sums<a name="direct-sums"></a></h3>
-<p>I left off <a href="http://localhost:2368/vector-spaces-1">last time</a> with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces. Not all sums have this property, but it is so important that it deserves special consideration.</p>
+<p>I left off <a href="/vector-spaces-1">last time</a> with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces. Not all sums have this property, but it is so important that it deserves special consideration.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $U$ and $W$ be subspaces of a vector space $V$ for which $V=U+W$. This sum is a <strong>direct sum</strong> if for every $\v\in V$, the representation</p>
 <p>$$\v=\u+\w,$$</p>
@@ -249,7 +262,7 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br>
 </blockquote>
 <p>It is important to distinguish between <em>lists</em> and <em>sets</em>. In a list, the order of the entries matters and entries can be repeated more than once.</p>
 <p>In the above definition, we first defined the span of one vector to be the smallest subspace containing that vector. We then defined the span of a list of vectors to be the sum of the spans of each vector in the list.</p>
-<p>Equivalently, the span of a list of vectors is a subspace containing every possible sum of scalar multiples of those vectors. In order to avoid having to repeat the phrase "sum of scalar multiples" over and ove, we define a new term which means the same thing.</p>
+<p>Equivalently, the span of a list of vectors is a subspace containing every possible sum of scalar multiples of those vectors. In order to avoid having to repeat the phrase &quot;sum of scalar multiples&quot; over and ove, we define a new term which means the same thing.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $V$ be a vector space with $\v_1,\v_2,\ldots,\v_n\in V$. A <strong>linear combination</strong> of the vectors $\v_1,\v_2,\ldots,\v_n$ is an expression of the form</p>
 <p>$$\sum_{i=1}^n a_i\v_i = a_1\v_1+a_2\v_2+\cdots+a_n\v_n,$$</p>
@@ -386,7 +399,7 @@ Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -416,21 +429,22 @@ Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

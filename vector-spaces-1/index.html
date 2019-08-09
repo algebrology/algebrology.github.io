@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Vector Spaces (1) - Subspaces and Sums</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/vector-spaces-1/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/vector-spaces-1/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Vector Spaces (1) - Subspaces and Sums">
-    <meta property="og:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.">
-    <meta property="og:url" content="http://localhost:2368/vector-spaces-1/">
-    <meta property="article:published_time" content="2019-03-16T04:04:40.000Z">
-    <meta property="article:modified_time" content="2019-03-16T18:24:49.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Vector Spaces (1) - Subspaces and Sums">
-    <meta name="twitter:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.">
-    <meta name="twitter:url" content="http://localhost:2368/vector-spaces-1/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Vector Spaces (1) - Subspaces and Sums" />
+    <meta property="og:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect." />
+    <meta property="og:url" content="http://localhost:2368/vector-spaces-1/" />
+    <meta property="article:published_time" content="2019-03-16T04:04:40.000Z" />
+    <meta property="article:modified_time" content="2019-03-16T18:24:49.000Z" />
+    <meta property="article:tag" content="linear algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vector Spaces (1) - Subspaces and Sums" />
+    <meta name="twitter:description" content="A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect." />
+    <meta name="twitter:url" content="http://localhost:2368/vector-spaces-1/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="linear algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/vector-spaces-1/",
     "datePublished": "2019-03-16T04:04:40.000Z",
     "dateModified": "2019-03-16T18:24:49.000Z",
+    "keywords": "linear algebra",
     "description": "A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-linear-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,19 +167,19 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#introduction">Introduction</a></li>
-<li><a href="index.html#vector-spaces">Vector Spaces</a></li>
-<li><a href="index.html#basic-properties">Basic Properties</a></li>
-<li><a href="index.html#examples">Examples</a></li>
-<li><a href="index.html#subspaces-and-sums">Subspaces and Sums</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#vector-spaces">Vector Spaces</a></li>
+<li><a href="#basic-properties">Basic Properties</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#subspaces-and-sums">Subspaces and Sums</a></li>
 </ol>
 <hr>
 <h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
 <p>It's almost ridiculous that I would expose you to free abelian groups before talking about vector spaces and linear algebra. Vector spaces and free abelian groups have a lot in common, but vector spaces are more familiar, more ubiquitous and easier to compute with.</p>
-<p>At their core, vector spaces are very simple and their definition will closely mimic that of groups and topological spaces. Recall that a group is a set with a binary operation, an identity and inverses for all its elements. A topological space is a set and a collection of "open sets" which include the set itself, the empty set, finite intersections and arbitrary unions of open sets. Vector spaces are defined in a similar manner.</p>
+<p>At their core, vector spaces are very simple and their definition will closely mimic that of groups and topological spaces. Recall that a group is a set with a binary operation, an identity and inverses for all its elements. A topological space is a set and a collection of &quot;open sets&quot; which include the set itself, the empty set, finite intersections and arbitrary unions of open sets. Vector spaces are defined in a similar manner.</p>
 <p>A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.</p>
 <p>You have likely encountered the idea of a vector before as some sort of arrow, anchored to the origin in euclidean space with some well-defined magnitude and direction.</p>
-<p><img src="../content/images/2019/03/vector-arrow.svg" alt="vector-arrow"></p>
+<p><img src="http://localhost:2368/content/images/2019/03/vector-arrow.svg" alt="vector-arrow"></p>
 <p>This is the sort of vector encountered in introductory physics classes. However, such arrows are not the only mathematical objects that can be added and scaled, so it would be silly to restrict our attention only to them. We will make a more abstract and inclusive definition of vector spaces, which are the main objects of study in linear algebra.</p>
 <p>We would like our definition to include some way to scale vectors so that we can expand of shrink them in magnitude while preserving their direction. Since in general there is no concept of vector multiplication, we will need to bring in additional elements by which we are allowed to multiply our vectors to achieve a scaling effect. These <em>scalars</em> will be the elements of a field, which we have encountered before in my posts on constructing the rational numbers, but I will give the definition again because it is so important.</p>
 <blockquote>
@@ -201,7 +214,7 @@ For all $a,b,c\in\F$, we have that $a(b+c)=ab+ac$.</p>
 </blockquote>
 <p>It is not too difficult to verify that the set $\R$ of real numbers is a field when considered with the usual addition and multiplication. Similarly, the sets $\C$ of complex numbers and $\Q$ of rational numbers form fields when equipped with their usual arithmetic.</p>
 <p>There are other examples of fields besides these familiar ones. For example, the set $\Z_3$ of integers modulo $3$ is a field when considered with addition and multiplication modulo $3$. The tables below describe addition and multiplication in $\Z_3$, so you can check for yourself that the field axioms hold.</p>
-<p><img src="../content/images/2019/03/Z_3-tables.svg" alt="Z_3-tables"></p>
+<p><img src="http://localhost:2368/content/images/2019/03/Z_3-tables.svg" alt="Z_3-tables"></p>
 <p>In fact, there are many more examples of finite fields. For any prime number $p$, the set $\Z_p$ of integers modulo $p$ forms a field. However, for our purposes we will usually only be interested in the fields $\R$ and $\C$.</p>
 <h3 id="vectorspacesanamevectorspaces">Vector Spaces<a name="vector-spaces"></a></h3>
 <p>With all of this in mind, we can move forward with defining the concept of a vector space over a field. This definition ensures that vectors interact with scalars and other vectors in a reasonable way.</p>
@@ -366,7 +379,7 @@ p(x) &amp;= \sum_{i=0}^n a_ix^i \\<br>
 <li>The set $U$ is closed under scalar multiplication.</li>
 </ol>
 </blockquote>
-<p>Proving this would consist largely of statements like "the associative property holds in $U$ because it holds in $V$." Therefore, I will omit the proof of this proposition.</p>
+<p>Proving this would consist largely of statements like &quot;the associative property holds in $U$ because it holds in $V$.&quot; Therefore, I will omit the proof of this proposition.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the set $U=\{(x,0\in\F^2\mid x\in\F\}$, where $\F$ is any field. This is the set of all ordered pairs with entries in $\F$ whose second component is the additive identity.</p>
 <p>The zero vector $(0,0)$ is certainly in $U$. From the definition of addition in $\F^2$, the sum of two vectors in $U$ must be of the form</p>
@@ -484,7 +497,7 @@ U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -514,21 +527,22 @@ U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

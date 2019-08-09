@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Cosets and Lagrange's Theorem</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosets and Lagrange&#x27;s Theorem</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/cosets-and-lagranges-theorem/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/cosets-and-lagranges-theorem/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Cosets and Lagrange's Theorem">
-    <meta property="og:description" content="It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.">
-    <meta property="og:url" content="http://localhost:2368/cosets-and-lagranges-theorem/">
-    <meta property="article:published_time" content="2019-03-05T03:53:03.000Z">
-    <meta property="article:modified_time" content="2019-03-06T03:37:34.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Cosets and Lagrange's Theorem">
-    <meta name="twitter:description" content="It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.">
-    <meta name="twitter:url" content="http://localhost:2368/cosets-and-lagranges-theorem/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cosets and Lagrange&#x27;s Theorem" />
+    <meta property="og:description" content="It&#x27;s a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you&#x27;ll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra." />
+    <meta property="og:url" content="http://localhost:2368/cosets-and-lagranges-theorem/" />
+    <meta property="article:published_time" content="2019-03-05T03:53:03.000Z" />
+    <meta property="article:modified_time" content="2019-03-06T03:37:34.000Z" />
+    <meta property="article:tag" content="algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Cosets and Lagrange&#x27;s Theorem" />
+    <meta name="twitter:description" content="It&#x27;s a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you&#x27;ll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra." />
+    <meta name="twitter:url" content="http://localhost:2368/cosets-and-lagranges-theorem/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/cosets-and-lagranges-theorem/",
     "datePublished": "2019-03-05T03:53:03.000Z",
     "dateModified": "2019-03-06T03:37:34.000Z",
+    "keywords": "algebra",
     "description": "It&#x27;s a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you&#x27;ll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -148,14 +161,14 @@ MathJax.Hub.Config({
 
         <header class="major">
             <span class="date">March 4, 2019</span>
-            <h1>Cosets and Lagrange's Theorem</h1>
+            <h1>Cosets and Lagrange&#x27;s Theorem</h1>
         </header>
 
 
         <div class="content">
             <ol>
-<li><a href="index.html#cosets">Cosets</a></li>
-<li><a href="index.html#lagrange's-theorem">Lagrange's Theorem</a></li>
+<li><a href="#cosets">Cosets</a></li>
+<li><a href="#lagrange's-theorem">Lagrange's Theorem</a></li>
 </ol>
 <hr>
 <h3 id="cosetsanamecosets">Cosets<a name="cosets"></a></h3>
@@ -193,7 +206,7 @@ MathJax.Hub.Config({
 <p>The proof that $x+H\subseteq H+x$ is completely analogous to the above, so we won't bother with it. We can thus conclude that $H+x=x+H$.</p>
 </blockquote>
 <p>This implies, for instance, that we could instead write $1+2\Z$ to denote the odd integers, but to me this doesn't look right for some reason and so I usually don't. In fact, for most of our purposes we really only need to consider one variety of coset. I tend to favor right cosets.</p>
-<p>Now it's time to prove my suspicion from the above example. This is important, so pay close attention. If you don't remember what a partition is, I advise you to read <a href="../equivalence-relations-and-quotient-sets/">my earlier post about them</a>.</p>
+<p>Now it's time to prove my suspicion from the above example. This is important, so pay close attention. If you don't remember what a partition is, I advise you to read <a href="http://localhost:2368/equivalence-relations-and-quotient-sets/">my earlier post about them</a>.</p>
 <blockquote>
 <p><strong>Theorem.</strong> If $H$ is a subgroup of a group $G$, then the (left/right) cosets of $H$ partition $G$.</p>
 <p><strong>Proof.</strong> We will prove the result for right cosets, since the proof for left cosets is practically identical.</p>
@@ -223,7 +236,7 @@ MathJax.Hub.Config({
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -253,21 +266,22 @@ MathJax.Hub.Config({
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Linear Maps</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/linear-maps/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/linear-maps/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Linear Maps">
-    <meta property="og:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.">
-    <meta property="og:url" content="http://localhost:2368/linear-maps/">
-    <meta property="article:published_time" content="2019-03-20T08:49:00.000Z">
-    <meta property="article:modified_time" content="2019-03-21T22:08:24.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Linear Maps">
-    <meta name="twitter:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.">
-    <meta name="twitter:url" content="http://localhost:2368/linear-maps/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Linear Maps" />
+    <meta property="og:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces." />
+    <meta property="og:url" content="http://localhost:2368/linear-maps/" />
+    <meta property="article:published_time" content="2019-03-20T08:49:00.000Z" />
+    <meta property="article:modified_time" content="2019-03-21T22:08:24.000Z" />
+    <meta property="article:tag" content="linear algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Linear Maps" />
+    <meta name="twitter:description" content="Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces." />
+    <meta name="twitter:url" content="http://localhost:2368/linear-maps/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="linear algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/linear-maps/",
     "datePublished": "2019-03-20T08:49:00.000Z",
     "dateModified": "2019-03-21T22:08:24.000Z",
+    "keywords": "linear algebra",
     "description": "Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-linear-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,9 +167,9 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#linear-maps">Linear Maps</a></li>
-<li><a href="index.html#basic-properties">Basic Properties</a></li>
-<li><a href="index.html#rank-and-nullity">Rank and Nullity</a></li>
+<li><a href="#linear-maps">Linear Maps</a></li>
+<li><a href="#basic-properties">Basic Properties</a></li>
+<li><a href="#rank-and-nullity">Rank and Nullity</a></li>
 </ol>
 <hr>
 <p>Sooo somewhere along the line I dropped the arrow notation for vectors. I was using $\v$ instead of $v$ to denote vectors to keep things clean and avoid confusion, but it was inevitable that this would eventually stop happening because it was a lot of work on my end.</p>
@@ -175,7 +188,7 @@ For any vector $u\in U$ and any scalar $a\in\F$, we have that $T(au)=aT(u)$.</p>
 </blockquote>
 <p>It is important to note that on the left side of each equation in this definition, the vector addition and scalar multiplication are being done in $U$. That is, we are applying $T$ to the sum $u_1+u_2\in U$ and to the scalar product $au\in U$. On the right, the addition and multiplication are being done in $V$. That is, we are first applying $T$ to $u_1$ and $u_2$ separately and adding the result in $V$, or applying it to $u$ and multiplying the result in $V$. So linear maps are precisely those functions for which it does not matter whether we add/multiply before or after applying the function.</p>
 <blockquote>
-<p><strong>Example.</strong> We define a "zero map" $0:U\to V$ between any two vector spaces by $0(u)=0$ for all vectors $u\in U$. This is obviously a linear map because</p>
+<p><strong>Example.</strong> We define a &quot;zero map&quot; $0:U\to V$ between any two vector spaces by $0(u)=0$ for all vectors $u\in U$. This is obviously a linear map because</p>
 <p>$$\begin{align}<br>
 0(u_1 + u_2) &amp;= 0 \\<br>
 &amp;= 0 + 0 \\<br>
@@ -298,7 +311,7 @@ T(au) &amp;= aTu \\<br>
 <p><strong>Proof.</strong> Since linear maps take subspaces to subspaces, and $U$ is a subspace of itself, it follows that $\im T$ is a subspace of $V$.</p>
 </blockquote>
 <h3 id="rankandnullityanamerankandnullity">Rank and Nullity<a name="rank-and-nullity"></a></h3>
-<p>Now we will explore the interesting relation between the dimensions of the kernel and image of a linear map. It will take some time to build up to the "big result" of this section, but it is well worth the wait.</p>
+<p>Now we will explore the interesting relation between the dimensions of the kernel and image of a linear map. It will take some time to build up to the &quot;big result&quot; of this section, but it is well worth the wait.</p>
 <p>To understand this connection, we begin by considering what injective and surjective linear maps look like.</p>
 <blockquote>
 <p><strong>Theorem.</strong> A linear map $T:U\to V$ is injective if and only if $\ker T = \set{0}$.</p>
@@ -388,7 +401,7 @@ v &amp;= Tu \\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -418,21 +431,22 @@ v &amp;= Tu \\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

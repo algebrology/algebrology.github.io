@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>The First Isomorphism Theorem</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/the-first-isomorphism-theorem/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/the-first-isomorphism-theorem/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="The First Isomorphism Theorem">
-    <meta property="og:description" content="It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!">
-    <meta property="og:url" content="http://localhost:2368/the-first-isomorphism-theorem/">
-    <meta property="article:published_time" content="2019-03-10T06:34:06.000Z">
-    <meta property="article:modified_time" content="2019-03-10T07:33:26.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="The First Isomorphism Theorem">
-    <meta name="twitter:description" content="It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!">
-    <meta name="twitter:url" content="http://localhost:2368/the-first-isomorphism-theorem/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The First Isomorphism Theorem" />
+    <meta property="og:description" content="It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!" />
+    <meta property="og:url" content="http://localhost:2368/the-first-isomorphism-theorem/" />
+    <meta property="article:published_time" content="2019-03-10T06:34:06.000Z" />
+    <meta property="article:modified_time" content="2019-03-10T07:33:26.000Z" />
+    <meta property="article:tag" content="algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The First Isomorphism Theorem" />
+    <meta name="twitter:description" content="It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!" />
+    <meta name="twitter:url" content="http://localhost:2368/the-first-isomorphism-theorem/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/the-first-isomorphism-theorem/",
     "datePublished": "2019-03-10T06:34:06.000Z",
     "dateModified": "2019-03-10T07:33:26.000Z",
+    "keywords": "algebra",
     "description": "It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -160,7 +173,7 @@ MathJax.Hub.Config({
 <p>If we know we are working with an additive abelian group, the identity will instead be written $0_G$ (or simply $0$).</p>
 </blockquote>
 <p>This notational convention may seem odd at first, but it will make things easier to understand in general.</p>
-<p>We will need the result I proved in my <a href="../normal-subgroups-and-quotient-groups/">previous post</a> that the kernel of a group homomorphism is a normal subgroup of the domain. We will also need the following theorem, which basically states that for any homomorphism, elements in the same coset of the kernel all get mapped to the same element.</p>
+<p>We will need the result I proved in my <a href="http://localhost:2368/normal-subgroups-and-quotient-groups/">previous post</a> that the kernel of a group homomorphism is a normal subgroup of the domain. We will also need the following theorem, which basically states that for any homomorphism, elements in the same coset of the kernel all get mapped to the same element.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $f:G\to H$ be a group homomorphism with $x,y\in G$ and let $K=\ker f$ to keep things concise. Then $Kx=Ky$ if and only if $f(x)=f(y)$.</p>
 <p><strong>Proof.</strong> Suppose first that $Kx=Ky$. Then $xy^{-1}\in K=\ker f$, so</p>
@@ -199,7 +212,7 @@ f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br>
 <p>We need to define a surjective homomorphism $f:\R^*\to \R^+$ for which $\ker f=\{-1,1\}$. This is actually really easy. We'll just let $f(x)=\abs{x}$. Clearly $f(x)=1$ precisely when either $x=1$ or $x=-1$, and so $\ker f=\{-1,1\}$ as desired. That $f$ is a homomorphism follows from the fact that $\abs{xy}=\abs{x}\abs{y}$ for all real numbers. It's just as easy to see that $f$ is surjective, because for any $x\in\R^+$ we know that at least $\abs{x}=x$.</p>
 <p>We've demonstrated that there exists a surjective homomorphism from $\R^*$ to $\R^+$ whose kernel is $\{-1,1\}$. The first isomorphism theorem immediately yields the desired result — that $\frac{\R^*}{\{-1,1\}}$ is isomorphic to $\R^+$.</p>
 <p>We don't even need to construct the isomorphism, although it's fairly straightforward to do so (the proof of the first isomorphism theorem tells us how).</p>
-<p>And intuitively, these groups <em>should</em> be isomorphic, if we think of the quotient group $\frac{\R^*}{\{-1,1\}}$ in the correct way. Basically, $\R^*$ is a gluing together of two copies of $\R^+$ — one copy containing all the positive numbers, and the other a mirror image containing all the negative numbers. The quotient group essentially "factors out" the sign of each number, leaving us with only one copy. The result is something that looks, acts and feels exactly like $\R^+$.</p>
+<p>And intuitively, these groups <em>should</em> be isomorphic, if we think of the quotient group $\frac{\R^*}{\{-1,1\}}$ in the correct way. Basically, $\R^*$ is a gluing together of two copies of $\R^+$ — one copy containing all the positive numbers, and the other a mirror image containing all the negative numbers. The quotient group essentially &quot;factors out&quot; the sign of each number, leaving us with only one copy. The result is something that looks, acts and feels exactly like $\R^+$.</p>
 </blockquote>
 
         </div>
@@ -208,7 +221,7 @@ f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -238,21 +251,22 @@ f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

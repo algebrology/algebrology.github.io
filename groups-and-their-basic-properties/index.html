@@ -1,35 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Groups and their Basic Properties</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <meta name="description" content="A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact...">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <meta name="description" content="A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact..." />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/groups-and-their-basic-properties/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/groups-and-their-basic-properties/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Groups and their Basic Properties">
-    <meta property="og:description" content="Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other.">
-    <meta property="og:url" content="http://localhost:2368/groups-and-their-basic-properties/">
-    <meta property="article:published_time" content="2017-04-07T23:05:25.000Z">
-    <meta property="article:modified_time" content="2019-02-20T04:47:34.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Groups and their Basic Properties">
-    <meta name="twitter:description" content="Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other.">
-    <meta name="twitter:url" content="http://localhost:2368/groups-and-their-basic-properties/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Groups and their Basic Properties" />
+    <meta property="og:description" content="Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other." />
+    <meta property="og:url" content="http://localhost:2368/groups-and-their-basic-properties/" />
+    <meta property="article:published_time" content="2017-04-07T23:05:25.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:47:34.000Z" />
+    <meta property="article:tag" content="algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Groups and their Basic Properties" />
+    <meta name="twitter:description" content="Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other." />
+    <meta name="twitter:url" content="http://localhost:2368/groups-and-their-basic-properties/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebra" />
     
     <script type="application/ld+json">
 {
@@ -55,6 +60,7 @@
     "url": "http://localhost:2368/groups-and-their-basic-properties/",
     "datePublished": "2017-04-07T23:05:25.000Z",
     "dateModified": "2019-02-20T04:47:34.000Z",
+    "keywords": "algebra",
     "description": "Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +69,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -96,6 +102,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -122,18 +130,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -156,15 +169,15 @@ MathJax.Hub.Config({
         <div class="content">
             <h3 id="contents">Contents</h3>
 <ol>
-<li><a href="index.html#introduction">Introduction</a></li>
-<li><a href="index.html#the-definition">The Definition</a></li>
-<li><a href="index.html#examples">Examples</a></li>
-<li><a href="index.html#basic-properties">Basic Properties</a></li>
-<li><a href="index.html#subgroups">Subgroups</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-definition">The Definition</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#basic-properties">Basic Properties</a></li>
+<li><a href="#subgroups">Subgroups</a></li>
 </ol>
 <hr>
 <h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
-<p>I think it's probably time I wrote a post about something other than topology, so today I'm going to break way into the field of algebra.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> It's difficult to explain exactly what algebra is until you've been exposed to some of it, but I like to think of algebra as the study of structure. Using algebraic techniques, seemingly different objects can be shown to be not so different after all, and many difficult problems can be solved relatively easy using such observations.</p>
+<p>I think it's probably time I wrote a post about something other than topology, so today I'm going to break way into the field of algebra.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> It's difficult to explain exactly what algebra is until you've been exposed to some of it, but I like to think of algebra as the study of structure. Using algebraic techniques, seemingly different objects can be shown to be not so different after all, and many difficult problems can be solved relatively easy using such observations.</p>
 <p>The first algebraic object I'd like to introduce, as you may have guessed, is a group. This will not be my only post on groups, since there is a lot to say about them. Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other. Before I define a group, I need to talk a little bit about binary operations.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>binary operation</strong> $\circ$ on a set $X$ is a function $\circ:X\times X\to X$.</p>
@@ -192,19 +205,19 @@ MathJax.Hub.Config({
 </blockquote>
 <p>Technically there are infinitely many 'trivial groups' since that one element could be anything, but all trivial groups are really the same. Let's call the element $e$. To see that the trivial group is in fact a group, first note that $e$ must be the group's identity element. Thus, $(ee)e=ee=e(ee)$ and so we have associativity. Furthermore, since $ee=ee=e$, clearly $e$ is its own inverse.</p>
 <p>The set of integers under addition also forms a group. Associativity is a property of addition itself, and you probably use it every day without even thinking about it. The identity element is zero, since $x+0=0+x=x$ for any $x\in\mathbb{Z}$. Lastly, the inverse of any integer $x$ is $-x$, since $x+(-x)=0$.</p>
-<p>Similarly, the set $\mathbb{R}^+$ of positive real numbers under multiplication forms a group. Again, associativity is obvious.<sup class="footnote-ref"><a href="index.html#fn2" id="fnref2">[2]</a></sup> The identity element is $1$ since $1\cdot x=x\cdot 1=x$ for any $x\in\mathbb{R}^+$. Lastly, the inverse of any $x\in\mathbb{R}^+$ is $\frac{1}{x}$. Notice that the set of all real numbers does not form a group under multiplication because zero has no multiplicative inverse!</p>
+<p>Similarly, the set $\mathbb{R}^+$ of positive real numbers under multiplication forms a group. Again, associativity is obvious.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> The identity element is $1$ since $1\cdot x=x\cdot 1=x$ for any $x\in\mathbb{R}^+$. Lastly, the inverse of any $x\in\mathbb{R}^+$ is $\frac{1}{x}$. Notice that the set of all real numbers does not form a group under multiplication because zero has no multiplicative inverse!</p>
 <p>The last example I'd like to talk about is considerably more abstract, and probably not something you would ever have considered might be a group. It is called the <strong>dihedral group</strong> (or <strong>group of symmetries</strong>) of a regular polygon. We write $D_n$ to denote the dihedral group of the $n$-sided regular polygon. How is $D_n$ defined? I'm not quite ready to do it rigorously, since we haven't talked about permutations yet, but I'll explain it intuitively.</p>
 <p>Basically, $D_n$ is the set of all rotations and reflections which preserve the locations of the vertices. The group operation is composition of these rotations and reflections, which essentially amounts to performing them one after the other. For instance, consider the equilateral triangle (the $3$-sided regular polygon)</p>
-<p><img src="../content/images/2017/04/equilateral-triangle-1.svg" alt="equilateral triangle"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/equilateral-triangle-1.svg" alt="equilateral triangle"></p>
 <p>where I've numbered the vertices to avoid the tremendous confusion that would otherwise ensue. Here's one of the vertex location preserving rotations we can perform, $r_1$:</p>
-<p><img src="../content/images/2017/04/r_1.svg" alt="r_1"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/r_1.svg" alt="r_1"></p>
 <p>Here's another one, $r_2$:</p>
-<p><img src="../content/images/2017/04/r_2-1.svg" alt="r_2"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/r_2-1.svg" alt="r_2"></p>
 <p>It's not too difficult to see that $r_2$ is really just $r_1$ applied twice! That is, $r_2=r_1\circ r_1$. Remember that this is the notation of function composition, so the first rotation applied is written on the right.</p>
 <p>Now that we have a better grasp of what's going on, let's think about the identity element of $D_3$. It should hopefully make sense that the identity element is the rotation by zero degrees. That is, the identity element is the act of doing nothing to the triangle. Call this element $e$. It should be clear that $e\circ r_1=r_1\circ e=r_1$ and likewise for $r_2$, so things are looking good so far.</p>
 <p>What are the inverses of $r_1$ and $r_2$? We just need to figure out how to get the vertices back to their original positions. It looks like $r_1\circ r_2=r_2\circ r_1=e$, so $r_1$ and $r_2$ are actually inverses!</p>
 <p>We've exhausted all the rotations, so now we need to look at the reflections. There are three of them, and each preserves the location of one vertex while swapping the other two. Let's call them $f_1, f_2$ and $f_3$, where the subscript denotes the vertex preserved under each. For instance, here's $f_1$:</p>
-<p><img src="../content/images/2017/04/f_1.svg" alt="f_1"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/f_1.svg" alt="f_1"></p>
 <p>What is the inverse of each reflection? If you reflect something twice along the same axis, it goes back to its original position. That is, $f_1, f_2$ and $f_3$ are each their own inverse.</p>
 <p>It's important to remember that the elements of the group are these reflections and rotations, rather than the triangles they act upon. I'll make all this more precise later when I talk about permutations, but for now I think this visual explanation should suffice.</p>
 <p>Next, $D_4$ is the dihedral group of the square, with four distinct rotations (where I have counted the identity among the rotations) and four reflections.</p>
@@ -248,18 +261,18 @@ a &amp;= e a &amp; \scriptstyle\textit{identity}\\<br>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>subgroup</strong> $H$ of a group $G$ is a subset of $G$ which is itself a group under the group operation on $G$.</p>
 </blockquote>
-<p>If $H$ is a subgroup of $G$, I will sometimes write $H\leq G$. This cannot really be confused with the "less than or equal to" relation because groups are not numbers and thus have no such concept.</p>
-<p>As an example, the even integers (denoted $2\mathbb{Z}$) are a subgroup of $\mathbb{Z}$ under addition. This is because the sum of two even integers is always even. However, the odd integers do not form a subgroup of $\mathbb{Z}$ under addition because the sum of two odd integers is not odd.<sup class="footnote-ref"><a href="index.html#fn3" id="fnref3">[3]</a></sup></p>
+<p>If $H$ is a subgroup of $G$, I will sometimes write $H\leq G$. This cannot really be confused with the &quot;less than or equal to&quot; relation because groups are not numbers and thus have no such concept.</p>
+<p>As an example, the even integers (denoted $2\mathbb{Z}$) are a subgroup of $\mathbb{Z}$ under addition. This is because the sum of two even integers is always even. However, the odd integers do not form a subgroup of $\mathbb{Z}$ under addition because the sum of two odd integers is not odd.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
 <p>I pointed out earlier that the rotations in $D_3$ themselves formed a group under function composition, and this means that they are a subgroup of $D_3$.</p>
 <p>In general, a group does not necessarily have any subgroups other than itself and the trivial group. We shall see later that if a subgroup (of a finite group) is to exist, it must contain a very predictable number of elements.</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Although my true motivation is perhaps more sinister than you could possibly imagine. 😈 <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>Although my true motivation is perhaps more sinister than you could possibly imagine. 😈 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>It's really not. When I inevitably define the real numbers from scratch as equivalence classes of Cauchy sequences of rational numbers in a future post, showing associativity will actually be something of a chore. As will everything else. <a href="index.html#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>It's really not. When I inevitably define the real numbers from scratch as equivalence classes of Cauchy sequences of rational numbers in a future post, showing associativity will actually be something of a chore. As will everything else. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>The odd integers form what is called a coset, $2\mathbb{Z}+1$ of the subgroup $2\mathbb{Z}$, but I will talk about this in a later post. <a href="index.html#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>The odd integers form what is called a coset, $2\mathbb{Z}+1$ of the subgroup $2\mathbb{Z}$, but I will talk about this in a later post. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -270,7 +283,7 @@ a &amp;= e a &amp; \scriptstyle\textit{identity}\\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -300,21 +313,22 @@ a &amp;= e a &amp; \scriptstyle\textit{identity}\\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

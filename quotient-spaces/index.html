@@ -1,35 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Quotient Spaces</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <meta name="description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent...">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <meta name="description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent..." />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/quotient-spaces/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/quotient-spaces/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Quotient Spaces">
-    <meta property="og:description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post.">
-    <meta property="og:url" content="http://localhost:2368/quotient-spaces/">
-    <meta property="article:published_time" content="2017-04-09T14:16:40.000Z">
-    <meta property="article:modified_time" content="2019-02-20T04:43:13.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Quotient Spaces">
-    <meta name="twitter:description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post.">
-    <meta name="twitter:url" content="http://localhost:2368/quotient-spaces/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Quotient Spaces" />
+    <meta property="og:description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post." />
+    <meta property="og:url" content="http://localhost:2368/quotient-spaces/" />
+    <meta property="article:published_time" content="2017-04-09T14:16:40.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:43:13.000Z" />
+    <meta property="article:tag" content="topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Quotient Spaces" />
+    <meta name="twitter:description" content="The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post." />
+    <meta name="twitter:url" content="http://localhost:2368/quotient-spaces/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="topology" />
     
     <script type="application/ld+json">
 {
@@ -55,6 +60,7 @@
     "url": "http://localhost:2368/quotient-spaces/",
     "datePublished": "2017-04-09T14:16:40.000Z",
     "dateModified": "2019-02-20T04:43:13.000Z",
+    "keywords": "topology",
     "description": "The notion of a quotient space will effectively allow us to glue pieces of topological spaces together. This corresponds to the collapsing of equivalent subsets to points which occurs in quotient sets, as I mentioned in my last post.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +69,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -96,6 +102,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -122,18 +130,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -177,11 +190,11 @@ MathJax.Hub.Config({
 <p>While it's true that any set $A$ can be turned into a quotient space by defining a suitable surjection as our quotient map, we generally restrict our interest to partitions of $A$. Let's first visualize the construction of a simple quotient space, which you may have seen before. We will then figure out how to formally document this process.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the square $[0,1]^2$ in the standard topology. We can first create a cylinder from the square by gluing two opposite edges together.</p>
-<p><img src="../content/images/2017/04/square_to_cylinder.svg" alt="square to cylinder"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/square_to_cylinder.svg" alt="square to cylinder"></p>
 <p>Next, we can glue the two open circular ends of the cylinder together to form a torus.</p>
-<p><img src="../content/images/2017/04/cylinder_to_torus.svg" alt="cylinder to torus"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/cylinder_to_torus.svg" alt="cylinder to torus"></p>
 <p>What we've really done here is glue the opposite edges of the square together, one pair at a time. A much more concise diagram representing this act simply identifies opposite edges of the square with each other, and the gluing is implied.</p>
-<p><img src="../content/images/2017/04/square_to_torus.svg" alt="square to torus"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/square_to_torus.svg" alt="square to torus"></p>
 <p>In such diagrams, it is understood that the two edges with one arrow get glued to each other and the two edges with two arrows get glued to each other. In this case everything is symmetrical so it doesn't matter which pair gets glued first, but there are probably cases in which it does matter. It is conventional to first glue together sides with one arrow, then two arrows and so on.</p>
 <p>It is this last diagram which provides us with something we can really use. This <em>identification</em> of sides is crucial to defining the torus as a quotient space of the square. What we are really doing here is partitioning the square in such a way that certain pairs of points on the boundary get grouped into the same equivalence class. More precisely, we partition the square into many sets, namely every point in the interior of the square and each pair of opposite points on the square's boundary:</p>
 <p>$$\begin{align}<br>
@@ -190,14 +203,14 @@ C_x     &amp;= \{(x,0),(x,1)\}\text{ for } x\in (0,1), \\<br>
 D_y     &amp;= \{(0,y),(1,y)\}\text{ for } y\in (0,1), \\<br>
 E        &amp;= \{(0,0),(0,1),(1,0),(1,1)\}.<br>
 \end{align}$$</p>
-<p>Allow me to explain these choices a little bit. We have defined one set $B_{x,y}$ in the partition for every point $(x,y)$ in the interior of the square. This is because in our quotient space, we do not want the interior of the square to collapse at all, and so every point should be in its own equivalence class. There is one set $C_x$ for every pair of points along the bottom and top of the square, and one set $C_y$ for every pair along the left and right edges. Putting these pairs into the same equivalence classes ensures that they will become one thing, i.e. 'glued together,' in the quotient space. Lastly, $E$ includes the corners of the square separately to avoid double-counting them.<sup class="footnote-ref"><a href="index.html#fn1" id="fnref1">[1]</a></sup> This also ensures explicitly that the four corners of the square will all end up being glued together.</p>
+<p>Allow me to explain these choices a little bit. We have defined one set $B_{x,y}$ in the partition for every point $(x,y)$ in the interior of the square. This is because in our quotient space, we do not want the interior of the square to collapse at all, and so every point should be in its own equivalence class. There is one set $C_x$ for every pair of points along the bottom and top of the square, and one set $C_y$ for every pair along the left and right edges. Putting these pairs into the same equivalence classes ensures that they will become one thing, i.e. 'glued together,' in the quotient space. Lastly, $E$ includes the corners of the square separately to avoid double-counting them.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> This also ensures explicitly that the four corners of the square will all end up being glued together.</p>
 <p>Going back to our original definitions for quotient maps and spaces, we define the set $A$ as the collection of all sets in this partition and the quotient map $f$ as the surjective function mapping each point in the square to the set in $A$ which contains it. Then it is easy to show that the resulting quotient space is (homeomorphic to) the torus $S^1\times S^1$, so we have accomplished what we set out to.</p>
 </blockquote>
 <p>Many, many more examples of quotient spaces can be generated easily in much the same manner. We can define the sphere as a quotient space of pretty much any polygon, for instance. However, it is tedious and difficult to draw diagrams and they can be found all over the internet anyway. This post is also nice and short for a change, so I'm going to stop here. The good news is that I've now introduced most of the common methods for constructing new topological spaces!</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Remember that the sets in a partition must be pairwise disjoint. <a href="index.html#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>Remember that the sets in a partition must be pairwise disjoint. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
@@ -208,7 +221,7 @@ E        &amp;= \{(0,0),(0,1),(1,0),(1,1)\}.<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -238,21 +251,22 @@ E        &amp;= \{(0,0),(0,1),(1,0),(1,1)\}.<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

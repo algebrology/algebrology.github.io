@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Group Homomorphisms</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/group-homomorphisms/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/group-homomorphisms/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Group Homomorphisms">
-    <meta property="og:description" content='A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the "correct" type of maps.'>
-    <meta property="og:url" content="http://localhost:2368/group-homomorphisms/">
-    <meta property="article:published_time" content="2019-03-03T05:37:37.000Z">
-    <meta property="article:modified_time" content="2019-03-03T06:58:35.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Group Homomorphisms">
-    <meta name="twitter:description" content='A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the "correct" type of maps.'>
-    <meta name="twitter:url" content="http://localhost:2368/group-homomorphisms/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Group Homomorphisms" />
+    <meta property="og:description" content="A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the &quot;correct&quot; type of maps." />
+    <meta property="og:url" content="http://localhost:2368/group-homomorphisms/" />
+    <meta property="article:published_time" content="2019-03-03T05:37:37.000Z" />
+    <meta property="article:modified_time" content="2019-03-03T06:58:35.000Z" />
+    <meta property="article:tag" content="algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Group Homomorphisms" />
+    <meta name="twitter:description" content="A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the &quot;correct&quot; type of maps." />
+    <meta name="twitter:url" content="http://localhost:2368/group-homomorphisms/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/group-homomorphisms/",
     "datePublished": "2019-03-03T05:37:37.000Z",
     "dateModified": "2019-03-03T06:58:35.000Z",
+    "keywords": "algebra",
     "description": "A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the &quot;correct&quot; type of maps.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,18 +167,18 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#introduction">Introduction</a></li>
-<li><a href="index.html#homomorphisms">Homomorphisms</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#homomorphisms">Homomorphisms</a></li>
 </ol>
 <hr>
 <h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
-<p>A long time ago I wrote <a href="../groups-and-their-basic-properties/">my first post about group theory</a>, in which I defined groups and subgroups, gave several examples of groups and proved a few of their basic but important properties. Hopefully at the very least you remember that a group is a set with an associative binary operation, an identity element and inverses for all its elements. The identity, as well as each element's invers, is unique and we can cancel like terms from both sides of equations like we generally do without thinking anyway.</p>
+<p>A long time ago I wrote <a href="http://localhost:2368/groups-and-their-basic-properties/">my first post about group theory</a>, in which I defined groups and subgroups, gave several examples of groups and proved a few of their basic but important properties. Hopefully at the very least you remember that a group is a set with an associative binary operation, an identity element and inverses for all its elements. The identity, as well as each element's invers, is unique and we can cancel like terms from both sides of equations like we generally do without thinking anyway.</p>
 <p>Before I dive in, there are just a few quick things we will need before we can talk about homomorphisms. The first is an easy way to identify whether a subset of a group is actually a subgroup.</p>
 <blockquote>
 <p><strong>Lemma.</strong> A subset $H$ of a group $G$ is a subgroup of $G$ if it is nonempty and if $ab^{-1}\in H$ whenever $a,b\in H$.</p>
 <p><strong>Proof.</strong> Since the operation on $H$ is inherited from $G$, it is clearly associative. Next, since $H$ is nonempty there exists $x\in H$, and thus by hypothesis $xx^{-1}=e\in H$, where $e$ is the identity element. Furthermore, since $e,x\in H$, we have that $ex^{-1}=x^{-1}\in H$, so $H$ contains inverses for all its elements. Finally, for any $a,b\in H$ we have established that $b^{-1}\in H$. So again by hypothesis, $a(b^{-1})^{-1}=ab\in H$, and so $H$ is closed under products. We have shown that $H$ is a group, and thus it is a subgroup of $G$.</p>
 </blockquote>
-<p>Notice that when I say something is "closed under products," what this really means is that the group operation is a well defined binary operation. For multiplicative groups, the word "product" fits nicely. For abelian groups with additive notation, it doesn't make quite as much sense but I will probably slip up and use it anyway.</p>
+<p>Notice that when I say something is &quot;closed under products,&quot; what this really means is that the group operation is a well defined binary operation. For multiplicative groups, the word &quot;product&quot; fits nicely. For abelian groups with additive notation, it doesn't make quite as much sense but I will probably slip up and use it anyway.</p>
 <p>For the most part, this lemma will simply make it a little bit faster to verify that certain things are subgroups of other groups. This will help keep future proofs nice and short.</p>
 <p>The next thing I should mention is the concept of a group's order. Because I have not talked about cardinality anywhere on my blog yet, I will only define order for finite groups. Luckily, this is all we'll need for a while.</p>
 <blockquote>
@@ -173,7 +186,7 @@ MathJax.Hub.Config({
 </blockquote>
 <p>That's a pretty simple definition. The trivial group contains only the identity, so it is a group of order one. The dihedral group of the regular $n$-gon, written $D_n$ and which I talked about in my first post on groups, has $2n$ elements and thus $\abs{D_n}=2n$. There are an abundance of examples of interesting finite groups, and the order of a finite group is really just its size.</p>
 <h3 id="homomorphismsanamehomomorphisms">Homomorphisms<a name="homomorphisms"></a></h3>
-<p>A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the "correct" type of maps. For topological spaces, it is the continuous maps that help us to understand their structure. For groups, we have the following analogous idea.</p>
+<p>A recurring theme in mathematics is that examining the maps between objects is indispensable to understanding those objects themselves. Of course, that depends on choosing the &quot;correct&quot; type of maps. For topological spaces, it is the continuous maps that help us to understand their structure. For groups, we have the following analogous idea.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>group homomorphism</strong> between groups $G$ and $H$ is a function $f:G\to H$ such that $f(x)f(y)=f(xy)$ for all $x,y\in G$.</p>
 </blockquote>
@@ -197,7 +210,7 @@ f(x) + f(y) &amp;= \log x +\log y \\<br>
 &amp;= f(x \cdot y).<br>
 \end{align}$$</p>
 <p>In addition, we know that $f$ is bijective because it has an inverse function, the exponential map $f^{-1}:\R\to\R^+$ given explicitly by $f^{-1}(x)=e^x$.</p>
-<p>What does it really mean when we say that these groups are isomorphic? It isn't just some meaningless abstract statement that these groups are "essentially" the same. It actually means that we can do algebra in one and then easily transfer it over to the other group! That is, we can do multiplication in $\R^+$ simply by doing the corresponding addition in $\R$ and then applying the logarithm. This is the principle that slide rules are based on. Addition is easier than multiplication, so we add our numbers by hand and then use the magic slide rule isomorphism machine to take us between groups and into the world of multiplication.</p>
+<p>What does it really mean when we say that these groups are isomorphic? It isn't just some meaningless abstract statement that these groups are &quot;essentially&quot; the same. It actually means that we can do algebra in one and then easily transfer it over to the other group! That is, we can do multiplication in $\R^+$ simply by doing the corresponding addition in $\R$ and then applying the logarithm. This is the principle that slide rules are based on. Addition is easier than multiplication, so we add our numbers by hand and then use the magic slide rule isomorphism machine to take us between groups and into the world of multiplication.</p>
 </blockquote>
 <p>Isomorphisms may be useful in certain cases, but they are actually a bit boring precisely <em>because</em> they perfectly preserve structure. After all, how interesting is a flat renaming of group elements? We might as well just call two isomorphic groups the same. General homomorphisms are actually much more interesting.</p>
 <p>It may be enlightening to see an example of a homomorphism that is not an isomorphism, but is still surprisingly structure-preserving.</p>
@@ -292,7 +305,7 @@ ab^{-1} &amp;= f(x)f(y)^{-1} \\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -322,21 +335,22 @@ ab^{-1} &amp;= f(x)f(y)^{-1} \\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

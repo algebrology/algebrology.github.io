@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Dual Spaces</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/dual-spaces/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dual Spaces" />
+    <meta property="og:description" content="Since I haven&#x27;t posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces." />
+    <meta property="og:url" content="http://localhost:2368/dual-spaces/" />
+    <meta property="article:published_time" content="2019-08-09T03:55:00.000Z" />
+    <meta property="article:modified_time" content="2019-08-09T19:13:30.000Z" />
+    <meta property="article:tag" content="linear algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dual Spaces" />
+    <meta name="twitter:description" content="Since I haven&#x27;t posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces." />
+    <meta name="twitter:url" content="http://localhost:2368/dual-spaces/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="linear algebra" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "http://localhost:2368/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Dual Spaces",
+    "url": "http://localhost:2368/dual-spaces/",
+    "datePublished": "2019-08-09T03:55:00.000Z",
+    "dateModified": "2019-08-09T19:13:30.000Z",
+    "keywords": "linear algebra",
+    "description": "Since I haven&#x27;t posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="http://localhost:2368">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Dual Spaces</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/eric/">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2019-08-08">2019-08-08</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-dual-space">The Dual Space</a></li>
+<li><a href="#the-double-dual-space">The Double Dual Space</a></li>
+</ol>
+<hr></hr>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<p>Since I haven't posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces. Since we care only about abstract properties of vector spaces and not about any specific vector space, I will talk generally about a vector space $V$ of dimension $n$ over a field $\F$ for the remainder of this post.</p>
+<p>As we discovered previously, every finite dimensional vector space has a basis. That is, there exists a linearly independent collection $(e_1,e_2,\ldots,e_n)$ of vectors in $V$ for which any vector $v$ in $V$ can be expressed as a linear combination of these basis vectors. That is, for any $v\in V$ there exist scalars $(v^i)_{i=1}^n$ in $\F$ for which</p>
+<p>$v=\sum_{i=1}^n v^i e_i.$</p>
+<p>Note that in the expression above, I have moved the index on $v^i$ into the upper position, whereas in previous posts I would have written the same scalars as $v_i$. There is a good reason for this, and it is commonly seen in physics and differential geometry. The reason will become apparent shortly, but for now just realize that using superscripts for index placement is really no different than using subscripts, and it <strong>does not</strong> represent exponentiation. For instance, $v^2$ represents the second scalar in a list and <strong>not</strong> $v\cdot v$.</p>
+<p>Having a basis for our vector space is nice for two main reasons:</p>
+<ol>
+<li>Any vector can be expressed in terms of the basis because the basis vectors span our vector space.</li>
+<li>There is no redundancy in this expression because the basis vectors are linearly independent.</li>
+</ol>
+<p>Recall also that a linear map $T$ between vector spaces $U$ and $V$ is a function $T:U\to V$ for which</p>
+<ol>
+<li>$T(u_1+u_2) = T(u_1) + T(u_2)$ for any $u_1, u_2 \in U$.</li>
+<li>$T(au) = aT(u)$ for any $a\in F$ and any $u\in U$.</li>
+</ol>
+<p>We learned that linear maps are completely determined by the way that they act on basis vectors. In fact, we can specify the images of the basis vectors and <em>extend by linearity</em> to obtain a linear map on the whole vector space.</p>
+<p>Now let's turn everything on its head.</p>
+<h3 id="thedualspaceanamethedualspace">The Dual Space<a name="the-dual-space"></a></h3>
+<p>Let's define the most important concept of this post:</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a vector space $V$ over a field $\F$, its <strong>dual space</strong>, written $V^*$, is the set of all linear maps from $V$ to $\F$.</p>
+</blockquote>
+<p>Of course, we are now talking about $\F$ as a vector space over itself, or else the idea of a linear map would make no sense.</p>
+<p>This definition may seem intimidating at first, but it's really not that complicated. An element of the dual space is just a linear function which eats a vector and returns a scalar. Elements of the dual space are often called <strong>covectors</strong> or <strong>linear functionals</strong>.</p>
+<p>Now, the fact that the dual space literally has the word "space" in its name is hopefully suggestive that it is itself a vector space. I suppose there might technically be multiple ways to turn this set into a vector space, but the canonical way is as follows:</p>
+<blockquote>
+<ul>
+<li>The zero vector ${\bf 0}\in V^*$ is the zero map ${\bf 0}:V\to\F$ which maps every vector to the zero element of $\F$. That is, ${\bf 0}(v)=0$ for every $v\in V$.</li>
+<li>Vector addition is just function addition. That is, if $s$ and $t$ are maps in the dual space, then $s+t$ is another map defined by $(s+t)(v) = s(v) + t(v)$.</li>
+<li>Scalar multiplication is inherited directly. That is, if $a$ is a scalar in $\F$ and $t$ is a map in the dual space, then $at$ is another map defined by $(at)(v) = a\cdot t(v)$.</li>
+<li>Additive inverses are given by scalar multiplication by $-1$. That is, if $t$ is a map in the dual space then $-t=(-1)\cdot t$.</li>
+</ul>
+<p>It is hopefully evident that all of the above maps are linear, and that with these definitions, the dual space satisfies the axioms of a vector space. I will not check these properties here because it is not difficult or instructive to do so.</p>
+</blockquote>
+<p>Now, the next natural question to ask is how the dual space $V^*$ is related to the original space $V$. The answer is not immediately obvious. There is no canonical mapping which takes any vector and picks out a specific covector which it is related to. That's not to say we can't form a bijection from $V$ to $V^*$, it just wouldn't have much meaning, and there is not an obvious candidate for a <em>favored</em> bijection.</p>
+<p>In fact, creating such a bijection would require first choosing a basis for $V$. Mathematicians do not consider this to be a natural correspondence, since it relies on picking some arbitrary basis, so we say there is no <strong>natural</strong> or <strong>canonical</strong> correspondence between $V$ and $V^*$.</p>
+<p>However, if we try to figure out the dimension of the dual space, the picture begins to become a little clearer. Before we proceed, we'll need the following definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> Given $n\in\N$, the <strong>Kronecker delta</strong> is the function $\delta:\Z_n\times \Z_n\to\R$ defined by</p>
+<p>$\delta^i_j =<br />
+\begin{cases}<br />
+0 &amp; \text{if } i\ne j, \\<br />
+1 &amp; \text{if } i = j.<br />
+\end{cases}$</p>
+</blockquote>
+<p>The weird upper and lower index notation in place of a more traditional notation for function arguments, such as $\delta(i, j)$, does have a purpose which will soon become apparent.</p>
+<p>Alright, we're now well armed to make a very bold claim:</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $(e_i)_{i=1}^n$ is a basis for a finite dimensional vector space $V$, then $(e^i)_{i=1}^n$ is a basis for $V^*$, where each basis covector $e^i:V\to\F$ is defined on basis vectors by $e^i(e_j)=\delta^i_j$ and defined on all of $V$ by extending by linearity.</p>
+<p><strong>Aside.</strong> Before we try to prove this, let's take a look at what these basis covectors really are. Since $(e_i)_{i=1}^n$ is a basis for $V$, we can write any vector $v\in V$ as $v=\sum_{j=1}^n v^j e_j$. Applying the $i$th basis covector to $v$ and using its linearity, we get</p>
+<p>$\begin{align}<br />
+e^i(v) &amp;= e^i\left(\sum_{j=1}^n v^j e_j\right) \\<br />
+&amp;= \sum_{j=1}^n v^j e^i(e_j) \\<br />
+&amp;= \sum_{j=1}^n v^j \delta^i_j \\<br />
+&amp;= v^i.<br />
+\end{align}$</p>
+<p>That is, $e^i$ is the linear map which picks out only the $i$th component of $v$ and discards the rest. It is in some sense a projection map onto the $i$th coordinate.</p>
+<p>In order to understand why the complicated-looking sum above broke down into such a simple expression, recall the defining property of the Kronecker delta function. For almost every $j$, the Kronecker delta was identically zero and so those $v^j$ terms do not contribute to the sum. The only term for which it wasn't zero was the $i$th term, and so we were left with only $v^i$. This ability of the Kronecker delta function to simplify ugly sums is almost magical, and we will see it over and over again.</p>
+<p><strong>Proof.</strong> In order to show that $(e^i)_{i=1}^n$ is a basis for $V^*$, we need to show that it is linearly independent and that it spans $V^*$.</p>
+<p>We argue first that it is linearly independent. Suppose $\sum_{i=1}^n a_i e^i=0$ for some scalars $(a_i)_{i=1}^n$. Then for any vector $v=\sum_{j=1}^n v^j e_j$ in $V$,</p>
+<p>\begin{align}<br />
+\left(\sum_{i=1}^n a_i e^i\right)(v) &amp;= \left(\sum_{i=1}^n a_i e^i\right)\left(\sum_{j=1}^n v^j e_j\right) \\<br />
+&amp;= \sum_{i=1}^n\sum_{i=j}^n a_i v^j e^i(e_j) \\<br />
+&amp;= \sum_{i=1}^n\sum_{i=j}^n a_i v^j \delta^i_j \\<br />
+&amp;= \sum_{i=1}^n a_i v^i \\<br />
+&amp;= 0.<br />
+\end{align}</p>
+<p>Since the $v^i$ were arbitrary, the only way this can only be true is if the scalars $(a_i)_{i=1}^n$ are identically zero. Thus, $(e^i)_{i=1}^n$ are linearly independent.</p>
+<p>We argue next that the covectors $(e^i)_{i=1}^n$ span the dual space. To this end, suppose $s$ is any covector in $V^*$. For any vector $v=\sum_{j=1}^n v^j e_j$, we have from the linearity of $s$ that</p>
+<p>\begin{align}<br />
+s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br />
+&amp;= \sum_{j=1}^n v^j s(e_j).<br />
+\end{align}</p>
+<p>Define $s_j = s(e_j)$ for each $1\le j \le n$. Then</p>
+<p>\begin{align}<br />
+\left(\sum_{j=1}^n s_j e^j\right)(v) &amp;= \left(\sum_{j=1}^n s_j e^j\right)\left(\sum_{i=1}^n v^i e_i\right) \\<br />
+&amp;= \sum_{j=1}^n\sum_{i=1}^n s_j v^i e^j(e_i) \\<br />
+&amp;= \sum_{j=1}^n\sum_{i=1}^n s_j v^i \delta^j_i \\<br />
+&amp;= \sum_{j=1}^n s_j v^j \\<br />
+&amp;= \sum_{j=1}^n v^j s(e_j) \\<br />
+&amp;= s(v).<br />
+\end{align}</p>
+<p>We've thus shown that any covector can be written as a linear combination of the covectors $(e^i)_{i=1}^n$, and thus they span the dual space.</p>
+<p>It follows that $(e^i)_{i=1}^n$ forms a basis for $V^*$, as desired.</p>
+</blockquote>
+<p>We call the basis defined in the proof above the <strong>dual basis</strong>, and it is the basis we usually work with when talking about the dual space. However, it is of course not the <em>only</em> basis we could choose. It is just particularly convenient for our purposes because of the way things tend to simplify via the Kronecker delta.</p>
+<p>Hidden in the result above is the fact that $\dim V^*=\dim V$. That's because we've exhibited a basis for $V^*$ consisting of $n$ covectors, which is the definition of the dimension of a vector space. So the dual space always has the same dimension as the original vector space (as long as its finite dimensional)! Which is pretty cool I guess. 😎</p>
+<h3 id="thedoubledualspaceanamethedoubledualspace">The Double Dual Space<a name="the-double-dual-space"></a></h3>
+<p>The following definition is exactly as you might expect.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a vector space $V$ over a field $\F$ and its dual space $\dual{V}$, its <strong>double dual space</strong>, written $\ddual{V}$, is the dual space of $\dual{V}$.</p>
+</blockquote>
+<p>By now, things may seem hopelessly abstract. If the dual space was the space of all linear functions from $V$ to $\F$, that would make the double dual the space of all linear functions from the space of linear functions from $V$ to $\F$ into $\F$. As if that wasn't complicated enough, there's no end in sight. Am I ever going to stop? Or am I going to next construct the triple dual space, the quadruple dual space, ad infinitum?</p>
+<p>It turns out we don't need to keep going, because as we will soon see, $\ddual{V}$ is essentially just $V$.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Every finite dimensional vector space $V$ over a field $\F$ is canonically isomorphic to its double dual space $\ddual{V}$.</p>
+<p><strong>Proof.</strong> Recall first that <em>canonically isomorphic</em> means we can find a isomorphism which does not depend on a choice of basis. So proving the "canonical" part consists only of not choosing a basis to arrive at the result.</p>
+<p>Since the dual space of any finite dimensional vector space shares its dimension, it follows that</p>
+<p>$\dim \ddual{V} = \dim \dual{V} = \dim V.$</p>
+<p>Thus, the rank-nullity theorem tells us that a linear map $T:V\to \ddual{V}$ is an isomorphism if it is injective, which greatly simplifies the proof.</p>
+<p>Define a map $T:V\to \ddual{V}$ by</p>
+<p>$\big(T(v)\big)(s) = s(v)$</p>
+<p>for any vector $v\in V$ and any covector $s\in \dual{V}$.</p>
+<p>Let's pause to make some sense of this. Since $T$ takes $V$ into its double dual, the image $T(v)$ of any vector $v\in V$ will be a linear map in $\ddual{V}$, which itself takes a covector $s\in\dual{V}$. That's why we're defining $T(v)$ by how it acts on a covector $s$.</p>
+<p>We will argue that $T$ is an isomorphism. Let's show first that $T$ is a linear map. To this end, suppose $v, v_1, v_2 \in V$ and $a \in \F$. Then because of the linearity of $s$,</p>
+<p>$\begin{align}<br />
+\big(T(v_1 + v_2)\big)(s) &amp;= s(v_1 + v_2) \\<br />
+&amp;= s(v_1) + s(v_2) \\<br />
+&amp;= \big(T(v_1)\big)(s) + \big(T(v_2)\big)(s),<br />
+\end{align}$</p>
+<p>and</p>
+<p>$\begin{align}<br />
+\big(T(av)\big)(s) &amp;= s(av) \\<br />
+&amp;= as(v) \\<br />
+&amp;= a\big(T(v)\big)(s).<br />
+\end{align}$</p>
+<p>We'll show next that $T$ is injective (and thus bijective by our earlier dimension argument). We will do so by showing that its kernel is trivial. So suppose $v\in\ker(T)$. Then by definition,</p>
+<p>$\begin{align}<br />
+\big(T(v)\big)(s) &amp;= s(v) \\<br />
+&amp;= 0<br />
+\end{align}$</p>
+<p>for all covectors $s\in\dual{V}$. It follows then that $v=0$, since the above holds for any choice of covector $s$, including isomorphisms which themselves must have trivial kernels.</p>
+<p>We have shown that $T$ is a bijective linear map, and we have done so without explicitly choosing a basis for any of the vector spaces involved, so it follows that $T$ is a canonical isomorphism, as desired.</p>
+</blockquote>
+<p>So it turns out that $V$ and $\ddual{V}$ can be used almost interchangeably. But using the double dual space gives us a nice kind of duality (pardon the pun), in that we can think of covectors as maps which act on vectors, and we can think of vectors as maps which act on covectors. Physicists often do this without realizing that they are technically working with cocovectors instead of vectors, but that's fine because the isomorphism makes it work.</p>
+<p>I'll leave this here for now. Next time I'll talk about multilinear maps and tensor products!</p>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://localhost:2368">Algebrology</a> &copy; 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

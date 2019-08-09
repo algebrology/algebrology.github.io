@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Path Connectedness</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/path-connectedness/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/path-connectedness/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Path Connectedness">
-    <meta property="og:description" content='Now we can think about a different type of "connectedness." Intuitively, if a space is "connected" you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is "disconnected."'>
-    <meta property="og:url" content="http://localhost:2368/path-connectedness/">
-    <meta property="article:published_time" content="2019-02-27T02:47:43.000Z">
-    <meta property="article:modified_time" content="2019-03-03T05:32:17.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Path Connectedness">
-    <meta name="twitter:description" content='Now we can think about a different type of "connectedness." Intuitively, if a space is "connected" you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is "disconnected."'>
-    <meta name="twitter:url" content="http://localhost:2368/path-connectedness/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Path Connectedness" />
+    <meta property="og:description" content="Now we can think about a different type of &quot;connectedness.&quot; Intuitively, if a space is &quot;connected&quot; you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is &quot;disconnected.&quot;" />
+    <meta property="og:url" content="http://localhost:2368/path-connectedness/" />
+    <meta property="article:published_time" content="2019-02-27T02:47:43.000Z" />
+    <meta property="article:modified_time" content="2019-03-03T05:32:17.000Z" />
+    <meta property="article:tag" content="topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Path Connectedness" />
+    <meta name="twitter:description" content="Now we can think about a different type of &quot;connectedness.&quot; Intuitively, if a space is &quot;connected&quot; you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is &quot;disconnected.&quot;" />
+    <meta name="twitter:url" content="http://localhost:2368/path-connectedness/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="topology" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/path-connectedness/",
     "datePublished": "2019-02-27T02:47:43.000Z",
     "dateModified": "2019-03-03T05:32:17.000Z",
+    "keywords": "topology",
     "description": "Now we can think about a different type of &quot;connectedness.&quot; Intuitively, if a space is &quot;connected&quot; you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is &quot;disconnected.&quot;",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,9 +167,9 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#some-useful-tools">Some Useful Tools</a></li>
-<li><a href="index.html#path-connected-spaces">Path Connected Spaces</a></li>
-<li><a href="index.html#a-pathological-example">A Path-ological Example</a></li>
+<li><a href="#some-useful-tools">Some Useful Tools</a></li>
+<li><a href="#path-connected-spaces">Path Connected Spaces</a></li>
+<li><a href="#a-pathological-example">A Path-ological Example</a></li>
 </ol>
 <hr>
 <h3 id="someusefultoolsanamesomeusefultools">Some Useful Tools<a name="some-useful-tools"></a></h3>
@@ -199,8 +212,8 @@ f^{-1}[W] &amp;= X \cap f^{-1}[W] \\<br>
 </blockquote>
 <p>It is implicitly understood in such cases that $[0,1]$ is to be viewed as a subspace of $\R$ in the standard topology.</p>
 <p>Basically a path is just a continuous map from the unit interval into the space of interest. Some authors use the word to describe both a path $p$ and its image $p([0,1])\subseteq X$, but I will keep the concepts separate. That is to say, a path is <em>not</em> the set of points that its image traces out in the codomain. Its image is a useful way to visualize it, however. And of course, since $[0,1]$ is a connected set, so is its image because paths are continuous! This means that the image of a path looks like a connected curve.</p>
-<p><img src="../content/images/2019/03/path-1.svg" alt="path-1"></p>
-<p>Now we can think about a different type of "connectedness." Intuitively, if a space is "connected" you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is "disconnected."</p>
+<p><img src="http://localhost:2368/content/images/2019/03/path-1.svg" alt="path-1"></p>
+<p>Now we can think about a different type of &quot;connectedness.&quot; Intuitively, if a space is &quot;connected&quot; you should be able to draw a path between any two points in the space. Otherwise, if there are points in the space that cannot be connected by a path, it is &quot;disconnected.&quot;</p>
 <p>But we've already used these words for a different concept, so we need to make up new ones.</p>
 <blockquote>
 <p><strong>Definition.</strong> A topological space $X$ is <strong>path connected</strong> if for any pair of points $a,b\in X$ there is a path $p:[0,1]\to X$ from $a$ to $b$.</p>
@@ -280,7 +293,7 @@ A &amp;= \Big\{\Big(x,\sin\big(\tfrac{1}{x}\big)\Big)\in\R^2\mid x\in (0,1)\Big\
 B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br>
 \end{align}$$</p>
 <p>$A$ is a sort of sine curve which oscillates more and more rapidly as you approach the origin from the right, and which does not include its endpoints. $B$ is just a vertical line. The <strong>topologist's sine curve</strong> is their union, $X=A\cup B$.</p>
-<p><img src="../content/images/2019/03/topologists-sine-curve-1.svg" alt="topologists-sine-curve-1"></p>
+<p><img src="http://localhost:2368/content/images/2019/03/topologists-sine-curve-1.svg" alt="topologists-sine-curve-1"></p>
 <p>The blue curve in the above graph is the set $A$ and the red curve (which may be too narrow on your display to see clearly) is the $B$. The line $B$ is sort of the natural completion of $A$, in the sense that $A$ never touches is but really looks like it ought to. More formally, every point of $B$ is a limit point of $A$.</p>
 <p>To show this, choose a point $(0,y)\in B$. Certainly $y=\sin\theta$ for some $\theta\in [0,2\pi)$, and thus $y=\sin(\theta+2\pi n)$ for every $n\in \N$. If $x_n=\frac{1}{\theta+2\pi n}$ then $y=\sin\big(\tfrac{1}{x_n}\big)$ for every $n\in \N$. Furthermore, it is clear that $\lim_{n\to\infty}x_n = 0$. Thus,</p>
 <p>$$\lim_{x_n\to 0}\Big(x_n,\sin\big(\tfrac{1}{x_n}\big)\Big) = (0,y).$$</p>
@@ -298,7 +311,7 @@ B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -328,21 +341,22 @@ B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

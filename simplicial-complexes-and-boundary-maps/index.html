@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Simplicial Complexes and Boundary Maps</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/simplicial-complexes-and-boundary-maps/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/simplicial-complexes-and-boundary-maps/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Simplicial Complexes and Boundary Maps">
-    <meta property="og:description" content='The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.'>
-    <meta property="og:url" content="http://localhost:2368/simplicial-complexes-and-boundary-maps/">
-    <meta property="article:published_time" content="2019-04-14T03:48:00.000Z">
-    <meta property="article:modified_time" content="2019-04-18T19:46:55.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Simplicial Complexes and Boundary Maps">
-    <meta name="twitter:description" content='The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.'>
-    <meta name="twitter:url" content="http://localhost:2368/simplicial-complexes-and-boundary-maps/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Simplicial Complexes and Boundary Maps" />
+    <meta property="og:description" content="The idea behind our definitions is that lots of topological spaces can be &quot;triangularized&quot; in such a way that they look sort of like a bunch of &quot;triangles&quot; glued together." />
+    <meta property="og:url" content="http://localhost:2368/simplicial-complexes-and-boundary-maps/" />
+    <meta property="article:published_time" content="2019-04-14T03:48:00.000Z" />
+    <meta property="article:modified_time" content="2019-04-18T19:46:55.000Z" />
+    <meta property="article:tag" content="algebraic topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Simplicial Complexes and Boundary Maps" />
+    <meta name="twitter:description" content="The idea behind our definitions is that lots of topological spaces can be &quot;triangularized&quot; in such a way that they look sort of like a bunch of &quot;triangles&quot; glued together." />
+    <meta name="twitter:url" content="http://localhost:2368/simplicial-complexes-and-boundary-maps/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebraic topology" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/simplicial-complexes-and-boundary-maps/",
     "datePublished": "2019-04-14T03:48:00.000Z",
     "dateModified": "2019-04-18T19:46:55.000Z",
+    "keywords": "algebraic topology",
     "description": "The idea behind our definitions is that lots of topological spaces can be &quot;triangularized&quot; in such a way that they look sort of like a bunch of &quot;triangles&quot; glued together.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebraic-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,13 +167,13 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#linear-maps">Simplicial Complexes</a></li>
-<li><a href="index.html#chain-groups">Chain Groups</a></li>
-<li><a href="index.html#boundary-maps">Boundary Maps</a></li>
+<li><a href="#linear-maps">Simplicial Complexes</a></li>
+<li><a href="#chain-groups">Chain Groups</a></li>
+<li><a href="#boundary-maps">Boundary Maps</a></li>
 </ol>
 <hr>
 <h3 id="simplicialcomplexesanamesimplicialcomplexes">Simplicial Complexes<a name="simplicial-complexes"></a></h3>
-<p>Let's define the types of topological spaces that are of interest to us in this post. The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.</p>
+<p>Let's define the types of topological spaces that are of interest to us in this post. The idea behind our definitions is that lots of topological spaces can be &quot;triangularized&quot; in such a way that they look sort of like a bunch of &quot;triangles&quot; glued together.</p>
 <blockquote>
 <p><strong>Definition.</strong> For any $n\in\N$, the <strong>standard $n$-simplex</strong> is the subset of $\R^{n+1}$ given by</p>
 <p>$$\Delta^n =\bset{(x_1,x_2,\ldots,x_{n+1})\in\R^{n+1}\mid x_i\ge 0 \text{ for all } i \text{ and } \sum_{i=1}^{n+1} x_i = 1}.$$</p>
@@ -168,11 +181,11 @@ MathJax.Hub.Config({
 <p>That is, $\Delta^n$ is the set of points in $\R^{n+1}$ whose components are all positive and sum to $1$. Clearly in $\R$ the only such point is $1$ itself, and so</p>
 <p>$$\Delta^0=\set{1}.$$</p>
 <p>In $\R^2$ the points which satisfy these conditions are precisely the points which lie on the line segment connecting the point $(1,0)$ to the point $(0,1)$, including these two points. For instance, the points $\left(\frac{1}{3}, \frac{2}{3}\right)$ and $\left(\frac{1}{2}, \frac{1}{2}\right)$ certainly satisfy the requirements and sit on this line segment. It follows that $\Delta^1$ is a line segment in $\R^2$.</p>
-<p><img src="../content/images/2019/04/delta_1-1.svg" alt="delta_1-1"></p>
+<p><img src="http://localhost:2368/content/images/2019/04/delta_1-1.svg" alt="delta_1-1"></p>
 <p>The simplex $\Delta^2$ is a triangle in $\R^3$ which contains its interior and is bounded by the line segments connecting the points $(1,0,0)$, $(0,1,0)$ and $(0,0,1)$.</p>
-<p><img src="../content/images/2019/04/delta_2.svg" alt="delta_2"></p>
+<p><img src="http://localhost:2368/content/images/2019/04/delta_2.svg" alt="delta_2"></p>
 <p>$\Delta^3$ is a solid tetrahedron in $\R^4$ (although we can embed it in $\R^3$ to visualize it). By solid, I mean that it contains its entire interior.</p>
-<p><img src="../content/images/2019/04/delta_3.svg" alt="delta_3"></p>
+<p><img src="http://localhost:2368/content/images/2019/04/delta_3.svg" alt="delta_3"></p>
 <p>Higher-dimensional simplices cannot be visualized so easily. However, they are still relatively easy objects to manipulate formally. And they follow a very interesting pattern:</p>
 <ul>
 <li>The $1$-simplex is a line with two $0$-simplices at either end.</li>
@@ -180,7 +193,7 @@ MathJax.Hub.Config({
 <li>The $3$-simplex is a tetrahedron whose faces are four $2$-simplices, whose edges are six $1$-simplices, and whose vertices are four $0$-simplices.</li>
 </ul>
 <p>Recall Pascal's triangle:</p>
-<p><img src="../content/images/2019/04/pascal.svg" alt="pascal"></p>
+<p><img src="http://localhost:2368/content/images/2019/04/pascal.svg" alt="pascal"></p>
 <p>Each element in the triangle (that isn't a $1$) is the sum of the two values directly above it. Equivalently, we can find the value in the $n$th row and $k$th column using the binomial formula:</p>
 <p>$${n \choose k} = \frac{n!}{k!(n-k)!}.$$</p>
 <p>Pascal's triangle is intimately related to the number of different dimensional faces of a simplex. The number of $k$-faces of an $n$-simplex is the value in column $(k+1)$ and row $(n+1)$ of the triangle, which you can verify quite easily for the simplices given above. For higher dimensional simplices, you'll just have to take my word for it for now.</p>
@@ -202,7 +215,7 @@ MathJax.Hub.Config({
 <p>This definition ensures that the gluing of simplices is done in such a way that all the vertices and faces line up nicely. And of course, we make a simplicial complex $X$ into a topological space by taking the union of all its simplices and considering it as a topological subspace of $\R^{n+1}$, where $n$ is the maximum dimension of any simplex in $X$.</p>
 <blockquote>
 <p><strong>Example.</strong> Here's an example of a simplicial complex which we'll be revisiting later. It should technically live in $\R^3$ since $f$ is a $2$-simplex, but this one just happens to be flat enough to embed in $\R^2$.</p>
-<p><img src="../content/images/2019/04/simplicial-complex-3.svg" alt="simplicial-complex-3"></p>
+<p><img src="http://localhost:2368/content/images/2019/04/simplicial-complex-3.svg" alt="simplicial-complex-3"></p>
 <p>Notice that the edges have arrows. This is because they are oriented simplices. That is, $[v_0, v_1]$ is a different simplex than $[v_1, v_0]$, and the arrows are visual indicators of the orientation. Technically $f$ is oriented as well, but I have not added a visual indication of this fact. We will treat $f$ as the simplex $[v_0, v_1, v_2]$.</p>
 <p>With all of that in mind, this complex consists of the following simplices:</p>
 <p><strong>0-simplices</strong>:</p>
@@ -292,7 +305,7 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -322,21 +335,22 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

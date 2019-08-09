@@ -1,35 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Metric Spaces (1)</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <meta name="description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements.">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <meta name="description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements." />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/metric-spaces-1/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/metric-spaces-1/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Metric Spaces (1)">
-    <meta property="og:description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set.">
-    <meta property="og:url" content="http://localhost:2368/metric-spaces-1/">
-    <meta property="article:published_time" content="2017-03-31T02:51:53.000Z">
-    <meta property="article:modified_time" content="2019-02-20T04:50:31.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Metric Spaces (1)">
-    <meta name="twitter:description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set.">
-    <meta name="twitter:url" content="http://localhost:2368/metric-spaces-1/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Metric Spaces (1)" />
+    <meta property="og:description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set." />
+    <meta property="og:url" content="http://localhost:2368/metric-spaces-1/" />
+    <meta property="article:published_time" content="2017-03-31T02:51:53.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:50:31.000Z" />
+    <meta property="article:tag" content="topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Metric Spaces (1)" />
+    <meta name="twitter:description" content="Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set." />
+    <meta name="twitter:url" content="http://localhost:2368/metric-spaces-1/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="topology" />
     
     <script type="application/ld+json">
 {
@@ -55,6 +60,7 @@
     "url": "http://localhost:2368/metric-spaces-1/",
     "datePublished": "2017-03-31T02:51:53.000Z",
     "dateModified": "2019-02-20T04:50:31.000Z",
+    "keywords": "topology",
     "description": "Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +69,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -96,6 +102,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -122,18 +130,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -156,9 +169,9 @@ MathJax.Hub.Config({
         <div class="content">
             <h3 id="contents">Contents</h3>
 <ol>
-<li><a href="index.html#motivation">Motivation</a></li>
-<li><a href="index.html#metrics">Metrics</a></li>
-<li><a href="index.html#open-and-closed-sets">Open and closed sets</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#metrics">Metrics</a></li>
+<li><a href="#open-and-closed-sets">Open and closed sets</a></li>
 </ol>
 <hr>
 <p>Taken by themselves, sets do not have much structure to them. They are essentially barren wastelands with no relationships at all between their elements. In this post we will remedy that by defining a way to add a measure of proximity to the points in a set.</p>
@@ -220,7 +233,7 @@ $$-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$$</p>
 </ol>
 </blockquote>
 <p>The concept of a metric thus captures many of the properties we associate with the concept of distance. For instance, the distance between a point and itself is always zero, which makes a lot of sense. The distance between two points is the same regardless of which direction you measure it. The distance between two points is never negative.</p>
-<p>We add the triangle inequality into the mix because it ensures our metrics don't become too unruly (we will see later that without it, open balls wouldn't necessarily be open sets). There's a silly, but perhaps insightful, quote justifying it: "The triangle inequality means that if you are going from $x$ to $z$ and you stop for a beer, it's going to take a little longer."</p>
+<p>We add the triangle inequality into the mix because it ensures our metrics don't become too unruly (we will see later that without it, open balls wouldn't necessarily be open sets). There's a silly, but perhaps insightful, quote justifying it: &quot;The triangle inequality means that if you are going from $x$ to $z$ and you stop for a beer, it's going to take a little longer.&quot;</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>metric space</strong> is a set $X$ together with a metric on $X$.</p>
 </blockquote>
@@ -255,7 +268,7 @@ $$-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$$</p>
 <p><strong>Theorem.</strong> In any metric space, an open ball is an open set.</p>
 <p><strong>Proof.</strong> Suppose we are given an arbitrary open ball of radius $r_0$ centered at a point $x_0$ in a metric space $X$. We need to show that for every point $x\in B(x_0,r_0)$, we can find a real number $r&gt;0$ such that $B(x,r)\subseteq B(x_0,r_0)$.</p>
 <p>Before making this argument rigorous, let's take a look at the following diagram of an open ball in $\mathbb{R}^2$ for a hint as to how we should proceed:</p>
-<p><img src="../content/images/2017/04/open-ball-is-open.svg" alt="open ball is open"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/open-ball-is-open.svg" alt="open ball is open"></p>
 <p>It certainly looks like we could choose $r=r_0-d(x,x_0)$, at least for the open ball above. We'd like to confirm that this choice will work for any open ball in any metric space. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $B(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq B(x_0,r_0)$, and that's all we need to do!</p>
 <p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r_0-r$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation:</p>
 <p>$$\begin{aligned}<br>
@@ -290,13 +303,13 @@ d(x_0,y) &amp;\leq d(x_0,x)+d(x,y)\\<br>
 <p><strong>Theorem.</strong> In any metric space $X$, the entire set $X$ is itself closed.</p>
 <p><strong>Proof.</strong> The complement of $X$ is $X-X=\varnothing$. Since the empty set is open, it follows that $X$ is closed.</p>
 </blockquote>
-<p>At first glance, these might seem like they contradict our earlier statements about these very same sets being open. The empty set and the space itself are both open and closed? I've heard several times the phrase "a set is not a door." Yes, sets can be both open and closed. The two are not mutually exclusive. It's also easy to find examples of sets in metric spaces which are neither open nor closed!</p>
+<p>At first glance, these might seem like they contradict our earlier statements about these very same sets being open. The empty set and the space itself are both open and closed? I've heard several times the phrase &quot;a set is not a door.&quot; Yes, sets can be both open and closed. The two are not mutually exclusive. It's also easy to find examples of sets in metric spaces which are neither open nor closed!</p>
 <p>The next thing we should do is confirm that a closed ball is a closed set — otherwise we'd be in a fair bit of trouble. This proof is pretty similar to the proof that an open ball is open, but a teensy bit trickier.</p>
 <blockquote>
 <p><strong>Theorem.</strong> In any metric space, a closed ball is a closed set.</p>
 <p><strong>Proof.</strong> Suppose we are given an arbitrary closed ball of radius $r_0$ centered at a point $x_0$ in a metric space $X$. If we can show that its complement, $X-\overline{B}(x_0,r_0)$, is open, then by the definition of a closed set, we will be done. Thus, we need to show that for every point $x\in X-\overline{B}(x_0,r_0)$ we can find a real number $r&gt;0$ such that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$.</p>
 <p>Once again, let's look at a diagram for some intuition before we dive any further into the proof:</p>
-<p><img src="../content/images/2017/04/closed-ball-is-closed.svg" alt="closed ball is closed"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/closed-ball-is-closed.svg" alt="closed ball is closed"></p>
 <p>A little bit of inspection indicates that it might suffice to choose $r=d(x,x_0)-r_0$. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $X-\overline{B}(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$, and then we'll be finished.</p>
 <p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r+r_0$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation, again starting with a slightly rearranged form of the triangle inequality:</p>
 <p>$$\begin{aligned}<br>
@@ -315,7 +328,7 @@ d(x_0,y)&amp;\geq d(x,x_0)-d(x,y)\\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -345,21 +358,22 @@ d(x_0,y)&amp;\geq d(x,x_0)-d(x,y)\\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

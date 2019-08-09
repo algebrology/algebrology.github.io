@@ -1,35 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Product Spaces</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <meta name="description" content="We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <meta name="description" content="We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/product-spaces/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/product-spaces/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Product Spaces">
-    <meta property="og:description" content="Next let's talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?">
-    <meta property="og:url" content="http://localhost:2368/product-spaces/">
-    <meta property="article:published_time" content="2017-04-08T20:54:38.000Z">
-    <meta property="article:modified_time" content="2019-02-20T04:45:14.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Product Spaces">
-    <meta name="twitter:description" content="Next let's talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?">
-    <meta name="twitter:url" content="http://localhost:2368/product-spaces/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Product Spaces" />
+    <meta property="og:description" content="Next let&#x27;s talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?" />
+    <meta property="og:url" content="http://localhost:2368/product-spaces/" />
+    <meta property="article:published_time" content="2017-04-08T20:54:38.000Z" />
+    <meta property="article:modified_time" content="2019-02-20T04:45:14.000Z" />
+    <meta property="article:tag" content="topology" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Product Spaces" />
+    <meta name="twitter:description" content="Next let&#x27;s talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?" />
+    <meta name="twitter:url" content="http://localhost:2368/product-spaces/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="topology" />
     
     <script type="application/ld+json">
 {
@@ -55,6 +60,7 @@
     "url": "http://localhost:2368/product-spaces/",
     "datePublished": "2017-04-08T20:54:38.000Z",
     "dateModified": "2019-02-20T04:45:14.000Z",
+    "keywords": "topology",
     "description": "Next let&#x27;s talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -63,8 +69,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -96,6 +102,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -122,18 +130,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-topology">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -156,15 +169,15 @@ MathJax.Hub.Config({
         <div class="content">
             <h3 id="contents">Contents</h3>
 <ol>
-<li><a href="index.html#definition">Definition</a></li>
-<li><a href="index.html#examples">Examples</a></li>
+<li><a href="#definition">Definition</a></li>
+<li><a href="#examples">Examples</a></li>
 </ol>
 <hr>
 <h3 id="definitionanamedefinition">Definition<a name="definition"></a></h3>
 <p>Next let's talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We've talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces? What should the topology look like?</p>
 <p>Obviously there are many options (to name a few, the discrete or trivial topologies can be defined on any set), but we would like to choose a topology that is as natural as possible and inherits its properties from the spaces from which it is built. This decision actually has its roots in category theory, but I hope that the choice will make some sense to you nonetheless.</p>
-<p>Let's say we are given topological spaces $X$ and $Y$ and we want to construct a "natural" topology on $X\times Y$. Our first instinct might be to choose as the open sets all products $U\times V$ where $U$ is open in $X$ and $V$ is open in $Y$. But even in $\mathbb{R}\times\mathbb{R}$ we can see that this doesn't result in a topology, since the union of products of open sets isn't necessarily itself a product of open sets, as illustrated below.</p>
-<p><img src="../content/images/2017/04/nonono.svg" alt="no no no"></p>
+<p>Let's say we are given topological spaces $X$ and $Y$ and we want to construct a &quot;natural&quot; topology on $X\times Y$. Our first instinct might be to choose as the open sets all products $U\times V$ where $U$ is open in $X$ and $V$ is open in $Y$. But even in $\mathbb{R}\times\mathbb{R}$ we can see that this doesn't result in a topology, since the union of products of open sets isn't necessarily itself a product of open sets, as illustrated below.</p>
+<p><img src="http://localhost:2368/content/images/2017/04/nonono.svg" alt="no no no"></p>
 <p>So clearly the products of open sets aren't going to form a topology by themselves, since they are not closed under unions. We don't throw out this idea entirely, though. It just so happens that the products of open sets do form a <em>basis</em> for a topology on $X\times Y$.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $(X,{\cal T}_X)$ and $(Y,{\cal T}_Y)$ denote topological spaces. Then ${\cal B} = \{U\times V\mid U\in {\cal T}_X, V\in {\cal T}_V\}$ is a basis for a topology on $X\times Y$.</p>
@@ -193,12 +206,12 @@ B_1\cap B_2 &amp;= (U_1\times V_1)\cap (U_2\times V_2) \\<br>
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> Consider the unit circle $S^1=\{(x,y)\in\mathbb{R}^2\mid x^2+y^2=1\}$ as a subspace of $\mathbb{R}^2$. Let's begin by visualizing $S^1\times S^1$. Recalling the definition of the Cartesian product, we can think loosely of each point on the first circle $S^1$ as corresponding to an entire circle. We thus obtain the <strong>torus</strong>, which is a donut-shaped subset of $\mathbb{R}^3$.</p>
-<p><img src="../content/images/2017/04/torus-1.svg" alt="torus"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/torus-1.svg" alt="torus"></p>
 <p>Notice that the torus is hollow. If we wanted a solid torus, we would take $S^1\times D^2$, where $D^2=\{(x,y)\in\mathbb{R}^2\mid x^2+y^2\le 1\}$ is the closed unit ball.</p>
-<p>Before we can think about the topology on the torus $S^1\times S^1$, we should first consider the topology on the circle $S^1$. Since it's a subspace of $\mathbb{R}^2$, open sets in the circle are intersections of $S^1$ with open sets in $\mathbb{R}^2$. These open sets basically look like unions of "open intervals" wrapped around the circle. In fact, they are all homeomorphic to open intervals, except for $S^1$ itself (which I will prove when I talk about connectedness).</p>
-<p><img src="../content/images/2017/04/circle_open_sets.svg" alt="circle open sets"></p>
+<p>Before we can think about the topology on the torus $S^1\times S^1$, we should first consider the topology on the circle $S^1$. Since it's a subspace of $\mathbb{R}^2$, open sets in the circle are intersections of $S^1$ with open sets in $\mathbb{R}^2$. These open sets basically look like unions of &quot;open intervals&quot; wrapped around the circle. In fact, they are all homeomorphic to open intervals, except for $S^1$ itself (which I will prove when I talk about connectedness).</p>
+<p><img src="http://localhost:2368/content/images/2017/04/circle_open_sets.svg" alt="circle open sets"></p>
 <p>Products of these open sets somewhat resemble open rectangles wrapped around the surface of the torus. We'll call them open patches, and the unions of these open patches form the open sets on the torus.</p>
-<p><img src="../content/images/2017/04/torus_open_sets.svg" alt="torus open sets"></p>
+<p><img src="http://localhost:2368/content/images/2017/04/torus_open_sets.svg" alt="torus open sets"></p>
 </blockquote>
 <p>Since $S^1\times S^1$ can also be viewed as a subspace of $\mathbb{R}^3$, we could also view the open sets on the torus as intersections of open sets in $\mathbb{R}^3$ with $S^1\times S^1$. This statement may seen obvious, but I haven't proved it yet.</p>
 <blockquote>
@@ -253,7 +266,7 @@ f^{-1}[U] &amp;= f^{-1}\left[(A\times B)\cap\bigcup_{i\in I}(A_i\times B_i)\righ
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -283,21 +296,22 @@ f^{-1}[U] &amp;= f^{-1}\left[(A\times B)\cap\bigcup_{i\in I}(A_i\times B_i)\righ
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

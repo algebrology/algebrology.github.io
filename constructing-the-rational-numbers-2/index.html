@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Constructing the Rational Numbers (2)</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/constructing-the-rational-numbers-2/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/constructing-the-rational-numbers-2/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Constructing the Rational Numbers (2)">
-    <meta property="og:description" content="This is a continuation of Constructing the Rational Numbers (1). Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.">
-    <meta property="og:url" content="http://localhost:2368/constructing-the-rational-numbers-2/">
-    <meta property="article:published_time" content="2019-02-22T00:38:35.000Z">
-    <meta property="article:modified_time" content="2019-02-25T09:29:33.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Constructing the Rational Numbers (2)">
-    <meta name="twitter:description" content="This is a continuation of Constructing the Rational Numbers (1). Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.">
-    <meta name="twitter:url" content="http://localhost:2368/constructing-the-rational-numbers-2/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Constructing the Rational Numbers (2)" />
+    <meta property="og:description" content="This is a continuation of Constructing the Rational Numbers (1). Before moving forward with the rest of the construction, I&#x27;d like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions." />
+    <meta property="og:url" content="http://localhost:2368/constructing-the-rational-numbers-2/" />
+    <meta property="article:published_time" content="2019-02-22T00:38:35.000Z" />
+    <meta property="article:modified_time" content="2019-02-25T09:29:33.000Z" />
+    <meta property="article:tag" content="foundations" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Constructing the Rational Numbers (2)" />
+    <meta name="twitter:description" content="This is a continuation of Constructing the Rational Numbers (1). Before moving forward with the rest of the construction, I&#x27;d like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions." />
+    <meta name="twitter:url" content="http://localhost:2368/constructing-the-rational-numbers-2/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="foundations" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/constructing-the-rational-numbers-2/",
     "datePublished": "2019-02-22T00:38:35.000Z",
     "dateModified": "2019-02-25T09:29:33.000Z",
+    "keywords": "foundations",
     "description": "This is a continuation of Constructing the Rational Numbers (1). Before moving forward with the rest of the construction, I&#x27;d like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-foundations">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -155,15 +168,15 @@ MathJax.Hub.Config({
         <div class="content">
             <h3 id="contents">Contents</h3>
 <ol>
-<li><a href="index.html#canonical-form">Canonical Form</a></li>
-<li><a href="index.html#where-is-z">Where is $\Z$?</a></li>
-<li><a href="index.html#ordering-the-rationals">Ordering the Rationals</a></li>
-<li><a href="index.html#filling-the-gaps">Filling the Gaps</a></li>
-<li><a href="index.html#field-axioms">Field Axioms</a></li>
+<li><a href="#canonical-form">Canonical Form</a></li>
+<li><a href="#where-is-z">Where is $\Z$?</a></li>
+<li><a href="#ordering-the-rationals">Ordering the Rationals</a></li>
+<li><a href="#filling-the-gaps">Filling the Gaps</a></li>
+<li><a href="#field-axioms">Field Axioms</a></li>
 </ol>
 <hr>
 <h3 id="canonicalformanamecanonicalform">Canonical Form<a name="canonical-form"></a></h3>
-<p>This is a continuation of <a href="../constructing-the-rational-numbers-1/">Constructing the Rational Numbers (1)</a>. Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.</p>
+<p>This is a continuation of <a href="http://localhost:2368/constructing-the-rational-numbers-1/">Constructing the Rational Numbers (1)</a>. Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.</p>
 <p>That is, from here on out the rational number $[(a,b)]$ will simply be written as the <strong>fraction</strong> $\frac{a}{b}$. And now rational numbers look exactly how you would expect. Yay! Note that the bar doesn't really mean anything yet, this notation is currently just a formalism.</p>
 <p>Remember that there are many choices of representative for each rational number. For instance, $\frac{1}{2}=\frac{2}{4}$ in the same way that $[(1,2)]=[(2,4)]$ because, in the language of my last post, $(1,2)\sim_\Q (2,4)$. Last time we defined this equivalence relation, $\sim_\Q$, which determines whether two fractions are really the same rational number. Let's rephrase this in terms of fractions and without the formality of the equivalence relation, because it's very important:</p>
 <blockquote>
@@ -214,7 +227,7 @@ MathJax.Hub.Config({
 <p>This is not too difficult. Since both fractions are already in canonical form, we know that $\gcd(m_1,n_1)=1$ and $\gcd(m_2,n_2)=1$. Furthermore, since they both represent $q$, we also know that $\frac{m_1}{n_1} = \frac{m_2}{n_2}$ and thus $m_1n_2=n_1m_2$.</p>
 <p>Certainly this indicates that $m_1$ is a factor of $n_1m_2$. But $m_1$ and $n_1$ are coprime by hypothesis, so it must be the case that $m_1$ is a factor of $m_2$. Reversing the argument, we see that $m_2$ is a factor of $m_1$. This can only be true if $m_1=m_2$. The argument that $n_1=n_2$ is exactly analogous. It follows then that the canonical form is unique, as desired.</p>
 </blockquote>
-<p>So now we know that every rational number can be represented in a way that is in this sense "most desirable." It certainly aligns with the simplification of fractions that we all saw in elementary school.</p>
+<p>So now we know that every rational number can be represented in a way that is in this sense &quot;most desirable.&quot; It certainly aligns with the simplification of fractions that we all saw in elementary school.</p>
 <p>Now, remember that we already defined addition and multiplication of rational numbers in my previous post. Let's review those definitions here.</p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>sum</strong> of two rational numbers $\frac{a}{b}$ and $\frac{c}{d}$ is the rational number $\frac{ad+bc}{bd}$.</p>
@@ -238,7 +251,7 @@ MathJax.Hub.Config({
 <blockquote>
 <p><strong>Definition.</strong> The <strong>rational integers</strong> are the set of rational numbers whose canonical form is $\frac{n}{1}$, where $n$ is an integer. We refer to $\frac{n}{1}$ as the <strong>rational integer corresponding to $n$</strong>.</p>
 </blockquote>
-<p>I don't actually think "rational integer" is a phrase that anyone ever uses, but it will serve our purposes for this post to distinguish between an integer and its corresponding rational number.</p>
+<p>I don't actually think &quot;rational integer&quot; is a phrase that anyone ever uses, but it will serve our purposes for this post to distinguish between an integer and its corresponding rational number.</p>
 <p>Rational integers behave just as we would expect under addition and multiplication. That is, their sums and products are also rational integers. Moreover, they are the <em>correct</em> rational integers. Let's make this a bit more formal:</p>
 <blockquote>
 <p><strong>Proposition.</strong> If $m$ and $n$ are integers, then the sum of their corresponding rational integers is the rational integer corresponding to their sum. That is,</p>
@@ -308,7 +321,7 @@ MathJax.Hub.Config({
 <p>Neat! We plugged one type of gap and now have solutions to lots of equations. All that's left is to check that we've filled the other type of gap.</p>
 <blockquote>
 <p><strong>Proposition.</strong> If $p$ and $q$ are rational numbers with $p&lt;q$, there exists a rational number $x$ for which $p&lt;x&lt;q$.</p>
-<p><strong>Proof.</strong> Suppose $p=\frac{p_1}{p_2}$ and $q=\frac{q_1}{q_2}$ are in canonical form. We argue that taking $x=\frac{p_1q_2 + p_2q_1}{2p_2q_2}$ will suffice. To see that we did not pull this out of thin air, notice that $x$ is really just the "average" of $p$ and $q$ put into fractional form, and thus we should expect it to sit directly between them on the number line.</p>
+<p><strong>Proof.</strong> Suppose $p=\frac{p_1}{p_2}$ and $q=\frac{q_1}{q_2}$ are in canonical form. We argue that taking $x=\frac{p_1q_2 + p_2q_1}{2p_2q_2}$ will suffice. To see that we did not pull this out of thin air, notice that $x$ is really just the &quot;average&quot; of $p$ and $q$ put into fractional form, and thus we should expect it to sit directly between them on the number line.</p>
 <p>We need to verify that $p&lt;x$ and that $x&lt;q$. To do so, we use the definition of order.</p>
 <p>For the first inequality, note first that since $p&lt;q$, we have that $p_1q_2&lt;p_2q_1$. Thus,</p>
 <p>$$\begin{align}<br>
@@ -343,7 +356,7 @@ MathJax.Hub.Config({
 <p>Furthermore, $\mathbb{F}$ is an <strong>ordered field</strong> if there is an order $&lt;$ on $\mathbb{F}$ which is compatible with the field structure in the following sense: If $a,b\in\mathbb{F}$ and $a,b\ge 0$, then $a+b\ge 0$ and $a\cdot b\ge 0$.</p>
 </blockquote>
 <p>That's pretty much it. It's not too hard to show that the rationals $\Q$ form an ordered field under the definitions we gave for addition and multiplication. The additive identity is $\frac{0}{1}$, the multiplicative identity is $\frac{1}{1}$, the additive inverse of $\frac{a}{b}$ is $\frac{-a}{b}$, and the multiplicative inverse of $\frac{a}{b}$ is $\frac{b}{a}$ (provided $a\ne 0$).</p>
-<p>The integers $\Z$ do <em>not</em> form an ordered field because they are lacking multiplicative inverses. This is precisely the first "gap" that we filled.</p>
+<p>The integers $\Z$ do <em>not</em> form an ordered field because they are lacking multiplicative inverses. This is precisely the first &quot;gap&quot; that we filled.</p>
 <p>So... yeah.</p>
 
         </div>
@@ -352,7 +365,7 @@ MathJax.Hub.Config({
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -382,21 +395,22 @@ MathJax.Hub.Config({
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

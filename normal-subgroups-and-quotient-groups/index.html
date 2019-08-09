@@ -1,34 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Normal Subgroups and Quotient Groups</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/main/css/main.css?v=cfb347c46d">
-    <noscript><link rel="stylesheet" href="../assets/main/css/noscript.css?v=cfb347c46d"></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=c49c7141c0" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=c49c7141c0" /></noscript>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://localhost:2368/normal-subgroups-and-quotient-groups/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/normal-subgroups-and-quotient-groups/amp/" />
     
-    <meta property="og:site_name" content="Algebrology">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Normal Subgroups and Quotient Groups">
-    <meta property="og:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
-    <meta property="og:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
-    <meta property="article:published_time" content="2019-03-06T04:52:39.000Z">
-    <meta property="article:modified_time" content="2019-03-10T05:38:01.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Normal Subgroups and Quotient Groups">
-    <meta name="twitter:description" content="Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?">
-    <meta name="twitter:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Eric Shapiro">
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Normal Subgroups and Quotient Groups" />
+    <meta property="og:description" content="Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?" />
+    <meta property="og:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/" />
+    <meta property="article:published_time" content="2019-03-06T04:52:39.000Z" />
+    <meta property="article:modified_time" content="2019-03-10T05:38:01.000Z" />
+    <meta property="article:tag" content="algebra" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Normal Subgroups and Quotient Groups" />
+    <meta name="twitter:description" content="Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?" />
+    <meta name="twitter:url" content="http://localhost:2368/normal-subgroups-and-quotient-groups/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="algebra" />
     
     <script type="application/ld+json">
 {
@@ -54,6 +59,7 @@
     "url": "http://localhost:2368/normal-subgroups-and-quotient-groups/",
     "datePublished": "2019-03-06T04:52:39.000Z",
     "dateModified": "2019-03-10T05:38:01.000Z",
+    "keywords": "algebra",
     "description": "Let&#x27;s now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we&#x27;d really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -62,8 +68,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14">
-    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="../rss/index.html">
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="http://localhost:2368/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
     CommonHTML: { 
@@ -95,6 +101,8 @@ MathJax.Hub.Config({
             bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
             span: "{\\text{span }}",
             rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
     
             <!-- NUMBER SYSTEMS -->
       		N: "{\\mathbb N}",
@@ -121,18 +129,23 @@ MathJax.Hub.Config({
 
 
 </head>
-<body class="is-preload post-template">
+<body class="is-preload post-template tag-algebra">
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
 
         <header id="header">
-                <a href="../" class="logo">Algebrology</a>
+                <a href="http://localhost:2368" class="logo">Algebrology</a>
         </header>
 
             <nav id="nav">
     <ul class="links">
-        <li class="nav-home "><a href="../">Home</a></li>
+        <li class="nav-home "><a href="http://localhost:2368/">Home</a></li>
+        <li class="nav-topology "><a href="http://localhost:2368/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="http://localhost:2368/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="http://localhost:2368/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="http://localhost:2368/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="http://localhost:2368/tag/foundations/">Foundations</a></li>
         <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
     </ul>
     <ul class="icons">
@@ -154,8 +167,8 @@ MathJax.Hub.Config({
 
         <div class="content">
             <ol>
-<li><a href="index.html#normal-subgroups">Normal Subgroups</a></li>
-<li><a href="index.html#quotient-groups">Quotient Groups</a></li>
+<li><a href="#normal-subgroups">Normal Subgroups</a></li>
+<li><a href="#quotient-groups">Quotient Groups</a></li>
 </ol>
 <hr>
 <h3 id="normalsubgroupsanamenormalsubgroups">Normal Subgroups<a name="normal-subgroups"></a></h3>
@@ -165,7 +178,7 @@ MathJax.Hub.Config({
 <p><strong>Desired Definition.</strong> If $H$ is a subgroup of $G$ and $x,y\in G$, then<br>
 $$(Hx)(Hy)=H(xy).$$</p>
 </blockquote>
-<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(ab)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="../constructing-the-rational-numbers-1/index.html#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
+<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(ab)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="http://localhost:2368/constructing-the-rational-numbers-1/#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
 <p>Interestingly, in this case the remedy is not to define coset multiplication in a different manner. Rather, we choose to restrict our attention only to cosets of a certain, particularly nice sort of subgroup.</p>
 <blockquote>
 <p><strong>Definition.</strong> A subgroup $N$ of a group $G$ is a <strong>normal subgroup</strong> if $xnx^{-1}\in N$ whenever $n\in N$ and $x\in G$. We refer to this defining property of normal subgroups by saying they are <strong>closed under conjugation</strong>.</p>
@@ -241,7 +254,7 @@ NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
 <p>Before moving on, let's look at a concrete example of a quotient group which is hopefully already familiar to you.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider again the group $\Z$ of integers under addition and its subgroup $2\Z$ of even integers. Certainly $2\Z$ is a normal subgroup because $\Z$ is abelian, and we may thus form the quotient group $\Z/2\Z$. Recall that this quotient group contains only two cosets, namely $2\Z$ and $2\Z+1$.</p>
-<p>Coset "multiplication" here is really coset addition because we are working in an additive group. Since $2\Z$ is the identity, we have that</p>
+<p>Coset &quot;multiplication&quot; here is really coset addition because we are working in an additive group. Since $2\Z$ is the identity, we have that</p>
 <p>$$\begin{align}<br>
 2\Z+2\Z &amp;= 2\Z, \\<br>
 2\Z + (2\Z+1) &amp;= 2\Z+1,\\<br>
@@ -281,7 +294,7 @@ xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
         <footer class="post-footer">
 
             <div class="authors">
-                <a class="author-box" href="../author/eric/">
+                <a class="author-box" href="/author/eric/">
                     <section class="author-box-content">
                         <div class="author-box-label">Author</div>
                         <h5 class="author-box-name">Eric Shapiro</h5>
@@ -311,21 +324,22 @@ xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
 
         <div id="copyright">
             <ul>
-                <li>© 2019 Eric Shapiro</li>
+                <li>&copy; 2019 Eric Shapiro</li>
             </ul>
         </div>
 
     </div>
 
 
-    <script src="../assets/main/js/jquery.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrollex.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/jquery.scrolly.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/browser.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/breakpoints.min.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/util.js?v=cfb347c46d"></script>
-    <script src="../assets/main/js/main.js?v=cfb347c46d"></script>
+    <script src="/assets/main/js/jquery.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/browser.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/util.js?v=c49c7141c0"></script>
+    <script src="/assets/main/js/main.js?v=c49c7141c0"></script>
 
     
 
 </body>
+</html>

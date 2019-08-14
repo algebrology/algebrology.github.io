@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Fri, 09 Aug 2019 19:33:20 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dual Spaces]]></title><description><![CDATA[Since I haven't posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces.]]></description><link>https://algebrology.github.io/dual-spaces/</link><guid isPermaLink="false">5d4cec2a2864a0008db11a72</guid><category><![CDATA[linear algebra]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Fri, 09 Aug 2019 03:55:00 GMT</pubDate><content:encoded><![CDATA[<ol>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 2.14</generator><lastBuildDate>Wed, 14 Aug 2019 04:18:29 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tensor Products and Multilinear Maps]]></title><description><![CDATA[If you're the sort of person who cowers in fear whenever the word "tensor" is mentioned, this post is for you. We'll pick up right where we left off last time in our discussion of the dual space, and discover how tensor products are a natural extension of the ideas developed in that post.]]></description><link>https://algebrology.github.io/tensor-products/</link><guid isPermaLink="false">5d4dedb22864a0008db11bac</guid><category><![CDATA[linear algebra]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Tue, 13 Aug 2019 22:06:00 GMT</pubDate><content:encoded><![CDATA[<p>If you're the sort of person who cowers in fear whenever the word &quot;tensor&quot; is mentioned, this post is for you. We'll pick up right where we left off <a href="https://algebrology.github.io/dual-spaces">last time</a> in our discussion of the dual space, and discover how tensor products are a natural extension of the ideas developed in that post.</p>
+<p>As before, throughout this post we will assume that $V$ is a finite dimensional vector space over a field $\F$. Furthermore, since there are going to be tons of sums in this post, and they will all have $n=\dim{V}$ terms, I will use the shorthand $\displaystyle\sum_i$ to mean $\displaystyle\sum_{i=1}^n$.</p>
+<p>We saw last time that the dual space $\dual{V}$ of a vector space $V$ was another vector space which consisted of all linear maps from $V$ to $\F$. That is, an element of the dual space (called a <strong>covector</strong> or <strong>linear functional</strong>) is a map which takes a vector and outputs a scalar.</p>
+<p>We also saw that, thanks to the natural isomorphism between a vector space $V$ and its double dual space $\ddual{V}$, we can view a vector as a map which takes a covector and outputs a scalar.</p>
+<p>Tensor products give us a way to combine vectors and covectors and build more interesting maps from them. Let's look first at the simplest type of tensor product and work upward from there.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given two covectors $s:V\to\F$ and $t:V\to\F$ in $\dual{V}$, their <strong>tensor product</strong> is the function $s \otimes t:V\times V\to\F$ defined by</p>
+<p>$$(s \otimes t)(u, v) = s(u)t(v)$$</p>
+<p>for all vectors $u,v\in V$.</p>
+</blockquote>
+<p>We haven't really done anything groundbreaking here. We took two covectors, $s$ and $t$, and combined them to make a new map $s\otimes t$ which takes two vectors, $u$ and $v$, and outputs the product of $s(u)$ and $t(v)$, which is, of course, a scalar.</p>
+<blockquote>
+<p><strong>Example.</strong> Suppose $V=\R^2$ and define $s,t:\R^2\to\R$ by</p>
+<p>$$\begin{align}<br>
+s(x,y) &amp;= x + y \\<br>
+t(x,y) &amp;= 2x<br>
+\end{align}$$</p>
+<p>for any vector $(x,y)$ in $\R^2$.</p>
+<p>It is trivial to check that $s$ and $t$ are linear maps, and so they are both covectors in $\dual{V}$. That means we can construct their tensor product as defined above. This will be a map which takes two vectors in $\R^2$ and combines them to output a single real number. Let's see how this works.</p>
+<p>We can construct $s\otimes t:\R^2\times\R^2\to\R$, defined by</p>
+<p>$$\begin{align}<br>
+(s\otimes t)(x_1,y_1,x_2,y_2) &amp;= s(x_1,y_1)t(x_2,y_2) \\<br>
+&amp;= (x_1 + y_1) (2x_2) \\<br>
+&amp;= 2x_1x_2 + 2y_1x_2,<br>
+\end{align}$$</p>
+<p>where $(x_1,y_1)$ and $(x_2,y_2)$ are any vectors in $\R^2$.</p>
+<p>For concreteness, let's see how it acts on two specific vectors, $(1,2)$ and $(3,4)$.</p>
+<p>$$\begin{align}<br>
+(s\otimes t)(1,2,3,4) &amp;= 2(1)(3) + 2(2)(3) \\<br>
+&amp;= 6 + 12 \\<br>
+&amp;= 18.<br>
+\end{align}$$</p>
+</blockquote>
+<p>We'd like to understand the properties of tensor products, so the first question we might ask is whether they are linear maps. Unfortunately, this question doesn't really make sense. We've defined linear maps as maps from one vector space to another which satisfy the properties of additivity and homogeneity. The tensor product we've defined instead takes the <em>cartesian product</em> of vector spaces into another vector space.</p>
+<p>We can rectify this by creating an extension of the idea of a linear map.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given three vector spaces $U,V,W$ over the same field $\F$, a <strong>bilinear map</strong> is a function $T:U\times V\to W$ which is linear <em>in each argument</em>. That is,</p>
+<div style="margin-left:1.5em">
+<p><strong>Additivity in the First Argument</strong><br>
+For any vectors $u_1,u_2\in U$ and $v\in V$, we have that $$T(u_1+u_2, v) = T(u_1, v) + T(u_2, v).$$</p>
+<p><strong>Additivity in the Second Argument</strong><br>
+For any vectors $u\in U$ and $v_1, v_2\in V$, we have that $$T(u, v_1 + v_2) = T(u, v_1) + T(u, v_2).$$</p>
+<p><strong>Homogeneity in Each Argument</strong><br>
+For any vectors $u\in U$, $v\in V$ and any scalar $a\in\F$, we have that $$T(au, v)=T(u, av) = aT(u, v).$$</p>
+</div>
+</blockquote>
+<p>Just as the set of linear maps from one vector space to another is itself a vector space, it turns out that the set of all bilinear maps also forms a vector space once we make the following natural prescriptions:</p>
+<blockquote>
+<ul>
+<li>The zero vector is the zero map ${\bf 0}:V\to F$.</li>
+<li>Vector addition is just function addition.</li>
+<li>Scalar multiplication is inherited directly.</li>
+<li>Additive inverses are given by scalar multiplication by $-1$.</li>
+</ul>
+</blockquote>
+<p>You'll notice that this is exactly what we did to turn the dual space into a vector space, and that's because it's the natural thing to do.</p>
+<p>Happily enough, it turns out that the tensor product of two covectors will always be a bilinear map!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Given two covectors $s,t\in\dual{V}$, their tensor product $s\otimes t$ is bilinear.</p>
+<p><strong>Proof.</strong> We need only verify that the properties of a bilinear map hold. To see that $s\otimes t$ is linear in the first argument, note that, from the linearity of $s$,</p>
+<p>$$\begin{align}<br>
+(s\otimes t)(u_1+u_2, v) &amp;= s(u_1+u_2)t(v) \\<br>
+&amp;= \big(s(u_1) + s(u_2)\big)t(v) \\<br>
+&amp;= s(u_1)t(v) + s(u_2)t(v) \\<br>
+&amp;= (s\otimes t)(u_1, v) + (s\otimes t)(u_2, v)<br>
+\end{align}$$</p>
+<p>for any vectors $u_1, u_2, v\in V$. Linearity in the second argument holds by a completely analogous argument.</p>
+<p>To see that $s\otimes t$ is homogenous in each argument, we note that</p>
+<p>$$\begin{align}<br>
+(s\otimes t)(au, v) &amp;= s(au)t(v) \\<br>
+&amp;= as(u)t(v) \\<br>
+&amp;= a(s\otimes t)(u,v) \\<br>
+&amp;= s(u)at(v) \\<br>
+&amp;= s(u)t(av) \\<br>
+&amp;= (s\otimes t)(u, av).<br>
+\end{align}$$</p>
+</blockquote>
+<p>So tensor products are actually very well behaved maps! Even more is true though:</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $B$ denote the space of all bilinear maps from $V\times V\to \F$. If $(e_i)_{i=1}^n$ is a basis for $V$ with dual basis $(e^i)_{i=1}^n$ for $\dual{V}$, then $(e^i\otimes e^j)_{i,j=1}^n$ is a basis for $B$.</p>
+<p><strong>Note.</strong> Because the expressions throughout the rest of this post will</p>
+<p><strong>Proof.</strong> We will show first that $(e^i\otimes e^j)_{i,j=1}^n$ is linearly independent. Suppose</p>
+<p>$$\sum_i\sum_j a_{ij} e^i \otimes e^j = 0$$</p>
+<p>for some scalars $(a_{ij})_{i,j=1}^n$ in $\F$. Then for any two vectors $u=\displaystyle\sum_k u^k e_k$ and $v=\displaystyle\sum_l v^l e_l$ in $V$,</p>
+<p>$$\begin{align}<br>
+\left(\sum_i\sum_j a_{ij} e^i \otimes e^j\right)\left(\sum_k u^k e_k, \sum_l v^l e_l\right) &amp;= \sum_i\sum_j a_{ij} e^i \left(\sum_k u^k e_k\right) e^j \left(\sum_l v^l e_l\right) \\<br>
+&amp;= \sum_i\sum_j a_{ij} \sum_k u^k e^i(e_k) \sum_l v^l e^j(e_l) \\<br>
+&amp;= \sum_i\sum_j a_{ij} \sum_k u^k \delta^i_k \sum_l v^l \delta^j_l \\<br>
+&amp;= \sum_i\sum_k a_{ij} u^i v^j \\<br>
+&amp;= 0.<br>
+\end{align}$$</p>
+<p>But since $u$ and $v$ were arbitrary, $u^i$ and $v^j$ are arbitrary and thus the above can only be certain if $a_{ij}=0$ for all $i$ and $j$. Thus, $(e^i\otimes e^j)_{i,j=1}^n$ is linearly independent.</p>
+<p>Next we will show that $B = \span (e^i\otimes e^j)_{i,j=1}^n$. Choose any bilinear map $T:V\times V\to\F$ in $B$, and define</p>
+<p>$$T_{ij} = T(e_i, e_j)$$</p>
+<p>for all $i$ and $j$. Then for any two vectors $u=\displaystyle\sum_k u^k e_k$ and $v=\displaystyle\sum_l v^l e_l$ in $V$,</p>
+<p>$$\begin{align}<br>
+T(u,v) &amp;= T\left(\sum_i u^i e_i, \sum_j v^j e_j\right) \\<br>
+&amp;= \sum_i\sum_j u^i v^j T(e_i, e_j) \\<br>
+&amp;= \sum_i\sum_j T_{ij} u^i v^j \\<br>
+&amp;= \sum_i\sum_j T_{ij} \sum_k u^k \delta^i_k \sum_l v^l \delta^j_l \\<br>
+&amp;= \sum_i\sum_j T_{ij} \sum_k u^k e^i(e_k) \sum_l v^l e^j(e_k) \\<br>
+&amp;= \sum_i\sum_j T_{ij} e^i \left(\sum_k u^k e_k\right) e^j \left(\sum_l v^l e_l\right) \\<br>
+&amp;= \left(\sum_i\sum_j T_{ij}e^i\otimes e^j\right)\left(\sum_k u^k e_k, \sum_l v^l e_l\right).<br>
+\end{align}$$</p>
+<p>Since we can write any $T\in B$ as a linear combination of tensor products $e^i\otimes e^j$, it follows that $(e^i\otimes e^j)_{i,j=1}^n$ spans $B$, completing the proof.</p>
+</blockquote>
+<p>So not only is every tensor product bilinear, it also happens that every bilinear map can be written as a linear combination of tensor products! Furthermore, we've exhibited a nice basis for the space of bilinear maps which is inherited from the dual basis. Lastly, the argument above shows that if $n = \dim V$, then the dimension of $B$ is $n^2$.</p>
+<p>Since the space of bilinear maps is the same as the space of tensor products of two covectors, we usually write $\dual{V}\otimes\dual{V}$ to denote $B$, and call it a <strong>tensor product space</strong>.</p>
+<p>Now, as ugly as the goop above was, we've still only dealt with the <em>simplest</em> form of tensor product. The following definitions extend what we have done so far.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given vector spaces $V_1, V_2, \ldots, V_k, W$ over the same field $\F$, a <strong>multilinear map</strong> is a function $T:V_1\times V_2\times \cdots \times V_k\to W$ which is linear in each argument.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> Given $j$ vectors $v_1, \ldots, v_j \in V$ and $k$ covectors $s_1, \ldots, s_k \in \dual{V}$, their tensor product is the function</p>
+<p>$$\bigotimes_{i=1}^j v_i \bigotimes_{i=1}^k s_i: \prod_{i=1}^j \dual{V} \prod_{i=1}^k V\to\F$$</p>
+<p>defined by</p>
+<p>$$\left(\bigotimes_{i=1}^j v_i \bigotimes_{i=1}^k s_i\right) (t_1, \ldots, t_j, u_1, \ldots, u_k) = \prod_{i=1}^j v_i(t_i) \prod_{i=1}^k s_i(u_i)$$</p>
+<p>for any covectors $t_1, \ldots, t_j$ and any vectors $u_1, \ldots, u_k$.</p>
+<p>We say that the <strong>rank</strong> of this tensor is (j, k).</p>
+</blockquote>
+<p>Just like with bilinear maps, multilinear maps $\prod_{i=1}^j \dual{V} \prod_{i=1}^k V\to\F$ form a vector space $M$ in the obvious way. Furthermore, this vector space is generated by the obvious choice of basis vectors. That is, if $(e_i)_{i=1}^n$ is a basis for $V$ with dual basis $(e^i)_{i=1}^n$ for $\dual{V}$, then</p>
+<p>$$\bigotimes_{l=1}^j {e_{i_l}} \bigotimes_{l=1}^k {e^{i_l}}$$</p>
+<p>is a basis for $M$. We thus write</p>
+<p>$$M = \bigotimes_{i=1}^j V \bigotimes_{i=1}^k \dual{V}$$</p>
+<p>and refer to it as a <strong>rank (j, k) tensor product space</strong>. I won't prove any of this, though, because the proof for a rank $(0, 2)$ tensor was already ugly enough! The proofs aren't difficult, but they are time and space-consuming.</p>
+<p>There are two important things to remember:</p>
+<ol>
+<li>A rank $(j, k)$ tensor takes $j$ covectors and $k$ vectors and outputs a scalar.</li>
+<li>The double dual isomorphism allows us to think of a vector as a linear map which takes a covector and outputs a scalar. This is how we interpret $v_i(t_i)$ in the definition above.</li>
+</ol>
+<p>I'll end this post here, but we'll be talking more about tensors very shortly!</p>
+]]></content:encoded></item><item><title><![CDATA[Dual Spaces]]></title><description><![CDATA[Since I haven't posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces.]]></description><link>https://algebrology.github.io/dual-spaces/</link><guid isPermaLink="false">5d4cec2a2864a0008db11a72</guid><category><![CDATA[linear algebra]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Fri, 09 Aug 2019 03:55:00 GMT</pubDate><content:encoded><![CDATA[<ol>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#the-dual-space">The Dual Space</a></li>
 <li><a href="#the-double-dual-space">The Double Dual Space</a></li>
@@ -2132,196 +2263,4 @@ B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br>
 </blockquote>
 <p>There are a few other well known examples of spaces like the above that are connected but not path connected. The most prominent is the <strong>topologist's whirlpool</strong>, which is essentially just the polar form of the topologist's sine curve.</p>
 <p>One might wonder if there is a sufficient additional criterion for a connected space to be path connected? The answer is yes. If a space is connected and <em>locally path connected</em> then it is path connected. However, I will not define local path connectedness or prove this result, since I do not really care about it and it is not useful to us.</p>
-]]></content:encoded></item><item><title><![CDATA[Constructing the Rational Numbers (2)]]></title><description><![CDATA[This is a continuation of Constructing the Rational Numbers (1). Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.]]></description><link>https://algebrology.github.io/constructing-the-rational-numbers-2/</link><guid isPermaLink="false">5c6f446575042202e3d9fce2</guid><category><![CDATA[foundations]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Fri, 22 Feb 2019 00:38:35 GMT</pubDate><content:encoded><![CDATA[<h3 id="contents">Contents</h3>
-<ol>
-<li><a href="#canonical-form">Canonical Form</a></li>
-<li><a href="#where-is-z">Where is $\Z$?</a></li>
-<li><a href="#ordering-the-rationals">Ordering the Rationals</a></li>
-<li><a href="#filling-the-gaps">Filling the Gaps</a></li>
-<li><a href="#field-axioms">Field Axioms</a></li>
-</ol>
-<hr>
-<h3 id="canonicalformanamecanonicalform">Canonical Form<a name="canonical-form"></a></h3>
-<p>This is a continuation of <a href="https://algebrology.github.io/constructing-the-rational-numbers-1/">Constructing the Rational Numbers (1)</a>. Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.</p>
-<p>That is, from here on out the rational number $[(a,b)]$ will simply be written as the <strong>fraction</strong> $\frac{a}{b}$. And now rational numbers look exactly how you would expect. Yay! Note that the bar doesn't really mean anything yet, this notation is currently just a formalism.</p>
-<p>Remember that there are many choices of representative for each rational number. For instance, $\frac{1}{2}=\frac{2}{4}$ in the same way that $[(1,2)]=[(2,4)]$ because, in the language of my last post, $(1,2)\sim_\Q (2,4)$. Last time we defined this equivalence relation, $\sim_\Q$, which determines whether two fractions are really the same rational number. Let's rephrase this in terms of fractions and without the formality of the equivalence relation, because it's very important:</p>
-<blockquote>
-<p><strong>Rule (Cross Multiplication).</strong> Two fractions $\frac{a}{b}$ and $\frac{c}{d}$ represent the same rational number if and only if $ad=bc$.</p>
-</blockquote>
-<p>We know in our hearts that although there are many fractional representations of each rational, there is always one preferred representation. That is, although $\frac{1}{2}$ and $\frac{2}{4}$ are both valid representations of the same number, we definitely prefer to call it $\frac{1}{2}$ because it's simpler somehow.</p>
-<p>We can easily make this decision rigorous, but first we need to recall the following definition:</p>
-<blockquote>
-<p><strong>Definition.</strong> Given two integers $a$ and $b$, their <strong>greatest common divisor</strong>, written $\gcd(a,b)$, is the largest positive integer which is a factor of both $a$ and $b$.</p>
-</blockquote>
-<p>Here are some examples, although you have likely seen this concept before.</p>
-<blockquote>
-<p><strong>Example.</strong> Consider $4$ and $6$. We can write $4=2\cdot 2$ and $6=2\cdot 3$. They both have one factor in common: $2$. Thus, $\gcd(4,6)=2$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Example.</strong> Consider $15$ and $30$. We can write $15=3\cdot 5$ and $30=2\cdot 3\cdot 5$. They have two prime factors in common, so their greatest common divisor is the product of these factors: $\gcd(15, 30)=15$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Example.</strong> Consider $0$ and $6$. We can trivially write $0=0\cdot 6$, and so $\gcd(0, 6) = 6$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Example.</strong> Consider $3$ and $7$. We cannot simplify either number further since they are both prime. Clearly they have no factors in common other than $1$, so $\gcd(3, 7)=1$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Example.</strong> Consider $4$ and $9$. Neither is prime, so we can write $4=2\cdot 2$ and $9=3\cdot 3$. There are still no common factors other than $1$, so $\gcd(4,9)=1$.</p>
-</blockquote>
-<p>That last example is particularly interesting, since we had two integers which were not prime, and whose greatest common divisor was still 1. We have a special name for this:</p>
-<blockquote>
-<p><strong>Definition.</strong> Two integers $a$ and $b$ are <strong>coprime</strong> (or <strong>relatively prime</strong>) if $\gcd(a,b)=1$.</p>
-</blockquote>
-<p>I will not prove it, since we are taking properties of the integers for granted, but the greatest common divisor of two integers always exists as long as they are not both zero.</p>
-<p>We now have the tools to choose a preferred representation for each rational number.</p>
-<blockquote>
-<p><strong>Definition.</strong> A fractional representation $\frac{a}{b}$ for a rational number is in <strong>canonical form</strong> if $a$ and $b$ are coprime and $b&gt;0$.</p>
-</blockquote>
-<p>This definition should hopefully make sense to you. It means, for instance, that $\frac{1}{2}$ is the canonical form for the rational number which is also represented by $\frac{2}{4}$, $\frac{-1}{-2}$, etc.</p>
-<p>However, whenever we make a definition like this it is important to determine two things. Does it always exist? And if it exists, is it unique? In this case, the answer to both questions is yet. There is always exactly one canonical form for each rational number, and so we may refer to it as <em>the</em> canonical form. Let's prove this!</p>
-<blockquote>
-<p><strong>Proposition.</strong> Every rational number has a unique canonical form.</p>
-<p><strong>Proof.</strong> Choose a rational number $q$. We argue first that a canonical form for $q$ exists. Let $\frac{a}{b}$ be some fraction which represents $q$. Note that $\gcd(a,b)$ is guaranteed to exist because $b\neq 0$. Thus there are integers $m$ and $n$ for which</p>
-<p>$$\frac{a}{b} = \frac{m\cdot\gcd(a,b)}{n\cdot\gcd(a,b)}.$$</p>
-<p>We argue that $\frac{a}{b}=\frac{m}{n}$. This is easily done by remembering the above rule for determining whether two fractions represent the same rational number. From the first equality above, we have that</p>
-<p>$$a \cdot n \cdot \gcd(a,b) = b \cdot m \cdot \gcd(a,b).$$</p>
-<p>Using the left cancellation property of the integers, we may cancel $\gcd(a,b)$ from both sides to obtain</p>
-<p>$$an=bm.$$</p>
-<p>Again using the cross multiplication rule for equivalent fractions, we see that $\frac{a}{b}=\frac{m}{n}$. If $n$ is positive, this is certainly a canonical form for $q$. Otherwise, we may easily obtain a canonical form by negating both slots of the fraction: $\frac{-m}{-n}$. It is easy to show from here that $\frac{a}{b}=\frac{-m}{-n}$, so I will not bother with it.</p>
-<p>We have demonstrated that a canonical form for $q$ exists. It remains to show that it is unique. That is, we aim to show that if $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$ are both canonical forms for $q$, then $m_1=m_2$ and $n_1=n_2$.</p>
-<p>This is not too difficult. Since both fractions are already in canonical form, we know that $\gcd(m_1,n_1)=1$ and $\gcd(m_2,n_2)=1$. Furthermore, since they both represent $q$, we also know that $\frac{m_1}{n_1} = \frac{m_2}{n_2}$ and thus $m_1n_2=n_1m_2$.</p>
-<p>Certainly this indicates that $m_1$ is a factor of $n_1m_2$. But $m_1$ and $n_1$ are coprime by hypothesis, so it must be the case that $m_1$ is a factor of $m_2$. Reversing the argument, we see that $m_2$ is a factor of $m_1$. This can only be true if $m_1=m_2$. The argument that $n_1=n_2$ is exactly analogous. It follows then that the canonical form is unique, as desired.</p>
-</blockquote>
-<p>So now we know that every rational number can be represented in a way that is in this sense &quot;most desirable.&quot; It certainly aligns with the simplification of fractions that we all saw in elementary school.</p>
-<p>Now, remember that we already defined addition and multiplication of rational numbers in my previous post. Let's review those definitions here.</p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>sum</strong> of two rational numbers $\frac{a}{b}$ and $\frac{c}{d}$ is the rational number $\frac{ad+bc}{bd}$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>product</strong> of two rational numbers $\frac{a}{b}$ and $\frac{c}{d}$ is the rational number $\frac{ac}{bd}$.</p>
-</blockquote>
-<p>It's worth mentioning that taking the sum or product of two fractions in canonical form does not always result in a canonical form fraction.</p>
-<blockquote>
-<p><strong>Example.</strong> The fraction $\frac{1}{2}$ is certainly in canonical form. However,</p>
-<p>$$\begin{align}<br>
-\frac{1}{2}+\frac{1}{2} &amp;= \frac{1\cdot 2 + 2\cdot 1}{2\cdot 2} \\<br>
-&amp;= \frac{4}{4}.<br>
-\end{align}$$</p>
-<p>This is certainly not in canonical form, since $\gcd(4,4)=4$.</p>
-<p>However, this is not really an issue since we can just rewrite it in canonical form post-computation. In this case, the canonical form for the result is $\frac{1}{1}$.</p>
-</blockquote>
-<h3 id="whereiszanamewhereisz">Where is $\Z$?<a name="where-is-z"></a></h3>
-<p>Ordinarily, when we are not being as ridiculously pedantic as we are in this post, we would consider the integers to be a subset of the rational numbers. But technically this is not the case of our construction, since our rationals are equivalence classes of pairs of integers and thus not integers themselves. It's our goal, therefore, to identify a subset of rationals that looks and behaves like the integers.</p>
-<p>The above example may have already given this away. Technically the rational number whose canonical form is $\frac{1}{1}$ is not the same thing as the integer $1$. But I mean, come on... they're pretty darn similar. This leads us to the following identification.</p>
-<blockquote>
-<p><strong>Definition.</strong> The <strong>rational integers</strong> are the set of rational numbers whose canonical form is $\frac{n}{1}$, where $n$ is an integer. We refer to $\frac{n}{1}$ as the <strong>rational integer corresponding to $n$</strong>.</p>
-</blockquote>
-<p>I don't actually think &quot;rational integer&quot; is a phrase that anyone ever uses, but it will serve our purposes for this post to distinguish between an integer and its corresponding rational number.</p>
-<p>Rational integers behave just as we would expect under addition and multiplication. That is, their sums and products are also rational integers. Moreover, they are the <em>correct</em> rational integers. Let's make this a bit more formal:</p>
-<blockquote>
-<p><strong>Proposition.</strong> If $m$ and $n$ are integers, then the sum of their corresponding rational integers is the rational integer corresponding to their sum. That is,</p>
-<p>$$\frac{m}{1}+\frac{n}{1}=\frac{m+n}{1}.$$</p>
-<p><strong>Proof.</strong> The result actually follows immediately from our definition of rational addition, since</p>
-<p>$$\begin{align}<br>
-\frac{m}{1}+\frac{n}{1} &amp;= \frac{m\cdot 1 + 1\cdot n}{1\cdot 1} \\<br>
-&amp;= \frac{m+n}{1}.<br>
-\end{align}$$</p>
-</blockquote>
-<p>We can do exactly the same sort of thing for multiplication:</p>
-<blockquote>
-<p><strong>Proposition.</strong> If $m$ and $n$ are integers, then the product of their corresponding rational integers is the rational integer corresponding to their product. That is,</p>
-<p>$$\frac{m}{1}\cdot\frac{n}{1}=\frac{mn}{1}.$$</p>
-<p><strong>Proof.</strong> Again, the result follows directly from our definition of rational multiplication. Note that</p>
-<p>$$\begin{align}<br>
-\frac{m}{1}\cdot\frac{n}{1} &amp;= \frac{m\cdot n}{1\cdot 1} \\<br>
-&amp;= \frac{mn}{1}.<br>
-\end{align}$$</p>
-</blockquote>
-<p>So these rational integers really do correspond to the integers in a one-to-one manner. Since there's no functional difference between rational integers and integers, we might as well just say they're the same thing.</p>
-<h3 id="orderingtherationalsanameorderingtherationals">Ordering the Rationals<a name="ordering-the-rationals"></a></h3>
-<p>One of the requirements we imposed on our construction last post was that the rationals should be ordered in a way that's compatible with the integers. That means that if $n$ and $m$ are integers with $n &lt; m$, then we definitely want it to be the case that $\frac{n}{1} &lt; \frac{m}{1}$. That is, integers and rational integers should have the same order.</p>
-<p>But in addition to rational integers, all the other rational numbers should be comparable as well. This is done easily enough.</p>
-<blockquote>
-<p><strong>Definition.</strong> Given two rational numbers $\frac{a}{b}$ and $\frac{c}{d}$ in canonical form, their <strong>order</strong> is determined by saying that $\frac{a}{b} &lt; \frac{c}{d}$ if and only if $ad&lt;bc$.</p>
-</blockquote>
-<p>Just as a quick check that this definition of order makes any sense, let's look at a couple simple examples.</p>
-<blockquote>
-<p><strong>Example.</strong> Consider the fractions $\frac{1}{2}$ and $\frac{2}{3}$. These are already in canonical form, and we would certainly expect $\frac{1}{2}$ to be less than $\frac{2}{3}$. Let's check that this is indeed the case.</p>
-<p>According to the definition, we just need to make sure that $1 \cdot 3 &lt; 2\cdot 2$. This is obviously true ($3&lt;4$) and so we're done.</p>
-</blockquote>
-<blockquote>
-<p><strong>Example.</strong> Consider the fractions $\frac{0}{1}$ and $\frac{-3}{2}$. Of course we hope it should be the case that $\frac{-3}{2}$ is less than $\frac{0}{1}$.</p>
-<p>Again, plugging these straight into the definition, we see that</p>
-<p>$$\begin{align}<br>
--3\cdot 1 &amp;= -3 \\<br>
-&amp;&lt; 0 \\<br>
-&amp;= 2\cdot 0.<br>
-\end{align}$$</p>
-</blockquote>
-<p>These sanity checks indicate that we're on the right track with our definition of order. But we need to guarantee that our order extends that of the integers. Let's do that now.</p>
-<blockquote>
-<p><strong>Proposition.</strong> If $m$ and $n$ are integers with $m&lt;n$ then $\frac{m}{1} &lt; \frac{n}{1}$.</p>
-<p><strong>Proof.</strong> There's really not much to prove. Since $m&lt;n$ we certainly have that $m\cdot 1 = 1\cdot n$. By the definition of order, this means that $\frac{m}{1} &lt; \frac{n}{1}$.</p>
-</blockquote>
-<p>So this order is compatible with the order on the integers. Yay! Now that our rational numbers are ordered, we're allowed to put them on the number line if we so choose.</p>
-<h3 id="fillingthegapsanamefillingthegaps">Filling the Gaps<a name="filling-the-gaps"></a></h3>
-<p>Our motivation for inventing rational numbers was to fill the two types of gaps we identified in the previous post as being missing from the integers. Namely, we required that our rational numbers satisfy the following properties:</p>
-<blockquote>
-<ul>
-<li>If $a$ and $b$ are integers with $a\ne 0$, there exists a rational number $x$ for which $ax=b$.</li>
-<li>If $p$ and $q$ are rational numbers with $p&lt;q$, there exists a rational number $x$ for which $p&lt;x&lt;q$.</li>
-</ul>
-</blockquote>
-<p>It's actually pretty straightforward to show that our construction guarantees these properties. Let's get straight to work!</p>
-<blockquote>
-<p><strong>Proposition.</strong> If $a$ and $b$ are integers with $a\ne 0$, there exists a rational number $x$ for which $ax=b$.</p>
-<p><strong>Proof.</strong> Technically we should consider the rational integers $\frac{a}{1}$ and $\frac{b}{1}$. We need to show that there is a rational number $\frac{p}{q}$ for which $\frac{a}{1}\cdot\frac{p}{q}=\frac{b}{1}$.</p>
-<p>We argue that taking $p=b$ and $q=a$ will yield the desired result. That is, we only need to verify that $\frac{a}{1}\cdot\frac{b}{a}=\frac{b}{1}$. Notice that, from the definition of rational multiplication,</p>
-<p>$$\begin{align}<br>
-\frac{a}{1}\cdot\frac{b}{a} &amp;= \frac{ab}{1a} \\<br>
-&amp;= \frac{ab}{a}.<br>
-\end{align}$$</p>
-<p>Since $\gcd(ab, a)=a$, the canonical form for the result is $\frac{b}{1}$, as desired.</p>
-</blockquote>
-<p>Neat! We plugged one type of gap and now have solutions to lots of equations. All that's left is to check that we've filled the other type of gap.</p>
-<blockquote>
-<p><strong>Proposition.</strong> If $p$ and $q$ are rational numbers with $p&lt;q$, there exists a rational number $x$ for which $p&lt;x&lt;q$.</p>
-<p><strong>Proof.</strong> Suppose $p=\frac{p_1}{p_2}$ and $q=\frac{q_1}{q_2}$ are in canonical form. We argue that taking $x=\frac{p_1q_2 + p_2q_1}{2p_2q_2}$ will suffice. To see that we did not pull this out of thin air, notice that $x$ is really just the &quot;average&quot; of $p$ and $q$ put into fractional form, and thus we should expect it to sit directly between them on the number line.</p>
-<p>We need to verify that $p&lt;x$ and that $x&lt;q$. To do so, we use the definition of order.</p>
-<p>For the first inequality, note first that since $p&lt;q$, we have that $p_1q_2&lt;p_2q_1$. Thus,</p>
-<p>$$\begin{align}<br>
-(p_1)(2p_2q_2) &amp;= (p_2)(2p_1q_2) \\<br>
-&amp;&lt; (p_2)(p_1q_2 + p_2q_1),<br>
-\end{align}$$</p>
-<p>It follows then that $\frac{p_1}{p_2} &lt; \frac{p_1q_2 + p_2q_1}{2p_2q_2}$. That is, $p&lt;x$.</p>
-<p>The proof that $x&lt;q$ is completely analagous to the above.</p>
-</blockquote>
-<p>And there we have it. Our construction of the rational numbers satisfies all the properties we wanted it to!</p>
-<p>So why did we do all this again? The short answer is because we can, and because it's kind of cool. The real answer is that we construct things in mathematics from the ground up so that</p>
-<ol>
-<li>We know that the objects we are working with actually exist.</li>
-<li>We know exactly what properties our objects satisfy.</li>
-</ol>
-<p>I don't feel comfortable working with anything I can't get a feel for in this way.</p>
-<h3 id="fieldaxiomsanamefieldaxioms">Field Axioms<a name="field-axioms"></a></h3>
-<p>Our rational numbers actually have a few more properties than I've mentioned. Technically, they form what is called an ordered field. I won't prove all of the field axioms here, but from what I've done already and the properties of the integers, you should be able to fill in the gaps pretty easily now. I'll just give you the axioms and then call it quits.</p>
-<blockquote>
-<p><strong>Definition.</strong> A <strong>field</strong> is a set $\mathbb{F}$ equipped with two operations, addition $+$ and multiplication $\cdot$, which satisfy the following properties:</p>
-<ol>
-<li><strong>Associativity of Addition</strong>: For all $a,b,c\in\mathbb{F}$, $a+(b+c)=(a+b)+c$.</li>
-<li><strong>Commutativity of Addition</strong>: For all $a,b\in\mathbb{F}$, $a+b=b+a$.</li>
-<li><strong>Additive Identity</strong>: There exists $0\in\mathbb{F}$ for which $0+a=a$ for any $a\in\mathbb{F}$.</li>
-<li><strong>Additive Inverses</strong>: For all $a\in\mathbb{F}$, there exists $-a\in\mathbb{F}$ for which $a+(-a)=0$.</li>
-<li><strong>Associativity of Multiplication</strong>: For all $a,b,c\in\mathbb{F}$, $a\cdot (b\cdot c)=(a\cdot b)\cdot c$.</li>
-<li><strong>Commutativity of Multiplication</strong>: For all $a,b\in\mathbb{F}$, $a\cdot b=b\cdot a$.</li>
-<li><strong>Multiplicative Identity</strong>: There exists $1\in\mathbb{F}$ with $1\ne 0$ for which $1\cdot a=a$ for any $a\in\mathbb{F}$.</li>
-<li><strong>Multiplicative Inverses</strong>: For all $a\in\mathbb{F}$ with $a\ne 0$, there exists $a^{-1}\in\mathbb{F}$ for which $a\cdot a^{-1}=1$.</li>
-<li><strong>Distributivity of Multiplication over Addition</strong>: For all $a,b,c\in\mathbb{F}$, $a\cdot (b+c) = a\cdot b+a\cdot c$.</li>
-</ol>
-<p>Furthermore, $\mathbb{F}$ is an <strong>ordered field</strong> if there is an order $&lt;$ on $\mathbb{F}$ which is compatible with the field structure in the following sense: If $a,b\in\mathbb{F}$ and $a,b\ge 0$, then $a+b\ge 0$ and $a\cdot b\ge 0$.</p>
-</blockquote>
-<p>That's pretty much it. It's not too hard to show that the rationals $\Q$ form an ordered field under the definitions we gave for addition and multiplication. The additive identity is $\frac{0}{1}$, the multiplicative identity is $\frac{1}{1}$, the additive inverse of $\frac{a}{b}$ is $\frac{-a}{b}$, and the multiplicative inverse of $\frac{a}{b}$ is $\frac{b}{a}$ (provided $a\ne 0$).</p>
-<p>The integers $\Z$ do <em>not</em> form an ordered field because they are lacking multiplicative inverses. This is precisely the first &quot;gap&quot; that we filled.</p>
-<p>So... yeah.</p>
 ]]></content:encoded></item></channel></rss>

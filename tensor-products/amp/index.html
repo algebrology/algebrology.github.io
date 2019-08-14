@@ -18,7 +18,7 @@
     <meta property="og:description" content="If you&#x27;re the sort of person who cowers in fear whenever the word &quot;tensor&quot; is mentioned, this post is for you. We&#x27;ll pick up right where we left off last time in our discussion of the dual space, and discover how tensor products are a natural extension of the ideas developed in that post." />
     <meta property="og:url" content="https://algebrology.github.io/tensor-products/" />
     <meta property="article:published_time" content="2019-08-13T22:06:00.000Z" />
-    <meta property="article:modified_time" content="2019-08-14T04:17:39.000Z" />
+    <meta property="article:modified_time" content="2019-08-14T04:21:32.000Z" />
     <meta property="article:tag" content="linear algebra" />
     
     <meta name="twitter:card" content="summary" />
@@ -53,7 +53,7 @@
     "headline": "Tensor Products and Multilinear Maps",
     "url": "https://algebrology.github.io/tensor-products/",
     "datePublished": "2019-08-13T22:06:00.000Z",
-    "dateModified": "2019-08-14T04:17:39.000Z",
+    "dateModified": "2019-08-14T04:21:32.000Z",
     "keywords": "linear algebra",
     "description": "If you&#x27;re the sort of person who cowers in fear whenever the word &quot;tensor&quot; is mentioned, this post is for you. We&#x27;ll pick up right where we left off last time in our discussion of the dual space, and discover how tensor products are a natural extension of the ideas developed in that post.",
     "mainEntityOfPage": {
@@ -220,9 +220,10 @@ T(u,v) &amp;= T\left(\sum_i u^i e_i, \sum_j v^j e_j\right) \\<br />
 <p>is a basis for $M$. We thus write</p>
 <p>$M = \bigotimes_{i=1}^j V \bigotimes_{i=1}^k \dual{V}$</p>
 <p>and refer to it as a <strong>rank (j, k) tensor product space</strong>. I won't prove any of this, though, because the proof for a rank $(0, 2)$ tensor was already ugly enough! The proofs aren't difficult, but they are time and space-consuming.</p>
-<p>There are two important things to remember:</p>
+<p>There are three important things to remember:</p>
 <ol>
 <li>A rank $(j, k)$ tensor takes $j$ covectors and $k$ vectors and outputs a scalar.</li>
+<li>A rank $(j, k)$ tensor product space has dimension $n^{j+k}$, where $n=\dim V$.</li>
 <li>The double dual isomorphism allows us to think of a vector as a linear map which takes a covector and outputs a scalar. This is how we interpret $v_i(t_i)$ in the definition above.</li>
 </ol>
 <p>I'll end this post here, but we'll be talking more about tensors very shortly!</p>

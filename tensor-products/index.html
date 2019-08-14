@@ -23,7 +23,7 @@
     <meta property="og:description" content="If you&#x27;re the sort of person who cowers in fear whenever the word &quot;tensor&quot; is mentioned, this post is for you. We&#x27;ll pick up right where we left off last time in our discussion of the dual space, and discover how tensor products are a natural extension of the ideas developed in that post." />
     <meta property="og:url" content="https://algebrology.github.io/tensor-products/" />
     <meta property="article:published_time" content="2019-08-13T22:06:00.000Z" />
-    <meta property="article:modified_time" content="2019-08-14T04:21:32.000Z" />
+    <meta property="article:modified_time" content="2019-08-14T04:36:07.000Z" />
     <meta property="article:tag" content="linear algebra" />
     
     <meta name="twitter:card" content="summary" />
@@ -58,7 +58,7 @@
     "headline": "Tensor Products and Multilinear Maps",
     "url": "https://algebrology.github.io/tensor-products/",
     "datePublished": "2019-08-13T22:06:00.000Z",
-    "dateModified": "2019-08-14T04:21:32.000Z",
+    "dateModified": "2019-08-14T04:36:07.000Z",
     "keywords": "linear algebra",
     "description": "If you&#x27;re the sort of person who cowers in fear whenever the word &quot;tensor&quot; is mentioned, this post is for you. We&#x27;ll pick up right where we left off last time in our discussion of the dual space, and discover how tensor products are a natural extension of the ideas developed in that post.",
     "mainEntityOfPage": {
@@ -246,7 +246,6 @@ For any vectors $u\in U$, $v\in V$ and any scalar $a\in\F$, we have that $$T(au,
 <p>So tensor products are actually very well behaved maps! Even more is true though:</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $B$ denote the space of all bilinear maps from $V\times V\to \F$. If $(e_i)_{i=1}^n$ is a basis for $V$ with dual basis $(e^i)_{i=1}^n$ for $\dual{V}$, then $(e^i\otimes e^j)_{i,j=1}^n$ is a basis for $B$.</p>
-<p><strong>Note.</strong> Because the expressions throughout the rest of this post will</p>
 <p><strong>Proof.</strong> We will show first that $(e^i\otimes e^j)_{i,j=1}^n$ is linearly independent. Suppose</p>
 <p>$$\sum_i\sum_j a_{ij} e^i \otimes e^j = 0$$</p>
 <p>for some scalars $(a_{ij})_{i,j=1}^n$ in $\F$. Then for any two vectors $u=\displaystyle\sum_k u^k e_k$ and $v=\displaystyle\sum_l v^l e_l$ in $V$,</p>

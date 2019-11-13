@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Permutations and Parity</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=efe6bcf6ed" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=efe6bcf6ed" /></noscript>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://algebrology.github.io/permutations-and-parity/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://algebrology.github.io/permutations-and-parity/amp/" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Permutations and Parity" />
+    <meta property="og:description" content="In my next post, I would like to introduce a very special type of tensor whose
+properties are invaluable in many fields, most notably differential geometry.
+Although it&#x27;s possible to understand antisymmetric tensors without discussing
+permutations and their parity, these concepts are invaluable to developing the
+theory properly. Thus, in this post we will take a brief voyage into the topic
+of permutations.
+
+&gt; Definition.  A permutation  on a finite set $X$ is a bijective function $p:X\to
+X$.
+
+
+T" />
+    <meta property="og:url" content="https://algebrology.github.io/permutations-and-parity/" />
+    <meta property="article:published_time" content="2019-11-13T03:00:15.000Z" />
+    <meta property="article:modified_time" content="2019-11-13T03:04:41.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Permutations and Parity" />
+    <meta name="twitter:description" content="In my next post, I would like to introduce a very special type of tensor whose
+properties are invaluable in many fields, most notably differential geometry.
+Although it&#x27;s possible to understand antisymmetric tensors without discussing
+permutations and their parity, these concepts are invaluable to developing the
+theory properly. Thus, in this post we will take a brief voyage into the topic
+of permutations.
+
+&gt; Definition.  A permutation  on a finite set $X$ is a bijective function $p:X\to
+X$.
+
+
+T" />
+    <meta name="twitter:url" content="https://algebrology.github.io/permutations-and-parity/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://algebrology.github.io/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "https://algebrology.github.io/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Permutations and Parity",
+    "url": "https://algebrology.github.io/permutations-and-parity/",
+    "datePublished": "2019-11-13T03:00:15.000Z",
+    "dateModified": "2019-11-13T03:04:41.000Z",
+    "description": "In my next post, I would like to introduce a very special type of tensor whose\nproperties are invaluable in many fields, most notably differential geometry.\nAlthough it&#x27;s possible to understand antisymmetric tensors without discussing\npermutations and their parity, these concepts are invaluable to developing the\ntheory properly. Thus, in this post we will take a brief voyage into the topic\nof permutations.\n\n&gt; Definition.  A permutation  on a finite set $X$ is a bijective function $p:X\\to\nX$.\n\n\nT",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://algebrology.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.14" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: {automatic: true},
+    },
+  	"HTML-CSS": { 
+        linebreaks: {automatic: true},
+    },
+    SVG: {
+        linebreaks: {automatic: true},
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            null: "{\\text{null }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+            M: "{\\mathscr{M}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
+            rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="https://algebrology.github.io" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="https://algebrology.github.io/">Home</a></li>
+        <li class="nav-topology "><a href="https://algebrology.github.io/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="https://algebrology.github.io/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="https://algebrology.github.io/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="https://algebrology.github.io/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="https://algebrology.github.io/tag/foundations/">Foundations</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">November 12, 2019</span>
+            <h1>Permutations and Parity</h1>
+        </header>
+
+
+        <div class="content">
+            <p>In my next post, I would like to introduce a very special type of tensor whose properties are invaluable in many fields, most notably differential geometry. Although it's possible to understand antisymmetric tensors without discussing permutations and their parity, these concepts are invaluable to developing the theory properly. Thus, in this post we will take a brief voyage into the topic of permutations.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <em>permutation</em> on a finite set $X$ is a bijective function $p:X\to X$.</p>
+</blockquote>
+<p>That seems simple enough. Basically, permutations offer us a way of rearranging the order of elements in a set. To see what I mean by this, let's look at a few examples.</p>
+<blockquote>
+<p><strong>Example.</strong> Let $\N_4$ denote the set ${0, 1, 2, 3}$ containing the first four natural numbers. The function $p_1:\N_4 \to \N_4$, defined by $p_1(x) = x + 1\mod 4$, is a permutation. See how the permutation $p_1$ rearranges the order of these numbers:</p>
+<p>$$<br>
+\begin{align}<br>
+0 &amp;\mapsto 1 \\<br>
+1 &amp;\mapsto 2 \\<br>
+2 &amp;\mapsto 3 \\<br>
+3 &amp;\mapsto 0.<br>
+\end{align}<br>
+$$</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> Not every permutation is as easy to write an equation to describe. For example, let $X$ denote the set ${a, b, c, d, e, f, g}$ . Then there exists a bijection $p_2$ which permutes these letters as follows:</p>
+<p>$$<br>
+\begin{align}<br>
+a &amp;\mapsto a \\<br>
+b &amp;\mapsto c \\<br>
+c &amp;\mapsto b \\<br>
+d &amp;\mapsto e \\<br>
+e &amp;\mapsto g \\<br>
+f &amp;\mapsto d \\<br>
+g &amp;\mapsto f.<br>
+\end{align}<br>
+$$</p>
+<p>However, there's no obvious way to describe this permutation other than to simply write out what happens to each individual letter.</p>
+</blockquote>
+<p>Because we often need to describe permutations that have no simple corresponding equation, it is common to adopt the following compact notation to represent permutations:</p>
+<blockquote>
+<p><strong>Notation.</strong> Let $p:X\to X$ denote a permutation on some finite set $X={x_0, x_1, x_2, \ldots, x_n}$. Then we can write</p>
+<p>$$<br>
+p = \begin{pmatrix}<br>
+x_0    &amp; x_1    &amp; x_2    &amp; \ldots &amp; x_n \\<br>
+p(x_0) &amp; p(x_1) &amp; p(x_2) &amp; \ldots &amp; p(x_n)<br>
+\end{pmatrix}<br>
+$$</p>
+<p>as a shorthand to describe the images of each element under $p$.</p>
+</blockquote>
+<p>Using this new notation, the permutation from the first example above can be written</p>
+<p>$$<br>
+p_1 = \begin{pmatrix}<br>
+0 &amp; 1 &amp; 2 &amp; 3 \\<br>
+1 &amp; 2 &amp; 3 &amp; 0<br>
+\end{pmatrix},<br>
+$$</p>
+<p>and the one from the second example becomes</p>
+<p>$$<br>
+p_2 = \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; c &amp; b &amp; e &amp; g &amp; d &amp; f<br>
+\end{pmatrix}.<br>
+$$</p>
+<p>This second example has a few interesting properties. Note that $a$ gets sent to $a$ and is thus a fixed point of the permutation. The letters $b$ and $c$ get swapped, and $d, e, f$ and $g$ all get permuted among themselves. What this means is that the action of $a$ is entirely unrelated to the actions of $b$ and $c$, which are entirely unrelated to the actions of $d, e, f$ and $g$.</p>
+<p>This observation that certain subsets behave completely independently of each other suggests that there may be a way to break the permutation into more fundamental building blocks.</p>
+<p>Before we delve into how this is done, it is important to realize that, since permutations are just functions, they can be composed with each other. The following easily-proved result tells us that the composition of permutations is always itself a permutation.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $p:A\to B$ and $q:B\to C$ be bijective functions. Then $q\circ p:A\to C$ is also bijective.</p>
+<p><strong>Proof.</strong> Since $p$ and $q$ are bijections, they are by definition injective and surjective. To show that $q\circ p$ is bijective, we must show that it is also injective and surjective.</p>
+<p>We argue first that $p\circ q$ is injective. To this end, suppose that $a_1, a_2\in A$ and that $a_1\ne a_2$. Then because $p$ is injective, we know that $p(a_1)\ne p(a_2)$. Furthermore, since $q$ is injective, we know that</p>
+<p>$$<br>
+\begin{align}<br>
+(q\circ p)(a_1) &amp;=   q(p(a_1)) \\<br>
+&amp;\ne q(p(a_2)) \\<br>
+&amp;=   (q\circ p)(a_2).<br>
+\end{align}<br>
+$$</p>
+<p>We have shown that distinct elements of $A$ get mapped to distinct elements of $C$, so it follows that $q\circ p$ is injective.</p>
+<p>It remains to be shown that $q\circ p$ is surjective. For any element $c\in C$, the surjectivity of $q$ tells us that there exists some element $b\in B$ for $c = q(b)$. It follows then from the surjectivity of $p$ that there exists some $a\in A$ for which $b=p(a)$. That is,</p>
+<p>$$<br>
+\begin{align}<br>
+c &amp;= q(p(a)) \\<br>
+&amp;= (q\circ p)(a).<br>
+\end{align}<br>
+$$</p>
+<p>We have shown that every element of $C$ gets mapped to by some element of $A$, so it follows that $q\circ p$ is surjective.</p>
+<p>Since $q\circ p$ is injective and surjective, it is bijective.</p>
+</blockquote>
+<p>This theorem is actually much more general than what we need, since permutations are very specific bijections which take finite sets to themselves. But as a special case, it certainly tells us that the composition of permutations is a permutation.</p>
+<blockquote>
+<p><strong>Notation.</strong> For convenience, we frequently omit the $\circ$ symbol and treat composition of permutations similarly to multiplication. That is, we simply write $qp$ instead of $q\circ p$. In particular, this allows us to use exponential notation to write</p>
+<p>$$<br>
+p^n = \underbrace{p\circ p\circ \cdots \circ p}_{n \text{ times}}.<br>
+$$</p>
+<p>We also define $p^0$ to be the identity function, and $p^{-n}$ to be $(p^{-1})^n$. Note that $p^{-1}$ exists and is guaranteed to be a permutation since $p$ is bijective. With these definitions, it is easy to see that, for any integers $n$ and $m$,</p>
+<p>$$<br>
+p^{n+m} = p^n p^m.<br>
+$$</p>
+</blockquote>
+<p>Equipped with our new machinery, we can begin to see how a permutation can be broken up into more basic building blocks.</p>
+<blockquote>
+<p><strong>Example.</strong> Consider the permutations</p>
+<p>$$<br>
+q_1 = \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; c &amp; b &amp; d &amp; e &amp; f &amp; g<br>
+\end{pmatrix}<br>
+$$</p>
+<p>and</p>
+<p>$$<br>
+q_2 = \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; b &amp; c &amp; e &amp; g &amp; d &amp; f<br>
+\end{pmatrix}.<br>
+$$</p>
+<p>Then their composition is</p>
+<p>$$<br>
+\begin{align}<br>
+q_2 \circ q_1 &amp;= \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; b &amp; c &amp; e &amp; g &amp; d &amp; f<br>
+\end{pmatrix} \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; c &amp; b &amp; d &amp; e &amp; f &amp; g<br>
+\end{pmatrix} \\<br>
+&amp;= \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; c &amp; b &amp; e &amp; g &amp; d &amp; f<br>
+\end{pmatrix} \\<br>
+&amp;= p_2.<br>
+\end{align}<br>
+$$</p>
+<p>This gives us an explicit way to express the permutation $p_2$ as the composition of a permutation $q_1$, which affects only the elements $b$ and $c$, and the permutation $q_2$, which affects only the elements $d, e, f, g$.</p>
+</blockquote>
+<p>It is generally possible to break up any permutation this way. We are now ready to see how it is done.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $p:X\to X$ be a permutation. Then the relation $\sim$ on $X$, defined by $a\sim b$ whenever $b=p^n(a)$ for some $n\in\Z$, is an equivalence relation.</p>
+<p><strong>Proof.</strong> By the definition of equivalence relation, it suffices to show that $\sim$ is reflexive, symmetric and transitive.</p>
+<p>To see that $\sim$ is reflexive, it suffices to choose $n=0$, as it is certainly true that $a = p^0(a)$ for any $a\in X$. (Recall that $p^0$ is the identity map.) Thus, $a\sim a$ for every $a\in X$.</p>
+<p>To see that it is symmetric, suppose $a\sim b$ for some elements $a,b\in X$. Then by definition, $b=p^n(a)$ for some integer $n$. Acting on both sides with the permutation $p^{-n}$ yields</p>
+<p>$$<br>
+\begin{align}<br>
+p^{-n}(b) &amp;= p^{-n}(p^n(a)) \\<br>
+&amp;= p^0(a) \\<br>
+&amp;= a.<br>
+\end{align}<br>
+$$</p>
+<p>It follows then that $b\sim a$ and thus $\sim$ is symmetric.</p>
+<p>Lastly, we need to show that $\sim$ is transitive. To this end, suppose that $a\sim b$ and $b\sim c$, for some elements $a, b, c\in X$. Then there exist integers $n_1, n_2$ for which $b=p^{n_1}(a)$ and $c=p^{n_2}(b)$. Then</p>
+<p>$$<br>
+\begin{align}<br>
+c &amp;= p^{n_2}(b) \\<br>
+&amp;= p^{n_2}(p^{n_1}(a)) \\<br>
+&amp;= (p^{n_2}p^{n_1})(a) \\<br>
+&amp;= p^{n_1 + n_2}(a).<br>
+\end{align}<br>
+$$</p>
+<p>Since $n_1+n_2$ is an integer, it follows that $c\sim a$ and thus $\sim$ is transitive.</p>
+<p>We have shown that $\sim$ is reflexive, symmetric and transitive. Therefore it is an equivalence relation.</p>
+</blockquote>
+<p>The following definition makes this all easier to talk about.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $p:X\to X$ denote a permutation on a finite set $X$, and let $\sim$ be the equivalence relation on $X$ defined in the previous theorem. Then the equivalence classes of $\sim$ are called <strong>orbits</strong> of the permutation $p$.</p>
+</blockquote>
+<p>Let's break this all down. Basically an orbit of a permutation is a collection of elements that are all reachable from each other under repeat application of that permutation. That is, if $x$ and $y$ are in the same orbit of some permutation, then applying the permutation to $x$ enough times will eventually get you to $y$.</p>
+<p>In the case of the permutation $p_2$ defined earlier in the post, the orbits are the sets ${a}$, ${b, c}$ and ${d, e, f, g}$. Our earlier assertion that these sets behaved independently of each other under the permutation $p_2$ is now formalized by the realization that orbits must partition the entire set. But remember that we were actually able to use this fact to find permutations $q_1$ and $q_2$ which acted on these orbits and whose composition was $p_2$. Let's see if we can make this type of decomposition more rigorous as well.</p>
+<blockquote>
+<p><strong>Definition.</strong> A permutation $p:X\to X$ is a <em>cycle</em> if at most one of its orbits contains more than a single element. Two cycles are called <em>disjoint</em> if their non-singleton orbits are disjoint sets. The <em>length</em> of a cycle is the size of its largest orbit.</p>
+</blockquote>
+<p>It is not difficult to see that $q_1$ and $q_2$ are cycles. The orbits of $q_1$ are ${a}$, ${b, c}$, ${d}$, ${e}$, ${f}$ and ${g}$. Note that only one of these orbits, namely ${b,c}$, has upwards of one element, and so $q_1$ is a cycle. Similarly, the orbits of $q_2$ are ${a}$, ${b}$, ${c}$ and ${d, e, f, g}$. Since only this last orbit has more than one element, $q_2$ is a cycle as well. Additionally, the cycles $q_1$ and $q_2$ are disjoint because their non-singleton orbits are disjoint.</p>
+<p>This implies that what we are really looking for is a way to decompose any permutation into a product of disjoint cycles. The next theorem tells us that this can always be done.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Any permutation $p:X\to X$ can be written as the composition of disjoint cycles.</p>
+<p><strong>Proof.</strong> Let $O_1, O_2, \ldots, O_n$ denote the orbits of $p$. (There are, of course, finitely many orbits because $X$ must be a finite set.) Then for each $1\le i \le n$ and each $x\in X$, define</p>
+<p>$$<br>
+c_i(x) = \begin{cases}<br>
+p(x) &amp; \text{if $x\in O_i$}, \\<br>
+x &amp; \text{otherwise}.<br>
+\end{cases}<br>
+$$</p>
+<p>Then each $c_i$ is a cycle because, by construction, its only non-singleton orbit is $O_i$. Since the orbits are disjoint, this in turn means that these are all disjoint cycles.</p>
+<p>We argue that $p=c_1c_2\cdots c_n$. To this end, choose any $a\in X$. Then at most one orbit of $p$, say $O_j$, contains $a$. This means that $c_j(a)=p(a)$ and $c_i(a) = a$ for every $i\ne j$. That is, the restriction $c_i\mid_{{a}}$is the identity map $i$. It follows then that</p>
+<p>$$<br>
+\begin{align}<br>
+(c_1 c_2 \cdots c_j \cdots c_n)(a) &amp;= \big(c_1\mid_{{a}} c_2\mid_{{a}} \cdots c_j \cdots c_n\mid_{{a}}\big)(a) \\<br>
+&amp;= \big(i^{j-1} c_j i^{n-j}\big)(a) \\<br>
+&amp;= c_j(a) \\<br>
+&amp;= p(a),<br>
+\end{align}<br>
+$$</p>
+<p>as desired.</p>
+</blockquote>
+<p>This type of decomposition is even unique! That is, there is one such collection of disjoint cycles whose product is our desired permutation. The order in which they are multiplied is not unique, however.</p>
+<p>If we do not demand that our cycles be disjoint, there are even more ways to decompose a permutation into products of cycles. As an example, consider the following definitions:</p>
+<p>$$<br>
+\begin{align}<br>
+r_1 &amp;= \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; c &amp; b &amp; d &amp; e &amp; f &amp; g<br>
+\end{pmatrix}, \\<br>
+r_2 &amp;= \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; b &amp; c &amp; e &amp; d &amp; f &amp; g<br>
+\end{pmatrix}, \\<br>
+r_3 &amp;= \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; b &amp; c &amp; d &amp; g &amp; f &amp; e<br>
+\end{pmatrix}, \\<br>
+r_4 &amp;= \begin{pmatrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; g &amp; f<br>
+\end{pmatrix}.<br>
+\end{align}<br>
+$$</p>
+<p>These are all permutations which each swap only two elements. They are cycles because each has only one non-singleton orbit. Those orbits are ${b, c}$, ${d, e}$, ${e, g}$ and ${f, g}$, respectively. These orbits are not disjoint, and thus neither are are the cycles. But it turns out that $r_4r_3r_2r_1=p_2$. To see this, the following flowchart might be a helpful visual aid, where we apply first $r_1$, then $r_2$, then $r_3$ and finally $r_4$ from top to bottom:</p>
+<p>$$<br>
+\begin{matrix}<br>
+a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
+&amp;&amp;&amp; \downarrow \\<br>
+a &amp; c &amp; b &amp; d &amp; e &amp; f &amp; g \\<br>
+&amp;&amp;&amp; \downarrow \\<br>
+a &amp; c &amp; b &amp; e &amp; d &amp; f &amp; g \\<br>
+&amp;&amp;&amp; \downarrow \\<br>
+a &amp; c &amp; b &amp; e &amp; g &amp; f &amp; d \\<br>
+&amp;&amp;&amp; \downarrow \\<br>
+a &amp; c &amp; b &amp; e &amp; g &amp; d &amp; f<br>
+\end{matrix}<br>
+$$</p>
+<p>Since we've now shown two ways of decomposing $p_2$ into cycles, it's obvious that such a decomposition is not unique unless we insist that our cycles are disjoint. There is still useful information to be extracted from such decompositions, however, particularly decompositions of the form above.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <em>transposition</em> is a cycle of length $2$.</p>
+</blockquote>
+<p>In other words, a transposition is a permutation which swaps only two elements. This means, for example, that $r_1, r_2, r_3$ and $r_4$ as defined above are all transpositions. The following theorem, though perhaps obvious, is surprisingly important.  Before we prove it, it is helpful to introduce a new notation for cycles:</p>
+<blockquote>
+<p><strong>Notation.</strong> Let $c:X\to X$ denote a cycle. If its largest orbit sends $x_1 \mapsto x_2 \mapsto \cdots \mapsto x_n$ then we write</p>
+<p>$$<br>
+c = \begin{pmatrix}<br>
+x_1 &amp; x_2 &amp; \cdots &amp; x_n<br>
+\end{pmatrix}.<br>
+$$</p>
+</blockquote>
+<p>This allows us to simplify our representations a great deal, as long as we know the permutations we're talking about are all cycles. For instance, it allows us to write</p>
+<p>$$<br>
+\begin{align}<br>
+q_1 &amp;= \begin{pmatrix}b &amp; c\end{pmatrix}, \\<br>
+q_2 &amp;= \begin{pmatrix}d &amp; e &amp; g &amp; f\end{pmatrix}, \\<br>
+r_1 &amp;= \begin{pmatrix}b &amp; c\end{pmatrix}, \\<br>
+r_2 &amp;= \begin{pmatrix}d &amp; e\end{pmatrix}, \\<br>
+r_3 &amp;= \begin{pmatrix}e &amp; g\end{pmatrix}, \\<br>
+r_4 &amp;= \begin{pmatrix}f &amp; g\end{pmatrix}.<br>
+\end{align}<br>
+$$</p>
+<p>Thus,</p>
+<p>$$<br>
+\begin{align}<br>
+p_2 &amp;= \begin{pmatrix}d &amp; e &amp; g &amp; f\end{pmatrix}\begin{pmatrix}b &amp; c\end{pmatrix} \\<br>
+&amp;= \begin{pmatrix}f &amp; g\end{pmatrix}\begin{pmatrix}e &amp; g\end{pmatrix}\begin{pmatrix}d &amp; e\end{pmatrix}\begin{pmatrix}b &amp; c\end{pmatrix}.<br>
+\end{align}<br>
+$$</p>
+<p>Now we're ready to prove that theorem!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Any permutation $p:X\to X$, where $X$ is a finite set containing at least two elements, can be expressed as a product of transpositions.</p>
+<p><strong>Proof.</strong> If $p$ is the identity permutation, then the empty product yields p. Otherwise, we can write $p$ as a finite product of cycles, $p=c_1c_2\cdots c_n$. If we can decompose each cycle $c_i$ into a product of transpositions, the result will follow.</p>
+<p>Each cycle $c_i$ can be written $c_i=\begin{pmatrix} a_1 &amp; a_2 &amp; \cdots &amp; a_{m_i} \end{pmatrix}$ for some integer $m_i$ and some ${a_j}_{j=1}^{m_i}$.  We write this cycle as a composition of transpositions as follows</p>
+<p>$$<br>
+\begin{align}<br>
+c_i &amp;= \begin{pmatrix} a_1 &amp; a_2 &amp; \cdots &amp; a_{m_i} \end{pmatrix} \\<br>
+&amp;= \begin{pmatrix}a_1 &amp; a_{m_i}\end{pmatrix}\begin{pmatrix}a_1 &amp; a_{m_i-1}\end{pmatrix}\cdots\begin{pmatrix}a_1 &amp; a_2\end{pmatrix}.<br>
+\end{align}<br>
+$$</p>
+<p>Now $p$ is just the product of these cycles, each of which is the product of transpositions, and so $p$ itself is a product of transpositions, completing the proof.</p>
+</blockquote>
+<p>There are many possible such decompositions into transpositions for any given permutation. However, it turns out that such decompositions have one important invariant property. Namely, any permutation's expression as a product of transpositions will always either have an odd number of transpositions or an even number.</p>
+<p>For instance, there may be many ways to decompose $p_2$ into a product of transpositions. But we've seen it done using four, and so we can say with certainty that any such decomposition will <em>always</em> have an even number of transpositions. This property is called the <em>parity</em> of a permutation, and it is so important that there is a theorem named after it — the Parity Theorem. Unfortunately the proof is somewhat beyond the scope of this blog post, but maybe I will devote a full post to it at some point. In any case, you should now have a good understanding of what it means. Here is the statement:</p>
+<blockquote>
+<p><strong>Parity Theorem.</strong> A permutation $p$ cannot be expressed as both the product of an odd number of transpositions and as the product of an even number of transpositions.</p>
+</blockquote>
+<p>This fact allows us make the following definitions:</p>
+<blockquote>
+<p><strong>Definition.</strong> A permutation is <em>odd</em> if it can be expressed as the product of an odd number of transpositions. It is <em>even</em> if it can be expressed as the product of an even number of transpositions.</p>
+</blockquote>
+<p>Every permutation is either even <em>or</em> odd, but it cannot be both. I will leave it at that for now, but we will be making use of this fact in my next post. Stay tuned!</p>
+
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="/author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="/assets/main/js/jquery.min.js?v=efe6bcf6ed"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=efe6bcf6ed"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=efe6bcf6ed"></script>
+    <script src="/assets/main/js/browser.min.js?v=efe6bcf6ed"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=efe6bcf6ed"></script>
+    <script src="/assets/main/js/util.js?v=efe6bcf6ed"></script>
+    <script src="/assets/main/js/main.js?v=efe6bcf6ed"></script>
+
+    
+
+</body>
+</html>

@@ -34,7 +34,7 @@ X$.
 T" />
     <meta property="og:url" content="https://algebrology.github.io/permutations-and-parity/" />
     <meta property="article:published_time" content="2019-11-13T03:00:15.000Z" />
-    <meta property="article:modified_time" content="2019-11-13T03:04:41.000Z" />
+    <meta property="article:modified_time" content="2019-11-14T02:18:19.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Permutations and Parity" />
     <meta name="twitter:description" content="In my next post, I would like to introduce a very special type of tensor whose
@@ -76,7 +76,7 @@ T" />
     "headline": "Permutations and Parity",
     "url": "https://algebrology.github.io/permutations-and-parity/",
     "datePublished": "2019-11-13T03:00:15.000Z",
-    "dateModified": "2019-11-13T03:04:41.000Z",
+    "dateModified": "2019-11-14T02:18:19.000Z",
     "description": "In my next post, I would like to introduce a very special type of tensor whose\nproperties are invaluable in many fields, most notably differential geometry.\nAlthough it&#x27;s possible to understand antisymmetric tensors without discussing\npermutations and their parity, these concepts are invaluable to developing the\ntheory properly. Thus, in this post we will take a brief voyage into the topic\nof permutations.\n\n&gt; Definition.  A permutation  on a finite set $X$ is a bijective function $p:X\\to\nX$.\n\n\nT",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </blockquote>
 <p>That seems simple enough. Basically, permutations offer us a way of rearranging the order of elements in a set. To see what I mean by this, let's look at a few examples.</p>
 <blockquote>
-<p><strong>Example.</strong> Let $\N_4$ denote the set ${0, 1, 2, 3}$ containing the first four natural numbers. The function $p_1:\N_4 \to \N_4$, defined by $p_1(x) = x + 1\mod 4$, is a permutation. See how the permutation $p_1$ rearranges the order of these numbers:</p>
+<p><strong>Example.</strong> Let $\N_4$ denote the set $\{0, 1, 2, 3\}$ containing the first four natural numbers. The function $p_1:\N_4 \to \N_4$, defined by $p_1(x) = x + 1\hspace{-4pt}\mod 4$, is a permutation. See how the permutation $p_1$ rearranges the order of these numbers:</p>
 <p>$$<br>
 \begin{align}<br>
 0 &amp;\mapsto 1 \\<br>
@@ -200,7 +200,7 @@ MathJax.Hub.Config({
 $$</p>
 </blockquote>
 <blockquote>
-<p><strong>Example.</strong> Not every permutation is as easy to write an equation to describe. For example, let $X$ denote the set ${a, b, c, d, e, f, g}$ . Then there exists a bijection $p_2$ which permutes these letters as follows:</p>
+<p><strong>Example.</strong> Not every permutation is as easy to write an equation to describe. For example, let $X$ denote the set $\{a, b, c, d, e, f, g\}$ . Then there exists a bijection $p_2$ which permutes these letters as follows:</p>
 <p>$$<br>
 \begin{align}<br>
 a &amp;\mapsto a \\<br>
@@ -216,7 +216,7 @@ $$</p>
 </blockquote>
 <p>Because we often need to describe permutations that have no simple corresponding equation, it is common to adopt the following compact notation to represent permutations:</p>
 <blockquote>
-<p><strong>Notation.</strong> Let $p:X\to X$ denote a permutation on some finite set $X={x_0, x_1, x_2, \ldots, x_n}$. Then we can write</p>
+<p><strong>Notation.</strong> Let $p:X\to X$ denote a permutation on some finite set $X=\{x_0, x_1, x_2, \ldots, x_n\}$. Then we can write</p>
 <p>$$<br>
 p = \begin{pmatrix}<br>
 x_0    &amp; x_1    &amp; x_2    &amp; \ldots &amp; x_n \\<br>
@@ -341,11 +341,11 @@ $$</p>
 <p><strong>Definition.</strong> Let $p:X\to X$ denote a permutation on a finite set $X$, and let $\sim$ be the equivalence relation on $X$ defined in the previous theorem. Then the equivalence classes of $\sim$ are called <strong>orbits</strong> of the permutation $p$.</p>
 </blockquote>
 <p>Let's break this all down. Basically an orbit of a permutation is a collection of elements that are all reachable from each other under repeat application of that permutation. That is, if $x$ and $y$ are in the same orbit of some permutation, then applying the permutation to $x$ enough times will eventually get you to $y$.</p>
-<p>In the case of the permutation $p_2$ defined earlier in the post, the orbits are the sets ${a}$, ${b, c}$ and ${d, e, f, g}$. Our earlier assertion that these sets behaved independently of each other under the permutation $p_2$ is now formalized by the realization that orbits must partition the entire set. But remember that we were actually able to use this fact to find permutations $q_1$ and $q_2$ which acted on these orbits and whose composition was $p_2$. Let's see if we can make this type of decomposition more rigorous as well.</p>
+<p>In the case of the permutation $p_2$ defined earlier in the post, the orbits are the sets $\{a\}$, $\{b, c\}$ and $\{d, e, f, g\}$. Our earlier assertion that these sets behaved independently of each other under the permutation $p_2$ is now formalized by the realization that orbits must partition the entire set. But remember that we were actually able to use this fact to find permutations $q_1$ and $q_2$ which acted on these orbits and whose composition was $p_2$. Let's see if we can make this type of decomposition more rigorous as well.</p>
 <blockquote>
 <p><strong>Definition.</strong> A permutation $p:X\to X$ is a <em>cycle</em> if at most one of its orbits contains more than a single element. Two cycles are called <em>disjoint</em> if their non-singleton orbits are disjoint sets. The <em>length</em> of a cycle is the size of its largest orbit.</p>
 </blockquote>
-<p>It is not difficult to see that $q_1$ and $q_2$ are cycles. The orbits of $q_1$ are ${a}$, ${b, c}$, ${d}$, ${e}$, ${f}$ and ${g}$. Note that only one of these orbits, namely ${b,c}$, has upwards of one element, and so $q_1$ is a cycle. Similarly, the orbits of $q_2$ are ${a}$, ${b}$, ${c}$ and ${d, e, f, g}$. Since only this last orbit has more than one element, $q_2$ is a cycle as well. Additionally, the cycles $q_1$ and $q_2$ are disjoint because their non-singleton orbits are disjoint.</p>
+<p>It is not difficult to see that $q_1$ and $q_2$ are cycles. The orbits of $q_1$ are $\{a\}$, $\{b, c\}$, $\{d\}$, $\{e\}$, $\{f\}$ and $\{g\}$. Note that only one of these orbits, namely $\{b,c\}$, has upwards of one element, and so $q_1$ is a cycle. Similarly, the orbits of $q_2$ are $\{a\}$, $\{b\}$, $\{c\}$ and $\{d, e, f, g\}$. Since only this last orbit has more than one element, $q_2$ is a cycle as well. Additionally, the cycles $q_1$ and $q_2$ are disjoint because their non-singleton orbits are disjoint.</p>
 <p>This implies that what we are really looking for is a way to decompose any permutation into a product of disjoint cycles. The next theorem tells us that this can always be done.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Any permutation $p:X\to X$ can be written as the composition of disjoint cycles.</p>
@@ -357,10 +357,10 @@ x &amp; \text{otherwise}.<br>
 \end{cases}<br>
 $$</p>
 <p>Then each $c_i$ is a cycle because, by construction, its only non-singleton orbit is $O_i$. Since the orbits are disjoint, this in turn means that these are all disjoint cycles.</p>
-<p>We argue that $p=c_1c_2\cdots c_n$. To this end, choose any $a\in X$. Then at most one orbit of $p$, say $O_j$, contains $a$. This means that $c_j(a)=p(a)$ and $c_i(a) = a$ for every $i\ne j$. That is, the restriction $c_i\mid_{{a}}$is the identity map $i$. It follows then that</p>
+<p>We argue that $p=c_1c_2\cdots c_n$. To this end, choose any $a\in X$. Then at most one orbit of $p$, say $O_j$, contains $a$. This means that $c_j(a)=p(a)$ and $c_i(a) = a$ for every $i\ne j$. That is, the restriction $c_i\mid_{\{a\}}$is the identity map $i$. It follows then that</p>
 <p>$$<br>
 \begin{align}<br>
-(c_1 c_2 \cdots c_j \cdots c_n)(a) &amp;= \big(c_1\mid_{{a}} c_2\mid_{{a}} \cdots c_j \cdots c_n\mid_{{a}}\big)(a) \\<br>
+(c_1 c_2 \cdots c_j \cdots c_n)(a) &amp;= \big(c_1\mid_{\{a\}} c_2\mid_{\{a\}} \cdots c_j \cdots c_n\mid_{\{a\}}\big)(a) \\<br>
 &amp;= \big(i^{j-1} c_j i^{n-j}\big)(a) \\<br>
 &amp;= c_j(a) \\<br>
 &amp;= p(a),<br>
@@ -369,6 +369,36 @@ $$</p>
 <p>as desired.</p>
 </blockquote>
 <p>This type of decomposition is even unique! That is, there is one such collection of disjoint cycles whose product is our desired permutation. The order in which they are multiplied is not unique, however.</p>
+<p>Disjoint cycles have another nice property: they commute, meaning that it does not matter in which order we apply them.</p>
+<blockquote>
+<p><strong>Theorem.</strong> If $p:X\to X$ and $q:X\to X$ are disjoint cycles, then $pq=qp$.</p>
+<p><strong>Proof.</strong> Since $p$ and $q$ are disjoint, then their non-singleton orbits, $O_p=\{a_0, a_2, \ldots, a_{n-1}\}$ and $O_q=\{b_0, b_2, \ldots, b_{m-1}\}$ are disjoint. Let $C$ be the set of elements in $X$ which are fixed points of both $p$ and $q$. Then $X=O_p \cup O_q \cup C$ and these sets are all pairwise disjoint. It thus suffices to show that $(pq)(x)=(qp)(x)$ for any of these cases: $x\in O_p$, $x\in O_q$ and $x\in C$.</p>
+<p>Suppose first that $x\in O_p$. Then $x=a_i$ for some $0\le i&lt; n$. Note that $p(a_i)=a_{i+1\hspace{-2pt}\mod n}$ and $q(a_i)=a_i$ since $a_i$ is by definition in a singleton orbit of $q$. Thus,</p>
+<p>$$<br>
+\begin{align}<br>
+(pq)(x) &amp;= (pq)(a_i) \\<br>
+&amp;= p(q(a_i)) \\<br>
+&amp;= p(a_i) \\<br>
+&amp;= a_{i+1\hspace{-2pt}\mod n} \\<br>
+&amp;= q(a_{i+1\hspace{-2pt}\mod n}) \\<br>
+&amp;= q(p(a_i)) \\<br>
+&amp;= (qp)(a_i).<br>
+\end{align}<br>
+$$</p>
+<p>An entirely symmetrical argument holds for the case where $x\in O_q$, noting that $x=b_j$ for some $0\le j&lt; m$ and that $q(b_j)=b_{j+1\hspace{-2pt}\mod m}$ and $p(b_j) = b_j$ since $b_j$ is a fixed point of $p$.</p>
+<p>Lastly, if $x\in C$ then it is a fixed point of both $p$ and $q$. That is, $p(x) = q(x) = x$. Thus,</p>
+<p>$$<br>
+\begin{align}<br>
+(pq)(x) &amp;= p(q(x)) \\<br>
+&amp;= p(x) \\<br>
+&amp;= x \\<br>
+&amp;= q(x) \\<br>
+&amp;= q(p(x)) \\<br>
+&amp;= (qp)(x).<br>
+\end{align}<br>
+$$</p>
+<p>It follows that $(pq)(x)=(qp)(x)$ for every $x\in X$, and thus $pq=qp$ as desired.</p>
+</blockquote>
 <p>If we do not demand that our cycles be disjoint, there are even more ways to decompose a permutation into products of cycles. As an example, consider the following definitions:</p>
 <p>$$<br>
 \begin{align}<br>
@@ -390,7 +420,7 @@ a &amp; b &amp; c &amp; d &amp; e &amp; g &amp; f<br>
 \end{pmatrix}.<br>
 \end{align}<br>
 $$</p>
-<p>These are all permutations which each swap only two elements. They are cycles because each has only one non-singleton orbit. Those orbits are ${b, c}$, ${d, e}$, ${e, g}$ and ${f, g}$, respectively. These orbits are not disjoint, and thus neither are are the cycles. But it turns out that $r_4r_3r_2r_1=p_2$. To see this, the following flowchart might be a helpful visual aid, where we apply first $r_1$, then $r_2$, then $r_3$ and finally $r_4$ from top to bottom:</p>
+<p>These are all permutations which each swap only two elements. They are cycles because each has only one non-singleton orbit. Those orbits are $\{b, c\}$, $\{d, e\}$, $\{e, g\}$ and $\{f, g\}$, respectively. These orbits are not disjoint, and thus neither are are the cycles. But it turns out that $r_4r_3r_2r_1=p_2$. To see this, the following flowchart might be a helpful visual aid, where we apply first $r_1$, then $r_2$, then $r_3$ and finally $r_4$ from top to bottom:</p>
 <p>$$<br>
 \begin{matrix}<br>
 a &amp; b &amp; c &amp; d &amp; e &amp; f &amp; g \\<br>
@@ -439,7 +469,7 @@ $$</p>
 <blockquote>
 <p><strong>Theorem.</strong> Any permutation $p:X\to X$, where $X$ is a finite set containing at least two elements, can be expressed as a product of transpositions.</p>
 <p><strong>Proof.</strong> If $p$ is the identity permutation, then the empty product yields p. Otherwise, we can write $p$ as a finite product of cycles, $p=c_1c_2\cdots c_n$. If we can decompose each cycle $c_i$ into a product of transpositions, the result will follow.</p>
-<p>Each cycle $c_i$ can be written $c_i=\begin{pmatrix} a_1 &amp; a_2 &amp; \cdots &amp; a_{m_i} \end{pmatrix}$ for some integer $m_i$ and some ${a_j}_{j=1}^{m_i}$.  We write this cycle as a composition of transpositions as follows</p>
+<p>Each cycle $c_i$ can be written $c_i=\begin{pmatrix} a_1 &amp; a_2 &amp; \cdots &amp; a_{m_i} \end{pmatrix}$ for some integer $m_i$ and some $\{a_j\}_{j=1}^{m_i}$.  We write this cycle as a composition of transpositions as follows</p>
 <p>$$<br>
 \begin{align}<br>
 c_i &amp;= \begin{pmatrix} a_1 &amp; a_2 &amp; \cdots &amp; a_{m_i} \end{pmatrix} \\<br>

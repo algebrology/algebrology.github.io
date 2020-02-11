@@ -23,7 +23,7 @@
     <meta property="og:description" content="Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics." />
     <meta property="og:url" content="https://algebrology.github.io/smooth-manifolds/" />
     <meta property="article:published_time" content="2020-02-10T19:43:54.000Z" />
-    <meta property="article:modified_time" content="2020-02-11T03:43:29.000Z" />
+    <meta property="article:modified_time" content="2020-02-11T03:59:22.000Z" />
     <meta property="article:tag" content="differential geometry" />
     
     <meta name="twitter:card" content="summary" />
@@ -58,7 +58,7 @@
     "headline": "Smooth Manifolds",
     "url": "https://algebrology.github.io/smooth-manifolds/",
     "datePublished": "2020-02-10T19:43:54.000Z",
-    "dateModified": "2020-02-11T03:43:29.000Z",
+    "dateModified": "2020-02-11T03:59:22.000Z",
     "keywords": "differential geometry",
     "description": "Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.",
     "mainEntityOfPage": {
@@ -178,7 +178,7 @@ MathJax.Hub.Config({
 <p><strong>Definition.</strong> A topological space is <strong>second countable</strong> if it has a countable basis.</p>
 </blockquote>
 <blockquote>
-<p><strong>Example.</strong> The set $\R$ with the standard topology is second countable, since ${(a, b)\subseteq\R\mid a, b\in \Q}$, the set of open intervals with rational endpoints, is a basis for $\R$. I won't prove it, but we can express any $x\in\R$ as a Cauchy sequence of rational numbers, so the union of open intervals with the elements of this sequence as an endpoint will be an open interval with $x$ as an endpoint.</p>
+<p><strong>Example.</strong> The set $\R$ with the standard topology is second countable, since ${(a, b)\subseteq\R\mid a, b\in \Q}$, the set of open intervals with rational endpoints, is a basis for $\R$. I won't prove it, but we can express any two real numbers $x&lt;y$ as a strictly decreasing and a strictly increasing Cauchy sequence of rational numbers, respectively. The union of open intervals with the elements of these sequences as rational endpoints will be an open interval with $x$ and $y$ as real endpoints.</p>
 </blockquote>
 <p>The next definition is not terribly important in its own right, but it will make the rest of the notation in this post considerably cleaner.</p>
 <blockquote>
@@ -282,7 +282,7 @@ $$f(p) = x_N^{-1}\circ (x_N\circ f\circ x_M^{-1})(x_M(p)).$$ Thus, all the behav
 <p><strong>Definition.</strong> Let $M$ and $N$ be smooth manifolds. A map $f:M\to N$ is a <strong>smooth map</strong> if for every point $p\in M$ there is a chart $(U_M, x_M)$ for $M$ whose domain contains $p$ and a chart $(U_N, x_N)$ whose domain contains $f(p)$ and for which $x_N\circ f\circ x_M^{-1}$ is smooth in the sense of ordinary differential calculus.</p>
 </blockquote>
 <p>We still need to check that the concept of a smooth map is well defined. For instance, it's possible that $p$ is contained in two charts whose intersection is $U_M$ and $f(p)$ is contained in two charts whose intersection is $U_N$.</p>
-<p><img src="https://algebrology.github.io/content/images/2020/02/smooth-function-well-defined.svg" alt="smooth-function-well-defined"></p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/smooth-map-well-defined.svg" alt="smooth-map-well-defined"></p>
 <p>Suppose $x_N\circ f\circ x_M^{-1}$ is smooth. Then<br>
 $$<br>
 \begin{align}y_N\circ f\circ y_M^{-1} &amp;= y_N\circ (x_N^{-1}\circ x_N)\circ f\circ (x_M^{-1}\circ x_M)\circ y_M^{-1} \\<br>

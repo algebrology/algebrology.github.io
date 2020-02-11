@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -104,7 +104,7 @@
 <h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
 <p>Since I haven't posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces. Since we care only about abstract properties of vector spaces and not about any specific vector space, I will talk generally about a vector space $V$ of dimension $n$ over a field $\F$ for the remainder of this post.</p>
 <p>As we discovered previously, every finite dimensional vector space has a basis. That is, there exists a linearly independent collection $(e_1,e_2,\ldots,e_n)$ of vectors in $V$ for which any vector $v$ in $V$ can be expressed as a linear combination of these basis vectors. That is, for any $v\in V$ there exist scalars $(v^i)_{i=1}^n$ in $\F$ for which</p>
-<p>$v=\sum_{i=1}^n v^i e_i.$</p>
+<p>$$v=\sum_{i=1}^n v^i e_i.$$</p>
 <p>Note that in the expression above, I have moved the index on $v^i$ into the upper position, whereas in previous posts I would have written the same scalars as $v_i$. There is a good reason for this, and it is commonly seen in physics and differential geometry. The reason will become apparent shortly, but for now just realize that using superscripts for index placement is really no different than using subscripts, and it <strong>does not</strong> represent exponentiation. For instance, $v^2$ represents the second scalar in a list and <strong>not</strong> $v\cdot v$.</p>
 <p>Having a basis for our vector space is nice for two main reasons:</p>
 <ol>
@@ -140,23 +140,23 @@
 <p>However, if we try to figure out the dimension of the dual space, the picture begins to become a little clearer. Before we proceed, we'll need the following definition:</p>
 <blockquote>
 <p><strong>Definition.</strong> Given $n\in\N$, the <strong>Kronecker delta</strong> is the function $\delta:\Z_n\times \Z_n\to\R$ defined by</p>
-<p>$\delta^i_j =<br />
+<p>$$\delta^i_j =<br />
 \begin{cases}<br />
 0 &amp; \text{if } i\ne j, \\<br />
 1 &amp; \text{if } i = j.<br />
-\end{cases}$</p>
+\end{cases}$$</p>
 </blockquote>
 <p>The weird upper and lower index notation in place of a more traditional notation for function arguments, such as $\delta(i, j)$, does have a purpose which will soon become apparent.</p>
 <p>Alright, we're now well armed to make a very bold claim:</p>
 <blockquote>
-<p><strong>Theorem.</strong> If $(e_i)_{i=1}^n$ is a basis for a finite dimensional vector space $V$, then $(e^i)_{i=1}^n$ is a basis for $V^*$, where each basis covector $e^i:V\to\F$ is defined on basis vectors by $e^i(e_j)=\delta^i_j$ and defined on all of $V$ by extending by linearity.</p>
+<p><strong>Theorem.</strong> If $(e_i)_{i=1}^n$ is a basis for a finite dimensional vector space $V$, then $(e^i)_{i=1}^n$ is a basis for $V^*$, where each basis covector $e^i:V\to\F$ is defined on basis vectors by $$e^i(e_j)=\delta^i_j$$ and defined on all of $V$ by extending by linearity.</p>
 <p><strong>Aside.</strong> Before we try to prove this, let's take a look at what these basis covectors really are. Since $(e_i)_{i=1}^n$ is a basis for $V$, we can write any vector $v\in V$ as $v=\sum_{j=1}^n v^j e_j$. Applying the $i$th basis covector to $v$ and using its linearity, we get</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 e^i(v) &amp;= e^i\left(\sum_{j=1}^n v^j e_j\right) \\<br />
 &amp;= \sum_{j=1}^n v^j e^i(e_j) \\<br />
 &amp;= \sum_{j=1}^n v^j \delta^i_j \\<br />
 &amp;= v^i.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>That is, $e^i$ is the linear map which picks out only the $i$th component of $v$ and discards the rest. It is in some sense a projection map onto the $i$th coordinate.</p>
 <p>In order to understand why the complicated-looking sum above broke down into such a simple expression, recall the defining property of the Kronecker delta function. For almost every $j$, the Kronecker delta was identically zero and so those $v^j$ terms do not contribute to the sum. The only term for which it wasn't zero was the $i$th term, and so we were left with only $v^i$. This ability of the Kronecker delta function to simplify ugly sums is almost magical, and we will see it over and over again.</p>
 <p><strong>Proof.</strong> In order to show that $(e^i)_{i=1}^n$ is a basis for $V^*$, we need to show that it is linearly independent and that it spans $V^*$.</p>
@@ -199,29 +199,29 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br />
 <p><strong>Theorem.</strong> Every finite dimensional vector space $V$ over a field $\F$ is canonically isomorphic to its double dual space $\ddual{V}$.</p>
 <p><strong>Proof.</strong> Recall first that <em>canonically isomorphic</em> means we can find a isomorphism which does not depend on a choice of basis. So proving the "canonical" part consists only of not choosing a basis to arrive at the result.</p>
 <p>Since the dual space of any finite dimensional vector space shares its dimension, it follows that</p>
-<p>$\dim \ddual{V} = \dim \dual{V} = \dim V.$</p>
+<p>$$\dim \ddual{V} = \dim \dual{V} = \dim V.$$</p>
 <p>Thus, the rank-nullity theorem tells us that a linear map $T:V\to \ddual{V}$ is an isomorphism if it is injective, which greatly simplifies the proof.</p>
 <p>Define a map $T:V\to \ddual{V}$ by</p>
-<p>$\big(T(v)\big)(s) = s(v)$</p>
+<p>$$\big(T(v)\big)(s) = s(v)$$</p>
 <p>for any vector $v\in V$ and any covector $s\in \dual{V}$.</p>
 <p>Let's pause to make some sense of this. Since $T$ takes $V$ into its double dual, the image $T(v)$ of any vector $v\in V$ will be a linear map in $\ddual{V}$, which itself takes a covector $s\in\dual{V}$. That's why we're defining $T(v)$ by how it acts on a covector $s$.</p>
 <p>We will argue that $T$ is an isomorphism. Let's show first that $T$ is a linear map. To this end, suppose $v, v_1, v_2 \in V$ and $a \in \F$. Then because of the linearity of $s$,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \big(T(v_1 + v_2)\big)(s) &amp;= s(v_1 + v_2) \\<br />
 &amp;= s(v_1) + s(v_2) \\<br />
 &amp;= \big(T(v_1)\big)(s) + \big(T(v_2)\big)(s),<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \big(T(av)\big)(s) &amp;= s(av) \\<br />
 &amp;= as(v) \\<br />
 &amp;= a\big(T(v)\big)(s).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>We'll show next that $T$ is injective (and thus bijective by our earlier dimension argument). We will do so by showing that its kernel is trivial. So suppose $v\in\ker(T)$. Then by definition,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \big(T(v)\big)(s) &amp;= s(v) \\<br />
 &amp;= 0<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>for all covectors $s\in\dual{V}$. It follows then that $v=0$, since the above holds for any choice of covector $s$, including isomorphisms which themselves must have trivial kernels.</p>
 <p>We have shown that $T$ is a bijective linear map, and we have done so without explicitly choosing a basis for any of the vector spaces involved, so it follows that $T$ is a canonical isomorphism, as desired.</p>
 </blockquote>
@@ -234,7 +234,7 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

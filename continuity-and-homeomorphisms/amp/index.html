@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -130,10 +130,10 @@
 <p>The enemy is angry. It chooses a new smaller ball $B$ and you draw a new, smaller $B'$ to compensate. You do it faster this time, because you've noticed a pattern. No matter what radius $\epsilon$ it chooses to make $B$, you've come up with a method to calculate the radius $\delta$ that $B'$ needs to be so that $f[B']$ will fit inside $B$.</p>
 <p>You tell the enemy your method, and it has no choice but to conclude that $f$ is continuous at $x$. Next, you demonstrate how to do this for any point $x\in X$, and reason that $f$ is continuous. The enemy's head promptly explodes.</p>
 <p>Let's look at a specific example. Let $X$ be a metric space and consider the identity function $i:X\to X$ defined by $i(x)=x$ for every $x\in X$. The enemy first chooses a point $x_0\in X$ and draws a ball of radius $\epsilon$ around $x_0=i(x_0)$. You realize immediately that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br />
 &amp;= B\big(i(x_0),\epsilon\big)<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>because $i$ is the identity function. So no matter what point $x_0$ or radius $\epsilon$ the enemy chooses, picking $\delta=\epsilon$ will always work. This argument shows that the identity function on any metric space is continuous!</p>
 <hr></hr>
 <p>Hopefully the definition of continuity makes sense to you now, because I'm about move on to an equivalent and simpler definition.</p>
@@ -152,7 +152,7 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br />
 <p><strong>Theorem.</strong> Let $X$ and $Y$ denote topological spaces, let ${\cal B}_X$ be a basis for the topology on $X$ and ${\cal B}_Y$ a basis for the topology on $Y$. A function $f:X\to Y$ is continuous if and only if $f^{-1}[B]$ is open in $X$ whenever $B\in{\cal B}_Y$.</p>
 <p><strong>Proof.</strong> Suppose first that $f$ is continuous. Since $B$ is a basis element, it is open in $Y$. It follows immediately that $f^{-1}[B]$ is open in $X$.</p>
 <p>Suppose next that the preimage of any basis element in $Y$ is open in $X$. It has been established that for any open set  $U\subseteq Y$, there exists an indexing set $I$ and basis elements $B_i\in{\cal{B}}_Y$ such that  $U=\bigcup\limits_{i\in I}B_i$. Thus,</p>
-<p>$f^{-1}[U]=f^{-1}\left[\bigcup\limits_{i\in I}B_i\right]=\bigcup\limits_{i\in I}f^{-1}[B_i],$</p>
+<p>$$f^{-1}[U]=f^{-1}\left[\bigcup\limits_{i\in I}B_i\right]=\bigcup\limits_{i\in I}f^{-1}[B_i],$$</p>
 <p>which is open since it is the union of open sets.</p>
 </blockquote>
 <p>Yay! Now let's use our beautiful definition of continuity to prove an elementary property of continuous maps: that the composition of two continuous functions</p>
@@ -196,7 +196,7 @@ i\big[B(x_0,\epsilon)\big] &amp;= B(x_0,\epsilon) \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

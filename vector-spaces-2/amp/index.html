@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -105,72 +105,72 @@
 <p>I left off <a href="https://algebrology.github.io/vector-spaces-1">last time</a> with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces. Not all sums have this property, but it is so important that it deserves special consideration.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $U$ and $W$ be subspaces of a vector space $V$ for which $V=U+W$. This sum is a <strong>direct sum</strong> if for every $\v\in V$, the representation</p>
-<p>$\v=\u+\w,$</p>
+<p>$$\v=\u+\w,$$</p>
 <p>where $\u\in U$ and $\w\in W$, is unique. If a sum is direct, it is expressed symbolically as</p>
-<p>$ V=U\oplus W.$</p>
+<p>$$ V=U\oplus W.$$</p>
 <p>Similarly, if $U_1,U_2,\ldots,U_n$ are subspaces of $V$ for which</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 V &amp;= \sum_{i=1}^n U_i \\<br />
 &amp;= U_1 + U_2 + \cdots + U_n,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>then this sum is direct if for every $\v\in V$, the representation</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \v &amp;= \sum_{i=1}^n \u_i \\<br />
 &amp;= \u_1 + \u_2 + \cdots + \u_n,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>where $\u_i\in U_i$ for every $i$, is unique. Such a direct sum is expressed symbolically as</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 V &amp;= \bigoplus_{i=1}^n U_i \\<br />
 &amp;= U_1 \oplus U_2 \oplus \cdots \oplus U_n.<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>Notice that a direct sum of linear subspaces is not really its own thing. It is a normal sum which happens to also have the property of being direct. You do not start with two subspaces and take their direct sum. You take the sum of subspaces, and that sum may happen to be direct.</p>
 <p>We have already seen an example of a sum which is direct. You may find it more enlightening if we exhibit an example of a sum which is <em>not</em> direct.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the subspaces</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 U &amp;= \set{(x,y,0)\in\R^3\mid x,y\in\R}, \\<br />
 W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>of the vector space $\R^3$. Clearly $\R^3=U+W$. The vector $(1,1,1)\in\R^3$ can be expressed as</p>
-<p>$(1,1,1)=(1,1,0)+(0,0,1),$</p>
+<p>$$(1,1,1)=(1,1,0)+(0,0,1),$$</p>
 <p>where $(1,1,0)\in U$ and $(0,0,1)\in W$. However, it can also be expressed as</p>
-<p>$(1,1,1)=(1,2,0)+(0,-1,1),$</p>
+<p>$$(1,1,1)=(1,2,0)+(0,-1,1),$$</p>
 <p>where $(1,2,0)\in U$ and $(0,-1,1)\in W$. In fact, there are infinitely many ways to decompose this into such a sum — the numbers in the second components just need to add up to $1$. Since the representation of $(1,1,1)$ as a sum of a vector in $U$ and a vector in $W$ is not unique, it follows that the sum $R^3=U+W$ is not direct.</p>
 </blockquote>
 <p>It is sometimes difficult to determine whether a sum is direct using only the definition. This would require some sort of insight as to why it must be direct, or the demonstration of a counterexample. This next proposition gives us a somewhat simplified method for checking whether a sum of subspaces is direct.</p>
 <blockquote>
 <p><strong>Proposition.</strong> Suppose $U_1,U_2,\ldots,U_n$ are subspaces of a vector space $V$ for which</p>
-<p>$V=\sum_{i=1}^n U_i.$</p>
+<p>$$V=\sum_{i=1}^n U_i.$$</p>
 <p>Then</p>
-<p>$V=\bigoplus_{i=1}^n U_i$</p>
+<p>$$V=\bigoplus_{i=1}^n U_i$$</p>
 <p>if and only if the choices of $\u_i\in U_i$ which satisfy</p>
-<p>$\0=\u_1+\u_2+\cdots+\u_n$</p>
+<p>$$\0=\u_1+\u_2+\cdots+\u_n$$</p>
 <p>are the vectors $\u_1=\u_2=\cdots=\u_n=\0$.</p>
 <p><strong>Proof.</strong> First, suppose that</p>
-<p>$V=\bigoplus_{i=1}^n U_i,$</p>
+<p>$$V=\bigoplus_{i=1}^n U_i,$$</p>
 <p>and for each $i$ choose $\u_i\in U_i$ so that</p>
-<p>$\0=\u_1+\u_2+\cdots+\u_n.$</p>
+<p>$$\0=\u_1+\u_2+\cdots+\u_n.$$</p>
 <p>Because the above sum is direct, this representation of $\0$ must be unique. It must be the case then that $\u_1=\u_2=\cdots=\u_n=\0$.</p>
 <p>Suppose next that the only way to satisfy</p>
-<p>$\0=\u_1+\u_2+\cdots+\u_n$</p>
+<p>$$\0=\u_1+\u_2+\cdots+\u_n$$</p>
 <p>where $\u_i\in U_i$ for each $i$, is by taking $\u_1=\u_2=\cdots=\u_n=\0$. For any $\v\in V$, we may write</p>
-<p>$\v=\v_1+\v_2+\cdots+\v_n, \tag{1}$</p>
+<p>$$\v=\v_1+\v_2+\cdots+\v_n, \tag{1}$$</p>
 <p>where $\v_i\in U_i$ for each $i$. Suppose that we can also write</p>
-<p>$\v=\w_1+\w_2+\cdots+\w_n, \tag{2}$</p>
+<p>$$\v=\w_1+\w_2+\cdots+\w_n, \tag{2}$$</p>
 <p>where $\w_i\in U_i$ for each $i$ Subtracting $(2)$ from $(1)$ yields</p>
-<p>$\0=(\v_1-\w_1)+(\v_2-\w_2)+\cdots+(\v_n-\w_n).$</p>
+<p>$$\0=(\v_1-\w_1)+(\v_2-\w_2)+\cdots+(\v_n-\w_n).$$</p>
 <p>For each $i$, we have that $\v_i-\w_i\in U_i$, since each $U_i$ is a subspace and thus closed under vector addition. Thus, since we have assumed $\0$ to have a unique expression of this form, it follows that $\v_i-\w_i=\0$ for all $i$. That is, $\v_i=\w_i$ for all $i$. We have shown that the expression for $\v$ is unique, and thus</p>
-<p>$V=\bigoplus_{i=1}^n U_i.$</p>
+<p>$$V=\bigoplus_{i=1}^n U_i.$$</p>
 </blockquote>
 <p>This result tells us that all we need to do in order to check that a sum of subspaces is direct is to make sure that there is only one way to express the zero vector as a sum of vectors from each subspace. This is certainly simpler than checking that every vector has a unique representation of this form. However, in the case of two subspaces, we can do even better.</p>
 <blockquote>
 <p><strong>Corollary.</strong> Suppose $U$ and $W$ are subspaces of a vector space $V$ and that $V=U+W$. Then $V=U\oplus W$ if and only if $U\cap W=\set{\0}$.</p>
 <p><strong>Proof.</strong> Suppose first that $V=U\oplus W$ and choose $\v\in U\cap W$. Then $\v\in U$ and $\v\in W$, so we also have that $-\v\in W$ because $W$ is a subspace of $V$ and so it is closed under scalar multiplication (in this case by $-1$). We can thus write</p>
-<p>$\0=\v+(-\v),$</p>
+<p>$$\0=\v+(-\v),$$</p>
 <p>and this expression is unique by the above proposition. It follows that $\v=-\v-\0$, and thus $U\cap W =\set{\0}$.</p>
 <p>Next, suppose that $U\cap W=\set{\0}$ and let</p>
-<p>$ \0=\u+\w,$</p>
+<p>$$ \0=\u+\w,$$</p>
 <p>where $\u\in U$ and $\w\in W$. Then $\u=-\w$ and so $-\w\in U$, which implies that $\w\in U$. Since $\w\in U$ and $w\in W$, it follows that $\w\in U\cap W$. By hypothesis, this means that $\w=\0$ and thus $\u=\0$. We have shown that the only way to decompose $\0$ in the form above is as the sum of zero vectors. Thus, it follows from the above proposition that $V=U\oplus W$, completing the proof.</p>
 </blockquote>
 <p>This result tells us that the sum of two subspaces is direct whenever their intersection is trivial. Unfortunately, this result does not generalize to sums of three or more subspaces. In fact, in the case of three or more subspaces, even pairwise intersections being trivial is not enough to guarantee that a sum is direct.</p>
@@ -178,15 +178,15 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
 <p>Given a vector space $V$ and a vector $\v\in V$, what is the smallest subspace of $V$ containing $\v$? It's not a trick question — the answer is actually somewhat obvious. It's the set $U=\set{a\v\in V\mid a\in\F}$ of all scalar multiples of $\v$. It is certainly clear that $U$ satisfies the criteria of a subspace. Furthermore, the only proper subspace of $U$ is $\set{\0}$, so it is certainly the smallest subspace of $V$ which contains $\v$. This is a very important idea, and it leads us to our next definition.</p>
 <blockquote>
 <p><strong>Definition.</strong> If $V$ is a vector space with $\v\in V$, then the <strong>span</strong> of $\v$ is the subspace</p>
-<p>$\span\v = \set{a\v\in V\mid a\in\F}.$</p>
+<p>$$\span\v = \set{a\v\in V\mid a\in\F}.$$</p>
 <p>Furthermore, if $(\v_1,\ldots,\v_n)$ is a list of vectors in $V$, then the span of $(v_1,\ldots,v_n)$ is the subspace</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \span(\v_1,\ldots,\v_n) &amp;= \sum_{i=1}^n \span\v_i \\<br />
 &amp;= \sum_{i=1}^n \set{a\v_i\in V\mid a\in\F} \\<br />
 &amp;= \bset{\sum_{i=1}^n a\v_i\in V\mid a\in\F}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>For consistency, we define the span of the empty list to be</p>
-<p>$\span()=\set{\0}.$</p>
+<p>$$\span()=\set{\0}.$$</p>
 <p>If $V=\span(\v_1,\ldots,\v_n)$, we say that $V$ is <strong>spanned</strong> by the list $(\v_1,\ldots,\v_n)$, or that this list <strong>spans</strong> $V$.</p>
 </blockquote>
 <p>It is important to distinguish between <em>lists</em> and <em>sets</em>. In a list, the order of the entries matters and entries can be repeated more than once.</p>
@@ -194,16 +194,16 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
 <p>Equivalently, the span of a list of vectors is a subspace containing every possible sum of scalar multiples of those vectors. In order to avoid having to repeat the phrase "sum of scalar multiples" over and ove, we define a new term which means the same thing.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $V$ be a vector space with $\v_1,\v_2,\ldots,\v_n\in V$. A <strong>linear combination</strong> of the vectors $\v_1,\v_2,\ldots,\v_n$ is an expression of the form</p>
-<p>$\sum_{i=1}^n a_i\v_i = a_1\v_1+a_2\v_2+\cdots+a_n\v_n,$</p>
+<p>$$\sum_{i=1}^n a_i\v_i = a_1\v_1+a_2\v_2+\cdots+a_n\v_n,$$</p>
 <p>where $a_1,a_2,\ldots,a_n\in\F$.</p>
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> Consider the vectors $(1,2)$, $(3,4)$ and $(0,-1)$ in the vector space $\R^2$. Some linear combinations of these vectors include</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 (9,9)&amp;=3(1,2)+2(3,4)+5(0,-1), \\<br />
 (-1,0)&amp;=2(1,2)-\phantom{1}(3,4)+0(0,-1), \\<br />
 (1,2)&amp;=\phantom{1}(1,2)+0(3,4)+0(0,-1).<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>With this definition, we can now think of the span of a list of vectors as the set of all linear combinations of those vectors. In addition, we can now see that a vector space $V$ is spanned by a list of vectors if every vector in $V$ can be expressed as a linear combination of vectors in that list.</p>
 <p>Although we are not quite ready to define the <em>dimension</em> of a vector space, we now have the necessary machinery to distinguish between finite-dimensional and infinite-dimensional vector spaces.</p>
@@ -214,13 +214,13 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
 <p>We will be primarily concerned with finite-dimensional vector spaces. These have much nicer properties and are considerably easier to work with and conceptualize. Infinite-dimensional vector spaces can be extremely poorly behaved and are dealt with in a branch of mathematics called functional analysis.</p>
 <blockquote>
 <p><strong>Example.</strong> For any positive integer $n$, the vector space $\R^n$ is finite-dimensional. This is because</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \R &amp;= \span(1), \\<br />
 \R^2 &amp;= \span\big((1,0), (0,1)\big), \\<br />
 \R^3 &amp;= \span\big((1,0,0), (0,1,0), (0,0,1)\big), \\<br />
 \R^4 &amp;= \span\big((1,0,0,0), (0,1,0,0), (0,0,1,0), (0,0,0,1)\big), \\<br />
 &amp;\;\; \vdots<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Of course, there are other lists of vectors that span each $\R^n$, but to show that a vector space is finite-dimensional, we need only demonstrate that one such list exists.</p>
 </blockquote>
 <blockquote>
@@ -231,17 +231,17 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
 <p><strong>Example.</strong> On the other hand, the vector space $\P_n(\F)$ of polynomials whose degree is at most $n$ is finite-dimensional.</p>
 </blockquote>
 <p>It is tempting to try to define the dimension of a finite-dimensional vector space using the machinery we have already developed. We could, perhaps, attempt to define the dimension of $V$ as the length of a list of vectors which spans $V$. Unfortunately, this is not well-defined because a vector space can have many spanning lists of different lengths. For example,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \R^2 &amp;= \span\big((0,1),(1,0)\big) \\<br />
 &amp;= \span\big((0,1),(1,0),(1,0)\big) \\<br />
 &amp;= \span\big((1,2),(2,3),(3,4),(4,5)\big),<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>because any vector in $\R^2$ can be expressed as a linear combination of vectors in each list. In fact, we can always take a list which spans a vector space $V$ and add to it any vector in $V$, resulting in a new list which also spans $V$. This means that the length of a spanning list is certainly not unique, and so we cannot define dimension in this way.</p>
 <h3 id="linearindependenceanamelinearindependence">Linear Independence<a name="linear-independence"></a></h3>
 <p>Intuition tells us that we are on the correct track, though. It should be somewhat obvious that the vector space $\R^2$ cannot possibly be spanned by any list containing <em>less than</em> two vectors. If this is truly the case, it should make sense to define the dimension of $\R^2$ to be $two$. We will therefore work toward figuring out the minimum length of a spanning list of vectors. The important concept of linear independence, which we will now define, will help us with this.</p>
 <blockquote>
 <p><strong>Definition.</strong> A list $(\v_1,\v_2,\ldots,\v_n)$ of vectors in a vector space $V$ is <strong>linearly independent</strong> if the only choices of $a_i\in F$ which satisfy</p>
-<p>$\sum_{i=1}^n a_i\v_i = \0 \tag{3}$</p>
+<p>$$\sum_{i=1}^n a_i\v_i = \0 \tag{3}$$</p>
 <p>are the scalars $a_1=a_2=\cdots=a_n=0$.</p>
 <p>If there exist $a_i\in\F$, not all zero, for which $(3)$ holds, then the list $(\v_1,\v_2,\ldots,\v_n)$ is <strong>linearly dependent</strong>.</p>
 </blockquote>
@@ -249,41 +249,41 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
 <p>Let's look at some more interesting examples.</p>
 <blockquote>
 <p><strong>Example.</strong> In $\R^2$, the list</p>
-<p>$\big((0,1),(1,0)\big)$</p>
+<p>$$\big((0,1),(1,0)\big)$$</p>
 <p>is linearly independent because</p>
-<p>$a_1(0,1)+a_2(1,0)=(0,0)$</p>
+<p>$$a_1(0,1)+a_2(1,0)=(0,0)$$</p>
 <p>only if $a_1=a_2=0$. No matter how hard we try, we cannot come up with any other linear combination of these vectors which yields the zero vector.</p>
 <p>However, if we add $(1,0)$ to the list, the resulting list</p>
-<p>$\big((0,1),(1,0),(1,0)\big)$</p>
+<p>$\big((0,1),(1,0),(1,0)\big)$$</p>
 <p>is linearly dependent because</p>
-<p>$0(0,1)+(1,0)-(1,0)=(0,0).$</p>
+<p>$$0(0,1)+(1,0)-(1,0)=(0,0).$$</p>
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> As a less trivial example, the list</p>
-<p>$\big((1,2),(2,3),(3,4),(4,5)\big)$</p>
+<p>$$\big((1,2),(2,3),(3,4),(4,5)\big)$$</p>
 <p>is also linearly dependent because</p>
-<p>$(1,1)+(2,3)-5(3,4)+3(4,5)=(0,0).$</p>
+<p>$$(1,1)+(2,3)-5(3,4)+3(4,5)=(0,0).$$</p>
 </blockquote>
 <p>Up until now, we have sort of been weaving a twisted web of interconnected ideas. Our next theorem relates them all and gives an alternate characterization of linear independence in terms of spans and direct sums.</p>
 <blockquote>
 <p><strong>Theorem.</strong> A list $(\v_1,\v_2,\ldots,\v_n)$ of nonzero vectors in a vector space $V$ is linearly independent if and only if</p>
-<p>$\span(\v_1,\v_2,\ldots,\v_n) = \bigoplus_{i=1}^n \span\v_i.$</p>
+<p>$$\span(\v_1,\v_2,\ldots,\v_n) = \bigoplus_{i=1}^n \span\v_i.$$</p>
 <p><strong>Proof.</strong> First, suppose that the list $(\v_1,\v_2,\ldots,\v_n)$ is linearly independent. Then by the definition of span, we have that</p>
-<p>$\span(\v_1,\v_2,\ldots,\v_n) = \sum_{i=1}^n \span\v_i.$</p>
+<p>$$\span(\v_1,\v_2,\ldots,\v_n) = \sum_{i=1}^n \span\v_i.$$</p>
 <p>From our earlier proposition, we need to show that only choices of $\u_i\in\span\v_i$ for which</p>
-<p>$\0=\u_1+\u_2+\cdots+\u_n$</p>
+<p>$$\0=\u_1+\u_2+\cdots+\u_n$$</p>
 <p>are the vectors</p>
-<p>$\u_1=\u_2=\cdots=\u_n=\0.$</p>
+<p>$$\u_1=\u_2=\cdots=\u_n=\0.$$</p>
 <p>Since $u_i\in\span\v_i$ for each $i$, we have that $\u_i=a_i\v_i$ for some $a_i\in\F$. Since $(\v_1,\v_2,\ldots,\v_n)$ is linearly independent, we have that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \0 &amp;= a_1\v_1+a_2\v_2+\cdots+a_n\v_n \\<br />
 &amp;= \u_1+\u_2+\cdots+\u_n<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>only if $a_1=a_2=\cdots=a_n=0$, which implies that $\u_i=\0$ for all $i$. If follows then that the desired sum is direct.</p>
 <p>Suppose next that</p>
-<p>$\span(\v_1,\v_2,\ldots,\v_n) = \bigoplus_{i=1}^n \span\v_i.$</p>
+<p>$$\span(\v_1,\v_2,\ldots,\v_n) = \bigoplus_{i=1}^n \span\v_i.$$</p>
 <p>Again from the above proposition, we know that the only choices of $\u_i\in\span\v_i$ which satisfy</p>
-<p>$\u_1=\u_2=\cdots=\u_n=\0.$</p>
+<p>$$\u_1=\u_2=\cdots=\u_n=\0.$$</p>
 <p>Since each $\u_i\in\span\v_i$, it follows that for each $i$, there is some $a_i\in\F$ for which $\u_i=a_i\v_i$. Since each $\v_i\ne 0$, it must be that each $a_i=0$. Thus, the list $(\v_1,\v_2,\ldots,\v_n)$ is linearly independent.</p>
 </blockquote>
 <p>This theorem establishes a somewhat different way of thinking about linear independence, and since the two are equivalent we are free to use either as a definition of linear independence.</p>
@@ -293,14 +293,14 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br />
 <p>$(a) \;\;$ $\v_i\in\span(\v_1,\v_2,\ldots,\v_n)$,<br />
 $(b) \;\;$ removing $\v_i$ from $(\v_1,\v_2,\ldots,\v_n)$ results in a list with the same span.</p>
 <p><strong>Proof.</strong> Since $(\v_1,\v_2,\ldots,\v_n)$ is linearly dependent, there exist $a_1,a_2,\ldots,a_n\in\F$, not all zero, for which</p>
-<p>$a_1\v_1+a_2\v_2+\cdots+a_n\v_n = 0.$</p>
+<p>$$a_1\v_1+a_2\v_2+\cdots+a_n\v_n = 0.$$</p>
 <p>We have assumed that $\v_1\ne\0$, so it is possible that $a_1=0$, but not all of $a_2,a_3,\ldots,a_n$ can equal zero. Let $i$ be the largest index for which $a_i\ne 0$. Then</p>
-<p>$a_1\v_1+a_2\v_2+\cdots+a_i\v_i = 0,$</p>
+<p>$$a_1\v_1+a_2\v_2+\cdots+a_i\v_i = 0,$$</p>
 <p>so we may write</p>
-<p>$\v_i = -\frac{a_1}{a_i}\v_1-\frac{a_2}{a_i}\v_2 - \cdots - \frac{a_{i-1}}{a_i}\v_{i-1}.$</p>
+<p>$$\v_i = -\frac{a_1}{a_i}\v_1-\frac{a_2}{a_i}\v_2 - \cdots - \frac{a_{i-1}}{a_i}\v_{i-1}.$$</p>
 <p>Since we have expressed $\v_i$ as a linear combination of $\v_1,\v_2,\ldots,\v_{i-1}$, it follows that $\v_i\in\span(\v_1,\v_2,\ldots,\v_n)$. This completes the proof of $(a)$.</p>
 <p>Next, choose any $\u\in\span(\v_1,\v_2,\ldots,\v_n)$. By definition, there exist $a_1,a_2,\ldots,a_n\in\F$ for which</p>
-<p>$\u=a_1\v_1+a_2\v_2+\cdots+a_n\v_n.$</p>
+<p>$$\u=a_1\v_1+a_2\v_2+\cdots+a_n\v_n.$$</p>
 <p>Using the result of $(a)$, we can replace $v_i$ in the above equation with a linear combination of the vectors $\v_1,\v_2,\ldots,\v_{i-1}$. Thus, $\u$ is also in the span of the list which results from removing $\v_i$.</p>
 </blockquote>
 <p>Now we will establish that linearly independent lists possess the property I mentioned earlier. Namely, we will show that linearly independent lists are the shortest possible spanning lists.</p>
@@ -310,12 +310,12 @@ $(b) \;\;$ removing $\v_i$ from $(\v_1,\v_2,\ldots,\v_n)$ results in a list with
 <div>
 <p><strong>Step 1.</strong><br />
 Because $(\u_1,\u_2,\ldots,\u_m)$ spans $V$, adding any vector to this list must result in a list which is linearly dependent. Namely, the list $L_{1,1}=(\v_1,\u_1,\u_2,\ldots,\u_m)$ is linearly dependent. It follows from the linear dependence lemma that there exists a positive integer $i\le m$ for which the removal of $\u_i$ from $L_{1,1}$ results in a new list $L_{1,2}$ which still spans $V$. Notice that $L_{1,2}$ is a list of length $m$. To simplify matters, we replace the index of every $\u_j$ for which $j&gt;i$ with $j-1$, so that we can write</p>
-<p>$L_{1,2}=(\v_1,\u_1,\u_2,\ldots,\u_{m-1}).$</p>
+<p>$$L_{1,2}=(\v_1,\u_1,\u_2,\ldots,\u_{m-1}).$$</p>
 <p><strong>Step k.</strong><br />
 Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector to this list must result in a list which is linearly dependent. Namely, the list $L_{k,1}$ formed by adding $\v_k$ to the beginning of $L_{k-1,1}$ is linearly dependent. It follows from the linear dependence lemma that we can remove some vector from $L_{k,1}$ without affecting its span. Since</p>
-<p>$L_{k,1}=(\v_k,\v_{k-1},\ldots,\v_1,\u_1,\u_2,\ldots,\u_{m-k+1})$</p>
+<p>$$L_{k,1}=(\v_k,\v_{k-1},\ldots,\v_1,\u_1,\u_2,\ldots,\u_{m-k+1})$$</p>
 <p>and $(\v_k,\v_{k-1},\ldots,\v_1)$ is linearly independent, there must exist a positive integer $i\le m-k+1$ for which the removal of $\u_i$ from $L_{k,1}$ results in a new list $L_{k,2}$ which still spans $V$. Notice that $L_{k,2}$ is a list of length $m$. Next, we replace the index of every $\u_j$ for which $j&gt;i$ with $j-1$, so that we can write</p>
-<p>$L_{k,2}=(\v_k,\v_{k-1},\ldots,\v_1,\u_1,\u_2,\ldots,\u_{m-k}).$</p>
+<p>$$L_{k,2}=(\v_k,\v_{k-1},\ldots,\v_1,\u_1,\u_2,\ldots,\u_{m-k}).$$</p>
 </div>
 <p>At the end of step $n$, we have used up every $\v_i$ and so the algorithm terminates. It cannot terminate before this because each list $K_{k,1}$ is linearly dependent, and so $m-n\ge 0$. We conclude that $m\ge n$, as desired.</p>
 </blockquote>
@@ -328,7 +328,7 @@ Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

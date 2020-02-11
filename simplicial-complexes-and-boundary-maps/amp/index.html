@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -105,10 +105,10 @@
 <p>Let's define the types of topological spaces that are of interest to us in this post. The idea behind our definitions is that lots of topological spaces can be "triangularized" in such a way that they look sort of like a bunch of "triangles" glued together.</p>
 <blockquote>
 <p><strong>Definition.</strong> For any $n\in\N$, the <strong>standard $n$-simplex</strong> is the subset of $\R^{n+1}$ given by</p>
-<p>$\Delta^n =\bset{(x_1,x_2,\ldots,x_{n+1})\in\R^{n+1}\mid x_i\ge 0 \text{ for all } i \text{ and } \sum_{i=1}^{n+1} x_i = 1}.$</p>
+<p>$$\Delta^n =\bset{(x_1,x_2,\ldots,x_{n+1})\in\R^{n+1}\mid x_i\ge 0 \text{ for all } i \text{ and } \sum_{i=1}^{n+1} x_i = 1}.$$</p>
 </blockquote>
 <p>That is, $\Delta^n$ is the set of points in $\R^{n+1}$ whose components are all positive and sum to $1$. Clearly in $\R$ the only such point is $1$ itself, and so</p>
-<p>$\Delta^0=\set{1}.$</p>
+<p>$$\Delta^0=\set{1}.$$</p>
 <p>In $\R^2$ the points which satisfy these conditions are precisely the points which lie on the line segment connecting the point $(1,0)$ to the point $(0,1)$, including these two points. For instance, the points $\left(\frac{1}{3}, \frac{2}{3}\right)$ and $\left(\frac{1}{2}, \frac{1}{2}\right)$ certainly satisfy the requirements and sit on this line segment. It follows that $\Delta^1$ is a line segment in $\R^2$.</p>
 <p></p>
 <p>The simplex $\Delta^2$ is a triangle in $\R^3$ which contains its interior and is bounded by the line segments connecting the points $(1,0,0)$, $(0,1,0)$ and $(0,0,1)$.</p>
@@ -124,14 +124,14 @@
 <p>Recall Pascal's triangle:</p>
 <p></p>
 <p>Each element in the triangle (that isn't a $1$) is the sum of the two values directly above it. Equivalently, we can find the value in the $n$th row and $k$th column using the binomial formula:</p>
-<p>${n \choose k} = \frac{n!}{k!(n-k)!}.$</p>
+<p>$${n \choose k} = \frac{n!}{k!(n-k)!}.$$</p>
 <p>Pascal's triangle is intimately related to the number of different dimensional faces of a simplex. The number of $k$-faces of an $n$-simplex is the value in column $(k+1)$ and row $(n+1)$ of the triangle, which you can verify quite easily for the simplices given above. For higher dimensional simplices, you'll just have to take my word for it for now.</p>
 <p>So far we've only looked at standard simplices, but we can just as easily talk about any point as a non-standard $0$-simplex, any line as a non-standard $1$-simplex, any triangle as a non-standard $2$-simplex, any tetrahedron as a non-standard $3$-simplex, etc. The preferred way to define these arbitrary simplices would be as the images of standard simplices under bijective affine transformations. (An affine transformation is basically just a linear transformation plus a translation, so that it is not necessarily origin-preserving.) However, we will work with them intuitively as follows:</p>
 <blockquote>
 <p><strong>Definition.</strong> Given a set of affine-independent vertices $v_0,v_2,\ldots,v_n$ in $\R^{n+1}$, the <strong>(oriented) $n$-simplex</strong> corresponding to these vertices is the convex hull of the vertices,</p>
-<p>$\bset{a_0v_0 + a_1v_1 + \cdots + a_nv_n\in\R^{n+1} \mid a_i\ge 0 \text{ for all } i \text{ and } \sum_{i=1}^{n+1} a_i = 1},$</p>
+<p>$$\bset{a_0v_0 + a_1v_1 + \cdots + a_nv_n\in\R^{n+1} \mid a_i\ge 0 \text{ for all } i \text{ and } \sum_{i=1}^{n+1} a_i = 1},$$</p>
 <p>and is denoted by</p>
-<p>$[v_0, v_1, \ldots, v_n].$</p>
+<p>$$[v_0, v_1, \ldots, v_n].$$</p>
 </blockquote>
 <p>We're now ready to define simplicial complexes. The basic idea is that they are built from simplices which have been glued together in a particularly nice way.</p>
 <blockquote>
@@ -173,16 +173,16 @@ $f=[v_0, v_1, v_2]$
 <p><strong>Definition.</strong> Let $X$ denote a simplicial complex. For each $n\in\N$, the <strong>group of simplicial $n$-chains</strong>, written $C_n(X)$, is the free abelian group with basis all $n$-simplices in $X$. The elements of $C_n(X)$ are called <strong>simplicial $n$-chains</strong> in $X$.</p>
 </blockquote>
 <p>Stated more plainly, an $n$-chain in a simplicial complex $X$ is a formal integral combination of $n$-simplices in $X$. For example, in the simplicial complex pictured above, we may talk about $1$-chains such as</p>
-<p>$3e_0 + 2e_2-e_3.$</p>
+<p>$$3e_0 + 2e_2-e_3.$$</p>
 <p>Since our simplices are oriented, it makes sense to define the negative of a simplex to be that simplex with its verticed traversed in the opposite order. That is,</p>
-<p>$-[v_0,v_1,\ldots,v_n] = [v_n,\ldots, v_1, v_0].$</p>
+<p>$$-[v_0,v_1,\ldots,v_n] = [v_n,\ldots, v_1, v_0].$$</p>
 <p>We may thus write the chain groups for our simplicial complex as follows:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 C_0 &amp;= \bset{\sum_{i=0}^4 a_iv_i \mid a_i\in\Z}, \\[1em]<br />
 C_1 &amp;= \bset{\sum_{i=0}^3 b_ie_i \mid b_i\in\Z}, \\[1em]<br />
 C_2 &amp;= \bset{cf \mid c\in\Z}, \\[1em]<br />
 C_n &amp;= \set{0} \text{ for } n\ge 3.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>It is natural to associate chains in $C_1$ to actual paths in the simplex $X$. For instance, the chain $\sigma = e_0 + e_1 + e_2$ traces out a path all the way around $f$ from $v_0$ to $v_1$ to $v_2$ and back to $v_0$.</p>
 <p>Its negative, $-\sigma = -e_2-e_1-e_0$ traces out the same path but in the opposite direction.</p>
 <p>Its double, $2\sigma = 2e_0 + 2e_1 + 2e_2$ traces out the same path twice in a row. That is, it loops around $f$ two times instead of just once.</p>
@@ -191,18 +191,18 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br />
 <p>First lets define the boundary of a $1$-simplex, since it is the easiest to visualize. Since a $1$-simplex is essentially just a closed line segment, its boundary should consist solely of its endpoints, which are $0$-simplices. However, the directedness of the edges indicates that we should add/subtract the endpoints rather than take their union.</p>
 <p>Thus, we define the boundary of the $1$-simplex $[v_0, v_1]$ to be the $0$-chain $v_1-v_0$.</p>
 <p>Similarly, we would like the boundary of the $2$-simplex $[v_0, v_1, v_2]$ to be the sum of its edges $[v_0, v_1]$, $[v_1, v_2]$ and $[v_2, v_0]$. So we define the boundary of $[v_0, v_1, v_2]$ as</p>
-<p>$[v_0, v_1] + [v_1, v_2] + [v_2, v_0] = [v_1, v_2] - [v_0, v_2] + [v_0, v_1].$</p>
+<p>$$[v_0, v_1] + [v_1, v_2] + [v_2, v_0] = [v_1, v_2] - [v_0, v_2] + [v_0, v_1].$$</p>
 <p>Note that the expressions on both sides are completely equal, just with the order permuted and $[v_2, v_0]$ negated twice. The reason for this rearrangement will become apparent shortly.</p>
 <p>It is <em>very</em> important to note that the boundary of an $n$-simplex is always an $(n-1)$-chain!</p>
 <p>In general, we will define boundary homomorphisms not just on simplices but between chain groups. First we will describe how they act on generators and then we will extend by linearity to a homomorphism on the chain groups.</p>
 <p>Let $X$ be a simplicial complex and let $B_n(X)$ denote the set of $n$-simplices in $X$. That is, $B_n(X)$ is a basis for the free abelian group $C_n(X)$, the group of $n$-chains in $X$. Define a function $\partial'_n:B_n(X)\to C_{n-1}(X)$ as follows: For any oriented $n$-simplex $\sigma=[v_0, v_1,\ldots, v_n]$, we let</p>
-<p>$\partial'_n(\sigma) = \partial'_n([v_0, v_1,\ldots, v_n])=\sum_{i=0}^n(-1)^i[v_0,\ldots,v_{i-1},v_{i+1},\ldots,v_n].$</p>
+<p>$$\partial'_n(\sigma) = \partial'_n([v_0, v_1,\ldots, v_n])=\sum_{i=0}^n(-1)^i[v_0,\ldots,v_{i-1},v_{i+1},\ldots,v_n].$$</p>
 <p>That is, an alternating sum of $n-1$-simplices where the $i$th term is missing the $i$th vertex.</p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>boundary map</strong> of dimension $n$ is the unique homomorphism $\partial_n:C_n(X)\to C_{n-1}(X)$ given by extending the function $\partial'_n$ by linearity.</p>
 </blockquote>
 <p>Notice that these boundary maps form a sequence</p>
-<p>$\cdots\xrightarrow{\partial_{n+1}} C_n(X)\xrightarrow{\partial_n} C_{n-1}(X)\xrightarrow{\partial_{n-1}}\cdots\xrightarrow{\partial_2}C_1(X)\xrightarrow{\partial_1}C_0(X)\xrightarrow{\partial_0}0.$</p>
+<p>$$\cdots\xrightarrow{\partial_{n+1}} C_n(X)\xrightarrow{\partial_n} C_{n-1}(X)\xrightarrow{\partial_{n-1}}\cdots\xrightarrow{\partial_2}C_1(X)\xrightarrow{\partial_1}C_0(X)\xrightarrow{\partial_0}0.$$</p>
 <p>Of course, $\partial_0$ is the zero map, since $0$ is the trivial group.</p>
 <p>It is easy to see that these boundary maps are all well defined and that $\partial_n(-\sigma)=-\partial_n(\sigma)$ for any $n$-simplex $\sigma$. Thus, boundary maps are not affected by the orientation of simplices in a chain, as long as the orientations are consistent.</p>
 <p>Next, we will prove an extremely important and useful result concerning the structure of chain groups and boundary maps — namely, the boundary of a boundary is always zero.</p>
@@ -220,10 +220,10 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br />
 <blockquote>
 <p><strong>Theorem.</strong> Let $X$ be a simplicial complex. Then $\im\partial_{n+1}\subseteq\ker\partial_n$ for any natural number $n$.</p>
 <p><strong>Proof.</strong> Choose any $\beta\in\im\partial_{n+1}$. Then $\beta=\partial_{n+1}(\sigma)$ for some chain $\sigma\in C_{n+1}$. But then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \partial_n(\beta) &amp;= \partial_n(\partial_{n+1}(\sigma)) \\<br />
 &amp;=0<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>from the above theorem, and so $\beta\in\ker\partial_n$. It follows that $\im\partial_{n+1}\subseteq\ker\partial_n$.</p>
 </blockquote>
 <p>In addition to the kernel and image being subgroups, because we are working strictly with abelian groups this implies that they are normal subgroups. In particular, since  $\im\partial_{n+1}\subseteq\ker\partial_n$, it follows that $\im\partial_{n+1}$ is a normal subgroup of $\ker\partial_n$. This means that we can actually form quotient groups $\frac{{\ker\partial_n}}{\im\partial_{n+1}}$ for every natural number $n$. This will become extremely important when we talk about homology in the next post. In fact, this is the definition of a homology group! But its motivation will become more clear later.</p>
@@ -234,7 +234,7 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

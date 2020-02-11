@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/cosets-and-lagranges-theorem/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,12 +167,12 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#cosets">Cosets</a></li>
 <li><a href="#lagrange's-theorem">Lagrange's Theorem</a></li>
 </ol>
 <hr>
-<h3 id="cosetsanamecosets">Cosets<a name="cosets"></a></h3>
+<h3 id="cosetsanamecosets">Cosets<a name="cosets"></h3>
 <p>It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra. Let's dig in, shall we?</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>right coset</strong> of $H$ with respect to $x$ is the set $Hx=\{hx\in G\mid h\in H\}$.</p>
@@ -218,7 +218,7 @@ MathJax.Hub.Config({
 <p>The last thing we need to show is that for any $x,y\in G$, if $Hx\ne Hy$ then $Hx\cap Hy=\varnothing$. That is, either cosets are the same or they are disjoint. We will argue the contrapositve, supposing that $Hx\cap Hy$ is nonempty. Then there exists some element $a\in Hx\cap Hy$. That is, $a\in Hx$ and $a\in Hy$, so $a=h_1x$ and $a=h_2y$ for some elements $h_1,h_2\in H$. It follows that $h_1x=h_2y$, and multiplication on the left by $h_1^{-1}$ show that $x=h_1^{-1}h_2y\in Hy$ because $h_1^{-1}h_2\in H$. Thus $Hx=Hy$, completing the proof.</p>
 </blockquote>
 <p>This is pretty exciting! It means that we can form an equivalence relation $\sim$ on any group $G$, where elements are equivalent if they are in the same coset of $H$. Moreover, we can form the quotient set $G\quotient{\sim}$, whose elements are precisely the cosets of $H$. For simplicity, we generally write $G/H$ instead of to denote this quotient set, since it is so very important that we are talking about the set of cosets of $H$. We'll revisit this special type of quotient set in my next post.</p>
-<h3 id="lagrangestheoremanamelagrangestheorem">Lagrange's Theorem<a name="lagrange's-theorem"></a></h3>
+<h3 id="lagrangestheoremanamelagrangestheorem">Lagrange's Theorem<a name="lagrange's-theorem"></h3>
 <p>We're actually very close to proving this famous theorem already. We just need one lemma first:</p>
 <blockquote>
 <p><strong>Lemma.</strong> If $H$ is a subgroup of a group $G$ and $x\in G$, there exists a bijection $f:G\to Hx$.</p>
@@ -230,7 +230,7 @@ MathJax.Hub.Config({
 <p><strong>Proof.</strong> We have already established that every coset of $H$ contains the same number of elements, $\abs{H}$. Since $G$ is finite, there are a finite number of distinct cosets of $H$, say $n$ of them. Because these cosets partition $G$, it follows that $\abs{G}=n\abs{H}$, completing the proof.</p>
 </blockquote>
 <p>This is probably somewhat surprising unless you're already familiar with groups. But it's just part of the astonishing usefulness of cosets. Lagrange's Theorem is actually incredibly useful because it tells us instantly that certain things <em>cannot</em> be subgroups of other things. For instance, a group of order $12$ cannot ever have subgroups of order $5,7,8,9,10$ or $11$. Without this theorem, you might have guessed that this was the case, but it would have been pretty tricky to prove it conclusively.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -274,13 +274,13 @@ MathJax.Hub.Config({
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

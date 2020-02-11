@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -181,18 +181,18 @@
 </blockquote>
 <p>The Cartesian product of the above sets would be a bit trickier to draw since this would require four spacial dimensions. As a simpler example, suppose that $A$ and $B$ are both $\mathbb{R}$, the set of real numbers. Then $A\times B=\mathbb{R}\times\mathbb{R}$ and this set would consist of all points in the plane. This is because $\mathbb{R}\times\mathbb{R}$ by definition contains all pairs of the form $(x,y)$ where $x$ and $y$ are real numbers. This is why two-dimensional Euclidean space is often written as $\mathbb{R}^2$, as shorthand for $\mathbb{R}\times\mathbb{R}$.</p>
 <p>It should be somewhat obvious how to take the union of an arbitrary collection of sets. For a finite collection of $n$ sets — $A_1, A_2, \dotsc, A_n$ — their union contains all of the elements that are in at least one of the sets:</p>
-<p>$\bigcup\limits_{i=1}^n A_i = \{x\mid x\in A_1 \text{ or } x\in A_2 \text{ or } \dotsc \text{ or } x\in A_n\}.$</p>
+<p>$$\bigcup\limits_{i=1}^n A_i = \{x\mid x\in A_1 \text{ or } x\in A_2 \text{ or } \dotsc \text{ or } x\in A_n\}.$$</p>
 <p>We can go even further, and take the union of any collection of sets. To do so, we first let $I$ be some <strong>indexing set</strong> such that $A_i$ is a set for every $i\in I$. Notice that there is nothing to stop $I$ from being an infinite set, in which case there would be infinitely many sets $A_i$ in our collection. We can take the union of all these sets as follows:</p>
-<p>$\bigcup\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for some } i\in I\}.$</p>
+<p>$$\bigcup\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for some } i\in I\}.$$</p>
 <p>The same type of thinking allows for intersections and Cartesian products to be defined for more than two sets. In the case of Cartesian products, multiplying $n$ sets yields a set whose elements are ordered $n$-tuples, where the $i$th component is an element of the $i$th set being multiplied. Cartesian products of infinitely many sets are a bit too complicated to discuss here, although we can easily take the intersection of an arbitrary collection of sets, much as we did for their union:</p>
-<p>$\bigcap\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for every } i\in I\}.$</p>
+<p>$$\bigcap\limits_{i\in I} A_i = \{x \mid x\in A_i \text{ for every } i\in I\}.$$</p>
 <p>There are two interesting ways in which the operation of set difference distributes over the operations of unions and intersections. These are called <strong>De Morgan's Laws</strong>:</p>
-<p>$X - (A \cup B) = (X - A) \cap (X - B),$<br />
-$X - (A \cap B) = (X - A) \cup (X - B).$</p>
+<p>$$X - (A \cup B) = (X - A) \cap (X - B),$$<br />
+$$X - (A \cap B) = (X - A) \cup (X - B).$$</p>
 <p>These highly symmetric rules often turn out to be very useful, and I encourage you to draw some pictures to try to understand them. I will not prove them here. To illustrate the second rule, here is an example: if a ball is not both red and blue, then it is not red or it is not blue (or possibly both).</p>
 <p>De Morgan's Laws also extend naturally to arbitrary collections of sets:</p>
-<p>$X - \bigcup\limits_{i\in I} A_i = \bigcap\limits_{i\in I} (X - A_i),$<br />
-$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$</p>
+<p>$$X - \bigcup\limits_{i\in I} A_i = \bigcap\limits_{i\in I} (X - A_i),$$<br />
+$$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
 <h3 id="functionsanamefunctions">Functions<a name="functions"></a></h3>
 <p>The last topic I'll talk about in this post is the concept of a function, as well as several important traits that functions may or may not possess. You've likely encountered functions before as things that eat variables and poo out numbers, and that's not a terrible way of thinking about them. We're going to make things a bit more formal though.</p>
 <blockquote>
@@ -260,7 +260,7 @@ $X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$</p>
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

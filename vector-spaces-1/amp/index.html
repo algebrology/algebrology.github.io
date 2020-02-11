@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -260,36 +260,36 @@ a\vec{0} + a\vec{0} &amp;= a(\vec{0}+\vec{0}) &amp; \scriptstyle\textit{second d
 <blockquote>
 <p><strong>Example.</strong> For any field $\F$, the set $\F^n$ is a vector space over $\F$ if we define vector addition and scalar multiplication in the following (obvious) way.</p>
 <p>Given $\x=(x_1,x_2,\ldots,x_n)$ and $\y=(y_1,y_2,\ldots,y_n)$ in $\F^n$, we define addition component-wise in terms of field addition as follows:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \x+\y &amp;= (x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n) \\<br />
 &amp;= (x_1+y_1,x_2+y_2,\ldots,x_n+y_n).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Similarly, given $a\in\F$ and $\x=(x_1,x_2,\ldots,x_n)\in\F^n$, we define scalar multiplication component-wise in terms of field multiplication as follows:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 a\x &amp;= a(x_1,x_2,\ldots,x_n) \\<br />
 &amp;= (ax_1,ax_2,\ldots,ax_n).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>It is not terribly difficult to show that $\F^n$ does in fact constitute a vector space over $\F$ with these operations. For instance, clearly $\0=(0,0,\ldots,0)$ acts as the zero vector in $\F^n$, and $-\x=(-x_1,-x_2,\ldots,-x_n)$ acts as the additive inverse of $\x=(x_1,x_2,\ldots,x_n)$.</p>
 </blockquote>
 <p>Our next example as a vector space may be slightly surprising at first, but it is both highly important and an excellent example of a vector space whose vectors are certainly not arrows of any kind. First, we will need the following definition.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $\F$ denote a field and let $n$ be a natural number. A <strong>polynomial</strong> with coefficients $a_0,a_1,\ldots,a_n$ in $\F$ is a function $p:\F\to\F$ of the form</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 p(x) &amp;= \sum_{i=0}^n a_ix^i \\<br />
 &amp;= a_0 + a_1x+a_2x^2+\cdots+a_nx^n<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>for all $x\in\F$. If $a_n\ne 0$, we say that $n$ is the <strong>degree</strong> of $p$. We write $\mathscr{P}(\F)$ to denote the set of all polynomials with coefficients in $\F$.</p>
 </blockquote>
 <p>As a concrete example, the function $p:\R\to\R$ defined by</p>
-<p>$p(x)=3+2x+8x^2$</p>
+<p>$$p(x)=3+2x+8x^2$$</p>
 <p>is a polynomial of degree two with coefficients in $\R$, namely $a_0=3$, $a_1=2$ and $a_2=8$. It is thus an element of $\mathscr{P}(\R)$.</p>
 <p>If $p(x)=0$ for all $x\in\F$, we call $p$ the <strong>zero polynomial</strong>, whose degree is undefined. However, for the purposes of adding and multiplying polynomials, it is sometimes useful to formally treat the degree of the zero polyomial as $-\infty$.</p>
 <blockquote>
 <p><strong>Example.</strong> It is easy to see that for any field $\F$, the set $\mathscr{P}(\F)$ forms a vector space over $\F$ when equipped with the following definitions of vector addition and scalar multiplication.</p>
 <p>For any two vectors $\p,\q\in\mathscr{P}(\F)$, we define their sum $\p+\q\in\mathscr{P}(\F)$ in terms of function addition. That is,</p>
-<p>$(\p+\q)(x)=\p(x)+\q(x)$</p>
+<p>$$(\p+\q)(x)=\p(x)+\q(x)$$</p>
 <p>for all $x\in\F$. Similarly, for any $a\in\F$ and $\p\in\mathscr{P}(\F)$, we define scalar multiplication as expected:</p>
-<p>$(a\p)(x)=a\p(x)$</p>
+<p>$$(a\p)(x)=a\p(x)$$</p>
 <p>for all $x\in\F$. It is clear that the zero polynomial must act as the zero vector. Again, checking that $\mathscr{P}(\F)$ is actually a vector space with these definitions is easy but fairly time consuming, so I won't do it here.</p>
 </blockquote>
 <h3 id="subspacesandsumsanamesubspacesandsums">Subspaces and Sums<a name="subspaces-and-sums"></a></h3>
@@ -312,43 +312,43 @@ p(x) &amp;= \sum_{i=0}^n a_ix^i \\<br />
 <blockquote>
 <p><strong>Example.</strong> Consider the set $U=\{(x,0\in\F^2\mid x\in\F\}$, where $\F$ is any field. This is the set of all ordered pairs with entries in $\F$ whose second component is the additive identity.</p>
 <p>The zero vector $(0,0)$ is certainly in $U$. From the definition of addition in $\F^2$, the sum of two vectors in $U$ must be of the form</p>
-<p>$(x,0) + (y,0) = (x+y,0)$</p>
+<p>$$(x,0) + (y,0) = (x+y,0)$$</p>
 <p>which is certainly in $U$. Similarly, the scalar product of any $a\in\F$ with any vector in $U$ must be of the form</p>
-<p>$a(x,0)=(ax,0)$</p>
+<p>$$a(x,0)=(ax,0)$$</p>
 <p>which is also in $U$. We have shown that all three conditions are met, so $U$ is a subspace of $\F^2$.</p>
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> If $\F$ is a field and $n$ is a natural number, then the set of all polynomials whose degree is at most $n$ forms a subspace of $\P(\F)$. We denote this subspace $\P_n(\F)$.</p>
 <p>To see that this is truly a subspace, we will verify the three conditions of the above proposition. We have already stated that the degree of the zero polynomial is $-\infty$, which is certainly less than $N$, so $\0\in\P_n(\F)$.</p>
 <p>Next, suppose that $\p,\q\in\P_n(\F)$. Then there exist degrees $j,k\le n$ and coefficients $a_0,\ldots,a_j,b_0,\ldots,b_k\in\F$ for which</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \p(x) &amp;= \sum_{i=0}^j a_ix^i, \\<br />
 \q(x) &amp;= \sum_{i=0}^k b_ix^i<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>for every $x\in\F$. Since $j$ is the degree of $\p$ and $k$ is the degree of $\q$, we know by definition that $a_j,b_k\ne 0$. Suppose without loss of generality that $j\le k$. It follows that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 (\p+\q)(x) &amp;= \sum_{i=0}^j a_ix^i + \sum_{i=0}^k b_ix^i \\<br />
 &amp;= \sum_{i=0}^j (a_i+b_i)x^i + \sum_{i=j+1}^k b_ix^i<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>for all $x\in\F$. Note that we have combined like terms until the smaller polynomial ran out, then added terms from the higher-degree polynomial until it was also depleted.</p>
 <p>For each $0\le i\le k$, define</p>
-<p>$c_i =<br />
+<p>$$c_i =<br />
 \begin{cases}<br />
 a_i + b_i &amp; \text{if } i\le j, \\<br />
 b_i &amp; \text{if } i&gt;j.<br />
-\end{cases}$</p>
+\end{cases}$$</p>
 <p>Then $c_0,\ldots,c_k\in\F$ are the coefficients of the polynomial $\p+\q$. That is,</p>
-<p>$(\p+\q)(x)=\sum_{i=0}^k c_i x^i.$</p>
+<p>$$(\p+\q)(x)=\sum_{i=0}^k c_i x^i.$$</p>
 <p>If $c_k\ne 0$ then $\p+\q$ is a polynomial of degree $k$. If $c_k = 0$ then $\p+\q$ is a polynomial of degree less than $k$. Since $k\le n$, it follows either way that $\p+\q\in\P(\F)$.</p>
 <p>Next, suppose that $a\in\F$ and $p\in\P(\F)$. Then there exists a degree $j\le n$ and coefficients $b_0,\ldots,b_j\in\F$ for which</p>
-<p>$\p(x)=\sum_{i=0}^j b_i x^i$</p>
+<p>$$\p(x)=\sum_{i=0}^j b_i x^i$$</p>
 <p>for all $x\in\F$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 a\p(x) &amp;= a\sum_{i=0}^j b_i x^i \\<br />
 &amp;= \sum_{i=0}^j ab_i x^i<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>for every $x\in\F$. If $a=0$ then clearly $a\p$ is the zero polynomial and thus $a\p=\0\in\P_n(\F)$. If $a\ne 0$ then for each $0\le i\le j$, define $c_i=ab_i$. Then $c_0,\ldots,c_j$ are the coefficients of $a\p$. That is,</p>
-<p>$a\p(x)=\sum_{i=0}^j c_i x^i.$</p>
+<p>$$a\p(x)=\sum_{i=0}^j c_i x^i.$$</p>
 <p>Therefore, $a\p$ is a polynomial of degree $j\le n$, so $a\p\in\P(\F)$. We have established (rather painstakingly) that all three conditions hold, and so we conclude that $\P_n(\F)$ is in fact a subspace of $\P(\F)$.</p>
 </blockquote>
 <p>We will now work toward defining sums of subspaces. We will begin with the following theorem, which establishes that the intersection of subspaces is always a subspace.</p>
@@ -363,18 +363,18 @@ a\p(x) &amp;= a\sum_{i=0}^j b_i x^i \\<br />
 <p>Naturally, we might now consider the question of whether the union of subspaces is a subspaces. A moment's thought will probably be enough to convince you that this is not true in general. The following example shows why.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the subspaces</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 U &amp;= \{(x,0)\in\R^2\mid x\in\R\}, \\<br />
 W &amp;= \{(0,y)\in\R^2\mid y\in\R\}<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>of $\R^2$. We can picture $U$ as the space of all vectors lying on the horizontal axis of the cartesian plane, and $W$ as the space of all vectors lying on the vertical axis. The union of these subspaces, $U\cup W$, is not closed under vector addition. To illustrate this, notice that $(1,0)\in U$ and $(0,1)\in W$, and that $(1,0)+(0,1)=(1,1)$. However, $(1,1)\notin U$ and $(1,1)\notin W$, so certainly $(1,1)\notin U\cup W$. Therefore, $U\cup W$ is not a subspace of $\R^2$.</p>
 </blockquote>
 <p>This is somewhat unfortunate behavior, because intersections and unions of sets are very natural and easy to work with. We would therefore like to define a way to combine subspaces in order to obtain a new subspace which is <em>as close as possible</em> to their union. We mean this in the sense that this new subspace should be the smallest subspace containing their union. To this end, we define the sum of subspaces in the following manner.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $U$ and $W$ be subspaces of a vector space $V$. The <strong>sum</strong> of $U$ and $W$ is the set</p>
-<p>$U+W=\{\u+\w\in V\mid\u\in U,\w\in W\}.$</p>
+<p>$$U+W=\{\u+\w\in V\mid\u\in U,\w\in W\}.$$</p>
 <p>Similarly, the sum of subspaces $U_1,\ldots,U_n$ of $V$ is the set</p>
-<p>$\sum_{i=1}^n U_i = \{\u_1 + \cdots + u_n\in V\mid \u_1\in U_1,\ldots,\u_n\in U_n\}.$</p>
+<p>$$\sum_{i=1}^n U_i = \{\u_1 + \cdots + u_n\in V\mid \u_1\in U_1,\ldots,\u_n\in U_n\}.$$</p>
 </blockquote>
 <p>This definition certainly fixes the issue we had with unions of subspaces, because it ensures by its very definition that it contains the sum of any vector in $U$ and any vector in $W$. We should make sure that the sum of subspaces is actually a subspace.</p>
 <blockquote>
@@ -382,23 +382,23 @@ W &amp;= \{(0,y)\in\R^2\mid y\in\R\}<br />
 <p><strong>Proof.</strong> Since $U$ and $W$ are subspaces, we know that they both contain the zero vector and are closed under vector addition and scalar multiplication.</p>
 <p>Since $\0\in U$ and $\0\in W$, clearly $\0\in U+W$ because $\0=\0+\0$, i.e., it is the sum of a vector in $U$ and a vector in $W$.</p>
 <p>Next, let $\v_1,\v_2\in U+W$. Then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \v_1 &amp;= \u_1+\w_1, \\<br />
 \v_2 &amp;= \u_2+\w_2<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>for some vectors $\u_1,\u_2\in U$ and $\w_1,\w_2\in W$. Since $U$ and $W$ are closed under vector addition, we know that $\u_1+\u_2\in U$ and $\w_1+\w_2\in W$. Therefore,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \v_1+\v_2 &amp;= (\u_1+\w_1) + (\u_2+\w_2) \\<br />
 &amp;= (\u_1+\u_2) + (\w_1+\w_2) \\<br />
 &amp;\in U+W<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>since it is the sum of a vector in $U$ and a vector in $W$.</p>
 <p>Finally, let $a\in\F$ and $\v\in U+W$, so that $\v=\u+\w$ for some $\u\in U$ and some $\w\in W$. Since $U$ and $W$ are closed under scalar multiplication, we know that $a\u\in U$ and $a\w\in W$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 a\v &amp;= a(\u+\w) \\<br />
 &amp;= a\u + a\w \\<br />
 &amp;\in U+W<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>since it is the sum of a vector in $U$ and a vector in $W$.</p>
 </blockquote>
 <p>Now that we have established that the sum of two subspaces is a subspace, we will prove our assertion above — that the sum of two subspaces is the smallest subspace containing their union. We do this by showing that any subspace containing their union must also contain their sum.</p>
@@ -410,13 +410,13 @@ a\v &amp;= a(\u+\w) \\<br />
 <p>This verifies that the sum of subspaces acts as we originally intended, in that it is as close to their union as possible while remaining a subspace. Now that we have demonstrated this nice characterization of sums, I will provide an example before moving on.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the subspaces</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 U_1 &amp;= \{(x,0,0)\in\R^3\mid x\in\R\}, \\<br />
 U_2 &amp;= \{(0,y,0)\in\R^3\mid y\in\R\}, \\<br />
 U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>of the vector space $\R^3$. These correspond to the subspaces of vectors lying along the $x$, $y$ and $z$ axes, respectively. The sum of these three subspaces is $\R^3$ itself, because for any vector $(x,y,z)\in\R^3$, we may write</p>
-<p>$(x,y,z)=(x,0,0)+(0,y,0)+(0,0,z),$</p>
+<p>$$(x,y,z)=(x,0,0)+(0,y,0)+(0,0,z),$$</p>
 <p>which is a sum of vectors in $U_1$, $U_2$ and $U_3$, respectively. This sum has a particularly nice property — namely that every vector in $\R^3$ has a <em>unique</em> representation as a sum of vectors in $U_1$, $U_2$ and $U_3$. Put another way, this sum is special because we are forced to express $(x,y,z)$ as above — there is no other way to break it down as such a sum. This is really why we choose to express points in $\R^3$ using these coordinates. In fact, this property of sums is so important that it has a name. But I will discuss direct sums next time, since it's very late and I'm a sleepyhead.</p>
 </blockquote>
 
@@ -426,7 +426,7 @@ U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

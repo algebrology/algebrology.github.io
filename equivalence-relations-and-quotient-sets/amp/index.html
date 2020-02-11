@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -104,12 +104,12 @@
 <p>So technically any subset of $A\times A$ is a relation on $A$, but most of them are usually boring and have little meaning. Relations are generally used to compare two elements in some way. That is, we use them to determine whether two elements are 'related' in the manner specified. We should take a look at some characteristics that relations may possess which make them more interesting, but first I'd like to give some examples of familiar relations.</p>
 <blockquote>
 <p><strong>Example.</strong> Take $A=\mathbb{N}$, the set of natural numbers. The "less than or equal to" relation on $\mathbb{N}$, usually written $\le$, is defined so that $(a,b)\in\le$ if and only if $b=a+x$ for some $x\in\mathbb{N}$. Clearly</p>
-<p>$\le \; := \{(a,b)\in\mathbb{N}^2\mid b=a+x\text{ for some }x\in\mathbb{N}\}$</p>
+<p>$$\le \; := \{(a,b)\in\mathbb{N}^2\mid b=a+x\text{ for some }x\in\mathbb{N}\}$$</p>
 <p>fits our definition of a relation because it is a subset of $\mathbb{N}\times\mathbb{N}$. However, no one ever writes things this way. Normal people use infix notation. That is, they write $a\le b$ rather than $(a,b)\in\le$. I will pretty much use infix notation for the rest of time since it tends to simplify things a great deal, and it is probably what you're used to seeing.</p>
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> Take $A=\mathbb{Z}$, the set of integers, and choose some $n\in\mathbb{Z}$. We can define a relation $=_n$ on $\mathbb{Z}$ so that for any $a,b\in\mathbb{Z}$, we have that $a=_n b$ if and only if $b-a=kn$ for some $k\in\mathbb{Z}$. We can write this more formally as</p>
-<p>$=_n \; := \{(a,b)\in\mathbb{Z}^2\mid b-a=kn\text{ for some }k\in\mathbb{Z}\}$</p>
+<p>$$=_n \; := \{(a,b)\in\mathbb{Z}^2\mid b-a=kn\text{ for some }k\in\mathbb{Z}\}$$</p>
 <p>but there isn't usually any benefit in doing things that way, and I think it's even a little bit confusing to look at. By the way, this relation is called <strong>congruence modulo $n$</strong> and it is of tremendous importance to many fields of mathematics. You can bet we'll be seeing this again at some point soon.</p>
 </blockquote>
 <blockquote>
@@ -144,11 +144,11 @@
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> Next, consider again the relation $=_n$ on $\mathbb{Z}$ of congruence modulo some integer $n$. Suppose $a=_n b$ and $b=_n c$. Then $b-a=k_1 n$ and $c-b=k_2 n$ for some integers $k_1$ and $k_2$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 c-a &amp;= (c-b) + (b-a) \\<br />
 &amp;= k_2 n - k_1 n \\<br />
 &amp;= (k_2-k_1)n.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Since $k_2-k_1\in\mathbb{Z}$, it follows that $a=_n c$.</p>
 </blockquote>
 <p>Now that we have established these three types of relation, it is a piece of cake to define an equivalence relation:</p>
@@ -214,7 +214,7 @@ c-a &amp;= (c-b) + (b-a) \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

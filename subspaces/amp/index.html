@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -114,18 +114,18 @@
 <p><strong>Theorem.</strong> Let $X$ denote a topological space with topology $\cal T$ and suppose $A\subseteq X$. Then ${\cal T}_A=\{A\cap U\mid U\in{\cal T}\}$ is a topology on $A$.</p>
 <p><strong>Proof.</strong> Notice first that $\varnothing, X\in\cal T$ by the definition a topology. Certainly $\varnothing=A\cap\varnothing\in{\cal T}_A$, so the empty set is open in the subspace. Similarly, $A=A\cap X\in{\cal T}_A$ because $A\subseteq X$, so $A$ itself is open in the subspace.</p>
 <p>Next, suppose that $I$ is an indexing set such that $V_i\in{\cal T}_A$ is open in the subspace for each $i\in I$. Then for every $i\in I$ we have that $V_i=A\cap U_i$ for some open set $U_i\in{\cal T}$, by the definition of the subspace topology. Since $\bigcup\limits_{i\in I}U_i\in\cal T$ it is clear that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \bigcup\limits_{i\in I}V_i &amp;= \bigcup\limits_{i\in I}(A\cap U_i) \\<br />
 &amp;= A\cap \bigcup\limits_{i\in I}U_i \\<br />
 &amp;\in{\cal T}_A,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>so we have shown that the union of any collection of open sets in the subspace is also open in the subspace.</p>
 <p>Finally, suppose that $V_i\in{\cal T}_A$ is open in the subspace for $1\leq i\leq n$ for some $n\in\mathbb{Z}^+$. Then for $1\leq i\leq n$, we again have that $V_i=A\cap U_i$ for some open set $U_i\in{\cal T}$, by the definition of the subspace topology. Since $\bigcap\limits_{i=1}^n U_i\in\cal T$, it is clear that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \bigcap\limits_{i=1}^n V_i &amp;= \bigcap\limits_{i=1}^n (A\cap U_i) \\<br />
 &amp;= A\cap \bigcap\limits_{i=1}^n U_i \\<br />
 &amp;\in {\cal T}_A,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>so we have shown that the intersection of a finite collection of open sets in the subspace is also open in the subspace. It follows that the subspace topology on $A$ is a topology, as desired.</p>
 </blockquote>
 <p>I have noticed that people often find the following observation confusing: If $A$ is a subset of a topological space $X$, then the set $A$ is both open and closed in the subspace topology on $A$. This is automatically true because of the definition of a topology. However, this says nothing at all about whether $A$ is open or closed as a <em>subset</em> of $X$. Similarly, there are plenty of sets that may be open or closed in the subspace topology that may not have been that way in the original topology. Make sure you pay attention to the distinction between subspaces and subsets!</p>
@@ -133,18 +133,18 @@
 <blockquote>
 <p><strong>Theorem.</strong> Let $A$ be a subspace of a topological space $X$. Then $U\subseteq A$ is closed in $A$ if and only if $U=A\cap V$ for some closed set $V\subseteq X$.</p>
 <p><strong>Proof.</strong> First, suppose that $U$ is closed in $A$. Then $A-U$ is open by definition, so $A-U=A\cap W$ for some open set $W$ in $X$. Certainly $V=X-W$ is closed in $X$, so</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 U &amp;= A-(A-U) \\<br />
 &amp;= A-(A\cap W) \\<br />
 &amp;= A-W \\<br />
 &amp;= A\cap (X-W) \\<br />
 &amp;= A\cap V.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Conversely, suppose that $U=A\cap V$ for some closed set $V$ in $X$. Then $X-V$ is open in $X$, so</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 A-U &amp;= A-(A\cap V) \\<br />
 &amp;= A\cap (X-V)<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>is open in $A$. Thus, $U$ is closed in $A$.</p>
 </blockquote>
 <p>I may not have explicitly proved all those set equalities in the past, but if they aren't immediately obvious to you then this might be a good time to go back and get some more practice with set-theoretic proofs.</p>
@@ -166,28 +166,28 @@ A-U &amp;= A-(A\cap V) \\<br />
 <p><strong>Proposition.</strong> Consider $\mathbb{R}$ with the standard topology and $A=\{(x,0)\in\mathbb{R}^2\mid x\in\mathbb{R}\}$ as a subspace of $\mathbb{R}^2$ with the standard topology. The spaces $\mathbb{R}$ and $A$ are homeomorphic.</p>
 <p><strong>Proof.</strong> We argue that the function $f:A\to\mathbb{R}$ defined by $f\big((x,0)\big)=x$ is a homeomorphism. It is trivial to check that $f$ is bijective and that its inverse function $f^{-1}:\mathbb{R}\to A$ is given by $f^{-1}(x)=(x,0)$.</p>
 <p>We will show first that $f^{-1}$ is continuous. Choose an open set $U$ in $A$. By definition, we can write $U$ as the intersection of $A$ with some union of open balls in $\mathbb{R}^2$. That is,</p>
-<p>$U=A\cap\bigcup\limits_{i\in I} B\big((x_i,y_i),r_i\big)$</p>
+<p>$$U=A\cap\bigcup\limits_{i\in I} B\big((x_i,y_i),r_i\big)$$</p>
 <p>for some indexing set $I$, where $(x_i,y_i)\in\mathbb{R}^2$ and $r_i\in\mathbb{R}^+$ for each $i\in I$. It follows that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 (f^{-1})^{-1}[U] &amp;= f[U] \\<br />
 &amp;= f\left[A\cap\bigcup\limits_{i\in I}B\big((x_i,y_i),r_i\big)\right] \\<br />
 &amp;= f\left[\bigcup\limits_{i\in I}A\cap B\big((x_i,y_i),r_i\big)\right] \\<br />
 &amp;= \bigcup\limits_{i\in I}f\Big[A\cap B\big((x_i,y_i),r_i\big)\Big].<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>A small amount of geometry and the Pythagorean Theorem gets us that for each $i\in I$, the set $f\Big[A\cap B\big((x_i,y_i),r_i\big)\Big]$ is equal to the open interval</p>
-<p>$\left(x_i-\sqrt{r_i^2-y_i^2}, x_i+\sqrt{r_i^2-y_i^2}\right)$</p>
+<p>$$\left(x_i-\sqrt{r_i^2-y_i^2}, x_i+\sqrt{r_i^2-y_i^2}\right)$$</p>
 <p>if $r_i&gt;y_i$, and it is empty if $r_i\leq y_i$. The union of open intervals is open in $\mathbb{R}$, so $(f^{-1})^{-1}[U]$ is open in $\mathbb{R}$ and thus $f^{-1}$ is continuous.</p>
 <p>Next, we will show that $f$ is continuous. Choose an open set $U$ in $\mathbb{R}$. By definition, $U$ is a union of open intervals in $\mathbb{R}$ (possibly $\mathbb{R}$ itself, in which case $f^{-1}[U]=f^{-1}[\mathbb{R}]=A$ is certainly open). More precisely, we can write</p>
-<p>$U=\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i),$</p>
+<p>$$U=\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i),$$</p>
 <p>where $I$ is some indexing set such that $x_i\in\mathbb{R}$ and $r_i\in\mathbb{R}^+$ for every $i\in I$. It follows that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f^{-1}[U] &amp;= f^{-1}\left[\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i)\right] \\<br />
 &amp;= f^{-1}\left[\bigcup\limits_{i\in I}\left\{x\in\mathbb{R}\bigg\vert \vert x-x_i\vert&lt; r_i\right\}\right] \\<br />
 &amp;= \bigcup\limits_{i\in I}f^{-1}\left[\left\{x\in\mathbb{R}\bigg\vert \vert x-x_i\vert&lt; r_i\right\}\right] \\<br />
 &amp;= \bigcup\limits_{i\in I}\left\{(x,0)\in\mathbb{R}^2\bigg\vert\vert x-x_i\vert&lt; r_i\right\} \\<br />
 &amp;= \bigcup\limits_{i\in I}\bigg(A\cap B\big((x_i,0),r_i\big)\bigg) \\<br />
 &amp;= A\cap \bigcup\limits_{i\in I}B\big((x_i,0),r_i\big).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>The union of open balls is open, so $f^{-1}[U]$ is the intersection of $A$ with an open set in $\mathbb{R}$ and is thus open in $A$. It follows that $f$ is continuous, completing the proof.</p>
 </blockquote>
 <p>It ended up being a bit long, but not too difficult. And I think this example really gets the point across that even though homeomorphic spaces may not be identical, they behave in essentially the same way. Most people aren't as careful as I just was, and frequently write that $\mathbb{R}$ is a subspace of $\mathbb{R}^2$. This isn't strictly true, but at least you now know how to interpret it.</p>
@@ -196,7 +196,7 @@ f^{-1}[U] &amp;= f^{-1}\left[\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i)\right] \\<
 <blockquote>
 <p><strong>Proposition.</strong> Let $a,b\in\mathbb{R}$ with $a&lt; b$. Then $\mathbb{R}$ and the interval $(a,b)$ are homeomorphic.</p>
 <p><strong>"Proof."</strong> Define $f:(a,b)\to\mathbb{R}$ by</p>
-<p>$f(x)=\frac{1}{x-a}+\frac{1}{x-b}.$</p>
+<p>$$f(x)=\frac{1}{x-a}+\frac{1}{x-b}.$$</p>
 <p>We will argue that $f$ is a homeomorphism. I am not going to check that $f$ is a bijection, although it is obvious just from looking at its graph. This could be done using the quadratic formula to find an explicit inverse function, being careful to restrict $f^{-1}$ so that it is surjective. It could also be done using calculus to show that this function is injective because it is monotonically decreasing and surjective by the intermediate value theorem because it approaches negative infinity at its left endpoint and positive infinity at its right endpoint.</p>
 <p>The function $f$ is clearly continuous because it is a rational function whose denominator is nonzero for every $x\in(a,b)$. Its inverse, $f^{-1}$ is also continuous for the same reason, but since I haven't explicitly computed it I will not show that this is the case.</p>
 </blockquote>
@@ -215,7 +215,7 @@ f^{-1}[U] &amp;= f^{-1}\left[\bigcup\limits_{i\in I}(x_i-r_i,x_i+r_i)\right] \\<
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

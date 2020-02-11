@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -105,14 +105,14 @@
 <hr></hr>
 <p>This post is a much needed break from my steady stream of posts concerning topology. Before my next post on bases for topologies, I need to introduce a proof technique that I haven't used so far.</p>
 <p>In mathematics, we come across patterns all the time. For instance, here's a pattern you may have noticed before:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 1       = 1\phantom{0}  &amp;= 1^2 \\<br />
 1+3     = 4\phantom{0}  &amp;= 2^2 \\<br />
 1+3+5   = 9\phantom{0}  &amp;= 3^2 \\<br />
 1+3+5+7 = 16 &amp;= 4^2 \\<br />
 &amp;\phantom{0}\vdots \\<br />
 1+3+5+7+\dotsc +(2n+1) &amp;= n^2<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>It turns out that for any natural number $n$, if you add the first $n$ odd numbers the result is always $n^2$. (Remember that the $n$th odd number is $2n-1$.) Here's a visual depiction of the pattern:</p>
 <p></p>
 <p>From this image, it is evident that adding together the first $n$ odd numbers literally results in a square of side length $n$. But how can we come up with a convincing argument that this pattern always holds? In answering this question, we will discuss a method that can also be applied to many other similar problems.</p>
@@ -166,18 +166,18 @@
 <p>Let's now prove that the pattern I introduced at beginning of this post always holds.</p>
 <blockquote>
 <p><strong>Theorem.</strong> For any $n\geq 1$,</p>
-<p>$1+3+5+\dotsc+(2n-1)=n^2.$</p>
+<p>$$1+3+5+\dotsc+(2n-1)=n^2.$$</p>
 <p><strong>Proof.</strong> We give a proof by induction on $n$.</p>
 <p>For our base case, we need to show that the statement is true when we let $n=1$. This is simple enough, because $1$ is certainly the sum of the first $1$ odd numbers, and it is equal to its square. That is, $1=1^2$, so we have shown that our base case is true.</p>
 <p>Now for the inductive step. We will assume that</p>
-<p>$1+3+5+\dotsc+(2n-1)=n^2,$</p>
+<p>$$1+3+5+\dotsc+(2n-1)=n^2,$$</p>
 <p>and use this to show that</p>
-<p>$1+3+5+\dotsc+(2n-1)+(2n+1)=(n+1)^2.$</p>
+<p>$$1+3+5+\dotsc+(2n-1)+(2n+1)=(n+1)^2.$$</p>
 <p>This requires a tiny bit of algebraic manipulation, but isn't at all difficult:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 1+3+5+\dotsc+(2n-1)+(2n+1) &amp;= n^2+(2n+1) \\<br />
 &amp;= (n+1)^2.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>In the first step above, we used our assumption that the sum of the first $n$ odd numbers is $n^2$ and substituted this result into the equation. In the second step, we factored our resulting quadratic, and subsequently showed that our inductive step holds.</p>
 <p>It follows from the principle of mathematical induction that our assertion is true.</p>
 </blockquote>
@@ -185,19 +185,19 @@
 <p>In my first post on set theory, I stated without proof that De Morgan's Laws extend to arbitrary collections of sets. I still won't prove that in full, but I'll prove something that's nearly as powerful.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $A_1,A_2,\dotsc,A_n\subseteq X$. Then</p>
-<p>$X-\bigcup\limits_{i=1}^n A_i=\bigcap\limits_{i=1}^n (X-A_i).$</p>
+<p>$$X-\bigcup\limits_{i=1}^n A_i=\bigcap\limits_{i=1}^n (X-A_i).$$</p>
 <p><strong>Proof.</strong> We proceed by induction on $n$. For our base case, we choose $n=2$. That is, we need to show that</p>
-<p>$X-(A_1\cup A_2)=(X-A_1)\cap (X-A_2).$</p>
+<p>$$X-(A_1\cup A_2)=(X-A_1)\cap (X-A_2).$$</p>
 <p>But this is just one of De Morgan's Laws, which we already know to be true! So we don't actually have to do any work to establish that the first criterion holds.</p>
 <p>Next, let $n\geq 2$ be a natural number and suppose that</p>
-<p>$X-\bigcup\limits_{i=1}^n A_i=\bigcap\limits_{i=1}^n (X-A_i).$</p>
+<p>$$X-\bigcup\limits_{i=1}^n A_i=\bigcap\limits_{i=1}^n (X-A_i).$$</p>
 <p>It is easy to see that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 X-\bigcup\limits_{i=1}^{n+1}A_i &amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup A_{n+1}\right) \\<br />
 &amp;= \left(X-\bigcup\limits_{i=1}^nA_i\right)\cap (X-A_{n+1}) \\<br />
 &amp;= \bigcap\limits_{i=1}^n(X-A_i)\cap(X-A_{n+1}) \\<br />
 &amp;= \bigcap\limits_{i=1}^{n+1}(X-A_i).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>This completes the proof.</p>
 </blockquote>
 <p>Let's look at another example. This is one of my favorites, and it lends itself nicely to a visual representation.</p>
@@ -242,7 +242,7 @@ X-\bigcup\limits_{i=1}^{n+1}A_i &amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup A_{
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

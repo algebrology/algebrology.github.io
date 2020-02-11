@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <meta name="description" content="It&#x27;s fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble..." />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -46,8 +46,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#limit-points">Limit Points</a></li>
 <li><a href="#closure">Closure</a></li>
@@ -178,7 +178,7 @@ MathJax.Hub.Config({
 <hr>
 <p>We are nearly ready to begin making some distinctions between different topological spaces. Distinguishing between fundamentally different spaces lies at the heart of the subject of topology, and it will occupy much of our time. However, before we can really dig in, we're going to need some additional tools.</p>
 <p>On a different note, and I've been meaning to mention this, I'd be willing to bet that you probably had a different sense of what open and closed sets were before learning any topology. It's fairly common to think of open sets as sets which do not contain their boundary, and closed sets as sets which do contain their boundary. The trouble here lies in defining the word 'boundary.' This is finally about to be addressed, first in the context of metric spaces because it is easier to see why the definitions are natural there. As in prior posts, these concepts generalize easily to topological space.</p>
-<h3 id="limitpointsanamelimitpoints">Limit Points<a name="limit-points"></a></h3>
+<h3 id="limitpointsanamelimitpoints">Limit Points<a name="limit-points"></h3>
 <p>If you've had any calculus, you've probably had some experience with limits. Whether or not the formal $\epsilon$-$\delta$ definition of a limit is familiar to you is of no real consequence. Even though this definition is extremely insightful, it isn't really necessary for our purposes. In fact, if we aren't working in a metric space then this definition doesn't even apply. The good news it that many definitions in topology have a sort of <em>too-good-to-be-true</em> feel to them, since they're often deceptively simple.</p>
 <p>Limit points are not the same type of limit that you encounter in a calculus or analysis class, but the underlying idea is similar. Informally, a point in a metric space is a limit point of some subset if it is arbitrarily close to other points in that subset. What exactly does this mean? It means that no matter how closely we zoom in on a limit point, there will always be another point in its immediate vicinity which belongs to the subset in question. Thus, we can in some sense approximate limit points to arbitrary accuracy using other points in the subset. This might be a little confusing or overwhelming, so I'll give you the definition now and you'll see that it isn't too bad. Its simplicity may even be a bit misleading.</p>
 <blockquote>
@@ -229,7 +229,7 @@ d(x,z) &amp;= \sqrt{2} \\<br>
 </blockquote>
 <p>The theorem we just proved translates as well, if we simply replace open balls with neighborhoods each time the appear in the proof.</p>
 <p>As always, there's nothing contradictory about the fact that the empty set is closed. Certainly the empty set contains all of its limit points, since it contains no points at all.</p>
-<h3 id="closureanameclosure">Closure<a name="closure"></a></h3>
+<h3 id="closureanameclosure">Closure<a name="closure"></h3>
 <p>We will now define the closure of a subset of a topological space. We will see later that taking the closure of a set is equivalent to include the set's boundary.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $A$ denote a subset of a topological space $X$. The <strong>closure</strong> of $A$ is the intersection of all closed set in $X$ which contain $A$. We denote the closure of a $A$ by $\overline A$.</p>
@@ -241,7 +241,7 @@ d(x,z) &amp;= \sqrt{2} \\<br>
 <p>We argue next that $\overline A\subseteq A\cup L(A)$. If $x\in A$ then the proof is immediate. If $x\in\overline A -A$, then by definition $x$ is in every closed set containing $A$. It follows that for any open set $U\subseteq X-A$, we have $x\notin U$. Thus any neighborhood of $x$ intersects $A$ in some point $p$. Since $x\notin A$, clearly $x\neq p$ and thus $x$ is a limit point of $A$.</p>
 </blockquote>
 <p>It's a somewhat gross proof, but a nice and useful result, and one that we will use often.</p>
-<h3 id="boundaryanameboundary">Boundary<a name="boundary"></a></h3>
+<h3 id="boundaryanameboundary">Boundary<a name="boundary"></h3>
 <p>Next let's formalize the concept of boundary. It's easy and intuitive to think about the boundary of a ball, so let's start there. Let's say we have an open and closed ball of the same center and radius in some metric space. They obviously have the same boundary — the circle with the same radius as these balls. Even though these points don't belong to the open ball, they are <em>just</em> touching its outer edge.</p>
 <p>Now what about this set, as a subset of $\mathbb{R}^2$ in the standard metric?</p>
 <p><img src="https://algebrology.github.io/content/images/2017/04/vomitous_mass.svg" alt="vomitous mass"></p>
@@ -261,7 +261,7 @@ d(x,z) &amp;= \sqrt{2} \\<br>
 <p>The proof that $\overline A\cap\overline{X-A}\subseteq\partial A$ is precisely the same as above, with the steps reversed.</p>
 </blockquote>
 <p>This means that the boundary of $A$ is the intersection of the smallest closed set containing $A$ and the smallest closed set containing its complement, which hopefully seems reasonable to you.</p>
-<h3 id="interioranameinterior">Interior<a name="interior"></a></h3>
+<h3 id="interioranameinterior">Interior<a name="interior"></h3>
 <p>I'm not going to bother with metric spaces for this part, since I think you get the idea. You can easily translate all the results about topological spaces back into metric spaces if you'd like. Intuitively, we can think of the interior of a set as everything in the set which does not belong to its boundary. This is actually not the definition we'll initially give, although we shall soon see that they are equivalent.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $A$ denote a subset of a topological space $X$. The <strong>interior</strong> of $A$ is the union of all open subsets of $A$. We write $\mathring A$ to denote the interior of $A$.</p>
@@ -275,7 +275,7 @@ d(x,z) &amp;= \sqrt{2} \\<br>
 <p>Next, choose $x\in\overline A-\partial A$. Then $x\in A$ or $x$ is a limit point of $A$, but $x$ is not a boundary point of $A$. Thus any neighborhood of $x$ contains a point in $A$ but no points in $X-A$, so $x\in\mathring A$.</p>
 </blockquote>
 <p>I'm probably boring you. I'm boring myself, actually, because I don't find any of this particularly interest. It's kind of necessary though, so I'm glad I went through it. I'm going to end the post here, and next time I'll finally talk about continuity, which is actually interesting and incredibly important.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -319,13 +319,13 @@ d(x,z) &amp;= \sqrt{2} \\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

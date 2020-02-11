@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <meta name="description" content="A group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact..." />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -46,8 +46,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#the-definition">The Definition</a></li>
@@ -177,7 +177,7 @@ MathJax.Hub.Config({
 <li><a href="#subgroups">Subgroups</a></li>
 </ol>
 <hr>
-<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></h3>
 <p>I think it's probably time I wrote a post about something other than topology, so today I'm going to break way into the field of algebra.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> It's difficult to explain exactly what algebra is until you've been exposed to some of it, but I like to think of algebra as the study of structure. Using algebraic techniques, seemingly different objects can be shown to be not so different after all, and many difficult problems can be solved relatively easy using such observations.</p>
 <p>The first algebraic object I'd like to introduce, as you may have guessed, is a group. This will not be my only post on groups, since there is a lot to say about them. Essentially, a group is a set endowed with a very basic structure. This structure is enforced by an operation which governs how the elements in the group interact with each other. Before I define a group, I need to talk a little bit about binary operations.</p>
 <blockquote>
@@ -186,7 +186,7 @@ MathJax.Hub.Config({
 <p>The definition nicely captures several important ideas. First, it guarantees that if $a,b\in X$ then $\circ(a,b)\in X$ as well. This is called <strong>closure</strong> under the binary operation — when we combine two elements in $X$, we always get back something which is also in $X$. Next, because we have defined $\circ$ as a function, it is guaranteed that every pair of elements in $X$ can be combined to yield a new element.</p>
 <p>You're probably more used to <strong>infix notation</strong> $a\circ b$, rather than the equivalent function notation $\circ(a,b)$, when it comes to denoting binary operations. That's good, since infix notation is more convenient and we will use it more often.</p>
 <p>As an example, the usual operations of addition and multiplication on $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}$ and $\mathbb{C}$ are binary operations on each of these sets. Let $X$ denote any of the aforementioned sets. That addition and multiplication on $X$ actually constitute binary operations is shown easily by noting that for any two elements $a,b\in X$, their sum $a+b$ and their product $a\cdot b$ are well defined and are also in $X$.</p>
-<h3 id="thedefinitionanamethedefinition">The Definition<a name="the-definition"></a></h3>
+<h3 id="thedefinitionanamethedefinition">The Definition<a name="the-definition"></h3>
 <p>I'll jump straight into it, shall I?</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>group</strong> is a set $G$ together with a binary operation $\circ:G\times G\to G$ with the following properties:</p>
@@ -199,7 +199,7 @@ MathJax.Hub.Config({
 <p>Stated in plain English, groups must have an identity element and inverses for every element, and the group operation must be associative. These all seem like reasonable requirements.</p>
 <p>In the future, we will occasionally be even more lax and denote $a\circ b$ as simply $ab$, when a group's binary operation is implicitly understood and no confusion can arise. When an element is 'multiplied' by itself numerous times, we will use exponential notation. For instance, $aa=a^2$ and $aaa=a^3$. It is consistent and convenient in this notation to denote the identity element $e=a^0$ for any element $a$ in a group.</p>
 <p>Furthermore, I will frequently refer to $G$ itself as a group, as this very rarely results in any confusion. Just remember that whenever I mention a group, there is always some binary operation lurking behind the curtain.</p>
-<h3 id="examplesanameexamples">Examples<a name="examples"></a></h3>
+<h3 id="examplesanameexamples">Examples<a name="examples"></h3>
 <p>Now that groups have been defined, I'd like to walk you through a few simple examples of groups.</p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>trivial group</strong> is the group containing only one element.</p>
@@ -224,7 +224,7 @@ MathJax.Hub.Config({
 <p>Next, $D_4$ is the dihedral group of the square, with four distinct rotations (where I have counted the identity among the rotations) and four reflections.</p>
 <p>Likewise, $D_5$ is the dihedral group of the regular pentagon, with five rotations and five reflections. In general, $D_n$ consists of $n$ rotations and $n$ reflections, totaling $2n$ elements.</p>
 <p>I'll talk about dihedral groups again in the future, but for now let me conclude by noting that the rotations in $D_n$ form a group of their own, since they cannot be composed in such a way as to produce anything other than a rotation. The reflections are a different story, though. They do not form a group since, for example, in $D_3$ we have that $f_2\circ f_1=r_2$. That is, the composition of two reflections can be a rotation.</p>
-<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
+<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></h3>
 <p>Now that I've gotten a few examples of groups out of the way, I'd like to talk about some immediate consequences of the group axioms. Let's begin by showing that we are allowed to cancel terms from equations, as we are so used to doing in the familiar number systems.</p>
 <blockquote>
 <p><strong>Left Cancellation Law.</strong> Let $G$ denote a group with $a,b,x\in G$. If $xa=xb$, then $a=b$.</p>
@@ -257,7 +257,7 @@ a &amp;= e a &amp; \scriptstyle\textit{identity}\\<br>
 <p><strong>Definition.</strong> A group $G$ is <strong>abelian</strong> (or <strong>commutative</strong>) if $xy=yx$ for every $x,y\in G$.</p>
 </blockquote>
 <p>Examples of abelian groups that we've already seen are the integers under addition and the positive real numbers under multiplication. On the other hand, the dihedral groups of order three and above are nonabelian.</p>
-<h3 id="subgroupsanamesubgroups">Subgroups<a name="subgroups"></a></h3>
+<h3 id="subgroupsanamesubgroups">Subgroups<a name="subgroups"></h3>
 <p>I'm almost done now, and I know this has been a pretty long post. I just need to introduce one more important concept and then I promise I'll stop.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>subgroup</strong> $H$ of a group $G$ is a subset of $G$ which is itself a group under the group operation on $G$.</p>
@@ -277,7 +277,7 @@ a &amp;= e a &amp; \scriptstyle\textit{identity}\\<br>
 </li>
 </ol>
 </section>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -321,13 +321,13 @@ a &amp;= e a &amp; \scriptstyle\textit{identity}\\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

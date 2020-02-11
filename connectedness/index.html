@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/connectedness/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#connected-spaces">Connected Spaces</a></li>
 <li><a href="#some-cool-results">Some Cool Results</a></li>
 </ol>
 <hr>
-<h3 id="connectedspacesanameconnectedspaces">Connected Spaces<a name="connected-spaces"></a></h3>
+<h3 id="connectedspacesanameconnectedspaces">Connected Spaces<a name="connected-spaces"></h3>
 <p>I decided to postpone the second half of my construction of the rational numbers because I needed to break up the monotony a bit.</p>
 <p>I'm finally about to show you some really cool stuff. In this post, I'm going to prove the Intermediate Value Theorem and the One-Dimensional Brouwer Fixed Point Theorem, which are two results that are undeniably and unreasonably useful. In order to prove them, however, we will need to study the notion of connectedness. I'll probably save path-connectedness for a later time, since this post will be long enough as is.</p>
 <p>Connectedness is pretty much exactly what you'd expect it to be - if something is connected then that means it is all one coherent piece. This is a very hand-wavy statement though, so let's try to come up with a real definition that makes sense in the context of topological spaces. It might be better to start by considering what it is that makes a space disconnected. Let's look at this picture of a space $X$ which we should certainly call disconnected (as a subspace of the plane $\R^2$ with the standard topology):</p>
@@ -327,7 +327,7 @@ U'\cup V'&amp;=\big([u,v]-V\big)\cup\big([u,v]-U\big)\\<br>
 <p>Suppose then that $s\in V'$. Then because $V'$ is open in $[u,v]$ and $u\notin V'$, there exists $d\in (u,s)$ for which $(d,s]\subseteq V'$. Then for every $x\in (d,s)$, we have that $x&lt;s$ and $x&gt;y$ for every $y\in U'$, which is again a contradiction because $s$ is the supremum of $U'$.</p>
 <p>Since $s\notin U'$ and $s\notin V'$, it must be true that $s\notin [u,v]$, which contradicts its definition.</p>
 </blockquote>
-<h3 id="somecoolresultsanamesomecoolresults">Some Cool Results<a name="some-cool-results"></a></h3>
+<h3 id="somecoolresultsanamesomecoolresults">Some Cool Results<a name="some-cool-results"></h3>
 <p>It's time for some fun stuff now. Let's start with the intermediate value theorem, which you may have experienced and ignored in a calculus class.</p>
 <blockquote>
 <p><strong>Intermediate Value Theorem.</strong> Let $X$ denote a connected space and let $f:X\to\R$ be continuous. If $x,y\in f[X]$ and $c\in [x,y]$, then $c\in f[X]$.</p>
@@ -381,7 +381,7 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
 <p><strong>Proof.</strong> Let $h:X\to Y$ be a homeomorphism, and let $g:Y\to Y$ be continuous. By hypothesis, $h$ and $h^{-1}$ are continuous, so $h^{-1}\circ g\circ h:X\to X$ is continuous since it is the composition of continuous functions. Thus, $h^{-1}\circ g\circ h$ has a fixed point. That is, there exists some $x\in X$ for which $\big(h^{-1}\circ g\circ h\big)(x)=x$. But then $\big(g\circ h\big)(x)=h(x)$, and thus $h(x)$ is a fixed point of $g$.</p>
 </blockquote>
 <p>I'll leave you with the following interesting fact that might occasionally occur to you as you stir hot beverages: the Brouwer fixed point theorem, together with the theorem above, tells us that some particle of your drink will end up in the same place it began. This is because the space occupied by the liquid (presumably a cylinder) is homeomorphic to the three-dimensional closed unit ball.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -425,13 +425,13 @@ U\cup V &amp;= (U'\cap f[X])\cup(V'\cap f[X])\\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

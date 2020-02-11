@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <meta name="description" content="In mathematics, we come across patterns all the time. For instance, here&#x27;s a pattern you may have noticed before..." />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -46,8 +46,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#the-axiom-of-choice-and-well-ordering-principle">The axiom of choice and well-ordering principle</a></li>
 <li><a href="#the-principle-of-mathematical-induction">The principle of mathematical induction</a></li>
@@ -188,7 +188,7 @@ MathJax.Hub.Config({
 <p>It turns out that for any natural number $n$, if you add the first $n$ odd numbers the result is always $n^2$. (Remember that the $n$th odd number is $2n-1$.) Here's a visual depiction of the pattern:</p>
 <p><img src="https://algebrology.github.io/content/images/2017/04/sum_of_odds-2.svg" alt=""></p>
 <p>From this image, it is evident that adding together the first $n$ odd numbers literally results in a square of side length $n$. But how can we come up with a convincing argument that this pattern always holds? In answering this question, we will discuss a method that can also be applied to many other similar problems.</p>
-<h3 id="theaxiomofchoiceandwellorderingprincipleanametheaxiomofchoiceandwellorderingprinciple">The axiom of choice and well-ordering principle<a name="the-axiom-of-choice-and-well-ordering-principle"></a></h3>
+<h3 id="theaxiomofchoiceandwellorderingprincipleanametheaxiomofchoiceandwellorderingprinciple">The axiom of choice and well-ordering principle<a name="the-axiom-of-choice-and-well-ordering-principle"></h3>
 <p>Before we start, I should mention that you cannot do a proof by induction unless you accept the <strong>axiom of choice</strong>. The axiom of choice is an extra axiom of set theory which is somewhat controversial (among mathematicians). This is because at first glance it seems obviously true, but it actually leads to some bizarre and unexpected results.</p>
 <blockquote>
 <p><strong>Axiom of Choice.</strong> Suppose $I$ is an indexing set and $C$ is a collection of nonempty sets $X_i$ for each $i\in I$. Then there exists a function $f:C\to\bigcup\limits_{i\in I} X_i$ such that $f(X_i)\in X_i$ for every $i$.</p>
@@ -202,7 +202,7 @@ MathJax.Hub.Config({
 </blockquote>
 <p>This assumes the ordering you're familiar with for the natural numbers. You know, the one where $0&lt;1&lt;2&lt;3$ and so on. This only holds because the natural numbers are bounded below. That is, there is a smallest natural number: $0$. If we wanted to extend this principle to the integers, we'd have to add the condition that our nonempty set of integers has a lower bound.</p>
 <p>The well-ordering principle should hopefully seem very obvious to you as well, and I'm not going to show how it implies the principle of mathematical induction.</p>
-<h3 id="theprincipleofmathematicalinductionanametheprincipleofmathematicalinduction">The principle of mathematical induction<a name="the-principle-of-mathematical-induction"></a></h3>
+<h3 id="theprincipleofmathematicalinductionanametheprincipleofmathematicalinduction">The principle of mathematical induction<a name="the-principle-of-mathematical-induction"></h3>
 <p>I'll stop beating around the bush and just do the thing already.</p>
 <blockquote>
 <p><strong>Principle of Mathematical Induction.</strong> Suppose P(n) is a (true/false) statement about a natural number $n$, and that the following two criteria hold:</p>
@@ -234,7 +234,7 @@ MathJax.Hub.Config({
 <p>So in other words, if we know for certain that the first domino will fall, this means that <em>every</em> domino will fall because we have verified both the base case and the inductive step.</p>
 <p><img src="https://algebrology.github.io/content/images/2017/04/dominoes_falling.svg" alt="dominoes falling"></p>
 <p>The argument we have just given shows an infinite number of things to be true! This is part of the power of inductive arguments.</p>
-<h3 id="examplesanameexamples">Examples<a name="examples"></a></h3>
+<h3 id="examplesanameexamples">Examples<a name="examples"></h3>
 <p>Let's now prove that the pattern I introduced at beginning of this post always holds.</p>
 <blockquote>
 <p><strong>Theorem.</strong> For any $n\geq 1$,</p>
@@ -307,7 +307,7 @@ X-\bigcup\limits_{i=1}^{n+1}A_i &amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup A_{
 </li>
 </ol>
 </section>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -351,13 +351,13 @@ X-\bigcup\limits_{i=1}^{n+1}A_i &amp;= X-\left(\bigcup\limits_{i=1}^nA_i\cup A_{
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

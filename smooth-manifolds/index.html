@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Smooth Manifolds</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://algebrology.github.io/smooth-manifolds/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://algebrology.github.io/smooth-manifolds/amp/" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Smooth Manifolds" />
+    <meta property="og:description" content="Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics." />
+    <meta property="og:url" content="https://algebrology.github.io/smooth-manifolds/" />
+    <meta property="article:published_time" content="2020-02-10T19:43:54.000Z" />
+    <meta property="article:modified_time" content="2020-02-11T03:29:29.000Z" />
+    <meta property="article:tag" content="differential geometry" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Smooth Manifolds" />
+    <meta name="twitter:description" content="Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics." />
+    <meta name="twitter:url" content="https://algebrology.github.io/smooth-manifolds/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="differential geometry" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://algebrology.github.io/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "https://algebrology.github.io/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Smooth Manifolds",
+    "url": "https://algebrology.github.io/smooth-manifolds/",
+    "datePublished": "2020-02-10T19:43:54.000Z",
+    "dateModified": "2020-02-11T03:29:29.000Z",
+    "keywords": "differential geometry",
+    "description": "Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://algebrology.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.5" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: {automatic: true},
+    },
+  	"HTML-CSS": { 
+        linebreaks: {automatic: true},
+    },
+    SVG: {
+        linebreaks: {automatic: true},
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            sgn: "{\\text{sgn }}",
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            null: "{\\text{null }}",
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+            M: "{\\mathscr{M}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
+            rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template tag-differential-geometry">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="https://algebrology.github.io" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="https://algebrology.github.io/">Home</a></li>
+        <li class="nav-topology "><a href="https://algebrology.github.io/tag/topology/">Topology</a></li>
+        <li class="nav-algebra "><a href="https://algebrology.github.io/tag/algebra/">Algebra</a></li>
+        <li class="nav-linear-algebra "><a href="https://algebrology.github.io/tag/linear-algebra/">Linear Algebra</a></li>
+        <li class="nav-algebraic-topology "><a href="https://algebrology.github.io/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="https://algebrology.github.io/tag/foundations/">Foundations</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">February 10, 2020</span>
+            <h1>Smooth Manifolds</h1>
+        </header>
+
+
+        <div class="content">
+            <!--kg-card-begin: markdown--><p>Disclaimer: This post requires a basic grasp of differential calculus. You don't really need to know how to calculate them, but you do need to be comfortable with the idea of derivatives and partial derivatives, and in particular we will need that the composition of two differentiable maps is differentiable (via the chain rule).</p>
+<p>Smooth manifolds are essentially the most general objects that we can do calculus on. Before we can define smooth manifolds, we need to know what a general topological manifold is. And before we can do that, we need just a few new set-theoretic and topological notions.</p>
+<blockquote>
+<p><strong>Definition.</strong> A set $X$ is <strong>countable</strong> if there is a bijection $f:X\to\Z$. That is, if it can be put into one-to-one correspondence with the integers. Finite sets are also considered to be countable.</p>
+</blockquote>
+<p>So countable sets include any finite set, the set $\Z$ itself, the rational numbers $\Q$, and anything else enumerable. Uncountable sets include the real numbers $\R$, the complex numbers $\C$, and many more.</p>
+<p>Recall that a basis for a topological space is a collection of open sets which may be used to generate the topology by taking unions of basis elements.</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological space is <strong>second countable</strong> if it has a countable basis.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The set $\R$ with the standard topology is second countable, since ${(a, b)\subseteq\R\mid a, b\in \Q}$, the set of open intervals with rational endpoints, is a basis for $\R$. I won't prove it, but we can express any $x\in\R$ as a Cauchy sequence of rational numbers, so the union of open intervals with the elements of this sequence as an endpoint will be an open interval with $x$ as an endpoint.</p>
+</blockquote>
+<p>The next definition is not terribly important in its own right, but it will make the rest of the notation in this post considerably cleaner.</p>
+<blockquote>
+<p><strong>Definition.</strong> Consider topological spaces $X$ and $Y$ and a function $f:X\to Y$. If the function $\hat{f}:X\to f[Y]$ with $\hat{f}(x)=f(x)$ for every $x\in X$ is a homeomorphism, then $f$ is a <strong>topological embedding</strong> or a <strong>homeomorphism onto its image</strong>.</p>
+</blockquote>
+<p>Next comes what we shall soon see is the most important property of a topological manifold:</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological space $X$ is <strong>locally Euclidean</strong> if there is some $n\in N$ for which every point $p\in X$ has a neighborhood $U\subseteq X$ which is homeomorphic to an open subset of $\R^n$.</p>
+</blockquote>
+<p>Essentially the definition says that every point of a locally Euclidean space is contained in an open set that looks like $\R^n$. We'll talk more about this in a few minutes so I won't say too much about it yet.</p>
+<p>We're now ready to define a topological manifold!</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>topological manifold</strong> is a topological space $M$ with the following properties:</p>
+<ol>
+<li>$M$ is Hausdorff,</li>
+<li>$M$ is second countable,</li>
+<li>$M$ is locally Euclidean.</li>
+</ol>
+<p>The number $n$ for which $M$ is locally Euclidean is called the <strong>dimension</strong> of the manifold, written $\dim M$.</p>
+</blockquote>
+<p>The Hausdorff and second countable conditions are important, as we shall see in later posts, but the third property is by far the most important, because it means we can treat sections of the manifold as though they were our old friend $\R^n$.</p>
+<blockquote>
+<p><strong>Example.</strong> The space $\R^n$ with the standard topology is trivially a topological manifold. In a previous post I showed that any metric space (and thus $\R^n$ in particular) is Hausdorff. I showed earlier in this post that $\R$ is second countable, and that argument extends easily to $\R^n$. All that remains is to show that $\R^n$ is locally Euclidean. This isn't too difficult. For any point $p\in\R^n$, any neighborhood $U$ of $p$ is trivially homeomorphic to itself under the identity map $i:\R^n\to\R^n$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> A less trivial example is given by the circle $S^1$ with the subspace topology from $\R^2$. The circle is not homeomorphic to $\R$, since any point of $\R$ is a cutpoint but no point of $S^1$ is a cutpoint (see my post on connectedness if this is unfamiliar). However, $S^1$ is the next best thing — it is a one-dimensional topological manifold.</p>
+<p>I will not show that $S^1$ is Hausdorff or second countable since these properties are easily proved and not incredibly interesting. We can show that it is locally Euclidean by exhibiting two open sets which cover $S^1$ and which are both homeomorphic to open intervals in $\R$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/charts-on-circle.svg" alt="charts-on-circle"></p>
+<p>By simply choosing two overlapping open sets $U$ and $V$ in $S^1$ as above, with embeddings $x:U\to\R$ and $y:V\to\R$, we can talk about patches of the circle as though they were $\R$ itself. We think of $x$ and $y$ as providing &quot;local coordinates&quot; for the regions $U$ and $V$. That is to say, each point $p\in U$ corresponds to precisely one real number in $\R$ — its local coordinate $x(p)$— and likewise for points in $V$. Since $U$ and $V$ must intersect, a point in their intersection will most likely have a different local coordinate under the map $y$ than under the map $x$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The torus $S^1\times S^1$ with the product topology (which is equivalent to the subspace topology from $\R^3$) is a topological manifold. It is not difficult to exhibit open sets that cover the torus and embeddings from those sets to the real numbers, but I don't want to get bogged down with technical details so I will not bother. You can look up ways to do it if you're interested!</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The subset $X$ of $\R^2$ below, considered with the subspace topology, is <strong>not</strong> a topological manifold.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/not-a-manifold.svg" alt="not-a-manifold"></p>
+<p>The issue is the point where the lines all intersect. All other points have neighborhoods homeomorphic to the real line, but no neighborhood of that point does. If we remove that point, we get a topological manifold, but it is no longer connected.</p>
+</blockquote>
+<p>In the case of the circle above, we had two open sets $U$ and $V$ that were homeomorphic to $\R$. In general, a manifold will have many such open sets and so it is convenient to have a name for them (and for the homeomorphisms).</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>chart</strong> $(U, x)$ of a topological manifold $M$ of dimension $n$ consists of an open set $U\subseteq M$ and a topological embedding $x:M\to\R^n$. The set $U$ is often called the <strong>chart domain</strong> and the embedding $x$ is often called the <strong>chart map</strong>.</p>
+</blockquote>
+<p>By definition, any nonempty topological manifold must have at least one chart.</p>
+<blockquote>
+<p><strong>Definition.</strong> An <strong>atlas</strong> for a topological manifold $M$ is a collection of charts whose domains cover $M$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> If $(U, x)$ and $(V, y)$ are charts of a manifold $M$ of dimension $n$ with $U\cap V\ne\varnothing$ then the functions $x\circ y^{-1}:y[U\cap V]\to x[U\cap V]$ and $y\circ x^{-1}:x[U\cap V]\to y[U\cap V]$ are called <strong>transition maps</strong> between the charts.</p>
+<p>Note that transition maps are homeomorphisms because they are compositions of restrictions/inverses of topological embeddings.</p>
+</blockquote>
+<p>In general a manifold will have many atlases. For instance, in the above example for the circle $S^1$, the collection ${(U, x), (V, y)}$ was an atlas. But we could have used different open sets, as long as they covered $S^1$. We could also add more charts and the result will still be an atlas.</p>
+<blockquote>
+<p><strong>Definition.</strong> An atlas for a topological manifold $M$ is a <strong>maximal atlas</strong> if it is not strictly contained in any other atlas for $M$.</p>
+</blockquote>
+<p>Every topological manifold has a maximal atlas. This isn't super important now, but it will be in a moment.</p>
+<p>That's it. That's all there is to topological manifolds (not really). Let's move on to smooth manifolds!</p>
+<p>Since topological manifolds are topological spaces, it makes sense to talk about continuous maps $\R\to M$ and $M\to N$, where $M$ and $N$ are topological manifolds. The endgame of this post is to be able to take this even further and talk about <em>smooth</em> maps $M\to \R$ and $M\to N$. First we must define what we mean by a smooth map between Euclidean spaces/</p>
+<blockquote>
+<p><strong>Definition.</strong> If $U\subseteq R^n$ and $V\subseteq R^m$ are open, a map $f:U\to V$ is called:</p>
+<ul>
+<li>$C^0$ if $f$ is continuous,</li>
+<li>$C^1$ if $f$ is continuously differentiable (that is, its derivative is continuous),</li>
+<li>$C^k$ if $f$ is $k$-times continuously differentiable,</li>
+<li>$C^\infty$ or <strong>smooth</strong> if $f$ is infinitely differentiable.</li>
+</ul>
+</blockquote>
+<p>We shall be mainly interested in the smooth ($C^\infty$) case, but everything that follows has an analogue for $C^k$ functions.</p>
+<p>Consider a function $f:M\to\R$ defined on a manifold $M$. I like to imagine such a function as assigning a temperature to each point on the manifold, but think about it however best suits you. We would like to come up with a way to extend the above concepts of differentiability and smoothness to such functions. Unlike continuity, however, differentiability is not a topological notion. To see this, note that the circle and the square are homeomorphic spaces, but the circle is intuitively smooth while the square is not (it has sharp corners where it ought not be differentiable). To define a notion of differentiability on a manifold, we have to get a little bit creative.</p>
+<p>Luckily, we have an atlas of charts that let us talk about regions of the manifold as though they were regions of $\R^n$. It may not be immediately obvious, but this lets us treat chunks of our function $f:M\to\R$ as though they were functions $\R^n\to\R$. To see this more clearly, we make the following definition.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a manifold of dimension $n$ and let $f:M\to\R$ be a function. If $(U, x)$ is a chart of $M$, we call $f\circ x^{-1}:x[U]\to\R$ the <strong>chart representative</strong> of $f$ under this chart.</p>
+</blockquote>
+<p>Here's a visualization of what the chart representative of a function $f:M\to\R$ might look like. If we are going with my &quot;temperature distribution&quot; interpretation, blue might represent &quot;colder&quot; regions of $M$ and red might represent &quot;warmer&quot; regions. Since $M$ is an $n$-dimensional manifold, every point $p\in M$ is contained in the domain of some chart $(U, x)$.  If we look at the image of $U$ under the chart map $x$, we obtain a region $x[U]$ in $\R^n$ to which we can assign familiar coordinates, and which gives us a pretty reasonable representation of what the function $f$ looks like on the domain $U$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/chart-representative.svg" alt="chart-representative"></p>
+<p>Remember that the chart map $x$ is necessarily an embedding and thus has an inverse $x^{-1}:x[U]\to U$ which is also a homeomorphism. The chart representative of $f$ under the chart $(U, x)$ is then the function $f\circ x^{-1}:x[U]\to\R$. It is crucial to notice that for any point $p\in U$, we have that $f(p) = (f\circ x^{-1})(x(p))$. This means that the chart representative $f\circ x^{-1}$ really contains all the same data that $f$ does on the chart domain $U$. Furthermore, since $f\circ x^{-1}$ takes an open subset of $\R^n$ to an open subset of $\R$, it is an object on which differentiability and smoothness make sense to talk about!</p>
+<p>Here's the idea then: we will try to define a function $f:M\to\R$ as <em>smooth</em> if every point $p\in M$ is contained in the domain of some chart $(U, x)$ for which the transition map $f\circ x^{-1}$ is smooth (i.e., $C^\infty$) in the sense of ordinary differential calculus. We need to be careful, though, since $p$ might be in the domain of two or more charts. It would be no good at all if the transition map with respect to one chart was smooth but the transition map with respect to another chart was not. In order for smoothness of $f$ to be a well-defined notion then, we need to make sure that it is not dependent on our choice of chart!</p>
+<p>Let's see what this requirement entails exactly. Suppose a point $p\in M$ is in the domain of two charts, $(U,x)$ and $(V, y)$. Then $U\cap V\subseteq M$ is nonempty, since it certainly contains $p$, and it is an open set since it is the intersection of two open sets.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/smooth-function-well-defined-1.svg" alt="smooth-function-well-defined-1"></p>
+<p>What we need is for smoothness of the chart representative $f\circ x^{-1}$ to imply smoothness of the chart representative $f\circ y^{-1}$. So suppose the chart representative $f\circ x^{-1}$ is smooth. Then, remembering that the composition of smooth functions is smooth and that composition of functions is associative, the other chart representative<br>
+$$<br>
+\begin{align}f\circ y^{-1} &amp;= f\circ (x^{-1}\circ x) \circ y^{-1} \\              &amp;= (f\circ x^{-1})\circ(x\circ y^{-1})\end{align}<br>
+$$ is guaranteed to be smooth only if the transition map $x\circ y^{-1}$ is smooth. Thus, we have failed in defining smooth functions on topological manifolds, since there is nothing in their definition which requires this.</p>
+<p>In order to make all of this work, we simply define a new notion:</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological manifold $M$ is a <strong>smooth manifold</strong> if for every pair of charts $(U, x)$ and $(V,y)$ in its atlas, the transition map $x\circ y^{-1}$ is smooth.</p>
+<p>We call such an atlas a <strong>smooth atlas</strong> and we say that such charts are <strong>smoothly compatible</strong>.</p>
+</blockquote>
+<p>Unlike a general topological manifold, which is guaranteed to have a perfectly fine atlas by definition, a smooth manifold needs to come with a specified smooth atlas. It is this special choice of atlas which makes a manifold smooth.</p>
+<p>In restricting the types of manifolds we consider to smooth manifolds, we have solved the issue above and we can immediately define smooth functions on smooth manifolds!</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold. A function $f:M\to\R$ is a <strong>smooth function</strong> if every point $p\in M$ is contained in the domain of some chart $(U, x)$ for which the chart representative $f\circ x^{-1}$ is smooth in the sense of ordinary differential calculus.</p>
+<p>We denote by $C^\infty(M)$ the collection of all smooth functions on $M$.</p>
+</blockquote>
+<p>The argument above proves that this definition is well defined on smooth manifolds, because if a function's transition map with respect to one chart is smooth, then all its transition maps in overlapping charts are guaranteed to be smooth by construction.</p>
+<p>Let me reiterate, just to really drive the point home. <em>There is no way to talk about smooth functions on a general topological manifold.</em> Only if we restrict our atlas to a smooth atlas in which all charts are smoothly compatible can we define such a concept. Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.</p>
+<p>In addition to being able to talk about smooth maps on a manifold, we now have all the required machinery to define smooth maps between two smooth manifolds. Suppose $f:M\to N$ is such a map between smooth manifolds $M$ of dimension $m$ and $N$ of dimension $n$. Then there are necessarily charts $(U_M, x_M)$ for $M$ and $(U_N, x_N)$ for $N$ for which $p\in U_M$ and $f(p)\in U_N$. We don't know how to differentiate $f$, but we can follow the same basic procedure we used above to define smooth functions.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/smooth-map-idea.svg" alt="smooth-map-idea"></p>
+<p>Observe that $x_N\circ f\circ x_M^{-1}$ is a function between open subsets of $\R^m$ and $\R^n$, and thus it is an object on which it is reasonable to talk about differentiability and smoothness in the ordinary vector-calculus sense. Furthermore, for any point $p\in U_M$ we have that<br>
+$$f(p) = x_N^{-1}\circ (x_N\circ f\circ x_M^{-1})(x_M(p)).$$ Thus, all the behavior of the function $f$ on the subsets $U_M$ and $U_N$ is completely recoverable from the function $x_N\circ f\circ x_M^{-1}$, so it makes sense to talk about it as a sort of representative of $f$ with respect to these charts.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ and $N$ be smooth manifolds. A map $f:M\to N$ is a <strong>smooth map</strong> if for every point $p\in M$ there is a chart $(U_M, x_M)$ for $M$ whose domain contains $p$ and a chart $(U_N, x_N)$ whose domain contains $f(p)$ and for which $x_N\circ f\circ x_M^{-1}$ is smooth in the sense of ordinary differential calculus.</p>
+</blockquote>
+<p>We still need to check that the concept of a smooth map is well defined. For instance, it's possible that $p$ is contained in two charts whose intersection is $U_M$ and $f(p)$ is contained in two charts whose intersection is $U_N$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/smooth-function-well-defined.svg" alt="smooth-function-well-defined"></p>
+<p>Suppose $x_N\circ f\circ x_M^{-1}$ is smooth. Then<br>
+$$<br>
+\begin{align}y_N\circ f\circ y_M^{-1} &amp;= y_N\circ (x_N^{-1}\circ x_N)\circ f\circ (x_M^{-1}\circ x_M)\circ y_M^{-1} \\<br>
+&amp;= (y_N\circ x_N^{-1})\circ (x_N\circ f\circ x_M^{-1})\circ (x_M\circ y_M^{-1})\end{align}<br>
+$$ is smooth because the transition maps $y_N\circ x_N^{-1}$ and $x_M\circ y_M^{-1}$ are smooth by the definition of a smooth manifold. Thus, the concept of smoothness of a map $f:M\to N$ is independent of the charts that we choose, and so it is a well defined notion.</p>
+<p>I'm going to stop here for now, but in my next post we'll see how we can defined tangent spaces to points on a manifold, which are a generalization of tangent hyperplanes to hypersurfaces in $\R^n$.</p>
+<!--kg-card-end: markdown-->
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="/author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
+
+    
+
+</body>
+</html>

@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <meta name="description" content="Everything in mathematics is built from sets. Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it." />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -46,8 +46,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#what-are-sets">What are sets?</a></li>
 <li><a href="#basic-facts-about-sets">Basic facts about sets</a></li>
@@ -177,14 +177,14 @@ MathJax.Hub.Config({
 </ol>
 <hr>
 <p>Everything in mathematics is built from sets.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> Even objects such as functions and arithmetic operations like addition are formally defined in terms of sets, although you would likely never expect it. A consequence of this fact is that a basic familiarity with set theory is necessary in order to understand the topics I'll be discussing here. For this reason, I've decided to include this introductory post on the topic so that adventurous readers with little mathematical background will be able to understand my future posts without having to leave the confines of this blog.</p>
-<h3 id="whataresetsanamewhataresets">What are sets?<a name="what-are-sets"></a></h3>
+<h3 id="whataresetsanamewhataresets">What are sets?<a name="what-are-sets"></h3>
 <p>Already we encounter something of a problem — one which took mathematicians quite a while to resolve, and should not be underestimated. The issue is that, because we wish to use set theory as the foundation of all future mathematical exploration, we don't actually have a place to start when defining sets themselves.</p>
 <p>It takes quite a bit of logical sophistication to arrive at a truly satisfactory definition of a set. If you're interested in such things, I encourage you to look into any resource you can find on <em>Zermelo-Fraenkel Set Theory with the Axiom of Choice</em> (usually abbreviated <em>ZFC</em>), which is a more rigorous set of axioms which govern the behavior of sets.</p>
 <p>For our purposes, the standard &quot;naïve&quot; set theory will do just fine. It is largely intuition-based, because it relies on the primitive notion that sets contain elements and elements are what make up sets. However, as long as we take certain precautions when dealing with sets, we should never encounter any problems stemming from this treatment:</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>set</strong> is a collection of <strong>elements</strong>.</p>
 </blockquote>
-<h3 id="basicfactsaboutsetsanamebasicfactsaboutsets">Basic facts about sets<a name="basic-facts-about-sets"></a></h3>
+<h3 id="basicfactsaboutsetsanamebasicfactsaboutsets">Basic facts about sets<a name="basic-facts-about-sets"></h3>
 <p>Traditionally, capital letters like $A$, $B$ or $X$ are used to denote sets. If $x$ is an element of a set $X$, we write $x\in X$ and we say that &quot;$x$ is in $X$.&quot;</p>
 <p>Sets are determined solely by the elements they contain. For instance, if the numbers $1$, $2$ and $3$ are the only elements of the set $X$, we can indicate this by writing $X=\{1,2,3\}$. When we define sets in this manner, by specifying a complete list of elements they contain, we always sandwich the list of elements between curly braces, as above.</p>
 <blockquote>
@@ -225,7 +225,7 @@ MathJax.Hub.Config({
 <p>It is often desirable to specify certain subsets of sets with which we are already acquainted in terms of some property that every element in the subset must possess. How would we, for instance, denote the set of positive real numbers? Or the set of even integers?</p>
 <p>We can construct such subsets using <strong>set-builder notation</strong>. This is basically a fancy notation describing the form that elements in the set take, followed by a vertical bar which means &quot;such that,&quot; and then a property which every element obeys — all sandwiched between the usual set brackets.</p>
 <p>In this new notation, $\{x\in\mathbb{R} \mid x&gt;0\}$ would be the set of positive real numbers. Similarly, $\{2n \mid n\in\mathbb{Z}\}$ is the set of even integers.</p>
-<h3 id="operationsofsetsanameoperationsonsets">Operations of sets<a name="operations-on-sets"></a></h3>
+<h3 id="operationsofsetsanameoperationsonsets">Operations of sets<a name="operations-on-sets"></h3>
 <p>Given two or more sets, we will often find the need to combine them in certain ways to create new sets. Below are four very common ways of creating new sets from old. Each of their definitions can be extended to combine any finite collection of sets, and sometimes even an infinite collection. Make certain that you are comfortable with each of these definitions, since they will show up everywhere ever.</p>
 <p>Let $A$ and $B$ denote sets. Let's say, for illustration, that they're sets of points in the plane of your screen and they look like these blobs:</p>
 <p><img src="https://algebrology.github.io/content/images/2017/03/sets.svg" alt=""></p>
@@ -265,7 +265,7 @@ $$X - (A \cap B) = (X - A) \cup (X - B).$$</p>
 <p>De Morgan's Laws also extend naturally to arbitrary collections of sets:</p>
 <p>$$X - \bigcup\limits_{i\in I} A_i = \bigcap\limits_{i\in I} (X - A_i),$$<br>
 $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
-<h3 id="functionsanamefunctions">Functions<a name="functions"></a></h3>
+<h3 id="functionsanamefunctions">Functions<a name="functions"></h3>
 <p>The last topic I'll talk about in this post is the concept of a function, as well as several important traits that functions may or may not possess. You've likely encountered functions before as things that eat variables and poo out numbers, and that's not a terrible way of thinking about them. We're going to make things a bit more formal though.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>function</strong> from a set $A$ to a set $B$, denoted $f:A\to B$, is a subset of $A\times B$ such that for each $x\in A$, there is exactly one $y\in B$ for which $(x, y)\in f$. In this definition, the set $A$ is called the <strong>domain</strong> of $f$ and $B$ is called the <strong>codomain</strong>.</p>
@@ -325,7 +325,7 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
 </li>
 </ol>
 </section>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -369,13 +369,13 @@ $$X - \bigcap\limits_{i\in I} A_i = \bigcup\limits_{i\in I} (X - A_i).$$</p>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

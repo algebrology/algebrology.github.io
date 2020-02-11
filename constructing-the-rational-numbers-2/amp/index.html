@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -146,11 +146,11 @@
 <blockquote>
 <p><strong>Proposition.</strong> Every rational number has a unique canonical form.</p>
 <p><strong>Proof.</strong> Choose a rational number $q$. We argue first that a canonical form for $q$ exists. Let $\frac{a}{b}$ be some fraction which represents $q$. Note that $\gcd(a,b)$ is guaranteed to exist because $b\neq 0$. Thus there are integers $m$ and $n$ for which</p>
-<p>$\frac{a}{b} = \frac{m\cdot\gcd(a,b)}{n\cdot\gcd(a,b)}.$</p>
+<p>$$\frac{a}{b} = \frac{m\cdot\gcd(a,b)}{n\cdot\gcd(a,b)}.$$</p>
 <p>We argue that $\frac{a}{b}=\frac{m}{n}$. This is easily done by remembering the above rule for determining whether two fractions represent the same rational number. From the first equality above, we have that</p>
-<p>$a \cdot n \cdot \gcd(a,b) = b \cdot m \cdot \gcd(a,b).$</p>
+<p>$$a \cdot n \cdot \gcd(a,b) = b \cdot m \cdot \gcd(a,b).$$</p>
 <p>Using the left cancellation property of the integers, we may cancel $\gcd(a,b)$ from both sides to obtain</p>
-<p>$an=bm.$</p>
+<p>$$an=bm.$$</p>
 <p>Again using the cross multiplication rule for equivalent fractions, we see that $\frac{a}{b}=\frac{m}{n}$. If $n$ is positive, this is certainly a canonical form for $q$. Otherwise, we may easily obtain a canonical form by negating both slots of the fraction: $\frac{-m}{-n}$. It is easy to show from here that $\frac{a}{b}=\frac{-m}{-n}$, so I will not bother with it.</p>
 <p>We have demonstrated that a canonical form for $q$ exists. It remains to show that it is unique. That is, we aim to show that if $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$ are both canonical forms for $q$, then $m_1=m_2$ and $n_1=n_2$.</p>
 <p>This is not too difficult. Since both fractions are already in canonical form, we know that $\gcd(m_1,n_1)=1$ and $\gcd(m_2,n_2)=1$. Furthermore, since they both represent $q$, we also know that $\frac{m_1}{n_1} = \frac{m_2}{n_2}$ and thus $m_1n_2=n_1m_2$.</p>
@@ -167,10 +167,10 @@
 <p>It's worth mentioning that taking the sum or product of two fractions in canonical form does not always result in a canonical form fraction.</p>
 <blockquote>
 <p><strong>Example.</strong> The fraction $\frac{1}{2}$ is certainly in canonical form. However,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \frac{1}{2}+\frac{1}{2} &amp;= \frac{1\cdot 2 + 2\cdot 1}{2\cdot 2} \\<br />
 &amp;= \frac{4}{4}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>This is certainly not in canonical form, since $\gcd(4,4)=4$.</p>
 <p>However, this is not really an issue since we can just rewrite it in canonical form post-computation. In this case, the canonical form for the result is $\frac{1}{1}$.</p>
 </blockquote>
@@ -184,22 +184,22 @@
 <p>Rational integers behave just as we would expect under addition and multiplication. That is, their sums and products are also rational integers. Moreover, they are the <em>correct</em> rational integers. Let's make this a bit more formal:</p>
 <blockquote>
 <p><strong>Proposition.</strong> If $m$ and $n$ are integers, then the sum of their corresponding rational integers is the rational integer corresponding to their sum. That is,</p>
-<p>$\frac{m}{1}+\frac{n}{1}=\frac{m+n}{1}.$</p>
+<p>$$\frac{m}{1}+\frac{n}{1}=\frac{m+n}{1}.$$</p>
 <p><strong>Proof.</strong> The result actually follows immediately from our definition of rational addition, since</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \frac{m}{1}+\frac{n}{1} &amp;= \frac{m\cdot 1 + 1\cdot n}{1\cdot 1} \\<br />
 &amp;= \frac{m+n}{1}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>We can do exactly the same sort of thing for multiplication:</p>
 <blockquote>
 <p><strong>Proposition.</strong> If $m$ and $n$ are integers, then the product of their corresponding rational integers is the rational integer corresponding to their product. That is,</p>
-<p>$\frac{m}{1}\cdot\frac{n}{1}=\frac{mn}{1}.$</p>
+<p>$$\frac{m}{1}\cdot\frac{n}{1}=\frac{mn}{1}.$$</p>
 <p><strong>Proof.</strong> Again, the result follows directly from our definition of rational multiplication. Note that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \frac{m}{1}\cdot\frac{n}{1} &amp;= \frac{m\cdot n}{1\cdot 1} \\<br />
 &amp;= \frac{mn}{1}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>So these rational integers really do correspond to the integers in a one-to-one manner. Since there's no functional difference between rational integers and integers, we might as well just say they're the same thing.</p>
 <h3 id="orderingtherationalsanameorderingtherationals">Ordering the Rationals<a name="ordering-the-rationals"></a></h3>
@@ -216,11 +216,11 @@
 <blockquote>
 <p><strong>Example.</strong> Consider the fractions $\frac{0}{1}$ and $\frac{-3}{2}$. Of course we hope it should be the case that $\frac{-3}{2}$ is less than $\frac{0}{1}$.</p>
 <p>Again, plugging these straight into the definition, we see that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 -3\cdot 1 &amp;= -3 \\<br />
 &amp;&lt; 0 \\<br />
 &amp;= 2\cdot 0.<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>These sanity checks indicate that we're on the right track with our definition of order. But we need to guarantee that our order extends that of the integers. Let's do that now.</p>
 <blockquote>
@@ -241,10 +241,10 @@
 <p><strong>Proposition.</strong> If $a$ and $b$ are integers with $a\ne 0$, there exists a rational number $x$ for which $ax=b$.</p>
 <p><strong>Proof.</strong> Technically we should consider the rational integers $\frac{a}{1}$ and $\frac{b}{1}$. We need to show that there is a rational number $\frac{p}{q}$ for which $\frac{a}{1}\cdot\frac{p}{q}=\frac{b}{1}$.</p>
 <p>We argue that taking $p=b$ and $q=a$ will yield the desired result. That is, we only need to verify that $\frac{a}{1}\cdot\frac{b}{a}=\frac{b}{1}$. Notice that, from the definition of rational multiplication,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \frac{a}{1}\cdot\frac{b}{a} &amp;= \frac{ab}{1a} \\<br />
 &amp;= \frac{ab}{a}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Since $\gcd(ab, a)=a$, the canonical form for the result is $\frac{b}{1}$, as desired.</p>
 </blockquote>
 <p>Neat! We plugged one type of gap and now have solutions to lots of equations. All that's left is to check that we've filled the other type of gap.</p>
@@ -253,10 +253,10 @@
 <p><strong>Proof.</strong> Suppose $p=\frac{p_1}{p_2}$ and $q=\frac{q_1}{q_2}$ are in canonical form. We argue that taking $x=\frac{p_1q_2 + p_2q_1}{2p_2q_2}$ will suffice. To see that we did not pull this out of thin air, notice that $x$ is really just the "average" of $p$ and $q$ put into fractional form, and thus we should expect it to sit directly between them on the number line.</p>
 <p>We need to verify that $p&lt;x$ and that $x&lt;q$. To do so, we use the definition of order.</p>
 <p>For the first inequality, note first that since $p&lt;q$, we have that $p_1q_2&lt;p_2q_1$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 (p_1)(2p_2q_2) &amp;= (p_2)(2p_1q_2) \\<br />
 &amp;&lt; (p_2)(p_1q_2 + p_2q_1),<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>It follows then that $\frac{p_1}{p_2} &lt; \frac{p_1q_2 + p_2q_1}{2p_2q_2}$. That is, $p&lt;x$.</p>
 <p>The proof that $x&lt;q$ is completely analagous to the above.</p>
 </blockquote>
@@ -282,7 +282,7 @@
 <li><strong>Multiplicative Inverses</strong>: For all $a\in\mathbb{F}$ with $a\ne 0$, there exists $a^{-1}\in\mathbb{F}$ for which $a\cdot a^{-1}=1$.</li>
 <li><strong>Distributivity of Multiplication over Addition</strong>: For all $a,b,c\in\mathbb{F}$, $a\cdot (b+c) = a\cdot b+a\cdot c$.</li>
 </ol>
-<p>Furthermore, $\mathbb{F}$ is an <strong>ordered field</strong> if there is an order __aSyNcId_&lt;_zxXLZfdc__lt;$ on $\mathbb{F}$ which is compatible with the field structure in the following sense: If $a,b\in\mathbb{F}$ and $a,b\ge 0$, then $a+b\ge 0$ and $a\cdot b\ge 0$.</p>
+<p>Furthermore, $\mathbb{F}$ is an <strong>ordered field</strong> if there is an order $&lt;$ on $\mathbb{F}$ which is compatible with the field structure in the following sense: If $a,b\in\mathbb{F}$ and $a,b\ge 0$, then $a+b\ge 0$ and $a\cdot b\ge 0$.</p>
 </blockquote>
 <p>That's pretty much it. It's not too hard to show that the rationals $\Q$ form an ordered field under the definitions we gave for addition and multiplication. The additive identity is $\frac{0}{1}$, the multiplicative identity is $\frac{1}{1}$, the additive inverse of $\frac{a}{b}$ is $\frac{-a}{b}$, and the multiplicative inverse of $\frac{a}{b}$ is $\frac{b}{a}$ (provided $a\ne 0$).</p>
 <p>The integers $\Z$ do <em>not</em> form an ordered field because they are lacking multiplicative inverses. This is precisely the first "gap" that we filled.</p>
@@ -294,7 +294,7 @@
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

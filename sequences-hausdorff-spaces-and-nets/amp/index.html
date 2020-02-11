@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -105,13 +105,13 @@
 <p>I'm now going to talk about sequences and nets, which often provide an alternative way of describing topological phenomena. I'll also talk about Hausdorff spaces, which have all sorts of nice properties. I was originally planning to include filters in this discussion as well, but I think if I did that this post might become long enough to break the internet.</p>
 <h3 id="sequencesanamesequences">Sequences<a name="sequences"></a></h3>
 <p>If you've taken a calculus class (or maybe even if you haven't) then you probably already have some notion of what sequences are. They're basically just lists of elements that go on forever. For instance,</p>
-<p>$\begin{gather}<br />
+<p>$$\begin{gather}<br />
 \begin{aligned}<br />
 (0,1,2,3,4,5,6,7,\dotsc)\\<br />
 (1,1,2,3,5,8,13,\dotsc)\\<br />
 (\text{cat},\text{cat},\text{cat},\text{cat},\dotsc)<br />
 \end{aligned}<br />
-\end{gather}$</p>
+\end{gather}$$</p>
 <p>are all sequences. The first two have entries in $\mathbb{N}$ and the third takes values in some set of animals.</p>
 <p>Notice that there is always one entry for each natural number. That is, there is a zeroth entry, a first entry, a second entry, and so on. The order in which these entries appear does matter, so put them in parentheses rather than set brackets to distinguish them from sets. Sequences have two main differences from countable infinite sets: they are ordered, and the same point can appear more than once. This important point leads us to the following rigorous definition of a sequence:</p>
 <blockquote>
@@ -134,11 +134,11 @@
 <blockquote>
 <p><strong>Theorem.</strong> The sequence $(x_n)_{n=1}^\infty$ given by $x_n=\frac{1}{n}$ converges to $0$.</p>
 <p><strong>Proof.</strong> Choose $\epsilon&gt;0$ and let $N&gt;\frac{1}{\epsilon}$. If $n&gt;N$, then certainly $n&gt;\frac{1}{\epsilon}$. Thus,</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 d(x_n, 0) &amp;= \vert x_n - 0\vert \\<br />
 &amp;= \tfrac{1}{n} \\<br />
 &amp;&lt; \epsilon.<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 </blockquote>
 <p>You don't really need to remember the proof of this fact, although it's incredibly easy to reproduce — the candidate for $N$ in this case is more obvious than usual. Just remember that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, which should hopefully make a lot of sense to you anyway. This is an important sequence which we will occasional use in the future.</p>
 <p>Also, notice that the sequence we just looked at doesn't actually <em>quite</em> fit the definition I gave for sequences. That is, it doesn't have an entry for every natural number (in particular, there is no $x_0$). We could easily remedy that by rewriting each term as $\frac{1}{n+1}$ and shifting each entry's index down by one. I chose to write it the way I did because it looks a bit nicer. It is somewhat common to allow sequences to start at any index we like, as we can always translate it into starting at zero using a similar substitution.</p>
@@ -164,10 +164,10 @@ d(x_n, 0) &amp;= \vert x_n - 0\vert \\<br />
 <p><strong>Theorem.</strong> Let $X$ denote a metric space with metric $d:X\times X\to\mathbb{R}$. Then $X$ is Hausdorff when equipped with the topology induced by the metric $d$.</p>
 <p><strong>Proof.</strong> Choose $x,y\in X$ with $x\ne y$. By the definition of a metric, $d(x,y)&gt;0$. Let $r=\frac{d(x,y)}{2}$ and define $U=B(x,r)$ and $V=B(y,r)$. It suffices to show that $U$ and $V$ are disjoint, which we will argue by contradiction.</p>
 <p>Suppose $U\cap V\ne\varnothing$. Then there exists some point $p\in U\cap V$, so $d(x,p)&lt; r$ and $d(y,p)&lt; r$ by the definitions of these open balls. Thus,</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 d(x,p)+d(y,p) &amp;&lt; 2r \\<br />
 &amp;= d(x,y),<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>which violates the triangle inequality. We have reached a contradiction, so the proof is complete.</p>
 </blockquote>
 <p>This tells us right away that things like $\mathbb{R}$ in the standard topology are Hausdorff. Now if we can just show that convergent sequences in Hausdorff spaces have unique limits, then I will definitely have been justified earlier in claiming that metric spaces have unique limits. Let's prove this right now.</p>
@@ -181,13 +181,13 @@ d(x,p)+d(y,p) &amp;&lt; 2r \\<br />
 <blockquote>
 <p><strong>Theorem.</strong> Let $X$ be a nonempty Hausdorff space. Then for every point $x\in X$, the set $\{x\}$ is closed.</p>
 <p><strong>Proof.</strong> Since $X$ is Hausdorff, for every $y\in X$ with $y\ne x$ there exist disjoint neighborhoods $U_y$ of $x$ and $V_y$ of $y$. It follows from the union lemma that</p>
-<p>$\bigcup\limits_{y\ne x}V_y = X-\{x\},$</p>
+<p>$$\bigcup\limits_{y\ne x}V_y = X-\{x\},$$</p>
 <p>and this set is open because it is the union of open sets. Thus, $\{x\}$ is closed because its complement is open.</p>
 </blockquote>
 <p>The next property is a little bit more interesting</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $X$ and $Y$ denote topological spaces and suppose $Y$ is Hausdorff. Then the graph of any continuous function $f:X\to Y$, given by</p>
-<p>$G=\left\{\big(x,f(x)\big)\mid x\in X\right\}$</p>
+<p>$$G=\left\{\big(x,f(x)\big)\mid x\in X\right\}$$</p>
 <p>is closed in the product space $X\times Y$.</p>
 <p><strong>Proof.</strong> It suffices to show that $(X\times Y)-G$ is open in $X\times Y$. Choose $(x,y)\in (X\times Y)-G$. Clearly $y\ne f(x)$, so because $Y$ is Hausdorff there exist disjoint neighborhoods $U$ of $y$ and $V$ of $f(x)$. Furthermore, because $f$ is continuous we have that $f^{-1}[V]$ is open in $X$. Notice that $x\in f^{-1}[V]$ by definition.</p>
 <p>Next, choose any point $\big(g,f(g)\big)\in G$, and let us consider separately the cases where $g\in f^{-1}[V]$ and $g\notin f^{-1}[V]$. If $g\in f^{-1}[V]$ then by definition $f(g)\in V$. Thus, $f(g)\notin U$ because $U$ and $V$ are disjoint. It follows that $\big(g,f(g)\big)\notin f^{-1}[V]\times U$. If, on the other hand, $g\notin f^{-1}[V]$ then it follows immediately that $\big(g,f(g)\big)\notin f^{-1}[V]\times U$ from the definition of the Cartesian product.</p>
@@ -197,21 +197,21 @@ d(x,p)+d(y,p) &amp;&lt; 2r \\<br />
 <blockquote>
 <p><strong>Theorem.</strong> Any subspace of a Hausdorff space is Hausdorff.</p>
 <p><strong>Proof.</strong> Let $A$ be a subspace of a Hausdorff space $X$ and choose points $x,y\in A$. Then there exist disjoint neighborhoods in $X$, $U$ of $x$ and $V$ of $y$. It follows that $A\cap U$ is a neighborhood of $x$ in $A$ and $A\cap V$ is a neighborhood of $y$ in $A$. Furthermore,</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 (A\cap U)\cap (A\cap V) &amp;= A\cap (U\cap V) \\<br />
 &amp;= A\cap\varnothing \\<br />
 &amp;= \varnothing,<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>so $A$ is Hausdorff.</p>
 </blockquote>
 <blockquote>
 <p><strong>Theorem.</strong> The product of two Hausdorff spaces is Hausdorff.</p>
 <p><strong>Proof.</strong> Let $X$ and $Y$ denote Hausdorff spaces and choose distinct points $(x_1,y_1)$ and $(x_2,y_2)$ in $X\times Y$. Without loss of generality (the other case is so similar) suppose $x_1\ne x_2$. Then because $X$ is Hausdorff, there exist disjoint neighborhoods $U_1$ of $x_1$ and $U_2$ of $x_2$ in $X$. Note that $U_1\times Y$ and $U_2\times Y$ are both open in $X\times Y$, and that $(x_1,y_1)\in U_1\times Y$ while $(x_2,y_2)\in U_2\times Y$. Furthermore,</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 (U_1\times Y)\cap (U_2\times Y) &amp;= (U_1\cap U_2)\times Y \\<br />
 &amp;= \varnothing\times Y \\<br />
 &amp;= \varnothing,<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>so $X\times Y$ is Hausdorff.</p>
 </blockquote>
 <p>It can be shown by induction that the product of any finite number of Hausdorff spaces is Hausdorff. It is also possible to show, in fact, that the product of <em>any</em> collection of Hausdorff spaces is Hausdorff, but I try to avoid talking about infinite Cartesian products unless I have no other choice.</p>
@@ -294,7 +294,7 @@ d(x,p)+d(y,p) &amp;&lt; 2r \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/path-connectedness/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#some-useful-tools">Some Useful Tools</a></li>
 <li><a href="#path-connected-spaces">Path Connected Spaces</a></li>
 <li><a href="#a-pathological-example">A Path-ological Example</a></li>
 </ol>
 <hr>
-<h3 id="someusefultoolsanamesomeusefultools">Some Useful Tools<a name="some-useful-tools"></a></h3>
+<h3 id="someusefultoolsanamesomeusefultools">Some Useful Tools<a name="some-useful-tools"></h3>
 <p>I defined connectedness in an earlier post, but there's actually a completely different route we could have taken to define it. Recall that a space is connected if it cannot be separated by disjoint neighborhoods. In this post we'll explore an alternative approach to defining connectedness of topological space, called <em>path connectedness</em>.</p>
 <p>But before we do so, we actually need another fact about connectedness. (Recall that $\overline B$ denotes the closure of the set $B$.)</p>
 <blockquote>
@@ -206,7 +206,7 @@ f^{-1}[W] &amp;= X \cap f^{-1}[W] \\<br>
 \end{align}$$</p>
 <p>Since $f_1$ and $f_2$ are continuous, certainly $f_1^{-1}[W]$ and $f_2^{-1}[W]$ are open in $U$ and $V$, respectively. Thus $f^{-1}[W]$ is open in $U\cup V = X$ since it is the union of open sets. It follows that $f$ is continuous, as desired.</p>
 </blockquote>
-<h3 id="pathconnectedspacesanamepathconnectedspaces">Path Connected Spaces<a name="path-connected-spaces"></a></h3>
+<h3 id="pathconnectedspacesanamepathconnectedspaces">Path Connected Spaces<a name="path-connected-spaces"></h3>
 <p>We can now work toward defining path connectedness. But first we need to define what a path is! The definition may look a bit ominous at first, but it's really just a formal way of saying exactly what you'd expect.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $X$ denote a topological space with points $a,b\in X$. A <strong>path</strong> in $X$ from $a$ to $b$ is a continuous map $p:[0,1]\to X$ for which $p(0)=a$ and $p(1)=b$.</p>
@@ -275,7 +275,7 @@ p_2(2t-1) &amp; \text{if } t\in [\frac{1}{2},1].<br>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>path components</strong> of a topological space are the equivalence classes of the relation $\sim$ defined above.</p>
 </blockquote>
-<h3 id="apathologicalexampleanameapathologicalexample">A Path-ological Example<a name="a-pathological-example"></a></h3>
+<h3 id="apathologicalexampleanameapathologicalexample">A Path-ological Example<a name="a-pathological-example"></h3>
 <p>(I wonder how many topology professors have made that pun with regard to the example I give below? Probably hundreds.)</p>
 <p>I mentioned above that connected spaces are not always path connected. In this section I will give an example of such a space, although the proof that this is the case is not exactly trivial. First, we will need the following result about sequences and limit points.</p>
 <blockquote>
@@ -305,7 +305,7 @@ B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br>
 </blockquote>
 <p>There are a few other well known examples of spaces like the above that are connected but not path connected. The most prominent is the <strong>topologist's whirlpool</strong>, which is essentially just the polar form of the topologist's sine curve.</p>
 <p>One might wonder if there is a sufficient additional criterion for a connected space to be path connected? The answer is yes. If a space is connected and <em>locally path connected</em> then it is path connected. However, I will not define local path connectedness or prove this result, since I do not really care about it and it is not useful to us.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -349,13 +349,13 @@ B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -120,11 +120,11 @@
 <p>Let's look at an example, to make sure we're fully on board with these concepts before we press onward. I'm going to cordon off the entire example so that we don't accidentally make sweeping generalizations about every metric space based on this one scenario.</p>
 <blockquote>
 <p><strong>Example.</strong> Take $X=\mathbb{R}^2$ equipped, of course, with the standard metric $d:X\times X\to\mathbb{R}$. Let $A=B\big((0,0),1\big)$, the open unit ball centered at the origin. Consider the following points in $X$:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 x &amp;= (0,0), \\<br />
 y &amp;= (1,0), \\<br />
 z &amp;= (1,1). \\<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>I'll even throw in a diagram to make things crystal clear:</p>
 <p></p>
 <p>Clearly $x\in A$ because $d(x,x)=0&lt; r$. However, $y,z\notin A$ because $d(x,y)=r$ and $d(x,z)=\sqrt{2}&gt;r$. Which, if any, of the points $x,y,z$ are limit points of $A$?</p>
@@ -136,12 +136,12 @@ z &amp;= (1,1). \\<br />
 <p>We've shown then that $y$ is a limit point of $A$, which is somewhat more interesting. A similar argument would show that any point $a\in X$ with $d(a,x)=1$ is a limit point of $A$. Sooo... even though we haven't defined the concept of "boundary" yet, it's looking like any point on what we intuitively perceive to be the boundary of $A$ is a limit point of $A$. This is an important realization.</p>
 <p>Finally, let's show that $z$ is not a limit point of $A$. To show that the necessary property is not true for every open ball centered at $z$, all we need to do is demonstrate a single open ball centered at $z$ which contains no points of $A$. This is easy! Just take as the radius any positive $\epsilon&lt;\sqrt{2}-1$ and that's essentially all there is to it.</p>
 <p>More formally, choose $\epsilon&lt;\sqrt{2}-1$ and consider $z_0\in B(z,\epsilon)$. By the definition of this open ball $d(z,z_0)&lt;\epsilon$. By the triangle inequality,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 d(x,z) &amp;= \sqrt{2} \\<br />
 &amp;\leq d(x,z_0) + d(z_0,z) \\<br />
 &amp;&lt; d(x,z_0) + \epsilon \\<br />
 &amp;&lt; d(x,z_0)+\sqrt{2}-1.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Rearranging the above inequality, we have that $d(x,z_0)&gt;1$ and so $z_0\notin A$. Thus, $z$ is not a limit point of $A$. Once again, a similar argument would show that, in general, any point $p\in X$ with $d(p,x)&gt;1$ is not a limit point of $A$.</p>
 <p>What can we conclude about this particular set $A$? The limit points of $A$ are every point in $A$ as well as every point on the unit circle $S^1$. That is, $L(A)=A\cup S^1=\overline{B}(x,r)$. This is the closed ball with the same center and radius as $A$.</p>
 </blockquote>
@@ -210,7 +210,7 @@ d(x,z) &amp;= \sqrt{2} \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

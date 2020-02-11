@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -114,11 +114,11 @@
 </blockquote>
 <p>Notice how the only difference between these two types of intervals is that the closed interval includes its endpoints whereas the open interval does not. You've no doubt been exposed to these definitions before so there isn't terribly much to discuss, but these will be our prototypes for the concepts of open and closed sets.</p>
 <p>How do we measure the distance between two real numbers? We would like our distance to always be positive, so we take whichever number is lower and subtract it from the higher number. If we don't know which number is higher or we want to make a general statement, we make use of the <strong>absolute value function</strong>:</p>
-<p>$\vert x \vert=<br />
+<p>$$\vert x \vert=<br />
 \begin{cases}<br />
 x  &amp; \text{if } x\geq 0,\\<br />
 -x &amp; \text{if } x&lt;0.<br />
-\end{cases}$</p>
+\end{cases}$$</p>
 <p>Notice that $\vert -x \vert = \vert x \vert$ for every $x\in\mathbb{R}$. Armed with this function which always returns a positive value, we can rephrase our notion of distance between real numbers $a$ and $b$. We'll call this distance $\vert a - b \vert$. The order in which the points appear no longer matters, which is a good sign.</p>
 <p>Now let's explore some of the very nice properties of this distance function we've just defined.</p>
 <ol>
@@ -131,22 +131,22 @@ x  &amp; \text{if } x\geq 0,\\<br />
 <blockquote>
 <p><strong>Theorem.</strong> Let $a,b$ and $c$ denote real numbers. Then $\vert a-c \vert \leq \vert a-b \vert + \vert b-c \vert$.</p>
 <p><strong>Proof 1.</strong> From the definition of the absolute value function, we have the following two facts:</p>
-<p>$-\vert a-b\vert\leq a-b\leq\vert a-b\vert,$<br />
-$-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$</p>
+<p>$$-\vert a-b\vert\leq a-b\leq\vert a-b\vert,$$<br />
+$$-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$$</p>
 <p>Adding together these two inequalities, we see that</p>
-<p>$-\vert a-b\vert-\vert b-c\vert\leq (a-b)+(b-c)\leq\vert a-b\vert+\vert b-c\vert,$</p>
+<p>$$-\vert a-b\vert-\vert b-c\vert\leq (a-b)+(b-c)\leq\vert a-b\vert+\vert b-c\vert,$$</p>
 <p>which simplifies to</p>
-<p>$-\big(\vert a-b\vert+\vert b-c\vert\big)\leq a-c\leq\vert a-b\vert+\vert b-c\vert.$</p>
+<p>$$-\big(\vert a-b\vert+\vert b-c\vert\big)\leq a-c\leq\vert a-b\vert+\vert b-c\vert.$$</p>
 <p>If we use the definition of the absolute value function yet again, it follows that $\vert a-c\vert\leq\vert a-b\vert+\vert b-c\vert$, as desired.</p>
 <p><strong>Proof 2.</strong> We proceed directly by the following computation:</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 \vert a-c\vert^2 &amp;=\big\vert (a-b)+(b-c)\big\vert^2\\<br />
 &amp;= \big((a-b)+(b-c)\big)\big((a-b)+(b-c)\big)\\<br />
 &amp;=(a-b)^2+2(a-b)(b-c)+(b-c)^2\\<br />
 &amp;=\vert a-b\vert^2+2(a-b)(b-c)+\vert b-c\vert^2\\<br />
 &amp;\leq \vert a-b\vert^2+2\vert a-b\vert\vert b-c\vert+\vert b-c\vert^2\\<br />
 &amp;=\big(\vert a-b\vert+\vert b-c\vert\big)^2.<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>Taking the positive square root of each side, we see that $\vert a-c\vert\leq\vert a-b\vert+\vert b-c\vert$, completing the proof.</p>
 </blockquote>
 <p>It may not be too obvious why right now, but the four properties above are extremely nice. Let's now move away from the real numbers to more general sets.</p>
@@ -170,12 +170,12 @@ $-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$</p>
 <p>We'll frequently just refer to the set $X$ as a metric space if its metric is implicitly understood. When talking about $n$-dimensional Euclidean space, $\mathbb{R}^n$, it should be understood that we are always referring to it as a metric space with the following metric, unless otherwise stated. This is really just the distance function you're used to extended to $n$-dimensional space:</p>
 <blockquote>
 <p><strong>Definition.</strong> The <strong>standard metric</strong> (or <strong>Euclidean metric</strong>) on $\mathbb{R}^n$ is defined by</p>
-<p>$ d({\bf x,y})=\sqrt{\sum\limits_{i=1}^n(x_i-y_i)^2}$</p>
+<p>$$ d({\bf x,y})=\sqrt{\sum\limits_{i=1}^n(x_i-y_i)^2}$$</p>
 <p>for all ${\bf x,y}\in\mathbb{R}^n$, where</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 {\bf x} &amp;= (x_1,x_2,\dotsc,x_n),\\<br />
 {\bf y} &amp;= (y_1,y_2,\dotsc,y_n)<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>for some $x_1,x_2,\dotsc,x_n,y_1,y_2,\dotsc,y_n\in\mathbb{R}$.</p>
 </blockquote>
 <h3 id="openandclosedsetsanameopenandclosedsets">Open and closed sets<a name="open-and-closed-sets"></a></h3>
@@ -200,11 +200,11 @@ $-\vert b-c\vert\leq b-c\leq\vert b-c\vert.$</p>
 <p></p>
 <p>It certainly looks like we could choose $r=r_0-d(x,x_0)$, at least for the open ball above. We'd like to confirm that this choice will work for any open ball in any metric space. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $B(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq B(x_0,r_0)$, and that's all we need to do!</p>
 <p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r_0-r$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation:</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 d(x_0,y) &amp;\leq d(x_0,x)+d(x,y)\\<br />
 &amp;&lt;(r_0-r)+r\\<br />
 &amp;=r_0.<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>But this implies, by the definition of our open ball $B(x_0,r_0)$, that $y\in B(x_0,r_0)$. Thus we have shown that $B(x,r)\subseteq B(x_0,r_0)$, as desired.</p>
 </blockquote>
 <p>That was actually a decent amount of work to prove something which seemed obvious, right? Notice how without the triangle inequality in the first line of this computation, we could not have finished this proof.</p>
@@ -241,11 +241,11 @@ d(x_0,y) &amp;\leq d(x_0,x)+d(x,y)\\<br />
 <p></p>
 <p>A little bit of inspection indicates that it might suffice to choose $r=d(x,x_0)-r_0$. We'll argue that, given this choice of $r$, any point $y\in B(x,r)$ is also in $X-\overline{B}(x_0,r_0)$. This will certainly show that $B(x,r)\subseteq X-\overline{B}(x_0,r_0)$, and then we'll be finished.</p>
 <p>With all this in mind, choose any point $y\in B(x,r)$. Notice first that, from our choice of $r$, we have that $d(x,x_0)=r+r_0$. Observe also that $d(x,y)&lt; r$ by the definition of our open ball $B(x,r)$. We now proceed with the following computation, again starting with a slightly rearranged form of the triangle inequality:</p>
-<p>$\begin{aligned}<br />
+<p>$$\begin{aligned}<br />
 d(x_0,y)&amp;\geq d(x,x_0)-d(x,y)\\<br />
 &amp;=(r+r_0)-d(x,y)\\<br />
 &amp;&gt;r_0.<br />
-\end{aligned}$</p>
+\end{aligned}$$</p>
 <p>The last step above may take a little bit of explanation. Since $d(x,y)&lt; r$, clearly $r-d(x,y)&gt;0$. Thus, $r+r_0-d(x,y)&gt;r_0$, which hopefully makes things a bit clearer.</p>
 <p>Since $d(x_0,y)&gt;r_0$, it follows that $y\notin\overline{B}(x_0,r_0)$ by the definition of this closed ball. It follows that $y\in X-\overline{B}(x_0,r_0)$. Thus, $X-\overline{B}(x_0,r_0)$ is open and so its complement $\overline{B}(x_0,r_0)$ is closed, as desired.</p>
 </blockquote>
@@ -257,7 +257,7 @@ d(x_0,y)&amp;\geq d(x,x_0)-d(x,y)\\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

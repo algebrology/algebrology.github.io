@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -116,11 +116,11 @@
 <p><strong>Example.</strong> Take $G=\Z$, the additive group of integers, and $H=2\Z$, the set of even integers. Certainly $2\Z$ is a subgroup of $Z$ because it contains the identity $0$, the sum of two even integers is even, and every even integer has an even inverse — its negative.</p>
 <p>Let's look at a few cosets of $2\Z$. How about the right cosets with respect to $0,1,2$ and $3$? Notice that because $\Z$ is an additive group, these cosets will be written $2\Z+0$, $2\Z+1$, $2\Z+2$ and $2\Z+3$.</p>
 <p>Directly from the definition of a right coset, we see that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 2\Z+0 &amp;= \{x+0\in\Z\mid x\in 2\Z\} \\<br />
 &amp;= \{x\in\Z\mid x\in 2\Z\} \\<br />
 &amp;= 2\Z.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>So in this case, the coset with respect to $0$ is just the subgroup $2\Z$. This actually always happens, as you can easily see. Adding the identity to all elements of a subgroup will of course just yield that subgroup again!</p>
 <p>Next, let's look at $2\Z+1$. This is the set $\{x+1\in\Z\mid x\in 2\Z\}$, which consists of things like $\ldots,-3,-1,1,3,5,\ldots$. This is really just the set of odd integers! It's definitely not a subgroup of $\Z$ though, since it doesn't contain $0$.</p>
 <p>The coset $2\Z+2$ is the set $\{x+2\in\Z\mid z\in 2\Z\}$, which contains elements like $\ldots,-4,-2,0,2,4,\ldots$. But this is the set of even integers again! That means $2\Z+2=2\Z$.</p>
@@ -140,8 +140,8 @@
 <p><strong>Theorem.</strong> If $H$ is a subgroup of a group $G$, then the (left/right) cosets of $H$ partition $G$.</p>
 <p><strong>Proof.</strong> We will prove the result for right cosets, since the proof for left cosets is practically identical.</p>
 <p>It is clear that every coset $Hx$ is nonempty because the identity element $e$ is in $H$ by virtue of it being a subgroup, and thus $x=ex\in Hx$.</p>
-<p>The next thing we need to show is that cosets cover all of $G$. But is clear that $\bigcup_{x\in G}x=G\subseteq\bigcup_{x\in G}Hx,$</p>
-<p>and similarly that $\bigcup_{x\in G}Hx\subseteq G=\bigcup_{x\in G}x,$</p>
+<p>The next thing we need to show is that cosets cover all of $G$. But is clear that $$\bigcup_{x\in G}x=G\subseteq\bigcup_{x\in G}Hx,$$</p>
+<p>and similarly that $$\bigcup_{x\in G}Hx\subseteq G=\bigcup_{x\in G}x,$$</p>
 <p>because $Hx\subseteq G$ for every $x\in G$. Thus, $G=\bigcup_{x\in G}Hx$.</p>
 <p>The last thing we need to show is that for any $x,y\in G$, if $Hx\ne Hy$ then $Hx\cap Hy=\varnothing$. That is, either cosets are the same or they are disjoint. We will argue the contrapositve, supposing that $Hx\cap Hy$ is nonempty. Then there exists some element $a\in Hx\cap Hy$. That is, $a\in Hx$ and $a\in Hy$, so $a=h_1x$ and $a=h_2y$ for some elements $h_1,h_2\in H$. It follows that $h_1x=h_2y$, and multiplication on the left by $h_1^{-1}$ show that $x=h_1^{-1}h_2y\in Hy$ because $h_1^{-1}h_2\in H$. Thus $Hx=Hy$, completing the proof.</p>
 </blockquote>
@@ -165,7 +165,7 @@
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

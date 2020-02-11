@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/linear-maps/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,14 +167,14 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#linear-maps">Linear Maps</a></li>
 <li><a href="#basic-properties">Basic Properties</a></li>
 <li><a href="#rank-and-nullity">Rank and Nullity</a></li>
 </ol>
 <hr>
 <p>Sooo somewhere along the line I dropped the arrow notation for vectors. I was using $\v$ instead of $v$ to denote vectors to keep things clean and avoid confusion, but it was inevitable that this would eventually stop happening because it was a lot of work on my end.</p>
-<h3 id="linearmapsanamelinearmaps">Linear Maps<a name="linear-maps"></a></h3>
+<h3 id="linearmapsanamelinearmaps">Linear Maps<a name="linear-maps"></h3>
 <p>Just as we decided to study continuous functions between topological spaces and homomorphisms between groups, much of linear algebra is dedicated to the study of linear maps between vector spaces.</p>
 <p>If you've been paying close attention, you may have noticed that vector spaces are really just groups to which we have added scalar multiplication. In the same vein, linear maps are really just homomorphisms with an additional property which makes them compatible with scalar multiplication.</p>
 <blockquote>
@@ -252,7 +252,7 @@ T(k(a,b)) &amp;= T(ka,kb) \\<br>
 &amp;= kT(a,b).<br>
 \end{align}$$</p>
 </blockquote>
-<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
+<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></h3>
 <p>What follows are some basic properties of linear maps.</p>
 <p>The first result says that linear maps take the zero vector in the domain to the zero vector in the codomain.</p>
 <blockquote>
@@ -311,7 +311,7 @@ T(au) &amp;= aTu \\<br>
 <p><strong>Theorem.</strong> If $T:U\to V$ then $\im T$ is a subspace of $V$.</p>
 <p><strong>Proof.</strong> Since linear maps take subspaces to subspaces, and $U$ is a subspace of itself, it follows that $\im T$ is a subspace of $V$.</p>
 </blockquote>
-<h3 id="rankandnullityanamerankandnullity">Rank and Nullity<a name="rank-and-nullity"></a></h3>
+<h3 id="rankandnullityanamerankandnullity">Rank and Nullity<a name="rank-and-nullity"></h3>
 <p>Now we will explore the interesting relation between the dimensions of the kernel and image of a linear map. It will take some time to build up to the &quot;big result&quot; of this section, but it is well worth the wait.</p>
 <p>To understand this connection, we begin by considering what injective and surjective linear maps look like.</p>
 <blockquote>
@@ -395,7 +395,7 @@ v &amp;= Tu \\<br>
 <p>From the rank-nullity theorem, it follows that $\dim\ker T = 0$. The only subspace with dimension zero is the trivial subspace, and so $\ker T = \set{0}$. Thus, $T$ is injective.</p>
 </blockquote>
 <p>So for two finite-dimensional vector spaces of the same dimension, injective and surjective linear maps are actually the same thing. Remember that a function that is both injective and surjective is called bijective and has an inverse function. As you shall see, all kinds of interesting results follow from this observation.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -439,13 +439,13 @@ v &amp;= Tu \\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

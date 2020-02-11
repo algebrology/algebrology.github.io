@@ -41,8 +41,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -64,7 +64,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -105,10 +105,10 @@
 <p><strong>Theorem.</strong> Let $X$ denote a topological space, let $A$ be a set and let $f:X\to A$ be a surjective function. Then the quotient topology defined above is a topology on $A$.</p>
 <p><strong>Proof.</strong> It is clear that $f^{-1}[\varnothing]=\varnothing$ and so the empty set is open in $A$. Furthermore, since $f$ is surjective, we know that $f^{-1}[A]=X$ is open in $X$ and so $A$ is also open in $A$.</p>
 <p>Next, suppose that $I$ is an indexing set and $U_i\subseteq A$ are such that $f^{-1}[U_i]$ is open in $X$ for each $i\in I$. Then certainly</p>
-<p>$f^{-1}\left[\bigcup\limits_{i\in I}U_i\right]=\bigcup\limits_{i\in I}f^{-1}[U_i]$</p>
+<p>$$f^{-1}\left[\bigcup\limits_{i\in I}U_i\right]=\bigcup\limits_{i\in I}f^{-1}[U_i]$$</p>
 <p>is open in $X$ since it is the union of open sets. Thus, $\bigcup\limits_{i\in I}U_i$ is open in A.</p>
 <p>Finally, suppose that $n\in\mathbb{Z}^+$ and that $U_i\subseteq A$ are such that $f^{-1}[U_i]$ is open in $X$ for each $1\le i\le n$. Then</p>
-<p>$f^{-1}\left[\bigcap\limits_{i=1}^n U_i\right]=\bigcap\limits_{i=1}^n f^{-1}[U_i]$</p>
+<p>$$f^{-1}\left[\bigcap\limits_{i=1}^n U_i\right]=\bigcap\limits_{i=1}^n f^{-1}[U_i]$$</p>
 <p>is open in $X$ since it is the intersection of a finite number of open sets. Thus, $\bigcap\limits_{i=1}^n U_i$ is open in $A$, completing the proof.</p>
 </blockquote>
 <p>There is also an equivalent, more intuitive way to define quotient spaces which will probably look more familiar to you after our discussion on quotient sets last post.</p>
@@ -126,12 +126,12 @@
 <p></p>
 <p>In such diagrams, it is understood that the two edges with one arrow get glued to each other and the two edges with two arrows get glued to each other. In this case everything is symmetrical so it doesn't matter which pair gets glued first, but there are probably cases in which it does matter. It is conventional to first glue together sides with one arrow, then two arrows and so on.</p>
 <p>It is this last diagram which provides us with something we can really use. This <em>identification</em> of sides is crucial to defining the torus as a quotient space of the square. What we are really doing here is partitioning the square in such a way that certain pairs of points on the boundary get grouped into the same equivalence class. More precisely, we partition the square into many sets, namely every point in the interior of the square and each pair of opposite points on the square's boundary:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 B_{x,y} &amp;= \{(x,y)\}\text{ for } (x,y)\in (0,1)^2, \\<br />
 C_x     &amp;= \{(x,0),(x,1)\}\text{ for } x\in (0,1), \\<br />
 D_y     &amp;= \{(0,y),(1,y)\}\text{ for } y\in (0,1), \\<br />
 E        &amp;= \{(0,0),(0,1),(1,0),(1,1)\}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Allow me to explain these choices a little bit. We have defined one set $B_{x,y}$ in the partition for every point $(x,y)$ in the interior of the square. This is because in our quotient space, we do not want the interior of the square to collapse at all, and so every point should be in its own equivalence class. There is one set $C_x$ for every pair of points along the bottom and top of the square, and one set $C_y$ for every pair along the left and right edges. Putting these pairs into the same equivalence classes ensures that they will become one thing, i.e. 'glued together,' in the quotient space. Lastly, $E$ includes the corners of the square separately to avoid double-counting them.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> This also ensures explicitly that the four corners of the square will all end up being glued together.</p>
 <p>Going back to our original definitions for quotient maps and spaces, we define the set $A$ as the collection of all sets in this partition and the quotient map $f$ as the surjective function mapping each point in the square to the set in $A$ which contains it. Then it is easy to show that the resulting quotient space is (homeomorphic to) the torus $S^1\times S^1$, so we have accomplished what we set out to.</p>
 </blockquote>
@@ -150,7 +150,7 @@ E        &amp;= \{(0,0),(0,1),(1,0),(1,1)\}.<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

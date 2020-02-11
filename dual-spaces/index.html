@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/dual-spaces/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#the-dual-space">The Dual Space</a></li>
 <li><a href="#the-double-dual-space">The Double Dual Space</a></li>
 </ol>
 <hr>
-<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></h3>
 <p>Since I haven't posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces. Since we care only about abstract properties of vector spaces and not about any specific vector space, I will talk generally about a vector space $V$ of dimension $n$ over a field $\F$ for the remainder of this post.</p>
 <p>As we discovered previously, every finite dimensional vector space has a basis. That is, there exists a linearly independent collection $(e_1,e_2,\ldots,e_n)$ of vectors in $V$ for which any vector $v$ in $V$ can be expressed as a linear combination of these basis vectors. That is, for any $v\in V$ there exist scalars $(v^i)_{i=1}^n$ in $\F$ for which</p>
 <p>$$v=\sum_{i=1}^n v^i e_i.$$</p>
@@ -190,7 +190,7 @@ MathJax.Hub.Config({
 </ol>
 <p>We learned that linear maps are completely determined by the way that they act on basis vectors. In fact, we can specify the images of the basis vectors and <em>extend by linearity</em> to obtain a linear map on the whole vector space.</p>
 <p>Now let's turn everything on its head.</p>
-<h3 id="thedualspaceanamethedualspace">The Dual Space<a name="the-dual-space"></a></h3>
+<h3 id="thedualspaceanamethedualspace">The Dual Space<a name="the-dual-space"></h3>
 <p>Let's define the most important concept of this post:</p>
 <blockquote>
 <p><strong>Definition.</strong> Given a vector space $V$ over a field $\F$, its <strong>dual space</strong>, written $V^*$, is the set of all linear maps from $V$ to $\F$.</p>
@@ -260,7 +260,7 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br>
 </blockquote>
 <p>We call the basis defined in the proof above the <strong>dual basis</strong>, and it is the basis we usually work with when talking about the dual space. However, it is of course not the <em>only</em> basis we could choose. It is just particularly convenient for our purposes because of the way things tend to simplify via the Kronecker delta.</p>
 <p>Hidden in the result above is the fact that $\dim V^*=\dim V$. That's because we've exhibited a basis for $V^*$ consisting of $n$ covectors, which is the definition of the dimension of a vector space. So the dual space always has the same dimension as the original vector space (as long as its finite dimensional)! Which is pretty cool I guess. 😎</p>
-<h3 id="thedoubledualspaceanamethedoubledualspace">The Double Dual Space<a name="the-double-dual-space"></a></h3>
+<h3 id="thedoubledualspaceanamethedoubledualspace">The Double Dual Space<a name="the-double-dual-space"></h3>
 <p>The following definition is exactly as you might expect.</p>
 <blockquote>
 <p><strong>Definition.</strong> Given a vector space $V$ over a field $\F$ and its dual space $\dual{V}$, its <strong>double dual space</strong>, written $\ddual{V}$, is the dual space of $\dual{V}$.</p>
@@ -299,7 +299,7 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br>
 </blockquote>
 <p>So it turns out that $V$ and $\ddual{V}$ can be used almost interchangeably. But using the double dual space gives us a nice kind of duality (pardon the pun), in that we can think of covectors as maps which act on vectors, and we can think of vectors as maps which act on covectors. Physicists often do this without realizing that they are technically working with cocovectors instead of vectors, but that's fine because the isomorphism makes it work.</p>
 <p>I'll leave this here for now. Next time I'll talk about multilinear maps and tensor products!</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -343,13 +343,13 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

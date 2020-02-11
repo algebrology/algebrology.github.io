@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <meta name="description" content="I&#x27;m now going to talk about sequences and nets, which often provide an alternative way of describing topological phenomena." />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -46,8 +46,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -168,14 +168,14 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#sequences">Sequences</a></li>
 <li><a href="#hausdorff-spaces">Hausdorff Spaces</a></li>
 <li><a href="#nets">Nets</a></li>
 </ol>
 <p>I'm now going to talk about sequences and nets, which often provide an alternative way of describing topological phenomena. I'll also talk about Hausdorff spaces, which have all sorts of nice properties. I was originally planning to include filters in this discussion as well, but I think if I did that this post might become long enough to break the internet.</p>
-<h3 id="sequencesanamesequences">Sequences<a name="sequences"></a></h3>
+<h3 id="sequencesanamesequences">Sequences<a name="sequences"></h3>
 <p>If you've taken a calculus class (or maybe even if you haven't) then you probably already have some notion of what sequences are. They're basically just lists of elements that go on forever. For instance,</p>
 <p>$$\begin{gather}<br>
 \begin{aligned}<br>
@@ -227,7 +227,7 @@ d(x_n, 0) &amp;= \vert x_n - 0\vert \\<br>
 <p><strong>Example.</strong> Let $X$ be any nonempty set equipped with the trivial topology.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> Then for any point $x\in X$, the only neighborhood of $x$ is $X$ itself. Certainly for any sequence $(x_n)_{n\in\mathbb{N}}$ in $X$, all terms of the sequence are in $X$. If follows that every sequence in $X$ converges to every point of $X$.</p>
 </blockquote>
 <p>This might strike you as a bit odd, and I'd agree with you. At the very least, this business of every sequence converging to every point is not very desirable behavior for a topological space. After all, we'd like limits of sequences to be unique. Luckily for us, there is a specific type of space for which this behavior is guaranteed!</p>
-<h3 id="hausdorffspacesanamehausdorffspaces">Hausdorff Spaces<a name="hausdorff-spaces"></a></h3>
+<h3 id="hausdorffspacesanamehausdorffspaces">Hausdorff Spaces<a name="hausdorff-spaces"></h3>
 <blockquote>
 <p><strong>Definition.</strong> A topological space $X$ is <strong>Hausdorff</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> if for every pair of points $x,y\in X$ with $x\ne y$, there exists a neighborhood $U$ of $x$ and a neighborhood $V$ of $y$ such that $U\cap V=\varnothing$.</p>
 </blockquote>
@@ -295,7 +295,7 @@ d(x,p)+d(y,p) &amp;&lt; 2r \\<br>
 </blockquote>
 <p>This theorem is great because it tells us that continuous functions preserve convergent sequences! It would be even better if the converse was true, because that would give us yet another alternative characterization of continuous functions. Unfortunately, this is not the case without additionally assuming that both spaces are first-countable (a property that I haven't mentioned yet, but that every metric space has). For general spaces, it is also possible for function which aren't continuous to preserve convergent sequences.</p>
 <p>This hints that sequences might not be exactly the right tool to study continuity. The problem is that they are too specific a concept. Let's next look at a generalization of sequences that will solve all of our problems.</p>
-<h3 id="netsanamenets">Nets<a name="nets"></a></h3>
+<h3 id="netsanamenets">Nets<a name="nets"></h3>
 <p>Before I start trying to explain nets to you, let me state the main theorem we eventually want to prove about them.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $X$ and $Y$ denote topological spaces. A function $f:X\to Y$ is continuous if and only if for every net $(x_a)_{a\in A}$ that converges to $x$, the net $\big(f(x_a)\big)_{a\in A}$ converges to $f(x)$.</p>
@@ -359,7 +359,7 @@ d(x,p)+d(y,p) &amp;&lt; 2r \\<br>
 </li>
 </ol>
 </section>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -403,13 +403,13 @@ d(x,p)+d(y,p) &amp;&lt; 2r \\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

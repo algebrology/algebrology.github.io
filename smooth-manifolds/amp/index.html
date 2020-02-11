@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Smooth Manifolds</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://algebrology.github.io/smooth-manifolds/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Smooth Manifolds" />
+    <meta property="og:description" content="Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics." />
+    <meta property="og:url" content="https://algebrology.github.io/smooth-manifolds/" />
+    <meta property="article:published_time" content="2020-02-10T19:43:54.000Z" />
+    <meta property="article:modified_time" content="2020-02-11T03:29:29.000Z" />
+    <meta property="article:tag" content="differential geometry" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Smooth Manifolds" />
+    <meta name="twitter:description" content="Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics." />
+    <meta name="twitter:url" content="https://algebrology.github.io/smooth-manifolds/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="differential geometry" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://algebrology.github.io/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "https://algebrology.github.io/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Smooth Manifolds",
+    "url": "https://algebrology.github.io/smooth-manifolds/",
+    "datePublished": "2020-02-10T19:43:54.000Z",
+    "dateModified": "2020-02-11T03:29:29.000Z",
+    "keywords": "differential geometry",
+    "description": "Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://algebrology.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.5" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="https://algebrology.github.io">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Smooth Manifolds</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/eric/">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2020-02-10">2020-02-10</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <p>Disclaimer: This post requires a basic grasp of differential calculus. You don't really need to know how to calculate them, but you do need to be comfortable with the idea of derivatives and partial derivatives, and in particular we will need that the composition of two differentiable maps is differentiable (via the chain rule).</p>
+<p>Smooth manifolds are essentially the most general objects that we can do calculus on. Before we can define smooth manifolds, we need to know what a general topological manifold is. And before we can do that, we need just a few new set-theoretic and topological notions.</p>
+<blockquote>
+<p><strong>Definition.</strong> A set $X$ is <strong>countable</strong> if there is a bijection $f:X\to\Z$. That is, if it can be put into one-to-one correspondence with the integers. Finite sets are also considered to be countable.</p>
+</blockquote>
+<p>So countable sets include any finite set, the set $\Z$ itself, the rational numbers $\Q$, and anything else enumerable. Uncountable sets include the real numbers $\R$, the complex numbers $\C$, and many more.</p>
+<p>Recall that a basis for a topological space is a collection of open sets which may be used to generate the topology by taking unions of basis elements.</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological space is <strong>second countable</strong> if it has a countable basis.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The set $\R$ with the standard topology is second countable, since ${(a, b)\subseteq\R\mid a, b\in \Q}$, the set of open intervals with rational endpoints, is a basis for $\R$. I won't prove it, but we can express any $x\in\R$ as a Cauchy sequence of rational numbers, so the union of open intervals with the elements of this sequence as an endpoint will be an open interval with $x$ as an endpoint.</p>
+</blockquote>
+<p>The next definition is not terribly important in its own right, but it will make the rest of the notation in this post considerably cleaner.</p>
+<blockquote>
+<p><strong>Definition.</strong> Consider topological spaces $X$ and $Y$ and a function $f:X\to Y$. If the function $\hat{f}:X\to f[Y]$ with $\hat{f}(x)=f(x)$ for every $x\in X$ is a homeomorphism, then $f$ is a <strong>topological embedding</strong> or a <strong>homeomorphism onto its image</strong>.</p>
+</blockquote>
+<p>Next comes what we shall soon see is the most important property of a topological manifold:</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological space $X$ is <strong>locally Euclidean</strong> if there is some $n\in N$ for which every point $p\in X$ has a neighborhood $U\subseteq X$ which is homeomorphic to an open subset of $\R^n$.</p>
+</blockquote>
+<p>Essentially the definition says that every point of a locally Euclidean space is contained in an open set that looks like $\R^n$. We'll talk more about this in a few minutes so I won't say too much about it yet.</p>
+<p>We're now ready to define a topological manifold!</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>topological manifold</strong> is a topological space $M$ with the following properties:</p>
+<ol>
+<li>$M$ is Hausdorff,</li>
+<li>$M$ is second countable,</li>
+<li>$M$ is locally Euclidean.</li>
+</ol>
+<p>The number $n$ for which $M$ is locally Euclidean is called the <strong>dimension</strong> of the manifold, written $\dim M$.</p>
+</blockquote>
+<p>The Hausdorff and second countable conditions are important, as we shall see in later posts, but the third property is by far the most important, because it means we can treat sections of the manifold as though they were our old friend $\R^n$.</p>
+<blockquote>
+<p><strong>Example.</strong> The space $\R^n$ with the standard topology is trivially a topological manifold. In a previous post I showed that any metric space (and thus $\R^n$ in particular) is Hausdorff. I showed earlier in this post that $\R$ is second countable, and that argument extends easily to $\R^n$. All that remains is to show that $\R^n$ is locally Euclidean. This isn't too difficult. For any point $p\in\R^n$, any neighborhood $U$ of $p$ is trivially homeomorphic to itself under the identity map $i:\R^n\to\R^n$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> A less trivial example is given by the circle $S^1$ with the subspace topology from $\R^2$. The circle is not homeomorphic to $\R$, since any point of $\R$ is a cutpoint but no point of $S^1$ is a cutpoint (see my post on connectedness if this is unfamiliar). However, $S^1$ is the next best thing — it is a one-dimensional topological manifold.</p>
+<p>I will not show that $S^1$ is Hausdorff or second countable since these properties are easily proved and not incredibly interesting. We can show that it is locally Euclidean by exhibiting two open sets which cover $S^1$ and which are both homeomorphic to open intervals in $\R$.</p>
+<p></p>
+<p>By simply choosing two overlapping open sets $U$ and $V$ in $S^1$ as above, with embeddings $x:U\to\R$ and $y:V\to\R$, we can talk about patches of the circle as though they were $\R$ itself. We think of $x$ and $y$ as providing "local coordinates" for the regions $U$ and $V$. That is to say, each point $p\in U$ corresponds to precisely one real number in $\R$ — its local coordinate $x(p)$— and likewise for points in $V$. Since $U$ and $V$ must intersect, a point in their intersection will most likely have a different local coordinate under the map $y$ than under the map $x$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The torus $S^1\times S^1$ with the product topology (which is equivalent to the subspace topology from $\R^3$) is a topological manifold. It is not difficult to exhibit open sets that cover the torus and embeddings from those sets to the real numbers, but I don't want to get bogged down with technical details so I will not bother. You can look up ways to do it if you're interested!</p>
+</blockquote>
+<blockquote>
+<p><strong>Example.</strong> The subset $X$ of $\R^2$ below, considered with the subspace topology, is <strong>not</strong> a topological manifold.</p>
+<p></p>
+<p>The issue is the point where the lines all intersect. All other points have neighborhoods homeomorphic to the real line, but no neighborhood of that point does. If we remove that point, we get a topological manifold, but it is no longer connected.</p>
+</blockquote>
+<p>In the case of the circle above, we had two open sets $U$ and $V$ that were homeomorphic to $\R$. In general, a manifold will have many such open sets and so it is convenient to have a name for them (and for the homeomorphisms).</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>chart</strong> $(U, x)$ of a topological manifold $M$ of dimension $n$ consists of an open set $U\subseteq M$ and a topological embedding $x:M\to\R^n$. The set $U$ is often called the <strong>chart domain</strong> and the embedding $x$ is often called the <strong>chart map</strong>.</p>
+</blockquote>
+<p>By definition, any nonempty topological manifold must have at least one chart.</p>
+<blockquote>
+<p><strong>Definition.</strong> An <strong>atlas</strong> for a topological manifold $M$ is a collection of charts whose domains cover $M$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Definition.</strong> If $(U, x)$ and $(V, y)$ are charts of a manifold $M$ of dimension $n$ with $U\cap V\ne\varnothing$ then the functions $x\circ y^{-1}:y[U\cap V]\to x[U\cap V]$ and $y\circ x^{-1}:x[U\cap V]\to y[U\cap V]$ are called <strong>transition maps</strong> between the charts.</p>
+<p>Note that transition maps are homeomorphisms because they are compositions of restrictions/inverses of topological embeddings.</p>
+</blockquote>
+<p>In general a manifold will have many atlases. For instance, in the above example for the circle $S^1$, the collection ${(U, x), (V, y)}$ was an atlas. But we could have used different open sets, as long as they covered $S^1$. We could also add more charts and the result will still be an atlas.</p>
+<blockquote>
+<p><strong>Definition.</strong> An atlas for a topological manifold $M$ is a <strong>maximal atlas</strong> if it is not strictly contained in any other atlas for $M$.</p>
+</blockquote>
+<p>Every topological manifold has a maximal atlas. This isn't super important now, but it will be in a moment.</p>
+<p>That's it. That's all there is to topological manifolds (not really). Let's move on to smooth manifolds!</p>
+<p>Since topological manifolds are topological spaces, it makes sense to talk about continuous maps $\R\to M$ and $M\to N$, where $M$ and $N$ are topological manifolds. The endgame of this post is to be able to take this even further and talk about <em>smooth</em> maps $M\to \R$ and $M\to N$. First we must define what we mean by a smooth map between Euclidean spaces/</p>
+<blockquote>
+<p><strong>Definition.</strong> If $U\subseteq R^n$ and $V\subseteq R^m$ are open, a map $f:U\to V$ is called:</p>
+<ul>
+<li>$C^0$ if $f$ is continuous,</li>
+<li>$C^1$ if $f$ is continuously differentiable (that is, its derivative is continuous),</li>
+<li>$C^k$ if $f$ is $k$-times continuously differentiable,</li>
+<li>$C^\infty$ or <strong>smooth</strong> if $f$ is infinitely differentiable.</li>
+</ul>
+</blockquote>
+<p>We shall be mainly interested in the smooth ($C^\infty$) case, but everything that follows has an analogue for $C^k$ functions.</p>
+<p>Consider a function $f:M\to\R$ defined on a manifold $M$. I like to imagine such a function as assigning a temperature to each point on the manifold, but think about it however best suits you. We would like to come up with a way to extend the above concepts of differentiability and smoothness to such functions. Unlike continuity, however, differentiability is not a topological notion. To see this, note that the circle and the square are homeomorphic spaces, but the circle is intuitively smooth while the square is not (it has sharp corners where it ought not be differentiable). To define a notion of differentiability on a manifold, we have to get a little bit creative.</p>
+<p>Luckily, we have an atlas of charts that let us talk about regions of the manifold as though they were regions of $\R^n$. It may not be immediately obvious, but this lets us treat chunks of our function $f:M\to\R$ as though they were functions $\R^n\to\R$. To see this more clearly, we make the following definition.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a manifold of dimension $n$ and let $f:M\to\R$ be a function. If $(U, x)$ is a chart of $M$, we call $f\circ x^{-1}:x[U]\to\R$ the <strong>chart representative</strong> of $f$ under this chart.</p>
+</blockquote>
+<p>Here's a visualization of what the chart representative of a function $f:M\to\R$ might look like. If we are going with my "temperature distribution" interpretation, blue might represent "colder" regions of $M$ and red might represent "warmer" regions. Since $M$ is an $n$-dimensional manifold, every point $p\in M$ is contained in the domain of some chart $(U, x)$.  If we look at the image of $U$ under the chart map $x$, we obtain a region $x[U]$ in $\R^n$ to which we can assign familiar coordinates, and which gives us a pretty reasonable representation of what the function $f$ looks like on the domain $U$.</p>
+<p></p>
+<p>Remember that the chart map $x$ is necessarily an embedding and thus has an inverse $x^{-1}:x[U]\to U$ which is also a homeomorphism. The chart representative of $f$ under the chart $(U, x)$ is then the function $f\circ x^{-1}:x[U]\to\R$. It is crucial to notice that for any point $p\in U$, we have that $f(p) = (f\circ x^{-1})(x(p))$. This means that the chart representative $f\circ x^{-1}$ really contains all the same data that $f$ does on the chart domain $U$. Furthermore, since $f\circ x^{-1}$ takes an open subset of $\R^n$ to an open subset of $\R$, it is an object on which differentiability and smoothness make sense to talk about!</p>
+<p>Here's the idea then: we will try to define a function $f:M\to\R$ as <em>smooth</em> if every point $p\in M$ is contained in the domain of some chart $(U, x)$ for which the transition map $f\circ x^{-1}$ is smooth (i.e., $C^\infty$) in the sense of ordinary differential calculus. We need to be careful, though, since $p$ might be in the domain of two or more charts. It would be no good at all if the transition map with respect to one chart was smooth but the transition map with respect to another chart was not. In order for smoothness of $f$ to be a well-defined notion then, we need to make sure that it is not dependent on our choice of chart!</p>
+<p>Let's see what this requirement entails exactly. Suppose a point $p\in M$ is in the domain of two charts, $(U,x)$ and $(V, y)$. Then $U\cap V\subseteq M$ is nonempty, since it certainly contains $p$, and it is an open set since it is the intersection of two open sets.</p>
+<p></p>
+<p>What we need is for smoothness of the chart representative $f\circ x^{-1}$ to imply smoothness of the chart representative $f\circ y^{-1}$. So suppose the chart representative $f\circ x^{-1}$ is smooth. Then, remembering that the composition of smooth functions is smooth and that composition of functions is associative, the other chart representative<br />
+$$<br />
+\begin{align}f\circ y^{-1} &amp;= f\circ (x^{-1}\circ x) \circ y^{-1} \\              &amp;= (f\circ x^{-1})\circ(x\circ y^{-1})\end{align}<br />
+$$ is guaranteed to be smooth only if the transition map $x\circ y^{-1}$ is smooth. Thus, we have failed in defining smooth functions on topological manifolds, since there is nothing in their definition which requires this.</p>
+<p>In order to make all of this work, we simply define a new notion:</p>
+<blockquote>
+<p><strong>Definition.</strong> A topological manifold $M$ is a <strong>smooth manifold</strong> if for every pair of charts $(U, x)$ and $(V,y)$ in its atlas, the transition map $x\circ y^{-1}$ is smooth.</p>
+<p>We call such an atlas a <strong>smooth atlas</strong> and we say that such charts are <strong>smoothly compatible</strong>.</p>
+</blockquote>
+<p>Unlike a general topological manifold, which is guaranteed to have a perfectly fine atlas by definition, a smooth manifold needs to come with a specified smooth atlas. It is this special choice of atlas which makes a manifold smooth.</p>
+<p>In restricting the types of manifolds we consider to smooth manifolds, we have solved the issue above and we can immediately define smooth functions on smooth manifolds!</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold. A function $f:M\to\R$ is a <strong>smooth function</strong> if every point $p\in M$ is contained in the domain of some chart $(U, x)$ for which the chart representative $f\circ x^{-1}$ is smooth in the sense of ordinary differential calculus.</p>
+<p>We denote by $C^\infty(M)$ the collection of all smooth functions on $M$.</p>
+</blockquote>
+<p>The argument above proves that this definition is well defined on smooth manifolds, because if a function's transition map with respect to one chart is smooth, then all its transition maps in overlapping charts are guaranteed to be smooth by construction.</p>
+<p>Let me reiterate, just to really drive the point home. <em>There is no way to talk about smooth functions on a general topological manifold.</em> Only if we restrict our atlas to a smooth atlas in which all charts are smoothly compatible can we define such a concept. Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.</p>
+<p>In addition to being able to talk about smooth maps on a manifold, we now have all the required machinery to define smooth maps between two smooth manifolds. Suppose $f:M\to N$ is such a map between smooth manifolds $M$ of dimension $m$ and $N$ of dimension $n$. Then there are necessarily charts $(U_M, x_M)$ for $M$ and $(U_N, x_N)$ for $N$ for which $p\in U_M$ and $f(p)\in U_N$. We don't know how to differentiate $f$, but we can follow the same basic procedure we used above to define smooth functions.</p>
+<p></p>
+<p>Observe that $x_N\circ f\circ x_M^{-1}$ is a function between open subsets of $\R^m$ and $\R^n$, and thus it is an object on which it is reasonable to talk about differentiability and smoothness in the ordinary vector-calculus sense. Furthermore, for any point $p\in U_M$ we have that<br />
+$$f(p) = x_N^{-1}\circ (x_N\circ f\circ x_M^{-1})(x_M(p)).$$ Thus, all the behavior of the function $f$ on the subsets $U_M$ and $U_N$ is completely recoverable from the function $x_N\circ f\circ x_M^{-1}$, so it makes sense to talk about it as a sort of representative of $f$ with respect to these charts.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ and $N$ be smooth manifolds. A map $f:M\to N$ is a <strong>smooth map</strong> if for every point $p\in M$ there is a chart $(U_M, x_M)$ for $M$ whose domain contains $p$ and a chart $(U_N, x_N)$ whose domain contains $f(p)$ and for which $x_N\circ f\circ x_M^{-1}$ is smooth in the sense of ordinary differential calculus.</p>
+</blockquote>
+<p>We still need to check that the concept of a smooth map is well defined. For instance, it's possible that $p$ is contained in two charts whose intersection is $U_M$ and $f(p)$ is contained in two charts whose intersection is $U_N$.</p>
+<p></p>
+<p>Suppose $x_N\circ f\circ x_M^{-1}$ is smooth. Then<br />
+$$<br />
+\begin{align}y_N\circ f\circ y_M^{-1} &amp;= y_N\circ (x_N^{-1}\circ x_N)\circ f\circ (x_M^{-1}\circ x_M)\circ y_M^{-1} \\<br />
+&amp;= (y_N\circ x_N^{-1})\circ (x_N\circ f\circ x_M^{-1})\circ (x_M\circ y_M^{-1})\end{align}<br />
+$$ is smooth because the transition maps $y_N\circ x_N^{-1}$ and $x_M\circ y_M^{-1}$ are smooth by the definition of a smooth manifold. Thus, the concept of smoothness of a map $f:M\to N$ is independent of the charts that we choose, and so it is a well defined notion.</p>
+<p>I'm going to stop here for now, but in my next post we'll see how we can defined tangent spaces to points on a manifold, which are a generalization of tangent hyperplanes to hypersurfaces in $\R^n$.</p>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

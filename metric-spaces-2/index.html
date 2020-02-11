@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <meta name="description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing." />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -21,7 +21,7 @@
     <meta property="og:site_name" content="Algebrology" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Metric Spaces (2)" />
-    <meta property="og:description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward. " />
+    <meta property="og:description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward." />
     <meta property="og:url" content="https://algebrology.github.io/metric-spaces-2/" />
     <meta property="article:published_time" content="2017-03-31T14:42:15.000Z" />
     <meta property="article:modified_time" content="2019-02-20T04:50:17.000Z" />
@@ -29,7 +29,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Metric Spaces (2)" />
-    <meta name="twitter:description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward. " />
+    <meta name="twitter:description" content="Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward." />
     <meta name="twitter:url" content="https://algebrology.github.io/metric-spaces-2/" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Eric Shapiro" />
@@ -46,8 +46,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#review-from-previous-post">Review from previous post</a></li>
 <li><a href="#open-sets">Open sets</a></li>
@@ -176,7 +176,7 @@ MathJax.Hub.Config({
 <li><a href="#now-what">Now what?</a></li>
 </ol>
 <hr>
-<h3 id="reviewfrompreviouspostanamereviewfrompreviouspost">Review from previous post<a name="review-from-previous-post"></a></h3>
+<h3 id="reviewfrompreviouspostanamereviewfrompreviouspost">Review from previous post<a name="review-from-previous-post"></h3>
 <p>Looking back through my first post about metric spaces, it occurred to me that I should probably have emphasized a few things that could be a bit confusing, so let me address those first before pressing forward.</p>
 <p>I briefly mentioned the <strong>standard metric</strong> on $\mathbb{R}^n$ ($n$-dimensional Euclidean space), but I didn't relate it back to anything concrete. I defined this metric by</p>
 <p>$$d({\bf x},{\bf y})=\sqrt{\sum\limits_{i=1}^n(x_i-y_i)^2},$$</p>
@@ -201,7 +201,7 @@ MathJax.Hub.Config({
 <p>$$d(f,g)=\int\limits_0^1\vert f(x)-g(x)\vert\mathrm{d}x,$$</p>
 <p>where $f,g\in X$, is a metric on $X$. If this example is gibberish to you, don't worry. I haven't defined integration, or even continuity, yet. I just wanted to show that there are even meaningful concepts of distance between functions, which is an enticing concept.</p>
 <p>I think that's about all I wanted to clarify from last time. Now we can move on to some more exciting new stuff!</p>
-<h3 id="opensetsanameopensets">Open sets<a name="open-sets"></a></h3>
+<h3 id="opensetsanameopensets">Open sets<a name="open-sets"></h3>
 <p>We already defined open sets in the last post, but let's restate that definition here so you don't have to go looking it up:</p>
 <blockquote>
 <p><strong>Definition.</strong> A subset $U$ of a metric space $X$ is <strong>open</strong> in $X$ if for every point $x\in U$ there exists a real number $r&gt;0$ for which the open ball $B(x,r)\subseteq U$.</p>
@@ -231,7 +231,7 @@ B(x,r_n)\subseteq A_n.$$</p>
 </blockquote>
 <p>Hopefully you're wondering why I only argued that a <em>finite</em> intersection of open sets is open. After all, I showed that an infinite union work, and unions and intersections are pretty similar, right? Well, not really. In fact, I can easily come up with an example of an infinite collection of open sets whose intersection isn't open:</p>
 <p>Consider $\mathbb{R}$ equipped with the standard metric, and the infinite collection of open intervals defined by $A_n=\left(-\frac{1}{n},\frac{1}{n}\right)$ for $n\in\mathbb{N}$. It's easy enough to see that $\bigcap\limits_{n=1}^\infty \left(-\frac{1}{n},\frac{1}{n}\right)=\{0\}$. For any $x&gt;0$, the quantity $\frac{1}{n}$ eventually becomes smaller than $x$ as $n$ grows larger, so the only point common to all these sets is $0$ because $\frac{1}{n}\neq 0$ for any $n\in\mathbb{N}$, no matter how large.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> The set $\{0\}$ is not open because no open ball of positive radius is contained within it.</p>
-<h3 id="closedsetsanameclosedsets">Closed sets<a name="closed-sets"></a></h3>
+<h3 id="closedsetsanameclosedsets">Closed sets<a name="closed-sets"></h3>
 <p>Again, we defined closed sets last time, but we'll restate their definition here as well for convenience:</p>
 <blockquote>
 <p><strong>Definition.</strong> A subset $U$ of a metric space $X$ is <strong>closed</strong> in $X$ if its complement, $X-U$, is open in $X$.</p>
@@ -251,7 +251,7 @@ B(x,r_n)\subseteq A_n.$$</p>
 <p>$$\bigcup\limits_{i\in I} (X-A_i)=X-\bigcap\limits_{i\in I}A_i$$</p>
 <p>is open by De Morgan's Laws. Therefore its complement, $\bigcap\limits_{i\in I}A_i$, is closed, completing the proof.</p>
 </blockquote>
-<h3 id="nowwhatanamenowwhat">Now what?<a name="now-what"></a></h3>
+<h3 id="nowwhatanamenowwhat">Now what?<a name="now-what"></h3>
 <p>What's fairly awesome is that we now actually know everything we need to know about open and closed sets. Well, not really. But we <em>do</em> know enough now to take another leap forward and define a <strong>topology</strong> on a set! I'm not going to do that right now, though. Instead I'm going to show you that everything we've done so far is really perfectly natural, in that it gives us the results we'd expect when talking about familiar sets.</p>
 <p>Let's first look at the set of real numbers. To be formal, I'm talking about $\mathbb{R}$ equipped with the standard metric $d(x,y)=\vert x-y\vert$. I think I said this earlier, but unless I say otherwise you should always assume that I'm talking about the standard metric whenever I say words about the real numbers. I asserted above that the open balls in this metric space are open intervals. That is,</p>
 <p>$$\begin{align}<br>
@@ -270,7 +270,7 @@ B(x,r) &amp;= \{x\in\mathbb{R}\mid d(x,y)&lt; r\} \\<br>
 </li>
 </ol>
 </section>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -314,13 +314,13 @@ B(x,r) &amp;= \{x\in\mathbb{R}\mid d(x,y)&lt; r\} \\<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

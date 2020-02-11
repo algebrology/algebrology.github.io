@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/constructing-the-rational-numbers-2/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,7 +167,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <h3 id="contents">Contents</h3>
+            <!--kg-card-begin: markdown--><h3 id="contents">Contents</h3>
 <ol>
 <li><a href="#canonical-form">Canonical Form</a></li>
 <li><a href="#where-is-z">Where is $\Z$?</a></li>
@@ -176,7 +176,7 @@ MathJax.Hub.Config({
 <li><a href="#field-axioms">Field Axioms</a></li>
 </ol>
 <hr>
-<h3 id="canonicalformanamecanonicalform">Canonical Form<a name="canonical-form"></a></h3>
+<h3 id="canonicalformanamecanonicalform">Canonical Form<a name="canonical-form"></h3>
 <p>This is a continuation of <a href="https://algebrology.github.io/constructing-the-rational-numbers-1/">Constructing the Rational Numbers (1)</a>. Before moving forward with the rest of the construction, I'd like to formally change my notation for rational numbers from that of equivalence classes of ordered pairs of integers to that of fractions.</p>
 <p>That is, from here on out the rational number $[(a,b)]$ will simply be written as the <strong>fraction</strong> $\frac{a}{b}$. And now rational numbers look exactly how you would expect. Yay! Note that the bar doesn't really mean anything yet, this notation is currently just a formalism.</p>
 <p>Remember that there are many choices of representative for each rational number. For instance, $\frac{1}{2}=\frac{2}{4}$ in the same way that $[(1,2)]=[(2,4)]$ because, in the language of my last post, $(1,2)\sim_\Q (2,4)$. Last time we defined this equivalence relation, $\sim_\Q$, which determines whether two fractions are really the same rational number. Let's rephrase this in terms of fractions and without the formality of the equivalence relation, because it's very important:</p>
@@ -246,7 +246,7 @@ MathJax.Hub.Config({
 <p>This is certainly not in canonical form, since $\gcd(4,4)=4$.</p>
 <p>However, this is not really an issue since we can just rewrite it in canonical form post-computation. In this case, the canonical form for the result is $\frac{1}{1}$.</p>
 </blockquote>
-<h3 id="whereiszanamewhereisz">Where is $\Z$?<a name="where-is-z"></a></h3>
+<h3 id="whereiszanamewhereisz">Where is $\Z$?<a name="where-is-z"></h3>
 <p>Ordinarily, when we are not being as ridiculously pedantic as we are in this post, we would consider the integers to be a subset of the rational numbers. But technically this is not the case of our construction, since our rationals are equivalence classes of pairs of integers and thus not integers themselves. It's our goal, therefore, to identify a subset of rationals that looks and behaves like the integers.</p>
 <p>The above example may have already given this away. Technically the rational number whose canonical form is $\frac{1}{1}$ is not the same thing as the integer $1$. But I mean, come on... they're pretty darn similar. This leads us to the following identification.</p>
 <blockquote>
@@ -274,7 +274,7 @@ MathJax.Hub.Config({
 \end{align}$$</p>
 </blockquote>
 <p>So these rational integers really do correspond to the integers in a one-to-one manner. Since there's no functional difference between rational integers and integers, we might as well just say they're the same thing.</p>
-<h3 id="orderingtherationalsanameorderingtherationals">Ordering the Rationals<a name="ordering-the-rationals"></a></h3>
+<h3 id="orderingtherationalsanameorderingtherationals">Ordering the Rationals<a name="ordering-the-rationals"></h3>
 <p>One of the requirements we imposed on our construction last post was that the rationals should be ordered in a way that's compatible with the integers. That means that if $n$ and $m$ are integers with $n &lt; m$, then we definitely want it to be the case that $\frac{n}{1} &lt; \frac{m}{1}$. That is, integers and rational integers should have the same order.</p>
 <p>But in addition to rational integers, all the other rational numbers should be comparable as well. This is done easily enough.</p>
 <blockquote>
@@ -300,7 +300,7 @@ MathJax.Hub.Config({
 <p><strong>Proof.</strong> There's really not much to prove. Since $m&lt;n$ we certainly have that $m\cdot 1 = 1\cdot n$. By the definition of order, this means that $\frac{m}{1} &lt; \frac{n}{1}$.</p>
 </blockquote>
 <p>So this order is compatible with the order on the integers. Yay! Now that our rational numbers are ordered, we're allowed to put them on the number line if we so choose.</p>
-<h3 id="fillingthegapsanamefillingthegaps">Filling the Gaps<a name="filling-the-gaps"></a></h3>
+<h3 id="fillingthegapsanamefillingthegaps">Filling the Gaps<a name="filling-the-gaps"></h3>
 <p>Our motivation for inventing rational numbers was to fill the two types of gaps we identified in the previous post as being missing from the integers. Namely, we required that our rational numbers satisfy the following properties:</p>
 <blockquote>
 <ul>
@@ -339,7 +339,7 @@ MathJax.Hub.Config({
 <li>We know exactly what properties our objects satisfy.</li>
 </ol>
 <p>I don't feel comfortable working with anything I can't get a feel for in this way.</p>
-<h3 id="fieldaxiomsanamefieldaxioms">Field Axioms<a name="field-axioms"></a></h3>
+<h3 id="fieldaxiomsanamefieldaxioms">Field Axioms<a name="field-axioms"></h3>
 <p>Our rational numbers actually have a few more properties than I've mentioned. Technically, they form what is called an ordered field. I won't prove all of the field axioms here, but from what I've done already and the properties of the integers, you should be able to fill in the gaps pretty easily now. I'll just give you the axioms and then call it quits.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>field</strong> is a set $\mathbb{F}$ equipped with two operations, addition $+$ and multiplication $\cdot$, which satisfy the following properties:</p>
@@ -359,7 +359,7 @@ MathJax.Hub.Config({
 <p>That's pretty much it. It's not too hard to show that the rationals $\Q$ form an ordered field under the definitions we gave for addition and multiplication. The additive identity is $\frac{0}{1}$, the multiplicative identity is $\frac{1}{1}$, the additive inverse of $\frac{a}{b}$ is $\frac{-a}{b}$, and the multiplicative inverse of $\frac{a}{b}$ is $\frac{b}{a}$ (provided $a\ne 0$).</p>
 <p>The integers $\Z$ do <em>not</em> form an ordered field because they are lacking multiplicative inverses. This is precisely the first &quot;gap&quot; that we filled.</p>
 <p>So... yeah.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -403,13 +403,13 @@ MathJax.Hub.Config({
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

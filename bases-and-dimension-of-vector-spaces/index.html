@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/bases-and-dimension-of-vector-spaces/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#bases">Bases</a></li>
 <li><a href="#dimension">Dimension</a></li>
 <li><a href="#some-useful-theorems">Some Useful Theorems</a></li>
 </ol>
 <hr>
-<h3 id="basesanamebases">Bases<a name="bases"></a></h3>
+<h3 id="basesanamebases">Bases<a name="bases"></h3>
 <p><a href="/vector-spaces-2">Previously</a>, I discussed span and linear independence. Essentially, the span of a list of vectors is the set of all possible linear combinations of those vectors, and a list of vectors is linearly independent if none of them can be expressed as a linear combination of the others.</p>
 <p>Now I'll use these ideas to introduce one of the most important concepts in linear algebra:</p>
 <blockquote>
@@ -225,7 +225,7 @@ a + b &amp;= 0 \tag{2}\\<br>
 <p>Let $V$ denote a finite-dimensional vector space. Then $V$ is spanned by some finite list of vectors, not all zero, $(v_1,\ldots,v_n)$. If this list is linearly independent, then we are done. Otherwise, we can use the linear dependence lemma to remove a vector from this list and produce a new list of length $n-1$ which still spans $V$. We continue this process until we are left with a linearly independent list, which will take at most $n-1$ steps, since any list containing one nonzero vector is automatically linearly independent. This resulting list is, by definition, a basis for $V$.</p>
 </blockquote>
 <p>This argument only works for finite-dimensional vector spaces, since it relies on the fact that we only have to apply the linear dependence lemma a finite number of times. Infinite-dimensional vector spaces, as I've mentioned before, are a lot grosser. It is possible to show that infinite-dimensional vector spaces are guaranteed to have bases if we accept the axiom of choice. Since most mathematicians much prefer to have bases for their vector spaces, this is just one more point in favor of accepting the axiom of choice. Luckily for us, we aren't currently interested in infinite-dimensional vector spaces and so we can simply ignore this icky business.</p>
-<h3 id="dimensionanamedimension">Dimension<a name="dimension"></a></h3>
+<h3 id="dimensionanamedimension">Dimension<a name="dimension"></h3>
 <p>Next comes a super important result which will finally settle the question I posed last time about how to define the dimension of a vector space. Its proof will employ the theorem I proved at the end of my last post, that the length of a list of spanning vectors is never shorter than any linearly independent list.</p>
 <blockquote>
 <p><strong>Theorem.</strong> All bases of a finite-dimensional vector space have the same length.</p>
@@ -250,7 +250,7 @@ e_n &amp;=&amp; (0,0,\ldots,1).<br>
 <p>That is, $e_i$ is the vector whose $i$th component is $1$ and every other component is zero.</p>
 </blockquote>
 <p>It should be fairly obvious that for any $n$, the standard basis for $\F^n$ is, in fact, a basis. It is certainly linearly independent and it is easy to write any vector in $\F^n$ as a linear combination of basis vectors, implying it also spans $\F^n$. Since there are $n$ basis vectors in the standard basis, it follows that $\dim\F^n=n$, just like we would expect.</p>
-<h3 id="someusefultheoremsanamesomeusefultheorems">Some Useful Theorems<a name="some-useful-theorems"></a></h3>
+<h3 id="someusefultheoremsanamesomeusefultheorems">Some Useful Theorems<a name="some-useful-theorems"></h3>
 <p>This first result tells use how to calculate the dimension of a sum of two subspaces. Recall that we previously showed that the intersection of two subspaces is itself a subspace.</p>
 <blockquote>
 <p><strong>Theorem.</strong> If $V_1$ and $V_2$ are subspaces of a finite-dimensional vector space, then</p>
@@ -306,7 +306,7 @@ e_n &amp;=&amp; (0,0,\ldots,1).<br>
 <p>Setting $j=n$, the result follows.</p>
 </blockquote>
 <p>Next time I will introduce linear maps, which are (besides vector spaces themselves) the primary objects of study in linear algebra.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -350,13 +350,13 @@ e_n &amp;=&amp; (0,0,\ldots,1).<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

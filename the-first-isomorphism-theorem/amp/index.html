@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -106,31 +106,31 @@
 <blockquote>
 <p><strong>Theorem.</strong> Let $f:G\to H$ be a group homomorphism with $x,y\in G$ and let $K=\ker f$ to keep things concise. Then $Kx=Ky$ if and only if $f(x)=f(y)$.</p>
 <p><strong>Proof.</strong> Suppose first that $Kx=Ky$. Then $xy^{-1}\in K=\ker f$, so</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f(xy^{-1}) &amp;= f(x)f(y^{-1}) \\<br />
 &amp;= f(x)f(y)^{-1} \\<br />
 &amp;= 1_H.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Multiplication on the right by $f(y)$ yields $f(x)=f(y)$.</p>
 <p>Suppose conversely that $f(x)=f(y)$. Then we can essentially just do the above in reverse. Multiplication on the right by $f(y)^{-1}$ yields</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br />
 &amp;= f(xy^{-1}) \\<br />
 &amp;= 1_H,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and thus $xy^{-1}\in\ker f=K$ by definition, completing the proof.</p>
 </blockquote>
 <p>This theorem, while deceptively simple, tells us something extremely important. Namely, that each coset of the kernel corresponds to precisely one element of the codomain. It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!</p>
 <blockquote>
 <p><strong>First Isomorphism Theorem.</strong> If $f:G\to H$ is a group homomorphism, then $G/\ker f$ is isomorphic to $\im f$.</p>
-<p><strong>Proof.</strong> Our claim is that the function $\varphi:G/\ker f\to\im f$ defined by $\varphi(Kx)=f(x)$ for every $Kx\in G/\ker f$ is an isomorphism. Again for convenience, we let $K=\ker f$.</p>
+<p><strong>Proof.</strong> Our claim is that the function $\varphi:G/\ker f\to\im f$ defined by $$\varphi(Kx)=f(x)$$ for every $Kx\in G/\ker f$ is an isomorphism. Again for convenience, we let $K=\ker f$.</p>
 <p>First, since $\varphi$ acts on cosets we must show that it is well defined, i.e., if $Kx=Ky$ then $\varphi(Kx)=\varphi(Ky)$. But from the above theorem, if $Kx=Ky$ then $f(x)=f(y)$, so it follows immediately that this is true.</p>
 <p>Next we argue that $\varphi$ is a homomorphism. Again, choose cosets $Kx$ and $Ky$ in $G/K$. Then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \varphi(Kx)\varphi(Ky) &amp;= f(x)f(y) \\<br />
 &amp;= f(xy) \\<br />
 &amp;= \varphi(K(xy))<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>because $f$ is a homomorphism, so $\varphi$ essentially inherits this property from $f$.</p>
 <p>Finally, we need to show that $\varphi$ is a bijection. To see that it is injective, suppose that $\varphi(Kx)=\varphi(Ky)$ for some cosets $Kx$ and $Ky$ in $G/K$. Then $f(x)=f(y)$, and so $Kx=Ky$ by the above theorem. To see that $\varphi$ is surjective, choose any $b\in\im f$. By definition, there exists $a\in G$ for which $f(a)=b$. Thus $b=\varphi(Ka)$, and so it follows that $\varphi$ is bijective, completing the proof.</p>
 </blockquote>
@@ -150,7 +150,7 @@ f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

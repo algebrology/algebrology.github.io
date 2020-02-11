@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -118,67 +118,67 @@ For any vector $u\in U$ and any scalar $a\in\F$, we have that $T(au)=aT(u)$.</p>
 <p>It is important to note that on the left side of each equation in this definition, the vector addition and scalar multiplication are being done in $U$. That is, we are applying $T$ to the sum $u_1+u_2\in U$ and to the scalar product $au\in U$. On the right, the addition and multiplication are being done in $V$. That is, we are first applying $T$ to $u_1$ and $u_2$ separately and adding the result in $V$, or applying it to $u$ and multiplying the result in $V$. So linear maps are precisely those functions for which it does not matter whether we add/multiply before or after applying the function.</p>
 <blockquote>
 <p><strong>Example.</strong> We define a "zero map" $0:U\to V$ between any two vector spaces by $0(u)=0$ for all vectors $u\in U$. This is obviously a linear map because</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 0(u_1 + u_2) &amp;= 0 \\<br />
 &amp;= 0 + 0 \\<br />
 &amp;= 0(u_1) + 0(u_2),<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>which shows that it satisfies additivity, and</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 0(au) &amp;= 0 \\<br />
 &amp;= a0 \\<br />
 &amp;= a0(u),<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>which shows that it satisfies homogeneitry.</p>
 </blockquote>
 <p>Note that I am making no distinction between the zero vector in the domain and the zero vector in the codomain. Nonetheless, it is important to realize that they may be different objects. For example, in the case of a linear map from $\R^n$ to $\P(\F)$, the zero vector in $\R^n$ is the $n$-tuple $(0,0,\ldots,0)$ and the zero vector in $\P(\F)$ is the zero polynomial $p(x)=0$.</p>
 <p>What's even worse though it that I'm also using the symbol $0$ to represent the zero map. Maybe I just worship chaos.</p>
 <blockquote>
 <p><strong>Example.</strong> The identity map $I:U\to V$ between any two vector spaces, defined as usual by $Iu=u$ for all vectors $u\in U$, is a linear map. To see that it is additive, note that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 I(u_1+u_2) &amp;= u_1+u_2 \\<br />
 &amp;= Iu_1 + Iu_2.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>To see that it is homogeneous, note that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 I(au) &amp;= au \\<br />
 &amp;= aIu.<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>The identity map is <em>super</em> important in linear algebra.</p>
 <blockquote>
 <p><strong>Example.</strong> The map $T:\R^2\to\R$ defined by $T(x,y)=x+y$ for any vector $(x,y)\in\R^2$ is a linear map.</p>
 <p>This map is additive because</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T((x_1,y_1)+(x_2,y_2)) &amp;= T(x_1+x_2,y_1+y_2) \\<br />
 &amp;= x_1+x_2+y_1+y_2 \\<br />
 &amp;= x_1+y_1+x_2+y_2 \\<br />
 &amp;= T(x_1,y_1) + T(x_2,y_2).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>It is homogeneous because</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T(a(x,y)) &amp;= T(ax,ay) \\<br />
 &amp;= ax+ay \\<br />
 &amp;= a(x+y) \\<br />
 &amp;= aT(x,y).<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <blockquote>
 <p><strong>Example.</strong> The map $T:\R^3\to\P_2(\R)$ defined by $T(a,b,c)=a+bx+(a-b)x^2$ is a linear map.</p>
 <p>It's additive because</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T((a_1,b_1)+(a_2,b_2)) &amp;= T(a_1+a_2,b_1+b_2) \\<br />
 &amp;= a_1+a_2 + (b_1+b_2)x + (a_1+a_2 - b_1-b_2)x^2\\<br />
 &amp;= a_1 + b_1x + (a_1-b_1)x^2 + a_2 + b_2x + (a_2-b_2)x^2\\<br />
 &amp;= T(a_1,b_1) + T(a_2,b_2).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>And it's homogeneous because</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T(k(a,b)) &amp;= T(ka,kb) \\<br />
 &amp;= ka + kbx + (ka-kb)x^2 \\<br />
 &amp;= k(a+bx+(a-b)x^2) \\<br />
 &amp;= kT(a,b).<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
 <p>What follows are some basic properties of linear maps.</p>
@@ -186,13 +186,13 @@ T(k(a,b)) &amp;= T(ka,kb) \\<br />
 <blockquote>
 <p><strong>Theorem.</strong> If $T:U\to V$ is a linear map, then $T(0)=0$.</p>
 <p><strong>Proof.</strong> We proceed directly via the following computation:</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T(0) &amp;= T(0) + 0 \\<br />
 &amp;= T(0) + T(0) - T(0) \\<br />
 &amp;= T(0 + 0) - T(0) \\<br />
 &amp;= T(0) - T(0) \\<br />
 &amp;= 0.<br />
-\end{align}$</p>
+\end{align}$$</p>
 </blockquote>
 <p>Linear maps do a lot more than that though. They also map subspaces to subspaces!</p>
 <blockquote>
@@ -200,17 +200,17 @@ T(0) &amp;= T(0) + 0 \\<br />
 <p><strong>Proof.</strong> We just need to show that $T[W]$ contains the zero vector and is closed under vector addition and scalar multiplication.</p>
 <p>Since $W$ is a subspace, it contains the zero vector in $U$. Thus, since $T(0)=0$, it follows that $T[W]$ contains the zero vector in $V$.</p>
 <p>Next, suppose $v_1,v_2\in T[W]$. Then $v_1=Tw_1$ and $v_2=Tw_2$ for some vectors $w_1,w_2\in W$. But since $W$ is a subspace, it contains $w_1+w_2$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 v_1 + v_2 &amp;= Tw_1 + Tw_2 \\<br />
 &amp;= T(w_1 + w_2) \\<br />
 &amp;\in T[W].<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Lastly, suppose $v\in T[W]$ and $a\in\F$. Then $v=Tw$ for some $w\in W$. But since $W$ is a subspace, it contains $aw$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 av &amp;= aTw \\<br />
 &amp;= T(aw) \\<br />
 &amp;\in T[W].<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>It follows that $T[W]$ is a subspace of $V$, as desired.</p>
 </blockquote>
 <p>The kernel of any linear transformation is a subspace of the domain.</p>
@@ -219,18 +219,18 @@ av &amp;= aTw \\<br />
 <p><strong>Proof.</strong> Again, we need to show that $\ker T$ contains the zero vector and is closed under vector addition and scalar multiplication.</p>
 <p>Since $T(0)=0$, certainly $0\in\ker T$ by definition.</p>
 <p>Next, suppose $u_1,u_2\in\ker T$. Then $Tu_1=0$ and $Tu_2=0$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T(u_1 + u_2) &amp;= Tu_1 + Tu_2 \\<br />
 &amp;= 0 + 0 \\<br />
 &amp;= 0,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and so $u_1+u_2\in\ker T$.</p>
 <p>Lastly, suppose that $u\in\ker T$ and $a\in\F$. Then $Tu=0$, and therefore</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 T(au) &amp;= aTu \\<br />
 &amp;= a0 \\<br />
 &amp;= 0,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>so $au\in\ker T$. It follows that $\ker T$ is a subspace of $U$.</p>
 </blockquote>
 <p>For some reason in linear algebra it is common to refer to the kernel of a linear transformation as its <strong>null space</strong>, and to write $\ker T$ as $\null T$. I personally find this annoying since in every other context we refer to fiber of $0$ as the kernel. But you should at least be aware that this convention exists and is prevalent in the literature.</p>
@@ -245,10 +245,10 @@ T(au) &amp;= aTu \\<br />
 <blockquote>
 <p><strong>Theorem.</strong> A linear map $T:U\to V$ is injective if and only if $\ker T = \set{0}$.</p>
 <p><strong>Proof.</strong> Suppose first that $\ker T=\set{0}$, and suppose further that $Tu_1=Tu_2$. Then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 0 &amp;= Tu_1 - Tu_2 \\<br />
 &amp;= T(u_1-u_2),<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and so $u_1-u_2\in\ker T$. But $\ker T$ contains only one element — the zero vector. So $u_1-u_2=0$, meaning $u_1=u_2$. It follows that $T$ is injective.</p>
 <p>Suppose conversely that $T$ is injective. We know that $T(0)=0$. Furthermore, since $T$ is injective, at most one vector in the domain can be mapped to any vector in the codomain. This implies that $0$ is the only vector which gets mapped to zero. Hence, $\ker T=\set{0}$.</p>
 </blockquote>
@@ -256,70 +256,70 @@ T(au) &amp;= aTu \\<br />
 <blockquote>
 <p><strong>Theorem.</strong> Let $T:U\to V$ denote an injective linear map, and suppose $(u_1,\ldots,u_n)$ is a linearly independent list of vectors in $U$. Then $(Tu_1,\ldots,Tu_n)$ is a linearly independent list of vectors in $V$.</p>
 <p><strong>Proof.</strong> Suppose we have scalars $a_i\in\F$ for $1\le i\le n$ such that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \sum_{i=1}a_iTu_i &amp;= T\left(\sum_{i=1}^n a_i u_i\right) \\<br />
 &amp;= 0.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Since $T$ is injective, we know that $\ker T=\set{0}$ and therefore</p>
-<p>$\sum_{i=1}^n a_i u_i = 0.$</p>
+<p>$$\sum_{i=1}^n a_i u_i = 0.$$</p>
 <p>Since $(u_1,\ldots,u_n)$ is linearly independent, this implies $a_i=0$ for $1\le i\le n$. Thus, $(Tu_1,\ldots,Tu_n)$ is linearly independent.</p>
 </blockquote>
 <p>The next theorem is probably pretty obvious. It just says that if the domain of a linear map is finite-dimensional then so is its image.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $T:U\to V$ denote a linear map. If $U$ is finite-dimensional, then $\im T$ is a finite-dimensional subspace of $V$.</p>
 <p><strong>Proof.</strong> We have already shown that $\im T$ is a subspace of $V$. To show that it is finite-dimensional, we must demonstrate that it is spanned by a finite list of vectors in $V$. Let $(e_1,\ldots,e_n)$ be any basis for $U$. We claim that</p>
-<p>$\im T = \span(Te_1,\ldots,Te_n).$</p>
+<p>$$\im T = \span(Te_1,\ldots,Te_n).$$</p>
 <p>To see this, choose any vector $v\in\im T$. Then $v=Tu$ for some $u\in U$. We may write $u$ as a linear combination of basis vectors</p>
-<p>$u = \sum_{i=1}^n a_i e_i,$</p>
+<p>$$u = \sum_{i=1}^n a_i e_i,$$</p>
 <p>where $a_i\in\F$ for $i\le i\le n$. Thus,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 v &amp;= Tu \\<br />
 &amp;= T\left(\sum_{i=1}^n a_i e_i\right) \\<br />
 &amp;= \sum_{i=1}^n a_i Te_i.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>We have expressed $v$ as a linear combination of the vectors $Te_1,\ldots,Te_n$. It follows that</p>
-<p>$\im T = \span(Te_1,\ldots,Te_n).$</p>
+<p>$$\im T = \span(Te_1,\ldots,Te_n).$$</p>
 <p>Since $\im T$ is spanned by a finite list of vectors, it is finite-dimensional.</p>
 </blockquote>
 <p>We now come to the main theorem of this post, which states that the dimension of the domain of a linear map is always equal to the sum of the dimensions of its kernel and image.</p>
 <blockquote>
 <p><strong>Rank-Nullity Theorem.</strong> Suppose $U$ is a finite-dimensional vector space, $V$ is any vector space, and $T:U\to V$ is a linear map. Then</p>
-<p>$\dim U = \dim\ker T + \dim\im T.$</p>
+<p>$$\dim U = \dim\ker T + \dim\im T.$$</p>
 <p><strong>Proof.</strong> Let $n=\dim\ker T$, and choose any basis $(e_1,\ldots,e_n)$ for $\ker T$. Then we can extend this list to a basis $(e_1,\ldots,e_n,f_1,\ldots,f_m)$ for $U$ by adding $m=\dim U - n$ linearly independent vectors. We argue that $\dim\im T=m$ by showing that $(Tf_1,\ldots,Tf_m)$ is a basis for $\im T$.</p>
 <p>Certainly $\im T = \span(Tf_1,\ldots,Tf_m)$ since $\span(Te_1,\ldots,Te_n)=\set{0}$ as all the $e_i$ are in the kernel of $T$. It suffices to show then that $(Tf_1,\ldots,Tf_m)$ is linearly independent.</p>
 <p>To this end, suppose we are given $a_i$ for $1\le i\le m$ such that</p>
-<p>$\sum_{i=1}^m a_i Tf_i = 0.$</p>
+<p>$$\sum_{i=1}^m a_i Tf_i = 0.$$</p>
 <p>Then since $T$ is a linear map, we have that</p>
-<p>$T\left(\sum_{i=1}^m a_i f_i\right) = 0.$</p>
+<p>$$T\left(\sum_{i=1}^m a_i f_i\right) = 0.$$</p>
 <p>It follows that</p>
-<p>$\sum_{i=1}^m a_i f_i\in\ker T,$</p>
+<p>$$\sum_{i=1}^m a_i f_i\in\ker T,$$</p>
 <p>and so we can rewrite this uniquely in terms of basis vectors for $\ker T$:</p>
-<p>$\sum_{i=1}^m a_i f_i = \sum_{i=1}^n b_i e_i, \tag{1}$</p>
+<p>$$\sum_{i=1}^m a_i f_i = \sum_{i=1}^n b_i e_i, \tag{1}$$</p>
 <p>where $b_i\in\F$ for $i\le 1\le n$. Since $(e_1,\ldots,e_n,f_1,\ldots,f_m)$ is a basis for $U$, it is linearly independent. Thus, equation $(1)$ implies that $a_i=0$ for $1\le i\le m$ and $b_i=0$ for $1\le i\le n$. Thus, $(Tf_1,\ldots,Tf_m)$ is linearly independent and so it is a basis for $\im T$. It follows that $\dim\im T = m$, and thus</p>
-<p>$\dim U = \dim\ker T + \dim\im T.$</p>
+<p>$$\dim U = \dim\ker T + \dim\im T.$$</p>
 </blockquote>
 <p>Essentially what this means is that with any linear map, every dimension of the domain is accounted for. By this, I really mean that every one-dimensional subspace is either squashed down to zero and thus in the kernel, or its linear dependence is preserved and it gets mapped to a unique one-dimensional subspace of the codomain.</p>
 <p>The reason this is called the rank-nullity theorem is because we make the following definitions:</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $T:U\to V$ denote a linear map. The <strong>rank</strong> of $T$ is</p>
-<p>$\text{rank }T = \dim\im T.$</p>
+<p>$$\text{rank }T = \dim\im T.$$</p>
 <p>Similarly, the <strong>nullity</strong> of $T$ is</p>
-<p>$\text{nullity }T = \dim\ker T.$</p>
+<p>$$\text{nullity }T = \dim\ker T.$$</p>
 </blockquote>
 <p>The rank-nullity theorem has an interesting implication.</p>
 <blockquote>
 <p><strong>Theorem.</strong> If $U$ and $V$ are finite-dimensional vector spaces with $\dim U=\dim V$ and $T:U\to V$ is a linear map. Then $T$ is injective if and only if it is surjective.</p>
 <p><strong>Proof.</strong> Suppose first that $T$ is injective, so that $\ker T=\set{0}$. Then $\dim\ker T = 0$, so from the rank-nullity theorem it follows that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \dim\im T &amp;= \dim U \\<br />
 &amp;= \dim V,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and thus $\im T = V$ because the only subspace of a finite-dimensional vector space whose dimension is the same as the parent space is the parent space itself. Thus, $T$ is surjective.</p>
 <p>Suppose next that $T$ is surjective. Then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 \dim\im T &amp;= \dim V \\<br />
 &amp;= \dim U.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>From the rank-nullity theorem, it follows that $\dim\ker T = 0$. The only subspace with dimension zero is the trivial subspace, and so $\ker T = \set{0}$. Thus, $T$ is injective.</p>
 </blockquote>
 <p>So for two finite-dimensional vector spaces of the same dimension, injective and surjective linear maps are actually the same thing. Remember that a function that is both injective and surjective is called bijective and has an inverse function. As you shall see, all kinds of interesting results follow from this observation.</p>
@@ -330,7 +330,7 @@ v &amp;= Tu \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

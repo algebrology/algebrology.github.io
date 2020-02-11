@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/simplicial-complexes-and-boundary-maps/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#linear-maps">Simplicial Complexes</a></li>
 <li><a href="#chain-groups">Chain Groups</a></li>
 <li><a href="#boundary-maps">Boundary Maps</a></li>
 </ol>
 <hr>
-<h3 id="simplicialcomplexesanamesimplicialcomplexes">Simplicial Complexes<a name="simplicial-complexes"></a></h3>
+<h3 id="simplicialcomplexesanamesimplicialcomplexes">Simplicial Complexes<a name="simplicial-complexes"></h3>
 <p>Let's define the types of topological spaces that are of interest to us in this post. The idea behind our definitions is that lots of topological spaces can be &quot;triangularized&quot; in such a way that they look sort of like a bunch of &quot;triangles&quot; glued together.</p>
 <blockquote>
 <p><strong>Definition.</strong> For any $n\in\N$, the <strong>standard $n$-simplex</strong> is the subset of $\R^{n+1}$ given by</p>
@@ -239,7 +239,7 @@ $e_4 = [v_0, v_3]$</p>
 $f=[v_0, v_1, v_2]$
 </div>
 </blockquote>
-<h3 id="chaingroupsanamechaingroups">Chain Groups<a name="chain-groups"></a></h3>
+<h3 id="chaingroupsanamechaingroups">Chain Groups<a name="chain-groups"></h3>
 <p>In an earlier post, I developed the machinery of free abelian groups. Now let's finally put that to use.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $X$ denote a simplicial complex. For each $n\in\N$, the <strong>group of simplicial $n$-chains</strong>, written $C_n(X)$, is the free abelian group with basis all $n$-simplices in $X$. The elements of $C_n(X)$ are called <strong>simplicial $n$-chains</strong> in $X$.</p>
@@ -259,7 +259,7 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br>
 <p>Its negative, $-\sigma = -e_2-e_1-e_0$ traces out the same path but in the opposite direction.</p>
 <p>Its double, $2\sigma = 2e_0 + 2e_1 + 2e_2$ traces out the same path twice in a row. That is, it loops around $f$ two times instead of just once.</p>
 <p>It might seem natural to view the chain $\sigma$ as the <em>boundary</em> of the simplex $f$. Let's work toward making this idea more formal.</p>
-<h3 id="boundarymapsanameboundarymaps">Boundary Maps<a name="boundary-maps"></a></h3>
+<h3 id="boundarymapsanameboundarymaps">Boundary Maps<a name="boundary-maps"></h3>
 <p>First lets define the boundary of a $1$-simplex, since it is the easiest to visualize. Since a $1$-simplex is essentially just a closed line segment, its boundary should consist solely of its endpoints, which are $0$-simplices. However, the directedness of the edges indicates that we should add/subtract the endpoints rather than take their union.</p>
 <p>Thus, we define the boundary of the $1$-simplex $[v_0, v_1]$ to be the $0$-chain $v_1-v_0$.</p>
 <p>Similarly, we would like the boundary of the $2$-simplex $[v_0, v_1, v_2]$ to be the sum of its edges $[v_0, v_1]$, $[v_1, v_2]$ and $[v_2, v_0]$. So we define the boundary of $[v_0, v_1, v_2]$ as</p>
@@ -299,7 +299,7 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br>
 <p>from the above theorem, and so $\beta\in\ker\partial_n$. It follows that $\im\partial_{n+1}\subseteq\ker\partial_n$.</p>
 </blockquote>
 <p>In addition to the kernel and image being subgroups, because we are working strictly with abelian groups this implies that they are normal subgroups. In particular, since  $\im\partial_{n+1}\subseteq\ker\partial_n$, it follows that $\im\partial_{n+1}$ is a normal subgroup of $\ker\partial_n$. This means that we can actually form quotient groups $\frac{{\ker\partial_n}}{\im\partial_{n+1}}$ for every natural number $n$. This will become extremely important when we talk about homology in the next post. In fact, this is the definition of a homology group! But its motivation will become more clear later.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -343,13 +343,13 @@ C_n &amp;= \set{0} \text{ for } n\ge 3.<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

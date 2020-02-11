@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/vector-spaces-1/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,7 +167,7 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#vector-spaces">Vector Spaces</a></li>
 <li><a href="#basic-properties">Basic Properties</a></li>
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
 <li><a href="#subspaces-and-sums">Subspaces and Sums</a></li>
 </ol>
 <hr>
-<h3 id="introductionanameintroduction">Introduction<a name="introduction"></a></h3>
+<h3 id="introductionanameintroduction">Introduction<a name="introduction"></h3>
 <p>It's almost ridiculous that I would expose you to free abelian groups before talking about vector spaces and linear algebra. Vector spaces and free abelian groups have a lot in common, but vector spaces are more familiar, more ubiquitous and easier to compute with.</p>
 <p>At their core, vector spaces are very simple and their definition will closely mimic that of groups and topological spaces. Recall that a group is a set with a binary operation, an identity and inverses for all its elements. A topological space is a set and a collection of &quot;open sets&quot; which include the set itself, the empty set, finite intersections and arbitrary unions of open sets. Vector spaces are defined in a similar manner.</p>
 <p>A vector space is a special kind of set containing elements called vectors, which can be added together and scaled in all the ways one would generally expect.</p>
@@ -217,7 +217,7 @@ For all $a,b,c\in\F$, we have that $a(b+c)=ab+ac$.</p>
 <p>There are other examples of fields besides these familiar ones. For example, the set $\Z_3$ of integers modulo $3$ is a field when considered with addition and multiplication modulo $3$. The tables below describe addition and multiplication in $\Z_3$, so you can check for yourself that the field axioms hold.</p>
 <p><img src="https://algebrology.github.io/content/images/2019/03/Z_3-tables.svg" alt="Z_3-tables"></p>
 <p>In fact, there are many more examples of finite fields. For any prime number $p$, the set $\Z_p$ of integers modulo $p$ forms a field. However, for our purposes we will usually only be interested in the fields $\R$ and $\C$.</p>
-<h3 id="vectorspacesanamevectorspaces">Vector Spaces<a name="vector-spaces"></a></h3>
+<h3 id="vectorspacesanamevectorspaces">Vector Spaces<a name="vector-spaces"></h3>
 <p>With all of this in mind, we can move forward with defining the concept of a vector space over a field. This definition ensures that vectors interact with scalars and other vectors in a reasonable way.</p>
 <blockquote>
 <p><strong>Definition.</strong> A <strong>vector space over a field</strong> $\F$ is a set $V$ of elements called <strong>vectors</strong>, together with two operations:</p>
@@ -248,7 +248,7 @@ For all $a\in\F$ and $\vec{u},\vec{v}\in V$, we have that $a(\vec{u}+\vec{v})=a\
 </div>
 </blockquote>
 <p>Although the choice of field is important when defining a particular vector space, it is often ignored when talking generally about vector spaces. This is because many results hold true for all vector spaces, regardless of the field over which they are defined. Whenever this information is important, it will be specified. Otherwise, we will often refer simply to a vector space $V$, with the understanding that some field $\F$ is lurking in the background.</p>
-<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></a></h3>
+<h3 id="basicpropertiesanamebasicproperties">Basic Properties<a name="basic-properties"></h3>
 <p>Now we will verify five basic facts that are true of all vector spaces. They may seem obvious, and many of them closely mimic analogous results we've already seen in group theory. Nonetheless, without proof we could not in good faith use them in our later arguments.</p>
 <p>The first important property is that a vector space only has one zero vector.</p>
 <blockquote>
@@ -320,7 +320,7 @@ a\vec{0} + a\vec{0} &amp;= a(\vec{0}+\vec{0}) &amp; \scriptstyle\textit{second d
 \end{align}</p>
 <p>Adding $-\vec{v}$ to both sides yields $-1\vec{v} = -\vec{v}$, the desired equality.</p>
 </blockquote>
-<h3 id="examplesanameexamples">Examples<a name="examples"></a></h3>
+<h3 id="examplesanameexamples">Examples<a name="examples"></h3>
 <p>We are now armed with a number of facts about abstract vector spaces and their interactions with scalars, but we have yet to exhibit a single actual example of a vector space. We will now examine some vector spaces that are important throughout the entire subject of linear algebra.</p>
 <blockquote>
 <p><strong>Example.</strong> It isn't too hard to see that the set $\{\0\}$, which contains only the zero vector, is a vector space over any field. We are forced to define vector addition and scalar multiplication in the only possible way, and $\0$ must act as both the zero vector and its own additive inverse. This is analogous to the trivial group in group theory, and is not a particularly interesting example.</p>
@@ -364,7 +364,7 @@ p(x) &amp;= \sum_{i=0}^n a_ix^i \\<br>
 <p>$$(a\p)(x)=a\p(x)$$</p>
 <p>for all $x\in\F$. It is clear that the zero polynomial must act as the zero vector. Again, checking that $\mathscr{P}(\F)$ is actually a vector space with these definitions is easy but fairly time consuming, so I won't do it here.</p>
 </blockquote>
-<h3 id="subspacesandsumsanamesubspacesandsums">Subspaces and Sums<a name="subspaces-and-sums"></a></h3>
+<h3 id="subspacesandsumsanamesubspacesandsums">Subspaces and Sums<a name="subspaces-and-sums"></h3>
 <p>It often happens that a vector space contains a subset which also acts as a vector space under the same operations of addition and scalar multiplication. For instance, the vector space $\{\0\}$ is a (fairly boring) subset of any vector space. This phenomenon is so important that we give it a name.</p>
 <blockquote>
 <p><strong>Definition.</strong> A subset $U$ of a vector space $V$ is a <strong>subspace</strong> of $V$ if it is itself a vector space under the same operations of vector addition and scalar multiplication.</p>
@@ -491,7 +491,7 @@ U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br>
 <p>$$(x,y,z)=(x,0,0)+(0,y,0)+(0,0,z),$$</p>
 <p>which is a sum of vectors in $U_1$, $U_2$ and $U_3$, respectively. This sum has a particularly nice property — namely that every vector in $\R^3$ has a <em>unique</em> representation as a sum of vectors in $U_1$, $U_2$ and $U_3$. Put another way, this sum is special because we are forced to express $(x,y,z)$ as above — there is no other way to break it down as such a sum. This is really why we choose to express points in $\R^3$ using these coordinates. In fact, this property of sums is so important that it has a name. But I will discuss direct sums next time, since it's very late and I'm a sleepyhead.</p>
 </blockquote>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -535,13 +535,13 @@ U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br>
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

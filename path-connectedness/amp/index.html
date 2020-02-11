@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -118,20 +118,20 @@
 <blockquote>
 <p><strong>Gluing Lemma.</strong> Let $X$ and $Y$ denote topological spaces with closed subsets $U,V\subseteq X$ for which $X=U\cup V$. If $f_1:U\to Y$ and $f_2:V\to Y$ are continuous functions which agree on their intersection, i.e. $f_1\restriction{U\cap V}=f_2\restriction{U\cap V}$, then there exists a unique continuous function $f:X\to Y$ with $f\restriction{U}=f_1$ and $f\restriction{V}=f_2$.</p>
 <p><strong>Proof.</strong> Showing that such a function is unique is fairly straightforward. We simply define $f:X\to Y$ by</p>
-<p>$f(x) =<br />
+<p>$$f(x) =<br />
 \begin{cases}<br />
 f_1(x) &amp; \text{if } x\in U, \\<br />
 f_2(x) &amp; \text{if } x\in V.<br />
-\end{cases}$</p>
+\end{cases}$$</p>
 <p>This function is clearly well defined because $f_1$ and $f_2$ agree on their intersection.</p>
 <p>We will argue next that $f$ is continuous by demonstrating that the preimage of any open set in $Y$ is open in $X$. To this end, suppose $W\subseteq Y$ is open. Then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f^{-1}[W] &amp;= X \cap f^{-1}[W] \\<br />
 &amp;= (U \cup V) \cap f^{-1}[W] \\<br />
 &amp;= (U \cap f^{-1}[W]) \cup (V \cap f^{-1}[W]) \\<br />
 &amp;= (U \cap f_1^{-1}[W]) \cup (V \cap f_2^{-1}[W]) \\<br />
 &amp;= f_1^{-1}[W] \cup f_2^{-1}[W].<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Since $f_1$ and $f_2$ are continuous, certainly $f_1^{-1}[W]$ and $f_2^{-1}[W]$ are open in $U$ and $V$, respectively. Thus $f^{-1}[W]$ is open in $U\cup V = X$ since it is the union of open sets. It follows that $f$ is continuous, as desired.</p>
 </blockquote>
 <h3 id="pathconnectedspacesanamepathconnectedspaces">Path Connected Spaces<a name="path-connected-spaces"></a></h3>
@@ -152,19 +152,19 @@ f^{-1}[W] &amp;= X \cap f^{-1}[W] \\<br />
 <p><strong>Theorem.</strong> Every path connected topological space is connected.</p>
 <p><strong>Proof.</strong> We give a proof by contradiction. Suppose a space $X$ is path connected but not connected. Then there exists a separation of $X$ by nonempty disjoint open sets $U,V\subseteq X$. Choose points $u\in U$ and $v\in V$. Since $X$ is path connected, there exists a path $p:[0,1]\to X$ with $p(0)=u$ and $p(1)=v$. Define $U'=U\cap p([0,1])$ and $V'=V\cap p([0,1])$. We will show that $U'$ and $V'$ form a separation of $p([0,1])$.</p>
 <p>First, we note that $u\in U'$ because $u\in U$ and $p(0)=u$ so $u\in p([0,1])$. Similarly, $v\in V'$ because $v\in V$ and $p(1)=v$ so $v\in p([0,1])$. Thus, $U'$ and $V'$ are nonempty. Next, clearly</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 U' \cup V' &amp;= \big(U \cap p([0, 1])\big) \cup \big(V \cap p([0, 1])\big) \\<br />
 &amp;= (U \cup V) \cap p([0,1]) \\<br />
 &amp;= X \cap p([0,1]) \\<br />
 &amp;= p([0,1]).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>A similar computation yields</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 U' \cap V' &amp;= \big(U \cap p([0, 1])\big) \cap \big(V \cap p([0, 1])\big) \\<br />
 &amp;= (U \cap V) \cap p([0,1]) \\<br />
 &amp;= \varnothing \cap p([0,1]) \\<br />
 &amp;= \varnothing.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Finally, $U'$ and $V'$ are both open in the subspace topology on $p([0,1])$ because they are intersections of $p([0,1])$ with open sets in $X$ ($U$ and $V$, respectively). It follows that $U'$ and $V'$ separate $p([0,1])$ and so it is disconnected. However, it is the continuous image of the connected set $[0,1]$, so this is a contradiction.</p>
 </blockquote>
 <p>So path connectedness implies connectedness. But as we shall see later on, the converse does not necessarily hold. So the two notions are actually different. It takes more to be a path connected space than a connected one!</p>
@@ -173,17 +173,17 @@ U' \cap V' &amp;= \big(U \cap p([0, 1])\big) \cap \big(V \cap p([0, 1])\big) \\<
 <p><strong>Theorem.</strong> If $f:X\to Y$ is a continuous function and $X$ is path connected, then $f[X]\subseteq Y$ is also path connected.</p>
 <p><strong>Proof.</strong> Choose points $a,b\in f[X]$ and pick $a'\in f^{-1}[\{a\}]$ and $b'\in f^{-1}[\{b\}]$. Since $X$ is path connected, there exists some path $p:[0,1]\to X$ from $a'$ to $b'$. We argue that $f\circ p:[0,1]\to Y$ is a path in $Y$ from $a$ to $b$.</p>
 <p>Certainly $f\circ p$ is continuous since it is the composition of continuous maps. Furthermore,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 (f\circ p)(0) &amp;= f(p(0)) \\<br />
 &amp;= f(a') \\<br />
 &amp;= a,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 (f\circ p)(1) &amp;= f(p(1)) \\<br />
 &amp;= f(b') \\<br />
 &amp;= b.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Thus $f\circ p$ is a path from $a$ to $b$, completing the proof.</p>
 </blockquote>
 <p>We saw earlier that disconnected spaces could be decomposed into maximal connected subsets. There is also a way of doing this for path disconnected spaces as well.</p>
@@ -192,11 +192,11 @@ U' \cap V' &amp;= \big(U \cap p([0, 1])\big) \cap \big(V \cap p([0, 1])\big) \\<
 <p><strong>Proof.</strong> We first show reflexivity. For any point $a\in X$, the constant map $p:[0,1]\to X$ given by $p(t)=a$ is certainly a path from $a$ to itself, so $a\sim a$.</p>
 <p>Next we show symmetry. If $a\sim b$ then there exists a path $p:[0,1]\to X$ with $p(0)=a$ and $p(1)=b$. Define $p^{-}:[0,1]\to X$ by $p^{-}(t)=p(1-t)$. We may think of $p^{-}$ as tracing out $p$ in reverse. That $p^{-}$ is well defined follows because $1-t\in [0,1]$ whenever $t\in [0,1]$, so the images of $p$ and $p^{-}$ are actually equal. Next, $p^{-}$ is continuous since it is the composition of the continuous functions $p$ and $1-t$. Finally, $p^{-}(0)=p(1)=b$ and $p^{-}(1)=p(0)=a$, so $p^{-}$ is a path from $b$ to $a$. Thus, $b\sim a$.</p>
 <p>Lastly, we show transitivity. If $a\sim b$ and $b\sim c$ then there exist paths $p_1:[0,1]\to X$ with $p_1(0)=a$ and $p_1(1)=b$ and $p_2:[0,1]\to X$ with $p_2(0)=b$ and $p_2(1)=c$. Define $p:[0,1]\to X$ by</p>
-<p>$p(t) =<br />
+<p>$$p(t) =<br />
 \begin{cases}<br />
 p_1(2t) &amp; \text{if } t\in [0,\frac{1}{2}], \\<br />
 p_2(2t-1) &amp; \text{if } t\in [\frac{1}{2},1].<br />
-\end{cases}$</p>
+\end{cases}$$</p>
 <p>We may think of $p$ as a path which traces out $p_1$ and then $p_2$ at twice the original speed. That $p$ is well defined follows from the fact that $p_1(1)=p_2(0)=b$. By the gluing lemma, this also implies that $p$ is continuous. Furthermore, $p(0)=p_1(0)=a$ and $p(1)=p_2(1)=c$, so $p$ is a path from $a$ to $c$. Thus, $a\sim c$, completing the proof.</p>
 </blockquote>
 <p>The above result gives us our maximal path-connected subsets:</p>
@@ -217,15 +217,15 @@ p_2(2t-1) &amp; \text{if } t\in [\frac{1}{2},1].<br />
 <p>We are now ready to give an example of a space that is connected but not path connected. Warning: it's pretty gross.</p>
 <blockquote>
 <p><strong>Example (The Topologist's Sine Curve).</strong> Define</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 A &amp;= \Big\{\Big(x,\sin\big(\tfrac{1}{x}\big)\Big)\in\R^2\mid x\in (0,1)\Big\}, \\<br />
 B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>$A$ is a sort of sine curve which oscillates more and more rapidly as you approach the origin from the right, and which does not include its endpoints. $B$ is just a vertical line. The <strong>topologist's sine curve</strong> is their union, $X=A\cup B$.</p>
 <p></p>
 <p>The blue curve in the above graph is the set $A$ and the red curve (which may be too narrow on your display to see clearly) is the $B$. The line $B$ is sort of the natural completion of $A$, in the sense that $A$ never touches is but really looks like it ought to. More formally, every point of $B$ is a limit point of $A$.</p>
 <p>To show this, choose a point $(0,y)\in B$. Certainly $y=\sin\theta$ for some $\theta\in [0,2\pi)$, and thus $y=\sin(\theta+2\pi n)$ for every $n\in \N$. If $x_n=\frac{1}{\theta+2\pi n}$ then $y=\sin\big(\tfrac{1}{x_n}\big)$ for every $n\in \N$. Furthermore, it is clear that $\lim_{n\to\infty}x_n = 0$. Thus,</p>
-<p>$\lim_{x_n\to 0}\Big(x_n,\sin\big(\tfrac{1}{x_n}\big)\Big) = (0,y).$</p>
+<p>$$\lim_{x_n\to 0}\Big(x_n,\sin\big(\tfrac{1}{x_n}\big)\Big) = (0,y).$$</p>
 <p>Since the sequence $\{x_n\}_{n\in\N}$ is not eventually constant, every point $y\in B$ is a limit point of $A$. Since $A$ is connected (it is the continuous image of $(0,1)$), it follows from the lemma at the beginning of this post that the topologist's sine curve $X$ is connected, since it can be obtained from a connected set plus by adding limit points.</p>
 <p>Showing that $X$ is not path connected is a bit trickier. We will proceed by contradiction, supposing that there exists a path $p:[0,1]\to X$ with $p(0)=(0,0)\in B$ and $p(1)\in A$. Since $B$ is closed in $\R^2$, it follows from the continuity of $p$ that $p^{-1}[B]$ is closed in $[0,1]$. Thus, $p^{-1}[B]$ contains a largest element, which we shall denote by $b$. This implies that $p\restriction{[b,1]}:[b,1]\to X$ is continuous with $p\restriction{[b,1]}(b)\in B$. and $p\restriction{[b,1]}(t)\in X-B = A$ for every $t&gt;b$.</p>
 <p>We define $p':[0,1]\to X$ by $p'(t)=p\big((1-b)t+b\big)$. Clearly $p'(0)=p(b)$ and $p'(1)=p(1)$. Also, $p'$ is continuous since it is the composition of continuous functions. Thus, $p'$ is a path in $X$ from $p(b)$ to $p(1)$ with $p'([0,1])=p([b,1])$. Furthermore, $p'(0)\in B$ while $p'(t)\in A$ for every $t\in (0,1]$.</p>
@@ -240,7 +240,7 @@ B &amp;= \Big\{(0,y)\in\R^2\mid y\in [-1,1]\Big\}.<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

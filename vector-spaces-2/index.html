@@ -9,8 +9,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=2b1a7f03b5" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=2b1a7f03b5" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=7d073189ac" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=7d073189ac" /></noscript>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/vector-spaces-2/" />
@@ -45,8 +45,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -68,7 +68,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
 
 
         <div class="content">
-            <ol>
+            <!--kg-card-begin: markdown--><ol>
 <li><a href="#direct-sums">Direct Sums</a></li>
 <li><a href="#span-and-linear-combinations">Span and Linear Combinations</a></li>
 <li><a href="#linear-independence">Linear Independence</a></li>
 </ol>
 <hr>
-<h3 id="directsumsanamedirectsums">Direct Sums<a name="direct-sums"></a></h3>
+<h3 id="directsumsanamedirectsums">Direct Sums<a name="direct-sums"></h3>
 <p>I left off <a href="/vector-spaces-1">last time</a> with an example of a sum of subspaces with a rather important property. Namely, every vector in the sum had a unique representation as a sum of vectors in the component subspaces. Not all sums have this property, but it is so important that it deserves special consideration.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $U$ and $W$ be subspaces of a vector space $V$ for which $V=U+W$. This sum is a <strong>direct sum</strong> if for every $\v\in V$, the representation</p>
@@ -246,7 +246,7 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br>
 <p>where $\u\in U$ and $\w\in W$. Then $\u=-\w$ and so $-\w\in U$, which implies that $\w\in U$. Since $\w\in U$ and $w\in W$, it follows that $\w\in U\cap W$. By hypothesis, this means that $\w=\0$ and thus $\u=\0$. We have shown that the only way to decompose $\0$ in the form above is as the sum of zero vectors. Thus, it follows from the above proposition that $V=U\oplus W$, completing the proof.</p>
 </blockquote>
 <p>This result tells us that the sum of two subspaces is direct whenever their intersection is trivial. Unfortunately, this result does not generalize to sums of three or more subspaces. In fact, in the case of three or more subspaces, even pairwise intersections being trivial is not enough to guarantee that a sum is direct.</p>
-<h3 id="spanandlinearcombinationsanamespanandlinearcombinations">Span and Linear Combinations<a name="span-and-linear-combinations"></a></h3>
+<h3 id="spanandlinearcombinationsanamespanandlinearcombinations">Span and Linear Combinations<a name="span-and-linear-combinations"></h3>
 <p>Given a vector space $V$ and a vector $\v\in V$, what is the smallest subspace of $V$ containing $\v$? It's not a trick question — the answer is actually somewhat obvious. It's the set $U=\set{a\v\in V\mid a\in\F}$ of all scalar multiples of $\v$. It is certainly clear that $U$ satisfies the criteria of a subspace. Furthermore, the only proper subspace of $U$ is $\set{\0}$, so it is certainly the smallest subspace of $V$ which contains $\v$. This is a very important idea, and it leads us to our next definition.</p>
 <blockquote>
 <p><strong>Definition.</strong> If $V$ is a vector space with $\v\in V$, then the <strong>span</strong> of $\v$ is the subspace</p>
@@ -309,7 +309,7 @@ W &amp;= \set{(0,y,z)\in\R^3\mid y,x\in\R}<br>
 &amp;= \span\big((1,2),(2,3),(3,4),(4,5)\big),<br>
 \end{align}$$</p>
 <p>because any vector in $\R^2$ can be expressed as a linear combination of vectors in each list. In fact, we can always take a list which spans a vector space $V$ and add to it any vector in $V$, resulting in a new list which also spans $V$. This means that the length of a spanning list is certainly not unique, and so we cannot define dimension in this way.</p>
-<h3 id="linearindependenceanamelinearindependence">Linear Independence<a name="linear-independence"></a></h3>
+<h3 id="linearindependenceanamelinearindependence">Linear Independence<a name="linear-independence"></h3>
 <p>Intuition tells us that we are on the correct track, though. It should be somewhat obvious that the vector space $\R^2$ cannot possibly be spanned by any list containing <em>less than</em> two vectors. If this is truly the case, it should make sense to define the dimension of $\R^2$ to be $two$. We will therefore work toward figuring out the minimum length of a spanning list of vectors. The important concept of linear independence, which we will now define, will help us with this.</p>
 <blockquote>
 <p><strong>Definition.</strong> A list $(\v_1,\v_2,\ldots,\v_n)$ of vectors in a vector space $V$ is <strong>linearly independent</strong> if the only choices of $a_i\in F$ which satisfy</p>
@@ -393,7 +393,7 @@ Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector
 </blockquote>
 <p>Algorithmic proofs like the above are common in linear algebra. Linear algebra has applications in almost every field, partially because it lends itself so nicely to computation.</p>
 <p>I will end here for now, and next time I will talk about bases for vector spaces.</p>
-
+<!--kg-card-end: markdown-->
         </div>
 
 
@@ -437,13 +437,13 @@ Because the list $L_{k-1,2}$ from the previous step spans $V$, adding any vector
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/browser.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/util.js?v=2b1a7f03b5"></script>
-    <script src="/assets/main/js/main.js?v=2b1a7f03b5"></script>
+    <script src="/assets/main/js/jquery.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/browser.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/util.js?v=7d073189ac"></script>
+    <script src="/assets/main/js/main.js?v=7d073189ac"></script>
 
     
 

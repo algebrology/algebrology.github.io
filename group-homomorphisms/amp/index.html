@@ -40,8 +40,8 @@
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
-            "width": 60,
-            "height": 60
+            "width": 48,
+            "height": 48
         }
     },
     "author": {
@@ -63,7 +63,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 2.14" />
+    <meta name="generator" content="Ghost 3.5" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
@@ -133,11 +133,11 @@
 <blockquote>
 <p><strong>Example.</strong> The group $(\R, +)$ of real numbers under addition and the group $(\R^+, \cdot)$ of positive real numbers under multiplication are isomorphic. We can establish this by exhibiting an isomorphism between them.</p>
 <p>Let's define the function $f:\R^+\to\R$ by $f(x)=\log x$. We will argue that $f$ is an isomorphism. First, it is clearly a homomorphism because from the basic properties of the logarithm,</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f(x) + f(y) &amp;= \log x +\log y \\<br />
 &amp;= \log(x \cdot y) \\<br />
 &amp;= f(x \cdot y).<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>In addition, we know that $f$ is bijective because it has an inverse function, the exponential map $f^{-1}:\R\to\R^+$ given explicitly by $f^{-1}(x)=e^x$.</p>
 <p>What does it really mean when we say that these groups are isomorphic? It isn't just some meaningless abstract statement that these groups are "essentially" the same. It actually means that we can do algebra in one and then easily transfer it over to the other group! That is, we can do multiplication in $\R^+$ simply by doing the corresponding addition in $\R$ and then applying the logarithm. This is the principle that slide rules are based on. Addition is easier than multiplication, so we add our numbers by hand and then use the magic slide rule isomorphism machine to take us between groups and into the world of multiplication.</p>
 </blockquote>
@@ -145,18 +145,18 @@ f(x) + f(y) &amp;= \log x +\log y \\<br />
 <p>It may be enlightening to see an example of a homomorphism that is not an isomorphism, but is still surprisingly structure-preserving.</p>
 <blockquote>
 <p><strong>Example.</strong> Consider the group $\Z$ of integers under addition and the group $\{-1,1\}$ under multiplication. In $\{-1,1\}$ we have that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 1\cdot 1 &amp;= 1, \\<br />
 -1\cdot 1 &amp;= -1. \\<br />
 1\cdot -1 &amp;= -1, \\<br />
 -1\cdot -1 &amp;= 1,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>So clearly the identity element in $\{-1,1\}$ is $1$ and every element is its own inverse. Let's construct a function $f:\Z\to\{-1,1\}$ defined by</p>
-<p>$f(x) =<br />
+<p>$$f(x) =<br />
 \begin{cases}<br />
 1 &amp; \text{if } x\in 2\Z, \\<br />
 -1 &amp; \text{if } x\in 2\Z+1.<br />
-\end{cases}$</p>
+\end{cases}$$</p>
 <p>(Here $2\Z$ is the set of even integers and $2\Z+1$ is the set of odd integers. My reason for denoting them this way will become apparent once we talk about cosets in a later post.)</p>
 <p>Let's show that this function is a homomorphism. Choose $m,n\in\Z$. There are three possible cases:</p>
 <ol>
@@ -164,9 +164,9 @@ f(x) + f(y) &amp;= \log x +\log y \\<br />
 <li>Both $m$ and $n$ are odd. That is, $m,n\in 2\Z+1$.</li>
 <li>Either $m$ is even and $n$ is odd or vice versa. Because both groups we're considering are abelian, it suffices to consider only one of these cases, $m\in 2\Z$ and $n\in 2\Z+1$.</li>
 </ol>
-<p>We examine case 1 first. Suppose $m,n\in 2\Z$, so that $f(m)=f(n)=1$. Then $m=2k_1$ and $n=2k_2$ for some $k_1,k_2\in\Z$. This means that $m+n=2k_1+2k_2=2(k_1+k_2)\in 2\Z.$ Thus, $f(m)f(n)=1\cdot 1=1=f(m+n).$</p>
-<p>Next, we look at case 2. Suppose that $m,n\in 2\Z+1$, so that $f(m)=f(n)=-1$. Then $m=2k_1+1$ and $n=2k_2+1$ for some $k_1,k_2\in\Z$. This means that $m+n=(2k_1+1)+(2k_2+1)=2k_1+2k_2+2=2(k_1+k_2+1)\in 2\Z.$ Thus, $f(m)f(n)=-1\cdot -1=1=f(m+n).$</p>
-<p>Lastly, we examine case 3. Suppose that $m\in 2\Z$ but $n\in 2\Z+1$, so that $f(m)=1$ and $f(n)=-1$. Then $m=2k_1$ and $n=2k_2+1$ for some $k_1,k_2\in\Z$. This means that $m+n=2k_1+2k_2+1=2(k_1+k_2)+1\in 2\Z+1.$ Thus, $f(m)f(n)=1\cdot -1=-1=f(m+n).$</p>
+<p>We examine case 1 first. Suppose $m,n\in 2\Z$, so that $f(m)=f(n)=1$. Then $m=2k_1$ and $n=2k_2$ for some $k_1,k_2\in\Z$. This means that $$m+n=2k_1+2k_2=2(k_1+k_2)\in 2\Z.$$ Thus, $$f(m)f(n)=1\cdot 1=1=f(m+n).$$</p>
+<p>Next, we look at case 2. Suppose that $m,n\in 2\Z+1$, so that $f(m)=f(n)=-1$. Then $m=2k_1+1$ and $n=2k_2+1$ for some $k_1,k_2\in\Z$. This means that $$m+n=(2k_1+1)+(2k_2+1)=2k_1+2k_2+2=2(k_1+k_2+1)\in 2\Z.$$ Thus, $$f(m)f(n)=-1\cdot -1=1=f(m+n).$$</p>
+<p>Lastly, we examine case 3. Suppose that $m\in 2\Z$ but $n\in 2\Z+1$, so that $f(m)=1$ and $f(n)=-1$. Then $m=2k_1$ and $n=2k_2+1$ for some $k_1,k_2\in\Z$. This means that $$m+n=2k_1+2k_2+1=2(k_1+k_2)+1\in 2\Z+1.$$ Thus, $$f(m)f(n)=1\cdot -1=-1=f(m+n).$$</p>
 <p>Since we have now checked that $f(m)f(n)=f(m+n)$ for all $m,n\in\Z$, it follows that $f$ is a homomorphism.</p>
 <p>That was really us showing what we already know — that the sum of two even numbers is even, the sum of two odd numbers is also even, and the sum of an even and an odd number is odd. The property of being even or odd is sometimes called <strong>parity</strong>, and this homomorphism preseves the parity of integers, as well as what happens to the parity of integers after you add them together. Actually, parity is basically all that is preserved by this homomorphism, but it's still a nice example of how homomorphisms can preserve important aspects of a group's structure.</p>
 </blockquote>
@@ -174,30 +174,30 @@ f(x) + f(y) &amp;= \log x +\log y \\<br />
 <blockquote>
 <p><strong>Theorem.</strong> If $f:G\to H$ is a group homomorphism then $f(e)=e$.</p>
 <p><strong>Proof.</strong> Since $f$ is a homomorphism, we have that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f(e)f(e) &amp;= f(ee) \\<br />
 &amp;= f(e) \\<br />
 &amp;= f(e)e.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Thus, cancellation on the left yields the equality $f(e)=e$.</p>
 </blockquote>
 <p>The next property is just as straightforward — homomorphisms always map inverses to inverses.</p>
 <blockquote>
 <p><strong>Theorem.</strong> If $f:G\to H$ is a group homomorphism then $f(x^{-1})=f(x)^{-1}$ for every $x\in G$.</p>
 <p><strong>Proof.</strong> Since $f$ is a homomorphism, we have that</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f(x)f(x^{-1}) &amp;= f(xx^{-1}) \\<br />
 &amp;= f(e) \\<br />
 &amp;= e.<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>Multiplication on the left by $f(x)^{-1}$ on both sides yields $f(x^{-1})=f(x)^{-1}$, as desired.</p>
 </blockquote>
 <p>Both of these properties only serve to reinforce my claim that homomorphisms are structure-preserving maps. I'll shut my smug face now and define two of the most important things ever.</p>
 <blockquote>
-<p><strong>Definition.</strong> The <strong>kernel</strong> of a group homomorphism $f:G\to H$ is the set $\ker f=\{x\in G\mid f(x)=e\}.$ That is, it is the set of elements in $G$ that get mapped to the identity in $H$.</p>
+<p><strong>Definition.</strong> The <strong>kernel</strong> of a group homomorphism $f:G\to H$ is the set $$\ker f=\{x\in G\mid f(x)=e\}.$$ That is, it is the set of elements in $G$ that get mapped to the identity in $H$.</p>
 </blockquote>
 <blockquote>
-<p><strong>Definition.</strong> The <strong>image</strong> of a group homomorphism $f:G\to H$ is the set $\im f=f[G]=\{f(x)\in H\mid x\in G\}.$ That is, it is the set of elements in $H$ that get mapped to by some element in $G$.</p>
+<p><strong>Definition.</strong> The <strong>image</strong> of a group homomorphism $f:G\to H$ is the set $$\im f=f[G]=\{f(x)\in H\mid x\in G\}.$$ That is, it is the set of elements in $H$ that get mapped to by some element in $G$.</p>
 </blockquote>
 <p>If $f:G\to H$ is a group homomorphism and $f$ is surjective, it should be clear that $H=\im f$. Similarly, if $f$ is injective then $\ker f = \{e\}$. These facts, along with the next two theorems, are crucial to everything we will do with groups in the future.</p>
 <blockquote>
@@ -205,12 +205,12 @@ f(x)f(x^{-1}) &amp;= f(xx^{-1}) \\<br />
 <p><strong>Proof.</strong> From the lemma at the beginning of this post, it suffices to show that $\ker f$ is nonempty and that $ab^{-1}\in \ker f$ whenever $a,b\in\ker f$.</p>
 <p>The fact that $\ker f$ is nonempty follows immediately from the property that $f(e)=e$, so certainly $e\in\ker f$.</p>
 <p>Next, suppose that $a,b\in\ker f$. That is, $f(a)=f(b)=e$. Then</p>
-<p>$\begin{align}<br />
+<p>$$\begin{align}<br />
 f(ab^{-1}) &amp;= f(a)f(b^{-1}) \\<br />
 &amp;= f(a)f(b)^{-1}) \\<br />
 &amp;= ee^{-1} \\<br />
 &amp;= e,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>and thus $ab^{-1}\in\ker f$ by definition. It follows that $\ker f$ is a subgroup of $G$.</p>
 </blockquote>
 <p>Along similar lines:</p>
@@ -219,11 +219,11 @@ f(ab^{-1}) &amp;= f(a)f(b^{-1}) \\<br />
 <p><strong>Proof.</strong> We will employ the same technique as in the previous proof.</p>
 <p>Certainly $\im f$ is nonempty because $e\in G$ and thus $f(e)=e\in\im g$.</p>
 <p>Next, suppose that $a,b\in\in f$. That is, $a=f(x)$ and $b=f(y)$ for some $x,y\in G$. Certainly $y^{-1}\in G$ and thus $xy^{-1}\in G$ as well, so<br />
-$\begin{align}<br />
+$$\begin{align}<br />
 ab^{-1} &amp;= f(x)f(y)^{-1} \\<br />
 &amp;= f(xy^{-1}) \\<br />
 &amp;\in \im f,<br />
-\end{align}$</p>
+\end{align}$$</p>
 <p>as desired.</p>
 </blockquote>
 <p>In my next few posts, you will begin to understand why it's such a big deal that the kernal and image of a homomorphism are subgroups.</p>
@@ -234,7 +234,7 @@ ab^{-1} &amp;= f(x)f(y)^{-1} \\<br />
         </article>
     </main>
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2019</section>
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

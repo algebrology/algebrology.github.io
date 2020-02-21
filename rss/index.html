@@ -1,4 +1,175 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 14 Feb 2020 05:35:21 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Smooth Manifolds]]></title><description><![CDATA[Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.]]></description><link>https://algebrology.github.io/smooth-manifolds/</link><guid isPermaLink="false">5e3f2249d75ec900eff3ba11</guid><category><![CDATA[differential geometry]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Mon, 10 Feb 2020 19:43:54 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Disclaimer: This post requires a basic grasp of differential calculus. You don't really need to know how to calculate them, but you do need to be comfortable with the idea of derivatives and partial derivatives, and in particular we will need that the composition of two differentiable maps is differentiable (via the chain rule).</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 21 Feb 2020 06:43:07 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tangent Spaces and the Pushforward]]></title><description><![CDATA[<!--kg-card-begin: markdown--><ol>
+<li><a href="#tangent-spaces">Tangent Spaces</a></li>
+<li><a href="#the-pushforward">The Pushforward</a></li>
+</ol>
+<p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/tangent-lines-1.svg" alt="tangent-lines-1"></p>
+<p>In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/tangent-plane.svg" alt="tangent-plane"></p>
+<p>In differential geometry, the analogous concept is the <em>tangent space</em> to a smooth manifold at</p>]]></description><link>https://algebrology.github.io/tangent-spaces-and-the-pushforward/</link><guid isPermaLink="false">5e44ba67361d9900498fcea2</guid><category><![CDATA[differential geometry]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Thu, 13 Feb 2020 03:08:16 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ol>
+<li><a href="#tangent-spaces">Tangent Spaces</a></li>
+<li><a href="#the-pushforward">The Pushforward</a></li>
+</ol>
+<p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/tangent-lines-1.svg" alt="tangent-lines-1"></p>
+<p>In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/tangent-plane.svg" alt="tangent-plane"></p>
+<p>In differential geometry, the analogous concept is the <em>tangent space</em> to a smooth manifold at a point, but there's some subtlety to this concept. Notice how the curves and surface in the examples above are sitting in a higher-dimensional space in order to make sense of their tangent lines/plane.</p>
+<p>The circle is a one-dimensional manifold, yet we've constructed its tangent line as an extrinsic object which lives outside the circle, and in doing so we have embedded the one-dimensional circle into a two-dimensional space. Similarly, in order to construct the tangent plane to the sphere, we've embedded it in three-dimensional space, although the sphere is a two-dimensional manifold.</p>
+<p>This is not a huge issue for these familiar objects. But since we want to use manifolds to describe things like higher-dimensional surfaces and spacetime in general relativity, we need some way to talk about the tangent space intrinsically, without embedding our manifold in a higher dimensional space. After all, it wouldn't really make sense to think about spacetime as sitting inside of some higher-dimensional manifold.</p>
+<p>Our construction of tangent spaces will follow this intrinsic approach, and has the benefit of being isomorphic to the parallel extrinsic approach (as we shall see later when we discuss the Whitney Embedding Theorem). Additionally, it is advantageous because of its simplicity and ease of calculation. So let's jump right into it!</p>
+<h3 id="tangentspacesanametangentspaces">Tangent Spaces<a name="tangent-spaces"></a></h3>
+<p>The fundamental concept in defining tangent spaces is that of a smooth curve $\gamma:\R\to M$. Of course, we haven't actually defined what it means for such a curve to be smooth yet, but we can easily borrow from our experience in defining smooth functions to accomplish this.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth manifold $M$, a curve $\gamma:\R\to M$ is a <strong>smooth curve</strong> if for every point $p\in \gamma[\R]\subseteq M$ there is a chart $(U, x)$ whose domain contains $p$ and for which $x\circ\gamma$ is smooth in the sense of ordinary differential calculus.</p>
+</blockquote>
+<p><img src="https://algebrology.github.io/content/images/2020/02/smooth-curve.svg" alt="smooth-curve"></p>
+<p>Of course, we need to justify that this is a well-defined notion, since we defined it in terms of charts. But since chart transition maps on a smooth manifold are smooth, the proof of this fact looks almost identical to the analogous arguments from the last post, so I will not give it here.</p>
+<p>In regular multivariable calculus, we have the idea of vectors based at a point and gradients of functions, and we form directional derivatives by combining vectors and gradients using an inner product. In differential geometry, there is no separating the concepts. Vectors <em>are</em> directional derivatives, plain and simple.</p>
+<p>The key idea in defining tangent vectors is the following: We can use smooth curves as measurement devices to determine the rate at which a smooth function is changing as we move along our manifold. Here's how.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold, $\gamma:\R\to M$ a smooth curve and $(U, x)$ a chart whose domain contains the point $p\in\gamma[\R]$. The <strong>directional derivative</strong> along the curve $\gamma$ at the point $p$ is the map $$V_{\gamma, p}:C^\infty(M)\to\R$$ defined by $$V_{\gamma, p} = (f\circ\gamma)'\at{\gamma^{-1}(p)}$$ for any smooth function $f\in C^\infty(M)$.</p>
+</blockquote>
+<p>To clarify, this is just the regular derivative of the function $f\circ\gamma:\R\to\R$ taken at the point $\gamma^{-1}(p)$, which is of course a real number.</p>
+<p>So these directional derivatives are maps which act on smooth functions and spit out real numbers. To see how these directional derivatives behave as measurement devices, as I claimed above, it is useful to look at level sets of the function $f$. A level set is just the set of points in our manifold $M$ which our function $f$ maps to the same value. To continue my analogy from last post, if $f$ describes the temperature of points on the manifold, a level set of $f$ is a set of points where the temperature is the same. Some level set of such a function might look something like this:</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/level-curves.svg" alt="level-curves"></p>
+<p>Since the values of our function are constant along level sets, we would expect the directional derivative along these level sets of our function to be zero. To be more precise, suppose $f:M\to\R$ is a smooth function and $L=\{p\in M\mid f(p) = k\}$ is a level set of $f$ where $k\in\R$ is just some constant. Now suppose $\gamma:\R\to M$ is a smooth curve whose image lies in the level set $L$, i.e., $\gamma[\R]\subseteq L$. Then by the definition of $L$, we have that $f(\gamma(x))=k$ for every $x\in\R$. That is, $f\circ\gamma:\R\to\R$ is a constant function, and so its derivative $(f\circ\gamma)'$ is zero everywhere. Thus, the directional derivative $V_{\gamma, p}f$ is zero at evert point $p\in\gamma[\R]$.</p>
+<p>Suppose instead we have a curve $\sigma:\R\to M$ along which the value of our smooth function $f$ is increasing. That is, if $x,y\in\R$ with $x&lt;y$, then $(f\circ\sigma)(x)&lt;(f\circ\sigma)(y)$. Then $(f\circ\sigma)'&gt;0$ for every $x\in\R$, and so the directional derivative $V_{\sigma, p}f$ is positive at every point $p\in\sigma[\R]$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/directional-derivatives.svg" alt="directional-derivatives"></p>
+<p>A very nice property of these directional derivatives is that they are linear maps!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ be a smooth manifold, $\gamma:\R\to M$ a smooth curve and $(U, x)$ a chart whose domain contains the point $p\in\gamma[\R]$. Then the directional derivative $V_{\gamma,p}:C^\infty(M)\to\R$ is a linear map.</p>
+<p><strong>Proof.</strong> We will show first that $V_{\gamma,p}$ is additive. Suppose that $f,g:M\to\R$ are smooth functions. Then</p>
+<p>$$\begin{align}<br>
+V_{\gamma, p}(f + g) &amp;= ((f+g)\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= (f\circ\gamma + g\circ\gamma)'\at{\gamma}^{-1}(p) \hint{distributive property}\\<br>
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} + (g\circ\gamma)'\at{\gamma^{-1}(p)} \hint{linearity of derivative} \\<br>
+&amp;= V_{\gamma, p}f + V_{\gamma, p}g.<br>
+\end{align}$$</p>
+<p>Next we will show that $V_{\gamma,p}$ is homogeneous. Suppose $f:M\to\R$ is a smooth function and $a\in\R$. Then</p>
+<p>$$\begin{align}<br>
+V_{\gamma, p}(af) &amp;= (af\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= (a(f\circ\gamma))'\at{\gamma}^{-1}(p) \hint{distributive property}\\<br>
+&amp;= a(f\circ\gamma)'\at{\gamma^{-1}(p)} \hint{linearity of derivative} \\<br>
+&amp;= aV_{\gamma, p}f.<br>
+\end{align}$$</p>
+<p>Thus, the directional derivative is a linear map.</p>
+</blockquote>
+<p>It turns out that, in addition to being a linear map, directional derivatives are also something called <strong>derivations</strong>. This simply means they obey a &quot;product rule&quot;:</p>
+<p>$$<br>
+\begin{align}<br>
+V_{\gamma, p}(fg) &amp;= (fg\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= ((f\circ\gamma)(g\circ\gamma))'\at{\gamma^{-1}(p)} \\<br>
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)}(g\circ\gamma)\at{\gamma^{-1}(p)} + (f\circ\gamma)\at{\gamma^{-1}(p)}(g\circ\gamma)'\at{\gamma^{-1}(p)} \hint{product rule of derivatives} \\<br>
+&amp;= (V_{\gamma, p}f)g(p) + f(p)V_{\gamma, p}(g)<br>
+\end{align}<br>
+$$</p>
+<p>We are now equipped to define the tangent space to a manifold at a point!</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold with $p\in M$. The <strong>tangent space</strong> to $M$ at the point $p$, written $T_p M$, is the vector space of all directional derivatives along curves at $p$.</p>
+</blockquote>
+<p>We have called the tangent space a vector space without proving that it is one. Since directional derivatives are functions $C^\infty(M)\to\R$, we can define vector addition as function addition and scalar multiplication as function multiplication. While these resulting objects are definitely functions, we have to show that they are directional derivatives. Otherwise our tangent space would not be closed under addition or multiplication, which is not allowed!</p>
+<blockquote>
+<p><strong>Theorem.</strong> The tangent space $T_p M$ of a smooth manifold at a point $p\in M$ is a vector space.</p>
+<p><strong>Proof.</strong> We will show first that $T_p M$ is closed under vector addition. That is, we must show that</p>
+<p>$$\begin{align}<br>
+(V_{\gamma,p}+V_{\sigma,p})f &amp;= V_{\gamma,p}f+V_{\sigma,p}f\\<br>
+&amp;\in T_p M<br>
+\end{align}$$</p>
+<p>for any smooth curves $\gamma,\sigma:\R\to M$. To do this, we must find a curve $\psi:\R\to M$ whose directional derivative $V_{\psi, p}$ is the sum of the directional derivatives along $\gamma$ and $\sigma$.</p>
+<p>To construct such a curve, we need to choose a chart $(U, x)$ whose domain contains $p$, and look at the chart representatives $x\circ\gamma:\R\to\R^n$ and $x\circ\sigma:\R\to\R^n$, where $n=\dim M$. Addition of these representatives makes sense in our chart. However, since we are going to define our curve $\psi$ in terms of a chart, we need to make sure that our definition is independent of our choice of chart! We keep this in the back of our minds, as this independence will follow quite naturally.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/addition-of-curves.svg" alt="addition-of-curves"></p>
+<p>If we add the two chart representatives $x\circ\gamma$ and $x\circ\sigma$ we will not end up with something which passes through $x(p)$ (unless $x(p)$ happens to be zero). To remedy this situation, we seek to define a new curve $\psi$ whose chart representative $x\circ\psi$ is</p>
+<p>$$x\circ\gamma + x\circ\sigma - x(p).$$</p>
+<p>This will guarantee that $x\circ\psi$ passes through $x(p)$. To construct this curve $\psi$, we simply take our desired chart representative and apply $x^{-1}$.</p>
+<p>$$\psi = x^{-1}(x\circ\gamma + x\circ\sigma - x(p)).$$</p>
+<p>Now we must show that $\psi$ really is the curve whose directional derivative is the sum of the directional derivatives of $\gamma$ and $\sigma$. That is, we need to demonstrate that $V_{\psi,p} = V_{\gamma,p} + V_{\sigma,p}$. This is quite straightforward.</p>
+<p>$$<br>
+\begin{align}<br>
+V_{\psi,p} &amp;= (f\circ\psi)'\at{\psi^{-1}(p)} \hint{definition of directional derivative} \\<br>
+&amp;= (f\circ(x^{-1}\circ x)\circ\psi)'\at{\psi^{-1}(p)} \hint{identity} \\<br>
+&amp;= (x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x\circ\psi\circ\psi^{-1}(p)} \hint{chain rule} \\<br>
+&amp;=(x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{identity} \\<br>
+&amp;=(x\circ\gamma + x\circ\sigma - x(p))'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{definition of $\psi$} \\<br>
+&amp;=(x\circ\gamma + x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{derivative of constant function} \\<br>
+&amp;= (x\circ\gamma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{linearity of derivative} \\<br>
+&amp;= (x\circ\gamma)'\at{\gamma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\sigma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{$\psi^{-1}(p) = \gamma^{-1}(p) = \sigma^{-1}(p)$} \\<br>
+&amp;= (f\circ(x^{-1}\circ x)\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ(x^{-1}\circ x)\circ\sigma)'\at{\sigma^{-1}(p)} \hint{chain rule} \\<br>
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ\sigma)'\at{\sigma^{-1}(p)} \hint{identity} \\<br>
+&amp;= V_{\gamma,p} + V_{\sigma,p}. \hint{definition of directional derivative}<br>
+\end{align}<br>
+$$</p>
+<p>Notice how the chart maps completely canceled out, and so even though our definition of $\psi$ was chart-dependent, its directional derivative was not! We have thus shown that $T_p M$ is closed under vector addition. The proof that it is closed under scalar multiplication is much simpler (it is just reparatmeterization of our curve) and so I will omit it because this proof is already long enough.</p>
+</blockquote>
+<p>Now that we are confident that $T_p M$ is a vector space, we will normally refer to its elements as <strong>tangent vectors</strong>. Interestingly, it is usually the case that the curve along which the tangent vector is defined is not important. Let's explore why. Suppose $\gamma$ is a curve, $f$ is a smooth function and $p\in M$ is a point on our curve. Then as before,</p>
+<p>$$\begin{align}<br>
+V_{\gamma, p}f &amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= (f\circ (x^{-1}\circ x)\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= ((f\circ x^{-1})\circ (x\circ\gamma))'\at{\gamma^{-1}(p)}.<br>
+\end{align}$$</p>
+<p>To make our lives easier, let's make the temporary substitutions<br>
+$$\begin{align}<br>
+F &amp;= f\circ x^{-1}, \\<br>
+\Gamma &amp;= x\circ\gamma.<br>
+\end{align}$$</p>
+<p>Now $F:\R^n\to\R$ and $\Gamma:\R\to\R^n$, so we can use the multivariable chain rule to obtain</p>
+<p>$$\begin{align}<br>
+V_{\gamma, p}f &amp;= (F\circ\Gamma)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= \sum_{i=1}^n\Bigg(\partial_i\at{x(p)}F\Bigg)\Bigg((\Gamma^{i})'\at{\gamma^{-1}(p)}\Bigg) \\<br>
+&amp;= \sum_{i=1}^n\Bigg(\partial_i\at{x(p)}(f\circ x^{-1})\Bigg)\Bigg((x^i\circ\gamma)'\at{\gamma^{-1}(p)}\Bigg),<br>
+\end{align}$$</p>
+<p>where $\partial_i$ represents the regular partial derivative with respect to the $i$th component and $\Gamma^i$ and $x^i$ are the $i$th component functions of $\Gamma$ and $x$, respectively.</p>
+<p>Now, this certainly doesn't look any nicer than $V_{\gamma, p}f$, so why have we done this? Because we have managed to separate the definition into two chunks, one of which depends on the curve $\gamma$ and one which doesn't. The part which doesn't, $\partial_i\at{x(p)}(f\circ x^{-1})$, is so special that it deserves its own name.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold, $f\in C^\infty(M)$ a smooth function, and $(U,x)$ a chart containing $p\in M$. Then the <strong>$i$th partial derivative operator with respect to the chart map $x$</strong> is the map: $$\frac{\partial}{\partial x^i}\at{p}:C^\infty(M)\to\R$$ defined by $$\frac{\partial}{\partial x^i}\at{p}f=\partial_i(f\circ x^{-1})\at{x(p)}.$$</p>
+</blockquote>
+<p>With this new definition, we see that</p>
+<p>$$V_{\gamma, p}f = \sum_{i=1}^n V^i \frac{\partial}{\partial x^i}\at{p}f$$</p>
+<p>where the $V^i\in\R$ are the curve-dependent parts which we don't care about. This means that the partial derivative operators $\Big(\dfrac{\partial}{\partial x^i}\at{p}f\Big)_{i=1}^n$ span $T_p M$. Furthermore, it is easy to show that they are linearly independent. It follows that $\Big(\dfrac{\partial}{\partial x^i}\at{p}f\Big)_{i=1}^n$ is a basis for the tangent space $T_p M$. From this, we see that $\dim T_p M = \dim M$. That is, the dimension of the tangent space is the same as the dimension of the original manifold!</p>
+<h3 id="thepushforwardanamethepushforward">The Pushforward<a name="the-pushforward"></a></h3>
+<p>The pushforward gives us a way to take smooth maps between manifolds and translate them into maps between tangent spaces on those manifolds. Here's the definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. The <strong>pushforward</strong> of $\phi$ is the map</p>
+<p>$$\phi_*:T_p M\to T_{\phi(p)} N$$</p>
+<p>defined by</p>
+<p>$$(\phi_*X)f=X(f\circ\phi)$$</p>
+<p>for any tangent vector $X\in T_p M$ and any smooth function $f\in C^\infty(N)$.</p>
+</blockquote>
+<p>Let's try to make sense of this definition. The pushforward turns the smooth map $\phi$ into a map $\phi_*$ between $T_p M$ and $T_{\phi(p)} N$, so it takes a tangent vector in $M$ based at the point $p$ to a tangent vector in $N$ based at the point $\phi(p)$. But tangent vectors are defined by how they act on smooth functions, so we defined the pushforward by how the tangent vector $\phi_*X\in T_{\phi(p)} N$ acts on smooth functions $f\in C^\infty(N)$.</p>
+<p>Since the pushforward is a map between vector spaces, it makes sense to ask whether it is a linear map. The answer is yes!</p>
+<blockquote>
+<p><strong>Theorem.</strong> The pushforward is a linear map.</p>
+<p><strong>Proof.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. We argue first that the pushforward $\phi_*$ is additive. So suppose $X$ and $Y$ are tangent vectors in $T_pM$. Then</p>
+<p>$$\begin{align}<br>
+\phi_*(X+Y)f &amp;= (X+Y)(f\circ\phi) \\<br>
+&amp;= X(f\circ\phi) + Y(f\circ\phi) \\<br>
+&amp;= (\phi_*X)f + (\phi_*Y)f<br>
+\end{align}$$</p>
+<p>for any smooth function $f:N\to\R$. Next, we argue that $\phi_*$ is homogeneous. So suppose $X$ is a tangent vector in $T_pM$ and $a\in\R$. Then</p>
+<p>$$\begin{align}<br>
+\phi_*(aX)f &amp;= (aX)(f\circ\phi) \\<br>
+&amp;= aX(f\circ\phi)\\<br>
+&amp;= a(\phi_*X)f.<br>
+\end{align}$$</p>
+</blockquote>
+<p>Not only is the pushforward a linear map, it also behaves exactly as we would like it to on tangent vectors. That is, if $V_{\gamma, p}$ is a directional derivative operator (tangent vector) along a curve $\gamma$ then the pushforward $\phi_*$ takes this to the directional derivative operator along the curve $\phi\circ\gamma$ in $N$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/pushforward-1.svg" alt="pushforward-1"></p>
+<p>The following theorem verifies that this is actually what happens.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. Then</p>
+<p>$$\phi_* V_{\gamma,p} = V_{\phi\circ\gamma, \phi(p)}.$$</p>
+<p><strong>Proof.</strong> The result follows from the following computation:</p>
+<p>$$\begin{align}<br>
+(\phi_* V_{\gamma,p})f &amp;= V_{\gamma,p}(f\circ\phi) \\<br>
+&amp;= \big((f\circ\phi)\circ\gamma\big)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= \big(f\circ(\phi\circ\gamma)\big)'\at{\gamma^{-1}(p)} \\<br>
+&amp;= \big(f\circ(\phi\circ\gamma)\big)'\at{(\gamma^{-1}\circ\phi^{-1})(\phi(p))} \\<br>
+&amp;= \big(f\circ(\phi\circ\gamma)\big)'\at{(\phi\circ\gamma)^{-1}(\phi(p))} \\<br>
+&amp;= V_{\phi\circ\gamma, \phi(p)}f.<br>
+\end{align}$$</p>
+</blockquote>
+<p>This post is only half of the picture. Next time I'll talk about the cotangent space and the pullback!</p>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Smooth Manifolds]]></title><description><![CDATA[Smooth manifolds are the primary object of study in differential geometry, and are an essential ingredient in general relativity (spacetime is assumed to be a smooth manifold) and other branches of physics.]]></description><link>https://algebrology.github.io/smooth-manifolds/</link><guid isPermaLink="false">5e3f2249d75ec900eff3ba11</guid><category><![CDATA[differential geometry]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Mon, 10 Feb 2020 19:43:54 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Disclaimer: This post requires a basic grasp of differential calculus. You don't really need to know how to calculate them, but you do need to be comfortable with the idea of derivatives and partial derivatives, and in particular we will need that the composition of two differentiable maps is differentiable (via the chain rule).</p>
 <p>Smooth manifolds are essentially the most general objects that we can do calculus on. Before we can define smooth manifolds, we need to know what a general topological manifold is. And before we can do that, we need just a few new set-theoretic and topological notions.</p>
 <blockquote>
 <p><strong>Definition.</strong> A set $X$ is <strong>countable</strong> if there is a bijection $f:X\to\Z$. That is, if it can be put into one-to-one correspondence with the integers. Finite sets are also considered to be countable.</p>
@@ -2363,67 +2534,4 @@ xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
 <p>Thus, a quotient group is abelian precisely when all commutators are contained within the identity coset!</p>
 <p>A slightly more liberal, though meaningful, way of phrasing this is by saying that if we <em>factor out</em> all the commutators of $G$, we are always left with an abelian group. This because all commutators are collapsed to the identity element in the quotient group when we quotient out the commutator subgroup. This is just one example of a more general phenomenon.</p>
 </blockquote>
-<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Cosets and Lagrange's Theorem]]></title><description><![CDATA[It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra.]]></description><link>https://algebrology.github.io/cosets-and-lagranges-theorem/</link><guid isPermaLink="false">5c7df11d6fe30a003ed533c6</guid><category><![CDATA[algebra]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Tue, 05 Mar 2019 03:53:03 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ol>
-<li><a href="#cosets">Cosets</a></li>
-<li><a href="#lagrange's-theorem">Lagrange's Theorem</a></li>
-</ol>
-<hr>
-<h3 id="cosetsanamecosets">Cosets<a name="cosets"></a></h3>
-<p>It's a bit difficult to explain exactly why cosets are so important without working with them for a while first. But as you'll hopefully start to understand within my next few posts, cosets pop up everywhere and are a necessary tool to get anything done in the world of algebra. Let's dig in, shall we?</p>
-<blockquote>
-<p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>right coset</strong> of $H$ with respect to $x$ is the set $Hx=\{hx\in G\mid h\in H\}$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Definition.</strong> Let $H$ denote a subgoup of a group $G$. For any fixed element $x\in G$, the <strong>left coset</strong> of $H$ with respect to $x$ is the set $xH=\{xh\in G\mid h\in H\}$.</p>
-</blockquote>
-<blockquote>
-<p><strong>Note.</strong> For abelian groups with additive notation, right and left cosets are instead denoted by $H+x$ and $x+H$, respectively.</p>
-</blockquote>
-<p>So basically a coset is a set obtained by taking the elements of a subgroup and adding a particular element to all of them. Note that a coset does need not be a subgroup! To get a feeling for what cosets really are and how they behave, let's look at an example.</p>
-<blockquote>
-<p><strong>Example.</strong> Take $G=\Z$, the additive group of integers, and $H=2\Z$, the set of even integers. Certainly $2\Z$ is a subgroup of $Z$ because it contains the identity $0$, the sum of two even integers is even, and every even integer has an even inverse — its negative.</p>
-<p>Let's look at a few cosets of $2\Z$. How about the right cosets with respect to $0,1,2$ and $3$? Notice that because $\Z$ is an additive group, these cosets will be written $2\Z+0$, $2\Z+1$, $2\Z+2$ and $2\Z+3$.</p>
-<p>Directly from the definition of a right coset, we see that</p>
-<p>$$\begin{align}<br>
-2\Z+0 &amp;= \{x+0\in\Z\mid x\in 2\Z\} \\<br>
-&amp;= \{x\in\Z\mid x\in 2\Z\} \\<br>
-&amp;= 2\Z.<br>
-\end{align}$$</p>
-<p>So in this case, the coset with respect to $0$ is just the subgroup $2\Z$. This actually always happens, as you can easily see. Adding the identity to all elements of a subgroup will of course just yield that subgroup again!</p>
-<p>Next, let's look at $2\Z+1$. This is the set $\{x+1\in\Z\mid x\in 2\Z\}$, which consists of things like $\ldots,-3,-1,1,3,5,\ldots$. This is really just the set of odd integers! It's definitely not a subgroup of $\Z$ though, since it doesn't contain $0$.</p>
-<p>The coset $2\Z+2$ is the set $\{x+2\in\Z\mid z\in 2\Z\}$, which contains elements like $\ldots,-4,-2,0,2,4,\ldots$. But this is the set of even integers again! That means $2\Z+2=2\Z$.</p>
-<p>Lastly, let's look at $2\Z+2$. This is the set $\{x+3\in\Z\mid z\in 2\Z\}$, which contains things like $\ldots,-3,-1,1,3,5,\ldots$. We've already seen that somewhere before. It's just the set of odd integers again. That is, $2\Z+3=2\Z+1$.</p>
-<p>It looks like there might actually only be two distinct cosets of $2\Z$. They are $2\Z$ itself and $2\Z+1$. Furthermore, every element of $\Z$ is in either one coset or the other, but never both (because an integer is either even or odd). So these cosets actually <em>partition</em> $\Z$, which is a very important point. But let's not get too far ahead of ourselves.</p>
-</blockquote>
-<p>The first thing I'd like to prove about cosets is fairly simple — if we are working in an abelian group, left and right cosets are the same!</p>
-<blockquote>
-<p><strong>Theorem.</strong> If $H$ is a subgroup of an abelian group $G$, then $H+x=x+H$ for every $x\in G$.</p>
-<p><strong>Proof.</strong> We will proceed by demonstrating that each side is a subset of the other.</p>
-<p>We show first that $H+x\subseteq x+H$. Choose $g\in H+x$, so that $g=h+x$ for some $h\in H$. Since $G$ is abelian, $h+x=x+h$ and thus $g=x+h\in x+H$. It follows that $H+x\subseteq x+H$.</p>
-<p>The proof that $x+H\subseteq H+x$ is completely analogous to the above, so we won't bother with it. We can thus conclude that $H+x=x+H$.</p>
-</blockquote>
-<p>This implies, for instance, that we could instead write $1+2\Z$ to denote the odd integers, but to me this doesn't look right for some reason and so I usually don't. In fact, for most of our purposes we really only need to consider one variety of coset. I tend to favor right cosets.</p>
-<p>Now it's time to prove my suspicion from the above example. This is important, so pay close attention. If you don't remember what a partition is, I advise you to read <a href="https://algebrology.github.io/equivalence-relations-and-quotient-sets/">my earlier post about them</a>.</p>
-<blockquote>
-<p><strong>Theorem.</strong> If $H$ is a subgroup of a group $G$, then the (left/right) cosets of $H$ partition $G$.</p>
-<p><strong>Proof.</strong> We will prove the result for right cosets, since the proof for left cosets is practically identical.</p>
-<p>It is clear that every coset $Hx$ is nonempty because the identity element $e$ is in $H$ by virtue of it being a subgroup, and thus $x=ex\in Hx$.</p>
-<p>The next thing we need to show is that cosets cover all of $G$. But is clear that $$\bigcup_{x\in G}x=G\subseteq\bigcup_{x\in G}Hx,$$</p>
-<p>and similarly that $$\bigcup_{x\in G}Hx\subseteq G=\bigcup_{x\in G}x,$$</p>
-<p>because $Hx\subseteq G$ for every $x\in G$. Thus, $G=\bigcup_{x\in G}Hx$.</p>
-<p>The last thing we need to show is that for any $x,y\in G$, if $Hx\ne Hy$ then $Hx\cap Hy=\varnothing$. That is, either cosets are the same or they are disjoint. We will argue the contrapositve, supposing that $Hx\cap Hy$ is nonempty. Then there exists some element $a\in Hx\cap Hy$. That is, $a\in Hx$ and $a\in Hy$, so $a=h_1x$ and $a=h_2y$ for some elements $h_1,h_2\in H$. It follows that $h_1x=h_2y$, and multiplication on the left by $h_1^{-1}$ show that $x=h_1^{-1}h_2y\in Hy$ because $h_1^{-1}h_2\in H$. Thus $Hx=Hy$, completing the proof.</p>
-</blockquote>
-<p>This is pretty exciting! It means that we can form an equivalence relation $\sim$ on any group $G$, where elements are equivalent if they are in the same coset of $H$. Moreover, we can form the quotient set $G\quotient{\sim}$, whose elements are precisely the cosets of $H$. For simplicity, we generally write $G/H$ instead of to denote this quotient set, since it is so very important that we are talking about the set of cosets of $H$. We'll revisit this special type of quotient set in my next post.</p>
-<h3 id="lagrangestheoremanamelagrangestheorem">Lagrange's Theorem<a name="lagrange's-theorem"></a></h3>
-<p>We're actually very close to proving this famous theorem already. We just need one lemma first:</p>
-<blockquote>
-<p><strong>Lemma.</strong> If $H$ is a subgroup of a group $G$ and $x\in G$, there exists a bijection $f:G\to Hx$.</p>
-<p><strong>Proof.</strong> We define a function $f:H\to Hx$ by $f(h)=hx$ for every $h\in H$. That is, the function that maps every element of $H$ to its product with $x$. Clearly $f$ is injective because if $f(h_1)=f(h_2)$ then $h_1x=h2_x$ and the right cancellation law yields $h_1=h_2$. Furthermore, $f$ is surjective because for any $y\in Hx$ we have by definition that $y=hx$ for some $h\in H$, and thus $y=f(h)$. It follows that $f$ is bijective, as desired.</p>
-</blockquote>
-<p>Recall that a bijection exists between finite sets only if those sets contain the same number of elements. This fact, along with the lemma above, tells us that all cosets of a subgroup are the same size! We are now ready to prove Lagrange's Theorem, which is actually very easy at this point.</p>
-<blockquote>
-<p><strong>Lagrange's Theorem.</strong> If $H$ is a subgroup of a finite group $G$, then $\abs{G}$ is a multiple of $\abs{H}$.</p>
-<p><strong>Proof.</strong> We have already established that every coset of $H$ contains the same number of elements, $\abs{H}$. Since $G$ is finite, there are a finite number of distinct cosets of $H$, say $n$ of them. Because these cosets partition $G$, it follows that $\abs{G}=n\abs{H}$, completing the proof.</p>
-</blockquote>
-<p>This is probably somewhat surprising unless you're already familiar with groups. But it's just part of the astonishing usefulness of cosets. Lagrange's Theorem is actually incredibly useful because it tells us instantly that certain things <em>cannot</em> be subgroups of other things. For instance, a group of order $12$ cannot ever have subgroups of order $5,7,8,9,10$ or $11$. Without this theorem, you might have guessed that this was the case, but it would have been pretty tricky to prove it conclusively.</p>
 <!--kg-card-end: markdown-->]]></content:encoded></item></channel></rss>

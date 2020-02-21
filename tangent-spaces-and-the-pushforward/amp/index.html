@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+
+    <title>Tangent Spaces and the Pushforward</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://algebrology.github.io/tangent-spaces-and-the-pushforward/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Tangent Spaces and the Pushforward" />
+    <meta property="og:description" content="Tangent Spaces The Pushforward In calculus, you learn how to construct tangent lines to differentiable curves at a point.    In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.    In differential geometry, the analogous concept is the tangent space to a smooth manifold at" />
+    <meta property="og:url" content="https://algebrology.github.io/tangent-spaces-and-the-pushforward/" />
+    <meta property="article:published_time" content="2020-02-13T03:08:16.000Z" />
+    <meta property="article:modified_time" content="2020-02-21T06:39:47.000Z" />
+    <meta property="article:tag" content="differential geometry" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Tangent Spaces and the Pushforward" />
+    <meta name="twitter:description" content="Tangent Spaces The Pushforward In calculus, you learn how to construct tangent lines to differentiable curves at a point.    In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.    In differential geometry, the analogous concept is the tangent space to a smooth manifold at" />
+    <meta name="twitter:url" content="https://algebrology.github.io/tangent-spaces-and-the-pushforward/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="differential geometry" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://algebrology.github.io/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "https://algebrology.github.io/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Tangent Spaces and the Pushforward",
+    "url": "https://algebrology.github.io/tangent-spaces-and-the-pushforward/",
+    "datePublished": "2020-02-13T03:08:16.000Z",
+    "dateModified": "2020-02-21T06:39:47.000Z",
+    "keywords": "differential geometry",
+    "description": " 1. Tangent Spaces\n 2. The Pushforward\n\nIn calculus, you learn how to construct tangent lines to differentiable curves\nat a point.\n\n\n\nIn multivariable calculus, you learn how to construct tangent planes to\ndifferentiable surfaces at a point.\n\n\n\nIn differential geometry, the analogous concept is the tangent space to a smooth\nmanifold at a point, but there&#x27;s some subtlety to this concept. Notice how the\ncurves and surface in the examples above are sitting in a higher-dimensional\nspace in order to ",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://algebrology.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.5" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="https://algebrology.github.io">Algebrology</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Tangent Spaces and the Pushforward</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/eric/">Eric Shapiro</a></p>
+                    <time class="post-date" datetime="2020-02-12">2020-02-12</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <ol>
+<li><a href="#tangent-spaces">Tangent Spaces</a></li>
+<li><a href="#the-pushforward">The Pushforward</a></li>
+</ol>
+<p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
+<p></p>
+<p>In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.</p>
+<p></p>
+<p>In differential geometry, the analogous concept is the <em>tangent space</em> to a smooth manifold at a point, but there's some subtlety to this concept. Notice how the curves and surface in the examples above are sitting in a higher-dimensional space in order to make sense of their tangent lines/plane.</p>
+<p>The circle is a one-dimensional manifold, yet we've constructed its tangent line as an extrinsic object which lives outside the circle, and in doing so we have embedded the one-dimensional circle into a two-dimensional space. Similarly, in order to construct the tangent plane to the sphere, we've embedded it in three-dimensional space, although the sphere is a two-dimensional manifold.</p>
+<p>This is not a huge issue for these familiar objects. But since we want to use manifolds to describe things like higher-dimensional surfaces and spacetime in general relativity, we need some way to talk about the tangent space intrinsically, without embedding our manifold in a higher dimensional space. After all, it wouldn't really make sense to think about spacetime as sitting inside of some higher-dimensional manifold.</p>
+<p>Our construction of tangent spaces will follow this intrinsic approach, and has the benefit of being isomorphic to the parallel extrinsic approach (as we shall see later when we discuss the Whitney Embedding Theorem). Additionally, it is advantageous because of its simplicity and ease of calculation. So let's jump right into it!</p>
+<h3 id="tangentspacesanametangentspaces">Tangent Spaces<a name="tangent-spaces"></a></h3>
+<p>The fundamental concept in defining tangent spaces is that of a smooth curve $\gamma:\R\to M$. Of course, we haven't actually defined what it means for such a curve to be smooth yet, but we can easily borrow from our experience in defining smooth functions to accomplish this.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth manifold $M$, a curve $\gamma:\R\to M$ is a <strong>smooth curve</strong> if for every point $p\in \gamma[\R]\subseteq M$ there is a chart $(U, x)$ whose domain contains $p$ and for which $x\circ\gamma$ is smooth in the sense of ordinary differential calculus.</p>
+</blockquote>
+<p></p>
+<p>Of course, we need to justify that this is a well-defined notion, since we defined it in terms of charts. But since chart transition maps on a smooth manifold are smooth, the proof of this fact looks almost identical to the analogous arguments from the last post, so I will not give it here.</p>
+<p>In regular multivariable calculus, we have the idea of vectors based at a point and gradients of functions, and we form directional derivatives by combining vectors and gradients using an inner product. In differential geometry, there is no separating the concepts. Vectors <em>are</em> directional derivatives, plain and simple.</p>
+<p>The key idea in defining tangent vectors is the following: We can use smooth curves as measurement devices to determine the rate at which a smooth function is changing as we move along our manifold. Here's how.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold, $\gamma:\R\to M$ a smooth curve and $(U, x)$ a chart whose domain contains the point $p\in\gamma[\R]$. The <strong>directional derivative</strong> along the curve $\gamma$ at the point $p$ is the map $$V_{\gamma, p}:C^\infty(M)\to\R$$ defined by $$V_{\gamma, p} = (f\circ\gamma)'\at{\gamma^{-1}(p)}$$ for any smooth function $f\in C^\infty(M)$.</p>
+</blockquote>
+<p>To clarify, this is just the regular derivative of the function $f\circ\gamma:\R\to\R$ taken at the point $\gamma^{-1}(p)$, which is of course a real number.</p>
+<p>So these directional derivatives are maps which act on smooth functions and spit out real numbers. To see how these directional derivatives behave as measurement devices, as I claimed above, it is useful to look at level sets of the function $f$. A level set is just the set of points in our manifold $M$ which our function $f$ maps to the same value. To continue my analogy from last post, if $f$ describes the temperature of points on the manifold, a level set of $f$ is a set of points where the temperature is the same. Some level set of such a function might look something like this:</p>
+<p></p>
+<p>Since the values of our function are constant along level sets, we would expect the directional derivative along these level sets of our function to be zero. To be more precise, suppose $f:M\to\R$ is a smooth function and $L=\{p\in M\mid f(p) = k\}$ is a level set of $f$ where $k\in\R$ is just some constant. Now suppose $\gamma:\R\to M$ is a smooth curve whose image lies in the level set $L$, i.e., $\gamma[\R]\subseteq L$. Then by the definition of $L$, we have that $f(\gamma(x))=k$ for every $x\in\R$. That is, $f\circ\gamma:\R\to\R$ is a constant function, and so its derivative $(f\circ\gamma)'$ is zero everywhere. Thus, the directional derivative $V_{\gamma, p}f$ is zero at evert point $p\in\gamma[\R]$.</p>
+<p>Suppose instead we have a curve $\sigma:\R\to M$ along which the value of our smooth function $f$ is increasing. That is, if $x,y\in\R$ with $x&lt;y$, then $(f\circ\sigma)(x)&lt;(f\circ\sigma)(y)$. Then $(f\circ\sigma)'&gt;0$ for every $x\in\R$, and so the directional derivative $V_{\sigma, p}f$ is positive at every point $p\in\sigma[\R]$.</p>
+<p></p>
+<p>A very nice property of these directional derivatives is that they are linear maps!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ be a smooth manifold, $\gamma:\R\to M$ a smooth curve and $(U, x)$ a chart whose domain contains the point $p\in\gamma[\R]$. Then the directional derivative $V_{\gamma,p}:C^\infty(M)\to\R$ is a linear map.</p>
+<p><strong>Proof.</strong> We will show first that $V_{\gamma,p}$ is additive. Suppose that $f,g:M\to\R$ are smooth functions. Then</p>
+<p>$$\begin{align}<br />
+V_{\gamma, p}(f + g) &amp;= ((f+g)\circ\gamma)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= (f\circ\gamma + g\circ\gamma)'\at{\gamma}^{-1}(p) \hint{distributive property}\\<br />
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} + (g\circ\gamma)'\at{\gamma^{-1}(p)} \hint{linearity of derivative} \\<br />
+&amp;= V_{\gamma, p}f + V_{\gamma, p}g.<br />
+\end{align}$$</p>
+<p>Next we will show that $V_{\gamma,p}$ is homogeneous. Suppose $f:M\to\R$ is a smooth function and $a\in\R$. Then</p>
+<p>$$\begin{align}<br />
+V_{\gamma, p}(af) &amp;= (af\circ\gamma)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= (a(f\circ\gamma))'\at{\gamma}^{-1}(p) \hint{distributive property}\\<br />
+&amp;= a(f\circ\gamma)'\at{\gamma^{-1}(p)} \hint{linearity of derivative} \\<br />
+&amp;= aV_{\gamma, p}f.<br />
+\end{align}$$</p>
+<p>Thus, the directional derivative is a linear map.</p>
+</blockquote>
+<p>It turns out that, in addition to being a linear map, directional derivatives are also something called <strong>derivations</strong>. This simply means they obey a "product rule":</p>
+<p>$$<br />
+\begin{align}<br />
+V_{\gamma, p}(fg) &amp;= (fg\circ\gamma)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= ((f\circ\gamma)(g\circ\gamma))'\at{\gamma^{-1}(p)} \\<br />
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)}(g\circ\gamma)\at{\gamma^{-1}(p)} + (f\circ\gamma)\at{\gamma^{-1}(p)}(g\circ\gamma)'\at{\gamma^{-1}(p)} \hint{product rule of derivatives} \\<br />
+&amp;= (V_{\gamma, p}f)g(p) + f(p)V_{\gamma, p}(g)<br />
+\end{align}<br />
+$$</p>
+<p>We are now equipped to define the tangent space to a manifold at a point!</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold with $p\in M$. The <strong>tangent space</strong> to $M$ at the point $p$, written $T_p M$, is the vector space of all directional derivatives along curves at $p$.</p>
+</blockquote>
+<p>We have called the tangent space a vector space without proving that it is one. Since directional derivatives are functions $C^\infty(M)\to\R$, we can define vector addition as function addition and scalar multiplication as function multiplication. While these resulting objects are definitely functions, we have to show that they are directional derivatives. Otherwise our tangent space would not be closed under addition or multiplication, which is not allowed!</p>
+<blockquote>
+<p><strong>Theorem.</strong> The tangent space $T_p M$ of a smooth manifold at a point $p\in M$ is a vector space.</p>
+<p><strong>Proof.</strong> We will show first that $T_p M$ is closed under vector addition. That is, we must show that</p>
+<p>$$\begin{align}<br />
+(V_{\gamma,p}+V_{\sigma,p})f &amp;= V_{\gamma,p}f+V_{\sigma,p}f\\<br />
+&amp;\in T_p M<br />
+\end{align}$$</p>
+<p>for any smooth curves $\gamma,\sigma:\R\to M$. To do this, we must find a curve $\psi:\R\to M$ whose directional derivative $V_{\psi, p}$ is the sum of the directional derivatives along $\gamma$ and $\sigma$.</p>
+<p>To construct such a curve, we need to choose a chart $(U, x)$ whose domain contains $p$, and look at the chart representatives $x\circ\gamma:\R\to\R^n$ and $x\circ\sigma:\R\to\R^n$, where $n=\dim M$. Addition of these representatives makes sense in our chart. However, since we are going to define our curve $\psi$ in terms of a chart, we need to make sure that our definition is independent of our choice of chart! We keep this in the back of our minds, as this independence will follow quite naturally.</p>
+<p></p>
+<p>If we add the two chart representatives $x\circ\gamma$ and $x\circ\sigma$ we will not end up with something which passes through $x(p)$ (unless $x(p)$ happens to be zero). To remedy this situation, we seek to define a new curve $\psi$ whose chart representative $x\circ\psi$ is</p>
+<p>$$x\circ\gamma + x\circ\sigma - x(p).$$</p>
+<p>This will guarantee that $x\circ\psi$ passes through $x(p)$. To construct this curve $\psi$, we simply take our desired chart representative and apply $x^{-1}$.</p>
+<p>$$\psi = x^{-1}(x\circ\gamma + x\circ\sigma - x(p)).$$</p>
+<p>Now we must show that $\psi$ really is the curve whose directional derivative is the sum of the directional derivatives of $\gamma$ and $\sigma$. That is, we need to demonstrate that $V_{\psi,p} = V_{\gamma,p} + V_{\sigma,p}$. This is quite straightforward.</p>
+<p>$$<br />
+\begin{align}<br />
+V_{\psi,p} &amp;= (f\circ\psi)'\at{\psi^{-1}(p)} \hint{definition of directional derivative} \\<br />
+&amp;= (f\circ(x^{-1}\circ x)\circ\psi)'\at{\psi^{-1}(p)} \hint{identity} \\<br />
+&amp;= (x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x\circ\psi\circ\psi^{-1}(p)} \hint{chain rule} \\<br />
+&amp;=(x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{identity} \\<br />
+&amp;=(x\circ\gamma + x\circ\sigma - x(p))'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{definition of $\psi$} \\<br />
+&amp;=(x\circ\gamma + x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{derivative of constant function} \\<br />
+&amp;= (x\circ\gamma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{linearity of derivative} \\<br />
+&amp;= (x\circ\gamma)'\at{\gamma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\sigma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{$\psi^{-1}(p) = \gamma^{-1}(p) = \sigma^{-1}(p)$} \\<br />
+&amp;= (f\circ(x^{-1}\circ x)\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ(x^{-1}\circ x)\circ\sigma)'\at{\sigma^{-1}(p)} \hint{chain rule} \\<br />
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ\sigma)'\at{\sigma^{-1}(p)} \hint{identity} \\<br />
+&amp;= V_{\gamma,p} + V_{\sigma,p}. \hint{definition of directional derivative}<br />
+\end{align}<br />
+$$</p>
+<p>Notice how the chart maps completely canceled out, and so even though our definition of $\psi$ was chart-dependent, its directional derivative was not! We have thus shown that $T_p M$ is closed under vector addition. The proof that it is closed under scalar multiplication is much simpler (it is just reparatmeterization of our curve) and so I will omit it because this proof is already long enough.</p>
+</blockquote>
+<p>Now that we are confident that $T_p M$ is a vector space, we will normally refer to its elements as <strong>tangent vectors</strong>. Interestingly, it is usually the case that the curve along which the tangent vector is defined is not important. Let's explore why. Suppose $\gamma$ is a curve, $f$ is a smooth function and $p\in M$ is a point on our curve. Then as before,</p>
+<p>$$\begin{align}<br />
+V_{\gamma, p}f &amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= (f\circ (x^{-1}\circ x)\circ\gamma)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= ((f\circ x^{-1})\circ (x\circ\gamma))'\at{\gamma^{-1}(p)}.<br />
+\end{align}$$</p>
+<p>To make our lives easier, let's make the temporary substitutions<br />
+$$\begin{align}<br />
+F &amp;= f\circ x^{-1}, \\<br />
+\Gamma &amp;= x\circ\gamma.<br />
+\end{align}$$</p>
+<p>Now $F:\R^n\to\R$ and $\Gamma:\R\to\R^n$, so we can use the multivariable chain rule to obtain</p>
+<p>$$\begin{align}<br />
+V_{\gamma, p}f &amp;= (F\circ\Gamma)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= \sum_{i=1}^n\Bigg(\partial_i\at{x(p)}F\Bigg)\Bigg((\Gamma^{i})'\at{\gamma^{-1}(p)}\Bigg) \\<br />
+&amp;= \sum_{i=1}^n\Bigg(\partial_i\at{x(p)}(f\circ x^{-1})\Bigg)\Bigg((x^i\circ\gamma)'\at{\gamma^{-1}(p)}\Bigg),<br />
+\end{align}$$</p>
+<p>where $\partial_i$ represents the regular partial derivative with respect to the $i$th component and $\Gamma^i$ and $x^i$ are the $i$th component functions of $\Gamma$ and $x$, respectively.</p>
+<p>Now, this certainly doesn't look any nicer than $V_{\gamma, p}f$, so why have we done this? Because we have managed to separate the definition into two chunks, one of which depends on the curve $\gamma$ and one which doesn't. The part which doesn't, $\partial_i\at{x(p)}(f\circ x^{-1})$, is so special that it deserves its own name.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold, $f\in C^\infty(M)$ a smooth function, and $(U,x)$ a chart containing $p\in M$. Then the <strong>$i$th partial derivative operator with respect to the chart map $x$</strong> is the map: $$\frac{\partial}{\partial x^i}\at{p}:C^\infty(M)\to\R$$ defined by $$\frac{\partial}{\partial x^i}\at{p}f=\partial_i(f\circ x^{-1})\at{x(p)}.$$</p>
+</blockquote>
+<p>With this new definition, we see that</p>
+<p>$$V_{\gamma, p}f = \sum_{i=1}^n V^i \frac{\partial}{\partial x^i}\at{p}f$$</p>
+<p>where the $V^i\in\R$ are the curve-dependent parts which we don't care about. This means that the partial derivative operators $\Big(\dfrac{\partial}{\partial x^i}\at{p}f\Big)_{i=1}^n$ span $T_p M$. Furthermore, it is easy to show that they are linearly independent. It follows that $\Big(\dfrac{\partial}{\partial x^i}\at{p}f\Big)_{i=1}^n$ is a basis for the tangent space $T_p M$. From this, we see that $\dim T_p M = \dim M$. That is, the dimension of the tangent space is the same as the dimension of the original manifold!</p>
+<h3 id="thepushforwardanamethepushforward">The Pushforward<a name="the-pushforward"></a></h3>
+<p>The pushforward gives us a way to take smooth maps between manifolds and translate them into maps between tangent spaces on those manifolds. Here's the definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. The <strong>pushforward</strong> of $\phi$ is the map</p>
+<p>$$\phi_*:T_p M\to T_{\phi(p)} N$$</p>
+<p>defined by</p>
+<p>$$(\phi_*X)f=X(f\circ\phi)$$</p>
+<p>for any tangent vector $X\in T_p M$ and any smooth function $f\in C^\infty(N)$.</p>
+</blockquote>
+<p>Let's try to make sense of this definition. The pushforward turns the smooth map $\phi$ into a map $\phi_*$ between $T_p M$ and $T_{\phi(p)} N$, so it takes a tangent vector in $M$ based at the point $p$ to a tangent vector in $N$ based at the point $\phi(p)$. But tangent vectors are defined by how they act on smooth functions, so we defined the pushforward by how the tangent vector $\phi_*X\in T_{\phi(p)} N$ acts on smooth functions $f\in C^\infty(N)$.</p>
+<p>Since the pushforward is a map between vector spaces, it makes sense to ask whether it is a linear map. The answer is yes!</p>
+<blockquote>
+<p><strong>Theorem.</strong> The pushforward is a linear map.</p>
+<p><strong>Proof.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. We argue first that the pushforward $\phi_*$ is additive. So suppose $X$ and $Y$ are tangent vectors in $T_pM$. Then</p>
+<p>$$\begin{align}<br />
+\phi_*(X+Y)f &amp;= (X+Y)(f\circ\phi) \\<br />
+&amp;= X(f\circ\phi) + Y(f\circ\phi) \\<br />
+&amp;= (\phi_*X)f + (\phi_*Y)f<br />
+\end{align}$$</p>
+<p>for any smooth function $f:N\to\R$. Next, we argue that $\phi_*$ is homogeneous. So suppose $X$ is a tangent vector in $T_pM$ and $a\in\R$. Then</p>
+<p>$$\begin{align}<br />
+\phi_*(aX)f &amp;= (aX)(f\circ\phi) \\<br />
+&amp;= aX(f\circ\phi)\\<br />
+&amp;= a(\phi_*X)f.<br />
+\end{align}$$</p>
+</blockquote>
+<p>Not only is the pushforward a linear map, it also behaves exactly as we would like it to on tangent vectors. That is, if $V_{\gamma, p}$ is a directional derivative operator (tangent vector) along a curve $\gamma$ then the pushforward $\phi_*$ takes this to the directional derivative operator along the curve $\phi\circ\gamma$ in $N$.</p>
+<p></p>
+<p>The following theorem verifies that this is actually what happens.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. Then</p>
+<p>$$\phi_* V_{\gamma,p} = V_{\phi\circ\gamma, \phi(p)}.$$</p>
+<p><strong>Proof.</strong> The result follows from the following computation:</p>
+<p>$$\begin{align}<br />
+(\phi_* V_{\gamma,p})f &amp;= V_{\gamma,p}(f\circ\phi) \\<br />
+&amp;= \big((f\circ\phi)\circ\gamma\big)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= \big(f\circ(\phi\circ\gamma)\big)'\at{\gamma^{-1}(p)} \\<br />
+&amp;= \big(f\circ(\phi\circ\gamma)\big)'\at{(\gamma^{-1}\circ\phi^{-1})(\phi(p))} \\<br />
+&amp;= \big(f\circ(\phi\circ\gamma)\big)'\at{(\phi\circ\gamma)^{-1}(\phi(p))} \\<br />
+&amp;= V_{\phi\circ\gamma, \phi(p)}f.<br />
+\end{align}$$</p>
+</blockquote>
+<p>This post is only half of the picture. Next time I'll talk about the cotangent space and the pullback!</p>
+
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://algebrology.github.io">Algebrology</a> &copy; 2020</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
+</html>

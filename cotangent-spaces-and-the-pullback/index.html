@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Cotangent Spaces and the Pullback</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=dc4fa6a71f" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=dc4fa6a71f" /></noscript>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://algebrology.github.io/cotangent-spaces-and-the-pullback/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://algebrology.github.io/cotangent-spaces-and-the-pullback/amp/" />
+    
+    <meta property="og:site_name" content="Algebrology" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cotangent Spaces and the Pullback" />
+    <meta property="og:description" content="Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that" />
+    <meta property="og:url" content="https://algebrology.github.io/cotangent-spaces-and-the-pullback/" />
+    <meta property="article:published_time" content="2020-02-21T21:30:47.000Z" />
+    <meta property="article:modified_time" content="2020-02-21T22:36:06.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Cotangent Spaces and the Pullback" />
+    <meta name="twitter:description" content="Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that" />
+    <meta name="twitter:url" content="https://algebrology.github.io/cotangent-spaces-and-the-pullback/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Eric Shapiro" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Algebrology",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://algebrology.github.io/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Eric Shapiro",
+        "url": "https://algebrology.github.io/author/eric/",
+        "sameAs": []
+    },
+    "headline": "Cotangent Spaces and the Pullback",
+    "url": "https://algebrology.github.io/cotangent-spaces-and-the-pullback/",
+    "datePublished": "2020-02-21T21:30:47.000Z",
+    "dateModified": "2020-02-21T22:36:06.000Z",
+    "description": "Last time, we defined the tangent space to a smooth manifold at a point. This\nturned out to be a vector space with the same dimension as the manifold, and\ntangent vectors were directional derivative operators which acted on smooth\nfunctions and spat out real numbers. We also found that choosing a chart allowed\nus to construct a useful basis of partial derivative operators with respect to\nthe components of the chart map.\n\nNow, as we so often do with vector spaces, we consider the dual space to th",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://algebrology.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.5" />
+    <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    CommonHTML: { 
+        linebreaks: {automatic: true},
+    },
+  	"HTML-CSS": { 
+        linebreaks: {automatic: true},
+    },
+    SVG: {
+        linebreaks: {automatic: true},
+    },
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
+    },
+    TeX: {
+    	Macros: {
+            
+            <!-- OPERATORS -->
+            sgn: "{\\text{sgn }}",
+            abs: ["{\\lvert #1 \\rvert}", 1],
+            restriction: ["{\\mid_{#1}}", 1],
+            im: "{\\text{im }}",
+            null: "{\\text{null }}",
+            at: ["{\\bigg\\rvert_{#1}}", 1],
+            smallat: ["{\\big\\rvert_{#1}}", 1],
+            quotient: ["{/\\negthickspace #1}", 1],
+            inner: ["{\\langle #1 \\rangle}", 1],
+ 			P: "{\\mathscr{P}}",
+            M: "{\\mathscr{M}}",
+            set: ["{ \\\{ #1 \\\} }", 1],
+            bset: ["{ \\left\\\{ #1 \\right\\\} }", 1],
+            span: "{\\text{span }}",
+            rank: "{\\text{rank }}",
+            dual: ["{#1^\*}", 1],
+            ddual: ["{#1^\{**}}", 1],
+            hint: ["&\\scriptstyle\\textit{#1}", 1],
+            d: "{\\mathrm{d}}",
+    
+            <!-- NUMBER SYSTEMS -->
+      		N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            F: "{\\mathbb F}",
+                
+            <!-- VECTORS -->
+            0: "{\\vec{0}}",
+            v: "{\\vec{v}}",
+            u: "{\\vec{u}}",
+            w: "{\\vec{w}}",
+            x: "{\\vec{x}}",
+            y: "{\\vec{y}}",
+            z: "{\\vec{z}}",
+            p: "{\\vec{p}}",
+            q: "{\\vec{q}}",
+    	}
+  	}
+});
+</script>
+
+
+</head>
+<body class="is-preload post-template">
+
+    <div id="wrapper" >
+
+
+        <header id="header">
+                <a href="https://algebrology.github.io" class="logo">Algebrology</a>
+        </header>
+
+            <nav id="nav">
+    <ul class="links">
+        <li class="nav-home "><a href="https://algebrology.github.io/">Home</a></li>
+        <li class="nav-topology "><a href="https://algebrology.github.io/tag/topology/">Topology</a></li>
+        <li class="nav-differential-geometry "><a href="https://algebrology.github.io/tag/differential-geometry/">Differential Geometry</a></li>
+        <li class="nav-algebraic-topology "><a href="https://algebrology.github.io/tag/algebraic-topology/">Algebraic Topology</a></li>
+        <li class="nav-foundations "><a href="https://algebrology.github.io/tag/foundations/">Foundations</a></li>
+        <li class="nav-errata "><a href="https://goo.gl/forms/IA1NOLz6nhaQWv182">Errata</a></li>
+    </ul>
+    <ul class="icons">
+    </ul>
+</nav>
+
+
+        
+
+<main id="main">
+
+    <section class="post">
+
+        <header class="major">
+            <span class="date">February 21, 2020</span>
+            <h1>Cotangent Spaces and the Pullback</h1>
+        </header>
+
+
+        <div class="content">
+            <!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that choosing a chart allowed us to construct a useful basis of partial derivative operators with respect to the components of the chart map.</p>
+<p>Now, as we so often do with vector spaces, we consider the dual space to the tangent space at a point.</p>
+<blockquote>
+<p><strong>Definition.</strong> If $M$ is a smooth manifold and $p\in M$ then the <strong>cotangent space</strong> to $M$ at the point $p$, written $T_p^*M$, is the dual space of $T_pM$. That is,</p>
+<p>$$T_p^*M = (T_pM)^*.$$</p>
+<p>We refer to elements of the cotangent space as <strong>cotangent vectors</strong>.</p>
+</blockquote>
+<p>From my previous post on dual vector spaces, we know that the cotangent space $T_p^*M$ consists of all linear maps from $T_pM$ to $\R$. That is, a cotangent vector $\omega\in T_p^*M$ acts on tangent vectors and spits out real numbers. Furthermore, we know that $\dim T_p^*M = \dim T_pM = \dim M$.</p>
+<p>Even so, we don't know too much about what cotangent vectors look like or how they behave. To aid us in our quest, we come to a crucial definition.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth function $f:M\to\R$ defined on a smooth manifold $M$ and a point $p\in M$, the <strong>differential</strong> of $f$ is the cotangent vector $\d f\smallat{p}:T_pM\to\R$ defined by</p>
+<p>$$\d f\smallat{p} X = Xf$$</p>
+<p>for any tangent vector $X\in T_pM$.</p>
+</blockquote>
+<p>It is easy to check that the differential of a smooth function is a linear map, and thus truly a cotangent vector. Even so, how does this new concept help us to understand the structure of the cotangent space? The next theorem tells us how.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ be a smooth manifold of dimension $n$ with $p\in M$, let $(U,x)$ be a chart whose domain contains $p$ and let $x^i$ denote the $i$th component of the chart map $x$. Then $\big(\d x^i\smallat{p}\big)_{i=1}^n$ is a basis for $T_P^*M$.</p>
+<p><strong>Proof.</strong> Choose a tangent vector $X\in T_pM$. Then since $\Big(\dfrac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ is a basis for $T_pM$, we may write</p>
+<p>$$X=\sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p}$$</p>
+<p>for some collection of scalars $X^j\in\R$. Thus,</p>
+<p>$$\begin{align}<br>
+\d x^i\smallat{p} X &amp;= \d x^i\smallat{p} \Big(\sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p}\Big) \\<br>
+&amp;= \sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p} x^i \\<br>
+&amp;= \sum_{j=1}^n X^j \partial_j (x^i\circ (x^j)^{-1})\at{x(p)} \\<br>
+&amp;= \sum_{j=1}^n X^j \delta^i_j \\<br>
+&amp;= X^i.<br>
+\end{align}$$</p>
+<p>That is, $d x^i\smallat{p}$ is the projection map onto the $i$th component of the vector $X$. So not only is $\big(\d x^i\smallat{p}\big)_{i=1}^n$ a basis for $T_p^*M$, it is actually the dual basis to the basis $\Big(\dfrac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ for $T_pM$.</p>
+</blockquote>
+<p>We shall later extend the idea of the differential of a function to that of the <em>exterior derivative</em> of a differential form. But as usual I'm getting ahead of myself!</p>
+<p>We're now equipped to define the notion of the pullback of a smooth map, which is the dual notion to the pushforward.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$, let $p\in M$ and let $\phi_*:T_pM\to T_{\phi(p)}N$ be the pushforward of $\phi$. Then the <strong>pullback</strong> of $\phi$ is the map</p>
+<p>$$\phi^*:T_{\phi(p)}^*N\to T_p^*M$$</p>
+<p>defined by</p>
+<p>$$(\phi^*\omega)X=\omega(\phi_*X)$$</p>
+<p>for any cotangent vector $\omega\in T_{\phi(p)}^* N$ and any tangent vector $X\in T_pM$.</p>
+</blockquote>
+<p>So the pullback takes the cotangent vector $\omega$ in the cotangent space to $N$ at $\phi(p)$ and turns it into a cotangent vector $\phi^*\omega$ in the cotangent space to $M$ at $p$. This cotangent vector acts on a vector $X$ in the tangent space to $M$ at $p$ as described and spits out a real number.</p>
+<p>Just like the pushforward, the pullback is a map between vector spaces and so it makes sense to ask whether it is a linear map. Again, the answer is yes.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$ and let $p\in M$. Then the pullback $\phi^*:T_{\phi(p)}^*N\to T_p^*M$ of the map $\phi$ is a linear map.</p>
+<p><strong>Proof.</strong> Suppose $X\in T_pM$ is a tangent vector and $\omega_1,\omega_2\in T_{\phi(p)}^* N$ are cotangent vectors. Then</p>
+<p>$$\begin{align}<br>
+\phi^*(\omega_1+\omega_2)X &amp;= (\omega_1 + \omega_2)(\phi_*X) \\<br>
+&amp;= \omega_1(\phi_*X) + \omega_2(\phi_*X) \\<br>
+&amp;= (\phi^*\omega_1)X + (\phi^*\omega_2)X,<br>
+\end{align}$$</p>
+<p>so the pullback is additive. Suppose next that $X\in T_pM$ is a tangent vector, and $\omega\in T_{\phi(p)}^* N$ is a cotangent vector and $a\in\R$ is a scalar. Then</p>
+<p>$$\begin{align}<br>
+\phi^*(a\omega)X &amp;= (a\omega)(\phi_*X) \\<br>
+&amp;= a\omega(\phi_*X) \\<br>
+&amp;= a\phi^*(\omega)X,<br>
+\end{align}$$</p>
+<p>so the pullback is homogeneous. It follows that it is a linear map.</p>
+</blockquote>
+<p>The pushforward took directional derivatives of curves to directional derivatives of images of curves under $\phi$ in the natural way. The same type of behavior is true for differentials of functions under the pullback!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$, let $p\in M$ and let $f\in C^\infty(N)$ be a smooth function. Then</p>
+<p>$$\phi^*\big(\d f\smallat{\phi(p)}\big) = \d (f\circ\phi)\smallat{p}.$$</p>
+<p><strong>Proof.</strong> Let $X\in T_pM$ be a tangent vector. Then</p>
+<p>$$\begin{align}<br>
+\phi^*\big(\d f\smallat{\phi(p)}\big)X &amp;= \d f\smallat{\phi(p)}(\phi_*X) \\<br>
+&amp;= (\phi_*X)f \\<br>
+&amp;= X(f\circ\phi) \\<br>
+&amp;= \d (f\circ\phi)\smallat{p}X.<br>
+\end{align}$$</p>
+</blockquote>
+<p>Now that we've explored the tangent and cotangent spaces to a smooth manifold at a point, we've gotten the difficult stuff out of the way. In my next post, we'll define the tangent and cotangent bundles, as well as vector, covector and tensor fields on a manifold. Stay tuned!</p>
+<!--kg-card-end: markdown-->
+        </div>
+
+
+        <footer class="post-footer">
+
+            <div class="authors">
+                <a class="author-box" href="/author/eric/">
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">Eric Shapiro</h5>
+                        <p>Read more posts by this author.</p>
+                    </section>
+                </a>
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+
+
+        <div id="copyright">
+            <ul>
+                <li>&copy; 2019 Eric Shapiro</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script src="/assets/main/js/jquery.min.js?v=dc4fa6a71f"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=dc4fa6a71f"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=dc4fa6a71f"></script>
+    <script src="/assets/main/js/browser.min.js?v=dc4fa6a71f"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=dc4fa6a71f"></script>
+    <script src="/assets/main/js/util.js?v=dc4fa6a71f"></script>
+    <script src="/assets/main/js/main.js?v=dc4fa6a71f"></script>
+
+    
+
+</body>
+</html>

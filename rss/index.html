@@ -1,16 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 21 Feb 2020 06:47:11 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tangent Spaces and the Pushforward]]></title><description><![CDATA[<!--kg-card-begin: markdown--><ol>
-<li><a href="#tangent-spaces">Tangent Spaces</a></li>
-<li><a href="#the-pushforward">The Pushforward</a></li>
-</ol>
-<p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 21 Feb 2020 22:37:35 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Cotangent Spaces and the Pullback]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that</p>]]></description><link>https://algebrology.github.io/cotangent-spaces-and-the-pullback/</link><guid isPermaLink="false">5e504ac6564b2a004912fc9f</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Fri, 21 Feb 2020 21:30:47 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that choosing a chart allowed us to construct a useful basis of partial derivative operators with respect to the components of the chart map.</p>
+<p>Now, as we so often do with vector spaces, we consider the dual space to the tangent space at a point.</p>
+<blockquote>
+<p><strong>Definition.</strong> If $M$ is a smooth manifold and $p\in M$ then the <strong>cotangent space</strong> to $M$ at the point $p$, written $T_p^*M$, is the dual space of $T_pM$. That is,</p>
+<p>$$T_p^*M = (T_pM)^*.$$</p>
+<p>We refer to elements of the cotangent space as <strong>cotangent vectors</strong>.</p>
+</blockquote>
+<p>From my previous post on dual vector spaces, we know that the cotangent space $T_p^*M$ consists of all linear maps from $T_pM$ to $\R$. That is, a cotangent vector $\omega\in T_p^*M$ acts on tangent vectors and spits out real numbers. Furthermore, we know that $\dim T_p^*M = \dim T_pM = \dim M$.</p>
+<p>Even so, we don't know too much about what cotangent vectors look like or how they behave. To aid us in our quest, we come to a crucial definition.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth function $f:M\to\R$ defined on a smooth manifold $M$ and a point $p\in M$, the <strong>differential</strong> of $f$ is the cotangent vector $\d f\smallat{p}:T_pM\to\R$ defined by</p>
+<p>$$\d f\smallat{p} X = Xf$$</p>
+<p>for any tangent vector $X\in T_pM$.</p>
+</blockquote>
+<p>It is easy to check that the differential of a smooth function is a linear map, and thus truly a cotangent vector. Even so, how does this new concept help us to understand the structure of the cotangent space? The next theorem tells us how.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ be a smooth manifold of dimension $n$ with $p\in M$, let $(U,x)$ be a chart whose domain contains $p$ and let $x^i$ denote the $i$th component of the chart map $x$. Then $\big(\d x^i\smallat{p}\big)_{i=1}^n$ is a basis for $T_P^*M$.</p>
+<p><strong>Proof.</strong> Choose a tangent vector $X\in T_pM$. Then since $\Big(\dfrac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ is a basis for $T_pM$, we may write</p>
+<p>$$X=\sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p}$$</p>
+<p>for some collection of scalars $X^j\in\R$. Thus,</p>
+<p>$$\begin{align}<br>
+\d x^i\smallat{p} X &amp;= \d x^i\smallat{p} \Big(\sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p}\Big) \\<br>
+&amp;= \sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p} x^i \\<br>
+&amp;= \sum_{j=1}^n X^j \partial_j (x^i\circ (x^j)^{-1})\at{x(p)} \\<br>
+&amp;= \sum_{j=1}^n X^j \delta^i_j \\<br>
+&amp;= X^i.<br>
+\end{align}$$</p>
+<p>That is, $d x^i\smallat{p}$ is the projection map onto the $i$th component of the vector $X$. So not only is $\big(\d x^i\smallat{p}\big)_{i=1}^n$ a basis for $T_p^*M$, it is actually the dual basis to the basis $\Big(\dfrac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ for $T_pM$.</p>
+</blockquote>
+<p>We shall later extend the idea of the differential of a function to that of the <em>exterior derivative</em> of a differential form. But as usual I'm getting ahead of myself!</p>
+<p>We're now equipped to define the notion of the pullback of a smooth map, which is the dual notion to the pushforward.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$, let $p\in M$ and let $\phi_*:T_pM\to T_{\phi(p)}N$ be the pushforward of $\phi$. Then the <strong>pullback</strong> of $\phi$ is the map</p>
+<p>$$\phi^*:T_{\phi(p)}^*N\to T_p^*M$$</p>
+<p>defined by</p>
+<p>$$(\phi^*\omega)X=\omega(\phi_*X)$$</p>
+<p>for any cotangent vector $\omega\in T_{\phi(p)}^* N$ and any tangent vector $X\in T_pM$.</p>
+</blockquote>
+<p>So the pullback takes the cotangent vector $\omega$ in the cotangent space to $N$ at $\phi(p)$ and turns it into a cotangent vector $\phi^*\omega$ in the cotangent space to $M$ at $p$. This cotangent vector acts on a vector $X$ in the tangent space to $M$ at $p$ as described and spits out a real number.</p>
+<p>Just like the pushforward, the pullback is a map between vector spaces and so it makes sense to ask whether it is a linear map. Again, the answer is yes.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$ and let $p\in M$. Then the pullback $\phi^*:T_{\phi(p)}^*N\to T_p^*M$ of the map $\phi$ is a linear map.</p>
+<p><strong>Proof.</strong> Suppose $X\in T_pM$ is a tangent vector and $\omega_1,\omega_2\in T_{\phi(p)}^* N$ are cotangent vectors. Then</p>
+<p>$$\begin{align}<br>
+\phi^*(\omega_1+\omega_2)X &amp;= (\omega_1 + \omega_2)(\phi_*X) \\<br>
+&amp;= \omega_1(\phi_*X) + \omega_2(\phi_*X) \\<br>
+&amp;= (\phi^*\omega_1)X + (\phi^*\omega_2)X,<br>
+\end{align}$$</p>
+<p>so the pullback is additive. Suppose next that $X\in T_pM$ is a tangent vector, and $\omega\in T_{\phi(p)}^* N$ is a cotangent vector and $a\in\R$ is a scalar. Then</p>
+<p>$$\begin{align}<br>
+\phi^*(a\omega)X &amp;= (a\omega)(\phi_*X) \\<br>
+&amp;= a\omega(\phi_*X) \\<br>
+&amp;= a\phi^*(\omega)X,<br>
+\end{align}$$</p>
+<p>so the pullback is homogeneous. It follows that it is a linear map.</p>
+</blockquote>
+<p>The pushforward took directional derivatives of curves to directional derivatives of images of curves under $\phi$ in the natural way. The same type of behavior is true for differentials of functions under the pullback!</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$, let $p\in M$ and let $f\in C^\infty(N)$ be a smooth function. Then</p>
+<p>$$\phi^*\big(\d f\smallat{\phi(p)}\big) = \d (f\circ\phi)\smallat{p}.$$</p>
+<p><strong>Proof.</strong> Let $X\in T_pM$ be a tangent vector. Then</p>
+<p>$$\begin{align}<br>
+\phi^*\big(\d f\smallat{\phi(p)}\big)X &amp;= \d f\smallat{\phi(p)}(\phi_*X) \\<br>
+&amp;= (\phi_*X)f \\<br>
+&amp;= X(f\circ\phi) \\<br>
+&amp;= \d (f\circ\phi)\smallat{p}X.<br>
+\end{align}$$</p>
+</blockquote>
+<p>Now that we've explored the tangent and cotangent spaces to a smooth manifold at a point, we've gotten the difficult stuff out of the way. In my next post, we'll define the tangent and cotangent bundles, as well as vector, covector and tensor fields on a manifold. Stay tuned!</p>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Tangent Spaces and the Pushforward]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
 <p><img src="https://algebrology.github.io/content/images/2020/02/tangent-lines-1.svg" alt="tangent-lines-1"></p>
 <p>In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.</p>
 <p><img src="https://algebrology.github.io/content/images/2020/02/tangent-plane.svg" alt="tangent-plane"></p>
-<p>In differential geometry, the analogous concept is the <em>tangent space</em> to a smooth manifold at</p>]]></description><link>https://algebrology.github.io/tangent-spaces-and-the-pushforward/</link><guid isPermaLink="false">5e44ba67361d9900498fcea2</guid><category><![CDATA[differential geometry]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Thu, 13 Feb 2020 03:08:16 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ol>
-<li><a href="#tangent-spaces">Tangent Spaces</a></li>
-<li><a href="#the-pushforward">The Pushforward</a></li>
-</ol>
-<p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
+<p>In differential geometry, the analogous concept is the <em>tangent space</em> to a smooth manifold at a point, but there's</p>]]></description><link>https://algebrology.github.io/tangent-spaces-and-the-pushforward/</link><guid isPermaLink="false">5e44ba67361d9900498fcea2</guid><category><![CDATA[differential geometry]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Thu, 13 Feb 2020 03:08:16 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>In calculus, you learn how to construct tangent lines to differentiable curves at a point.</p>
 <p><img src="https://algebrology.github.io/content/images/2020/02/tangent-lines-1.svg" alt="tangent-lines-1"></p>
 <p>In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.</p>
 <p><img src="https://algebrology.github.io/content/images/2020/02/tangent-plane.svg" alt="tangent-plane"></p>
@@ -18,7 +79,6 @@
 <p>The circle is a one-dimensional manifold, yet we've constructed its tangent line as an extrinsic object which lives outside the circle, and in doing so we have embedded the one-dimensional circle into a two-dimensional space. Similarly, in order to construct the tangent plane to the sphere, we've embedded it in three-dimensional space, although the sphere is a two-dimensional manifold.</p>
 <p>This is not a huge issue for these familiar objects. But since we want to use manifolds to describe things like higher-dimensional surfaces and spacetime in general relativity, we need some way to talk about the tangent space intrinsically, without embedding our manifold in a higher dimensional space. After all, it wouldn't really make sense to think about spacetime as sitting inside of some higher-dimensional manifold.</p>
 <p>Our construction of tangent spaces will follow this intrinsic approach, and has the benefit of being isomorphic to the parallel extrinsic approach (as we shall see later when we discuss the Whitney Embedding Theorem). Additionally, it is advantageous because of its simplicity and ease of calculation. So let's jump right into it!</p>
-<h3 id="tangentspacesanametangentspaces">Tangent Spaces<a name="tangent-spaces"></a></h3>
 <p>The fundamental concept in defining tangent spaces is that of a smooth curve $\gamma:\R\to M$. Of course, we haven't actually defined what it means for such a curve to be smooth yet, but we can easily borrow from our experience in defining smooth functions to accomplish this.</p>
 <blockquote>
 <p><strong>Definition.</strong> Given a smooth manifold $M$, a curve $\gamma:\R\to M$ is a <strong>smooth curve</strong> if for every point $p\in \gamma[\R]\subseteq M$ there is a chart $(U, x)$ whose domain contains $p$ and for which $x\circ\gamma$ is smooth in the sense of ordinary differential calculus.</p>
@@ -55,16 +115,16 @@ V_{\gamma, p}(af) &amp;= (af\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
 \end{align}$$</p>
 <p>Thus, the directional derivative is a linear map.</p>
 </blockquote>
-<p>It turns out that, in addition to being a linear map, directional derivatives are also something called <strong>derivations</strong>. This simply means they obey a &quot;product rule&quot;:</p>
+<p>It turns out that, in addition to being a linear map, directional derivatives are also something called <strong>derivations</strong>. This simply means they obey a &quot;product rule&quot;</p>
 <p>$$<br>
 \begin{align}<br>
 V_{\gamma, p}(fg) &amp;= (fg\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
 &amp;= ((f\circ\gamma)(g\circ\gamma))'\at{\gamma^{-1}(p)} \\<br>
-&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)}(g\circ\gamma)\at{\gamma^{-1}(p)} + (f\circ\gamma)\at{\gamma^{-1}(p)}(g\circ\gamma)'\at{\gamma^{-1}(p)} \hint{product rule of derivatives} \\<br>
+&amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)}(g\circ\gamma)\at{\gamma^{-1}(p)} + (f\circ\gamma)\at{\gamma^{-1}(p)}(g\circ\gamma)'\at{\gamma^{-1}(p)} \\<br>
 &amp;= (V_{\gamma, p}f)g(p) + f(p)V_{\gamma, p}(g)<br>
 \end{align}<br>
 $$</p>
-<p>We are now equipped to define the tangent space to a manifold at a point!</p>
+<p>which is inherited from the product rule for ordinary derivatives. We are now equipped to define the tangent space to a manifold at a point!</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $M$ be a smooth manifold with $p\in M$. The <strong>tangent space</strong> to $M$ at the point $p$, written $T_p M$, is the vector space of all directional derivatives along curves at $p$.</p>
 </blockquote>
@@ -126,7 +186,6 @@ V_{\gamma, p}f &amp;= (F\circ\Gamma)'\at{\gamma^{-1}(p)} \\<br>
 <p>With this new definition, we see that</p>
 <p>$$V_{\gamma, p}f = \sum_{i=1}^n V^i \frac{\partial}{\partial x^i}\at{p}f$$</p>
 <p>where the $V^i\in\R$ are the curve-dependent parts which we don't care about. This means that the partial derivative operators $\Big(\dfrac{\partial}{\partial x^i}\at{p}f\Big)_{i=1}^n$ span $T_p M$. Furthermore, it is easy to show that they are linearly independent. It follows that $\Big(\dfrac{\partial}{\partial x^i}\at{p}f\Big)_{i=1}^n$ is a basis for the tangent space $T_p M$. From this, we see that $\dim T_p M = \dim M$. That is, the dimension of the tangent space is the same as the dimension of the original manifold!</p>
-<h3 id="thepushforwardanamethepushforward">The Pushforward<a name="the-pushforward"></a></h3>
 <p>The pushforward gives us a way to take smooth maps between manifolds and translate them into maps between tangent spaces on those manifolds. Here's the definition:</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $M$ and $N$ be smooth manifolds with $p\in M$, and let $\phi:M\to N$ be a smooth map. The <strong>pushforward</strong> of $\phi$ is the map</p>
@@ -2412,126 +2471,5 @@ f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br>
 <p>We've demonstrated that there exists a surjective homomorphism from $\R^*$ to $\R^+$ whose kernel is $\{-1,1\}$. The first isomorphism theorem immediately yields the desired result — that $\frac{\R^*}{\{-1,1\}}$ is isomorphic to $\R^+$.</p>
 <p>We don't even need to construct the isomorphism, although it's fairly straightforward to do so (the proof of the first isomorphism theorem tells us how).</p>
 <p>And intuitively, these groups <em>should</em> be isomorphic, if we think of the quotient group $\frac{\R^*}{\{-1,1\}}$ in the correct way. Basically, $\R^*$ is a gluing together of two copies of $\R^+$ — one copy containing all the positive numbers, and the other a mirror image containing all the negative numbers. The quotient group essentially &quot;factors out&quot; the sign of each number, leaving us with only one copy. The result is something that looks, acts and feels exactly like $\R^+$.</p>
-</blockquote>
-<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Normal Subgroups and Quotient Groups]]></title><description><![CDATA[Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though?]]></description><link>https://algebrology.github.io/normal-subgroups-and-quotient-groups/</link><guid isPermaLink="false">5c7f40876fe30a003ed53402</guid><category><![CDATA[algebra]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Wed, 06 Mar 2019 04:52:39 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ol>
-<li><a href="#normal-subgroups">Normal Subgroups</a></li>
-<li><a href="#quotient-groups">Quotient Groups</a></li>
-</ol>
-<hr>
-<h3 id="normalsubgroupsanamenormalsubgroups">Normal Subgroups<a name="normal-subgroups"></a></h3>
-<p>Let's now revisit the quotient set $G/H$, where $H$ is a subgroup of $G$. What we'd really like to do is turn $G/H$ into a group in a meaningful way. What should the group operation be, though? Recall that the elements of $G/H$ are the cosets of $H$, so what we really need to define is a meaningful way to multiply cosets.</p>
-<p>It would be great if we could define coset multiplication as follows:</p>
-<blockquote>
-<p><strong>Desired Definition.</strong> If $H$ is a subgroup of $G$ and $x,y\in G$, then<br>
-$$(Hx)(Hy)=H(xy).$$</p>
-</blockquote>
-<p>Unfortunately, this is not always uniquely defined. That is, if $Hx=Ha$ and $Hy=Hb$ for some $a,b\in G$, it is possible that $H(xy)\ne H(ab)$, which means this isn't an acceptable way to multiply cosets. This is the same behavior we saw when I proposed an incorrect definition of addition while <a href="https://algebrology.github.io/constructing-the-rational-numbers-1/#construction">constructing the rational numbers</a>. The result cannot depend on our choice of representative for the equivalence class!</p>
-<p>Interestingly, in this case the remedy is not to define coset multiplication in a different manner. Rather, we choose to restrict our attention only to cosets of a certain, particularly nice sort of subgroup.</p>
-<blockquote>
-<p><strong>Definition.</strong> A subgroup $N$ of a group $G$ is a <strong>normal subgroup</strong> if $xnx^{-1}\in N$ whenever $n\in N$ and $x\in G$. We refer to this defining property of normal subgroups by saying they are <strong>closed under conjugation</strong>.</p>
-</blockquote>
-<p>It goes without saying that every subgroup of an abelian group is normal, since in that case</p>
-<p>$$\begin{align}<br>
-xnx^{-1} &amp;= xx^{-1}n \\<br>
-&amp;= n,<br>
-\end{align}$$</p>
-<p>which is in $N$ by definition. However, there are certainly non-abelian groups with normal subgroups. And normal subgroups are particularly special because their left and right cosets are the same, even if they are not subgroups of an abelian group!</p>
-<blockquote>
-<p><strong>Theorem.</strong> If $N$ is a normal subgroup of a group $G$, then $xN=Nx$ for every $x\in G$.</p>
-<p><strong>Proof.</strong> For any $g\in xN$, we have that $g=xn$ for some $n\in N$. Since $N$ is closed under conjugation, $xnx^{-1}\in N$ and so $g=(xnx^{-1}x)\in Nx$. Thus, $xN\subseteq Nx$.</p>
-<p>The proof that $Nx\subseteq xN$ is nearly identical, so I will not include it.</p>
-</blockquote>
-<p>In a recent post I showed that the kernel of a homomorphism is a always a subgroup of its domain. It turns out that they are actually <em>normal</em> subgroups, and this will be very important to us later on.</p>
-<blockquote>
-<p><strong>Theorem.</strong> The kernel of any group homomorphism is a normal subgroup of the domain.</p>
-<p><strong>Proof.</strong> Let $G$ and $H$ be groups and let $f:G\to H$ denote a homomorphism between them. Suppose $x\in G$ and $k\in\ker f$. We need to show that $xkx^{-1}\in\ker f$.</p>
-<p>Since $k\in\ker f$, we have by definition that $f(k)=e$. Furthermore, since $f$ is a homomorphism,</p>
-<p>$$\begin{align}<br>
-f(xkx^{-1}) &amp;= f(x)f(k)f(x^{-1}) \\<br>
-&amp;= f(x)ef(x)^{-1} \\<br>
-&amp;= f(x)f(x)^{-1} \\<br>
-&amp;= e.<br>
-\end{align}$$</p>
-<p>Thus, $xkx^{-1}$ is in $\ker f$ by definition, so $\ker f$ is a normal subgroup of $G$.</p>
-</blockquote>
-<h3 id="quotientgroupsanamequotientgroups">Quotient Groups<a name="quotient-groups"></a></h3>
-<p>We are now ready to define quotient <em>groups</em>!</p>
-<blockquote>
-<p><strong>Definition.</strong> Let $N$ denote a normal subgroup of a group $G$. The <strong>quotient group of $G$ modulo $N$</strong> is the set $G/N$ together with coset multiplication defined by $(Nx)(Ny)=N(xy)$ for all $x,y\in G$.</p>
-</blockquote>
-<p>That's all well and good, but we're getting ahead of ourselves again. We still haven't actually shown that this multiplication is well defined when restricted to cosets of normal subgroups. Let's do that right now. After that, we'll still need to prove that this thing we'ved defined is really a group.</p>
-<blockquote>
-<p><strong>Theorem.</strong> Let $N$ denote a normal subgroup of a group $G$, with $Nx=Na$ and $Ny=Nb$ for some $a,b,x,y\in G$. Then $N(xy)=N(ab)$.</p>
-<p><strong>Proof.</strong> Since $Nx=Na$, we know that $x\in Na$ and thus $x=n_1a$ for some $n_1\in N$. Similarly, since $Ny=Nb$, we know that $y\in Nb$ and thus $y=n_2b$ for some $n_2\in N$. Thus,</p>
-<p>$$\begin{align}<br>
-xy &amp;= n_1an_2b \\<br>
-&amp;\in NaNb \\<br>
-&amp;= N(ab),<br>
-\end{align}$$</p>
-<p>so $N(xy)=N(ab)$, as desired.</p>
-</blockquote>
-<p>Now we need to show that quotient groups are actually groups. The proof of this is fairly straightforward.</p>
-<blockquote>
-<p><strong>Theorem.</strong> The quotient group as defined above is in fact a group.</p>
-<p><strong>Proof.</strong> We have already shown that coset multiplication is well defined. We will show first that it is associative. Consider $Nx, Ny, Nz\in G/N$. By definition,</p>
-<p>$$\begin{align}<br>
-Nx(NyNz) &amp;= NxN(yz) \\<br>
-&amp;= N(xyz) \\<br>
-&amp;= N(xy)Nz \\<br>
-&amp;= (NxNy)Nz.<br>
-\end{align}$$</p>
-<p>Next, we will show that $N$ is the identity element of $G/N$. Because $N$ is a subgroup of $G$, the identity element $e\in G$ is in $N$. Thus, for any $Nx\in G/N$, we have that</p>
-<p>$$\begin{align}<br>
-NNx &amp;= NeNx \\<br>
-&amp;= N(ex) \\<br>
-&amp;= Nx \\<br>
-&amp;= N(xe) \\<br>
-&amp;= NxNe \\<br>
-&amp;= NxN.<br>
-\end{align}$$</p>
-<p>Finally, we will show that for any $Nx\in G/N$, the coset $Nx^{-1}$ is its inverse. This is clear because</p>
-<p>$$\begin{align}<br>
-NxNx^{-1} &amp;= N(xx^{-1}) \\<br>
-&amp;= Ne \\<br>
-&amp;= N(x^{-1}x) \\<br>
-&amp;= Nx^{-1}Nx.<br>
-\end{align}$$</p>
-<p>We have shown that $G/N$ has all the properties of a group, so the proof is complete.</p>
-</blockquote>
-<p>Before moving on, let's look at a concrete example of a quotient group which is hopefully already familiar to you.</p>
-<blockquote>
-<p><strong>Example.</strong> Consider again the group $\Z$ of integers under addition and its subgroup $2\Z$ of even integers. Certainly $2\Z$ is a normal subgroup because $\Z$ is abelian, and we may thus form the quotient group $\Z/2\Z$. Recall that this quotient group contains only two cosets, namely $2\Z$ and $2\Z+1$.</p>
-<p>Coset &quot;multiplication&quot; here is really coset addition because we are working in an additive group. Since $2\Z$ is the identity, we have that</p>
-<p>$$\begin{align}<br>
-2\Z+2\Z &amp;= 2\Z, \\<br>
-2\Z + (2\Z+1) &amp;= 2\Z+1,\\<br>
-(2\Z+1) + 2\Z &amp;= 2\Z+1, \\<br>
-(2\Z+1) + (2\Z+1) &amp;= 2\Z.<br>
-\end{align}$$</p>
-<p>Let's rename these cosets, just for kicks. We'll refer to $2\Z$ as $0$ and $2\Z+1$ as $1$. Then we get</p>
-<p>$$\begin{align}<br>
-0 + 0 &amp;= 0, \\<br>
-0 + 1 &amp;= 1,\\<br>
-1 + 0 &amp;= 1, \\<br>
-1 + 1 &amp;= 0.<br>
-\end{align}$$</p>
-<p>This is precisely the group $\Z_2$ of integers modulo $2$, with the operation of addition modulo $2$. In fact, the formal way to define $\Z_n$, the group of integers modulo $n$, is as the quotient group $\Z/n\Z$.</p>
-</blockquote>
-<p>Now I'd like to give some motivation for why quotient groups are so important and useful. This is best done by example, because otherwise my explanation would likely turn into another incomprehensible rant.</p>
-<blockquote>
-<p><strong>Example.</strong> To start, we define a <strong>commutator</strong> of a group $G$ to be any element of the form $aba^{-1}b^{-1}$, where $a,b\in G$. Notice that $aba^{-1}b^{-1}$ reduces to the identity $e$ if and only if $ab=ba$. That is, the commutator $aba^{-1}b^{-1}$ collapses to the identity precisely when $a$ and $b$ commute. Clearly in any abelian group, every commutator is equal to the identity element.</p>
-<p>Suppose a quotient group $G/N$ is abelian. That is, for any two cosets $Nx, Ny\in G/N$, their product commutes, i.e.,</p>
-<p>$$\begin{align}<br>
-NxNy &amp;= N(xy) \\<br>
-&amp;= N(yx) \\<br>
-&amp;= NyNx.<br>
-\end{align}$$</p>
-<p>But this is true if and only if</p>
-<p>$$\begin{align}<br>
-xy(yx)^{-1} &amp;= xyx^{-1}y^{-1} \\<br>
-&amp;\in N.<br>
-\end{align}$$</p>
-<p>Thus, a quotient group is abelian precisely when all commutators are contained within the identity coset!</p>
-<p>A slightly more liberal, though meaningful, way of phrasing this is by saying that if we <em>factor out</em> all the commutators of $G$, we are always left with an abelian group. This because all commutators are collapsed to the identity element in the quotient group when we quotient out the commutator subgroup. This is just one example of a more general phenomenon.</p>
 </blockquote>
 <!--kg-card-end: markdown-->]]></content:encoded></item></channel></rss>

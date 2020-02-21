@@ -18,7 +18,7 @@
     <meta property="og:description" content="Tangent Spaces The Pushforward In calculus, you learn how to construct tangent lines to differentiable curves at a point.    In multivariable calculus, you learn how to construct tangent planes to differentiable surfaces at a point.    In differential geometry, the analogous concept is the tangent space to a smooth manifold at" />
     <meta property="og:url" content="https://algebrology.github.io/tangent-spaces-and-the-pushforward/" />
     <meta property="article:published_time" content="2020-02-13T03:08:16.000Z" />
-    <meta property="article:modified_time" content="2020-02-21T06:39:47.000Z" />
+    <meta property="article:modified_time" content="2020-02-21T06:46:48.000Z" />
     <meta property="article:tag" content="differential geometry" />
     
     <meta name="twitter:card" content="summary" />
@@ -53,7 +53,7 @@
     "headline": "Tangent Spaces and the Pushforward",
     "url": "https://algebrology.github.io/tangent-spaces-and-the-pushforward/",
     "datePublished": "2020-02-13T03:08:16.000Z",
-    "dateModified": "2020-02-21T06:39:47.000Z",
+    "dateModified": "2020-02-21T06:46:48.000Z",
     "keywords": "differential geometry",
     "description": " 1. Tangent Spaces\n 2. The Pushforward\n\nIn calculus, you learn how to construct tangent lines to differentiable curves\nat a point.\n\n\n\nIn multivariable calculus, you learn how to construct tangent planes to\ndifferentiable surfaces at a point.\n\n\n\nIn differential geometry, the analogous concept is the tangent space to a smooth\nmanifold at a point, but there&#x27;s some subtlety to this concept. Notice how the\ncurves and surface in the examples above are sitting in a higher-dimensional\nspace in order to ",
     "mainEntityOfPage": {
@@ -175,17 +175,17 @@ $$</p>
 <p>Now we must show that $\psi$ really is the curve whose directional derivative is the sum of the directional derivatives of $\gamma$ and $\sigma$. That is, we need to demonstrate that $V_{\psi,p} = V_{\gamma,p} + V_{\sigma,p}$. This is quite straightforward.</p>
 <p>$$<br />
 \begin{align}<br />
-V_{\psi,p} &amp;= (f\circ\psi)'\at{\psi^{-1}(p)} \hint{definition of directional derivative} \\<br />
+V_{\psi,p} &amp;= (f\circ\psi)'\at{\psi^{-1}(p)} \hint{definition} \\<br />
 &amp;= (f\circ(x^{-1}\circ x)\circ\psi)'\at{\psi^{-1}(p)} \hint{identity} \\<br />
 &amp;= (x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x\circ\psi\circ\psi^{-1}(p)} \hint{chain rule} \\<br />
 &amp;=(x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{identity} \\<br />
 &amp;=(x\circ\gamma + x\circ\sigma - x(p))'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{definition of $\psi$} \\<br />
-&amp;=(x\circ\gamma + x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{derivative of constant function} \\<br />
+&amp;=(x\circ\gamma + x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{derivative of constant} \\<br />
 &amp;= (x\circ\gamma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{linearity of derivative} \\<br />
 &amp;= (x\circ\gamma)'\at{\gamma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\sigma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{$\psi^{-1}(p) = \gamma^{-1}(p) = \sigma^{-1}(p)$} \\<br />
 &amp;= (f\circ(x^{-1}\circ x)\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ(x^{-1}\circ x)\circ\sigma)'\at{\sigma^{-1}(p)} \hint{chain rule} \\<br />
 &amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ\sigma)'\at{\sigma^{-1}(p)} \hint{identity} \\<br />
-&amp;= V_{\gamma,p} + V_{\sigma,p}. \hint{definition of directional derivative}<br />
+&amp;= V_{\gamma,p} + V_{\sigma,p}. \hint{definition}<br />
 \end{align}<br />
 $$</p>
 <p>Notice how the chart maps completely canceled out, and so even though our definition of $\psi$ was chart-dependent, its directional derivative was not! We have thus shown that $T_p M$ is closed under vector addition. The proof that it is closed under scalar multiplication is much simpler (it is just reparatmeterization of our curve) and so I will omit it because this proof is already long enough.</p>

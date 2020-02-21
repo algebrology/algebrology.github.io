@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 21 Feb 2020 06:43:07 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tangent Spaces and the Pushforward]]></title><description><![CDATA[<!--kg-card-begin: markdown--><ol>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 21 Feb 2020 06:47:11 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Tangent Spaces and the Pushforward]]></title><description><![CDATA[<!--kg-card-begin: markdown--><ol>
 <li><a href="#tangent-spaces">Tangent Spaces</a></li>
 <li><a href="#the-pushforward">The Pushforward</a></li>
 </ol>
@@ -86,17 +86,17 @@ $$</p>
 <p>Now we must show that $\psi$ really is the curve whose directional derivative is the sum of the directional derivatives of $\gamma$ and $\sigma$. That is, we need to demonstrate that $V_{\psi,p} = V_{\gamma,p} + V_{\sigma,p}$. This is quite straightforward.</p>
 <p>$$<br>
 \begin{align}<br>
-V_{\psi,p} &amp;= (f\circ\psi)'\at{\psi^{-1}(p)} \hint{definition of directional derivative} \\<br>
+V_{\psi,p} &amp;= (f\circ\psi)'\at{\psi^{-1}(p)} \hint{definition} \\<br>
 &amp;= (f\circ(x^{-1}\circ x)\circ\psi)'\at{\psi^{-1}(p)} \hint{identity} \\<br>
 &amp;= (x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x\circ\psi\circ\psi^{-1}(p)} \hint{chain rule} \\<br>
 &amp;=(x\circ\psi)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{identity} \\<br>
 &amp;=(x\circ\gamma + x\circ\sigma - x(p))'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{definition of $\psi$} \\<br>
-&amp;=(x\circ\gamma + x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{derivative of constant function} \\<br>
+&amp;=(x\circ\gamma + x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{derivative of constant} \\<br>
 &amp;= (x\circ\gamma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\psi^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{linearity of derivative} \\<br>
 &amp;= (x\circ\gamma)'\at{\gamma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} + (x\circ\sigma)'\at{\sigma^{-1}(p)}(f\circ x^{-1})'\at{x(p)} \hint{$\psi^{-1}(p) = \gamma^{-1}(p) = \sigma^{-1}(p)$} \\<br>
 &amp;= (f\circ(x^{-1}\circ x)\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ(x^{-1}\circ x)\circ\sigma)'\at{\sigma^{-1}(p)} \hint{chain rule} \\<br>
 &amp;= (f\circ\gamma)'\at{\gamma^{-1}(p)} + (f\circ\sigma)'\at{\sigma^{-1}(p)} \hint{identity} \\<br>
-&amp;= V_{\gamma,p} + V_{\sigma,p}. \hint{definition of directional derivative}<br>
+&amp;= V_{\gamma,p} + V_{\sigma,p}. \hint{definition}<br>
 \end{align}<br>
 $$</p>
 <p>Notice how the chart maps completely canceled out, and so even though our definition of $\psi$ was chart-dependent, its directional derivative was not! We have thus shown that $T_p M$ is closed under vector addition. The proof that it is closed under scalar multiplication is much simpler (it is just reparatmeterization of our curve) and so I will omit it because this proof is already long enough.</p>

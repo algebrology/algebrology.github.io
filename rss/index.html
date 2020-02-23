@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Fri, 21 Feb 2020 22:37:35 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Cotangent Spaces and the Pullback]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that</p>]]></description><link>https://algebrology.github.io/cotangent-spaces-and-the-pullback/</link><guid isPermaLink="false">5e504ac6564b2a004912fc9f</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Fri, 21 Feb 2020 21:30:47 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that choosing a chart allowed us to construct a useful basis of partial derivative operators with respect to the components of the chart map.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Sun, 23 Feb 2020 00:02:47 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[The Tangent Bundle]]></title><description><![CDATA[In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems.]]></description><link>https://algebrology.github.io/the-tangent-bundle/</link><guid isPermaLink="false">5e516f62564b2a004912fd0a</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Sat, 22 Feb 2020 20:36:21 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Before we begin, I need to introduce a few new concepts. The first is that of a module, which is like a vector space but whose scalars come from a ring instead of a field. I guess I should formally define what a ring is before defining a module.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>ring</strong> is a set $R$ of elements called <strong>scalars</strong>, together with two binary operations:</p>
+<div style="margin-left:1.5em">
+<p><strong>Addition</strong><br>
+which assigns to any pair of scalars $a,b\in\F$ the scalar $a+b\in R$,</p>
+<p><strong>Multiplication</strong><br>
+which assigns to any pair of scalars $a,b\in\F$ the scalar $ab\in R$.</p>
+</div>
+<p>Any ring and its operations must satisfy the following properties:</p>
+<div style="margin-left:1.5em"> 
+<p><strong>Additive Identity</strong><br>
+There exists $0\in R$ such that $0+a=a$ for every $a\in R$.</p>
+<p><strong>Additive Inverses</strong><br>
+For every $a\in R$, there exists $b\in R$ for which $a+b=0$.</p>
+<p><strong>Commutative Property of Addition</strong><br>
+For all $a,b\in R$, we have that $a+b=b+a$.</p>
+<p><strong>Associative Property of Addition</strong><br>
+For all $a,b,c\in R$, we have that $(a+b)+c=a+(b+c)$.</p>
+<p><strong>Associative Property of Multiplication</strong><br>
+For all $a,b,c\in R$, we have that $(ab)c=a(bc)$.</p>
+<p><strong>Distributive Property</strong><br>
+For all $a,b,c\in R$, we have that $a(b+c)=ab+ac$.</p>
+</div>
+</blockquote>
+<p>So basically a ring is just like a field, except it does not necessarily have a multiplicative identity or multiplicative inverses, and multiplication is not necessarily commutative. If a ring does have a multiplicative identity, it is called a <em>ring with unity</em>. If it additionally has multiplicative inverses (since this would make no sense without an identity) it is called a <em>division ring</em>. If its multiplication is commutative, it is called a <em>commutative ring</em>.</p>
+<p>The definition of a module is exactly the same as that of a vector space, except its scalars come from a ring.</p>
+<blockquote>
+<p><strong>Definition.</strong> A <strong>module over a ring</strong> $R$ is a set $\Gamma$, together with two operations:</p>
+<div style="margin-left:1.5em">
+<p><strong>Addition</strong><br>
+which assigns to any pair $u,v\in \Gamma$ the element $u+v\in \Gamma$,</p>
+<p><strong>Scalar Multiplication</strong><br>
+which assigns to any scalar $a\in R$ and any $v\in \Gamma$ the element $av\in \Gamma$.</p>
+</div>
+<p>Any module and its operations must satisfy the following properties:</p>
+<div style="margin-left:1.5em">
+<p><strong>Zero Element</strong><br>
+There exists $0\in \Gamma$ such that $0+v=v$ for every $v\in \Gamma$.</p>
+<p><strong>Additive Inverses</strong><br>
+For every $u\in \Gamma$, there exists $v\in \Gamma$ for which $u+v=0$.</p>
+<p><strong>Commutative Property of Addition</strong><br>
+For all $u,v\in \Gamma$, we have that $u+v=v+u$.</p>
+<p><strong>Associative Property of Addition</strong><br>
+For all $u,v,w\in \Gamma$, we have that $(u+v)+w=u+(v+w)$.</p>
+<p><strong>Compatibility with Ring Multiplication</strong><br>
+For all $a,b\in R$ and $v\in \Gamma$, we have that $(ab)v=a(bv)$.</p>
+<p><strong>Scalar Multiplicative Identity</strong><br>
+For every $v\in \Gamma$, we have that $1v=v$.</p>
+<p><strong>First Distributive Property</strong><br>
+For all $a,b\in R$ and $v\in \Gamma$, we have that $(a+b)v=av+bv$.</p>
+<p><strong>Second Distributive Property</strong><br>
+For all $a\in R$ and $u,v\in \Gamma$, we have that $a(u+v)=au+av$.</p>
+</div>
+</blockquote>
+<p>The next new concept we need is that of the disjoint union of sets:</p>
+<blockquote>
+<p><strong>Definition.</strong> Given an indexing set $I$ and a collection of sets $\{A_i\}_{i\in I}$ indexed by $I$, their <strong>disjoint union</strong> is the set</p>
+<p>$$\bigsqcup_{i\in I}A_i = \bigcup_{i\in I} A_i\times\{i\}.$$</p>
+</blockquote>
+<p>The main point of the disjoint union is to keep an identifier for which set the elements originally came from.</p>
+<blockquote>
+<p><strong>Example.</strong> Let $A_1=A_2=\R$. Normally the union of $A_1$ and $A_2$ would just be $\R$ itself, since every element of $A_2$ is already in $A_1$. However, their disjoint union is the set</p>
+<p>$$A_1\sqcup A_2 = (\R\times\{1\})\cup(\R\times\{2\}).$$</p>
+<p>Each element of this disjoint union is either of the form $(a, 1)$ or $(a, 2)$, where $a\in\R$, so these elements look and feel just like real numbers except that we can tell whether they came from the set $A_1$ or $A_2$.</p>
+</blockquote>
+<p>There is, of course, no reason why all the sets being unioned together need to be the same set. Later we shall see an example where each set is different, but it is still useful to keep the identifying index.</p>
+<p>Lastly, we will need the idea of a section. This is sort of the dual concept to that of a retraction, which I introduced when discussing the Brouwer Fixed Point Theorem in my post on connectedness.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $f:A\to B$ be a function between sets. A function $s:B\to A$ is called a <strong>section</strong> of $f$ if $f\circ s=1_B$. That is, if $f\circ s(b)=b$ for every $b\in B$.</p>
+</blockquote>
+<p>Informally speaking, sections provide a way to pick out representatives of level sets of the function $f$. To see what I mean, let's look at an example.</p>
+<blockquote>
+<p><strong>Example.</strong> Let $A$ denote a set of people and let $B$ denote a set of continents. Define $f:A\to B$ as the function which tells you which continent a person was born in. For instance, $f($me$) =$ North America.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/sections-1.svg" alt="sections-1"></p>
+<p>In order to define a section $s:B\to A$ for which $f\circ s$ is the identity map on $B$, all we need to do is send each continent to one person who lives there. Here are two possible sections for $f$, $s_1, s_2:B\to A$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/sections-2-1.svg" alt="sections-2-1"></p>
+<p>Check for yourself that $f\circ s_1$ and $f\circ s_2$ are both the identity on $B$. And notice that my claim earlier holds true: these sections pick one representative of each continent. This concept will be very important later on.</p>
+</blockquote>
+<p>Now we have the necessary machinery to proceed!</p>
+<p>So far we've seen how to construct tangent vectors to a manifold at a point, and tangent spaces to manifolds at a point. But what if we wanted to do this at every point on our manifold? In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems.</p>
+<p>The first and most obvious problem is that defining <em>smoothness</em> of vector fields is going to be extremely tricky, since smoothness is a property of maps from smooth manifolds to smooth manifolds.</p>
+<p>The second problem is even more troubling. We would like to define a vector field $X$ as a map which acts on any point $p$ in a smooth manifold and returns a tangent vector in $T_pM$. However, we don't currently have any set which can act as the codomain of such a map. This is because each point in the manifold has a <em>different</em> tangent space, so a vector at $p$ lives in $T_pM$ while a vector based at $q$ lives in $T_qM$.</p>
+<p>So before we can proceed, we need to come up with a set comprised of all possible tangent vectors to all the points on our manifold, so this set can act as the codomain of a vector field. Furthermore, since we want a concept of smoothness for our vector fields, this set will have to be a smooth manifold. This smooth manifold I'm describing will be the <em>tangent bundle</em>.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth manifold $M$, its <strong>tangent bundle</strong>, is the set</p>
+<p>$$TM = \bigsqcup_{p\in M} T_pM.$$</p>
+</blockquote>
+<p>The name &quot;bundle&quot; is actually very appropriate since the tangent bundle, as a set, is really just all the tangent spaces bundled together. Every element of the tangent bundle $TM$ is of the form $(X, p)$, where $p\in M$ is a point in our manifold and $X\in T_pM$ is a tangent vector based at $p$. Our goal now is to introduce a smooth manifold structure on the tangent bundle.</p>
+<p>A smooth manifold is a second countable, Hausdorff, locally Euclidean topological space. So the first thing we need to do is give $TM$ a topology. To this end, we introduce a simple but extremely important definition:</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth manifold $M$ and its tangent bundle $TM$,  the <strong>bundle projection map</strong> is the function $\pi:TM\to M$ defined by $\pi\big((X,p)\big)=p$ for every $(X,p)\in TM$.</p>
+</blockquote>
+<p>It is extremely important to note that the bundle projection map is surjective!</p>
+<p>We will equip the tangent bundle $TM$ wth the bare minimum topology required to make the bundle projection map $\pi$ continuous. This is actually quite simple. We define a set $U\subseteq TM$ as open if and only if $U=\pi^{-1}[V]$ for some open set $V\subseteq M$. In this sense, $TM$ inherits its topology from $M$, which is exactly what we want!</p>
+<p>Let's verify that this is actually a topology, and that $\pi$ is continuous with this topology, as claimed.</p>
+<blockquote>
+<p><strong>Theorem.</strong> The topology on $TM$ defined above is in fact a topology, and $\pi:TM\to M$ is continuous.</p>
+<p><strong>Proof.</strong> To show that this is a topology on the tangent bundle, we must verify three things: that the empty set and $TM$ itself are open, that the union of any collection of open sets is open, and that the intersection of any finite collection of open sets is open.</p>
+<p>To see that the empty set is open in $TM$, we note that $\varnothing\subseteq M$ is open because $M$ is a topological space. Thus, $\varnothing=\pi^{-1}[\varnothing]$ is open by definition. To see that $TM$ is open, we note that $M$ is open in itself, and so $\pi^{-1}[M]=TM$ is open by definition.</p>
+<p>Next, we argue that the union of open sets in $TM$ is open. Let $I$ be an indexing set for which $\{U_i\}_{i\in I}$ is a collection of open subsets of $TM$. Then each $U_i=\pi^{-1}[V_i]$ for some open set $V_i\subseteq M$. It follows from the properties of the preimage that</p>
+<p>$$\begin{align}<br>
+\bigcup_{i\in I}U_i &amp;= \bigcup_{i\in I}\pi^{-1}[V_i] \\<br>
+&amp;= \pi^{-1}\Big[\bigcup_{i\in I}V_i\Big].<br>
+\end{align}$$</p>
+<p>Since the union of open sets in $M$ is open, it follows that $\bigcup_{i\in I}V_i$ is open in $M$ and thus $\bigcup_{i\in I}U_i$ is open in $TM$.</p>
+<p>Lastly, we argue that the intersection of a finite collection of open sets in $TM$ is open. Let $U_1, U_2, \ldots, U_n$ be a collection of open subsets of $TM$. Then each $U_i=\pi^{-1}[V_i]$ for some open set $V_i\subseteq M$. It follows from the properties of the preimage that</p>
+<p>$$\begin{align}<br>
+\bigcap_{i=1}^n U_i &amp;= \bigcap_{i=1}^n \pi^{-1}[V_i] \\<br>
+&amp;= \pi^{-1}\Big[\bigcap_{i=1}^n V_i\Big].<br>
+\end{align}$$</p>
+<p>Since the intersection of a finite collection of open sets in $M$ is open, it follows that $\bigcup_{i=1}^n V_i$ is open in $M$ and thus $\bigcup_{i=1}^n U_i$ is open in $TM$. Thus, this is indeed a topology on $TM$.</p>
+<p>It is almost trivial to show that $\pi:TM\to M$ is continuous. Consider any open set $V\subseteq M$. Then $\pi^{-1}[V]$ is open in $TM$ by the definition of our topology! Thus, $\pi$ is a continuous function.</p>
+</blockquote>
+<p>So $TM$ is indeed a topological space with the topology induced by $M$ as we described. The next step is to show that it is a topological manifold. To do this, we technically need to check that $TM$ is Hausdorff and second countable. I will not do this here, though, since it is not very informative. It is vital however to show that it is locally Euclidean. To do this, we simply need to demonstrate that every point in $TM$ in contained in some chart domain.</p>
+<p>To this end, choose any point $(X, p)$ in $TM$. Then $p\in M$ and $X\in T_pM$. We will use the atlas on $M$ to construct a chart whose domain contains $(X, p)$. Since $M$ is a manifold, there is at least one chart $(U, x)$ for $M$ whose domain contains $p$.</p>
+<p>We use this information to define a chart $(U', x')$ for $TM$ whose domain contains $(X, p)$ as follows:</p>
+<p>$$\begin{align}<br>
+U' &amp;= \bigsqcup_{q\in U} T_q M \\<br>
+x'\big((Y, q)\big) &amp;= \big(x^1(q), x^2(q), \ldots, x^n(q), Y^1, Y^2, \ldots, Y^n\big),<br>
+\end{align}$$</p>
+<p>where $n=\dim M$ and $Y=\displaystyle\sum_{i=1}^n Y_i\frac{\partial}{\partial x^i}\at{q}\in T_qM$.</p>
+<p><img src="https://algebrology.github.io/content/images/2020/02/tangent-bundle.svg" alt="tangent-bundle"></p>
+<p>Notice that $x':TM\to\R^{2n}$, so what I am saying is that $TM$ is a manifold whose dimension is twice the dimension of $M$. We of course need to verify that the set $U'$ as defined above is open in $TM$. Technically we also need to show that $x'$ is an embedding, but I will omit this step since it is not difficult or interesting.</p>
+<blockquote>
+<p><strong>Theorem.</strong> The set $U'$ as defined above is open in the tangent bundle $TM$. That is, if $U$ is an open set in $M$ then $U'=\bigsqcup_{q\in U}T_qM$ is an open set in $TM$.</p>
+<p><strong>Proof.</strong> We need to construct an open set $V\subseteq M$ for which $U'=\pi^{-1}[V]$. It just so happens that this set is $U$ itself, since</p>
+<p>$$\begin{align}<br>
+\pi^{-1}[U] &amp;= \{(X, q)\in TM \mid \pi\big((X,q)\big)\in U\} \\<br>
+&amp;= \bigsqcup_{q\in U} T_qM \\<br>
+&amp;= U'.<br>
+\end{align}$$</p>
+<p>Since $U'$ is the preimage under $\pi$ of an open set in $M$, it is open in the tangent bundle $TM$.</p>
+</blockquote>
+<p>So we've shown that $TM$ is a topological manifold, and it was almost too easy! In fact, most things related to the tangent bundle are. It is defined to be nice and to make our lives easier.</p>
+<p>Lastly, we should show that the atlas we've exhibited on $TM$ is a smooth atlas. That is, if $(U', x')$ and $(V', y')$ are charts for $TM$ with nonempty intersection, $U'\cap V'\ne\varnothing$, then we need to show that the transition map $y'\circ(x')^{-1}:\R^{2n}\to\R^{2n}$ is smooth in the sense of ordinary multivariable calculus. It is not too difficult to do so, but I won't bother to do it here.</p>
+<p>In any case, we've arrived where we wanted to: the tangent bundle is a smooth manifold! We have all the machinery we need now to develop vector fields in my next post, as well as covector and tensor fields!</p>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Cotangent Spaces and the Pullback]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that</p>]]></description><link>https://algebrology.github.io/cotangent-spaces-and-the-pullback/</link><guid isPermaLink="false">5e504ac6564b2a004912fc9f</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Fri, 21 Feb 2020 21:30:47 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that choosing a chart allowed us to construct a useful basis of partial derivative operators with respect to the components of the chart map.</p>
 <p>Now, as we so often do with vector spaces, we consider the dual space to the tangent space at a point.</p>
 <blockquote>
 <p><strong>Definition.</strong> If $M$ is a smooth manifold and $p\in M$ then the <strong>cotangent space</strong> to $M$ at the point $p$, written $T_p^*M$, is the dual space of $T_pM$. That is,</p>
@@ -2424,52 +2561,4 @@ U_3 &amp;= \{(0,0,z)\in\R^3\mid z\in\R\}<br>
 </blockquote>
 <p>I'm going to end the post here and save the good stuff for next time. In particular, I still need to talk about matrices for homomorphisms between free abelian groups, Smith Normal Form, and the Fundamental Theorem of Finitely Generated Abelian Groups.</p>
 <p>Until next time :D</p>
-<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[The First Isomorphism Theorem]]></title><description><![CDATA[It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!]]></description><link>https://algebrology.github.io/the-first-isomorphism-theorem/</link><guid isPermaLink="false">5c84a734fdce06003e4aeefc</guid><category><![CDATA[algebra]]></category><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Sun, 10 Mar 2019 06:34:06 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>In the study of group theory, there are a few important theorems called the First, Second and Third Isomorphism Theorems. The second and third are really just special cases of the first, and they will not be immediately useful to us so I will put off their discussion until some other time.</p>
-<p>Before proceeding any further, I would like to make a notational change that will make my life a little easier when writing these posts about algebra. Thus far, I have been using $e$ to denote the identity element of a group. From here on out, I will use the following convention:</p>
-<blockquote>
-<p><strong>Notation.</strong> Given an arbitrary group $G$, its identity element will be written $1_G$ (or simply $1$ when no confusion can arise).</p>
-<p>If we know we are working with an additive abelian group, the identity will instead be written $0_G$ (or simply $0$).</p>
-</blockquote>
-<p>This notational convention may seem odd at first, but it will make things easier to understand in general.</p>
-<p>We will need the result I proved in my <a href="https://algebrology.github.io/normal-subgroups-and-quotient-groups/">previous post</a> that the kernel of a group homomorphism is a normal subgroup of the domain. We will also need the following theorem, which basically states that for any homomorphism, elements in the same coset of the kernel all get mapped to the same element.</p>
-<blockquote>
-<p><strong>Theorem.</strong> Let $f:G\to H$ be a group homomorphism with $x,y\in G$ and let $K=\ker f$ to keep things concise. Then $Kx=Ky$ if and only if $f(x)=f(y)$.</p>
-<p><strong>Proof.</strong> Suppose first that $Kx=Ky$. Then $xy^{-1}\in K=\ker f$, so</p>
-<p>$$\begin{align}<br>
-f(xy^{-1}) &amp;= f(x)f(y^{-1}) \\<br>
-&amp;= f(x)f(y)^{-1} \\<br>
-&amp;= 1_H.<br>
-\end{align}$$</p>
-<p>Multiplication on the right by $f(y)$ yields $f(x)=f(y)$.</p>
-<p>Suppose conversely that $f(x)=f(y)$. Then we can essentially just do the above in reverse. Multiplication on the right by $f(y)^{-1}$ yields</p>
-<p>$$\begin{align}<br>
-f(x)f(y)^{-1} &amp;= f(x)f(y^{-1})\\<br>
-&amp;= f(xy^{-1}) \\<br>
-&amp;= 1_H,<br>
-\end{align}$$</p>
-<p>and thus $xy^{-1}\in\ker f=K$ by definition, completing the proof.</p>
-</blockquote>
-<p>This theorem, while deceptively simple, tells us something extremely important. Namely, that each coset of the kernel corresponds to precisely one element of the codomain. It would be nice if there was some sort of relationship between cosets of the kernel and the image of a homomorphism. Oh wait... there is!</p>
-<blockquote>
-<p><strong>First Isomorphism Theorem.</strong> If $f:G\to H$ is a group homomorphism, then $G/\ker f$ is isomorphic to $\im f$.</p>
-<p><strong>Proof.</strong> Our claim is that the function $\varphi:G/\ker f\to\im f$ defined by $$\varphi(Kx)=f(x)$$ for every $Kx\in G/\ker f$ is an isomorphism. Again for convenience, we let $K=\ker f$.</p>
-<p>First, since $\varphi$ acts on cosets we must show that it is well defined, i.e., if $Kx=Ky$ then $\varphi(Kx)=\varphi(Ky)$. But from the above theorem, if $Kx=Ky$ then $f(x)=f(y)$, so it follows immediately that this is true.</p>
-<p>Next we argue that $\varphi$ is a homomorphism. Again, choose cosets $Kx$ and $Ky$ in $G/K$. Then</p>
-<p>$$\begin{align}<br>
-\varphi(Kx)\varphi(Ky) &amp;= f(x)f(y) \\<br>
-&amp;= f(xy) \\<br>
-&amp;= \varphi(K(xy))<br>
-\end{align}$$</p>
-<p>because $f$ is a homomorphism, so $\varphi$ essentially inherits this property from $f$.</p>
-<p>Finally, we need to show that $\varphi$ is a bijection. To see that it is injective, suppose that $\varphi(Kx)=\varphi(Ky)$ for some cosets $Kx$ and $Ky$ in $G/K$. Then $f(x)=f(y)$, and so $Kx=Ky$ by the above theorem. To see that $\varphi$ is surjective, choose any $b\in\im f$. By definition, there exists $a\in G$ for which $f(a)=b$. Thus $b=\varphi(Ka)$, and so it follows that $\varphi$ is bijective, completing the proof.</p>
-</blockquote>
-<p>I'm trying to keep this post short, but I should provide at least one example of how this theorem can be applied.</p>
-<blockquote>
-<p><strong>Example.</strong> Consider the abelian group $\R^*$ of nonzero real numbers under multiplication, the group $\R^+$ of positive real numbers under multiplication, and the subgroup $\{-1,1\}$ of $\R^*$. This subgroup is certainly normal since it comes from an abelian group.</p>
-<p>We will show that the quotient group $\frac{\R^*}{\{-1,1\}}$ is isomorphic to $\R^+$. And we'll do it using the first isomorphism theorem!</p>
-<p>We need to define a surjective homomorphism $f:\R^*\to \R^+$ for which $\ker f=\{-1,1\}$. This is actually really easy. We'll just let $f(x)=\abs{x}$. Clearly $f(x)=1$ precisely when either $x=1$ or $x=-1$, and so $\ker f=\{-1,1\}$ as desired. That $f$ is a homomorphism follows from the fact that $\abs{xy}=\abs{x}\abs{y}$ for all real numbers. It's just as easy to see that $f$ is surjective, because for any $x\in\R^+$ we know that at least $\abs{x}=x$.</p>
-<p>We've demonstrated that there exists a surjective homomorphism from $\R^*$ to $\R^+$ whose kernel is $\{-1,1\}$. The first isomorphism theorem immediately yields the desired result — that $\frac{\R^*}{\{-1,1\}}$ is isomorphic to $\R^+$.</p>
-<p>We don't even need to construct the isomorphism, although it's fairly straightforward to do so (the proof of the first isomorphism theorem tells us how).</p>
-<p>And intuitively, these groups <em>should</em> be isomorphic, if we think of the quotient group $\frac{\R^*}{\{-1,1\}}$ in the correct way. Basically, $\R^*$ is a gluing together of two copies of $\R^+$ — one copy containing all the positive numbers, and the other a mirror image containing all the negative numbers. The quotient group essentially &quot;factors out&quot; the sign of each number, leaving us with only one copy. The result is something that looks, acts and feels exactly like $\R^+$.</p>
-</blockquote>
 <!--kg-card-end: markdown-->]]></content:encoded></item></channel></rss>

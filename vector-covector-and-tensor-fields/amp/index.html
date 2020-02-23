@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Cotangent Spaces and the Pullback</title>
+    <title>Vector, Covector and Tensor Fields</title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="https://algebrology.github.io/cotangent-spaces-and-the-pullback/" />
+    <link rel="canonical" href="https://algebrology.github.io/vector-covector-and-tensor-fields/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     
     <meta property="og:site_name" content="Algebrology" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Cotangent Spaces and the Pullback" />
-    <meta property="og:description" content="Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that" />
-    <meta property="og:url" content="https://algebrology.github.io/cotangent-spaces-and-the-pullback/" />
-    <meta property="article:published_time" content="2020-02-21T21:30:47.000Z" />
-    <meta property="article:modified_time" content="2020-02-23T05:16:37.000Z" />
+    <meta property="og:title" content="Vector, Covector and Tensor Fields" />
+    <meta property="og:description" content="Last time I said that our motivation for defining the tangent bundle was so that we&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite get there! Let&#x27;s do that now, since we are already equipped to do so!  Definition. Let $M$ be a smooth" />
+    <meta property="og:url" content="https://algebrology.github.io/vector-covector-and-tensor-fields/" />
+    <meta property="article:published_time" content="2020-02-23T09:07:00.000Z" />
+    <meta property="article:modified_time" content="2020-02-23T21:09:30.000Z" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Cotangent Spaces and the Pullback" />
-    <meta name="twitter:description" content="Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that" />
-    <meta name="twitter:url" content="https://algebrology.github.io/cotangent-spaces-and-the-pullback/" />
+    <meta name="twitter:title" content="Vector, Covector and Tensor Fields" />
+    <meta name="twitter:description" content="Last time I said that our motivation for defining the tangent bundle was so that we&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite get there! Let&#x27;s do that now, since we are already equipped to do so!  Definition. Let $M$ be a smooth" />
+    <meta name="twitter:url" content="https://algebrology.github.io/vector-covector-and-tensor-fields/" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Eric Shapiro" />
     
@@ -46,11 +46,11 @@
         "url": "https://algebrology.github.io/author/eric/",
         "sameAs": []
     },
-    "headline": "Cotangent Spaces and the Pullback",
-    "url": "https://algebrology.github.io/cotangent-spaces-and-the-pullback/",
-    "datePublished": "2020-02-21T21:30:47.000Z",
-    "dateModified": "2020-02-23T05:16:37.000Z",
-    "description": "Last time, we defined the tangent space to a smooth manifold at a point. This\nturned out to be a vector space with the same dimension as the manifold, and\ntangent vectors were directional derivative operators which acted on smooth\nfunctions and spat out real numbers. We also found that choosing a chart allowed\nus to construct a useful basis of partial derivative operators with respect to\nthe components of the chart map.\n\nNow, as we so often do with vector spaces, we consider the dual space to th",
+    "headline": "Vector, Covector and Tensor Fields",
+    "url": "https://algebrology.github.io/vector-covector-and-tensor-fields/",
+    "datePublished": "2020-02-23T09:07:00.000Z",
+    "dateModified": "2020-02-23T21:09:30.000Z",
+    "description": "Last time I said that our motivation for defining the tangent bundle was so that\nwe&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite\nget there! Let&#x27;s do that now, since we are already equipped to do so!\n\n&gt; Definition. Let $M$ be a smooth manifold and $TM$ its tangent bundle. A smooth\nvector field on $M$ is a smooth section of the bundle projection map $\\pi:TM\\to\nM$.\n\nWe write $\\Gamma(TM)$ to denote the set of all vector fields on $M$.\n\n\nThis may seem like gibberish at f",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://algebrology.github.io/"
@@ -82,83 +82,71 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Cotangent Spaces and the Pullback</h1>
+                <h1 class="post-title">Vector, Covector and Tensor Fields</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="/author/eric/">Eric Shapiro</a></p>
-                    <time class="post-date" datetime="2020-02-21">2020-02-21</time>
+                    <time class="post-date" datetime="2020-02-23">2020-02-23</time>
                 </section>
             </header>
             <section class="post-content">
 
-                <p>Last time, we defined the tangent space to a smooth manifold at a point. This turned out to be a vector space with the same dimension as the manifold, and tangent vectors were directional derivative operators which acted on smooth functions and spat out real numbers. We also found that choosing a chart allowed us to construct a useful basis of partial derivative operators with respect to the components of the chart map.</p>
-<p>Now, as we so often do with vector spaces, we consider the dual space to the tangent space at a point.</p>
+                <p>Last time I said that our motivation for defining the tangent bundle was so that we'd be able to define smooth vector fields on a manifold, but I didn't quite get there! Let's do that now, since we are already equipped to do so!</p>
 <blockquote>
-<p><strong>Definition.</strong> If $M$ is a smooth manifold and $p\in M$ then the <strong>cotangent space</strong> to $M$ at the point $p$, written $T_p^*M$, is the dual space of $T_pM$. That is,</p>
-<p>$$T_p^*M = (T_pM)^*.$$</p>
-<p>We refer to elements of the cotangent space as <strong>cotangent vectors</strong>.</p>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold and $TM$ its tangent bundle. A <strong>smooth vector field</strong> on $M$ is a smooth section of the bundle projection map $\pi:TM\to M$.</p>
+<p>We write $\Gamma(TM)$ to denote the set of all vector fields on $M$.</p>
 </blockquote>
-<p>From my previous post on dual vector spaces, we know that the cotangent space $T_p^*M$ consists of all linear maps from $T_pM$ to $\R$. That is, a cotangent vector $\omega\in T_p^*M$ acts on tangent vectors and spits out real numbers. Furthermore, we know that $\dim T_p^*M = \dim T_pM = \dim M$.</p>
-<p>Even so, we don't know too much about what cotangent vectors look like or how they behave. To aid us in our quest, we come to a crucial definition.</p>
+<p>This may seem like gibberish at first, so let's parse the definition a bit. If $X$ is a vector field on $M$, then as a section of $\pi$ it must be a map $X:M\to TM$ for which $\pi\circ X=1_M$. So it has the correct domain and codomain, since we want a vector field to be an assignment of a tangent vector to each point of our manifold. Furthermore, it's a smooth map, which makes sense because $M$ and $TM$ are both manifolds. Lastly, it assigns to each point $p\in M$ a tangent vector in $T_p M$ based at $p$. That's because, as we saw last time, sections provide representatives for the level sets of a function. More formally, since $\pi(X(p))=p$, it must be that $X(p)$ is of the form $(Y, p)\in TM$ for some vector $Y\in T_pM$, so that $\pi\big((Y, p)\big)=p$.</p>
+<p></p>
+<p>This is only part of the picture, though, because we want to be able to work with vector fields algebraically. One might think to turn $\Gamma(TM)$ into a vector field over $\R$. This would allow us to scale vector fields and add them together in the natural ways. However, scaling an entire vector field by a fixed amount is pretty boring. We can do much better!</p>
+<p>Notice that the set of smooth functions $C^\infty(M)$ is a commutative ring with unity under the usual addition and multiplication of functions. It fails to be a field, though, because it lacks inverses for certain nonzero elements (a nonzero function which vanishes anywhere has no multiplicative inverse). If we use smooth functions as our scalars by turning $\Gamma(TM)$ into a module over $C^\infty(M)$, we gain the power to scale vector fields by smooth functions. That is, the amount of scaling will depend on where in the manifold we look.</p>
+<p>It is convenient now to make the following definition, which extends our previous definition of partial derivative operators with respect to a chart component at a point:</p>
 <blockquote>
-<p><strong>Definition.</strong> Given a smooth function $f:M\to\R$ defined on a smooth manifold $M$ and a point $p\in M$, the <strong>differential</strong> of $f$ at $p$ is the cotangent vector $\d f\smallat{p}:T_pM\to\R$ defined by</p>
-<p>$$\d f\smallat{p} X = Xf$$</p>
-<p>for any tangent vector $X\in T_pM$.</p>
-</blockquote>
-<p>It is easy to check that the differential of a smooth function is a linear map, and thus truly a cotangent vector. Even so, how does this new concept help us to understand the structure of the cotangent space? The next theorem tells us how.</p>
-<blockquote>
-<p><strong>Theorem.</strong> Let $M$ be a smooth manifold of dimension $n$ with $p\in M$, let $(U,x)$ be a chart whose domain contains $p$ and let $x^i$ denote the $i$th component of the chart map $x$. Then $\big(\d x^i\smallat{p}\big)_{i=1}^n$ is a basis for $T_P^*M$.</p>
-<p><strong>Proof.</strong> Choose a tangent vector $X\in T_pM$. Then since $\Big(\dfrac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ is a basis for $T_pM$, we may write</p>
-<p>$$X=\sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p}$$</p>
-<p>for some collection of scalars $X^j\in\R$. Thus,</p>
-<p>$$\begin{align}<br />
-\d x^i\smallat{p} X &amp;= \d x^i\smallat{p} \Big(\sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p}\Big) \\<br />
-&amp;= \sum_{j=1}^n X^j \frac{\partial}{\partial x^j}\at{p} x^i \\<br />
-&amp;= \sum_{j=1}^n X^j \partial_j (x^i\circ (x^j)^{-1})\at{x(p)} \\<br />
-&amp;= \sum_{j=1}^n X^j \delta^i_j \\<br />
-&amp;= X^i.<br />
-\end{align}$$</p>
-<p>That is, $d x^i\smallat{p}$ is the projection map onto the $i$th component of the vector $X$. So not only is $\big(\d x^i\smallat{p}\big)_{i=1}^n$ a basis for $T_p^*M$, it is actually the dual basis to the basis $\Big(\dfrac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ for $T_pM$.</p>
-</blockquote>
-<p>We shall later extend the idea of the differential of a function to that of the <em>exterior derivative</em> of a differential form. But as usual I'm getting ahead of myself!</p>
-<p>We're now equipped to define the notion of the pullback of a smooth map, which is the dual notion to the pushforward.</p>
-<blockquote>
-<p><strong>Definition.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$, let $p\in M$ and let $\phi_*:T_pM\to T_{\phi(p)}N$ be the pushforward of $\phi$. Then the <strong>pullback</strong> of $\phi$ is the map</p>
-<p>$$\phi^*:T_{\phi(p)}^*N\to T_p^*M$$</p>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold and let $(U, x)$ be a chart on $M$. The <strong>partial derivative vector field with respect to the $i$th component of the chart map $x$</strong> is the vector field</p>
+<p>$$\frac{\partial}{\partial x^i}:C^\infty(M)\to C^\infty(M)$$</p>
 <p>defined by</p>
-<p>$$(\phi^*\omega)X=\omega(\phi_*X)$$</p>
-<p>for any cotangent vector $\omega\in T_{\phi(p)}^* N$ and any tangent vector $X\in T_pM$.</p>
+<p>$$\frac{\partial}{\partial x^i}f = \partial_i(f\circ x^{-1})$$</p>
+<p>for any smooth function $f\in C^\infty(M)$, where $\partial_i$ represents the normal partial derivative operator with respect to the $i$th component in the sense of multivariable calculus.</p>
 </blockquote>
-<p>So the pullback takes the cotangent vector $\omega$ in the cotangent space to $N$ at $\phi(p)$ and turns it into a cotangent vector $\phi^*\omega$ in the cotangent space to $M$ at $p$. This cotangent vector acts on a vector $X$ in the tangent space to $M$ at $p$ as described and spits out a real number.</p>
-<p>Just like the pushforward, the pullback is a map between vector spaces and so it makes sense to ask whether it is a linear map. Again, the answer is yes.</p>
+<p>There's just one minor issue, though. Only modules over division rings are guaranteed to have a basis. Since $C^\infty(M)$ is not a division ring, it is possible that $\Gamma(TM)$ might not have a basis for some manifolds $M$.</p>
 <blockquote>
-<p><strong>Theorem.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$ and let $p\in M$. Then the pullback $\phi^*:T_{\phi(p)}^*N\to T_p^*M$ of the map $\phi$ is a linear map.</p>
-<p><strong>Proof.</strong> Suppose $X\in T_pM$ is a tangent vector and $\omega_1,\omega_2\in T_{\phi(p)}^* N$ are cotangent vectors. Then</p>
-<p>$$\begin{align}<br />
-\phi^*(\omega_1+\omega_2)X &amp;= (\omega_1 + \omega_2)(\phi_*X) \\<br />
-&amp;= \omega_1(\phi_*X) + \omega_2(\phi_*X) \\<br />
-&amp;= (\phi^*\omega_1)X + (\phi^*\omega_2)X,<br />
-\end{align}$$</p>
-<p>so the pullback is additive. Suppose next that $X\in T_pM$ is a tangent vector, and $\omega\in T_{\phi(p)}^* N$ is a cotangent vector and $a\in\R$ is a scalar. Then</p>
-<p>$$\begin{align}<br />
-\phi^*(a\omega)X &amp;= (a\omega)(\phi_*X) \\<br />
-&amp;= a\omega(\phi_*X) \\<br />
-&amp;= a\phi^*(\omega)X,<br />
-\end{align}$$</p>
-<p>so the pullback is homogeneous. It follows that it is a linear map.</p>
+<p><strong>Example.</strong> Let $M=\R$. Vector fields in $\R$ are pretty boring. They're all of the form</p>
+<p>$$X=f\frac{\partial}{\partial x}$$</p>
+<p>for some smooth function $f$, where $(\R, x)$ is the global chart on $\R$. That's because at each point, a tangent vector can only point in one of two directions: negative or positive. Thus, $\Gamma(T\R)$ in this case has $\Big(\dfrac{\partial}{\partial x}\Big)$ as a basis, since every vector field is a $C^\infty(M)$-multiple of $\dfrac{\partial}{\partial x}$.</p>
 </blockquote>
-<p>The pushforward took directional derivatives of curves to directional derivatives of images of curves under $\phi$ in the natural way. The same type of behavior is true for differentials of functions under the pullback!</p>
 <blockquote>
-<p><strong>Theorem.</strong> Let $\phi:M\to N$ be a smooth map between smooth manifolds $M$ and $N$, let $p\in M$ and let $f\in C^\infty(N)$ be a smooth function. Then</p>
-<p>$$\phi^*\big(\d f\smallat{\phi(p)}\big) = \d (f\circ\phi)\smallat{p}.$$</p>
-<p><strong>Proof.</strong> Let $X\in T_pM$ be a tangent vector. Then</p>
-<p>$$\begin{align}<br />
-\phi^*\big(\d f\smallat{\phi(p)}\big)X &amp;= \d f\smallat{\phi(p)}(\phi_*X) \\<br />
-&amp;= (\phi_*X)f \\<br />
-&amp;= X(f\circ\phi) \\<br />
-&amp;= \d (f\circ\phi)\smallat{p}X.<br />
-\end{align}$$</p>
+<p><strong>Example.</strong> Let $M=S^2$, the two-dimensional unit sphere. It is a theorem of algebraic topology (the <strong>hairy ball theorem</strong>) that there is no nonvanishing continuous tangent vector field on spheres of even dimension. Thus, there is certainly no nonvanishing <em>smooth</em> tangent vector field on $S^2$. Basis vector fields can't vanish, and so it follows that there is no basis for $\Gamma(TS^2)$.</p>
 </blockquote>
-<p>Now that we've explored the tangent and cotangent spaces to a smooth manifold at a point, we've gotten the difficult stuff out of the way. In my next post, we'll define the tangent and cotangent bundles, as well as vector, covector and tensor fields on a manifold. Stay tuned!</p>
+<p>This doesn't really turn out to be a problem though, because it turns out that $\Gamma(TM)$ always has a local basis on any chart. That is, if we choose a chart $(U, x)$ on $M$ then $\Big(\dfrac{\partial}{\partial x^i}\Big)_{i=1}^n$ is a basis for $\Gamma(TU)$. Since we usually work in terms of charts anyway, this is good enough for our purposes.</p>
+<p>Next we turn to the cotangent bundle, so we can develop covector fields.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth manifold $M$, its cotangent bundle is the set</p>
+<p>$$T^*M = \bigsqcup_{p\in M}T_p^* M.$$</p>
+</blockquote>
+<p>Just as we did for the tangent bundle, we can turn the cotangent bundle into a topological space by defining a bundle projection map $\pi^*:T^*M\to M$ and using the induced topology. We can then give $T^*M$ a smooth manifold structure exactly as we did for $TM$, and of course it will also have twice the dimension of the original manifold. I will omit these details, though, so that this post is not an almost exact duplicate of the previous post.</p>
+<p>This allows us to define smooth covector fields in the obvious way:</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold and $T^*M$ its cotangent bundle. A <strong>smooth covector field</strong> on $M$ is a smooth section of the bundle projection map $\pi^*:T^*M\to M$.</p>
+<p>We write $\Gamma(T^*M)$ to denote the set of all covector fields on $M$.</p>
+</blockquote>
+<p>While vector fields act on functions, covector fields act on vector fields. However, we give them the same $C^\infty(M)$-module structure.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold and let $f\in C^\infty(M)$ be a smooth function. The <strong>differential</strong> of $f$ is the covector field</p>
+<p>$$\d f:\Gamma(TM)\to C^\infty(M)$$</p>
+<p>defined by</p>
+<p>$$(\d f)X = Xf$$</p>
+<p>for any smooth vector field $X\in\Gamma(TM)$.</p>
+</blockquote>
+<p>Just like with vector fields, given a chart $(U, x)$, the covector fields $(\d x^i)_{i=1}^n$ form a local basis for $\Gamma(T^*U)$.</p>
+<p>Now that we have a grip of smooth vector and covector fields on a smooth manifold, along with their $C^\infty(M)$-module structures, we can define smooth tensor fields — one of the most important objects in differential geometry.</p>
+<blockquote>
+<p><strong>Definition.</strong> Let $M$ be a smooth manifold. A <strong>smooth tensor field</strong> on $M$ is a $C^\infty(M)$-multilinear map</p>
+<p>$$T:\prod_{i=1}^j \Gamma(T^*M) \prod_{i=1}^k \Gamma(TM)\to\R.$$</p>
+<p>We say that the <strong>rank</strong> of this tensor field is $(j,k)$.</p>
+</blockquote>
+<p>In any chart $(U, x)$, a smooth tensor field is locally a tensor product of the form</p>
+<p>$$T = \bigotimes_{i=1}^j f^i\frac{\partial}{\partial x^i} \bigotimes_{i=1}^k g_i\d x^i.$$</p>
+<p>There's a lot more to be said about tensor fields, but I'll leave it at that for now.</p>
+<p>One last thing I'll mention, but won't go into too much detail on, is that the pushforward and pullback can be extended to vector and covector fields, respectively. Hence, the pushforward acts as a covariant functor from the category of smooth manifolds with smooth maps into the category of vector bundles. Likewise, the pullback acts as a contravariant functor between the same categories.</p>
 
 
             </section>

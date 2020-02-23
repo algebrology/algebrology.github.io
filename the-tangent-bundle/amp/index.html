@@ -18,7 +18,7 @@
     <meta property="og:description" content="In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems." />
     <meta property="og:url" content="https://algebrology.github.io/the-tangent-bundle/" />
     <meta property="article:published_time" content="2020-02-22T20:36:21.000Z" />
-    <meta property="article:modified_time" content="2020-02-23T03:04:01.000Z" />
+    <meta property="article:modified_time" content="2020-02-23T04:57:06.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="The Tangent Bundle" />
     <meta name="twitter:description" content="In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems." />
@@ -49,7 +49,7 @@
     "headline": "The Tangent Bundle",
     "url": "https://algebrology.github.io/the-tangent-bundle/",
     "datePublished": "2020-02-22T20:36:21.000Z",
-    "dateModified": "2020-02-23T03:04:01.000Z",
+    "dateModified": "2020-02-23T04:57:06.000Z",
     "description": "In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -175,7 +175,7 @@ For all $a\in R$ and $u,v\in \Gamma$, we have that $a(u+v)=au+av$.</p>
 <p>The second problem is even more troubling. We would like to define a vector field $X$ as a map which acts on any point $p$ in a smooth manifold and returns a tangent vector in $T_pM$. However, we don't currently have any set which can act as the codomain of such a map. This is because each point in the manifold has a <em>different</em> tangent space, so a vector at $p$ lives in $T_pM$ while a vector based at $q$ lives in $T_qM$.</p>
 <p>So before we can proceed, we need to come up with a set comprised of all possible tangent vectors to all the points on our manifold, so this set can act as the codomain of a vector field. Furthermore, since we want a concept of smoothness for our vector fields, this set will have to be a smooth manifold. This smooth manifold I'm describing will be the <em>tangent bundle</em>.</p>
 <blockquote>
-<p><strong>Definition.</strong> Given a smooth manifold $M$, its <strong>tangent bundle</strong>, is the set</p>
+<p><strong>Definition.</strong> Given a smooth manifold $M$, its <strong>tangent bundle</strong> is the set</p>
 <p>$$TM = \bigsqcup_{p\in M} T_pM.$$</p>
 </blockquote>
 <p>The name "bundle" is actually very appropriate since the tangent bundle, as a set, is really just all the tangent spaces bundled together. Every element of the tangent bundle $TM$ is of the form $(X, p)$, where $p\in M$ is a point in our manifold and $X\in T_pM$ is a tangent vector based at $p$. Our goal now is to introduce a smooth manifold structure on the tangent bundle.</p>

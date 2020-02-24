@@ -23,7 +23,7 @@
     <meta property="og:description" content="Last time I said that our motivation for defining the tangent bundle was so that we&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite get there! Let&#x27;s do that now, since we are already equipped to do so!  Definition. Let $M$ be a smooth" />
     <meta property="og:url" content="https://algebrology.github.io/vector-covector-and-tensor-fields/" />
     <meta property="article:published_time" content="2020-02-23T09:07:00.000Z" />
-    <meta property="article:modified_time" content="2020-02-23T21:09:30.000Z" />
+    <meta property="article:modified_time" content="2020-02-24T04:10:24.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Vector, Covector and Tensor Fields" />
     <meta name="twitter:description" content="Last time I said that our motivation for defining the tangent bundle was so that we&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite get there! Let&#x27;s do that now, since we are already equipped to do so!  Definition. Let $M$ be a smooth" />
@@ -54,7 +54,7 @@
     "headline": "Vector, Covector and Tensor Fields",
     "url": "https://algebrology.github.io/vector-covector-and-tensor-fields/",
     "datePublished": "2020-02-23T09:07:00.000Z",
-    "dateModified": "2020-02-23T21:09:30.000Z",
+    "dateModified": "2020-02-24T04:10:24.000Z",
     "description": "Last time I said that our motivation for defining the tangent bundle was so that\nwe&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite\nget there! Let&#x27;s do that now, since we are already equipped to do so!\n\n&gt; Definition. Let $M$ be a smooth manifold and $TM$ its tangent bundle. A smooth\nvector field on $M$ is a smooth section of the bundle projection map $\\pi:TM\\to\nM$.\n\nWe write $\\Gamma(TM)$ to denote the set of all vector fields on $M$.\n\n\nThis may seem like gibberish at f",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -174,6 +174,23 @@ MathJax.Hub.Config({
 <p><img src="https://algebrology.github.io/content/images/2020/02/vector-field.svg" alt="vector-field"></p>
 <p>This is only part of the picture, though, because we want to be able to work with vector fields algebraically. One might think to turn $\Gamma(TM)$ into a vector field over $\R$. This would allow us to scale vector fields and add them together in the natural ways. However, scaling an entire vector field by a fixed amount is pretty boring. We can do much better!</p>
 <p>Notice that the set of smooth functions $C^\infty(M)$ is a commutative ring with unity under the usual addition and multiplication of functions. It fails to be a field, though, because it lacks inverses for certain nonzero elements (a nonzero function which vanishes anywhere has no multiplicative inverse). If we use smooth functions as our scalars by turning $\Gamma(TM)$ into a module over $C^\infty(M)$, we gain the power to scale vector fields by smooth functions. That is, the amount of scaling will depend on where in the manifold we look.</p>
+<p>We think of tangent vectors as maps that act on smooth functions and spit out real numbers. Unfortunately, vector fields as we defined them do not act on smooth functions, they act on points in $M$ and produce tangent vectors. The following trick allows us to think of them instead as objects which act on smooth functions again.</p>
+<blockquote>
+<p><strong>Definition.</strong> Given a smooth manifold $M$ and a vector field $X\in\Gamma(TM)$, the <strong>canonically associated derivation</strong> of $X$ is the map $\hat{X}:C^\infty(M)\to C^\infty(M) defined by</p>
+<p>$$(\hat{X}f)(p)=X(p)f$$</p>
+<p>for any point $p\in M$.</p>
+</blockquote>
+<p>The fact that the canonically assoiated derivation of a vector field is actually a derivation follows from the fact that tangent vectors are derivations.</p>
+<blockquote>
+<p><strong>Theorem.</strong> The canonically assoiated derivation of a vector field is a derivation.</p>
+<p><strong>Proof.</strong> Let $M$ be a smooth manifold and choose a vector field $X\in\Gamma(TM)$. If $f$ and $g$ are smooth functions in $C^\infty(M)$ then</p>
+<p>$$\begin{align}<br>
+(\hat{X}(fg))(p) &amp;= X(p)(fg) \\<br>
+&amp;= fX(p)g + gX(p)f<br>
+\end{align}$$</p>
+<p>because $X(p)$ is a tangent vector in $T_pM$ which we know to be a derivation.</p>
+</blockquote>
+<p>Because we like to think of vector fields as objects which act on smooth functions, we will henceforth treat a vector field and its canonically associated derivation as the same object and never speak of this again. Just remember what's really going on behind the scenes, so that the definitions all line up properly.</p>
 <p>It is convenient now to make the following definition, which extends our previous definition of partial derivative operators with respect to a chart component at a point:</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $M$ be a smooth manifold and let $(U, x)$ be a chart on $M$. The <strong>partial derivative vector field with respect to the $i$th component of the chart map $x$</strong> is the vector field</p>
@@ -215,11 +232,11 @@ MathJax.Hub.Config({
 <p>Now that we have a grip of smooth vector and covector fields on a smooth manifold, along with their $C^\infty(M)$-module structures, we can define smooth tensor fields — one of the most important objects in differential geometry.</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $M$ be a smooth manifold. A <strong>smooth tensor field</strong> on $M$ is a $C^\infty(M)$-multilinear map</p>
-<p>$$T:\prod_{i=1}^j \Gamma(T^*M) \prod_{i=1}^k \Gamma(TM)\to\R.$$</p>
+<p>$$T:\prod_{i=1}^j \Gamma(T^*M)\times\prod_{i=1}^k \Gamma(TM)\to\R.$$</p>
 <p>We say that the <strong>rank</strong> of this tensor field is $(j,k)$.</p>
 </blockquote>
 <p>In any chart $(U, x)$, a smooth tensor field is locally a tensor product of the form</p>
-<p>$$T = \bigotimes_{i=1}^j f^i\frac{\partial}{\partial x^i} \bigotimes_{i=1}^k g_i\d x^i.$$</p>
+<p>$$T = \bigotimes_{i=1}^j f^i\frac{\partial}{\partial x^i}\otimes\bigotimes_{i=1}^k g_i\d x^i.$$</p>
 <p>There's a lot more to be said about tensor fields, but I'll leave it at that for now.</p>
 <p>One last thing I'll mention, but won't go into too much detail on, is that the pushforward and pullback can be extended to vector and covector fields, respectively. Hence, the pushforward acts as a covariant functor from the category of smooth manifolds with smooth maps into the category of vector bundles. Likewise, the pullback acts as a contravariant functor between the same categories.</p>
 <!--kg-card-end: markdown-->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Mon, 24 Feb 2020 16:26:02 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Vector, Covector and Tensor Fields]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Last time I said that our motivation for defining the tangent bundle was so that we'd be able to define smooth vector fields on a manifold, but I didn't quite get there! Let's do that now, since we are already equipped to do so!</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Algebrology]]></title><description><![CDATA[A gentle introduction to insanity.]]></description><link>https://algebrology.github.io/</link><image><url>https://algebrology.github.io/favicon.png</url><title>Algebrology</title><link>https://algebrology.github.io/</link></image><generator>Ghost 3.5</generator><lastBuildDate>Mon, 24 Feb 2020 23:40:05 GMT</lastBuildDate><atom:link href="https://algebrology.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Vector, Covector and Tensor Fields]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Last time I said that our motivation for defining the tangent bundle was so that we'd be able to define smooth vector fields on a manifold, but I didn't quite get there! Let's do that now, since we are already equipped to do so!</p>
 <blockquote>
 <p><strong>Definition.</strong> Let $M$ be a smooth</p></blockquote>]]></description><link>https://algebrology.github.io/vector-covector-and-tensor-fields/</link><guid isPermaLink="false">5e51ec7ad6f91f0049df6c98</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Sun, 23 Feb 2020 09:07:00 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Last time I said that our motivation for defining the tangent bundle was so that we'd be able to define smooth vector fields on a manifold, but I didn't quite get there! Let's do that now, since we are already equipped to do so!</p>
 <blockquote>
@@ -17,12 +17,13 @@
 </blockquote>
 <p>The fact that the assoiated derivation of a vector field is actually a derivation follows from the fact that tangent vectors are derivations.</p>
 <blockquote>
-<p><strong>Theorem.</strong> The associated derivation of a vector field is a derivation on $C^\infty(M).</p>
+<p><strong>Theorem.</strong> The associated derivation of a vector field is a derivation on $C^\infty(M)$.</p>
 <p><strong>Proof.</strong> Let $M$ be a smooth manifold and choose a vector field $X\in\Gamma(TM)$. If $f$ and $g$ are smooth functions in $C^\infty(M)$ then for any point $p\in M$,</p>
 <p>$$\begin{align}<br>
 (\hat{X}(fg))(p) &amp;= X(p)(fg) \\<br>
 &amp;= fX(p)g + gX(p)f \\<br>
-&amp;= f(\hat{X}(g))(p) + g(\hat{X}(f))(p)<br>
+&amp;= f(\hat{X}(g))(p) + g(\hat{X}(f))(p) \\<br>
+&amp;= (f\hat{X}g + g\hat{X}f)(p)<br>
 \end{align}$$</p>
 <p>because $X(p)$ is a tangent vector in $T_pM$ which we know to be a derivation. It follows that $\hat{X}(fg) = f\hat{X}g + g\hat{X}f$ and thus $\hat{X}$ is a derivation of smooth functions.</p>
 </blockquote>
@@ -72,7 +73,7 @@
 <p>We say that the <strong>rank</strong> of this tensor field is $(j,k)$.</p>
 </blockquote>
 <p>In any chart $(U, x)$, a smooth tensor field is locally a tensor product of the form</p>
-<p>$$T = \bigotimes_{i=1}^j f^i\frac{\partial}{\partial x^i}\otimes\bigotimes_{i=1}^k g_i\d x^i.$$</p>
+<p>$$T = \sum_{\substack{i\in I\\ j\in J}}\bigotimes_{i\in I}^j f^i\frac{\partial}{\partial x^i}\otimes\bigotimes_{j\in J}^k g_j\d x^j.$$</p>
 <p>There's a lot more to be said about tensor fields, but I'll leave it at that for now.</p>
 <p>One last thing I'll mention, but won't go into too much detail on, is that the pushforward and pullback can be extended to vector and covector fields, respectively. Hence, the pushforward acts as a covariant functor from the category of smooth manifolds with smooth maps into the category of vector bundles. Likewise, the pullback acts as a contravariant functor between the same categories.</p>
 <!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[The Tangent Bundle]]></title><description><![CDATA[In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems.]]></description><link>https://algebrology.github.io/the-tangent-bundle/</link><guid isPermaLink="false">5e516f62564b2a004912fd0a</guid><dc:creator><![CDATA[Eric Shapiro]]></dc:creator><pubDate>Sat, 22 Feb 2020 20:36:21 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Before we begin, I need to introduce a few new concepts. The first is that of a module, which is like a vector space but whose scalars come from a ring instead of a field. I guess I should formally define what a ring is before defining a module.</p>

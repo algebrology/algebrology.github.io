@@ -23,7 +23,7 @@
     <meta property="og:description" content="Last time I said that our motivation for defining the tangent bundle was so that we&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite get there! Let&#x27;s do that now, since we are already equipped to do so!  Definition. Let $M$ be a smooth" />
     <meta property="og:url" content="https://algebrology.github.io/vector-covector-and-tensor-fields/" />
     <meta property="article:published_time" content="2020-02-23T09:07:00.000Z" />
-    <meta property="article:modified_time" content="2020-02-24T16:25:46.000Z" />
+    <meta property="article:modified_time" content="2020-02-24T23:39:12.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Vector, Covector and Tensor Fields" />
     <meta name="twitter:description" content="Last time I said that our motivation for defining the tangent bundle was so that we&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite get there! Let&#x27;s do that now, since we are already equipped to do so!  Definition. Let $M$ be a smooth" />
@@ -54,7 +54,7 @@
     "headline": "Vector, Covector and Tensor Fields",
     "url": "https://algebrology.github.io/vector-covector-and-tensor-fields/",
     "datePublished": "2020-02-23T09:07:00.000Z",
-    "dateModified": "2020-02-24T16:25:46.000Z",
+    "dateModified": "2020-02-24T23:39:12.000Z",
     "description": "Last time I said that our motivation for defining the tangent bundle was so that\nwe&#x27;d be able to define smooth vector fields on a manifold, but I didn&#x27;t quite\nget there! Let&#x27;s do that now, since we are already equipped to do so!\n\n&gt; Definition. Let $M$ be a smooth manifold and $TM$ its tangent bundle. A smooth\nvector field on $M$ is a smooth section of the bundle projection map $\\pi:TM\\to\nM$.\n\nWe write $\\Gamma(TM)$ to denote the set of all vector fields on $M$.\n\n\nThis may seem like gibberish at f",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -187,7 +187,8 @@ MathJax.Hub.Config({
 <p>$$\begin{align}<br>
 (\hat{X}(fg))(p) &amp;= X(p)(fg) \\<br>
 &amp;= fX(p)g + gX(p)f \\<br>
-&amp;= f(\hat{X}(g))(p) + g(\hat{X}(f))(p)<br>
+&amp;= f(\hat{X}(g))(p) + g(\hat{X}(f))(p) \\<br>
+&amp;= (f\hat{X}g + g\hat{X}f)(p)<br>
 \end{align}$$</p>
 <p>because $X(p)$ is a tangent vector in $T_pM$ which we know to be a derivation. It follows that $\hat{X}(fg) = f\hat{X}g + g\hat{X}f$ and thus $\hat{X}$ is a derivation of smooth functions.</p>
 </blockquote>
@@ -237,7 +238,7 @@ MathJax.Hub.Config({
 <p>We say that the <strong>rank</strong> of this tensor field is $(j,k)$.</p>
 </blockquote>
 <p>In any chart $(U, x)$, a smooth tensor field is locally a tensor product of the form</p>
-<p>$$T = \bigotimes_{i=1}^j f^i\frac{\partial}{\partial x^i}\otimes\bigotimes_{i=1}^k g_i\d x^i.$$</p>
+<p>$$T = \sum_{\substack{i\in I\\ j\in J}}\bigotimes_{i\in I}^j f^i\frac{\partial}{\partial x^i}\otimes\bigotimes_{j\in J}^k g_j\d x^j.$$</p>
 <p>There's a lot more to be said about tensor fields, but I'll leave it at that for now.</p>
 <p>One last thing I'll mention, but won't go into too much detail on, is that the pushforward and pullback can be extended to vector and covector fields, respectively. Hence, the pushforward acts as a covariant functor from the category of smooth manifolds with smooth maps into the category of vector bundles. Likewise, the pullback acts as a contravariant functor between the same categories.</p>
 <!--kg-card-end: markdown-->

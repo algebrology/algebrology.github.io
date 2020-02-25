@@ -18,7 +18,7 @@
     <meta property="og:description" content="In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems." />
     <meta property="og:url" content="https://algebrology.github.io/the-tangent-bundle/" />
     <meta property="article:published_time" content="2020-02-22T20:36:21.000Z" />
-    <meta property="article:modified_time" content="2020-02-23T04:57:06.000Z" />
+    <meta property="article:modified_time" content="2020-02-25T22:17:25.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="The Tangent Bundle" />
     <meta name="twitter:description" content="In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems." />
@@ -49,7 +49,7 @@
     "headline": "The Tangent Bundle",
     "url": "https://algebrology.github.io/the-tangent-bundle/",
     "datePublished": "2020-02-22T20:36:21.000Z",
-    "dateModified": "2020-02-23T04:57:06.000Z",
+    "dateModified": "2020-02-25T22:17:25.000Z",
     "description": "In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -225,8 +225,53 @@ x'\big((Y, q)\big) &amp;= \big(x^1(q), x^2(q), \ldots, x^n(q), Y^1, Y^2, \ldots,
 <p>Since $U'$ is the preimage under $\pi$ of an open set in $M$, it is open in the tangent bundle $TM$.</p>
 </blockquote>
 <p>So we've shown that $TM$ is a topological manifold, and it was almost too easy! In fact, most things related to the tangent bundle are. It is defined to be nice and to make our lives easier.</p>
-<p>Lastly, we should show that the atlas we've exhibited on $TM$ is a smooth atlas. That is, if $(U', x')$ and $(V', y')$ are charts for $TM$ with nonempty intersection, $U'\cap V'\ne\varnothing$, then we need to show that the transition map $y'\circ(x')^{-1}:\R^{2n}\to\R^{2n}$ is smooth in the sense of ordinary multivariable calculus. It is not too difficult to do so, but I won't bother to do it here.</p>
-<p>In any case, we've arrived where we wanted to: the tangent bundle is a smooth manifold! We have all the machinery we need now to develop vector fields in my next post, as well as covector and tensor fields!</p>
+<p>Lastly, we should show that the atlas we've exhibited on $TM$ is a smooth atlas. That is, if $(U', x')$ and $(V', y')$ are charts for $TM$ with nonempty intersection, $U'\cap V'\ne\varnothing$, then we need to show that the transition map $x'\circ(y')^{-1}:\R^{2n}\to\R^{2n}$ is smooth in the sense of ordinary multivariable calculus. It is not too difficult to do so, but it is a bit ugly. To simplify the proof, we'll need a lemma which explains what happens to the components of tangent vectors under a change of chart.</p>
+<blockquote>
+<p><strong>Lemma.</strong> Suppose $(U, x)$ and $(V, y)$ are charts on a smooth manifold $M$ of dimension $n$ with $U\cap V\ne\varnothing$. If $p\in U\cap V$ and $Z\in T_p M$ is the tangent vector</p>
+<p>$$Z = \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p}$$</p>
+<p>with respect to the chart map $y$, then</p>
+<p>$$Z = \sum_{i=1}^n c^i \frac{\partial}{\partial x^i}\at{p}$$</p>
+<p>with resepct to the chart map $x$, where each component $c^j$ is given by</p>
+<p>$$c^j = \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} x^j.$$</p>
+<p><strong>Proof.</strong> Since $\displaystyle\Big(\frac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ is a basis for $T_p M$, we know there exist scalars $c^1, c^2, \ldots, c^n\in\R$ for which</p>
+<p>$$\sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} = \sum_{i=1}^n c^i \frac{\partial}{\partial x^i}\at{p}.$$</p>
+<p>If we apply the differential of $x^j$, the cotangent vector $\d x^j\smallat{p}:T_p M\to\R$, to both sides of the above equation, things simplify considerably. Applying it first to the right side, we obtain</p>
+<p>$$\begin{align}<br />
+\d x^j\smallat{p}\Big(\sum_{i=1}^n c^i \frac{\partial}{\partial x^i}\at{p}\Big) &amp;= \sum_{i=1}^n c^i \d x^j\smallat{p} \Big(\frac{\partial}{\partial x^i}\at{p}\Big) \\<br />
+&amp;= \sum_{i=1}^n c^i\delta^j_i \\<br />
+&amp;= c^j.<br />
+\end{align}$$</p>
+<p>Applying $\d x^j\smallat{p}$ to the right side, we see that</p>
+<p>$$\begin{align}<br />
+\d x^j\smallat{p}\Big(\sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p}\Big) &amp;= \sum_{i=1}^n b^i \d x^j\smallat{p} \Big(\frac{\partial}{\partial y^i}\at{p}\Big) \\<br />
+&amp;= \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} x^j<br />
+\end{align}$$</p>
+<p>Equating the two sides, we see that</p>
+<p>$$c^j = \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} x^j,$$</p>
+<p>as desired.</p>
+</blockquote>
+<p>Now that we know how tangent vectors transform under a change of basis, we can prove that the chart maps we've defined on the tangent bundle are smooth maps in the sense of multivariable calculus.</p>
+<blockquote>
+<p><strong>Theorem.</strong> Let $M$ be a smooth manifold. If $(U', x')$ and $(V', y')$ are charts for $TM$ with nonempty intersection, then the transition map $x'\circ(y')^{-1}:\R^{2n}\to\R^{2n}$ is smooth.</p>
+<p><strong>Proof.</strong> Choose any point $(a^1, a^2, \ldots, a^n, b^1, b^2, \ldots, b^n)$ in the image of the transition map $\im x'\circ(y')^{-1}\subseteq\R^{2n}$. Then</p>
+<p>$$\begin{align}<br />
+x'\circ(y')^{-1}(a^1, a^2, \ldots, a^n, b^1, b^2, \ldots, b^n) &amp;= x'\Big(y^{-1}(a^1, a^2,\ldots,a^n), \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p}\Big) \\<br />
+&amp;= (A^1, A^2, \ldots, A^n, B^1, B^2, \ldots, B^n),<br />
+\end{align}$$</p>
+<p>where each $A^j$ is given by</p>
+<p>$$\begin{align}<br />
+A^j &amp;= x^j\circ y^{-1}(a^1, a^2, \ldots, a^n) \\<br />
+&amp;= (x\circ y^{-1})^j (a^1, a^2, \ldots, a^n)<br />
+\end{align}$$</p>
+<p>and each $B^j$ is given by</p>
+<p>$$\begin{align}<br />
+B^j &amp;= \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} x^j \\<br />
+&amp;= \sum_{i=1}^n b^i \partial_i(x^j\circ y^{-1})\at{y(p)} \\<br />
+&amp;= \sum_{i=1}^n b^i \partial_i(x\circ y^{-1})^j\at{y(p)}.<br />
+\end{align}$$</p>
+<p>These components are all smooth, since the transition map $x\circ y^{-1}$ on $M$ is smooth. It follows that the transition map $x'\circ(y')^{-1}$ on $TM$ is smooth, completing the proof.</p>
+</blockquote>
+<p>We've arrived where we wanted to: the tangent bundle is a smooth manifold! We have all the machinery we need now to develop vector fields in my next post, as well as covector and tensor fields.</p>
 
 
             </section>

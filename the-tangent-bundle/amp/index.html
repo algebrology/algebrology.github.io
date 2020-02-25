@@ -18,7 +18,7 @@
     <meta property="og:description" content="In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems." />
     <meta property="og:url" content="https://algebrology.github.io/the-tangent-bundle/" />
     <meta property="article:published_time" content="2020-02-22T20:36:21.000Z" />
-    <meta property="article:modified_time" content="2020-02-25T22:17:25.000Z" />
+    <meta property="article:modified_time" content="2020-02-25T22:27:12.000Z" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="The Tangent Bundle" />
     <meta name="twitter:description" content="In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems." />
@@ -49,7 +49,7 @@
     "headline": "The Tangent Bundle",
     "url": "https://algebrology.github.io/the-tangent-bundle/",
     "datePublished": "2020-02-22T20:36:21.000Z",
-    "dateModified": "2020-02-25T22:17:25.000Z",
+    "dateModified": "2020-02-25T22:27:12.000Z",
     "description": "In multivariable calculus, we have the concept of a smooth vector field, which is an assignment of a vector to each point in $\\R^n$ in such a way that the vectors vary smoothly as we move around in space. We would like to do the same on smooth manifolds, but we immediately run into some problems.",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -231,7 +231,7 @@ x'\big((Y, q)\big) &amp;= \big(x^1(q), x^2(q), \ldots, x^n(q), Y^1, Y^2, \ldots,
 <p>$$Z = \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p}$$</p>
 <p>with respect to the chart map $y$, then</p>
 <p>$$Z = \sum_{i=1}^n c^i \frac{\partial}{\partial x^i}\at{p}$$</p>
-<p>with resepct to the chart map $x$, where each component $c^j$ is given by</p>
+<p>with respect to the chart map $x$, where each component $c^j$ is given by</p>
 <p>$$c^j = \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} x^j.$$</p>
 <p><strong>Proof.</strong> Since $\displaystyle\Big(\frac{\partial}{\partial x^i}\at{p}\Big)_{i=1}^n$ is a basis for $T_p M$, we know there exist scalars $c^1, c^2, \ldots, c^n\in\R$ for which</p>
 <p>$$\sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} = \sum_{i=1}^n c^i \frac{\partial}{\partial x^i}\at{p}.$$</p>
@@ -241,7 +241,7 @@ x'\big((Y, q)\big) &amp;= \big(x^1(q), x^2(q), \ldots, x^n(q), Y^1, Y^2, \ldots,
 &amp;= \sum_{i=1}^n c^i\delta^j_i \\<br />
 &amp;= c^j.<br />
 \end{align}$$</p>
-<p>Applying $\d x^j\smallat{p}$ to the right side, we see that</p>
+<p>Applying $\d x^j\smallat{p}$ to the left side, we see that</p>
 <p>$$\begin{align}<br />
 \d x^j\smallat{p}\Big(\sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p}\Big) &amp;= \sum_{i=1}^n b^i \d x^j\smallat{p} \Big(\frac{\partial}{\partial y^i}\at{p}\Big) \\<br />
 &amp;= \sum_{i=1}^n b^i \frac{\partial}{\partial y^i}\at{p} x^j<br />

@@ -391,7 +391,7 @@ a {
 	border-bottom-color: rgba(33, 41, 49, 0.5)
 }
 
-a:hover {
+a:not(p):hover {
 	border-bottom-color: transparent;
 	color: #18bfef !important
 }

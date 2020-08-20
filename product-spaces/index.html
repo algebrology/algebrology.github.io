@@ -9,11 +9,10 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=8ebf29bf22" />
-    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=8ebf29bf22" /></noscript>
+    <link rel="stylesheet" type="text/css" href="/assets/main/css/main.css?v=8e76bc551c" />
+    <noscript><link rel="stylesheet" href="/assets/main/css/noscript.css?v=8e76bc551c" /></noscript>
 
     <meta name="description" content="We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://algebrology.github.io/product-spaces/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="amphtml" href="https://algebrology.github.io/product-spaces/amp/" />
@@ -24,7 +23,7 @@
     <meta property="og:description" content="Next let&#x27;s talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?" />
     <meta property="og:url" content="https://algebrology.github.io/product-spaces/" />
     <meta property="article:published_time" content="2017-04-08T20:54:38.000Z" />
-    <meta property="article:modified_time" content="2019-02-20T04:45:14.000Z" />
+    <meta property="article:modified_time" content="2020-08-20T22:57:40.000Z" />
     <meta property="article:tag" content="topology" />
     
     <meta name="twitter:card" content="summary" />
@@ -43,6 +42,7 @@
     "publisher": {
         "@type": "Organization",
         "name": "Algebrology",
+        "url": "https://algebrology.github.io/",
         "logo": {
             "@type": "ImageObject",
             "url": "https://algebrology.github.io/favicon.ico",
@@ -59,7 +59,7 @@
     "headline": "Product Spaces",
     "url": "https://algebrology.github.io/product-spaces/",
     "datePublished": "2017-04-08T20:54:38.000Z",
-    "dateModified": "2019-02-20T04:45:14.000Z",
+    "dateModified": "2020-08-20T22:57:40.000Z",
     "keywords": "topology",
     "description": "Next let&#x27;s talk about an intuitive way to combine topological spaces to create new spaces which inherit certain characteristics from their parents. We&#x27;ve talked about Cartesian products before in the context of set theory, but what happens if we take the Cartesian product of topological spaces?",
     "mainEntityOfPage": {
@@ -69,7 +69,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 3.5" />
+    <meta name="generator" content="Ghost 3.30" />
     <link rel="alternate" type="application/rss+xml" title="Algebrology" href="https://algebrology.github.io/rss/" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
@@ -217,15 +217,19 @@ B_1\cap B_2 &amp;= (U_1\times V_1)\cap (U_2\times V_2) \\<br>
 <p>Products of these open sets somewhat resemble open rectangles wrapped around the surface of the torus. We'll call them open patches, and the unions of these open patches form the open sets on the torus.</p>
 <p><img src="https://algebrology.github.io/content/images/2017/04/torus_open_sets.svg" alt="torus open sets"></p>
 </blockquote>
-<p>Since $S^1\times S^1$ can also be viewed as a subspace of $\mathbb{R}^3$, we could also view the open sets on the torus as intersections of open sets in $\mathbb{R}^3$ with $S^1\times S^1$. This statement may seen obvious, but I haven't proved it yet.</p>
+<p>Since $S^1\times S^1$ can also be viewed as a subspace of $\mathbb{R}^3$, we could also view the open sets on the torus as intersections of open sets in $\mathbb{R}^3$ with $S^1\times S^1$. This statement may seen obvious, but I haven't proved it yet. Specifically, I need to show that a subspace of a product space is the same as a product of subspaces.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Let $X$ and $Y$ denote topological spaces with $A\subseteq X$ and $B\subseteq Y$. The topology on $A\times B$ as a subspace of $X\times Y$ is the same as the product topology where $A$ is a subspace of $X$ and $B$ is a subspace of $Y$.</p>
-<p><strong>Proof.</strong> We argue that any open set in either topology is also open in the other. Choose an open set $U$ in the subspace topology on $A\times B$. By definition, there exists some open set $V$ in $X\times Y$ such that $U=(A\times B)\cap B$. Since it is open in the product topology on $X\times Y$, we have that $V$ must be a union of products of open sets. That is,</p>
+<p><strong>Proof.</strong> We argue that any open set in either topology is also open in the other. First, choose an open set $U$ in the subspace topology on $A\times B$ (as a subspace of the product topology on $X\times Y$). By the definition of the subspace topology, there exists some open set $V$ in $X\times Y$ such that $U=(A\times B)\cap B$. Since $V$ is open in the product topology on $X\times Y$, we have that $V$ must be a union of products of open sets. That is,</p>
+<p>$$V = \bigcup_{i\in I}(S_i \times T_i)$$</p>
+<p>where $I$ is an indexing set such that $S_i$ is open in $X$ and $T_i$ is open in $Y$ for every $i\in I$. Thus,</p>
 <p>$$\begin{align}<br>
-V &amp;= \bigcup\limits_{i\in I}(S_i\times T_i) \\<br>
-&amp;= \bigcup\limits_{i\in I}S_i\times\bigcup\limits_{i\in I}T_i,<br>
+U &amp;= V \cap (A\times B) \\[.5em]<br>
+&amp;= \bigcup\limits_{i\in I}(S_i\times T_i) \cap (A\times B) \\<br>
+&amp;= \bigcup\limits_{i\in I}\big( (S_i\times T_i) \cap (A\times B) \big) \\<br>
+&amp;= \bigcup\limits_{i\in I}\big( (S_i\cap A) \times (T_i\cap B) \big).<br>
 \end{align}$$</p>
-<p>where $I$ is an indexing set such that $S_i$ is open in $X$ and $T_i$ is open in $Y$ for every $i\in I$. But this means that $U$ is open in the product topology on $A\times B$.</p>
+<p>But $S_i\cap A$ is open in $A$ and $T_i\cap B$ is open in $B$ by the definition of the subspace topology. It follows that $U$ is a union of basis elements for the product topology on $A\times B$, and is thus open in that topology.</p>
 <p>The proof of the reverse direction is completely symmetrical.</p>
 </blockquote>
 <p>So any open set on the torus can also be expressed as the intersection of open balls in $\mathbb{R}^3$ with $S^1\times S^1$. This may or may not be a simpler way of viewing the topology on the torus, depending on the application.</p>
@@ -307,13 +311,13 @@ f^{-1}[U] &amp;= f^{-1}\left[(A\times B)\cap\bigcup_{i\in I}(A_i\times B_i)\righ
     </div>
 
 
-    <script src="/assets/main/js/jquery.min.js?v=8ebf29bf22"></script>
-    <script src="/assets/main/js/jquery.scrollex.min.js?v=8ebf29bf22"></script>
-    <script src="/assets/main/js/jquery.scrolly.min.js?v=8ebf29bf22"></script>
-    <script src="/assets/main/js/browser.min.js?v=8ebf29bf22"></script>
-    <script src="/assets/main/js/breakpoints.min.js?v=8ebf29bf22"></script>
-    <script src="/assets/main/js/util.js?v=8ebf29bf22"></script>
-    <script src="/assets/main/js/main.js?v=8ebf29bf22"></script>
+    <script src="/assets/main/js/jquery.min.js?v=8e76bc551c"></script>
+    <script src="/assets/main/js/jquery.scrollex.min.js?v=8e76bc551c"></script>
+    <script src="/assets/main/js/jquery.scrolly.min.js?v=8e76bc551c"></script>
+    <script src="/assets/main/js/browser.min.js?v=8e76bc551c"></script>
+    <script src="/assets/main/js/breakpoints.min.js?v=8e76bc551c"></script>
+    <script src="/assets/main/js/util.js?v=8e76bc551c"></script>
+    <script src="/assets/main/js/main.js?v=8e76bc551c"></script>
 
     
 

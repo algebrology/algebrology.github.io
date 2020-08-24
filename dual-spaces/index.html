@@ -22,7 +22,7 @@
     <meta property="og:description" content="Since I haven&#x27;t posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces." />
     <meta property="og:url" content="https://algebrology.github.io/dual-spaces/" />
     <meta property="article:published_time" content="2019-08-09T03:55:00.000Z" />
-    <meta property="article:modified_time" content="2019-08-09T19:13:30.000Z" />
+    <meta property="article:modified_time" content="2020-08-24T18:29:15.000Z" />
     <meta property="article:tag" content="linear algebra" />
     
     <meta name="twitter:card" content="summary" />
@@ -58,7 +58,7 @@
     "headline": "Dual Spaces",
     "url": "https://algebrology.github.io/dual-spaces/",
     "datePublished": "2019-08-09T03:55:00.000Z",
-    "dateModified": "2019-08-09T19:13:30.000Z",
+    "dateModified": "2020-08-24T18:29:15.000Z",
     "keywords": "linear algebra",
     "description": "Since I haven&#x27;t posted for a while, I decided to break up my rants about homology with some posts on linear (and multilinear) algebra. In this post, we will (as usual) deal only with finite dimensional vector spaces.",
     "mainEntityOfPage": {
@@ -261,15 +261,31 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br>
 <p>We've thus shown that any covector can be written as a linear combination of the covectors $(e^i)_{i=1}^n$, and thus they span the dual space.</p>
 <p>It follows that $(e^i)_{i=1}^n$ forms a basis for $V^*$, as desired.</p>
 </blockquote>
-<p>We call the basis defined in the proof above the <strong>dual basis</strong>, and it is the basis we usually work with when talking about the dual space. However, it is of course not the <em>only</em> basis we could choose. It is just particularly convenient for our purposes because of the way things tend to simplify via the Kronecker delta.</p>
+<p>We call the basis defined in the proof above the <strong>dual basis</strong>, and it is the basis we usually work with when talking about the dual space. Note that the dual basis depends on the basis we chose for the original vector space, so every basis for $V$ has a corresponding dual basis for $\dual{V}$.  However, it is of course not the <em>only</em> basis we could choose. It is just particularly convenient for our purposes because of the way things tend to simplify via the Kronecker delta.</p>
 <p>Hidden in the result above is the fact that $\dim V^*=\dim V$. That's because we've exhibited a basis for $V^*$ consisting of $n$ covectors, which is the definition of the dimension of a vector space. So the dual space always has the same dimension as the original vector space (as long as its finite dimensional)! Which is pretty cool I guess. 😎</p>
+<p>The following result will be useful to us later.</p>
+<blockquote>
+<p><strong>Lemma.</strong> Suppose $V$ is a finite dimensional vector space over a field $\F$ and let $v\in V$. If $s(v) = 0$ for every covector $s\in\dual{V}$, then $v = 0$.</p>
+<p><strong>Proof.</strong> We proceed by contraposition, supposing that $v\ne 0$ and arguing that there exists a covector $s\in\dual{V}$ for which $s(v)\ne 0$.</p>
+<p>Choose any basis $(e_i)_{i=1}^n$ for $V$. Then we may write $v=\sum_{i=1}^n v^i e_i$ for some scalars $v^1, v^2, \ldots, v^n\in\F$. Since $v\ne 0$, one of its components (with respect to our chosen basis) must be nonzero. That is, there exists $k\in \{1, 2, \ldots, n\}$ for which $v^k\ne 0$.</p>
+<p>We choose $s=e^k$, the $k$th dual basis vector. Notice that, by linearity of $s$,</p>
+<p>\begin{align}<br>
+s(v) &amp;= e^k(v) \\<br>
+&amp;= e^k\left( \sum_{i=1}^n v^i e_i \right) \\<br>
+&amp;= \sum_{i=1}^n v^i e^k(e_i) \\<br>
+&amp;= \sum_{i=1}^n v^i \delta^k_i \\<br>
+&amp;= v^k \\[.5em]<br>
+&amp;\ne 0.<br>
+\end{align}</p>
+<p>Thus, we have demonstrated there exists a covector $s$ for which $s(v)\ne 0$, and the result follows by contraposition.</p>
+</blockquote>
 <h3 id="thedoubledualspaceanamethedoubledualspace">The Double Dual Space<a name="the-double-dual-space"></h3>
 <p>The following definition is exactly as you might expect.</p>
 <blockquote>
 <p><strong>Definition.</strong> Given a vector space $V$ over a field $\F$ and its dual space $\dual{V}$, its <strong>double dual space</strong>, written $\ddual{V}$, is the dual space of $\dual{V}$.</p>
 </blockquote>
 <p>By now, things may seem hopelessly abstract. If the dual space was the space of all linear functions from $V$ to $\F$, that would make the double dual the space of all linear functions from the space of linear functions from $V$ to $\F$ into $\F$. As if that wasn't complicated enough, there's no end in sight. Am I ever going to stop? Or am I going to next construct the triple dual space, the quadruple dual space, ad infinitum?</p>
-<p>It turns out we don't need to keep going, because as we will soon see, $\ddual{V}$ is essentially just $V$.</p>
+<p>It turns out we don't need to keep going, because as we will soon see, $\ddual{V}$ is essentially just $V$. We will need the above lemma to prove it.</p>
 <blockquote>
 <p><strong>Theorem.</strong> Every finite dimensional vector space $V$ over a field $\F$ is canonically isomorphic to its double dual space $\ddual{V}$.</p>
 <p><strong>Proof.</strong> Recall first that <em>canonically isomorphic</em> means we can find a isomorphism which does not depend on a choice of basis. So proving the &quot;canonical&quot; part consists only of not choosing a basis to arrive at the result.</p>
@@ -292,12 +308,12 @@ s(v) &amp;= s\left(\sum_{j=1}^n v^j e_j\right) \\<br>
 &amp;= as(v) \\<br>
 &amp;= a\big(T(v)\big)(s).<br>
 \end{align}$$</p>
-<p>We'll show next that $T$ is injective (and thus bijective by our earlier dimension argument). We will do so by showing that its kernel is trivial. So suppose $v\in\ker(T)$. Then by definition,</p>
+<p>We'll show next that $T$ is injective (and thus bijective by our earlier dimension argument). We will do so by showing that its kernel is trivial. So suppose $v\in\ker T$. Then by definition,</p>
 <p>$$\begin{align}<br>
 \big(T(v)\big)(s) &amp;= s(v) \\<br>
 &amp;= 0<br>
 \end{align}$$</p>
-<p>for all covectors $s\in\dual{V}$. It follows then that $v=0$, since the above holds for any choice of covector $s$, including isomorphisms which themselves must have trivial kernels.</p>
+<p>for all covectors $s\in\dual{V}$. It follows then from the above lemma that $v=0$, since the above holds for any choice of covector $s$. Therefore, $\ker T = \{0\}$ and so $T$ is injective (and thus bijective).</p>
 <p>We have shown that $T$ is a bijective linear map, and we have done so without explicitly choosing a basis for any of the vector spaces involved, so it follows that $T$ is a canonical isomorphism, as desired.</p>
 </blockquote>
 <p>So it turns out that $V$ and $\ddual{V}$ can be used almost interchangeably. But using the double dual space gives us a nice kind of duality (pardon the pun), in that we can think of covectors as maps which act on vectors, and we can think of vectors as maps which act on covectors. Physicists often do this without realizing that they are technically working with cocovectors instead of vectors, but that's fine because the isomorphism makes it work.</p>
